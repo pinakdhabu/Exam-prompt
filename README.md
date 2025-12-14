@@ -835,4 +835,4 @@ My question:
 
 **Last Updated:** December 2025  
 **Compatible with:** ChatGPT Plus, ChatGPT Free, Gemini Pro  
-**Subjects Covered:** Engineering (DBMS, OS, CN, SE, TOC, and more)
+**Subjects Covered:** Engineering (DBMS, OS, CN, SE, and more)
