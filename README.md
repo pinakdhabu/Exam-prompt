@@ -4,6 +4,99 @@ ChatGPT prompts for answer generation
 ## Click here to test (gemini)
 https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK
 
+# 📌 How to Make a Project in ChatGPT (PC & Phone)
+
+## 🧠 What Are ChatGPT Projects?
+Projects are workspace folders inside ChatGPT that help you organize related chats, uploaded files, and custom instructions in one place. They are useful for managing long-term tasks, studies, research, or content creation.
+
+---
+
+## 🖥️ How to Create a Project on PC (Web / Desktop)
+
+### 1. Open ChatGPT
+- Go to the ChatGPT website or open the desktop app.
+- Sign in to your account.
+
+### 2. Open the Projects Panel
+- Look at the **left sidebar**.
+- Find and click **Projects** (expand the sidebar if hidden).
+
+### 3. Create a New Project
+- Click the **“+” (plus)** icon next to Projects.
+- Enter a **project name**.
+- (Optional) Choose a **color** for easy identification.
+
+### 4. Add or Create Chats
+- Start a **new chat inside the project**, or
+- Move existing chats:
+  - Click the **three dots (⋮)** on a chat
+  - Select **Add to project**
+
+### 5. Upload Files
+- Open the project.
+- Click **Add files** or the **paperclip icon**.
+- Upload PDFs, DOCX, PPTX, images, etc.
+
+### 6. Add Project Instructions (Optional)
+- Set custom instructions for the project.
+- These instructions guide how ChatGPT responds within that project.
+
+---
+
+## 📱 How to Create a Project on Phone (Android / iOS)
+
+> Note: The mobile app supports projects, but management options may be slightly limited compared to PC.
+
+### 1. Open the ChatGPT App
+- Launch the official ChatGPT app.
+- Sign in.
+
+### 2. Open Menu / Projects
+- Tap the **☰ menu** or **Projects tab** (if visible).
+
+### 3. Create a New Project
+- Tap **Projects**.
+- Tap the **“+” (plus)** icon.
+- Enter the **project name** and confirm.
+
+### 4. Add Chats
+- Start a new chat inside the project.
+- Chats created inside remain linked to that project.
+
+### 5. Upload Files
+- Open the project chat.
+- Tap the **paperclip / upload icon**.
+- Select files from your phone storage.
+
+---
+
+## 🗂️ Best Practices for Using Projects
+
+- Create **one project per topic or goal**.
+- Upload all **relevant documents** to the project.
+- Use **clear project instructions** for consistent answers.
+- Keep related chats inside the same project.
+- Rename or color-code projects for easy navigation.
+
+---
+
+## ✅ Quick Summary
+
+### PC / Web
+1. Open ChatGPT → Projects → +
+2. Name the project
+3. Add chats or move existing ones
+4. Upload files
+5. Add instructions (optional)
+
+### Phone / App
+1. Open app → Menu → Projects
+2. Tap + and name project
+3. Start chats inside project
+4. Upload files from device
+
+
+
 For example 
 - simple prompt (upload syllabus pdf)
 ```
