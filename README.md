@@ -1,6 +1,9 @@
 # Exam-prompt
 ChatGPT prompts for answer generation
 
+## Click here to test (gemini)
+https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK
+
 For example 
 - simple prompt (upload syllabus pdf)
 ```
