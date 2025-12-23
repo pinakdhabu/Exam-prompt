@@ -8,17 +8,13 @@
 
 ### Test with Gemini
 
-📊 *Q.P. Analysis Tool*
-👉 https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh
+📊 [*Q.P. Analysis Tool*](https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh)
 
-📝 *Notes Generator*
-👉 https://gemini.google.com/gem/bf5b14582187
+📝 [*Notes Generator*](https://gemini.google.com/gem/bf5b14582187)
 
-🔥 *Important Topics Generator*
-👉 https://gemini.google.com/gem/4266a7e8000e
+🔥 [*Important Topics Generator*](https://gemini.google.com/gem/4266a7e8000e)
 
-🧠 *Exam-Style Answer Generator*
-👉 https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK
+🧠 [*Exam-Style Answer Generator*](https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK)
 
 
 # 🌟 Gemini Gems – Complete Overview
