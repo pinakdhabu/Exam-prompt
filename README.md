@@ -6,7 +6,7 @@
 
 ## 🚀 Quick Start
 
-### Test with Gemini
+### Test with Gemini Gems
 
 📊 [*Q.P. Analysis Tool*](https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh)
 
