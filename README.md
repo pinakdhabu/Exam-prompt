@@ -4,9 +4,19 @@
 
 ---
 
-## Quick Start
+## Quick Start with Gemini Gems
 
-Upload your **SPPU syllabus PDF** and **previous year question papers**, then use the appropriate generator below.
+📊 [*Q.P. Analysis Tool*](https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh)
+
+📝 [*Notes Generator*](https://gemini.google.com/gem/bf5b14582187)
+
+🔥 [*Important Topics Generator*](https://gemini.google.com/gem/4266a7e8000e)
+
+🧠 [*Exam-Style Answer Generator*](https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK)
+
+---
+
+Or use the prompts below with ChatGPT/Claude directly. Upload your **SPPU syllabus PDF** and **previous year question papers**, then use the appropriate generator.
 
 ---
 
