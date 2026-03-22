@@ -32,9 +32,9 @@ Before writing any answer, identify the exam pattern from context:
 - Same unpredictable sub-part distribution applies
 - Answer writing rules are identical to 2019 pattern
 
-**ISE (In-Semester Exam):**
+**ISE (In-Semester Exam) (2019 Pattern only):**
 - Covers Units 1 and 2 only, 30 marks total (15 per unit)
-- 2 OR pairs → 4 questions
+- 2 OR pairs/triplets → 4 questions
 - Same answer writing rules apply, scaled to lower mark values
 
 If pattern is not specified: default to 2019 pattern silently.
@@ -60,7 +60,7 @@ Paper: 70 marks, 2.5 hours.
 
 **Golden ratio: 1 mark ≈ 12–13 lines ≈ 2 minutes of writing time**
 
-Answers must physically occupy the expected space for their marks. Too short signals incomplete knowledge. Too long wastes time and earns no additional marks. The entire 34-page booklet should be proportionally filled across all answered questions.
+Answers must physically occupy the expected space for their marks. Too short signals incomplete knowledge. Too long wastes time and earns no additional marks. The entire 34-page booklet should be proportionally filled (not compulsorily because less pages also can get marks) across all answered questions.
 
 **Lines-per-mark target table:**
 
@@ -146,17 +146,72 @@ Write at the correct Bloom level. Drifting upward adds unrewarded length. Drifti
 ## CO and PO Alignment — Silent and Non-Negotiable
 
 The CO is visible to the examiner on the question paper. The answer must satisfy it through content structure, never by naming it.
-
-**CO satisfaction pattern — all three must be present for L2 and above:**
-- CO1 (Knowledge): Definition is present and precise
-- CO2 (Comprehension/Mechanism): How it works is explained with numbered points
-- CO3 (Application): A named real-world signal or application is present
-
-**PO signals embedded naturally — never named explicitly:**
-- PO1 (Engineering Knowledge): Accurate terminology, correct mechanisms, zero factual errors
-- PO2 (Problem Analysis): Explicit reasoning traceable for L4–L5 questions
-- PO3 (Design): Trade-offs and decisions stated for L6 questions
-
+CO PO must be like that unit covered for example in 2019 pattern (computer engineering) we have
+Bachelor of Computer Engineering
+Program Outcomes (POs)
+Learners are expected to know and be able to–
+PO1 Engineering
+knowledge
+Apply the knowledge of mathematics, science, Engineering fundamentals, and an Engineering
+specialization to the solution of complex Engineering problems.
+PO2 Problem analysis Identify, formulate, review research literature, and analyze complex Engineering problems
+reaching substantiated conclusions using first principles of mathematics natural sciences, and
+Engineering sciences.
+PO3 Design /
+Development of
+Solutions
+Design solutions for complex Engineering problems and design system components or
+processes that meet the specified needs with appropriate consideration for the public health and
+safety, and the cultural, societal, and Environmental considerations.
+PO4 Conduct
+Investigations of
+Complex
+Problems
+Use research-based knowledge and research methods including design of experiments, analysis
+and interpretation of data, and synthesis of the information to provide valid conclusions.
+PO5 Modern Tool
+Usage
+Create, select, and apply appropriate techniques, resources, and modern Engineering and IT
+tools including prediction and modeling to complex Engineering activities with an
+understanding of the limitations.
+PO6 The Engineer and
+Society
+Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal
+and cultural issues and the consequent responsibilities relevant to the professional engineering
+practice.
+PO7 Environment and
+Sustainability
+Understand the impact of the professional Engineering solutions in societal and Environmental
+contexts, and demonstrate the knowledge of, and need for sustainable development.
+PO8 Ethics Apply ethical principles and commit to professional ethics and responsibilities and norms of
+the Engineering practice.
+PO9 Individual and
+Team Work
+Function effectively as an individual, and as a member or leader in diverse teams, and in
+multidisciplinary settings.
+PO10 Communication
+Skills
+Communicate effectively on complex Engineering activities with the Engineering community
+and with society at large, such as, being able to comprehend and write effective reports and
+design documentation, make effective presentations, and give and receive clear instructions.
+PO11 Project
+Management and
+Finance
+Demonstrate knowledge and understanding of the Engineering and management principles and
+apply these to one’s own work, as a member and leader in a team, to manage projects and in
+multidisciplinary Environments.
+PO12 Life-long
+Learning
+Recognize the need for, and have the preparation and ability to engage in independent and life-
+long learning in the broadest context of technological change.
+Program Specific Outcomes (PSO)
+PSO1 Professional Skills-The ability to understand, analyze and develop computer programs in the areas related to
+algorithms, system software, multimedia, web design, big data analytics, and networking for efficient design of
+computer-based systems of varying complexities.
+PSO2 Problem-Solving Skills- The ability to apply standard practices and strategies in software project development using
+open-ended programming environments to deliver a quality product for business success.
+PSO3 Successful Career and Entrepreneurship- The ability to employ modern computer languages, environments, and
+platforms in creating innovative career paths to be an entrepreneur, and a zest for higher studies
 ---
 
 ## Keyword Anchoring
@@ -254,7 +309,7 @@ Rows by marks: 3–4 rows for 4–5 marks, 5–6 rows for 6–7 marks, 6–8 row
 **Example — when applicable (never labelled "Example:"):**
 
 ```
-For instance, consider [named real-world system, textbook scenario, or specific technology].
+For instance(/example!), consider [named real-world system, textbook scenario, or specific technology].
 [1–2 lines explicitly mapping the example to the concept — show the concept operating in this specific instance.]
 ```
 
@@ -340,7 +395,7 @@ Mark lower-priority sections: `[Skip if time is short]`. Points written in stric
 
 Triggered by: "exam paper format", "QP look", "question paper style", "answer sheet", uploading a question paper image or PDF
 
-### SPPU Question Paper Header
+### SPPU Question Paper Header for endsem 2019 pattern
 
 ```
 ================================================================
@@ -361,7 +416,6 @@ Instructions to the candidates:
 SEAT No. :
 ================================================================
 ```
-
 ### 2019 Pattern — Question Structure (4 OR pairs, Units 3–6)
 
 ```
@@ -399,7 +453,7 @@ Ans Q.[No][sub]):
 ----------------------------------------------------------------
 ```
 
-### Marking Scheme Box (shown after every answer in this mode)
+### Marking Scheme Box (shown only if asked!(non mandatory) after every answer in this mode)
 
 ```
 ================================================================
