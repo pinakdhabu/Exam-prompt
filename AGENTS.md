@@ -14,43 +14,50 @@ How to use skills:
 Usage notes:
 - Only use skills listed in <available_skills> below
 - Do not invoke a skill that is already loaded in your context
+- This repo is pre-configured for Computer Engineering. For OTHER departments:
+  1. Ask user for a directory path containing their PYQ PDFs and syllabus PDFs
+  2. Scan that directory recursively for .pdf files
+  3. Identify which are question papers vs syllabus docs (by filename/content)
+  4. Read the PDFs to understand the department's subjects and pattern
+  5. Load the appropriate skill — it works for ANY engineering department
+  6. If no directory provided and no PDFs uploaded → Ask: "Please provide your syllabus PDF and PYQ pdfs"
 </usage>
 
 <available_skills>
 
 <skill>
 <name>sppu-answer-writer</name>
-<description>Generates exam-ready theory answers for SPPU Undergraduate Engineering (2019 & 2024 Pattern) indistinguishable from official model answer sheets. Handles command words (Define, Explain, Compare, Justify), marks-to-depth mapping, Bloom's taxonomy alignment, and exam paper format mode. Covers FE/SE/TE/BE Computer Engineering subjects.</description>
+<description>Generates exam-ready theory answers for SPPU Undergraduate Engineering (2019 & 2024 Pattern) indistinguishable from official model answer sheets. Handles command words (Define, Explain, Compare, Justify), marks-to-depth mapping, Bloom's taxonomy alignment, and exam paper format mode. Works for ANY engineering department when provided with their syllabus. Pre-configured with Computer Engineering intelligence.</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>sppu-notes-generator</name>
-<description>Generates 100% syllabus-locked, exam-ready NOTES for SPPU subjects. Produces structured notes with definitions, mechanism points, diagrams, tables, and examples. Calibrated for examiner checking behavior.</description>
+<description>Generates 100% syllabus-locked, exam-ready NOTES for SPPU subjects. Produces structured notes with definitions, mechanism points, diagrams, tables, and examples. Calibrated for examiner checking behavior. Works for ANY department.</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>sppu-pyq-analyzer</name>
-<description>Analyzes SPPU Previous Year Question Papers and syllabus to generate high-probability exam topics, question patterns, unit-wise trends, Bloom's distribution, and exam strategy. Requires PYQ PDFs as input.</description>
+<description>Analyzes SPPU Previous Year Question Papers and syllabus to generate high-probability exam topics, question patterns, unit-wise trends, Bloom's distribution, and exam strategy. Requires PYQ PDFs as input. Works for ANY department.</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>sppu-imp-topics-generator</name>
-<description>Generates high-probability IMP topics, exam-relevant questions grouped by marks, and unit-wise preparation strategy from PYQ analysis. Outputs Must-Prepare, Selective, and Safe-to-Skim categories.</description>
+<description>Generates high-probability IMP topics, exam-relevant questions grouped by marks, and unit-wise preparation strategy from PYQ analysis. Outputs Must-Prepare, Selective, and Safe-to-Skim categories. Works for ANY department.</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>sppu-assignment-writer</name>
-<description>Generates assignment-ready theory answers for SPPU engineering subjects. Produces clear, syllabus-aligned content with marking scheme. Suitable for 5-7 mark evaluation depth.</description>
+<description>Generates assignment-ready theory answers for SPPU engineering subjects. Produces clear, syllabus-aligned content with marking scheme. Suitable for 5-7 mark evaluation depth. Works for ANY department.</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>sppu-exam-paper-generator</name>
-<description>Generates full SPPU-style question papers (2019 & 2024 Pattern) with proper header, OR structure, CO mapping, and mandatory question types. Covers all units with Bloom's distribution.</description>
+<description>Generates full SPPU-style question papers (2019 & 2024 Pattern) with proper header, OR structure, CO mapping, and mandatory question types. Covers all units with Bloom's distribution. Works for ANY department.</description>
 <location>project</location>
 </skill>
 
@@ -63,6 +70,12 @@ Usage notes:
 <skill>
 <name>sppu-pyq-index</name>
 <description>Complete index of SPPU Previous Year Question Paper collection (2019-2025, 270MB+) organized by year, semester, subject. References local PDF collection for all Computer Engineering subjects including FE, Honors, and electives.</description>
+<location>project</location>
+</skill>
+
+<skill>
+<name>sppu-universal-adapter</name>
+<description>Universal entry point for ANY SPPU engineering department. Scans user-provided directory for PYQ PDFs and syllabus PDFs, identifies department and subjects, then routes to the correct skill. If no PDFs found, asks user to provide them. Use this when user mentions a non-Comp department (Mechanical, Civil, Electrical, AIDS, etc.) or doesn't specify their department.</description>
 <location>project</location>
 </skill>
 
