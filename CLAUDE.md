@@ -1,13 +1,13 @@
 ---
-name: sppu-exam-skill-hub
+name: universal-exam-skill-hub
 description: >
-  Master entry point for all SPPU engineering exam preparation skills. Routes to specialized sub-skills for answer writing, notes generation, PYQ analysis, IMP topics, assignment writing, and exam paper generation.
-  Trigger on any SPPU engineering exam-related query. The AGENTS.md file in this repo contains a complete skill loading system.
+  Master entry point for ALL SPPU exam preparation skills. Routes to specialized universal sub-skills for answer writing, notes generation, PYQ analysis, IMP topics, assignment writing, exam paper generation, and university detection.
+  Trigger on any exam-related query. The AGENTS.md file in this repo contains a complete skill loading system. Works for ANY university worldwide.
 ---
 
-# SPPU Exam Skill Hub
+# Universal Exam Skill Hub
 
-This repository contains a comprehensive set of skills for SPPU Undergraduate Engineering exam preparation (2019 & 2024 Pattern).
+This repository contains a comprehensive set of universal exam preparation skills for **any university worldwide** (pre-configured for SPPU Computer Engineering).
 
 ## Available Skills
 
@@ -15,13 +15,14 @@ All skills are in the `skills/` directory with `SKILL.md` files. See `AGENTS.md`
 
 | Skill | File | Purpose |
 |---|---|---|
-| answer-writer | `skills/answer-writer/SKILL.md` | Write exam-ready theory answers |
-| notes-generator | `skills/notes-generator/SKILL.md` | Compile syllabus-locked notes |
-| pyq-analyzer | `skills/pyq-analyzer/SKILL.md` | Analyze PYQ patterns |
-| imp-topics-generator | `skills/imp-topics-generator/SKILL.md` | Generate IMP topics & questions |
-| assignment-writer | `skills/assignment-writer/SKILL.md` | Write assignment answers |
-| exam-paper-generator | `skills/exam-paper-generator/SKILL.md` | Generate question papers |
-| subject-prompt-bank | `skills/subject-prompt-bank/SKILL.md` | Subject-specific sample answers |
+| universal-a-plus-answer-writer | `skills/answer-writer/SKILL.md` | 10/10 GPA answers — all conditions |
+| universal-notes-generator | `skills/notes-generator/SKILL.md` | 12+ note formats for any subject |
+| universal-pyq-analyzer | `skills/pyq-analyzer/SKILL.md` | 13 analysis types with stats |
+| universal-imp-topics-generator | `skills/imp-topics-generator/SKILL.md` | 5 probability levels, 7 time plans |
+| universal-assignment-writer | `skills/assignment-writer/SKILL.md` | 12 assignment types with marking |
+| universal-exam-paper-generator | `skills/exam-paper-generator/SKILL.md` | 11+ university paper patterns |
+| universal-subject-prompt-bank | `skills/subject-prompt-bank/SKILL.md` | 8 discipline templates, 16 samples |
+| universal-university-adapter | `skills/universal-university-adapter/SKILL.md` | University detection & routing |
 | pyq-index | `pyq-index/SKILL.md` | PYQ PDF collection index |
 
 ## PYQ Collection
@@ -31,9 +32,9 @@ Location: `/home/pinak/Documents/SPPU Engineering PYQ Papers/`
 
 ## Usage
 
-When the user asks a question, load the relevant skill from the `skills/` directory. Each SKILL.md contains complete instructions for that specific task type.
+Load the relevant skill from the `skills/` directory. For non-SPPU universities, first load the `universal-university-adapter` skill which scans/accepts your PYQ and syllabus PDFs, detects your university pattern, and routes to the correct skill.
 
-## Official Syllabus Reference
+## Official Syllabus Reference (SPPU)
 
 For accurate unit-wise content, Course Outcomes (CO), and CO-PO mapping:
 - See [`SYLLABUS.md`](SYLLABUS.md) — extracted from official SPPU PDFs
