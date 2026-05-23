@@ -298,19 +298,25 @@ document.getElementById('clearBtn').onclick = () => {
   document.getElementById('result').style.display = 'none';
 };
 
-document.getElementById('openChatGPT').onclick = () => {
-  const q = encodeURIComponent(document.getElementById('question').value || 'Explain ACID properties [6 marks]');
-  window.open('https://chatgpt.com/?prompt=' + q, '_blank');
-};
+async function copyAndOpen(url) {
+  const question = document.getElementById('question').value;
+  const univ = document.getElementById('univ').value;
+  const full = promptContent + '\n\n---\n\n' + (question || '[Paste your question here]') + '\nUniversity pattern: ' + univ;
+  try {
+    await navigator.clipboard.writeText(full);
+  } catch {
+    document.getElementById('result').textContent = 'Copy failed. Select all manually (Ctrl+A, Ctrl+C).';
+    document.getElementById('result').style.display = 'block';
+    return;
+  }
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').textContent = 'Full prompt + question copied to clipboard!\n\nPaste it into the chat that just opened.';
+  window.open(url, '_blank');
+}
 
-document.getElementById('openClaude').onclick = () => {
-  window.open('https://claude.ai/new', '_blank');
-};
-
-document.getElementById('openGemini').onclick = () => {
-  const q = encodeURIComponent(document.getElementById('question').value || 'Explain ACID properties [6 marks]');
-  window.open('https://gemini.google.com/?q=' + q, '_blank');
-};
+document.getElementById('openChatGPT').onclick = () => copyAndOpen('https://chatgpt.com');
+document.getElementById('openClaude').onclick = () => copyAndOpen('https://claude.ai/new');
+document.getElementById('openGemini').onclick = () => copyAndOpen('https://gemini.google.com');
 </script>
 </body>
 </html>
