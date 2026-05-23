@@ -58,7 +58,11 @@
 <body>
 
 <header>
-  <h1>Exam Prompt — Universal Answer Generator</h1>
+  <div style="display:flex;align-items:center;gap:8px">
+    <a href="index.html" style="color:var(--text);text-decoration:none;font-weight:700;font-size:1rem">Exam Prompt</a>
+    <span style="color:var(--muted);font-size:0.75rem">/</span>
+    <span style="color:var(--secondary);font-size:0.85rem">Generator</span>
+  </div>
   <div class="controls">
     <select id="univ">
       <option value="SPPU">SPPU</option>
@@ -77,6 +81,14 @@
 </header>
 
 <main>
+  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+    <span style="border:1px solid var(--border);padding:1px 8px;font-size:0.65rem;color:var(--secondary)">Claude</span>
+    <span style="border:1px solid var(--border);padding:1px 8px;font-size:0.65rem;color:var(--secondary)">ChatGPT</span>
+    <span style="border:1px solid var(--border);padding:1px 8px;font-size:0.65rem;color:var(--secondary)">Gemini</span>
+    <span style="border:1px solid var(--border);padding:1px 8px;font-size:0.65rem;color:var(--secondary)">Cursor</span>
+    <span style="border:1px solid var(--border);padding:1px 8px;font-size:0.65rem;color:var(--secondary)">Copilot</span>
+    <span style="border:1px solid var(--border);padding:1px 8px;font-size:0.65rem;color:var(--secondary)">Codex</span>
+  </div>
   <label>Your Question</label>
   <div class="hint">Include subject, marks, and exam type. Example: <em>Explain deadlock avoidance [8 marks] DBMS, closed book</em></div>
   <textarea id="question" placeholder="Paste your exam question here..."></textarea>
@@ -95,7 +107,7 @@
 </main>
 
 <footer>
-  <a href="https://github.com/pinakdhabu/Exam-prompt">GitHub</a> &middot; 20 skills for any university worldwide
+  <a href="https://github.com/pinakdhabu/Exam-prompt">GitHub</a> &middot; <a href="skills.html">Skills</a> &middot; 20 skills for any university worldwide
 </footer>
 
 <script>

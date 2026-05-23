@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills — Exam Prompt</title>
+<style>
+  :root {
+    --bg: #201d1d;
+    --surface: #302c2c;
+    --text: #fdfcfc;
+    --secondary: #9a9898;
+    --muted: #6e6e73;
+    --accent: #007aff;
+    --accent-hover: #0056b3;
+    --danger: #ff3b30;
+    --success: #30d158;
+    --warning: #ff9f0a;
+    --border: rgba(15, 0, 0, 0.12);
+    --border-strong: #646262;
+    --font: 'IBM Plex Mono', 'Berkeley Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    --radius: 4px;
+    --radius-input: 6px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.5; font-size: 16px; font-weight: 400; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  header .logo { font-weight: 700; font-size: 1.1rem; }
+  header .logo a { color: var(--text); text-decoration: none; }
+  header nav a { color: var(--secondary); text-decoration: none; margin-left: 24px; font-size: 0.9rem; font-weight: 500; }
+  header nav a:hover { color: var(--text); }
+  header nav a.active { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
+
+  .page-header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+  .page-header p { color: var(--secondary); font-size: 0.9rem; max-width: 600px; }
+
+  .filter-bar {
+    display: flex; gap: 8px; padding: 20px 0;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    background: transparent; border: 1px solid var(--border); color: var(--secondary);
+    padding: 2px 14px; border-radius: var(--radius); font-size: 0.8rem; cursor: pointer;
+    font-family: var(--font); font-weight: 500; line-height: 2;
+  }
+  .filter-btn:hover { border-color: var(--border-strong); color: var(--text); }
+  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--text); }
+
+  .cat-label {
+    font-size: 0.85rem; font-weight: 700; color: var(--secondary);
+    padding: 24px 0 12px; border-bottom: 1px solid var(--border);
+    margin-top: 8px;
+  }
+
+  .skills-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); margin: 16px 0 48px; }
+
+  .skill-item {
+    background: var(--surface); padding: 20px;
+    display: grid; grid-template-columns: 1fr 120px; gap: 16px;
+    align-items: start;
+  }
+  .skill-info h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; }
+  .skill-info h3 .badge {
+    display: inline-block; font-size: 0.6rem; font-weight: 500;
+    padding: 1px 8px; border: 1px solid var(--border); margin-left: 8px; vertical-align: middle;
+    color: var(--secondary);
+  }
+  .skill-info p { color: var(--secondary); font-size: 0.8rem; line-height: 1.5; }
+  .skill-meta { text-align: right; }
+  .skill-meta .tag {
+    display: inline-block; font-size: 0.65rem; font-weight: 500;
+    padding: 1px 8px; border: 1px solid var(--border); margin-bottom: 6px;
+    color: var(--secondary);
+  }
+  .skill-meta a { color: var(--accent); font-size: 0.75rem; text-decoration: underline; display: block; margin-top: 4px; }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 32px 0;
+    text-align: center; color: var(--secondary); font-size: 0.8rem;
+  }
+  footer a { color: var(--accent); text-decoration: underline; }
+  a { color: var(--accent); }
+
+  .hidden { display: none; }
+
+  @media (max-width: 768px) {
+    .skill-item { grid-template-columns: 1fr; }
+    .skill-meta { text-align: left; }
+    header nav a { margin-left: 12px; font-size: 0.8rem; }
+    .page-header { padding: 32px 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo"><a href="index.html">Exam Prompt</a></div>
+    <nav>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="index.html#quickstart">Quick Start</a>
+      <a href="https://github.com/pinakdhabu/Exam-prompt">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1># All 20 Skills</h1>
+    <p>Modular, self-contained, portable across every AI agent platform. Each skill is a SKILL.md file that teaches the AI how to perform a specific task.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Claude</span>
+      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">ChatGPT</span>
+      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Gemini</span>
+      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Cursor</span>
+      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Copilot</span>
+      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Codex</span>
+      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">DeepSeek</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="core">Core</button>
+    <button class="filter-btn" data-filter="writing">Writing</button>
+    <button class="filter-btn" data-filter="analysis">Analysis</button>
+    <button class="filter-btn" data-filter="practice">Practice</button>
+    <button class="filter-btn" data-filter="planning">Planning</button>
+    <button class="filter-btn" data-filter="infra">Infrastructure</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Core -->
+  <div class="cat-label" data-cat="core">Core Skills</div>
+  <div class="skills-list" data-cat="core">
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>A+ Answer Writer <span class="badge">core</span></h3>
+        <p>15-phase answer generation pipeline with anti-deduction guard. Handles every question type, mark level (1-100+), Bloom's level, and command word. Pre-configured for SPPU Computer Engineering, adapts to any syllabus PDF.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">answer</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-a-plus-answer-writer/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Notes Generator <span class="badge">core</span></h3>
+        <p>12+ note formats with automatic format selection: Cornell, Mind Map, Flowchart, Q&A, Rapid Revision, Outline, Matrix, Timeline, Summary, Flashcards, Diagram, and Cheat Sheet. Selects optimal format based on subject type, exam conditions, time available, and learning style.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">notes</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-notes-generator/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>PYQ Analyzer <span class="badge">core</span></h3>
+        <p>13+ statistical analyses on previous year question papers: frequency distribution, unit-wise weightage, Bloom's level heatmap, CO mapping, question type trends, difficulty drift, repeated questions, topic coverage gaps, and probability-ranked predictions with recency adjustment. Requires PDF input.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">analysis</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-pyq-analyzer/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>IMP Topics Generator <span class="badge">core</span></h3>
+        <p>5 probability levels (90%+, 70%+, 50%+, 30%+, 10%+), 7 time-plan options, GPA-targeted tracks for 10/10, 8/10, and pass goals. Per-unit strategies with exact question predictions. Requires PYQ analysis output as input.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">strategy</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-imp-topics-generator/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Writing -->
+  <div class="cat-label" data-cat="writing">Writing & Assignment Skills</div>
+  <div class="skills-list" data-cat="writing">
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Assignment Writer</h3>
+        <p>12 assignment types across 6 output formats. Supports theory, numerical, case study, research, literature review, project proposals, design, analysis, comparison, critical review, problem-solving, and diagram/illustration. Includes marking scheme and CO alignment.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">writing</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-assignment-writer/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Exam Paper Generator</h3>
+        <p>Supports 11+ university patterns: SPPU, VTU, JNTU, Mumbai, AKTU, RGPV, IIT/NIT, North American, UK/Oxford/Cambridge, and Generic. 13 question types, CO/Bloom mapping, marking schemes, and model answer keys.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">writing</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-exam-paper-generator/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Subject Prompt Bank</h3>
+        <p>8 discipline templates: Engineering, Science, Law, Medical, CS, Mathematics, Humanities, and Management. 16 sample answers across 2, 4, 6, 10, and 15-mark levels. Pre-optimized responses with time-budgeted formats.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">writing</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-subject-prompt-bank/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Lab Report Writer</h3>
+        <p>4 lab templates: Engineering, Science, Medical, and Research. Full sections including aim, apparatus, theory, procedure, observations, calculations, results, discussion, conclusions, and viva questions.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">writing</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-lab-report-writer/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Case Study Solver</h3>
+        <p>10+ structured frameworks: SWOT, PESTEL, 5 Whys, Fishbone, Root Cause Analysis, IRAC, Ethical Matrix, Decision Tree, Cost-Benefit, and Force Field. Covers business, engineering, medical, legal, ethical, and technical cases.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">writing</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-case-study-solver/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Essay Grader</h3>
+        <p>Per-criterion scoring: 7 criteria for theory questions, 5 for numerical, 7 for essays. Each criterion evaluated on accuracy, completeness, structure, examples, depth, clarity, and presentation. Includes model answer comparison and improvement priorities.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">writing</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-essay-grader/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analysis -->
+  <div class="cat-label" data-cat="analysis">Analysis & Mapping Skills</div>
+  <div class="skills-list" data-cat="analysis">
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Formula Sheet Generator</h3>
+        <p>10 categories: engineering, mathematics, physics, chemistry, finance, statistics, data science, electronics, mechanics, and thermodynamics. Each formula includes variable definitions, SI units, applicability conditions, and exam tips. Optimized for closed-book recall.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">reference</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-formula-sheet-generator/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Mind Map Generator</h3>
+        <p>Three output formats: Mermaid syntax, text outline, and image descriptions. Color-coded by Bloom's level and priority. Hierarchical structure with cross-links between related concepts. Supports any subject and exam pattern.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">visual</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-mind-map-generator/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Cross-Subject Mapper</h3>
+        <p>Maps conceptual connections across courses. Shows dependency graphs, shared concepts, prerequisite chains, and integrated study paths. Essential for comprehensive exams and interdisciplinary understanding across any degree program.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">visual</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-cross-subject-mapper/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Practice -->
+  <div class="cat-label" data-cat="practice">Practice & Revision Skills</div>
+  <div class="skills-list" data-cat="practice">
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Flashcard Generator</h3>
+        <p>6 card types across 3 difficulty tiers: Fact (basic recall), Cloze (fill-in-blank), Concept (definition), Problem (calculation), Scenario (application), and Compare (contrast). Built-in SRS metadata. Exports to Anki, Quizlet, CSV, and text formats.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">practice</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-flashcard-generator/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>MCQ Practice Generator</h3>
+        <p>9 MCQ patterns: single-correct, multiple-correct, assertion-reason, match-the-following, true/false, fill-in-blank, sequence, analogy, and comprehension. Bloom's-calibrated difficulty with distractor strategy explanations.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">practice</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-mcq-practice-generator/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Viva / Oral Exam Prep</h3>
+        <p>8 viva types: lab, course, project, PhD defense, interview, panel, online, and surprise. CLAIM-EVIDENCE-LINK framework with simulated examiner-student dialogue, anticipated follow-up probes, and grading criteria for all disciplines.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">practice</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-viva-oral-exam-prep/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Last-Minute Crammer</h3>
+        <p>Emergency plans for 12h, 6h, 3h, and 1h timeframes. Uses rapid memory encoding: memory palace, chunking, peg system, acronym chains, and story method. Each plan includes a pre-exam hall strategy checklist.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">practice</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-last-minute-crammer/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Planning -->
+  <div class="cat-label" data-cat="planning">Planning & Strategy Skills</div>
+  <div class="skills-list" data-cat="planning">
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Study Planner</h3>
+        <p>4 plan types: Marathon (30+ days), Sprint (7-14 days), Cram (1-3 days), and Balanced (semester-long). Spaced repetition integration, time allocation algorithm based on difficulty and weightage, adaptive rescheduling, and break scheduling.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">strategy</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-study-planner/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Infrastructure -->
+  <div class="cat-label" data-cat="infra">Infrastructure & Integration Skills</div>
+  <div class="skills-list" data-cat="infra">
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>University Adapter</h3>
+        <p>Auto-detects the user's university from directory of PDFs, uploaded files, verbal descriptions, URLs, or implicit context. Identifies exam pattern (Indian, US, UK, European, Australian, Asian, or Generic) and routes to the correct skill. Works for all departments across every country.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">infra</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-university-adapter/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <h3>Session Config</h3>
+        <p>Persistent session configuration stored as a JSON profile. Stores university, subject, exam pattern, and user preferences. Set once, shared across all 20 skills. Eliminates redundant context detection by providing a single profile that every skill reads.</p>
+      </div>
+      <div class="skill-meta">
+        <span class="tag">infra</span>
+        <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-session-config/SKILL.md">SKILL.md</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>MIT License &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">GitHub</a> &middot; Built for students everywhere</p>
+  </div>
+</footer>
+
+<script>
+const filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.cat-label, .skills-list').forEach(el => {
+      if (filter === 'all') {
+        el.classList.remove('hidden');
+      } else {
+        if (el.dataset.cat === filter) el.classList.remove('hidden');
+        else el.classList.add('hidden');
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
