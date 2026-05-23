@@ -135,6 +135,7 @@
     <button id="openChatGPT" class="primary">Open in ChatGPT</button>
     <button id="openClaude">Open in Claude</button>
     <button id="openGemini">Open in Gemini</button>
+    <button id="openGem" style="color:var(--warm);border-color:var(--warm);font-size:0.68rem">Open Gemini Gem</button>
   </div>
 
   <div class="result" id="result"></div>
@@ -148,6 +149,7 @@
 const SKILLS = {
   "answer-writer": {
     name: "A+ Answer Writer",
+    gem: "https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK",
     desc: "You are a 10/10 GPA Exam Answer Generator operating at Senior Examiner + University Moderator level.",
     text: `# Universal Exam A+ System — Any University, Any Subject, 10/10 GPA
 
@@ -226,6 +228,7 @@ Remain in this role for the entire conversation.` },
 
   "notes": {
     name: "Notes Generator",
+    gem: "https://gemini.google.com/gem/bf5b14582187",
     desc: "You are an academic notes generator that produces exam-ready study material.",
     text: `# Notes Generator — Exam-Ready Study Notes
 
@@ -252,6 +255,7 @@ Remain in this role for the entire conversation.` },
 
   "pyq": {
     name: "PYQ Analyzer",
+    gem: "https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh",
     desc: "You are a statistical exam analyst. Analyze past question papers to find patterns.",
     text: `# PYQ Analyzer — Previous Year Question Paper Analysis
 
@@ -280,6 +284,7 @@ Remain in this role for the entire conversation.` },
 
   "imp-topics": {
     name: "IMP Topics",
+    gem: "https://gemini.google.com/gem/4266a7e8000e",
     desc: "You are an exam strategist. Generate high-probability important topics.",
     text: `# IMP Topics Generator — Exam Strategy
 
@@ -753,6 +758,15 @@ async function copyAndOpen(url) {
 document.getElementById('openChatGPT').onclick = () => copyAndOpen('https://chatgpt.com');
 document.getElementById('openClaude').onclick = () => copyAndOpen('https://claude.ai/new');
 document.getElementById('openGemini').onclick = () => copyAndOpen('https://gemini.google.com');
+document.getElementById('openGem').onclick = () => {
+  const skill = SKILLS[skillSelect.value];
+  if (skill && skill.gem) {
+    window.open(skill.gem, '_blank');
+    showResult('opening gemini gem: ' + skill.name);
+  } else {
+    showResult('no gemini gem available for this skill. try: answer-writer, notes, pyq, or imp-topics.');
+  }
+};
 </script>
 </body>
 </html>

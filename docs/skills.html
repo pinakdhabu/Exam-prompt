@@ -196,28 +196,32 @@ const skills = [
     cat: 'core',
     tags: ['answer-writer', 'core'],
     desc: '15-phase answer generation pipeline with anti-deduction guard. Handles every question type (theory, numerical, MCQ, case study, derivation, diagram, design), every mark level (1-100+), every Bloom\'s level, and every command word (Define, Explain, Compare, Evaluate, Design, etc.). Pre-configured for SPPU Computer Engineering with universal adaptability via syllabus PDF input.',
-    url: 'answer-writer'
+    url: 'answer-writer',
+    gem: 'https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK'
   },
   {
     name: 'Notes Generator',
     cat: 'core',
     tags: ['notes', 'core'],
     desc: '12+ note formats with automatic selection: Cornell, Mind Map, Flowchart, Q&A, Rapid Revision, Outline, Matrix, Timeline, Summary, Cheat Sheet, Diagram, Flashcards. Picks the optimal format based on subject type (theory/practical/math), exam conditions (closed/open book), time available, and learning style.',
-    url: 'notes-generator'
+    url: 'notes-generator',
+    gem: 'https://gemini.google.com/gem/bf5b14582187'
   },
   {
     name: 'PYQ Analyzer',
     cat: 'core',
     tags: ['analysis', 'core'],
     desc: '13+ statistical analyses on previous year question papers: frequency distribution, unit-wise weightage, Bloom\'s level heatmap, CO mapping, question type trends, difficulty drift, repeated question detection, topic coverage gaps, and probability-ranked predictions with recency adjustment. PYQ PDFs required as input.',
-    url: 'pyq-analyzer'
+    url: 'pyq-analyzer',
+    gem: 'https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh'
   },
   {
     name: 'IMP Topics Generator',
     cat: 'core',
     tags: ['strategy', 'core'],
     desc: '5 probability levels (90%+, 70%+, 50%+, 30%+, 10%+), 7 time-plan options (from 7 days to 1 hour), and GPA-targeted tracks for 10/10, 8/10, and pass goals. Per-unit strategies with exact question predictions. Requires PYQ analysis output as input. Never generates answers — focuses on what to study.',
-    url: 'imp-topics-generator'
+    url: 'imp-topics-generator',
+    gem: 'https://gemini.google.com/gem/4266a7e8000e'
   },
   {
     name: 'Assignment Writer',
@@ -346,6 +350,7 @@ function render(filter) {
       <div class="skill-meta">
         ${s.tags.map(t => `<span>${t}</span>`).join('')}
         <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/${s.url}/SKILL.md" target="_blank">SKILL.md</a>
+        ${s.gem ? `<a href="${s.gem}" target="_blank" style="color:var(--warm);border-color:var(--warm)">gemini gem</a>` : ''}
       </div>
     </div>
   `).join('');
