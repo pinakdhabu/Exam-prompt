@@ -1,0 +1,43 @@
+# ============================================================
+# Deployment Architecture
+# ============================================================
+
+direction: right
+
+title: "Deployment"
+
+github: "GitHub" {
+  repo: "pinakdhabu/Exam-prompt" {
+    skills: "Skills (SKILL.md files)"
+    architectures: "Architecture (D2 files)"
+    gh_actions: "GitHub Actions"
+  }
+}
+
+agents: "AI Agents" {
+  claude_code: "Claude Code"
+  cursor: "Cursor"
+  copilot: "GitHub Copilot"
+  codex: "OpenAI Codex"
+  gemini_cli: "Gemini CLI"
+}
+
+users: "Users" {
+  student: "Student"
+  paste_prompt: "PROMPT.md -> Any AI chat"
+  direct_agent: "Direct agent access"
+}
+
+# No-render files (data only)
+session_files: "Persistent Context" {
+  agenst_md: "AGENTS.md"
+  claude_md: "CLAUDE.md"
+  session_config: "Session Config"
+}
+
+# Flows
+repo -> agents: "npx skills@latest add / gh skill install"
+agents -> users: "Answer generation"
+users -> repo: "Upload PYQs + syllabus"
+
+session_files -> agents: "Auto-discovered on load"

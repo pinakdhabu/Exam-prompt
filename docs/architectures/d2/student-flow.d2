@@ -1,0 +1,82 @@
+# ============================================================
+# Student Interaction Flow
+# ============================================================
+
+direction: down
+
+title: "User Journey"
+
+# ============================================================
+# Onboarding
+# ============================================================
+onboarding: "Onboarding" {
+  university_pick: "Pick University"
+  subject_pick: "Pick Subject"
+  pattern_pick: "Pick Exam Pattern"
+  upload: "Upload Syllabus + PYQs"
+}
+
+# ============================================================
+# Session Config
+# ============================================================
+config: "Session Configuration" {
+  profile: {
+    university: "University: SPPU"
+    subject: "Subject: DBMS"
+    pattern: "Pattern: 2024"
+    exam_type: "Exam: ESE"
+    marks: "Marks: 70"
+    duration: "Duration: 150 min"
+  }
+}
+
+# ============================================================
+# User Actions
+# ============================================================
+actions: "What Do You Want?" {
+  write_answer: "Write an Answer" {
+    input_question: "Paste question"
+    input_marks: "Set marks"
+    get_answer: "Get 10/10 answer"
+  }
+  generate_notes: "Generate Notes" {
+    pick_format: "Pick format (Cornell / Mind Map / ...)"
+    pick_units: "Pick units"
+    get_notes: "Get notes"
+  }
+  analyze_pyq: "Analyze PYQs" {
+    upload_pyqs: "Upload PYQs"
+    get_analysis: "Get frequency + predictions"
+  }
+  get_imp: "Get IMP Topics" {
+    get_imp_list: "Get prioritized topics"
+  }
+  practice_mcq: "Practice MCQs" {
+    pick_topic: "Pick topic"
+    set_difficulty: "Set difficulty"
+    get_mcqs: "Get MCQs with explanations"
+  }
+  plan_study: "Plan Study Schedule" {
+    set_deadline: "Set exam date"
+    set_hours: "Set hours/day"
+    get_plan: "Get day-by-day plan"
+  }
+  flashcard_mode: "Generate Flashcards" {
+    pick_source: "Pick source material"
+    export_anki: "Export to Anki"
+  }
+}
+
+# ============================================================
+# Flows
+# ============================================================
+onboarding -> config: "Set once per session"
+config -> actions: "Persistent context"
+
+actions -> write_answer
+actions -> generate_notes
+actions -> analyze_pyq
+actions -> get_imp
+actions -> practice_mcq
+actions -> plan_study
+actions -> flashcard_mode

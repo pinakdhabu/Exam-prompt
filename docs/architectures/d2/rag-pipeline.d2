@@ -1,0 +1,72 @@
+# ============================================================
+# RAG Pipeline — Retrieval-Augmented Generation Flow
+# ============================================================
+
+direction: right
+
+title: "RAG Pipeline Flow"
+
+document: "Source Documents" {
+  pdf: "PDFs"
+  syllabus_doc: "Syllabus"
+  pyq_doc: "PYQs"
+  notes_doc: "Notes"
+}
+
+preprocessing: "Preprocessing" {
+  clean: "Text Cleaning" {
+    remove_stopwords: "Remove Stopwords"
+    normalize: "Normalize Text"
+  }
+  chunk: "Semantic Chunking" {
+    fixed: "Fixed-size Chunks"
+    semantic: "Semantic Boundaries"
+  }
+  embed: "Embedding Generation" {
+    model_bge: "BGE / Instructor"
+    model_openai: "OpenAI Ada"
+  }
+}
+
+vector_store: "Vector Store" {
+  index: "Vector Index" {
+    flat: "Flat Index"
+    hnsw: "HNSW Index"
+  }
+  metadata_index: "Metadata Index" {
+    unit: "Unit Filter"
+    year: "Year Filter"
+    subject: "Subject Filter"
+  }
+  cache_q: "Query Cache"
+}
+
+retrieval: "Retrieval" {
+  hybrid: "Hybrid Search" {
+    dense: "Dense (vector)"
+    sparse: "Sparse (BM25)"
+  }
+  reranker: "Cross-Encoder Reranker"
+  context: "Context Assembly"
+}
+
+generation: "Generation" {
+  prompt: "Prompt Assembly" {
+    system: "System Prompt"
+    skill: "Skill Instructions"
+    context: "Retrieved Context"
+    question: "User Question"
+  }
+  llm_call: "LLM Inference"
+  output_proc: "Output Processing" {
+    format: "Format Check"
+    citation: "Citation Injection"
+  }
+}
+
+# Data flows
+document -> preprocessing: "Raw text"
+preprocessing -> vector_store: "Embedded chunks"
+vector_store -> retrieval: "Similarity search"
+retrieval -> generation: "Ranked context"
+generation -> output_proc: "Generated answer"
