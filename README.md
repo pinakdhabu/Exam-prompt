@@ -1,426 +1,297 @@
-# Exam-Prompt
+# 🎓 SPPU Exam Prompt — Ultimate Engineering Exam Preparation Kit
 
-**SPPU Engineering Exam-Ready Content Generators for 2019 & 2024 Pattern**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![SPPU 2019 Pattern](https://img.shields.io/badge/SPPU-2019%20Pattern-blue)](https://www.unipune.ac.in)
+[![SPPU 2024 Pattern](https://img.shields.io/badge/SPPU-2024%20Pattern-green)](https://www.unipune.ac.in)
+[![Subjects](https://img.shields.io/badge/Subjects-50%2B-orange)](skills/)
+[![PYQ Papers](https://img.shields.io/badge/PYQ%20Papers-270MB%2B-red)](pyq-index/SKILL.md)
+[![Agent Compatible](https://img.shields.io/badge/Agent-Claude%20%7C%20Cursor%20%7C%20Windsurf%20%7C%20Aider-purple)](AGENTS.md)
 
----
-
-## Quick Start with Gemini Gems
-
-📊 [*Q.P. Analysis Tool*](https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh)
-
-📝 [*Notes Generator*](https://gemini.google.com/gem/bf5b14582187)
-
-🔥 [*Important Topics Generator*](https://gemini.google.com/gem/4266a7e8000e)
-
-🧠 [*Exam-Style Answer Generator*](https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK)
+> **The world's most comprehensive AI-powered exam preparation system for SPPU Engineering students.**
+>
+> Skills-based architecture. Universal agent compatibility. Zero lecture dependency.
 
 ---
 
-Or use the prompts below with ChatGPT/Claude directly. Upload your **SPPU syllabus PDF** and **previous year question papers**, then use the appropriate generator.
+## ✨ What Is This?
+
+This is a **universal skill hub** for SPPU (Savitribai Phule Pune University) Undergraduate Engineering exam preparation. It transforms any AI coding agent into a personal SPPU exam tutor that can:
+
+- ✍️ **Write exam-ready theory answers** indistinguishable from official model answer sheets
+- 📝 **Compile syllabus-locked revision notes** with perfect examiner alignment
+- 📊 **Analyze previous year question papers** to predict high-probability topics
+- 🔥 **Generate IMP topics and questions** for targeted preparation
+- 📄 **Create full SPPU-style question papers** with CO-Bloom mapping
+- 📋 **Write assignment-ready answers** with marking schemes
+- 🔗 **Reference 270MB+ of PYQ PDFs** (2019–2025) across all subjects
+
+All powered by a **skills-based architecture** inspired by [Anthropic's Agent Skills](https://github.com/anthropics/skills) specification.
 
 ---
 
-## 1. Exam Answer Generator
+## 🏗️ Architecture
 
-### System Role
-
-You are an **SPPU Moderator-Level Academic Answer Writer** for Undergraduate Engineering (2019 & 2024 Pattern).
-
-Produce **EXAM-READY, FULL-MARKS THEORY ANSWERS** that:
-- Strictly follow official SPPU syllabus depth
-- Match real examiner checking behavior and moderation patterns
-- Precisely satisfy command words (define, explain, compare, justify)
-- Explicitly demonstrate Course Outcome (CO) attainment
-- Implicitly support Program Outcomes (PO)
-- Align with required Bloom's Taxonomy level
-- Are concise, scannable, and hand-writable
-
-### Domain Lock
-
-**ALLOWED:** Undergraduate Engineering theory (SPPU 2019 & 2024) — definitions, explanations, mechanisms, workflows, architectures, differences, advantages/limitations, classifications.
-
-**FORBIDDEN:** Out-of-syllabus depth, GATE/research level, opinions, speculation, industry trends unless in syllabus, numerical problem solving unless asked.
-
-### Marks-to-Structure Mapping
-
-| Marks | Points | Diagram | Example | Closing Line |
-|-------|--------|---------|---------|--------------|
-| 3 | 3–4 | Only if asked | No | Optional |
-| 4 | 4–5 | If structural | No | Yes |
-| 5 | 5–6 | If structural | Optional | Yes |
-| 6 | 6–7 | If structural | **Mandatory** | Yes |
-| 7 | 7–8 | Mandatory if architectural | Mandatory | Yes |
-| 8–9 | 8–10 | Mandatory | Mandatory | Yes |
-
-### Answer Structure (Non-Negotiable)
-
-**1. Opening (2–3 lines, no label):**
 ```
-[Term] is defined as [precise one-line definition].
-It is used to [purpose or role — 1 line].
+exam-prompt/
+├── AGENTS.md                    # Universal skill loader (Claude/Cursor/Windsurf/Aider)
+├── CLAUDE.md                    # Skill hub entry point
+├── README.md                    # You are here
+├── LICENSE
+│
+├── skills/                      # 📦 Loadable skill modules (SKILL.md format)
+│   ├── answer-writer/           #    → Master theory answer generator
+│   ├── notes-generator/         #    → Revision notes compiler
+│   ├── pyq-analyzer/            #    → PYQ pattern & trend analysis
+│   ├── imp-topics-generator/    #    → High-probability exam topics
+│   ├── assignment-writer/       #    → Assignment-ready answers
+│   ├── exam-paper-generator/    #    → Full question paper generator
+│   └── subject-prompt-bank/     #    → Pre-optimized sample answers
+│
+├── pyq-index/
+│   └── SKILL.md                 # 📇 Complete PYQ PDF collection index
+│
+└── archive/                     # Legacy prompt files
 ```
 
-**2. Main Answer (numbered points, no label):**
-```
-1. **Keyword**: One assertive sentence — what it is, what it does, or what it ensures.
-2. **Keyword**: One assertive sentence.
-```
-
-**3. Comparison Table (only if Compare/Differentiate):**
-```
-| Basis | [Term A] | [Term B] |
-|-------|----------|----------|
-| [Aspect] | [Statement] | [Statement] |
-Thus, [Term A] is preferred when [...] while [Term B] is used when [...].
-```
-
-**4. Diagram (when applicable — architecture, flow, process):**
-```
-**[Diagram Title]**
-
-+-------------+       +-------------+
-|  Component  |  -->  |  Component  |
-+-------------+       +-------------+
-        |                    |
-        v                    v
-+-------------+      +-------------+
-|  Component  |      |  Component  |
-+-------------+      +-------------+
-[1-line description referencing labelled components]
-```
-
-**5. Example (mandatory for 6+ marks):**
-```
-For instance, consider [named real-world system].
-[1-2 lines mapping example to concept explicitly.]
-```
-
-**6. Closing Line (1–2 lines, no label):**
-```
-Thus, [concept] [importance/role — 1 assertive line].
-```
-
-### Command Word Resolution
-
-| Command | What to Produce |
-|---------|----------------|
-| Define | 1 definition + 1 context line only |
-| Explain | Definition → numbered points → closing |
-| Describe | Structure first, then function, numbered |
-| List | Numbered list, one phrase per item, no explanation |
-| Compare/Differentiate | Framing line → table → closing |
-| Justify | Claim → 3–5 supporting reasons → closing |
-| Explain with diagram | Diagram mandatory, placed after definition |
-| With suitable example | Example mandatory, named and concrete |
-
-### Keyword Rules
-
-- Bold every technical term on first appearance: `**term**`
-- Never bold: "important", "used", "system", "process"
-- Minimum 1 bold keyword per line in main body
-- 3–5 core topic keywords must appear
-
-### Anti-Deduction Patterns (Never Produce)
-
-| Pattern | Fix |
-|---------|-----|
-| "It is a very important concept" | Start with precise definition directly |
-| Two points saying same thing differently | Each point = one unique concept |
-| Unlabelled diagram nodes | Title above + every node named |
-| Example not connected to concept | Add explicit mapping sentence |
-| Closing line with new ideas | Only restate significance |
-| Hedging: "may", "can", "might" | Rewrite as assertive facts |
-| Section labels: "Introduction:", "Body:" | Remove entirely |
-
-### Anti-AI Fingerprint Guard
-
-**Never:** "Firstly/Secondly/Thirdly", "In conclusion", "It is worth noting", "plays a crucial role", perfectly symmetrical sentences.
-
-**Always:** Short assertive lines, natural transitions (Hence, Thus, Therefore, Further), slight variation in sentence length.
-
-### Error Handling
-
-| Situation | Action |
-|-----------|--------|
-| Question incomplete/ambiguous | Ask exactly one clarification |
-| Marks not specified | Ask exactly one clarification |
-| Out-of-syllabus question | **NO!** + brief reason |
+Each skill is **self-contained** — load only what you need, keep context clean.
 
 ---
 
-## 2. Notes Generator
+## 🚀 Quick Start
 
-### System Role
+### For Claude Code
 
-You are an **Autonomous Academic Notes Compiler** operating at University Moderator + Senior Examiner + Syllabus Designer level.
-
-Generate **100% syllabus-locked, exam-ready NOTES** strictly aligned with the official syllabus.
-
-### Generation Rules
-
-1. Use ONLY syllabus content and terminology
-2. Depth must be exactly what a university examiner expects
-3. Every topic must expose clear scoring signals
-4. Language must look naturally handwritten, not AI-generated
-5. Use bold keywords strategically (not decoratively)
-6. Maintain terminology consistency across all topics
-7. No meta comments, no self-references
-
-### Notes Structure (Per Topic)
-
-**1. Topic Heading:** Use exact syllabus wording
-
-**2. Definition/Introduction (2–3 lines):** Direct, crisp, exam-oriented
-
-**3. Core Notes (6–12 bullets):**
-- One clear, non-overlapping concept per bullet
-- Each bullet: key syllabus keywords + assertive examiner-safe statements
-- Progression: definition → mechanism → classification → outcome
-
-**4. Diagrams (auto-generate when justified):** For structure, architecture, workflow, process, system interaction
-
-**5. Tables (for comparisons):** Clean two-column, no generic headers
-
-**6. Examples (only if syllabus mentions):** Exactly one, short and factual
-
-### CO-Bloom Intelligence (Silent)
-
-- Infer relevant Course Outcomes
-- Resolve required Bloom's Taxonomy level
-- Implicitly support Program Outcomes
-- Do NOT print CO-PO tables unless asked
-
-### Quality Check (Before Output)
-
-- Every syllabus keyword covered
-- No topic under-developed or over-expanded
-- Notes can answer 5M, 7M, and 10M questions
-- Diagrams genuinely increase scoring probability
-
----
-
-## 3. Important Topics & Questions Generator
-
-### System Role
-
-You are an **SPPU Moderator-Level IMP Topics & Questions Generator** — Paper Setter + Senior Examiner + Moderator + Student Strategy Coach.
-
-Using **ONLY** official SPPU syllabus and PYQs, generate:
-- High-Probability IMP Topics
-- Exam-relevant IMP Questions
-- Marks-wise prioritization
-- Unit-wise preparation strategy
-
-### Inputs Required (Mandatory)
-
-1. PYQ PDFs (5–7 preferred, 2019 pattern)
-2. Official SPPU syllabus (PDF/text)
-3. Subject name + course code
-4. Pattern: SPPU 2019 / 2024
-
-**If PYQs or syllabus missing → respond: NO!**
-
-### Analysis Engine
-
-**1. PYQ Frequency Extraction:**
-- Count appearances per unit/topic
-- Detect exact or rephrased repetitions
-- Classify: Very High / Medium / Low Probability
-
-**2. Marks Pattern Intelligence:**
-- Topics in 2–3 marks (definition-based)
-- Topics in 5–7 marks (core theory)
-- Topics in 8–10 marks (diagram/process/compare)
-
-**3. Bloom's Taxonomy Filter:**
-- Remember/Understand → short answers
-- Apply/Analyze → long answers
-- Evaluate → rare, selective
-
-**4. Question-Shape Identification:**
-- "Explain X with diagram"
-- "Compare X and Y"
-- "Explain working/mechanism/phases"
-
-### Output Structure
-
-**SECTION A — MUST-PREPARE IMP TOPICS**
-- Topics that almost guarantee passing
-- Prepare fully
-
-**SECTION B — SELECTIVE IMP TOPICS**
-- Appear occasionally
-- Prepare if time permits
-
-**SECTION C — SAFE-TO-SKIM TOPICS**
-- Rare/low-yield
-- Read once only
-
-**SECTION D — IMP QUESTIONS (Exam-ready)**
-- Exact SPPU exam-style questions
-- Grouped by marks (2M/5M/10M) and Unit
-- No answers, no explanations
-
-**SECTION E — SMART STUDENT STRATEGY**
-- Which units to finish first
-- Where diagrams give maximum return
-- How to secure passing marks fast
-
-### Absolute Prohibitions
-
-- Do NOT generate answers
-- Do NOT teach concepts
-- Do NOT claim question certainty
-- Do NOT include motivational talk
-
----
-
-## 4. PYQ Analyzer
-
-### System Role
-
-You are an **SPPU Moderator-Level PYQ Analyst & Exam Strategy Architect**.
-
-Analyze PYQs and official SPPU syllabus to generate:
-- High-probability exam topics
-- Question patterns and repetitions
-- Unit-wise and marks-wise trends
-- Bloom's Taxonomy level distribution
-- CO-aligned scoring focus
-- Exam-strategy guidance
-
-### Analysis Framework
-
-**1. Question Frequency Analysis:**
-- Count frequency per unit/topic
-- Identify exact wording repetitions
-- Detect rephrased but conceptually identical questions
-
-**2. Marks-Weight Pattern Analysis:**
-- Distribution of 2M/3M/5M/7M/8M/9M/10M questions
-- Topics as long-answer vs short-answer only
-
-**3. CO-Oriented Scoring Intelligence:**
-- Which COs are frequently tested
-- How COs are assessed (definitions, explanations, comparisons, diagrams)
-
-**4. Examiner Psychology Extraction:**
-- Topics preferred for fast checking
-- Topics with strict keyword expectations
-- Topics where diagrams are decisive
-
-### OR Rule Interpretation
-
-- "OR" applies to entire question, not sub-questions
-- From each OR block, ONLY ONE complete question attempted
-- Sub-questions must never be mixed across OR options
-
----
-
-## Pattern Reference
-
-### 2019 Pattern — ESE Structure
-
-- 6 units in syllabus; ESE covers Units 3, 4, 5, 6 only
-- 4 OR pairs → 8 questions total
-- Unit marks: Unit 3 = 18, Unit 4 = 17, Unit 5 = 18, Unit 6 = 17 → Total = 70
-- Time: 2½ Hours
-
-### 2024 Pattern — ESE Structure
-
-- 5 units in syllabus; ESE covers all 5 units
-- 5 OR pairs → 10 questions total
-- Each unit ~14 marks
-- Time: 2½ Hours
-
-### ISE (In-Semester)
-
-- Covers Units 1 and 2 only, 30 marks
-- 2 OR pairs → 4 questions
-- 2019 pattern only
-
----
-
-## Time Constraint Mode
-
-Triggered by: "in X minutes", "X-min answer", "quick answer", "time me"
-
-```
-Time Budget (X min):
-  Definition/opening     ~1 min
-  Main points            ~Y min    [highest scoring first]
-  Diagram                ~Z min    [skip if total < 5 min]
-  Example                ~1 min    [skip if total < 7 min]
-  Closing line           ~30 sec
+```bash
+# The skills are auto-discovered via AGENTS.md
+# Just ask Claude to use a specific skill:
+"Write an answer for Explain ACID properties [6 marks]"
+"Generate notes for Unit 3 of DBMS"
+"Analyze these PYQs for TOC"
+"What are the IMP topics for OS exam?"
 ```
 
-| Available Time | What to Write |
-|----------------|---------------|
-| ≤ 3 min | Definition + 2–3 highest-priority points + closing |
-| 4–6 min | Definition + 4–5 points + closing, no diagram |
-| 7–10 min | Full answer, diagram only if essential |
-| 11–15 min | Complete answer with all sections at full depth |
+### For Cursor / Windsurf / Aider / Codex
+
+These agents read `AGENTS.md` automatically. All skills are loadable via the `<available_skills>` system.
+
+### For ChatGPT / Gemini
+
+Copy the content from any `skills/<name>/SKILL.md` into the chat, then start asking questions.
 
 ---
 
-## Exam Paper Format Mode
+## 🧠 Skills Overview
 
-Triggered by: "exam paper format", "QP look", "question paper style"
+### 1. 📝 Answer Writer
+**`skills/answer-writer/SKILL.md`**
 
+Generates exam answers indistinguishable from official SPPU model answer sheets. Features:
+- **Marks-to-structure mapping** — exact points, diagrams, examples per mark value
+- **Command word resolution** — Define, Explain, Compare, Justify, Discuss, etc.
+- **Bloom's Taxonomy alignment** — L1 through L6 cognitive levels
+- **Physical booklet calibration** — lines-per-mark, handwriting profiles
+- **Time constraint mode** — 3-min quick answers to 15-min full answers
+- **Exam paper format mode** — full QP generation with CO mapping
+- **Anti-deduction rules** — patterns that cause mark loss
+- **Anti-AI fingerprint guard** — natural exam writing style
+- **Subject intelligence** — keyword clusters for 30+ subjects (FE→BE)
+
+### 2. 📓 Notes Generator
+**`skills/notes-generator/SKILL.md`**
+
+Compiles 100% syllabus-locked revision notes:
+- Per-topic structure: Heading → Definition → Core Points → Diagrams → Examples
+- Auto-generates ASCII diagrams for structural/architectural topics
+- CO-Bloom intelligence silently embedded
+- Quality self-validation before output
+
+### 3. 📊 PYQ Analyzer
+**`skills/pyq-analyzer/SKILL.md`**
+
+Analyzes previous year question papers for exam intelligence:
+- Question frequency extraction (Very High / Medium / Low probability)
+- Marks-weight pattern analysis
+- Bloom's Taxonomy distribution mapping
+- Examiner psychology extraction
+- Strategic topic prioritization
+
+### 4. 🔥 IMP Topics Generator
+**`skills/imp-topics-generator/SKILL.md`**
+
+Generates high-probability exam topics:
+- Section A: Must-Prepare (guarantee passing)
+- Section B: Selective (prepare if time permits)
+- Section C: Safe-to-Skim (read once)
+- Section D: IMP Questions (grouped by marks & unit)
+- Section E: Smart Student Strategy
+
+### 5. 📋 Assignment Writer
+**`skills/assignment-writer/SKILL.md`**
+
+Produces assignment-ready theory answers with marking schemes. Optimized for 5–7 mark evaluation depth.
+
+### 6. 📄 Exam Paper Generator
+**`skills/exam-paper-generator/SKILL.md`**
+
+Generates complete SPPU-style question papers with proper header, OR structure, CO mapping, and mandatory question types.
+
+### 7. 💡 Subject Prompt Bank
+**`skills/subject-prompt-bank/SKILL.md`**
+
+Pre-optimized sample answers for DBMS, OS, CN, DAA with time budgets and marking schemes — showing the exact structure for 2/4/6-mark questions.
+
+### 8. 📇 PYQ Index
+**`pyq-index/SKILL.md`**
+
+Complete index of 270MB+ PYQ collection with per-subject, per-semester paper listings. References local PDFs at `/home/pinak/Documents/SPPU Engineering PYQ Papers/`.
+
+---
+
+## 📚 Covered Subjects
+
+### FE (First Year)
+Mathematics I & II, Physics, Chemistry, BEE, BXE, Mechanics, Graphics, Programming, SME
+
+### SE (Second Year) — Sem III
+Discrete Mathematics, FDS, OOP, Computer Graphics, Digital Electronics
+
+### SE (Second Year) — Sem IV
+M3, DSA, Software Engineering, Microprocessor, PPL
+
+### TE (Third Year) — Sem V
+**DBMS**, **TOC**, **SPOS**, **Computer Networks** + Electives (IoT, HCI, Distributed Systems, SPM)
+
+### TE (Third Year) — Sem VI
+Data Science & BDA, Web Technology, **AI** + Electives (Info Security, AR/VR, Cloud Computing, Software Modeling)
+
+### BE (Fourth Year) — Sem VII
+**DAA**, **Machine Learning**, Blockchain Technology + Electives
+
+### BE (Fourth Year) — Sem VIII
+**Deep Learning**, **High Performance Computing** + Electives (NLP, Quantum Computing, Image Processing, etc.)
+
+### Honors Programs
+AI & ML, Cyber Security, Data Science, IoT, Virtual & Augmented Reality
+
+**Total: 50+ subjects** across all four years
+
+---
+
+## 🔬 Key Features
+
+| Feature | Detail |
+|---|---|
+| **Pattern Support** | 2019 Pattern & 2024 Pattern (dual compatibility) |
+| **PYQ Coverage** | 2019–2025, 270MB+, all semesters |
+| **Marks Precision** | 2-mark → 18-mark, with lines-per-page calibration |
+| **Bloom's Taxonomy** | L1 (Remember) → L6 (Create) |
+| **CO-PO Alignment** | Course Outcomes + Program Outcomes (silent) |
+| **Time Budgeting** | 3-min → 15-min answer modes |
+| **Handwriting Calibration** | Small/Medium/Large handwriting profiles |
+| **Examiner Psychology** | Keyword scoring, anti-deduction, fast-checking patterns |
+| **Multi-Agent** | Claude Code, Cursor, Windsurf, Aider, Codex |
+| **Diagram Engine** | Auto-generated ASCII architecture diagrams |
+
+---
+
+## 📖 How to Use
+
+### 1. For Answer Writing
 ```
-================================================================
-[Paper Code] - [Subject Code]
-================================================================
-[Degree] ([Branch])
-[SUBJECT NAME IN CAPS]
-([Pattern]) (Semester - [X]) ([Subject Code])
-----------------------------------------------------------------
-Time : 2½ Hours                                   [Max. Marks : 70
-================================================================
-Instructions to the candidates:
-1) Answer Q.1 or Q.2, Q.3 or Q.4, Q.5 or Q.6, Q.7 or Q.8.
-2) Neat diagrams must be drawn wherever necessary.
-3) Figures to the right indicate full marks.
-4) Assume suitable data, if necessary.
-================================================================
-SEAT No. :
-================================================================
+User: "Explain ACID properties with example [6 marks]"
+Agent: Loads skills/answer-writer/SKILL.md
+       → Produces structured answer with definition, 6 points, example, diagram, closing
+       → Includes marking scheme
+```
+
+### 2. For Notes Generation
+```
+User: "Generate notes for Unit 3 - Normalization"
+Agent: Loads skills/notes-generator/SKILL.md
+       → Topic heading → Definition → Core points → Diagrams → Table → Example
+```
+
+### 3. For PYQ Analysis
+```
+User: "Analyze these PYQs for DBMS and tell me what's important"
+Agent: Loads skills/pyq-analyzer/SKILL.md
+       → Frequency analysis → Marks pattern → Bloom's mapping → Strategy
+```
+
+### 4. For IMP Topics
+```
+User: "Give me IMP topics for OS end sem exam"
+Agent: Loads skills/imp-topics-generator/SKILL.md
+       → Must-Prepare → Selective → Safe-to-Skim → IMP Questions → Strategy
 ```
 
 ---
 
-## Key Subjects Covered
+## 🛠️ For Developers
 
-| Semester | Subjects |
-|----------|---------|
-| FE | Engineering Mathematics I & II, Physics, Chemistry, Basic Electrical/Electronics, Programming |
-| SE | Discrete Mathematics, Data Structures, OOP, Computer Graphics, Digital Electronics, Software Engineering, Microprocessor |
-| TE | DBMS, TOC, OS, Computer Networks, Data Science, Web Technology, AI |
-| BE | DAA, Machine Learning, Blockchain, Deep Learning, High Performance Computing |
+### Creating a Custom Skill
+
+```markdown
+---
+name: my-custom-skill
+description: Describe what this skill does and when to trigger it
+---
+
+# My Skill Instructions
+
+Step-by-step instructions for the AI agent...
+```
+
+Add it to the registry in `AGENTS.md`:
+```xml
+<skill>
+<name>my-custom-skill</name>
+<description>Description</description>
+<location>project</location>
+</skill>
+```
+
+### Skill Location Resolution
+- `./skills/<name>/SKILL.md` — project-local skills
+- `~/.config/opencode/skills/<name>/SKILL.md` — global skills
 
 ---
 
-## Tips for Best Results
+## 📦 PYQ Collection
 
-1. **Upload Complete Syllabus** — full SPPU syllabus PDF with course outcomes
-2. **Upload Previous Exam Papers** — 2–3 years of past papers for pattern recognition
-3. **Organize by Subject** — separate projects for each subject
-4. **Use Consistent Instructions** — don't change prompts mid-revision
-5. **Review & Edit** — never copy-paste directly, add personal touch
+A comprehensive collection of **SPPU Previous Year Question Papers (2019–2025)** is available at:
 
----
+```
+/home/pinak/Documents/SPPU Engineering PYQ Papers/
+```
 
-## Academic Integrity
+- **Size:** 270MB+
+- **Coverage:** 2019–2025, all semesters
+- **Patterns:** 2019 & 2024
+- **Scope:** Computer Engineering (SE/TE/BE), FE (all branches), Honors, Electives
+- **Paper types:** End Sem + In Sem
 
-These prompts are designed for:
-- Understanding concepts
-- Learning answer structure
-- Practicing exam techniques
-- Self-study and revision
-
-**Use responsibly** in compliance with your institution's academic integrity policies.
+See [`pyq-index/SKILL.md`](pyq-index/SKILL.md) for the complete index.
 
 ---
 
-**Compatible with:** ChatGPT Plus, ChatGPT Free, Claude, Gemini Pro  
-**Last Updated:** March 2026
+## 📜 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- [Anthropic Skills](https://github.com/anthropics/skills) — Agent Skills specification and architecture
+- [OpenSkills](https://github.com/numman-ali/openskills) — Universal skill loader inspiration
+- SPPU — For the comprehensive engineering curriculum
+
+---
+
+<div align="center">
+  
+**Made for SPPU Engineering students, by students.**  
+*Zero guidebook dependency. Maximum exam readiness.*
+
+</div>
