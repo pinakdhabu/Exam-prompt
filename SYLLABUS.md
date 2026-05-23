@@ -1,6 +1,6 @@
 # SPPU Computer Engineering — Official Syllabus Reference (2019 Pattern)
 
-> Extracted from official SPPU syllabus PDFs located at `/home/pinak/Documents/SPPU Engineering PYQ Papers/Computer Engineering/1 SYLLABUS/2019 PATTERN/`
+> Extracted from official SPPU syllabus PDFs
 >
 > This document provides exact unit-wise content, Course Outcomes (CO), and CO-PO mapping for every subject. Use this as the authoritative source when generating exam answers.
 
@@ -415,6 +415,4 @@ Per SPPU 2019 Rules and Regulations (R3.4):
 
 ## Reference
 
-- Official SPPU syllabus PDFs: `/home/pinak/Documents/SPPU Engineering PYQ Papers/Computer Engineering/1 SYLLABUS/2019 PATTERN/`
-- Engineering Rules and Regulations 2019 Pattern: `0 Engineering Rules and Regulations SPPU 2019 Pattern.txt`
-- PYQ collection: `/home/pinak/Documents/SPPU Engineering PYQ Papers/`
+- Official SPPU syllabus PDFs (2019 Pattern)

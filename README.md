@@ -6,7 +6,7 @@
 [![Universities](https://img.shields.io/badge/Universities-Any-success)](skills/universal-university-adapter/SKILL.md)
 [![Subjects](https://img.shields.io/badge/Subjects-Any-orange)](skills/)
 [![Question Types](https://img.shields.io/badge/Question%20Types-All-ff69b4)](skills/answer-writer/SKILL.md)
-[![PYQ Papers](https://img.shields.io/badge/PYQ%20Papers-270MB%2B-red)](pyq-index/SKILL.md)
+
 [![Agent Compatible](https://img.shields.io/badge/Agent-Claude%20%7C%20Cursor%20%7C%20Windsurf%20%7C%20Aider-purple)](AGENTS.md)
 [![Built By](https://img.shields.io/badge/Built%20By-AI-blueviolet)](#-how-this-repo-was-built)
 
@@ -30,7 +30,7 @@ The system can:
 - **Generate IMP topics** with 5 probability levels and 7 time-plan options
 - **Create full exam question papers** in 11+ university patterns (SPPU, VTU, JNTU, IIT, Oxford, Cambridge, etc.)
 - **Write assignment-ready answers** with marking schemes, Bloom's levels, and CO alignment
-- **Reference 270MB+ of SPPU PYQ PDFs** (2019–2025) across all subjects
+
 - **Adapt to ANY university** — upload your syllabus PDF + PYQ PDFs, and the system auto-detects your pattern
 
 All powered by a **universal skills-based architecture** inspired by [Anthropic's Agent Skills](https://github.com/anthropics/skills) specification.
@@ -174,7 +174,7 @@ Universal entry point for ANY university worldwide. Detects university from dire
 ### 9.  PYQ Index
 **`pyq-index/SKILL.md`**
 
-Complete index of 270MB+ SPPU PYQ collection with per-subject, per-semester paper listings. References local PDFs at `/home/pinak/Documents/SPPU Engineering PYQ Papers/`.
+Complete index of SPPU PYQ collection with per-subject, per-semester paper listings.
 
 ---
 
@@ -218,7 +218,7 @@ AI & ML, Cyber Security, Data Science, IoT, Virtual & Augmented Reality
 | **Mark Ranges** | 1 → 100+, with universal lines-per-mark formula |
 | **Exam Conditions** | Closed/open book, online, oral/viva, lab, take-home |
 | **Pattern Support** | 11+ patterns: SPPU 2019/2024, VTU, JNTU, Mumbai, AKTU, RGPV, IIT/NIT, North American, UK/Oxford/Cambridge, Generic |
-| **PYQ Coverage** | 2019–2025, 270MB+, all semesters (additional PYQs accepted for any university) |
+| **PYQ Coverage** | 2019–2025, all semesters (additional PYQs accepted for any university) |
 | **Note Formats** | 12+ formats: Outline, Cornell, Mind Map, Flowchart, Q&A, etc. |
 | **Analysis Types** | 13+ statistical PYQ analysis types with probability % |
 | **Time Plans** | 7 options: emergency (1 night) → 1-month |
@@ -355,19 +355,7 @@ Add it to the registry in `AGENTS.md`:
 
 ## PYQ Collection
 
-A comprehensive collection of **SPPU Previous Year Question Papers (2019–2025)** is available at:
-
-```
-/home/pinak/Documents/SPPU Engineering PYQ Papers/
-```
-
-- **Size:** 270MB+
-- **Coverage:** 2019–2025, all semesters
-- **Patterns:** 2019 & 2024
-- **Scope:** Computer Engineering (SE/TE/BE), FE (all branches), Honors, Electives
-- **Paper types:** End Sem + In Sem
-
-See [`pyq-index/SKILL.md`](pyq-index/SKILL.md) for the complete index.
+See [`pyq-index/SKILL.md`](pyq-index/SKILL.md) for the complete index of SPPU Previous Year Question Papers (2019–2025).
 
 ---
 
@@ -460,7 +448,7 @@ The AI read all 16 existing markdown files in the repo, understood their purpose
 ### Step 4: Integrate Official Syllabus
 The AI was pointed to the local syllabus directory at:
 ```
-/home/pinak/Documents/SPPU Engineering PYQ Papers/Computer Engineering/1 SYLLABUS/
+./SYLLABUS.md
 ```
 It read the official **SPPU 2019 Pattern syllabus PDFs** (.txt extracts) for all years (FE/SE/TE/BE) and extracted:
 - Exact unit-wise content for every subject
@@ -469,11 +457,7 @@ It read the official **SPPU 2019 Pattern syllabus PDFs** (.txt extracts) for all
 - Examination schemes and credit structures
 
 ### Step 5: Integrate PYQ Collection
-The AI scanned the **270MB+ PYQ collection** at:
-```
-/home/pinak/Documents/SPPU Engineering PYQ Papers/
-```
-And built a complete [`pyq-index/SKILL.md`](pyq-index/SKILL.md) — a searchable index of every PYQ PDF organized by year, semester, subject, and exam type.
+The AI read the PYQ collection and built a complete [`pyq-index/SKILL.md`](pyq-index/SKILL.md) — a searchable index of every PYQ PDF organized by year, semester, subject, and exam type.
 
 ### Step 6: Generate Skills (First Pass)
 The AI wrote 8 `SKILL.md` files in `skills/` directory with SPPU-specific context:
@@ -510,7 +494,7 @@ A repo where **any AI agent** can load universal exam skills on demand — with:
 - **11+ university patterns** from SPPU to Oxford to MIT
 - **13+ analysis types** with statistical rigor
 - **12+ note formats** for any learning style
-- **270MB+ PYQ reference** (SPPU) + accepts PYQs from any university
+
 - **Examiner-verified answer patterns** baked into every skill
 
 The entire transformation from flat prompts to universal skills architecture took under 30 minutes of AI working time.

@@ -27,8 +27,7 @@ All skills are in the `skills/` directory with `SKILL.md` files. See `AGENTS.md`
 
 ## PYQ Collection
 
-A 270MB+ collection of SPPU PYQ PDFs (2019–2025) is referenced by `pyq-index/SKILL.md`.
-Location: `/home/pinak/Documents/SPPU Engineering PYQ Papers/`
+A collection of SPPU PYQ PDFs (2019–2025) is referenced by `pyq-index/SKILL.md`.
 
 ## Usage
 
@@ -38,4 +37,4 @@ Load the relevant skill from the `skills/` directory. For non-SPPU universities,
 
 For accurate unit-wise content, Course Outcomes (CO), and CO-PO mapping:
 - See [`SYLLABUS.md`](SYLLABUS.md) — extracted from official SPPU PDFs
-- Syllabus PDFs located at: `/home/pinak/Documents/SPPU Engineering PYQ Papers/Computer Engineering/1 SYLLABUS/2019 PATTERN/`
+- See [`SYLLABUS.md`](SYLLABUS.md) for the complete reference

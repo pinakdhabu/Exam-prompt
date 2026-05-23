@@ -68,7 +68,7 @@ Usage notes:
 
 <skill>
 <name>sppu-pyq-index</name>
-<description>Complete index of SPPU Previous Year Question Paper collection (2019-2025, 270MB+) organized by year, semester, subject. References local PDF collection for all Computer Engineering subjects including FE, Honors, and electives. SPPU-specific.</description>
+<description>Complete index of SPPU Previous Year Question Paper collection (2019-2025) organized by year, semester, subject. References local PDF collection for all Computer Engineering subjects including FE, Honors, and electives. SPPU-specific.</description>
 <location>project</location>
 </skill>
 

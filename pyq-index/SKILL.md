@@ -2,7 +2,7 @@
 name: sppu-pyq-index
 description: >
   Complete index of SPPU Previous Year Question Paper collection (2019–2025) across all Computer Engineering subjects.
-  References a 270MB+ local PDF collection organized by year, semester, and subject.
+  References a local PDF collection organized by year, semester, and subject.
   Use this skill to locate PYQ PDFs for any SPPU Computer Engineering subject before running analysis or generating answers.
 ---
 
@@ -11,9 +11,9 @@ description: >
 ## Overview
 
 This index references a comprehensive collection of **SPPU Previous Year Question Papers** located at:
-`/home/pinak/Documents/SPPU Engineering PYQ Papers/`
+`PYQ collection directory`
 
-**Total size:** ~270MB | **Coverage:** 2019–2025 | **Patterns:** 2019 & 2024
+**Coverage:** 2019–2025 | **Patterns:** 2019 & 2024
 
 ---
 
@@ -160,9 +160,9 @@ Also includes merged collections: "F.E. 2024 PATTERN SEM 1 PYQP_s.pdf", "F.E. 20
 
 ## Finding a Specific PYQ
 
-To locate a specific PYQ PDF, navigate to:
+PYQ PDFs are organized in the following directory structure:
 ```
-/home/pinak/Documents/SPPU Engineering PYQ Papers/
+<PYQ collection root>/
   Computer Engineering/
     [Year Level]/
       [Semester]/
@@ -172,7 +172,7 @@ To locate a specific PYQ PDF, navigate to:
 
 For FE papers:
 ```
-/home/pinak/Documents/SPPU Engineering PYQ Papers/
+<PYQ collection root>/
   F.E.___/
     [Pattern]/
       Sem 1,2/
@@ -182,7 +182,7 @@ For FE papers:
 
 For all-branch merged papers:
 ```
-/home/pinak/Documents/SPPU Engineering PYQ Papers/
+<PYQ collection root>/
   Other branch/
     End Sem/All Branches/
       [Year Level]/
