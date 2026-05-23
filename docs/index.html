@@ -3,146 +3,238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exam Prompt — Universal Answer System for Any University</title>
+<title>Exam Prompt — Academic Skill Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #201d1d;
-    --surface: #302c2c;
-    --text: #fdfcfc;
-    --secondary: #9a9898;
-    --muted: #6e6e73;
-    --accent: #007aff;
-    --accent-hover: #0056b3;
-    --accent-active: #004085;
-    --danger: #ff3b30;
-    --success: #30d158;
-    --warning: #ff9f0a;
-    --border: rgba(15, 0, 0, 0.12);
-    --border-strong: #646262;
-    --font: 'IBM Plex Mono', 'Berkeley Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-    --radius: 4px;
-    --radius-input: 6px;
+    --bg: #0c0c0e;
+    --surface: #18181b;
+    --surface-alt: #1f1f23;
+    --text: #f4f4f5;
+    --secondary: #a1a1aa;
+    --muted: #52525b;
+    --accent: #22d3ee;
+    --accent-dim: rgba(34,211,238,0.12);
+    --accent-glow: rgba(34,211,238,0.06);
+    --warm: #fb923c;
+    --success: #4ade80;
+    --border: #27272a;
+    --border-bright: #3f3f46;
+    --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --radius: 6px;
+    --radius-sm: 4px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.5; font-size: 16px; font-weight: 400; }
-  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: var(--font-sans); line-height: 1.65; font-size: 15px;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+    background-size: 28px 28px;
+    pointer-events: none; z-index: 0;
+  }
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+
+  .caret::after {
+    content: ''; display: inline-block; width: 8px; height: 1.1em;
+    background: var(--accent); margin-left: 4px; vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
   /* Header */
   header {
     border-bottom: 1px solid var(--border);
-    padding: 16px 0;
-    background: var(--bg);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(12,12,14,0.88); backdrop-filter: blur(16px);
   }
-  header .container { display: flex; align-items: center; justify-content: space-between; }
-  header .logo { font-weight: 700; font-size: 1.1rem; }
-  header nav a { color: var(--secondary); text-decoration: none; margin-left: 24px; font-size: 0.9rem; font-weight: 500; }
-  header nav a:hover { color: var(--text); }
+  header .container {
+    display: flex; align-items: center; justify-content: space-between; height: 52px;
+  }
+  header .logo {
+    font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    letter-spacing: -0.02em;
+  }
+  header .logo span { color: var(--accent); }
+  header nav { display: flex; gap: 2px; }
+  header nav a {
+    color: var(--secondary); text-decoration: none; padding: 6px 14px;
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500;
+    border-radius: var(--radius-sm); transition: color 0.15s, background 0.15s;
+  }
+  header nav a:hover { color: var(--text); background: var(--surface); }
 
   /* Hero */
-  .hero {
-    padding: 80px 0 60px;
-    text-align: center;
+  .hero { padding: 100px 0 60px; text-align: center; position: relative; }
+  .hero::after {
+    content: ''; position: absolute; top: -20%; left: 50%;
+    transform: translateX(-50%); width: 700px; height: 500px;
+    background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
   }
   .hero h1 {
-    font-size: 2.375rem;
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 16px;
+    font-family: var(--font-mono); font-size: 4.5rem; font-weight: 700;
+    line-height: 1; margin-bottom: 6px; letter-spacing: -0.04em;
   }
-  .hero p { color: var(--secondary); max-width: 650px; margin: 0 auto 32px; }
-  .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .hero h1 .accent { color: var(--accent); }
+  .hero-sub {
+    font-family: var(--font-mono); font-size: 0.9rem; color: var(--secondary);
+    max-width: 480px; margin: 14px auto 28px; line-height: 1.6;
+  }
+  .hero-platforms {
+    display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px;
+  }
+  .hero-platforms span {
+    font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500;
+    color: var(--muted); border: 1px solid var(--border); padding: 4px 12px;
+    border-radius: var(--radius-sm); transition: all 0.2s;
+  }
+  .hero-platforms span:hover { color: var(--accent); border-color: var(--accent); }
+  .hero-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
   .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 4px 20px; border-radius: var(--radius); font-weight: 500;
-    font-size: 0.9rem; text-decoration: none; cursor: pointer; border: none;
-    font-family: var(--font); line-height: 2;
+    display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px;
+    border-radius: var(--radius-sm); font-weight: 500; font-size: 0.82rem;
+    text-decoration: none; cursor: pointer; border: none;
+    font-family: var(--font-mono); line-height: 1.4; transition: all 0.2s;
   }
-  .btn-primary { background: var(--accent); color: var(--text); }
-  .btn-primary:hover { background: var(--accent-hover); }
-  .btn-primary:active { background: var(--accent-active); }
-  .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
-  .btn-secondary:hover { border-color: var(--text); }
+  .btn-primary { background: var(--accent); color: #0c0c0e; }
+  .btn-primary:hover { box-shadow: 0 0 30px var(--accent-dim); }
+  .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--border-bright); background: var(--surface); }
 
   /* Stats */
   .stats {
-    display: flex; justify-content: center; gap: 48px;
-    padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    display: flex; justify-content: center; gap: 8px;
+    padding: 44px 28px; max-width: 760px; margin: 0 auto; flex-wrap: wrap;
   }
-  .stat { text-align: center; }
-  .stat-number { font-size: 2rem; font-weight: 700; color: var(--accent); }
-  .stat-label { color: var(--secondary); font-size: 0.85rem; margin-top: 4px; }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 28px; text-align: center;
+    flex: 1; min-width: 130px; transition: border-color 0.2s;
+  }
+  .stat:hover { border-color: var(--border-bright); }
+  .stat-num {
+    font-family: var(--font-mono); font-size: 1.75rem; font-weight: 700; line-height: 1;
+  }
+  .stat-num .accent { color: var(--accent); }
+  .stat-label {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); margin-top: 5px;
+  }
 
   /* Section */
   .section { padding: 64px 0; }
-  .section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--text); }
-  .section > p { color: var(--secondary); margin-bottom: 40px; max-width: 600px; }
+  .section-header { margin-bottom: 32px; }
+  .section-header .term-line {
+    font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); margin-bottom: 8px;
+  }
+  .section-header .term-line .arrow { color: var(--accent); }
+  .section-header h2 {
+    font-family: var(--font-mono); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px;
+  }
+  .section-header p { color: var(--secondary); max-width: 560px; font-size: 0.88rem; }
 
   /* Skills grid */
   .skills-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1px; background: var(--border); margin-top: 24px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden;
   }
   .skill-card {
-    background: var(--surface); padding: 20px;
+    background: var(--surface); padding: 22px; display: flex; flex-direction: column;
+    transition: background 0.15s;
   }
-  .skill-card h3 { font-size: 0.9rem; margin-bottom: 8px; font-weight: 700; }
-  .skill-card h3 .badge {
-    display: inline-block; font-size: 0.6rem; font-weight: 500;
-    padding: 1px 8px; border: 1px solid var(--border); margin-left: 8px; vertical-align: middle;
-    color: var(--secondary);
+  .skill-card:hover { background: var(--surface-alt); }
+  .skill-card h3 {
+    font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; margin-bottom: 7px;
   }
-  .skill-card p { color: var(--secondary); font-size: 0.8rem; line-height: 1.5; }
+  .skill-card h3 .tag {
+    display: inline-block; font-family: var(--font-mono); font-size: 0.58rem; font-weight: 500;
+    padding: 1px 8px; border: 1px solid var(--border); margin-left: 8px;
+    color: var(--muted); border-radius: var(--radius-sm); vertical-align: middle;
+  }
+  .skill-card p { color: var(--secondary); font-size: 0.78rem; line-height: 1.55; flex: 1; }
+  .skill-card .source {
+    font-family: var(--font-mono); font-size: 0.63rem; color: var(--muted);
+    margin-top: 12px; border-top: 1px solid var(--border); padding-top: 9px;
+  }
 
-  /* Quick start */
-  .code-block {
-    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 20px; font-family: var(--font); font-size: 0.85rem;
-    overflow-x: auto; margin: 16px 0;
-    position: relative;
+  /* Steps */
+  .steps {
+    display: flex; flex-direction: column; gap: 1px;
+    background: var(--border); border-radius: var(--radius); overflow: hidden;
   }
-  .code-block pre { color: var(--text); white-space: pre; }
-  .copy-btn {
-    position: absolute; top: 12px; right: 12px;
-    background: transparent; color: var(--secondary); border: 1px solid var(--border);
-    padding: 2px 12px; border-radius: var(--radius); font-size: 0.75rem; cursor: pointer;
-    font-family: var(--font);
-  }
-  .copy-btn:hover { color: var(--text); border-color: var(--border-strong); }
-
-  .steps { display: flex; flex-direction: column; gap: 1px; margin: 24px 0; background: var(--border); }
   .step {
     display: flex; gap: 16px; align-items: flex-start;
-    background: var(--surface); padding: 20px;
+    background: var(--surface); padding: 22px; transition: background 0.15s;
   }
+  .step:hover { background: var(--surface-alt); }
   .step-num {
-    width: 28px; height: 28px; border: 1px solid var(--border-strong);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 500; font-size: 0.8rem; flex-shrink: 0;
-    color: var(--secondary);
+    font-family: var(--font-mono); width: 30px; height: 30px;
+    border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 0.75rem; flex-shrink: 0;
+    color: var(--accent); border-radius: var(--radius-sm);
   }
-  .step h3 { font-size: 0.9rem; margin-bottom: 4px; font-weight: 700; }
-  .step p { color: var(--secondary); font-size: 0.85rem; }
+  .step-body h3 { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; }
+  .step-body p { color: var(--secondary); font-size: 0.84rem; }
+  .step-body .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .step-body .pills span {
+    font-family: var(--font-mono); font-size: 0.63rem; font-weight: 500;
+    color: var(--muted); border: 1px solid var(--border);
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  /* Code block */
+  .code-block {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px; margin: 14px 0; position: relative;
+  }
+  .code-block pre {
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--text);
+    white-space: pre; overflow-x: auto; line-height: 1.65;
+  }
+  .code-block pre .cmt { color: var(--muted); }
+  .code-block pre .out { color: var(--warm); }
+  .code-block .copy-btn {
+    position: absolute; top: 10px; right: 10px;
+    background: var(--surface-alt); color: var(--secondary);
+    border: 1px solid var(--border); padding: 3px 10px;
+    border-radius: var(--radius-sm); font-size: 0.65rem; cursor: pointer;
+    font-family: var(--font-mono); font-weight: 500; transition: all 0.15s;
+  }
+  .code-block .copy-btn:hover { color: var(--text); border-color: var(--border-bright); }
 
   /* Footer */
-  footer {
-    border-top: 1px solid var(--border); padding: 32px 0;
-    text-align: center; color: var(--secondary); font-size: 0.8rem;
-  }
-  footer a { color: var(--accent); text-decoration: underline; }
-
-  a { color: var(--accent); }
-  code { font-family: var(--font); font-size: 0.85rem; color: var(--success); }
+  footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+  footer p { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { font-family: var(--font-mono); font-size: 0.8rem; color: var(--warm); }
+  hr { border: none; border-top: 1px solid var(--border); }
 
   @media (max-width: 768px) {
-    .hero h1 { font-size: 1.5rem; }
-    .stats { gap: 24px; flex-wrap: wrap; }
-    header nav a { margin-left: 12px; font-size: 0.8rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero { padding: 60px 0 36px; }
+    .stat { min-width: calc(50% - 12px); padding: 14px 16px; }
+    .stat-num { font-size: 1.3rem; }
+    header nav a { padding: 4px 8px; font-size: 0.7rem; }
     .skills-grid { grid-template-columns: 1fr; }
-    .hero { padding: 48px 0 40px; }
     .section { padding: 40px 0; }
+    .step { flex-direction: column; gap: 8px; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; }
+    .stat { min-width: 100%; }
+    .stats { gap: 6px; padding: 28px 16px; }
   }
 </style>
 </head>
@@ -150,12 +242,12 @@
 
 <header>
   <div class="container">
-    <div class="logo">Exam Prompt</div>
+    <div class="logo">exam<span>~</span>prompt</div>
     <nav>
-      <a href="app.html">Quick Tool</a>
-      <a href="skills.html">Skills</a>
-      <a href="#quickstart">How It Works</a>
-      <a href="https://github.com/pinakdhabu/Exam-prompt">GitHub</a>
+      <a href="app.html">app</a>
+      <a href="skills.html">skills</a>
+      <a href="#install">install</a>
+      <a href="https://github.com/pinakdhabu/Exam-prompt">src</a>
     </nav>
   </div>
 </header>
@@ -163,205 +255,217 @@
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <h1>Turn any AI agent into your personal exam tutor</h1>
-    <p>20 modular skills that teach Claude Code, Cursor, Copilot, Codex, Gemini CLI, ChatGPT, and DeepSeek to write 10/10 answers for any university, any subject, any exam condition.</p>
-    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px">
-      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Claude</span>
-      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">ChatGPT</span>
-      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Gemini</span>
-      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Cursor</span>
-      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Copilot</span>
-      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">Codex</span>
-      <span style="border:1px solid var(--border);padding:2px 10px;font-size:0.7rem;color:var(--secondary)">DeepSeek</span>
+    <h1>20<span class="accent">/</span>10</h1>
+    <div class="hero-sub"><span class="caret">Academic AI skills for any university, any exam</span></div>
+    <div class="hero-platforms">
+      <span>claude-code</span>
+      <span>chatgpt</span>
+      <span>gemini</span>
+      <span>cursor</span>
+      <span>copilot</span>
+      <span>codex</span>
+      <span>deepseek</span>
     </div>
     <div class="hero-buttons">
-      <a href="app.html" class="btn btn-primary">Open Quick Tool</a>
-      <a href="#quickstart" class="btn btn-secondary">How It Works</a>
-      <a href="skills.html" class="btn btn-secondary">Skills</a>
+      <a href="app.html" class="btn btn-primary">open app</a>
+      <a href="skills.html" class="btn btn-secondary">ls skills/</a>
+      <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/PROMPT.md" class="btn btn-secondary">cat PROMPT.md</a>
     </div>
   </div>
 </section>
 
 <!-- Stats -->
-<div class="stats container">
-  <div class="stat"><div class="stat-number">20</div><div class="stat-label">Skills</div></div>
-  <div class="stat"><div class="stat-number">50+</div><div class="stat-label">Command Words</div></div>
-  <div class="stat"><div class="stat-number">11+</div><div class="stat-label">Univ Patterns</div></div>
-  <div class="stat"><div class="stat-number">6</div><div class="stat-label">Bloom's Levels</div></div>
+<div class="stats">
+  <div class="stat"><div class="stat-num">20</div><div class="stat-label">skills</div></div>
+  <div class="stat"><div class="stat-num"><span class="accent">12</span></div><div class="stat-label">note formats</div></div>
+  <div class="stat"><div class="stat-num">11<span class="accent" style="font-size:1rem">+</span></div><div class="stat-label">univ patterns</div></div>
+  <div class="stat"><div class="stat-num">7</div><div class="stat-label">ai platforms</div></div>
 </div>
 
-<!-- Quick Start -->
-<section class="section" id="quickstart">
-  <div class="container">
-    <h2># Quick Start</h2>
-    <p>Take this prompt, paste it into any AI, and start getting exam-ready answers.</p>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <h3>Copy the master prompt</h3>
-          <p>Copy the contents of <code>PROMPT.md</code> — a 150-line reference sheet with all rules, command words, and university patterns.</p>
-          <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/PROMPT.md" class="btn btn-secondary btn-small" style="margin-top:8px;line-height:1.5;padding:4px 12px" target="_blank">Open PROMPT.md</a>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <h3>Paste into any AI</h3>
-          <p>ChatGPT, Claude, Gemini, DeepSeek — paste PROMPT.md first, then paste your exam question.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <h3>Get your answer</h3>
-          <p>Include subject, marks, university, and exam type. Example: <em>"Explain deadlock avoidance [8 marks] SPPU TE Comp, closed book"</em></p>
-        </div>
-      </div>
-    </div>
-
-    <h3 style="margin-top:40px;margin-bottom:16px;font-size:0.9rem">Install as Skills (for coding agents)</h3>
-    <div class="code-block">
-      <button class="copy-btn" onclick="navigator.clipboard.writeText('npx skills@latest add pinakdhabu/Exam-prompt')">Copy</button>
-      <pre># Discover + install all 20 skills<br>npx skills@latest add pinakdhabu/Exam-prompt<br><br># Or with GitHub CLI (gh v2.90+)<br>gh skill install pinakdhabu/Exam-prompt</pre>
-    </div>
-  </div>
-</section>
+<hr>
 
 <!-- Skills -->
-<section class="section" id="skills">
+<section class="section">
   <div class="container">
-    <h2># All 20 Skills</h2>
-    <p>Modular, self-contained, portable across every AI agent platform.</p>
-
+    <div class="section-header">
+      <div class="term-line"><span class="arrow">&gt;</span> ls skills/ | grep exam</div>
+      <h2>All Academic Skills</h2>
+      <p>20 purpose-built <code>SKILL.md</code> files — self-contained, cross-platform, exam-ready.</p>
+    </div>
     <div class="skills-grid">
       <div class="skill-card">
-        <h3>A+ Answer Writer <span class="badge">core</span></h3>
-        <p>Generates 10/10 answers for ANY question type, mark level, command word, and exam condition. 15-phase pipeline with anti-deduction guard.</p>
+        <h3>A+ Answer Writer <span class="tag">core</span></h3>
+        <p>15-phase answer pipeline. Every question type, every mark level (1-100+), every Bloom's level and command word.</p>
+        <div class="source">exam-prompt/answer-writer</div>
       </div>
       <div class="skill-card">
-        <h3>Notes Generator <span class="badge">core</span></h3>
-        <p>12+ note formats (Cornell, Mind Map, Flowchart, Q&A, Rapid Revision, etc.) with auto-format selection based on subject, exam type, and time.</p>
+        <h3>Notes Generator <span class="tag">core</span></h3>
+        <p>12+ formats — Cornell, Mind Map, Flowchart, Q&A, Rapid Revision, Outline, Matrix, Timeline, Cheat Sheet. Auto-selected by subject and time.</p>
+        <div class="source">exam-prompt/notes-generator</div>
       </div>
       <div class="skill-card">
-        <h3>PYQ Analyzer <span class="badge">core</span></h3>
-        <p>13+ statistical analyses — frequency, weightage, Bloom's heatmap, trend regression, gap analysis. Probability-ranked predictions with recency adjustment.</p>
+        <h3>PYQ Analyzer <span class="tag">core</span></h3>
+        <p>13 statistical analyses on past papers — frequency, weightage, Bloom's heatmap, trend regression, gap analysis, probability predictions.</p>
+        <div class="source">exam-prompt/pyq-analyzer</div>
       </div>
       <div class="skill-card">
-        <h3>IMP Topics Generator <span class="badge">core</span></h3>
-        <p>5 probability levels, 7 time-plan options, GPA-targeted tracks (10/10 vs 8/10 vs pass). Per-unit strategies with exact question predictions.</p>
+        <h3>IMP Topics Generator <span class="tag">core</span></h3>
+        <p>5 probability levels, 7 time plans, GPA-targeted tracks (10/10, 8/10, pass). Per-unit strategies with exact predictions.</p>
+        <div class="source">exam-prompt/imp-topics-generator</div>
       </div>
       <div class="skill-card">
         <h3>Assignment Writer</h3>
-        <p>12 assignment types in 6 output formats. Always includes marking scheme, Bloom's level, and CO alignment.</p>
+        <p>12 assignment types in 6 output formats. Marking scheme, Bloom's level, and CO alignment for each section.</p>
+        <div class="source">exam-prompt/assignment-writer</div>
       </div>
       <div class="skill-card">
         <h3>Exam Paper Generator</h3>
-        <p>11+ university patterns (SPPU, VTU, JNTU, IIT, Oxford, Cambridge, etc.) with CO/Bloom mapping, marking schemes, and answer keys.</p>
+        <p>11+ university patterns — SPPU, VTU, JNTU, Mumbai, AKTU, IIT, Oxford, Cambridge, North American, Generic. Answer keys included.</p>
+        <div class="source">exam-prompt/exam-paper-generator</div>
       </div>
       <div class="skill-card">
         <h3>Subject Prompt Bank</h3>
-        <p>8 discipline templates (Engineering, Science, Law, Medical, CS, Math, Humanities, Management) with 16 sample answers across all mark levels.</p>
+        <p>8 discipline templates — Engineering, Science, Law, Medical, CS, Math, Humanities, Management. 16 sample answers across all mark levels.</p>
+        <div class="source">exam-prompt/subject-prompt-bank</div>
       </div>
       <div class="skill-card">
         <h3>Flashcard Generator</h3>
-        <p>6 card types (Fact, Cloze, Concept, Problem, Scenario, Compare) with SRS metadata. Exports to Anki, Quizlet, CSV, markdown.</p>
+        <p>6 card types, 3 difficulty tiers, SRS metadata. Exports to Anki, Quizlet, CSV, and markdown.</p>
+        <div class="source">exam-prompt/flashcard-generator</div>
       </div>
       <div class="skill-card">
         <h3>Study Planner</h3>
-        <p>4 plan types (Marathon, Sprint, Cram, Balanced) with spaced repetition, time allocation algorithm, and adaptive rescheduling.</p>
+        <p>4 plan types — Marathon, Sprint, Cram, Balanced. Spaced repetition, time allocation, adaptive rescheduling, break scheduling.</p>
+        <div class="source">exam-prompt/study-planner</div>
       </div>
       <div class="skill-card">
         <h3>MCQ Practice Generator</h3>
-        <p>9 MCQ patterns, Bloom's-calibrated difficulty, distractor strategy. Matches your university's exam format.</p>
+        <p>9 MCQ patterns, Bloom's-calibrated difficulty, distractor strategy. Matches your university's exam format exactly.</p>
+        <div class="source">exam-prompt/mcq-practice-generator</div>
       </div>
       <div class="skill-card">
         <h3>Viva / Oral Prep</h3>
-        <p>8 viva types (lab, course, project, PhD defense, online) with simulated examiner dialogue, CLAIM-EVIDENCE-LINK framework.</p>
+        <p>8 viva types — lab, course, project, PhD defense, panel, online. CLAIM-EVIDENCE-LINK framework with grading criteria.</p>
+        <div class="source">exam-prompt/viva-oral-exam-prep</div>
       </div>
       <div class="skill-card">
         <h3>Last-Minute Crammer</h3>
-        <p>12h / 6h / 3h / 1h emergency plans. Memory palace, chunking, peg system, acronym chains. Exam-hall strategy guide.</p>
+        <p>12h / 6h / 3h / 1h emergency plans. Memory palace, chunking, peg system, acronym chains.</p>
+        <div class="source">exam-prompt/last-minute-crammer</div>
       </div>
       <div class="skill-card">
         <h3>Lab Report Writer</h3>
-        <p>4 templates (Engineering, Science, Medical, Research). Full sections: aim, theory, procedure, observations, calculations, discussion, viva.</p>
+        <p>4 templates — Engineering, Science, Medical, Research. Full sections from aim to viva questions.</p>
+        <div class="source">exam-prompt/lab-report-writer</div>
       </div>
       <div class="skill-card">
         <h3>Formula Sheet Generator</h3>
-        <p>10 categories with variable definitions, SI units, and applicability conditions. Optimized for closed-book recall.</p>
+        <p>10 categories with variable definitions, SI units, applicability conditions. Built for closed-book recall.</p>
+        <div class="source">exam-prompt/formula-sheet-generator</div>
       </div>
       <div class="skill-card">
         <h3>Mind Map Generator</h3>
-        <p>Mermaid syntax + text outline + image descriptions. Color-coded by Bloom's level and priority with cross-links.</p>
+        <p>Mermaid syntax, text outline, image descriptions. Color-coded by Bloom's level and priority with cross-links.</p>
+        <div class="source">exam-prompt/mind-map-generator</div>
       </div>
       <div class="skill-card">
         <h3>Case Study Solver</h3>
-        <p>10+ frameworks (SWOT, PESTEL, 5 Whys, Fishbone, IRAC, Ethical Matrix, Decision Tree) for any case type.</p>
+        <p>10+ frameworks — SWOT, PESTEL, 5 Whys, Fishbone, IRAC, Ethical Matrix, Decision Tree. Any case type.</p>
+        <div class="source">exam-prompt/case-study-solver</div>
       </div>
       <div class="skill-card">
         <h3>Essay Grader</h3>
-        <p>Per-criterion scoring (7 criteria for theory, 5 for numerical, 7 for essays) with model answer comparison and improvement priorities.</p>
+        <p>Per-criterion scoring — 7 criteria for theory, 5 for numerical, 7 for essays. Model answer comparison.</p>
+        <div class="source">exam-prompt/essay-grader</div>
       </div>
       <div class="skill-card">
         <h3>Cross-Subject Mapper</h3>
-        <p>Dependency graphs, shared concepts, integrated study paths, and program-level mapping for comprehensive exams.</p>
+        <p>Dependency graphs, shared concepts, integrated study paths, program-level mapping for comprehensive exams.</p>
+        <div class="source">exam-prompt/cross-subject-mapper</div>
       </div>
       <div class="skill-card">
         <h3>University Adapter</h3>
-        <p>Auto-detects any university from PDFs, URLs, or verbal description. Routes to the correct skill with full JSON context payload.</p>
+        <p>Auto-detects any university from PDFs, URLs, or description. Routes to the correct skill with full context payload.</p>
+        <div class="source">exam-prompt/universal-university-adapter</div>
       </div>
       <div class="skill-card">
         <h3>Session Config</h3>
-        <p>Persistent JSON profile (university, subject, pattern) shared across all skills. Set once, use everywhere.</p>
+        <p>Persistent JSON profile — university, subject, pattern. Set once, shared across all 20 skills.</p>
+        <div class="source">exam-prompt/session-config</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- For Students -->
-<section class="section" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<hr>
+
+<!-- How it works -->
+<section class="section" id="install">
   <div class="container">
-    <h2># For Students</h2>
-    <p>No setup required. You don't need to know what an AI agent is.</p>
+    <div class="section-header">
+      <div class="term-line"><span class="arrow">&gt;</span> ./setup.sh</div>
+      <h2>How It Works</h2>
+      <p>Three ways in — pick the one that fits your workflow.</p>
+    </div>
     <div class="steps">
       <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <h3>Open your browser</h3>
-          <p>Go to ChatGPT, Claude.ai, or Gemini. No installs, no config.</p>
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>For students — paste and ask</h3>
+          <p>Open ChatGPT, Claude.ai, or Gemini. Copy PROMPT.md, paste it in, then type your question.</p>
+          <div class="pills"><span>chatgpt</span><span>claude.ai</span><span>gemini</span><span>deepseek</span></div>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <h3>Copy PROMPT.md</h3>
-          <p><a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/PROMPT.md" target="_blank">Open raw PROMPT.md</a> -> Ctrl+A -> Ctrl+C</p>
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>For coding agents — install skills</h3>
+          <p>One command installs all 20 skills. Your agent loads the right SKILL.md automatically.</p>
+          <div class="pills"><span>claude code</span><span>cursor</span><span>copilot</span><span>codex</span></div>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <h3>Paste and ask</h3>
-          <p>Paste into the chat, then type your question: <em>"Write an answer for Explain ACID properties [6 marks]"</em></p>
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>For browser — quick tool</h3>
+          <p>Web app copies skill + question to clipboard. One click opens your AI ready to go.</p>
+          <div class="pills"><a href="app.html" class="btn btn-primary" style="padding:6px 18px;font-size:0.72rem">open app</a></div>
         </div>
       </div>
+    </div>
+
+    <h3 style="margin-top:40px;margin-bottom:10px;font-family:var(--font-mono);font-size:0.82rem;font-weight:600">Install</h3>
+    <div class="code-block">
+      <button class="copy-btn" onclick="navigator.clipboard.writeText('npx skills@latest add pinakdhabu/Exam-prompt');this.textContent='copied!';setTimeout(()=>this.textContent='copy',2000)">copy</button>
+      <pre><span class="cmt"># install all 20 exam skills</span>
+$ npx skills@latest add pinakdhabu/Exam-prompt
+
+<span class="cmt"># or with GitHub CLI</span>
+$ gh skill install pinakdhabu/Exam-prompt
+
+<span class="cmt"># verify</span>
+$ ls skills/ | wc -l
+<span class="out">20</span></pre>
     </div>
   </div>
 </section>
 
+<hr>
+
 <!-- Architecture -->
-<section class="section" id="architecture">
+<section class="section">
   <div class="container">
-    <h2># Architecture</h2>
-    <p>Text-based architecture diagrams auto-rendered from D2 source via GitHub Actions.</p>
-    <div style="background:var(--surface);border:1px solid var(--border);padding:20px;margin-top:20px;text-align:center">
-      <img src="architectures/exports/system.png" alt="System Architecture" style="max-width:100%">
-      <p style="color:var(--secondary);font-size:0.85rem;margin-top:12px">
-        <a href="architectures/d2/system.d2">Source (.d2)</a> /
-        <a href="architectures/exports/system.png">PNG</a> /
-        <a href="architectures/exports/system.svg">SVG</a>
+    <div class="section-header">
+      <div class="term-line"><span class="arrow">&gt;</span> cat architectures/system.d2</div>
+      <h2>Architecture</h2>
+      <p>System diagrams from D2 source, auto-rendered via GitHub Actions.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center">
+      <img src="architectures/exports/system.png" alt="System Architecture" style="max-width:100%;border-radius:var(--radius-sm)">
+      <p style="color:var(--secondary);font-size:0.8rem;margin-top:14px;font-family:var(--font-mono)">
+        <a href="architectures/d2/system.d2">system.d2</a> /
+        <a href="architectures/exports/system.png">png</a> /
+        <a href="architectures/exports/system.svg">svg</a>
       </p>
     </div>
   </div>
@@ -370,18 +474,20 @@
 <!-- Footer -->
 <footer>
   <div class="container">
-    <p>MIT License &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">GitHub</a> &middot; Built for students everywhere</p>
+    <p>MIT &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; 20 academic skills</p>
   </div>
 </footer>
 
 <script>
-document.querySelectorAll('.copy-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy', 2000);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.stat-num').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(6px)';
+    el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    el.style.transitionDelay = `${0.1 + i * 0.08}s`;
+    setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 100);
   });
 });
 </script>
 </body>
 </html>
-
