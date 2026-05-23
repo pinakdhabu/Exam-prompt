@@ -369,11 +369,7 @@ This arises from [root cause].
 ### Diagram Rules (Universal)
 
 - Place diagram AFTER the definition but BEFORE the main body points.
-- **Prefer Mermaid syntax** over ASCII when possible. Mermaid renders beautifully in GitHub markdown, VS Code, and modern AI tools.
-- Use **Mermaid syntax** for diagrams when the environment supports it (markdown code blocks with ```mermaid). This produces professional, renderable diagrams in GitHub, VS Code, and most AI chat tools.
-- Use **ASCII diagrams** as fallback when Mermaid is not supported or when the user specifically needs a hand-drawable reference.
-- Include ` ```mermaid ` blocks for: flowcharts, sequence diagrams, class diagrams, ER diagrams, state diagrams, pie charts, and architecture diagrams.
-- For physical paper exams: describe the diagram clearly enough that the student can draw it by hand.
+- Draw diagrams in ASCII for text-based answers. Describe "draw this" for physical paper.
 - Every diagram must have:
   - A title ABOVE the diagram
   - ALL nodes/components LABELLED
@@ -397,34 +393,6 @@ Diagram types for different subjects:
 | Economics | Supply-demand curves, graphs, circular flow diagrams |
 
 A **mandatory diagram** does not count toward the line/point count — it is additional.
-
-### Mermaid Diagram Quick Reference
-
-Use these Mermaid patterns for common exam diagrams. Always wrap in ` ```mermaid ` blocks.
-
-| Diagram Type | Mermaid Syntax | Use When |
-|---|---|---|
-| **Flowchart** | ```` ```mermaid\nflowchart TD\n  A[Start] --> B{Decision}\n  B -- Yes --> C[Process]\n  B -- No --> D[End]\n```` | Algorithms, processes, workflows, decision trees |
-| **Sequence Diagram** | ```` ```mermaid\nsequenceDiagram\n  Client->>Server: Request\n  Server->>Database: Query\n  Database-->>Server: Result\n  Server-->>Client: Response\n```` | Network protocols, communication flows, | 
-| **Class Diagram** | ```` ```mermaid\nclassDiagram\n  class Student {\n    +name: String\n    +enroll()\n  }\n```` | OOP concepts, ER model, UML |
-| **ER Diagram** | ```` ```mermaid\nerDiagram\n  STUDENT ||--o{ ENROLLS : registers\n  COURSE ||--o{ ENROLLS : has\n```` | Database design, entity relationships |
-| **State Diagram** | ```` ```mermaid\nstateDiagram-v2\n  [*] --> Idle\n  Idle --> Processing : start\n  Processing --> Done : complete\n  Done --> [*]\n```` | Process states, lifecycles, state machines |
-| **Timeline** | ```` ```mermaid\ntimeline\n  title Project Phases\n  2024 Q1 : Planning\n  2024 Q2 : Development\n  2024 Q3 : Testing\n```` | Project timelines, historical sequences |
-| **Pie Chart** | ```` ```mermaid\npie title Budget\n  "Research" : 30\n  "Development" : 50\n  "Testing" : 20\n```` | Resource allocation, percentage distribution |
-| **Block Diagram** | Use flowchart with `[/input/]` `[output]` `{process}` shapes | System architecture, hardware components |
-
-**Fallback to ASCII** when Mermaid is not renderable (e.g., plain text editor, print-only context):
-
-```
-+----------------+     +----------------+     +----------------+
-|  Component A   | --> |  Component B   | --> |  Component C   |
-+----------------+     +----------------+     +----------------+
-         |                      |
-         v                      v
-    +---------+           +----------+
-    | Output  |           | Feedback |
-    +---------+           +----------+
-```
 
 ### Table Rules
 
