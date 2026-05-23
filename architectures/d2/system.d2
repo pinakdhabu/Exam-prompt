@@ -1,0 +1,174 @@
+# ============================================================
+# Exam Prompt AI — Universal Exam Preparation System
+# Architecture-as-Code (D2 Language)
+# Auto-rendered via GitHub Actions
+# ============================================================
+
+direction: right
+
+# ============================================================
+# INPUT SOURCES
+# ============================================================
+input: "Input Sources" {
+  syllabus: "Syllabus PDFs"
+  pyqs: "PYQ PDFs"
+  notes: "Student Notes"
+  query: "User Questions"
+}
+
+# ============================================================
+# INGESTION PIPELINE
+# ============================================================
+ingestion: "Document Ingestion" {
+  ocr: "OCR Engine"
+  parser: "PDF Parser"
+  chunker: "Text Chunker"
+  metadata: "Metadata Extractor"
+
+  ocr -> parser
+  parser -> chunker
+  chunker -> metadata
+}
+
+# ============================================================
+# KNOWLEDGE LAYER (RAG + Vector Memory)
+# ============================================================
+knowledge: "Knowledge Layer" {
+  vector_db: "Vector Database"
+  embeddings: "Embedding Engine"
+  semantic: "Semantic Index"
+  cache: "Response Cache"
+
+  embeddings -> vector_db
+  vector_db -> semantic
+}
+
+# ============================================================
+# AI ORCHESTRATOR
+# ============================================================
+orchestrator: "AI Orchestrator" {
+  context_builder: "Context Builder"
+  skill_router: "Skill Router"
+  university_adapter: "University Adapter"
+  prompt_engine: "Prompt Constructor"
+  retrieval: "Retrieval Engine"
+
+  context_builder -> skill_router
+  university_adapter -> context_builder
+  skill_router -> prompt_engine
+  retrieval -> context_builder
+}
+
+# ============================================================
+# UNIVERSITY PLUGIN SYSTEM
+# ============================================================
+plugins: "University Plugins" {
+  sppu: "SPPU Plugin"
+  vtu: "VTU Plugin"
+  jntu: "JNTU Plugin"
+  mumbai: "Mumbai Univ Plugin"
+  aktu: "AKTU Plugin"
+  rgpv: "RGPV Plugin"
+  iit: "IIT/NIT Plugin"
+  uk: "UK/Oxford Plugin"
+  us: "North American Plugin"
+  custom: "Custom Plugin"
+}
+
+# ============================================================
+# SKILL MODULES
+# ============================================================
+skills: "Skill Modules" {
+  answer_writer: "Answer Writer"
+  notes_gen: "Notes Generator"
+  pyq_analyzer: "PYQ Analyzer"
+  imp_topics: "IMP Topics Generator"
+  assignment: "Assignment Writer"
+  exam_paper: "Exam Paper Generator"
+  flashcards: "Flashcard Generator"
+  study_planner: "Study Planner"
+  mcq_gen: "MCQ Generator"
+  viva_prep: "Viva Prep"
+  crammer: "Last-Minute Crammer"
+  lab_report: "Lab Report Writer"
+  formula_sheet: "Formula Sheet Generator"
+  mind_map: "Mind Map Generator"
+  case_study: "Case Study Solver"
+  essay_grader: "Essay Grader"
+  cross_subject: "Cross-Subject Mapper"
+}
+
+# ============================================================
+# LLM LAYER
+# ============================================================
+llm: "LLM Layer" {
+  claude: "Claude"
+  gpt: "GPT"
+  gemini: "Gemini"
+  local: "Local Models (Mistral, Llama)"
+}
+
+# ============================================================
+# VALIDATION ENGINE
+# ============================================================
+validation: "Validation Engine" {
+  syllabus_check: "Syllabus Alignment"
+  co_mapping: "CO Mapping"
+  bloom_check: "Bloom's Verification"
+  hallucination: "Hallucination Check"
+  format_validator: "Format Validator"
+}
+
+# ============================================================
+# OUTPUT GENERATOR
+# ============================================================
+output: "Output Generator" {
+  answers: "Exam Answers"
+  notes: "Notes"
+  reports: "Analysis Reports"
+  mcqs: "Practice MCQs"
+  flashcards: "Flashcard Decks"
+  schedules: "Study Schedules"
+  diagrams: "Mind Maps / Diagrams"
+  papers: "Question Papers"
+  reports_lab: "Lab Reports"
+}
+
+# ============================================================
+# FEEDBACK & ANALYTICS
+# ============================================================
+analytics: "Feedback & Analytics" {
+  user_ratings: "User Ratings"
+  topic_tracking: "Topic Tracking"
+  accuracy: "Accuracy Metrics"
+  trends: "Question Trends"
+  weak_areas: "Weak Area Detection"
+}
+
+# ============================================================
+# EXPORT ENGINE
+# ============================================================
+export: "Export Engine" {
+  pdf_export: "PDF"
+  docx_export: "DOCX"
+  md_export: "Markdown"
+  anki_export: "Anki APKG"
+  csv_export: "CSV"
+  svg_export: "SVG"
+}
+
+# ============================================================
+# DATA FLOWS (solid = primary, dashed = metadata/context)
+# ============================================================
+input -> ingestion: "Raw documents"
+ingestion -> knowledge: "Chunked + embedded text"
+knowledge -> orchestrator: "Retrieved context"
+orchestrator -> plugins: "University detection"
+plugins -> orchestrator: "Pattern config"
+orchestrator -> skills: "Selected skill"
+skills -> llm: "Prompt + context"
+llm -> validation: "Raw output"
+validation -> output: "Validated output"
+output -> export: "Formatted content"
+output -> analytics: "Usage data"
+analytics -> orchestrator: "Improvement signals"

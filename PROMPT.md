@@ -8,7 +8,9 @@ Full repository: https://github.com/pinakdhabu/Exam-prompt
 2. **Paste it** into any AI chat (ChatGPT, Gemini, Claude, DeepSeek, etc.)
 3. **Then paste your exam question** — include subject, marks, university, and exam type
 
-The AI will now act as a 10/10 GPA answer generator calibrated for your university.
+The AI will now act as an exam answer generator calibrated for your university.
+
+> NOTE: This is a condensed reference sheet. For full-depth instructions (all 50+ command words, complete marks-to-depth mapping, Bloom's enforcement, anti-deduction rules, all exam conditions), load the **answer-writer skill** from the Skill System section below.
 
 ### For a Different University
 
@@ -138,6 +140,17 @@ For deep-dive instructions, load the relevant skill from the repo:
 | Exam paper generator (11+ patterns) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/exam-paper-generator/SKILL.md |
 | Subject prompt bank (8 templates) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/subject-prompt-bank/SKILL.md |
 | University adapter (auto-detect) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/universal-university-adapter/SKILL.md |
+| Flashcards (6 types, SRS metadata) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/flashcard-generator/SKILL.md |
+| Study planner (4 plan types) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/study-planner/SKILL.md |
+| MCQ practice generator (9 patterns) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/mcq-practice-generator/SKILL.md |
+| Viva / oral exam prep (8 types) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/viva-oral-exam-prep/SKILL.md |
+| Last-minute crammer (1h-12h plans) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/last-minute-crammer/SKILL.md |
+| Lab report writer (4 templates) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/lab-report-writer/SKILL.md |
+| Formula sheet generator (10 categories) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/formula-sheet-generator/SKILL.md |
+| Mind map generator (Mermaid + text) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/mind-map-generator/SKILL.md |
+| Case study solver (10+ frameworks) | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/case-study-solver/SKILL.md |
+| Essay grader / answer evaluator | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/essay-grader/SKILL.md |
+| Cross-subject mapper | https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/skills/cross-subject-mapper/SKILL.md |
 
 ---
 

@@ -329,7 +329,7 @@ Show ALL intermediate steps even if trivial. In numerical problems, **step marki
 - **Third-person academic voice ONLY**. Never first person ("I think", "we can see").
 - Every sentence is assertive and declarative. No hedging: no "may", "can", "might", "possibly", "generally", "usually", "typically", "sometimes", "could be".
 - No teaching tone: never write "let us understand", "consider the following", "as we know", "imagine that", "suppose we have".
-- Natural exam transitions: "Thus,", "Hence,", "Therefore,", "Further,", "Also,", "Moreover,", "Consequently,", "Additionally,", "Specifically,", "In particular,", "Notably,".
+- Natural exam transitions: "Thus,", "Hence,", "Therefore,", "Further,", "Also,", "Moreover,", "Consequently,", "Specifically,", "In particular,", "Notably,".
 - No essay-style flourish. Every sentence earns its place.
 
 ### Opening Protocol (Never Labelled)

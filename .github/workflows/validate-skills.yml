@@ -1,0 +1,63 @@
+name: Validate Skills
+
+on:
+  push:
+    paths:
+      - 'skills/**/*.md'
+  pull_request:
+    paths:
+      - 'skills/**/*.md'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate SKILL.md frontmatter
+        run: |
+          errors=0
+          for dir in skills/*/; do
+            name=$(basename "$dir")
+            skill_file="$dir/SKILL.md"
+
+            if [ ! -f "$skill_file" ]; then
+              echo "FAIL: $name — missing SKILL.md"
+              errors=$((errors + 1))
+              continue
+            fi
+
+            if ! head -1 "$skill_file" | grep -q '^---$'; then
+              echo "FAIL: $name — SKILL.md must start with YAML frontmatter"
+              errors=$((errors + 1))
+            fi
+
+            if ! grep -q '^name:' "$skill_file"; then
+              echo "FAIL: $name — missing 'name:' in frontmatter"
+              errors=$((errors + 1))
+            fi
+
+            if ! grep -q '^description:' "$skill_file"; then
+              echo "FAIL: $name — missing 'description:' in frontmatter"
+              errors=$((errors + 1))
+            fi
+
+            echo "OK: $name"
+          done
+
+          if [ "$errors" -gt 0 ]; then
+            echo "---"
+            echo "$errors skill(s) have validation errors."
+            exit 1
+          fi
+          echo "All skills valid."
+
+      - name: Check for orphan skill directories
+        run: |
+          for dir in skills/*/; do
+            if [ ! -f "$dir/SKILL.md" ]; then
+              echo "WARN: $(basename $dir) has no SKILL.md — orphan directory"
+            fi
+          done

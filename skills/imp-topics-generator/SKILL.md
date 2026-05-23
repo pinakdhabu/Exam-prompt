@@ -116,7 +116,7 @@ When syllabus + PYQs are provided, automatically detect:
 
 | Probability Level | Range | Meaning |
 |---|---|---|
-| **Very High** | >70% | Almost certain to appear. Prepare fully. |
+| **Very High** | >70% | Highest probability of appearing. Prepare fully. |
 | **High** | 50-70% | Very likely to appear. Strong preparation needed. |
 | **Medium** | 30-50% | Moderate chance. Prepare if time permits. |
 | **Low** | 10-30% | Low chance. Quick revision only. |

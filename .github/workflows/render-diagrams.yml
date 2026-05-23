@@ -1,0 +1,43 @@
+name: Render Architecture Diagrams
+
+on:
+  push:
+    paths:
+      - 'architectures/d2/*.d2'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install D2
+        run: curl -fsSL https://d2lang.com/install.sh | sh -s --
+
+      - name: Create exports directory
+        run: mkdir -p architectures/exports
+
+      - name: Render D2 diagrams to SVG
+        run: |
+          for file in architectures/d2/*.d2; do
+            name=$(basename "$file" .d2)
+            d2 "$file" "architectures/exports/$name.svg" --theme 300
+          done
+
+      - name: Render D2 diagrams to PNG
+        run: |
+          for file in architectures/d2/*.d2; do
+            name=$(basename "$file" .d2)
+            d2 "$file" "architectures/exports/$name.png" --theme 300
+          done
+
+      - name: Commit rendered diagrams
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-render architecture diagrams from D2 source"
+          file_pattern: architectures/exports/*

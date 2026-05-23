@@ -22,7 +22,7 @@
 
 This is a **universal skill hub** that transforms any AI coding agent into a personal **10/10 GPA exam tutor** for **any university worldwide**. Pre-configured with **SPPU Computer Engineering** (Savitribai Phule Pune University) intelligence. Instantly adapts to any other university's syllabus and exam pattern when provided.
 
-The system can:
+The system includes **19 skills** that can:
 
 - **Write A+ exam answers** for ALL question types (theory, numerical, MCQ, case study, derivation, diagram, design, oral, lab) at ALL mark levels (1–100+)
 - **Compile exam-ready notes** in 12+ formats (Outline, Cornell, Mind Map, Flowchart, Q&A, etc.)
@@ -30,6 +30,15 @@ The system can:
 - **Generate IMP topics** with 5 probability levels and 7 time-plan options
 - **Create full exam question papers** in 11+ university patterns (SPPU, VTU, JNTU, IIT, Oxford, Cambridge, etc.)
 - **Write assignment-ready answers** with marking schemes, Bloom's levels, and CO alignment
+
+- **Generate Anki flashcards** with SRS metadata from any study material
+- **Create study schedules** with spaced repetition and active recall sessions
+- **Generate practice MCQs** calibrated by Bloom's level and university pattern
+- **Prepare for viva/oral exams** with simulated examiner dialogue
+- **Get emergency cram plans** for 12h, 6h, 3h, and 1h timeframes
+- **Write complete lab reports** with templates for engineering, science, medical
+- **Create formula sheets, mind maps, case study solutions, cross-subject connections**
+- **Get your answers graded** with per-criterion feedback and model answer comparison
 
 - **Adapt to ANY university** — upload your syllabus PDF + PYQ PDFs, and the system auto-detects your pattern
 
@@ -63,7 +72,7 @@ exam-prompt/
 ├── README.md                    # You are here
 ├── LICENSE
 │
-├── skills/                      #  Universal skill modules (SKILL.md format)
+├── skills/                      #  20 Universal skill modules (SKILL.md format)
 │   ├── answer-writer/           #    → 10/10 GPA answer generator (all conditions)
 │   ├── notes-generator/         #    → Exam-ready notes (12+ formats)
 │   ├── pyq-analyzer/            #    → PYQ analysis (13+ types, stats)
@@ -71,7 +80,42 @@ exam-prompt/
 │   ├── assignment-writer/       #    → Assignment-ready answers (12 types)
 │   ├── exam-paper-generator/    #    → Question papers (11+ patterns)
 │   ├── subject-prompt-bank/     #    → Pre-optimized sample answers
-│   └── universal-university-adapter/ # → Any-university entry point
+│   ├── universal-university-adapter/ # → Any-university entry point
+│   ├── flashcard-generator/     #    → 6 types, SRS metadata, Anki/Quizlet
+│   ├── study-planner/           #    → Personalized schedules (4 plan types)
+│   ├── mcq-practice-generator/  #    → 9 MCQ patterns, Bloom's-calibrated
+│   ├── viva-oral-exam-prep/     #    → 8 viva types, simulated examiner
+│   ├── last-minute-crammer/     #    → 12h/6h/3h/1h emergency plans
+│   ├── lab-report-writer/       #    → 4 templates, full report structure
+│   ├── formula-sheet-generator/ #    → 10 categories, compact reference
+│   ├── mind-map-generator/      #    → Mermaid + text + image descriptions
+│   ├── case-study-solver/       #    → 10+ frameworks, structured analysis
+│   ├── essay-grader/            #    → Per-criterion scoring, model answers
+│   ├── cross-subject-mapper/    #    → Dependency graphs, integrated paths
+│   └── session-config/          #    → Persistent JSON config profile
+│
+├── architectures/               #  Architecture-as-Code (D2 language)
+│   ├── d2/                      #    → Source .d2 files
+│   │   ├── system.d2
+│   │   ├── rag-pipeline.d2
+│   │   ├── student-flow.d2
+│   │   └── deployment.d2
+│   └── exports/                 #    → Auto-rendered SVGs
+│
+├── scripts/                      #  Auto skill creation utilities
+│   ├── create-skill.sh           #    → Generate new skill from template
+│   ├── validate-skills.sh        #    → Validate all SKILL.md frontmatter
+│   └── generate-agents-md.sh     #    → Auto-register skills in AGENTS.md
+│
+├── templates/
+│   └── skill/
+│       └── SKILL.md              #  New skill scaffold template
+│
+├── .github/
+│   └── workflows/
+│       ├── render-diagrams.yml   #  Auto-render D2 on push
+│       ├── validate-skills.yml   #  Validate SKILL.md on PR/push
+│       └── sync-skills.yml       #  Auto-register skills in AGENTS.md
 │
 ├── pyq-index/
 │   └── SKILL.md                 #  Complete PYQ PDF collection index
@@ -80,6 +124,48 @@ exam-prompt/
 ```
 
 Each skill is **self-contained** — load only what you need, keep context clean.
+
+---
+
+## Auto Skill Creation
+
+Creating a new skill is automated. Run the script, and it handles everything:
+
+```bash
+# Create a new skill (generates SKILL.md, validates, registers in AGENTS.md, syncs globally)
+./scripts/create-skill.sh my-new-skill "My New Skill" "Description of what the skill does"
+```
+
+This single command:
+1. Creates `skills/my-new-skill/SKILL.md` from template
+2. Validates the SKILL.md frontmatter
+3. Auto-registers the skill in `AGENTS.md` `<available_skills>`
+4. Syncs to `~/.agents/skills/universal-my-new-skill/`
+
+Or do it manually:
+```bash
+# Validate all skills
+./scripts/validate-skills.sh
+
+# Validate a specific skill
+./scripts/validate-skills.sh my-skill
+
+# Regenerate AGENTS.md from all skills (auto-detects new ones)
+./scripts/generate-agents-md.sh
+```
+
+### What Auto-Registration Does
+
+When you push a new skill to GitHub:
+- **validate-skills.yml**: CI checks every SKILL.md has valid frontmatter (name, description)
+- **sync-skills.yml**: CI auto-registers the new skill in AGENTS.md and updates the skill count in README
+
+### Skill Template
+
+See `templates/skill/SKILL.md` for the standard scaffold. Every new skill follows this structure:
+- YAML frontmatter with `name: universal-<skill-name>` and `description`
+- Overview, How This Skill Works, Features, Use Cases
+- Integration references to other skills
 
 ---
 
@@ -175,6 +261,61 @@ Universal entry point for ANY university worldwide. Detects university from dire
 **`pyq-index/SKILL.md`**
 
 Complete index of SPPU PYQ collection with per-subject, per-semester paper listings.
+
+### 10.  Universal Flashcard Generator
+**`skills/flashcard-generator/SKILL.md`**
+
+Converts study material into optimized flashcards with 6 types (Fact, Cloze, Concept, Problem, Scenario, Compare), 3 difficulty tiers, and SRS scheduling metadata. Exports to Anki (.apkg), CSV, markdown, JSON.
+
+### 11.  Universal Study Planner
+**`skills/study-planner/SKILL.md`**
+
+Generates day-by-day study schedules with 4 plan types (Marathon 30+ days, Sprint 7-14 days, Cram 1-3 days, Balanced 15-30 days). Includes spaced repetition schedule, per-topic time allocation algorithm, and adaptive re-scheduling.
+
+### 12.  Universal MCQ Practice Generator
+**`skills/mcq-practice-generator/SKILL.md`**
+
+Creates exam-style MCQs in 9 patterns (single/multiple correct, assertion-reason, match, T/F, fill-blank, case-based, ordering, diagram-based). Difficulty calibrated by Bloom's level with detailed distractor explanations.
+
+### 13.  Universal Viva / Oral Exam Prep
+**`skills/viva-oral-exam-prep/SKILL.md`**
+
+Prepares for 8 viva types (lab, course, project, comprehensive, PhD defense, internship, admission, online). Simulates examiner dialogue with follow-up probes. Includes CLAIM-EVIDENCE-LINK answer framing framework.
+
+### 14.  Universal Last-Minute Crammer
+**`skills/last-minute-crammer/SKILL.md`**
+
+Emergency exam preparation with plans for 12h, 6h, 3h, and 1h timeframes. Uses rapid memory encoding (memory palace, chunking, peg system, acronym chains). Includes exam-hall strategy guide.
+
+### 15.  Universal Lab Report Writer
+**`skills/lab-report-writer/SKILL.md`**
+
+Generates complete lab reports in 4 templates (Engineering, Science, Research, Medical). Covers all sections: aim, apparatus, theory, procedure, observations, calculations, results, discussion, conclusion, viva questions.
+
+### 16.  Universal Formula Sheet Generator
+**`skills/formula-sheet-generator/SKILL.md`**
+
+Compact formula references across 10 categories (algebraic, calculus, statistical, chemical, electrical, mechanical, financial, algorithmic, logical, physics). Organized by unit with variable definitions and SI units.
+
+### 17.  Universal Mind Map Generator
+**`skills/mind-map-generator/SKILL.md`**
+
+Visual concept maps in Mermaid syntax, indented text outline, and image description formats. Color-coded by Bloom's level and priority. Includes cross-links between related concepts.
+
+### 18.  Universal Case Study Solver
+**`skills/case-study-solver/SKILL.md`**
+
+Solves any case study type using 10+ structured frameworks (SWOT, PESTEL, 5 Whys, Fishbone, IRAC, Ethical Matrix, Decision Tree, Cost-Benefit). Covers business, engineering, medical, legal, ethical, and social science cases.
+
+### 19.  Universal Essay Grader / Answer Evaluator
+**`skills/essay-grader/SKILL.md`**
+
+Scores answers against university rubrics with per-criterion breakdown. 7 criteria for theory, 5 for numerical, 7 for essays. Includes strengths/weaknesses analysis, improvement priorities, and model answer comparison.
+
+### 20.  Universal Cross-Subject Mapper
+**`skills/cross-subject-mapper/SKILL.md`**
+
+Maps conceptual connections across subjects showing prerequisite dependencies, shared concepts, applications, analogies, and extensions. Creates program-level dependency graphs and integrated study paths.
 
 ---
 

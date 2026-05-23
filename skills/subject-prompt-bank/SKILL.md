@@ -480,7 +480,7 @@ A **Database Management System (DBMS)** is software that enables users to define
 
 Example: University database where Student entity (roll_no, name) has enrolls relationship with Course entity (code, title).
 
-Thus, ER model provides a clear blueprint for database design. Hence it is widely used in the initial phase of database development.
+Thus, ER model provides a clear blueprint for database design. It is widely used in the initial phase of database development.
 
 #### Compare File System vs DBMS [6 marks]
 **Time Budget**: 6 min
@@ -493,7 +493,7 @@ Thus, ER model provides a clear blueprint for database design. Hence it is widel
 | Concurrent access leads to inconsistency | Ensures consistency via locking |
 | Backup and recovery complex | Built-in backup and recovery mechanisms |
 
-Thus, File System is suitable for simple applications while DBMS is preferred for enterprise applications requiring data integrity.
+Thus, File System is suitable for simple applications, while DBMS is preferred for enterprise applications requiring data integrity.
 
 ### OS (310243)
 
@@ -513,7 +513,7 @@ A **process** is a program in execution, and it transitions through various stat
 4. **Waiting**: Process is waiting for an event (e.g., I/O completion).
 5. **Terminated**: Process has finished execution.
 
-Thus, process state transitions enable efficient CPU utilization. Hence it is fundamental to multiprogramming operating systems.
+Process state transitions enable efficient CPU utilization and are fundamental to multiprogramming operating systems.
 
 #### Explain Round Robin Scheduling Algorithm [4 marks]
 **Time Budget**: 4 min
@@ -525,7 +525,7 @@ Thus, process state transitions enable efficient CPU utilization. Hence it is fu
 3. **Fairness**: All processes receive equal CPU time allocation.
 4. **Context Switching**: Overhead increases with smaller time quantum values.
 
-Thus, Round Robin provides good response time for interactive systems. Hence it is widely used in time-sharing operating systems.
+Thus, Round Robin provides good response time for interactive systems and is widely used in time-sharing operating systems.
 
 #### Explain Banker's Algorithm for Deadlock Avoidance [6 marks]
 **Time Budget**: 6 min
@@ -537,7 +537,7 @@ Thus, Round Robin provides good response time for interactive systems. Hence it 
 3. **Need Matrix**: Calculates remaining resource needs of each process.
 4. **Available Vector**: Tracks currently available resources in system.
 
-Thus, Banker's Algorithm prevents deadlock by ensuring safe state maintenance. Hence it is used in systems where deadlock avoidance is critical.
+Thus, Banker's Algorithm prevents deadlock by ensuring safe state maintenance. It is used in systems where deadlock avoidance is critical.
 
 ### CN (310244)
 
@@ -556,7 +556,7 @@ The **TCP/IP Model** is a practical networking model consisting of four layers t
 3. **Transport**: Provides end-to-end communication using TCP/UDP.
 4. **Application**: Combines Session, Presentation, and Application layers of OSI.
 
-Thus, TCP/IP model provides a robust framework for internet communication. Hence it is the de facto standard for global networking.
+Thus, TCP/IP model provides a robust framework for internet communication. It is the de facto standard for global networking.
 
 #### Compare TCP and UDP [6 marks]
 **Time Budget**: 6 min
@@ -588,7 +588,7 @@ Thus, TCP is suitable for applications requiring reliability (e.g., HTTP, FTP) w
 3. **Combine**: Merge two sorted arrays by comparing elements and placing smaller one first.
 4. **Stability**: Merge Sort is stable as it preserves relative order of equal elements.
 
-Thus, Merge Sort guarantees O(n log n) performance regardless of input distribution. Hence it is preferred when consistent performance is required.
+Thus, Merge Sort guarantees O(n log n) performance regardless of input distribution. It is preferred when consistent performance is required.
 
 #### Explain Dynamic Programming with example [6 marks]
 **Time Budget**: 6 min
@@ -602,7 +602,7 @@ Thus, Merge Sort guarantees O(n log n) performance regardless of input distribut
 
 Example: Fibonacci sequence where fib(n) = fib(n-1) + fib(n-2). DP stores fib(0)...fib(n) in array, computing each once.
 
-Thus, Dynamic Programming reduces time complexity from exponential to polynomial. Hence it is used in optimization problems like Knapsack, LCS, and Matrix Chain Multiplication.
+Thus, Dynamic Programming reduces time complexity from exponential to polynomial. It is used in optimization problems like Knapsack, LCS, and Matrix Chain Multiplication.
 
 ---
 
