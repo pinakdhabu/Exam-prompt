@@ -3,3 +3,5 @@ archive/
 __pycache__/
 .DS_Store
 node_modules/
+.codegraph/
+.agents/

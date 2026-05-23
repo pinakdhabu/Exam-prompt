@@ -1,0 +1,16 @@
+title: Universal Exam Prompt
+description: 20 AI skills for 10/10 grades at any university worldwide
+url: "https://pinakdhabu.github.io/Exam-prompt"
+baseurl: "/Exam-prompt"
+theme: null
+markdown: GFM
+highlighter: none
+include:
+  - docs
+  - architectures
+  - skills
+exclude:
+  - .codegraph
+  - node_modules
+  - scripts
+  - templates

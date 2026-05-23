@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Prompt — Instant Answer Generator</title>
+<style>
+  :root { --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3a; --text: #e4e6ef; --muted: #8b8fa3; --accent: #6c5ce7; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; height: 100vh; display: flex; flex-direction: column; }
+  header { padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 1rem; font-weight: 600; }
+  .controls { display: flex; gap: 8px; }
+  button, select { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; cursor: pointer; }
+  button:hover, select:hover { border-color: var(--accent); }
+  button.primary { background: var(--accent); border-color: var(--accent); }
+  main { flex: 1; display: flex; flex-direction: column; max-width: 900px; margin: 0 auto; padding: 24px; width: 100%; }
+  textarea { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); padding: 16px; font-size: 0.95rem; font-family: inherit; resize: vertical; width: 100%; }
+  textarea:focus { outline: none; border-color: var(--accent); }
+  #question { flex: 1; min-height: 120px; margin: 16px 0; }
+  #prompt { min-height: 100px; font-size: 0.85rem; color: var(--muted); }
+  .hint { color: var(--muted); font-size: 0.8rem; margin: 8px 0; }
+  .result { display: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 16px; white-space: pre-wrap; line-height: 1.6; font-size: 0.9rem; max-height: 400px; overflow-y: auto; }
+  footer { border-top: 1px solid var(--border); padding: 12px 24px; font-size: 0.8rem; color: var(--muted); text-align: center; }
+  a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Exam Prompt — Universal Answer Generator</h1>
+  <div class="controls">
+    <select id="univ">
+      <option value="SPPU">SPPU</option>
+      <option value="VTU">VTU</option>
+      <option value="JNTU">JNTU</option>
+      <option value="Mumbai">Mumbai Univ</option>
+      <option value="AKTU">AKTU</option>
+      <option value="IIT">IIT/NIT</option>
+      <option value="Oxford">Oxford/Cambridge</option>
+      <option value="US">North American</option>
+      <option value="Generic">Generic</option>
+    </select>
+    <button id="copyBtn" class="primary">Copy Prompt</button>
+    <button id="clearBtn">Clear</button>
+  </div>
+</header>
+
+<main>
+  <label style="font-weight:600;font-size:0.9rem">Your Question</label>
+  <div class="hint">Include subject, marks, and exam type. Example: <em>Explain deadlock avoidance [8 marks] DBMS, closed book</em></div>
+  <textarea id="question" placeholder="Paste your exam question here..."></textarea>
+
+  <label style="font-weight:600;font-size:0.9rem">System Prompt (pre-loaded)</label>
+  <div class="hint">This is the master instruction. It gets copied to your clipboard automatically.</div>
+  <textarea id="prompt" readonly></textarea>
+
+  <div style="display:flex;gap:8px;margin-top:8px">
+    <button id="openChatGPT" class="primary">Open in ChatGPT</button>
+    <button id="openClaude">Open in Claude</button>
+    <button id="openGemini">Open in Gemini</button>
+  </div>
+
+  <div class="result" id="result"></div>
+</main>
+
+<footer>
+  <a href="https://github.com/pinakdhabu/Exam-prompt">GitHub</a> &middot; 20 skills for any university worldwide
+</footer>
+
+<script>
+const promptUrl = 'https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/PROMPT.md';
+
+async function loadPrompt() {
+  try {
+    const res = await fetch(promptUrl);
+    const text = await res.text();
+    document.getElementById('prompt').value = text;
+  } catch {
+    document.getElementById('prompt').value = 'Failed to load PROMPT.md. Check internet connection.\n\nManual: https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/PROMPT.md';
+  }
+}
+loadPrompt();
+
+document.getElementById('copyBtn').onclick = async () => {
+  const prompt = document.getElementById('prompt').value;
+  const question = document.getElementById('question').value;
+  const univ = document.getElementById('univ').value;
+  const full = prompt + '\n\n---\n\n' + (question || '[Paste your question here]') + '\nUniversity pattern: ' + univ;
+  await navigator.clipboard.writeText(full);
+  document.getElementById('copyBtn').textContent = 'Copied!';
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').textContent = 'Prompt copied to clipboard!\n\n1. Go to ChatGPT, Claude, or Gemini\n2. Paste the clipboard\n3. The AI will respond with your exam answer';
+  setTimeout(() => document.getElementById('copyBtn').textContent = 'Copy Prompt', 2000);
+};
+
+document.getElementById('clearBtn').onclick = () => {
+  document.getElementById('question').value = '';
+  document.getElementById('result').style.display = 'none';
+};
+
+document.getElementById('openChatGPT').onclick = () => {
+  const q = encodeURIComponent(document.getElementById('question').value || 'Explain ACID properties [6 marks]');
+  window.open('https://chatgpt.com/?prompt=' + q, '_blank');
+};
+
+document.getElementById('openClaude').onclick = () => {
+  window.open('https://claude.ai/new', '_blank');
+};
+
+document.getElementById('openGemini').onclick = () => {
+  const q = encodeURIComponent(document.getElementById('question').value || 'Explain ACID properties [6 marks]');
+  window.open('https://gemini.google.com/?q=' + q, '_blank');
+};
+</script>
+</body>
+</html>

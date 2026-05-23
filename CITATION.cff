@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Universal Exam Prompt"
+message: "If you use this work in an academic context, please cite it as below."
+authors:
+  - family-names: "Dhabu"
+    given-names: "Pinak"
+    orcid: "https://orcid.org/0009-0000-0000-0000"
+title: "Universal Exam Prompt: AI-Powered Exam Preparation System for Any University Worldwide"
+version: "1.0.0"
+date-released: 2026-05-23
+url: "https://github.com/pinakdhabu/Exam-prompt"
+repository-code: "https://github.com/pinakdhabu/Exam-prompt"
+keywords:
+  - exam-preparation
+  - education
+  - ai-agents
+  - skills
+  - prompts
+  - university
+license: MIT

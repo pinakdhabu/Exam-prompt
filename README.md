@@ -9,6 +9,8 @@
 
 [![Agent Compatible](https://img.shields.io/badge/Agent-Claude%20%7C%20Cursor%20%7C%20Windsurf%20%7C%20Aider-purple)](AGENTS.md)
 [![Built By](https://img.shields.io/badge/Built%20By-AI-blueviolet)](#-how-this-repo-was-built)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-success)](https://pinakdhabu.github.io/Exam-prompt/)
+[![Stars](https://img.shields.io/github/stars/pinakdhabu/Exam-prompt?style=social)](https://github.com/pinakdhabu/Exam-prompt)
 
 > **The world's most comprehensive AI-powered exam preparation system — works for ANY university, ANY department, ANY subject worldwide.**
 >
