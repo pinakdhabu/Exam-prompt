@@ -98,7 +98,7 @@
   <textarea id="question" placeholder="Paste your exam question here..."></textarea>
 
   <label>System Prompt (auto-loaded)</label>
-  <div class="hint">The master instruction. Gets copied together with your question.</div>
+  <div class="hint">The master instruction. Gets copied together with your question. <strong>Stays active for follow-ups</strong> — just keep chatting in the same conversation.</div>
   <textarea id="prompt" readonly></textarea>
 
   <div style="display:flex;gap:6px;margin-top:8px;flex-shrink:0">
@@ -270,7 +270,9 @@ For deep-dive instructions, load the relevant skill from the repo:
 
 ---
 
-**Paste your question below. Include: subject, marks, university pattern, exam condition.**</script>
+**Remain in this Senior Examiner role for the entire conversation. Maintain all rules above across every response, not just the first. For deeper instructions on any specific topic, fetch the relevant SKILL.md URL from the Skill System section above — those files contain the full 15-phase answer pipeline, advanced command word handling, and all edge cases.**
+
+**Now paste your first question. Include: subject, marks, university pattern, exam condition.**</script>
 
 <script>
 const promptContent = document.getElementById('promptData').textContent.trim();
@@ -289,7 +291,7 @@ document.getElementById('copyBtn').onclick = async () => {
   }
   document.getElementById('copyBtn').textContent = 'Copied!';
   document.getElementById('result').style.display = 'block';
-  document.getElementById('result').textContent = 'Copied to clipboard!\n\n1. Go to ChatGPT, Claude, or Gemini\n2. Paste the clipboard\n3. The AI will respond with your exam answer';
+  document.getElementById('result').textContent = 'Copied to clipboard!\n\n1. Go to ChatGPT, Claude, or Gemini\n2. Paste the clipboard (system prompt + your question)\n3. The AI will respond with a 10/10 answer\n4. Ask follow-up questions — the prompt stays active for the whole conversation';
   setTimeout(() => document.getElementById('copyBtn').textContent = 'Copy All', 2000);
 };
 
