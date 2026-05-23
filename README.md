@@ -27,6 +27,23 @@ This is a **universal skill hub** for SPPU (Savitribai Phule Pune University) Un
 
 All powered by a **skills-based architecture** inspired by [Anthropic's Agent Skills](https://github.com/anthropics/skills) specification.
 
+> 📖 **Official SPPU Syllabus Reference:** See [`SYLLABUS.md`](SYLLABUS.md) for complete unit-wise content, Course Outcomes, and CO-PO mapping for all 30+ Computer Engineering subjects — extracted directly from the official SPPU PDFs.
+
+---
+
+## ⚡ Quick Start with Gemini Gems
+
+One-click access to specialized AI agents for SPPU exam prep — no setup required.
+
+| Tool | Link | What It Does |
+|---|---|---|
+| 📊 Q.P. Analysis Tool | [Open Gemini Gem](https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh) | Analyzes PYQs and syllabus to predict exam patterns |
+| 📝 Notes Generator | [Open Gemini Gem](https://gemini.google.com/gem/bf5b14582187) | Generates 100% syllabus-locked revision notes |
+| 🔥 Important Topics Generator | [Open Gemini Gem](https://gemini.google.com/gem/4266a7e8000e) | Outputs must-prepare IMP topics & questions |
+| 🧠 Exam-Style Answer Generator | [Open Gemini Gem](https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK) | Writes full-marks theory answers |
+
+> 💡 **Pro tip:** Upload your SPPU syllabus PDF + previous year question papers to any Gemini Gem for best results. You can also use the prompts below with ChatGPT/Claude directly.
+
 ---
 
 ## 🏗️ Architecture

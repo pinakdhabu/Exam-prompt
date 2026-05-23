@@ -32,3 +32,9 @@ Location: `/home/pinak/Documents/SPPU Engineering PYQ Papers/`
 ## Usage
 
 When the user asks a question, load the relevant skill from the `skills/` directory. Each SKILL.md contains complete instructions for that specific task type.
+
+## Official Syllabus Reference
+
+For accurate unit-wise content, Course Outcomes (CO), and CO-PO mapping:
+- See [`SYLLABUS.md`](SYLLABUS.md) — extracted from official SPPU PDFs
+- Syllabus PDFs located at: `/home/pinak/Documents/SPPU Engineering PYQ Papers/Computer Engineering/1 SYLLABUS/2019 PATTERN/`
