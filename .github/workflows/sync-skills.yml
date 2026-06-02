@@ -54,12 +54,7 @@ jobs:
             fm_name=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^name:' | sed 's/^name: //' | tr -d '[:space:]' || echo "$name")
 
             # Extract description (handles multiline YAML folded block scalars >)
-            fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | awk '
-              /^description:/ { in_desc=1; sub(/^description:[[:space:]]*[>|]?[[:space:]]*/,""); desc=$0; next }
-              in_desc && /^[[:space:]]/ { sub(/^[[:space:]]*/,""); desc=desc" "$0; next }
-              in_desc { in_desc=0 }
-              END { gsub(/^[[:space:]]+/,"",desc); gsub(/[[:space:]]+$/,"",desc); if(desc!="") print desc }
-            ' || echo "No description.")
+            fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | sed -n '/^description:/,/^[a-z]/p' | head -n -1 | sed -E 's/^description:[[:space:]]*[>|]?[[:space:]]*//' | sed 's/^[[:space:]]*//' | tr '\n' ' ' | sed 's/[[:space:]]*$//' || echo "No description.")
 
             cat >> /tmp/agents_new.md << SKILLEOF
 <skill>
