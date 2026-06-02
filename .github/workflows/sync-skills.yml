@@ -52,7 +52,14 @@ jobs:
 
             # Extract name from frontmatter
             fm_name=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^name:' | sed 's/^name: //' | tr -d '[:space:]' || echo "$name")
-            fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^description:' | sed 's/^description: //' || echo "No description.")
+
+            # Extract description (handles multiline YAML folded block scalars >)
+            fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | awk '
+              /^description:/ { in_desc=1; sub(/^description:[[:space:]]*[>|]?[[:space:]]*/,""); desc=$0; next }
+              in_desc && /^[[:space:]]/ { sub(/^[[:space:]]*/,""); desc=desc" "$0; next }
+              in_desc { in_desc=0 }
+              END { gsub(/^[[:space:]]+/,"",desc); gsub(/[[:space:]]+$/,"",desc); if(desc!="") print desc }
+            ' || echo "No description.")
 
             cat >> /tmp/agents_new.md << SKILLEOF
 <skill>
