@@ -115,6 +115,12 @@
       "skillPath": "skills/pyq-analyzer/SKILL.md",
       "computedHash": "38db95df9e991e243d6cf5b99e2ef332aab155ae220f97de0377fdbf8d9a16fe"
     },
+    "universal-sppu-exam-simulator": {
+      "source": "pinakdhabu/Exam-prompt",
+      "sourceType": "github",
+      "skillPath": "skills/sppu-exam-simulator/SKILL.md",
+      "computedHash": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
     "universal-subject-prompt-bank": {
       "source": "pinakdhabu/Exam-prompt",
       "sourceType": "github",

@@ -107,6 +107,12 @@ Usage notes:
 </skill>
 
 <skill>
+<name>universal-sppu-exam-simulator</name>
+<description>SPPU Physical Exam Simulation Engine for ANY university worldwide. Models real examination hall constraints — answer-book page limits, writing speed, time pressure, examiner psychology, and moderator-level marking. Companion skill that enforces physical exam realism on all generated answers. Pre-configured for SPPU 2019 & 2024 Pattern.</description>
+<location>project</location>
+</skill>
+
+<skill>
 <name>universal-session-config</name>
 <description>Persistent session configuration for the Exam Prompt system. Stores university, subject, exam pattern, and user profile across skill calls. Eliminates redundant context detection by providing a single JSON profile that every other skill reads. Works for ANY university worldwide.</description>
 <location>project</location>
