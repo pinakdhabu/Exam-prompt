@@ -54,16 +54,15 @@ jobs:
             fm_name=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^name:' | sed 's/^name: //' | tr -d '[:space:]' || echo "$name")
 
             # Extract description (handles multiline YAML folded block scalars >)
-            fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | sed -n '/^description:/,/^[a-z]/p' | head -n -1 | sed -E 's/^description:[[:space:]]*[>|]?[[:space:]]*//' | sed 's/^[[:space:]]*//' | tr '\n' ' ' | sed 's/[[:space:]]*$//' || echo "No description.")
+            fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | sed -n '/^description:/,/^[a-z]/p' | head -n -1 | sed 's/^description: *> *//' | sed 's/^description: *//' | sed 's/^ *//' | tr '\n' ' ' | sed 's/ *$//' || echo "No description.")
 
-            cat >> /tmp/agents_new.md << SKILLEOF
-<skill>
-<name>$fm_name</name>
-<description>$fm_desc</description>
-<location>project</location>
-</skill>
-
-SKILLEOF
+            {
+              echo "<skill>"
+              echo "<name>$fm_name</name>"
+              echo "<description>$fm_desc</description>"
+              echo "<location>project</location>"
+              echo ""
+            } >> /tmp/agents_new.md
           done
 
           echo "$xml_end" >> /tmp/agents_new.md
