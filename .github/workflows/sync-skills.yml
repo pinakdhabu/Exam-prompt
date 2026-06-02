@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'skills/**/SKILL.md'
+      - '.github/workflows/sync-skills.yml'
   workflow_dispatch:
 
 permissions:
