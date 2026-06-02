@@ -15,6 +15,7 @@ How to use skills:
 
 Usage notes:
 
+
 <available_skills>
 
 <skill>
@@ -124,4 +125,3 @@ Usage notes:
 
 </available_skills>
 <!-- SKILLS_TABLE_END -->
-</skills_system>
