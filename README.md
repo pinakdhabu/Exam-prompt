@@ -65,6 +65,22 @@ One-click access to specialized AI agents for SPPU exam prep — no setup requir
 
 ---
 
+## Quick Install (All AI Coding Agents)
+
+Install all 22 exam-prep skills globally for your AI coding agent:
+
+```bash
+# One-command install — targets OpenCode + universal agents
+npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
+
+# Or use the helper script
+bash scripts/install.sh
+```
+
+> **Note:** Skills install to `~/.agents/skills/` — shared by all universal agents (OpenCode, Amp, Cline, PromptScript, etc.). The "PromptScript does not support global" message is cosmetic; PromptScript reads from `~/.agents/skills/` automatically.
+
+---
+
 ## Architecture
 
 ```
