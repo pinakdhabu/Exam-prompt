@@ -90,7 +90,7 @@ exam-prompt/
 ├── README.md                    # You are here
 ├── LICENSE
 │
-├── skills/                      #  21 Universal skill modules (SKILL.md format)
+├── skills/                      #  22 Universal skill modules (SKILL.md format)
 │   ├── answer-writer/           #    → 10/10 GPA answer generator (all conditions)
 │   ├── notes-generator/         #    → Exam-ready notes (12+ formats)
 │   ├── pyq-analyzer/            #    → PYQ analysis (13+ types, stats)
