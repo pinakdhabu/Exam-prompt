@@ -24,6 +24,11 @@ Usage notes:
 <location>project</location>
 
 <skill>
+<name>universal-document-reader</name>
+<description>Base preprocessing skill — Converts any document (PDF, DOCX, scanned images, handwritten notes) to clean, LLM-friendly text. Must be run BEFORE any other skill when working with documents. Supports text-based PDFs, scanned/image PDFs (via OCR), Word documents, images, PPTX, EPUB, and HTML. Includes text cleaning pipeline and integration with all other skills.</description>
+<location>project</location>
+
+<skill>
 <name>universal-assignment-writer</name>
 <description> Generates assignment-ready content for any university worldwide across all assignment types (theory, numerical, case study, research, literature review, project proposals, design, analysis, comparison, critical review, problem-solving, and diagram/illustration). Supports multiple output formats, evaluation depth mapping, marking scheme generation, and citation requirements. University-agnostic.</description>
 <location>project</location>
