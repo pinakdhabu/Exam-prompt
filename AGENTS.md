@@ -31,11 +31,6 @@
 </skill>
 
 <skill>
-<name>universal-diagram-generator</name>
-<description>Generates professional diagrams (flowcharts, mind maps, architecture, UML, graphs) from Mermaid, D2, and Graphviz code. Renders to SVG for GitHub Markdown and embeds into PDFs automatically. Supports ALL diagram types for ANY university, ANY subject.</description>
-<location>project</location>
-
-<skill>
 <name>universal-document-generator</name>
 <description>Converts Markdown study content to print-ready PDF documents with professional formatting. Covers full pipeline from source PDFs to clean text to Markdown notes to PDF output. Works for ANY university, ANY subject. Trigger on requests to generate PDFs from Markdown, create printable study materials, or batch-convert notes to PDF.</description>
 <location>project</location>
