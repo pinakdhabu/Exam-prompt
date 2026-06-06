@@ -1,0 +1,31 @@
+{
+  "name": "Exam-Prompt — AI Exam Preparation System",
+  "description": "Universal skill hub for AI-powered exam preparation. 24 skills, any university worldwide.",
+  "version": "0.0.0",
+
+  "skills": {
+    "autoLoad": true,
+    "paths": [
+      "${workspaceFolder}/skills"
+    ]
+  },
+
+  "agents": {
+    "answer-writer": {
+      "description": "Generates A+ exam answers for any university",
+      "skill": "skills/answer-writer/SKILL.md"
+    },
+    "notes-generator": {
+      "description": "Creates exam-ready notes in 12+ formats",
+      "skill": "skills/notes-generator/SKILL.md"
+    },
+    "pyq-analyzer": {
+      "description": "Analyzes previous year question papers with 13+ statistical methods",
+      "skill": "skills/pyq-analyzer/SKILL.md"
+    },
+    "imp-topics": {
+      "description": "Generates high-probability exam topics with time plans",
+      "skill": "skills/imp-topics-generator/SKILL.md"
+    }
+  }
+}

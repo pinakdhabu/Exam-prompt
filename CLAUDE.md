@@ -13,6 +13,8 @@ This repository contains a comprehensive set of universal exam preparation skill
 
 All skills are in the `skills/` directory with `SKILL.md` files. See `AGENTS.md` for the complete skill registry.
 
+**For complete agent instructions** — including skill discovery, conversation starters, multi-step workflows, and configuration guides for all major AI coding platforms (Cursor, Windsurf, Aider, Cline, Copilot, Continue.dev) — see [`AGENT-GUIDE.md`](AGENT-GUIDE.md).
+
 | Skill | File | Purpose |
 |---|---|---|
 | universal-a-plus-answer-writer | `skills/answer-writer/SKILL.md` | 10/10 GPA answers — all conditions |

@@ -203,6 +203,8 @@ See `templates/skill/SKILL.md` for the standard scaffold. Every new skill follow
 
 This section tells **any AI coding agent** (Claude Code, Cursor, Windsurf, Aider, Cline, OpenCode, ChatGPT, Gemini) exactly how to use this repo.
 
+> **📖 For the complete agent guide**, see [`AGENT-GUIDE.md`](AGENT-GUIDE.md) — covers all 24 skills, 20 conversation starters, multi-step workflows, and platform-specific configuration for 8+ AI coding agents.
+
 ### How This Repo Works for AI Agents
 
 This repo uses a **universal skills architecture**:

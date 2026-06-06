@@ -1,0 +1,41 @@
+# Aider Configuration for Exam-Prompt
+# Aider reads this file for project-level settings.
+# https://aider.chat/docs/config/options.html
+
+# Model settings
+model: claude-sonnet-4-20250514
+weak-model: claude-3-5-haiku-latest
+edit-format: diff
+
+# Project settings
+auto-commits: false
+lint: true
+lint-cmd: "bash scripts/validate-skills.sh"
+show-release-notes: false
+
+# File settings
+restore-chat-history: true
+gitignore: true
+
+# Read these files for context on startup
+read:
+  - AGENTS.md
+  - CLAUDE.md
+  - CONTRIBUTING.md
+  - USE-CASES.md
+
+# Architecture / conventions
+map-refresh: auto
+
+# Message formatting
+chat-mode: markdown
+
+# Read-only files (can see but not edit)
+# Use .aiderignore for files aider should never touch
+read-only:
+  - SYLLABUS.md
+  - pyq-index/SKILL.md
+  - USE-CASES.md
+  - AGENTS.md
+  - AGENT-GUIDE.md
+  - CLAUDE.md

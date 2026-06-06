@@ -1,0 +1,96 @@
+# Continue.dev Configuration for Exam-Prompt
+# https://docs.continue.dev/customize/config
+
+name: exam-prompt
+description: Universal AI-powered exam preparation system for any university worldwide
+
+# Model configuration
+models:
+  - name: Claude Sonnet 4
+    provider: anthropic
+    model: claude-sonnet-4-20250514
+    default: true
+
+  - name: GPT-4o
+    provider: openai
+    model: gpt-4o
+
+# Tab autocomplete
+tabAutocompleteModel:
+  name: Codestral
+  provider: mistral
+  model: codestral-latest
+
+# Slash commands
+slashCommands:
+  - name: answer
+    description: Write an A+ exam answer
+    prompt: |
+      Read skills/answer-writer/SKILL.md and follow its instructions to answer this question:
+      {{input}}
+    params:
+      skill: answer-writer
+
+  - name: notes
+    description: Generate exam-ready notes
+    prompt: |
+      Read skills/notes-generator/SKILL.md and generate notes for:
+      {{input}}
+    params:
+      skill: notes-generator
+
+  - name: pyq
+    description: Analyze previous year question papers
+    prompt: |
+      Read skills/pyq-analyzer/SKILL.md and analyze these papers:
+      {{input}}
+    params:
+      skill: pyq-analyzer
+
+  - name: imp
+    description: Generate IMP topics with study plan
+    prompt: |
+      Read skills/imp-topics-generator/SKILL.md and generate IMP topics:
+      {{input}}
+    params:
+      skill: imp-topics-generator
+
+  - name: mcq
+    description: Generate practice MCQs
+    prompt: |
+      Read skills/mcq-practice-generator/SKILL.md and generate MCQs for:
+      {{input}}
+    params:
+      skill: mcq-practice-generator
+
+  - name: cram
+    description: Emergency last-minute cram plan
+    prompt: |
+      Read skills/last-minute-crammer/SKILL.md and create cram plan:
+      {{input}}
+    params:
+      skill: last-minute-crammer
+
+# Context providers
+contextProviders:
+  - name: file
+    params:
+      path: AGENTS.md
+  - name: folder
+    params:
+      path: skills/
+      description: All exam preparation skills
+  - name: terminal
+
+# Tab context
+tabAutocompleteSettings:
+  useSimilarFiles: true
+  maxContextLength: 4000
+
+# Embeddings provider
+embeddingsProvider:
+  provider: transformers.js
+
+# Experimental features
+experimental:
+  predictFileSystem: false
