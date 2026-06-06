@@ -72,6 +72,35 @@ If pattern is unclear: Ask exactly 1 clarification question. Never assume beyond
 | **Multiple Select** | "Select all that apply" |
 | **Viva/Oral** | "Explain X [viva]", "Answer orally" |
 
+### 1B.1 — Edge Case Question Types
+
+| Question Pattern | Structure | Marks |
+|---|---|---|
+| **Critically evaluate / Criticize** | Balanced pros/cons table + final judgment paragraph | 8-10 marks |
+| **Prove / Prove by contradiction** | Given → Assume contrary → Derive contradiction → Conclude. Step-by-step logical flow. | All marks |
+| **Trace / Simulate / Dry run** | Tabular trace format: `Step \| Stack/Queue/Registers \| Input \| Output \| Action` | 4-8 marks |
+| **Write a note on** | 6-8 points + diagram + example | 6 marks |
+| **Short note on** | 4-5 points + diagram | 4 marks |
+| **Explain with suitable example** | Every theoretical point immediately followed by a concrete named instance. Add "Concept → Example mapping" block. | 6-10 marks |
+| **Multi-part questions (3a, 3b, 3c)** | Shared diagrams across parts, cross-referencing, total time budget across parts, hierarchical mark allocation | Varies |
+| **Derive and hence prove** | Sequential dependency markers: `Step A output → Step B input` with clear intermediate results | 6-10 marks |
+| **Design / Implement / Develop complete system** | Requirements → Architecture → Module design → Pseudocode → Complexity → Testing → Deployment | 15 marks |
+| **Solve using [method1] and also solve using [method2]** | Parallel solution: Method A → Result A + Method B → Result B + Comparison | 8-10 marks |
+| **State and prove** | Strict 2-part: Statement (exact wording) → Proof (stepwise with justification) | 6-10 marks |
+| **Diagram-as-answer questions** | Invert priority: diagram first (full-page, every component labeled), then 3-4 lines of explanation | 4-8 marks |
+| **Explain in detail with a case study** | Case context → Problem → Solution approach → Application → Outcome | 8-10 marks |
+| **Numerical with conceptual follow-up** | Calculate X. Then: post-numerical analysis section discussing "What would happen if Y changed?" | 6-10 marks |
+| **Compare and contrast** | Table with similarities + differences (both sides) | 4-8 marks |
+| **Compare** | Table with similarities + differences | 4-8 marks |
+| **Contrast** | Differences-only table | 4-8 marks |
+| **Summarize** | 3-sentence-per-topic → final 1-paragraph synthesis pipeline | 4-6 marks |
+| **Differentiate between X, Y, and Z (3-way)** | 3-column table + relationship Venn diagram | 6-8 marks |
+| **Justify with mathematical reasoning** | Claim → Mathematical formulation → Derivation → Numerical verification → Conclusion | 6-10 marks |
+| **Assume suitable data** | Assumption rules: reasonable values, mention assumption explicitly | Varies |
+| **Write a note on applications of X** | Application-first: Domain 1 → specific use → Domain 2 → specific use → Summary | 4-6 marks |
+| **Graphical method questions** | Graph setup → Axes labels → Plotting → Feasible region → Optimal point → Interpretation | 6-10 marks |
+| **Explain the role of X in Y** | Role in system → Interaction with other components → Impact → Example | 6-8 marks |
+
 ### 1C — Identify Marks
 
 Scale the answer proportionally:
@@ -117,6 +146,17 @@ Adaptive formula: **1 mark ≈ 2-3 lines of average handwriting ≈ 25-30 second
 | **Take-home** | Higher depth expected. Include more references, cross-links, comprehensive analysis. Longer, more polished. |
 | **Timed (X minutes)** | Activate Time Management mode (see below). Prioritize highest-scoring sections. |
 | **Untimed** | Maximum quality. All sections at full depth. |
+
+### 1D.1 — Additional Exam Conditions
+
+| Condition | Adjustments |
+|---|---|
+| **Take-home exam** | Cover page, citations, references, appendix, structured sections with headers. Higher depth expected throughout. |
+| **Online proctored** | More aggressive time budget (typing vs writing), copy-paste safe formatting, self-contained answers. No diagram dependency in critical points. |
+| **Cheat-sheet allowed** | Condensed mode: skip definitions, max 1 page per topic, keyword-only format. Focus on application and problem-solving. |
+| **Group exam** | Dividing work strategy, cross-referencing between sections, consistent terminology across team members. Shared responsibility for diagrams. |
+| **Negative marking** | Attempt estimation logic: which questions to skip, partial marks strategy. Only answer high-confidence questions first. |
+| **Open-book with limited time** | Skip definitions entirely. Emphasize analysis, cross-referencing, and application. Reference known sources quickly. |
 
 ### 1E — Identify Bloom's Level (Implicit)
 
@@ -405,7 +445,7 @@ Use these Mermaid patterns for common exam diagrams. Always wrap in ` ```mermaid
 | Diagram Type | Mermaid Syntax | Use When |
 |---|---|---|
 | **Flowchart** | ```` ```mermaid\nflowchart TD\n  A[Start] --> B{Decision}\n  B -- Yes --> C[Process]\n  B -- No --> D[End]\n```` | Algorithms, processes, workflows, decision trees |
-| **Sequence Diagram** | ```` ```mermaid\nsequenceDiagram\n  Client->>Server: Request\n  Server->>Database: Query\n  Database-->>Server: Result\n  Server-->>Client: Response\n```` | Network protocols, communication flows, | 
+| **Sequence Diagram** | ```` ```mermaid\nsequenceDiagram\n  Client->>Server: Request\n  Server->>Database: Query\n  Database-->>Server: Result\n  Server-->>Client: Response\n```` | Network protocols, communication flows, |
 | **Class Diagram** | ```` ```mermaid\nclassDiagram\n  class Student {\n    +name: String\n    +enroll()\n  }\n```` | OOP concepts, ER model, UML |
 | **ER Diagram** | ```` ```mermaid\nerDiagram\n  STUDENT ||--o{ ENROLLS : registers\n  COURSE ||--o{ ENROLLS : has\n```` | Database design, entity relationships |
 | **State Diagram** | ```` ```mermaid\nstateDiagram-v2\n  [*] --> Idle\n  Idle --> Processing : start\n  Processing --> Done : complete\n  Done --> [*]\n```` | Process states, lifecycles, state machines |
@@ -493,6 +533,19 @@ Keywords come from:
 - Previous model answer papers for the same topic
 
 In the absence of syllabus: use universally accepted terminology for the topic.
+
+---
+
+### 5A — Time-Saving Shortcuts for SPPU Exams
+
+For SPPU 2.5 hour exams, these shortcuts save 15-20 minutes:
+
+1. **Drawing block diagrams**: Do not draw perfect boxes. Quick rectangles with 2 strokes.
+2. **Tables**: Straight lines using ruler edge, fast column headers only.
+3. **Lists**: Use numbers 1, 2, 3 not bullet dots (faster to write).
+4. **Reusing diagrams**: If two questions share a diagram, draw once and write "Same diagram as Q3(a)".
+5. **Common formulas**: Write standard formulas without naming them (saves time when formula sheet not allowed).
+6. **Closing lines**: Keep to exactly 1 line. Use pre-prepared templates.
 
 ---
 
@@ -593,6 +646,28 @@ In the absence of syllabus: use universally accepted terminology for the topic.
 
 ---
 
+### 6A — SPPU-Specific Anti-Deduction Rules
+
+SPPU moderators apply additional physical-presentation deductions beyond content errors. These patterns are specific to SPPU answer booklet evaluation:
+
+| Pattern | Fix |
+|---|---|
+| Not underlining key terms with pen | Physically underline bolded terms with pen in written answer |
+| Starting a new answer mid-page in answer booklet | Always start each answer on a fresh page |
+| Complex diagram taking too long | Neat block diagram with labels is sufficient — do not waste time on artistic detail |
+| Numerical final answer not boxed | Always draw a box around the final answer with units |
+| Running out of time and writing nothing | Write bullet points instead of paragraphs — partial marks awarded |
+| Leaving blank space between answers | Draw a horizontal line or write "Answer to Q.X" |
+| Writing "Answer:" before the answer | Remove — just write the answer directly |
+| Crossing out entire answers messily | Single horizontal line through the wrong text only |
+| Mixing ink colors | Stick to one color (blue or black ink pen) |
+| Writing in margins | Keep all content within the answer area |
+| Diagrams in pencil | Use pen for labels, pencil only for drawing lines |
+| Not writing question numbers clearly | Write question number before each answer |
+| Answer booklet page numbers vs answer ordering | Follow booklet page numbers, answer in sequence |
+
+---
+
 ## PHASE 7: EXAM CONDITIONS MODE
 
 ### Open Book Mode
@@ -659,6 +734,26 @@ Adjustments:
 - Skip writing basic formulas (examiner knows you have them).
 - Focus on: which formula to use, WHY, and the working/application.
 - For numericals: emphasize the problem-solving approach, not formula recall.
+
+---
+
+### 7A — Handwriting and Physical Presentation
+
+Handwriting size directly affects word count, page usage, and examiner readability. Choose based on marks and time:
+
+| Handwriting Size | Words per Page | Best For | Risk |
+|---|---|---|---|
+| **Small** | ~350-400 | Maximizing content in limited pages | Readability if cramped; examiner fatigue |
+| **Medium** | ~250-300 | Ideal balance of content and readability | None — recommended for most answers |
+| **Large** | ~150-200 | Clarity for examiner; filling pages for low-mark questions | Too few words per page for high-mark questions |
+
+Additional presentation rules:
+
+- **Line spacing**: Leave 2-3mm between lines for readability.
+- **Margin discipline**: Maintain 1cm margin on the left, 0.5cm on the right.
+- **Page budgeting rule of thumb**: 1 mark ≈ 3-4 lines of medium handwriting. For small handwriting, 1 mark ≈ 4-5 lines. For large handwriting, 1 mark ≈ 2-3 lines.
+- **Answer spacing**: Leave one blank line after each numbered point within an answer. Leave 2-3 blank lines between different answers.
+- **Header separation**: Draw a horizontal line across the page after completing one answer before starting the next.
 
 ---
 
@@ -979,7 +1074,7 @@ Example — "ACID properties":
   C -> Consistency (valid state to valid state)
   I -> Isolation (concurrent = sequential)
   D -> Durability (committed = permanent)
-  
+
   Mnemonic: "All Cars In Drive" (Atomicity, Consistency, Isolation, Durability)
 ```
 
@@ -997,7 +1092,7 @@ For each answer used in exam preparation:
 ```
 Day 1:  Study the full answer (write it out once)
 Day 2:  Active recall — write the answer without looking
-Day 4:  Mental recall — check only keywords 
+Day 4:  Mental recall — check only keywords
 Day 8:  Write full answer again (should be 80%+ accurate)
 Day 16: Speed write — time yourself to write within exam time
 Exam Eve: Quick scan of keyword highlights only
