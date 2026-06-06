@@ -1,0 +1,211 @@
+name: Nightly Self-Improve
+
+on:
+  schedule:
+    # Every day at midnight UTC — rolling release check
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # Manual trigger for immediate check
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  self-improve:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund 2>&1 | tail -3
+
+      - name: Check for orphan skill directories
+        id: orphans
+        run: |
+          orphans=0
+          for dir in skills/*/; do
+            if [ ! -f "$dir/SKILL.md" ]; then
+              name=$(basename "$dir")
+              echo "Orphan: $name"
+              orphans=$((orphans + 1))
+            fi
+          done
+          echo "count=$orphans" >> $GITHUB_OUTPUT
+          if [ "$orphans" -gt 0 ]; then
+            echo "Found $orphans orphan skill directories"
+          else
+            echo "No orphan skills"
+          fi
+
+      - name: Auto-register any unregistered skills
+        run: |
+          if [ -f scripts/generate-agents-md.sh ]; then
+            bash scripts/generate-agents-md.sh --dry-run 2>&1 | head -5 || true
+          fi
+          echo "AGENTS.md skill check complete"
+
+      - name: Check for sample papers missing solutions
+        id: missing-solutions
+        run: |
+          missing=0
+          while IFS= read -r -d '' paper; do
+            solution="${paper%.md}-solution.md"
+            if [ ! -f "$solution" ]; then
+              relpath="${paper#./}"
+              echo "Missing solution: $relpath"
+              missing=$((missing + 1))
+            fi
+          done < <(find examples/ -name 'sample-paper-*.md' ! -name '*-solution.md' -print0 2>/dev/null)
+          echo "count=$missing" >> $GITHUB_OUTPUT
+
+      - name: Check for stale dependencies
+        id: deps
+        run: |
+          if [ -f package.json ]; then
+            if [ -f package-lock.json ] && [ package-lock.json -ot package.json ]; then
+              echo "stale=true" >> $GITHUB_OUTPUT
+              echo "package-lock.json is stale — needs npm install"
+            else
+              echo "stale=false" >> $GITHUB_OUTPUT
+              echo "Dependencies look current"
+            fi
+          fi
+
+      - name: Check for TODO/FIXME/HACK comments
+        id: todos
+        run: |
+          count=$(grep -r 'TODO\|FIXME\|HACK' --include='*.py' --include='*.js' --include='*.sh' \
+            --include='*.md' --include='*.yml' --include='*.yaml' --include='*.ps1' \
+            --exclude-dir=node_modules --exclude-dir=.git \
+            --exclude-dir=.github 2>/dev/null | wc -l)
+          echo "count=$count" >> $GITHUB_OUTPUT
+
+      - name: Collate report
+        id: report
+        run: |
+          ORPHANS=${{ steps.orphans.outputs.count }}
+          MISSING=${{ steps.missing-solutions.outputs.count }}
+          TODOS=${{ steps.todos.outputs.count }}
+
+          STALE=${{ steps.deps.outputs.stale }}
+
+          ISSUES=()
+          [ "$ORPHANS" -gt 0 ] && ISSUES+=("orphan-count=$ORPHANS")
+          [ "$MISSING" -gt 0 ] && ISSUES+=("missing-solutions=$MISSING")
+          [ "$TODOS" -gt 0 ] && ISSUES+=("todos=$TODOS")
+          [ "$STALE" = "true" ] && ISSUES+=("stale-deps=1")
+
+          if [ ${#ISSUES[@]} -gt 0 ]; then
+            echo "Found issues: ${ISSUES[*]}"
+            # Create a summary report
+            {
+              echo "## Nightly Self-Improve Report ($(date -u +%Y-%m-%d))"
+              echo ""
+              echo "| Check | Status |"
+              echo "|-------|--------|"
+              echo "| Orphan skills | $ORPHANS |"
+              echo "| Missing solutions | $MISSING |"
+              echo "| Stale dependencies | $(echo $STALE) |"
+              echo "| TODO/FIXME comments | $TODOS |"
+              echo ""
+              if [ "$ORPHANS" -gt 0 ]; then
+                echo "### Orphan Skill Directories"
+                echo "These directories in skills/ have no SKILL.md:"
+                echo '```'
+                for dir in skills/*/; do
+                  if [ ! -f "$dir/SKILL.md" ]; then
+                    echo "  $(basename "$dir")"
+                  fi
+                done
+                echo '```'
+              fi
+              if [ "$MISSING" -gt 0 ]; then
+                echo "### Sample Papers Missing Solutions"
+                echo '```'
+                while IFS= read -r -d '' paper; do
+                  solution="${paper%.md}-solution.md"
+                  if [ ! -f "$solution" ]; then
+                    echo "  $paper"
+                  fi
+                done < <(find examples/ -name 'sample-paper-*.md' ! -name '*-solution.md' -print0 2>/dev/null)
+                echo '```'
+              fi
+            } > /tmp/nightly-report.md
+            echo "report_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "All checks passed — no issues found"
+            echo "report_exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit auto-fixes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "nightly: auto-fix issues found on $(date -u +%Y-%m-%d)"
+          add_options: '-A'
+
+      - name: Open issue for remaining issues
+        if: steps.report.outputs.report_exists == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('/tmp/nightly-report.md', 'utf8');
+
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: ['nightly-report']
+            });
+
+            if (issues.data.length > 0) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues.data[0].number,
+                title: `Nightly Report: ${new Date().toISOString().split('T')[0]}`,
+                body: report
+              });
+              console.log(`Updated issue #${issues.data[0].number}`);
+            } else {
+              const result = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `Nightly Report: ${new Date().toISOString().split('T')[0]}`,
+                body: report,
+                labels: ['nightly-report', 'auto-generated']
+              });
+              console.log(`Created issue #${result.data.number}`);
+            }
+
+      - name: Close nightly issue when all clear
+        if: steps.report.outputs.report_exists == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: ['nightly-report']
+            });
+
+            if (issues.data.length > 0) {
+              for (const issue of issues.data) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  state: 'closed',
+                  state_reason: 'completed'
+                });
+                console.log(`Closed issue #${issue.number} — all checks passed`);
+              }
+            }

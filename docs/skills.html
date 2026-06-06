@@ -160,8 +160,8 @@
   <div class="container">
     <div class="term-line"><span class="arrow">&gt;</span> ls skills/</div>
     <h1>Academic Skills</h1>
-    <p>20 SKILL.md files — one per exam task. Self-contained, portable, exam-ready.</p>
-    <div class="count">20 skills · 6 categories</div>
+    <p>24 SKILL.md files — one per exam task. Self-contained, portable, exam-ready.</p>
+    <div class="count">24 skills · 6 categories</div>
   </div>
 </div>
 
@@ -185,7 +185,7 @@
 
 <footer>
   <div class="container">
-    <p>MIT &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; 20 academic skills</p>
+    <p>MIT &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; 24 academic skills</p>
   </div>
 </footer>
 
@@ -332,8 +332,36 @@ const skills = [
     name: 'Session Config',
     cat: 'infra',
     tags: ['infra'],
-    desc: 'Persistent session configuration stored as a JSON profile. Stores university, subject, exam pattern, and user preferences across all skill calls. Set once, shared across all 20 skills. Eliminates redundant context detection by providing a single profile that every other skill reads.',
+    desc: 'Persistent session configuration stored as a JSON profile. Stores university, subject, exam pattern, and user preferences across all 24 skills. Set once via bash scripts/profile.sh — shared across every skill. Eliminates redundant context detection.',
     url: 'session-config'
+  },
+  {
+    name: 'Document Reader',
+    cat: 'infra',
+    tags: ['infra'],
+    desc: 'Converts any document (PDF, DOCX, images, scanned) to clean LLM-friendly text. Supports text PDFs, OCR-scanned PDFs (tesseract), Word docs, images, PowerPoint, EPUB, and HTML. First step before any skill processing.',
+    url: 'universal-document-reader'
+  },
+  {
+    name: 'Document Generator',
+    cat: 'infra',
+    tags: ['infra'],
+    desc: 'Converts Markdown study content to print-ready PDF documents with A4 professional formatting. Two backends: Python (weasyprint) and Node.js (Playwright). Completes the 3-stage pipeline: PDF → TXT → MD → PDF.',
+    url: 'document-generator'
+  },
+  {
+    name: 'QP Fetcher',
+    cat: 'infra',
+    tags: ['infra'],
+    desc: 'Auto-fetches previous year question papers from university websites using Playwright or Python fallback. Fuzzy subject matching, rate limiting, retry logic. Covers all semesters and branches. One-command: npm run fetch:qp.',
+    url: 'qp-fetcher'
+  },
+  {
+    name: 'SPPU Exam Simulator',
+    cat: 'planning',
+    tags: ['strategy'],
+    desc: 'Physical exam hall simulation engine. Models 36-page answer booklet, 34 writable pages, writing speed, time pressure, and examiner psychology. Use alongside Answer Writer for realistic exam practice.',
+    url: 'sppu-exam-simulator'
   }
 ];
 

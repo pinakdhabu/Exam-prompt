@@ -1,0 +1,4 @@
+# Ignore downloaded PDF files
+*.pdf
+# But track the directory (via .gitkeep)
+!.gitkeep

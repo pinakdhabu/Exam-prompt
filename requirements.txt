@@ -1,0 +1,26 @@
+# Exam Prompt — Python Dependencies
+# Install: pip install -r requirements.txt
+
+# Markdown to PDF conversion
+markdown>=3.6
+weasyprint>=62.0
+
+# PDF text extraction
+PyPDF2>=3.0
+pypdf>=4.0  # fallback for PyPDF2
+
+# Document conversion
+python-docx>=1.1.0  # DOCX reading
+# pandoc is a system binary (apt install pandoc / brew install pandoc / choco install pandoc)
+# For programmatic pandoc access from Python, install: pip install pypandoc
+
+# OCR (optional, for scanned documents)
+pytesseract>=0.3.10 # tesseract OCR Python wrapper
+Pillow>=10.0        # image processing
+
+# Image preprocessing (for OCR pipeline)
+opencv-python>=4.9.0  # advanced image processing (optional)
+
+# Handwriting recognition (optional)
+# transformers>=4.40.0   # TrOCR models
+# torch>=2.0.0           # PyTorch for transformers

@@ -1,0 +1,85 @@
+name: Auto-Format Markdown
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.md'
+      - '.github/workflows/format-markdown.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install prettier
+        run: npm install --no-save prettier 2>&1 | tail -3
+
+      - name: Format Markdown files
+        run: |
+          # Format all .md files with prettier (keep it simple)
+          npx prettier --write \
+            --print-width 100 \
+            --prose-wrap always \
+            --tab-width 2 \
+            --no-config \
+            '**/*.md' \
+            '!node_modules/**' \
+            '!.git/**' \
+            '!AGENTS.md' 2>&1 | tail -5 || true
+          echo "Formatting complete"
+
+      - name: Check SKILL.md frontmatter consistency
+        run: |
+          # Ensure every SKILL.md starts with ---\nname: ...
+          for dir in skills/*/; do
+            skill_file="$dir/SKILL.md"
+            if [ -f "$skill_file" ]; then
+              # Check first line is ---
+              if ! head -1 "$skill_file" | grep -q '^---$'; then
+                # Prepend frontmatter template
+                name=$(basename "$dir")
+                {
+                  echo "---"
+                  echo "name: $name"
+                  echo "description: |"
+                  echo "  TODO: Add description"
+                  echo "---"
+                  echo ""
+                  cat "$skill_file"
+                } > /tmp/skill_fixed.md
+                mv /tmp/skill_fixed.md "$skill_file"
+                echo "Fixed: $skill_file — added frontmatter"
+              fi
+            fi
+          done
+
+      - name: Check for trailing whitespace
+        run: |
+          # Remove trailing whitespace from all files (except binary)
+          find . -type f \
+            ! -path './node_modules/*' \
+            ! -path './.git/*' \
+            ! -name '*.svg' \
+            ! -name '*.png' \
+            ! -name '*.jpg' \
+            ! -name '*.pdf' \
+            -exec sed -i 's/[[:space:]]*$//' {} \;
+          echo "Trailing whitespace removed"
+
+      - name: Commit formatted files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "style: auto-format markdown and fix whitespace"
+          add_options: '-A'

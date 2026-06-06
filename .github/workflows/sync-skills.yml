@@ -7,6 +7,9 @@ on:
     paths:
       - 'skills/**/SKILL.md'
       - '.github/workflows/sync-skills.yml'
+  schedule:
+    # Also run nightly as part of rolling release
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 permissions:
@@ -22,22 +25,20 @@ jobs:
       - name: Count skills
         id: count
         run: |
-          COUNT=$(ls -d skills/*/ | wc -l)
+          COUNT=$(ls -d skills/*/ 2>/dev/null | wc -l)
           echo "count=$COUNT" >> $GITHUB_OUTPUT
           echo "Found $COUNT skills"
 
       - name: Auto-generate AGENTS.md
         run: |
-          # Generate available_skills block from all skills
-          # Read AGENTS.md and replace content between <available_skills> and </available_skills>
           AGENTS="AGENTS.md"
           SKILLS_DIR="skills"
 
-          # Build the available_skills XML
+          # Build <available_skills> XML block
           xml_start='<available_skills>'
           xml_end='</available_skills>'
 
-          # Extract header (everything up to <available_skills>)
+          # Extract header (everything before <available_skills>)
           sed -n '1,/<available_skills>/p' "$AGENTS" | head -n -1 > /tmp/agents_new.md
           echo "" >> /tmp/agents_new.md
           echo "$xml_start" >> /tmp/agents_new.md
@@ -47,15 +48,17 @@ jobs:
             name=$(basename "$dir")
             skill_file="$dir/SKILL.md"
             if [ ! -f "$skill_file" ]; then
-              echo "WARN: $name has no SKILL.md, skipping"
               continue
             fi
 
             # Extract name from frontmatter
             fm_name=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^name:' | sed 's/^name: //' | tr -d '[:space:]' || echo "$name")
 
-            # Extract description (handles multiline YAML folded block scalars >)
-            fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | sed -n '/^description:/,/^[a-z]/p' | head -n -1 | sed 's/^description: *> *//' | sed 's/^description: *//' | sed 's/^ *//' | tr '\n' ' ' | sed 's/ *$//' || echo "No description.")
+            # Extract description (handles multiline YAML)
+            fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | \
+              sed -n '/^description:/,/^[a-z]/p' | head -n -1 | \
+              sed 's/^description: *> *//' | sed 's/^description: *//' | \
+              sed 's/^ *//' | tr '\n' ' ' | sed 's/ *$//' || echo "No description.")
 
             {
               echo "<skill>"
@@ -69,22 +72,46 @@ jobs:
           echo "$xml_end" >> /tmp/agents_new.md
           echo '<!-- SKILLS_TABLE_END -->' >> /tmp/agents_new.md
 
-          # Append the rest after </available_skills> in original
+          # Append rest after </available_skills> in original
           tail -n +$(($(grep -n '</available_skills>' "$AGENTS" | head -1 | cut -d: -f1) + 3)) "$AGENTS" >> /tmp/agents_new.md
 
           mv /tmp/agents_new.md "$AGENTS"
           echo "Regenerated AGENTS.md"
 
-      - name: Update README skill count
+      - name: Update README with dynamic badges
         run: |
-          COUNT=$(ls -d skills/*/ | wc -l)
-          # Update the number in the architecture tree line
-          sed -i "s/skills\/.*Universal skill modules/skills\/                      #  $COUNT Universal skill modules/" README.md
-          echo "Updated README with skill count: $COUNT"
+          SKILL_COUNT=$(ls -d skills/*/ 2>/dev/null | wc -l)
+          PAPER_COUNT=$(find examples/ -name 'sample-paper-*.md' 2>/dev/null | wc -l)
+          SOLUTION_COUNT=$(find examples/ -name '*-solution.md' 2>/dev/null | wc -l)
+
+          # Generate a dynamic status badge line
+          BADGES="![Skills](https://img.shields.io/badge/skills-$SKILL_COUNT-blue)"
+          BADGES="$BADGES ![Papers](https://img.shields.io/badge/sample_papers-$PAPER_COUNT-green)"
+          BADGES="$BADGES ![Solutions](https://img.shields.io/badge/solutions-$SOLUTION_COUNT-orange)"
+          BADGES="$BADGES ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4)"
+          BADGES="$BADGES ![License](https://img.shields.io/badge/license-MIT-brightgreen)"
+
+          # Update or insert the badge line in README.md
+          if grep -q '\[!\[Skills\]' README.md 2>/dev/null; then
+            sed -i "s|\[!\[Skills\].*|$BADGES|" README.md
+          else
+            # Insert after the first heading
+            sed -i "1a\\\n$BADGES\n" README.md
+          fi
+          echo "Updated README badges"
+
+      - name: Generate docs skills list
+        run: |
+          COUNT=$(ls -d skills/*/ 2>/dev/null | wc -l)
+          # Update the skills count in docs/skills.html
+          if [ -f docs/skills.html ]; then
+            sed -i "s/SKILL_COUNT/$COUNT/g" docs/skills.html
+            echo "Updated docs/skills.html"
+          fi
 
       - name: Commit auto-registration
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto-register skill in AGENTS.md"
+          commit_message: "nightly: auto-register skills and update badges"
           add_options: '-A'
-          file_pattern: AGENTS.md README.md
+          file_pattern: AGENTS.md README.md docs/skills.html

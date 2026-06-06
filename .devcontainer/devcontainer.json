@@ -1,0 +1,57 @@
+{
+  "name": "Exam-Prompt Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "description": "One-click development environment for Exam-Prompt contributors. Includes Node.js, Python, Pandoc, and all tools needed to create sample papers, validate skills, and generate PDFs.",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "postCreateCommand": "npm install && pip install --user weasyprint markdown pyyaml && npm install -g prettier && git config --global core.autocrlf input",
+  
+  "postStartCommand": "echo 'Exam-Prompt dev environment ready. Run: bash scripts/validate-skills.sh'",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+        "bierner.markdown-mermaid",
+        "mushan.vscode-paste-image",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "EditorConfig.EditorConfig",
+        "github.vscode-github-actions",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.wordWrap": "on",
+        "editor.tabSize": 2,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "markdownlint.config": {
+          "MD013": false,
+          "MD033": false,
+          "MD041": false
+        }
+      }
+    }
+  },
+
+  "forwardPorts": [],
+
+  "remoteUser": "codespace",
+
+  "hostRequirements": {
+    "memory": "4gb",
+    "storage": "10gb"
+  }
+}

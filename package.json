@@ -1,0 +1,56 @@
+{
+  "name": "exam-prompt",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Universal Exam Prompt — AI-Powered Exam Preparation System for Any University Worldwide",
+  "keywords": [
+    "exam-preparation",
+    "education",
+    "ai-agents",
+    "skills",
+    "sppu",
+    "university",
+    "study-tool",
+    "rolling-release"
+  ],
+  "homepage": "https://pinakdhabu.github.io/Exam-prompt/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinakdhabu/Exam-prompt.git"
+  },
+  "license": "MIT",
+  "author": "Pinak Dhabu",
+  "type": "commonjs",
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "setup:win": "powershell -ExecutionPolicy Bypass -File scripts/setup.ps1",
+    "profile": "bash scripts/profile.sh",
+    "profile:show": "bash scripts/profile.sh show",
+    "profile:env": "bash scripts/profile.sh env",
+    "submit:pyq": "bash scripts/submit-pyq.sh",
+    "update": "bash scripts/self-update.sh",
+    "update:check": "bash scripts/self-update.sh --check-only",
+    "update:fix": "bash scripts/self-update.sh --fix",
+    "fetch:qp": "node scripts/fetch-qp.js",
+    "convert:pdf": "node scripts/convert-to-pdf.js",
+    "convert:pdf:all": "node scripts/batch-convert-to-pdf.js",
+    "install:skills": "bash scripts/install.sh",
+    "validate:skills": "bash scripts/validate-skills.sh",
+    "generate:agents": "bash scripts/generate-agents-md.sh",
+    "create:skill": "bash scripts/create-skill.sh",
+    "format": "npx prettier --write --print-width 100 --prose-wrap always --tab-width 2 '**/*.md' '!node_modules/**' '!.git/**' '!AGENTS.md'",
+    "diagrams": "curl -fsSL https://d2lang.com/install.sh | sh -s -- && for f in architectures/d2/*.d2; do d2 \"$f\" \"architectures/exports/$(basename $f .d2).svg\" --theme 300; done",
+    "codespaces": "echo 'Ready! Run: bash scripts/validate-skills.sh'",
+    "test:fetch": "node scripts/fetch-qp.js --semester 5 --list"
+  },
+  "dependencies": {
+    "marked": "^15.0.0",
+    "playwright": "^1.52.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

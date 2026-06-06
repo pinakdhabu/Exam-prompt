@@ -1,0 +1,82 @@
+name: Auto-Convert Sample Papers to PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'examples/**/*.md'
+      - '!examples/**/README.md'
+      - '.github/workflows/convert-to-pdf.yml'
+  workflow_dispatch:
+    # Allow manual trigger to convert all papers
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install chromium 2>&1 | tail -5
+
+      - name: Convert changed sample papers to PDF
+        run: |
+          # Get list of changed MD files (excluding README)
+          # HEAD~1 may not exist on first push — handle gracefully
+          CHANGED=""
+          if git rev-parse HEAD~1 &>/dev/null; then
+            CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'examples/**/*.md' ':(exclude)examples/**/README.md' 2>/dev/null || echo "")
+          fi
+
+          if [ -z "$CHANGED" ]; then
+            echo "No sample paper MD files changed. Checking if manual trigger..."
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              echo "Manual trigger — converting all sample papers"
+              node scripts/batch-convert-to-pdf.js --parallel 4
+            else
+              echo "No changes to convert"
+            fi
+            exit 0
+          fi
+
+          echo "Changed files:"
+          echo "$CHANGED"
+
+          # Convert each changed MD file
+          for file in $CHANGED; do
+            if [ -f "$file" ]; then
+              echo "Converting: $file"
+              node scripts/convert-to-pdf.js "$file" 2>&1 || echo "  FAILED: $file"
+            fi
+          done
+
+      - name: Check for new PDFs
+        id: pdf-check
+        run: |
+          COUNT=$(find examples/ -name '*.pdf' -newer .git/index 2>/dev/null | wc -l)
+          if [ "$COUNT" -gt 0 ]; then
+            echo "new_pdfs=$COUNT" >> $GITHUB_OUTPUT
+            echo "Found $COUNT new/updated PDFs"
+          else
+            echo "No new PDFs generated — skipping commit"
+          fi
+
+      - name: Commit PDFs
+        if: steps.pdf-check.outputs.new_pdfs != ''
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-convert sample papers to PDF"
+          file_pattern: examples/**/*.pdf
+          add_options: '-A'

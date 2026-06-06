@@ -24,7 +24,7 @@
 
 This is a **universal skill hub** that transforms any AI coding agent into a personal **10/10 GPA exam tutor** for **any university worldwide**. Pre-configured with **SPPU Computer Engineering** (Savitribai Phule Pune University) intelligence. Instantly adapts to any other university's syllabus and exam pattern when provided.
 
-The system includes **23 skills** that can:
+The system includes **24 skills** that can:
 
 - **Write A+ exam answers** for ALL question types (theory, numerical, MCQ, case study, derivation, diagram, design, oral, lab) at ALL mark levels (1–100+)
 - **Compile exam-ready notes** in 12+ formats (Outline, Cornell, Mind Map, Flowchart, Q&A, etc.)
@@ -67,7 +67,7 @@ One-click access to specialized AI agents for SPPU exam prep — no setup requir
 
 ## Quick Install (All AI Coding Agents)
 
-Install all 22 exam-prep skills globally for your AI coding agent:
+Install all 24 exam-prep skills globally for your AI coding agent:
 
 ```bash
 # One-command install — targets OpenCode + universal agents
@@ -90,7 +90,7 @@ exam-prompt/
 ├── README.md                    # You are here
 ├── LICENSE
 │
-├── skills/                      #  23 Universal skill modules (SKILL.md format)
+├── skills/                      #  24 Universal skill modules (SKILL.md format)
 │   ├── answer-writer/           #    → 10/10 GPA answer generator (all conditions)
 │   ├── notes-generator/         #    → Exam-ready notes (12+ formats)
 │   ├── pyq-analyzer/            #    → PYQ analysis (13+ types, stats)
@@ -112,7 +112,8 @@ exam-prompt/
 │   ├── case-study-solver/       #    → 10+ frameworks, structured analysis
 │   ├── essay-grader/            #    → Per-criterion scoring, model answers
 │   ├── cross-subject-mapper/    #    → Dependency graphs, integrated paths
-│   └── session-config/          #    → Persistent JSON config profile
+│   ├── session-config/          #    → Persistent JSON config profile
+│   └── qp-fetcher/               #    → Auto-fetch PYQs from websites
 │
 ├── architectures/               #  Architecture-as-Code (D2 language)
 │   ├── d2/                      #    → Source .d2 files
@@ -193,26 +194,184 @@ See `templates/skill/SKILL.md` for the standard scaffold. Every new skill follow
 
 ---
 
-## Quick Start
+---
+
+## AI Agent Instructions
+
+This section tells **any AI coding agent** (Claude Code, Cursor, Windsurf, Aider, Cline, OpenCode, ChatGPT, Gemini) exactly how to use this repo.
+
+### How This Repo Works for AI Agents
+
+This repo uses a **universal skills architecture**:
+
+1. Each skill lives in `skills/<name>/SKILL.md`
+2. When you (the user) ask an exam-related question, the AI agent loads the appropriate skill's `SKILL.md`
+3. The skill contains **step-by-step instructions** for the AI agent to generate the best possible output
+4. The `AGENTS.md` file is a machine-readable registry that AI agents auto-discover
 
 ### For Claude Code
 
+Skills are auto-discovered via `AGENTS.md` and `CLAUDE.md`. Just start asking:
+
 ```bash
-# The skills are auto-discovered via AGENTS.md
-# Just ask Claude to use a specific skill:
+# Answer writing
 "Write an answer for Explain ACID properties [6 marks]"
-"Generate notes for Unit 3 of DBMS"
-"Analyze these PYQs for TOC"
-"What are the IMP topics for OS exam?"
+
+# Notes generation
+"Generate Cornell notes for Unit 3 of DBMS"
+
+# PYQ analysis
+"Analyze these PYQs and tell me what's important"
+
+# IMP topics
+"What are the IMP topics for my TOC exam? I have 3 days"
+
+# Full exam simulation
+"Simulate a full SPPU 2019 pattern DBMS exam"
+
+# Different university
+"I'm at VTU, Mechanical Engineering. Generate a sample paper for Fluid Mechanics"
 ```
 
-### For Cursor / Windsurf / Aider / Codex
+### For Cursor / Windsurf / Aider / Cline / OpenCode
 
-These agents read `AGENTS.md` automatically. All skills are loadable via the `<available_skills>` system.
+These agents read `AGENTS.md` and `CLAUDE.md` automatically. The skills are loaded via `<available_skills>` system tags.
 
-### For ChatGPT / Gemini
+**Pro tip**: Open the repo in your agent and just start asking questions. The agent will auto-discover and load the right skill.
 
-Copy the content from any `skills/<name>/SKILL.md` into the chat, then start asking questions.
+### For ChatGPT / Gemini (Manual Load)
+
+1. **Copy** the content from any `skills/<name>/SKILL.md` into the chat
+2. **Paste** as a single message
+3. **Then ask** your exam question in the next message
+
+Example:
+```
+You: [Paste entire skills/answer-writer/SKILL.md content]
+You: Now please write an answer for "Explain ACID properties with example [6 marks]"
+```
+
+### Loading Multiple Skills
+
+For complex tasks, load multiple skills:
+```
+You: [Paste skills/pyq-analyzer/SKILL.md]
+You: [Paste skills/imp-topics-generator/SKILL.md]
+You: Analyze these PYQ PDFs for DBMS and generate IMP topics with a 7-day study plan
+```
+
+### For Any Agent: Quick Prompt Templates
+
+Copy-paste these prompts to get started:
+
+**Answer Writing:**
+```
+I need an exam answer. Load universal-a-plus-answer-writer from the skills directory.
+Question: [paste question]
+Marks: [marks]
+University: [name]
+Subject: [name]
+```
+
+**Notes Generation:**
+```
+Load universal-notes-generator from the skills directory.
+Generate [Cornell/Outline/Flowchart/Mind Map] notes for:
+Subject: [name]
+Unit: [number] — [title]
+Topics: [list]
+Exam type: [closed/open/online]
+Time available: [days]
+```
+
+**PYQ Analysis + IMP Topics:**
+```
+Load universal-pyq-analyzer and universal-imp-topics-generator from skills directory.
+My PYQ PDFs are at: [path/to/pyq/folder]
+My syllabus PDF is at: [path/to/syllabus.pdf]
+I have [X] days to prepare.
+Target GPA: [8/10 or 10/10]
+```
+
+**Full Exam Simulation:**
+```
+Load universal-sppu-exam-simulator and universal-a-plus-answer-writer.
+Subject: [name]
+Pattern: [SPPU 2019 / SPPU 2024 / Generic]
+Time: [X] hours
+Total marks: [Y]
+Units covered: [list]
+```
+
+**Different University:**
+```
+Load universal-university-adapter then universal-a-plus-answer-writer.
+I'm at [University Name], [Department].
+My subject is [subject name].
+Here is my syllabus: [path or paste]
+Here are my PYQs: [path or paste]
+I need: [answer/notes/analysis/IMP topics]
+```
+
+---
+
+## Conversation Starters
+
+Try these prompts with any AI agent after loading the repo:
+
+| Scenario | Prompt |
+|---|---|
+| **Answer writing** | "Explain ACID properties with example [6 marks] — SPPU 2019 pattern" |
+| **Short note** | "Write a short note on B+ Tree indexing [4 marks]" |
+| **Numerical** | "Solve: Given schedule S = {R1(A),W2(A),R2(B),W1(B)}, check if it's conflict serializable [6 marks]" |
+| **Comparison** | "Compare TCP and UDP [6 marks] in table format" |
+| **Derivation** | "Derive the time complexity of Merge Sort [5 marks]" |
+| **Diagram** | "Draw and explain ER diagram for Hospital Management System [8 marks]" |
+| **Design** | "Design a DFA for strings ending with '01' over {0,1} [6 marks]" |
+| **Essay** | "Analyze the impact of AI on modern software engineering practices [10 marks]" |
+| **Case study** | "Solve this case study: A company wants to migrate from SQL to NoSQL. Analyze and recommend." |
+| **Notes** | "Generate Cornell notes for Unit 3 of DBMS — Normalization" |
+| **Mind map** | "Generate a mind map for Operating System concepts" |
+| **Formula sheet** | "Create a formula sheet for Engineering Mathematics 3 — all units" |
+| **PYQ analysis** | "These are my PYQs (paste PDFs). What topics should I focus on?" |
+| **IMP topics** | "I have 3 days to prepare for TOC. Give me IMP topics with a time plan." |
+| **MCQ practice** | "Generate 10 MCQs on Normalization with varying difficulty" |
+| **Flashcards** | "Create Anki flashcards from these notes on Machine Learning" |
+| **Viva prep** | "Prepare me for a viva on Database Management Systems" |
+| **Lab report** | "Write a complete lab report for: Implementation of Stack using Arrays" |
+| **Study plan** | "Create a 30-day study plan for BE Computer Engineering Semester 8" |
+| **Cross-subject** | "How does Normalization in DBMS connect to Functional Dependencies in Discrete Math?" |
+| **QP fetching** | "Fetch PYQs for BE Computer Engineering Semester 8 — DBMS and TOC" |
+| **Essay grading** | "Grade my answer on Artificial Intelligence. Here it is: [paste]" |
+| **Cram mode** | "I have 6 hours before my exam. Give me a cram plan for OS!" |
+| **Assignment** | "Write an assignment on Cloud Computing service models with marking scheme" |
+| **Exam paper** | "Generate a full question paper for DBMS — SPPU 2019 pattern" |
+| **Any university** | "I'm a Mechanical Engineering student at VTU. Generate notes for Fluid Mechanics Unit 2" |
+| **Multi-subject** | "Map the connections between Data Structures, DBMS, and Operating Systems" |
+
+### Multi-Step Workflows
+
+**Full exam prep workflow:**
+```
+Step 1: "Load universal-pyq-analyzer. Analyze these PYQ PDFs for DBMS."
+Step 2: "Now load universal-imp-topics-generator. Give me IMP topics with a 1-week plan."
+Step 3: "Load universal-notes-generator. Generate Cornell notes for the top 3 IMP topics."
+Step 4: "Load universal-mcq-practice-generator. Generate 10 practice MCQs on those topics."
+```
+
+**Assignment completion workflow:**
+```
+Step 1: "Load universal-document-reader. Read this assignment PDF."
+Step 2: "Load universal-assignment-writer. Write the assignment with marking scheme."
+Step 3: "Load universal-document-generator. Convert the assignment to PDF."
+```
+
+**Emergency exam workflow:**
+```
+Step 1: "Load universal-last-minute-crammer. I have 3 hours before my exam."
+Step 2: "Load universal-formula-sheet-generator. Generate a one-page formula sheet."
+Step 3: "Load universal-mind-map-generator. Create a rapid revision mind map."
+```
 
 ---
 
@@ -291,10 +450,15 @@ Converts Markdown study content to print-ready PDF documents with professional A
 
 Universal entry point for ANY university worldwide. Detects university from directory scan, uploaded PDFs, verbal description, URL, or implicit context. Identifies exam pattern (Indian/US/UK/European/Australian/Asian), routes to the correct universal skill, and adapts content to the user's specific university and department.
 
-### 12.  PYQ Index
+### 11.  PYQ Index
 **`pyq-index/SKILL.md`**
 
 Complete index of SPPU PYQ collection with per-subject, per-semester paper listings.
+
+### 12.  Universal Session Config
+**`skills/session-config/SKILL.md`**
+
+Persistent JSON configuration profile for student preferences. Stores university, subject, exam pattern, handwriting size, default note format, and more. Set once via `bash scripts/profile.sh` — shared across all 24 skills. Eliminates redundant context detection.
 
 ### 13.  Universal Flashcard Generator
 **`skills/flashcard-generator/SKILL.md`**
@@ -350,6 +514,11 @@ Scores answers against university rubrics with per-criterion breakdown. 7 criter
 **`skills/cross-subject-mapper/SKILL.md`**
 
 Maps conceptual connections across subjects showing prerequisite dependencies, shared concepts, applications, analogies, and extensions. Creates program-level dependency graphs and integrated study paths.
+
+### 24.  Universal QP Fetcher
+**`skills/qp-fetcher/SKILL.md`**
+
+Automatically fetches previous year question papers from university websites (supports sppuquestionpapers.com). Uses Playwright for browser-based PDF download with fuzzy subject matching, rate limiting, and retry logic. Covers all semesters and branches. Includes Python fallback (requests + BeautifulSoup) for CLI-only environments.
 
 ---
 

@@ -1,0 +1,88 @@
+# Universal Exam Prompt — Agent Configuration for Cursor / Windsurf / Aider / Cline
+
+## What This Repo Is
+
+This is a universal skill hub for AI-powered exam preparation. It works for ANY university worldwide.
+
+## How to Use
+
+1. When the user asks an exam-related question, check the `AGENTS.md` file for available skills
+2. Skills are in `skills/<skill-name>/SKILL.md` — each is a complete instruction set
+3. Load the relevant skill by reading its SKILL.md content
+4. Follow the skill's instructions step-by-step to generate the best output
+
+## Key Files
+
+- `AGENTS.md` — Machine-readable registry of all available skills (XML format)
+- `CLAUDE.md` — Quick reference table of all skills
+- `skills/<name>/SKILL.md` — Full skill instructions (the actual "brain")
+- `USE-CASES.md` — 33 real-world workflow examples
+- `CONTRIBUTING.md` — How to contribute sample papers and skills
+
+## Quick Reference
+
+All 24 skills:
+
+1. **universal-a-plus-answer-writer** — Exam answers (all types, all marks, all conditions)
+2. **universal-notes-generator** — 12+ note formats
+3. **universal-pyq-analyzer** — 13 analysis types with stats
+4. **universal-imp-topics-generator** — IMP topics with probability
+5. **universal-assignment-writer** — Complete assignments with marking schemes
+6. **universal-exam-paper-generator** — Full question papers (11+ patterns)
+7. **universal-subject-prompt-bank** — Pre-optimized sample answers
+8. **universal-document-reader** — PDF/DOCX/image → clean text
+9. **universal-document-generator** — Markdown → print-ready PDF
+10. **universal-university-adapter** — Detect any university from PDFs
+11. **universal-flashcard-generator** — Anki/Quizlet flashcards
+12. **universal-study-planner** — Personalized study schedules
+13. **universal-mcq-practice-generator** — Bloom's-calibrated MCQs
+14. **universal-viva-oral-exam-prep** — Viva prep with examiner simulation
+15. **universal-last-minute-crammer** — Emergency plans (12h/6h/3h/1h)
+16. **universal-lab-report-writer** — Complete lab report templates
+17. **universal-formula-sheet-generator** — Compact formula references
+18. **universal-mind-map-generator** — Mermaid + text mind maps
+19. **universal-case-study-solver** — 10+ frameworks (SWOT, PESTEL, etc.)
+20. **universal-essay-grader** — Per-criterion answer scoring
+21. **universal-cross-subject-mapper** — Subject connection graphs
+22. **universal-sppu-exam-simulator** — Full exam hall simulation
+23. **universal-session-config** — Persistent user profile config
+24. **universal-qp-fetcher** — Auto-fetch PYQs from websites
+
+## Conversation Starters (Copy-Paste)
+
+### Easy Mode
+```
+Explain ACID properties with example [6 marks]
+```
+
+### With Subject
+```
+Write an answer for: [question] [marks]. Subject: DBMS. University: SPPU 2019 pattern.
+```
+
+### With University Detection
+```
+I'm at VTU, Mechanical Engineering. My PYQs are at /home/user/pyqs/. Analyze them.
+```
+
+### Full Workflow
+```
+Step 1: Analyze these PYQs for DBMS (2 PDFs attached)
+Step 2: Give me IMP topics with a 7-day plan
+Step 3: Generate Cornell notes for the top 3 topics
+Step 4: Create 15 practice MCQs
+```
+
+## Note on Multiple Skills
+
+For complex tasks, load multiple skills sequentially. Example:
+1. First load `skills/pyq-analyzer/SKILL.md` to analyze PYQs
+2. Then load `skills/imp-topics-generator/SKILL.md` to generate topics
+3. Then load `skills/study-planner/SKILL.md` to create schedule
+
+## Tip: No University Pattern?
+
+If the user doesn't specify a university, default to:
+- 5 units/modules, 100 marks, 3 hours
+- OR within each unit
+- Generic question structure
