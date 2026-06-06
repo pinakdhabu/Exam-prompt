@@ -51,14 +51,14 @@ validate_skill() {
     echo "FAIL: $name — cannot parse YAML frontmatter"
     errors=$((errors + 1))
   else
-    # Check name field
-    if ! echo "$frontmatter" | grep -Eq '^name:\s'; then
+    # Check name field (handle both 'name: value' and 'name:\n  value' formats)
+    if ! echo "$frontmatter" | grep -Eq '^name:(\s|$)' ; then
       echo "FAIL: $name — frontmatter missing 'name:' field"
       errors=$((errors + 1))
     fi
 
-    # Check description field
-    if ! echo "$frontmatter" | grep -Eq '^description:\s'; then
+    # Check description field (handle both 'description: value' and 'description:\n  value')
+    if ! echo "$frontmatter" | grep -Eq '^description:(\s|$)' ; then
       echo "FAIL: $name — frontmatter missing 'description:' field"
       errors=$((errors + 1))
     fi

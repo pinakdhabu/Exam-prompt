@@ -29,57 +29,11 @@ jobs:
           echo "count=$COUNT" >> $GITHUB_OUTPUT
           echo "Found $COUNT skills"
 
-      - name: Auto-generate AGENTS.md
+      - name: Auto-generate AGENTS.md and skills.json
         run: |
-          AGENTS="AGENTS.md"
-          SKILLS_DIR="skills"
-
-          # Extract header (everything before <available_skills>)
-          HEADER=$(sed '/<available_skills>/q' "$AGENTS" | sed '$d')
-          # Extract footer (everything after </available_skills>)
-          FOOTER=$(sed -n '/<\/available_skills>/,\$p' "$AGENTS" | sed '1d')
-
-          # Build the new <available_skills> block
-          {
-            echo "$HEADER"
-            echo ""
-            echo "<available_skills>"
-            echo ""
-            for dir in "$SKILLS_DIR"/*/; do
-              name=$(basename "$dir")
-              skill_file="$dir/SKILL.md"
-              [ ! -f "$skill_file" ] && continue
-
-              # Extract name from YAML frontmatter
-              fm_name=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^name:' | sed 's/^name: *//' | tr -d '[:space:]')
-              [ -z "$fm_name" ] && fm_name="$name"
-
-              # Extract description from YAML frontmatter
-              # Uses sed to grab frontmatter, grep for description line, then clean it up
-              fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | \
-                grep '^description:' | \
-                sed 's/^description: *> *//; s/^description: *| *//; s/^description: *//' | \
-                sed ':a;N;$!ba;s/\n/ /g' | xargs)
-              [ -z "$fm_desc" ] && fm_desc="No description provided."
-
-              echo '<skill>'
-              echo "<name>$fm_name</name>"
-              echo "<description>$fm_desc</description>"
-              echo '<location>project</location>'
-              echo ''
-            done
-            echo "</available_skills>"
-            echo ""
-            echo "$FOOTER"
-          } > /tmp/agents_new.md
-
-          # Ensure the SKILLS_TABLE_END comment exists after </available_skills>
-          if ! grep -q 'SKILLS_TABLE_END' /tmp/agents_new.md; then
-            sed -i '/<\/available_skills>/a <!-- SKILLS_TABLE_END -->' /tmp/agents_new.md
-          fi
-
-          mv /tmp/agents_new.md "$AGENTS"
-          echo "Regenerated AGENTS.md"
+          # Delegate to the dedicated script (uses Python for robust YAML extraction)
+          bash scripts/generate-skills-manifest.sh
+          echo "Regenerated AGENTS.md and skills.json"
 
       - name: Update README with dynamic badges
         run: |

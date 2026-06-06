@@ -1,6 +1,10 @@
 ---
 name: universal-document-generator
-description: Converts Markdown study content to print-ready PDF documents with professional formatting. Covers full pipeline: source PDFs → text → Markdown notes → PDF output. Works for ANY university, ANY subject. Trigger on requests to generate PDFs from Markdown, create printable study materials, or batch-convert notes to PDF.
+description: >
+  Converts Markdown study content to print-ready PDF documents with professional formatting. Covers
+  full pipeline from source PDFs to clean text to Markdown notes to PDF output. Works for ANY
+  university, ANY subject. Trigger on requests to generate PDFs from Markdown, create printable
+  study materials, or batch-convert notes to PDF.
 ---
 
 # Universal Document Generator — Markdown to PDF Pipeline

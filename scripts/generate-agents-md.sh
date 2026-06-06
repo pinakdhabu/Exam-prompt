@@ -2,73 +2,64 @@
 # ============================================================
 # generate-agents-md.sh — Auto-generate AGENTS.md <available_skills>
 #
-# Scans all directories under skills/, reads the SKILL.md
-# frontmatter, and generates the <available_skills> block.
+# Uses Python yaml.safe_load() for robust frontmatter extraction
+# (handles multi-line > and | descriptions, colons in values).
 #
 # Usage:
-#   ./scripts/generate-agents-md.sh   # Update AGENTS.md in place
-#   ./scripts/generate-agents-md.sh --dry-run  # Print to stdout
+#   ./scripts/generate-agents-md.sh              # Update AGENTS.md in place
+#   ./scripts/generate-agents-md.sh --dry-run    # Print to stdout
+#   ./scripts/generate-agents-md.sh --json-only  # Only generate skills.json
 # ============================================================
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SKILLS_DIR="$REPO_ROOT/skills"
 AGENTS_MD="$REPO_ROOT/AGENTS.md"
+SKILLS_JSON="$REPO_ROOT/skills/skills.json"
+TMP_DATA="/tmp/skills_data_$$.json"
 
 DRY_RUN="${1:-}"
 
-# Read skill frontmatter
-declare -a SKILL_NAMES
-declare -a SKILL_DESCS
+# ─── Extract all skill metadata via Python ─────────────────────
+python3 << 'PYEOF' > "$TMP_DATA"
+import os, json, yaml
 
-for dir in "$SKILLS_DIR"/*/; do
-  name=$(basename "$dir")
-  skill_file="$dir/SKILL.md"
+base = os.environ.get('SKILLS_DIR', 'skills')
+skills = []
 
-  if [ ! -f "$skill_file" ]; then
-    echo "WARN: $name has no SKILL.md, skipping" >&2
-    continue
-  fi
+for d in sorted(os.listdir(base)):
+    dpath = os.path.join(base, d)
+    if not os.path.isdir(dpath):
+        continue
+    skill_file = os.path.join(dpath, 'SKILL.md')
+    if not os.path.isfile(skill_file):
+        continue
+    with open(skill_file) as f:
+        content = f.read()
+    parts = content.split('---', 2)
+    if len(parts) < 3:
+        continue
+    try:
+        data = yaml.safe_load(parts[1])
+    except Exception:
+        data = {}
+    if not data or 'name' not in data:
+        continue
 
-  # Extract name from frontmatter
-  fm_name=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^name:' | sed 's/^name: //' | tr -d '[:space:]' || true)
-  # Extract description from frontmatter (first line only)
-  fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^description:' | sed 's/^description: //' || true)
+    skills.append({
+        'name': str(data.get('name', d)),
+        'description': str(data.get('description', 'No description provided.')),
+        'version': str(data.get('version', '1.0.0')),
+        'directory': d,
+    })
 
-  if [ -z "$fm_name" ]; then
-    echo "WARN: $name has no 'name:' in frontmatter, using directory name" >&2
-    fm_name="$name"
-  fi
+print(json.dumps(skills, ensure_ascii=False))
+PYEOF
 
-  if [ -z "$fm_desc" ]; then
-    echo "WARN: $name has no 'description:' in frontmatter" >&2
-    fm_desc="No description provided."
-  fi
+export SKILLS_DIR
+SKILL_COUNT=$(python3 -c "import json; print(len(json.load(open('$TMP_DATA'))))" 2>/dev/null || echo 0)
 
-  SKILL_NAMES+=("$fm_name")
-  SKILL_DESCS+=("$fm_desc")
-done
-
-# Generate available_skills XML
-generate_xml() {
-  echo '<available_skills>'
-  echo ''
-
-  for i in "${!SKILL_NAMES[@]}"; do
-    cat << EOF
-<skill>
-<name>${SKILL_NAMES[$i]}</name>
-<description>${SKILL_DESCS[$i]}</description>
-<location>project</location>
-</skill>
-
-EOF
-  done
-
-  echo '</available_skills>'
-}
-
-# Generate the full AGENTS.md
+# ─── Generate AGENTS.md ────────────────────────────────────────
 generate_agents_md() {
   # Read everything before <!-- SKILLS_TABLE_START -->
   sed '/<!-- SKILLS_TABLE_START -->/q' "$AGENTS_MD"
@@ -76,18 +67,70 @@ generate_agents_md() {
   # Read the <usage> block between SKILLS_TABLE_START and <available_skills>
   sed -n '/<!-- SKILLS_TABLE_START -->/,/<available_skills>/p' "$AGENTS_MD" | sed '$d'
 
-  # Generate available_skills
-  generate_xml
+  # Generate available_skills block from JSON data
+  python3 << PYEOF
+import json, xml.sax.saxutils as saxutils
+
+skills = json.load(open('$TMP_DATA'))
+
+print('<available_skills>')
+print()
+
+for skill in skills:
+    name = saxutils.escape(skill['name'])
+    desc = saxutils.escape(skill['description'])
+    print(f'''<skill>
+<name>{name}</name>
+<description>{desc}</description>
+<location>project</location>
+''')
+
+print('</available_skills>')
+print('<!-- SKILLS_TABLE_END -->')
+print()
+PYEOF
 
   # Read everything after </available_skills>
   sed -n '/<\/available_skills>/,$p' "$AGENTS_MD" | tail -n +2
 }
 
-if [ "$DRY_RUN" = "--dry-run" ]; then
-  generate_agents_md
-else
-  tmpfile=$(mktemp)
-  generate_agents_md > "$tmpfile"
-  mv "$tmpfile" "$AGENTS_MD"
-  echo "Updated: $AGENTS_MD ($(echo "${#SKILL_NAMES[@]}") skills registered)"
-fi
+# ─── Generate skills.json ──────────────────────────────────────
+generate_skills_json() {
+  python3 << PYEOF
+import json
+from datetime import datetime, timezone
+
+skills = json.load(open('$TMP_DATA'))
+
+manifest = {
+    '\$schema': 'exam-prompt-skills-v1',
+    'generated': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+    'total_skills': len(skills),
+    'skills': skills,
+    'compatible_with': ['claude-code', 'opencode', 'cursor', 'windsurf', 'cline', 'github-copilot', 'continue-dev'],
+}
+
+print(json.dumps(manifest, indent=2, ensure_ascii=False))
+PYEOF
+}
+
+# ─── Execute ──────────────────────────────────────────────────
+case "$DRY_RUN" in
+  --dry-run)
+    generate_agents_md
+    ;;
+  --json-only)
+    generate_skills_json > "$SKILLS_JSON"
+    echo "Written: $SKILLS_JSON ($SKILL_COUNT skills)"
+    ;;
+  *)
+    tmpfile=$(mktemp)
+    generate_agents_md > "$tmpfile"
+    mv "$tmpfile" "$AGENTS_MD"
+    generate_skills_json > "$SKILLS_JSON"
+    echo "Updated: $AGENTS_MD ($SKILL_COUNT skills registered)"
+    echo "Updated: $SKILLS_JSON ($SKILL_COUNT skills)"
+    ;;
+esac
+
+rm -f "$TMP_DATA"

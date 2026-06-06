@@ -44,8 +44,8 @@ A collection of SPPU PYQ PDFs (2019–2025) is referenced by `pyq-index/SKILL.md
 
 Run `bash deps/resolve.sh` to auto-detect and resolve all project dependencies. This scans the
 project (package.json, requirements.txt, scripts), detects your OS and package manager, checks
-what's installed, and outputs `deps/manifest.json` — an agent-readable manifest that AI agents
-(Claude Code, OpenCode, Cursor) can read to understand the dependency landscape automatically.
+what's installed, and outputs `deps/manifest.json` — an agent-readable manifest that AI agents can
+read to understand the dependency landscape automatically.
 
 ```bash
 # Check dependency status
@@ -55,6 +55,15 @@ bash deps/resolve.sh
 # Install missing required deps
 bash deps/resolve.sh --install
 ```
+
+## Skills Manifest
+
+A machine-readable manifest at [`skills/skills.json`](skills/skills.json) lists all 26 skills with
+their names, descriptions, versions, and file paths. Compatible with:
+
+- Claude Code (`npx skills@latest add pinakdhabu/Exam-prompt`)
+- OpenCode (auto-discovers via AGENTS.md)
+- Cursor, Windsurf, Cline, GitHub Copilot, Continue.dev
 
 ## Usage
 
