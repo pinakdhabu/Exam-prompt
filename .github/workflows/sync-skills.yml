@@ -54,13 +54,12 @@ jobs:
               fm_name=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^name:' | sed 's/^name: *//' | tr -d '[:space:]')
               [ -z "$fm_name" ] && fm_name="$name"
 
-              # Extract description from YAML frontmatter (handles > block scalar)
-              fm_desc=$(awk '
-                /^---$/ { count++; next }
-                count == 1 { desc = desc sep $0; sep = " " }
-                count == 2 { exit }
-                END { print desc }
-              ' "$skill_file" | grep -v '^name:' | sed 's/^description: *> *//; s/^description: *//' | xargs)
+              # Extract description from YAML frontmatter
+              # Uses sed to grab frontmatter, grep for description line, then clean it up
+              fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | \
+                grep '^description:' | \
+                sed 's/^description: *> *//; s/^description: *| *//; s/^description: *//' | \
+                sed ':a;N;$!ba;s/\n/ /g' | xargs)
               [ -z "$fm_desc" ] && fm_desc="No description provided."
 
               cat <<SKILL_EOF
@@ -76,16 +75,8 @@ jobs:
             echo "$FOOTER"
           } > /tmp/agents_new.md
 
-          # Preserve the <!-- SKILLS_TABLE_END --> comment at the end of the block
-          if grep -q 'SKILLS_TABLE_END' /tmp/agents_new.md; then
-            : # already has it
-          else
-            echo "<!-- SKILLS_TABLE_START -->" >> /tmp/agents_new.md
-            echo "<!-- SKILLS_TABLE_START -->" >> /tmp/agents_new.md
-            echo "<!-- SKILLS_TABLE_START -->" >> /tmp/agents_new.md
-            echo "<!-- SKILLS_TABLE_START -->" >> /tmp/agents_new.md
-            cat /tmp/agents_new.md > /tmp/agents_final.md
-            # Actually just add it after </available_skills>
+          # Ensure the SKILLS_TABLE_END comment exists after </available_skills>
+          if ! grep -q 'SKILLS_TABLE_END' /tmp/agents_new.md; then
             sed -i '/<\/available_skills>/a <!-- SKILLS_TABLE_END -->' /tmp/agents_new.md
           fi
 
