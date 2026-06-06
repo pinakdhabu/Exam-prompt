@@ -22,6 +22,12 @@ OUTPUT_FILE="pyq-index/INDEX.md"
 STATS_ONLY=false
 REFRESH=false
 
+# --- Help ---
+if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
+  sed -n '2,/^$/p' "$0" | sed 's/^#//; s/^ //'
+  exit 0
+fi
+
 # --- Parse Args ---
 while [[ $# -gt 0 ]]; do
   case $1 in

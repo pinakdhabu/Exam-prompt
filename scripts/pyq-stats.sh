@@ -19,6 +19,12 @@ set -euo pipefail
 PYQ_DIR="${HOME}/Downloads/Computer Engineering"
 OUTPUT_MODE="full"
 
+# --- Help ---
+if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
+  sed -n '2,/^$/p' "$0" | sed 's/^#//; s/^ //'
+  exit 0
+fi
+
 while [[ $# -gt 0 ]]; do
   case $1 in
     --subjects) OUTPUT_MODE="subjects"; shift ;;
