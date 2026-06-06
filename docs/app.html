@@ -100,6 +100,11 @@
       <option value="essay-grader">Essay Grader</option>
       <option value="cross-subject">Cross-Subject Mapper</option>
       <option value="adapter">University Adapter</option>
+      <option value="doc-reader">Document Reader</option>
+      <option value="doc-generator">Document Generator</option>
+      <option value="session-config">Session Config</option>
+      <option value="qp-fetcher">QP Fetcher</option>
+      <option value="sppu-simulator">SPPU Exam Simulator</option>
     </select>
     <select id="univ">
       <option value="SPPU">SPPU</option>
@@ -122,6 +127,7 @@
     <label>Your Question</label>
   </div>
   <div class="hint">Include subject, marks, university, and exam type.</div>
+  <div class="hint" style="color:var(--accent)">$ 24 skills available — 19 quick-start prompts here, 5 reference prompts below</div>
   <div class="hint" style="color:var(--accent)">$ The skill prompt + your question get copied together</div>
   <textarea id="question" placeholder="Paste your exam question here..."></textarea>
 
@@ -679,7 +685,102 @@ You are a University Detection Specialist. Identify the user's university from p
 ## Supported Patterns
 SPPU, VTU, JNTU, Mumbai, AKTU, RGPV, IIT/NIT, North American, UK/Oxford/Cambridge, European ECTS, Australian, Asian, Generic
 
-Remain in this role for the entire conversation.` }
+Remain in this role for the entire conversation.` },
+
+  "doc-reader": {
+    name: "Document Reader",
+    desc: "You are a document extraction specialist. Convert PDFs/images to clean text.",
+    text: `# Document Reader — PDF/Image to Text
+
+Convert the provided document to clean, LLM-friendly text.
+
+## Supported Formats
+PDF (text), PDF (scanned/OCR), DOCX, images (PNG/JPG/TIFF), PPTX, EPUB, HTML
+
+## Output
+Clean text with preserved structure. Remove headers/footers/page numbers.
+
+## Full Skill
+See skills/universal-document-reader/SKILL.md for complete instructions.` },
+
+  "doc-generator": {
+    name: "Document Generator",
+    desc: "You are a document formatter. Convert Markdown to print-ready PDF.",
+    text: `# Document Generator — Markdown to PDF
+
+Convert the generated Markdown content to a print-ready document.
+
+## Backends
+- Python: weasyprint (recommended)
+- Node.js: Playwright
+
+## Output Specifications
+- A4 format
+- Professional styling
+- Page numbers
+- Syntax-highlighted code blocks
+
+## Full Skill
+See skills/document-generator/SKILL.md for complete instructions.` },
+
+  "session-config": {
+    name: "Session Config",
+    desc: "You are a configuration manager. Set up persistent student profiles.",
+    text: `# Session Config — Persistent Student Profile
+
+Configure a persistent profile for the student across all skills.
+
+## Profile Fields
+- University, Department, Program, Year, Semester
+- Exam pattern, default marks, duration
+- Preferred language, handwriting size
+- Current subjects
+
+## Storage
+~/.exam-prompt/profile.json
+
+## Setup
+bash scripts/profile.sh
+
+## Full Skill
+See skills/session-config/SKILL.md for complete instructions.` },
+
+  "qp-fetcher": {
+    name: "QP Fetcher",
+    desc: "You are a question paper downloader. Auto-fetch PYQs from websites.",
+    text: `# QP Fetcher — Auto-Fetch Question Papers
+
+Automatically download previous year question papers from university websites.
+
+## Sources
+- sppuquestionpapers.com
+- Supports fuzzy subject matching
+- Rate-limited (respects robots.txt)
+
+## Usage
+npm run fetch:qp -- --semester 5 --branch be
+
+## Full Skill
+See skills/qp-fetcher/SKILL.md for complete instructions.` },
+
+  "sppu-simulator": {
+    name: "SPPU Exam Simulator",
+    desc: "You are an exam hall simulator. Model real exam constraints.",
+    text: `# SPPU Exam Simulator — Physical Exam Constraints
+
+Simulate real examination hall conditions.
+
+## Constraints
+- 36-page answer book, 34 writable pages
+- Average handwriting speed
+- Examiner attention: 15-120 seconds per answer
+- Time budgeting: proportional to marks
+
+## Use With
+Load alongside Answer Writer for realistic exam practice.
+
+## Full Skill
+See skills/sppu-exam-simulator/SKILL.md for complete instructions.` }
 };
 
 const skillSelect = document.getElementById('skillSelect');
