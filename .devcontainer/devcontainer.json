@@ -2,7 +2,7 @@
   "name": "Exam-Prompt Dev Environment",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "description": "One-click development environment for Exam-Prompt contributors. Includes Node.js, Python, Pandoc, and all tools needed to create sample papers, validate skills, and generate PDFs.",
-  
+
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
@@ -14,7 +14,7 @@
   },
 
   "postCreateCommand": "npm install && pip install --user weasyprint markdown pyyaml && npm install -g prettier && git config --global core.autocrlf input",
-  
+
   "postStartCommand": "echo 'Exam-Prompt dev environment ready. Run: bash scripts/validate-skills.sh'",
 
   "customizations": {

@@ -11,6 +11,7 @@
 **Time Budget:** 4 min | **Bloom's:** L2
 
 **Procedure:**
+
 1. Draw XY line (reference line between HP and VP)
 2. Mark point P in **First Quadrant** (above HP, in front of VP)
 3. **Front View (P'):** 25 mm above XY line
@@ -29,6 +30,7 @@ graph TD
 **Given:** A(10,15), B(50,40), AB = 70 mm
 
 **Procedure:**
+
 1. Mark A' (10 above XY) and A (15 below XY)
 2. Mark B' (50 above XY) and B (40 below XY)
 3. Join A'B' (Front View) and AB (Top View)
@@ -40,19 +42,20 @@ graph TD
 
 ### Q2) a) First Angle vs Third Angle Projection [4]
 
-| Parameter | First Angle | Third Angle |
-|-----------|-------------|-------------|
-| **Object position** | Between observer and plane | Plane between observer and object |
-| **Symbol** | Slanted cone with narrow end | Slanted cone with wide end |
-| **Plan (Top view)** | Below XY | Above XY |
-| **Elevation** | Above XY | Below XY |
-| **Used in** | Europe, India | USA |
+| Parameter           | First Angle                  | Third Angle                       |
+| ------------------- | ---------------------------- | --------------------------------- |
+| **Object position** | Between observer and plane   | Plane between observer and object |
+| **Symbol**          | Slanted cone with narrow end | Slanted cone with wide end        |
+| **Plan (Top view)** | Below XY                     | Above XY                          |
+| **Elevation**       | Above XY                     | Below XY                          |
+| **Used in**         | Europe, India                | USA                               |
 
 ---
 
 ### Q2) b) Line CD (80 mm) inclined at 30° to HP, 45° to VP [10]
 
 **Procedure:**
+
 1. Draw reference point C' and C (15 above, 20 below XY)
 2. Draw arc of TL=80 mm at given inclinations
 3. Project points using **auxiliary plane method**
@@ -66,12 +69,14 @@ graph TD
 ### Q3) Pentagon inclined at 45° to HP, one side parallel to VP [14]
 
 **Procedure:**
+
 1. Draw pentagon of side 30 mm in its true shape (auxiliary view)
 2. Incline the surface at **45° to HP**
 3. One side must remain **parallel to VP**
 4. Project points from auxiliary view to front and top views
 
 **Key steps:**
+
 - Stage 1: Keep surface parallel to HP (draw true shape)
 - Stage 2: Incline to 45° (one side parallel to VP)
 - Hidden edges shown as dashed lines
@@ -81,6 +86,7 @@ graph TD
 ### Q4) Hexagon parallel to VP, perpendicular to HP [14]
 
 **Procedure:**
+
 1. Draw hexagon of side 25 mm in its **true shape** (surface parallel to VP)
 2. Surface is **perpendicular to HP** → projects as a line in top view
 3. One side at **30° to HP** in the auxiliary view
@@ -95,6 +101,7 @@ graph TD
 **Given:** Base 30 mm, Axis 50 mm, Resting on HP, All base edges equally inclined to VP
 
 **Procedure:**
+
 1. Top View: Square with all edges equally inclined to VP (diamond orientation)
 2. Front View: Triangle (apex above base center)
 3. Axis = 50 mm in front view
@@ -107,6 +114,7 @@ graph TD
 **Given:** Base diameter 50 mm, Axis 60 mm, Axis inclined 30° to HP
 
 **Procedure:**
+
 1. Stage 1: Cone with axis perpendicular to HP (circle with center, triangle side view)
 2. Stage 2: Tilt axis by **30° to HP**
 3. Re-project all points
@@ -119,6 +127,7 @@ graph TD
 **Given:** Cylinder 40 mm dia, 60 mm axis. Section plane at 45° to HP
 
 **Procedure:**
+
 1. Draw cylinder in front and top view
 2. Mark cutting plane at **45° to HP** in front view
 3. Project intersection points to top view
@@ -132,6 +141,7 @@ graph TD
 **Given:** Base 30 mm, Axis 60 mm
 
 **Development (unfolded surfaces):**
+
 ```
 60 mm      30 mm      30 mm      30 mm      30 mm
 ┌──────────┬──────────┬──────────┬──────────┬──────────┐
@@ -141,6 +151,7 @@ graph TD
 └──────────┴──────────┴──────────┴──────────┴──────────┘
             ← Total length = 120 mm (4 × 30) →
 ```
+
 Each face: 30 mm × 60 mm rectangle. Fold lines between faces.
 
 ---
@@ -152,6 +163,7 @@ Each face: 30 mm × 60 mm rectangle. Fold lines between faces.
 **Given:** Base 40×25 mm, Axis 50 mm, Cut at 20 mm from apex
 
 **Procedure:**
+
 1. Draw pyramid with base, apex, and cutting plane
 2. Find intersection points on each edge
 3. **True length of each edge** from auxiliary view
@@ -166,6 +178,7 @@ Each face: 30 mm × 60 mm rectangle. Fold lines between faces.
 **Given:** Base side 25 mm, Axis 60 mm
 
 **Procedure:**
+
 1. Draw **isometric axes** (120° apart)
 2. Construct pentagon in isometric (using coordinate method)
 3. Extrude axis to 60 mm
@@ -182,6 +195,7 @@ Each face: 30 mm × 60 mm rectangle. Fold lines between faces.
 **Given:** Overall 60×40×30 mm mechanical part
 
 **Orthographic views:**
+
 - **Front View:** Height 30 mm, Width 60 mm (shows shape features)
 - **Top View:** Width 60 mm, Depth 40 mm (shows top profile)
 - **Side View (Right):** Height 30 mm, Depth 40 mm (shows side details)
@@ -197,6 +211,7 @@ Each view aligned with **projection lines** connecting common points.
 **Isometric length = True length × cos(30°) = True length × 0.866**
 
 Construction:
+
 1. Draw horizontal line (true scale)
 2. Incline at 30° (isometric axis)
 3. Divide true scale into equal parts
@@ -210,6 +225,7 @@ Construction:
 **Given:** 50×30×40 mm stepped block
 
 Sketch three views freehand:
+
 - Maintain **proportions** (not exact scale)
 - Use **construction lines** lightly
 - Darken final visible edges
@@ -222,18 +238,20 @@ Sketch three views freehand:
 
 ### Q10) b) Definitions [4]
 
-- **Isometric Axis:** Three mutually perpendicular lines drawn at 120° to each other (one vertical, two at 30° to horizontal)
+- **Isometric Axis:** Three mutually perpendicular lines drawn at 120° to each other (one vertical,
+  two at 30° to horizontal)
 - **Isometric Plane:** A plane parallel to any one of the isometric axes
-- **Isometric Scale:** Scale used to measure foreshortened lengths in isometric projection (1 isometric unit = 0.866 true units)
+- **Isometric Scale:** Scale used to measure foreshortened lengths in isometric projection (1
+  isometric unit = 0.866 true units)
 
 ---
 
 ## Mnemonic Summary
 
-| Concept | Mnemonic |
-|---------|----------|
-| **Projection methods** | **FAT** — First Angle (object before plane), similar to European |
-| **Angle difference** | **FA3T** — First Angle = 1,3 quadrants; Third Angle = 3,1 reversed |
-| **Isometric axes** | **V30** — Vertical + 30° left + 30° right |
-| **Section hatching** | **45°** — Always at 45° to horizontal, same direction per part |
-| **Development** | **FLATS** — Fold Lines Aligned To Surface |
+| Concept                | Mnemonic                                                           |
+| ---------------------- | ------------------------------------------------------------------ |
+| **Projection methods** | **FAT** — First Angle (object before plane), similar to European   |
+| **Angle difference**   | **FA3T** — First Angle = 1,3 quadrants; Third Angle = 3,1 reversed |
+| **Isometric axes**     | **V30** — Vertical + 30° left + 30° right                          |
+| **Section hatching**   | **45°** — Always at 45° to horizontal, same direction per part     |
+| **Development**        | **FLATS** — Fold Lines Aligned To Surface                          |

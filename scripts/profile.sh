@@ -86,13 +86,13 @@ validate_profile() {
     echo -e "${RED}No profile found. Run: bash scripts/profile.sh${NC}"
     return 1
   fi
-  
+
   # Check it's valid JSON
   if ! python3 -c "import json; json.load(open('$PROFILE_PATH'))" 2>/dev/null; then
     echo -e "${RED}Invalid JSON in profile. Run: bash scripts/profile.sh reset${NC}"
     return 1
   fi
-  
+
   # Check required fields
   local REQUIRED_FIELDS=("student.university" "exam.pattern" "student.department")
   for field in "${REQUIRED_FIELDS[@]}"; do
@@ -109,7 +109,7 @@ for k in '$field'.split('.'):
       return 1
     fi
   done
-  
+
   return 0
 }
 
@@ -119,12 +119,12 @@ show_profile() {
     echo -e "${YELLOW}No profile found. Run: bash scripts/profile.sh${NC}"
     return 1
   fi
-  
+
   echo -e "${CYAN}═══════════════════════════════════════════${NC}"
   echo -e "${CYAN}  Student Profile${NC}"
   echo -e "${CYAN}═══════════════════════════════════════════${NC}"
   echo ""
-  
+
   python3 -c "
 import json, sys
 p = json.load(open('$PROFILE_PATH'))
@@ -154,7 +154,7 @@ if created:
     print(f'  Created: {created}')
     print(f'  Updated: {updated}')
 "
-  
+
   echo ""
   echo -e "${YELLOW}To edit: bash scripts/profile.sh edit${NC}"
   echo -e "${YELLOW}To reset: bash scripts/profile.sh reset${NC}"
@@ -167,7 +167,7 @@ interactive_setup() {
   echo -e "${CYAN}  Set once — the AI remembers you forever${NC}"
   echo -e "${CYAN}═══════════════════════════════════════════${NC}"
   echo ""
-  
+
   # Load existing if present
   local PROFILE
   if [[ -f "$PROFILE_PATH" ]]; then
@@ -177,7 +177,7 @@ interactive_setup() {
   else
     PROFILE=$(create_default_profile)
   fi
-  
+
   # Parse current values
   local CUR_UNIV CUR_DEPT CUR_PROG CUR_YEAR CUR_SEM CUR_PATTERN CUR_MARKS CUR_DUR CUR_LANG CUR_HAND CUR_NOTE
   CUR_UNIV=$(echo "$PROFILE" | python3 -c "import json,sys; p=json.load(sys.stdin); print(p.get('student',{}).get('university',''))" 2>/dev/null || echo "")
@@ -191,27 +191,27 @@ interactive_setup() {
   CUR_LANG=$(echo "$PROFILE" | python3 -c "import json,sys; p=json.load(sys.stdin); print(p.get('exam',{}).get('preferred_language','english'))" 2>/dev/null || echo "english")
   CUR_HAND=$(echo "$PROFILE" | python3 -c "import json,sys; p=json.load(sys.stdin); print(p.get('settings',{}).get('handwriting_size','medium'))" 2>/dev/null || echo "medium")
   CUR_NOTE=$(echo "$PROFILE" | python3 -c "import json,sys; p=json.load(sys.stdin); print(p.get('settings',{}).get('default_note_format','cornell'))" 2>/dev/null || echo "cornell")
-  
+
   # University
   read -p "$(echo -e "${BLUE}University${NC} [${CUR_UNIV:-SPPU}]: ")" INPUT
   UNIV="${INPUT:-${CUR_UNIV:-SPPU}}"
-  
+
   # Department
   read -p "$(echo -e "${BLUE}Department${NC} [${CUR_DEPT:-Computer Engineering}]: ")" INPUT
   DEPT="${INPUT:-${CUR_DEPT:-Computer Engineering}}"
-  
+
   # Program
   read -p "$(echo -e "${BLUE}Program${NC} (BE/BTech/ME/MTech/BCA/MCA) [${CUR_PROG:-BE}]: ")" INPUT
   PROG="${INPUT:-${CUR_PROG:-BE}}"
-  
+
   # Year
   read -p "$(echo -e "${BLUE}Year${NC} (FE/SE/TE/BE) [${CUR_YEAR:-FE}]: ")" INPUT
   YEAR="${INPUT:-${CUR_YEAR:-FE}}"
-  
+
   # Semester
   read -p "$(echo -e "${BLUE}Semester${NC} (1-8) [${CUR_SEM:-1}]: ")" INPUT
   SEM="${INPUT:-${CUR_SEM:-1}}"
-  
+
   # Exam pattern
   echo ""
   echo -e "${YELLOW}Exam Patterns:${NC}"
@@ -233,7 +233,7 @@ interactive_setup() {
     6|"AKTU") PATTERN="AKTU"; MARKS=100; DUR=180 ;;
     *) PATTERN="$PATTERN_INPUT"; MARKS="$CUR_MARKS"; DUR="$CUR_DUR" ;;
   esac
-  
+
   # Custom marks/duration if generic
   if [[ "$PATTERN_INPUT" == "7" || "$PATTERN_INPUT" == "Generic" || "$PATTERN_INPUT" == "generic" ]]; then
     read -p "$(echo -e "${BLUE}Total marks${NC} [${MARKS}]: ")" INPUT
@@ -241,20 +241,20 @@ interactive_setup() {
     read -p "$(echo -e "${BLUE}Duration (minutes)${NC} [${DUR}]: ")" INPUT
     DUR="${INPUT:-$DUR}"
   fi
-  
+
   # Language
   echo ""
   read -p "$(echo -e "${BLUE}Preferred language${NC} (english/hindi/marathi) [${CUR_LANG:-english}]: ")" INPUT
   LANG="${INPUT:-${CUR_LANG:-english}}"
-  
+
   # Handwriting size
   read -p "$(echo -e "${BLUE}Handwriting size${NC} (small/medium/large) [${CUR_HAND:-medium}]: ")" INPUT
   HAND="${INPUT:-${CUR_HAND:-medium}}"
-  
+
   # Default note format
   read -p "$(echo -e "${BLUE}Default note format${NC} (cornell/outline/mindmap/flowchart/qa) [${CUR_NOTE:-cornell}]: ")" INPUT
   NOTE="${INPUT:-${CUR_NOTE:-cornell}}"
-  
+
   # Subjects
   echo ""
   echo -e "${YELLOW}Enter subjects you're currently studying (one per line).${NC}"
@@ -265,10 +265,10 @@ interactive_setup() {
     [[ "$INPUT" == "" || "$INPUT" == "done" ]] && break
     SUBJECTS+=("$INPUT")
   done
-  
+
   # Build JSON
   NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-  
+
   # Write subjects to temp file for safe JSON transfer to Python
   if [[ ${#SUBJECTS[@]} -gt 0 ]]; then
     printf '%s\n' "${SUBJECTS[@]}" | python3 -c "
@@ -280,7 +280,7 @@ with open('/tmp/exam_prompt_subjects.json', 'w') as f:
   else
     echo '[]' > /tmp/exam_prompt_subjects.json
   fi
-  
+
   python3 -c "
 import json, sys
 
@@ -358,7 +358,7 @@ print('Profile saved to: $PROFILE_PATH')
 }
 JSONEOF
   }
-  
+
   echo ""
   echo -e "${GREEN}═══════════════════════════════════════════${NC}"
   echo -e "${GREEN}  Profile saved! The AI will now remember your preferences.${NC}"

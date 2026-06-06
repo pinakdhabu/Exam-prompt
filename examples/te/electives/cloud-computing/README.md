@@ -4,14 +4,14 @@
 
 ## Syllabus Overview
 
-| Unit | Title | Hours |
-|------|-------|-------|
-| I | Introduction to Cloud Computing | 07 |
-| II | Cloud Computing Architecture | 07 |
-| III | Cloud Services and Deployment Models | 07 |
-| IV | Virtualization | 07 |
-| V | Cloud Storage and Security | 07 |
-| VI | Cloud Platforms and Applications | 07 |
+| Unit | Title                                | Hours |
+| ---- | ------------------------------------ | ----- |
+| I    | Introduction to Cloud Computing      | 07    |
+| II   | Cloud Computing Architecture         | 07    |
+| III  | Cloud Services and Deployment Models | 07    |
+| IV   | Virtualization                       | 07    |
+| V    | Cloud Storage and Security           | 07    |
+| VI   | Cloud Platforms and Applications     | 07    |
 
 ## Key Topics
 

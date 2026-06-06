@@ -1,16 +1,24 @@
 ---
 name: universal-essay-grader
-description: Scores and evaluates student answers against university-specific rubrics for ANY university worldwide. Covers ALL question types, ALL mark ranges (1-100+), ALL Bloom's levels. Provides detailed feedback per evaluation criterion with improvement suggestions and model answer comparison.
+description:
+  Scores and evaluates student answers against university-specific rubrics for ANY university
+  worldwide. Covers ALL question types, ALL mark ranges (1-100+), ALL Bloom's levels. Provides
+  detailed feedback per evaluation criterion with improvement suggestions and model answer
+  comparison.
 ---
 
 # Universal Essay Grader / Answer Evaluator
 
 ## Overview
-Evaluates student answers against the expected standard for any university exam. Provides a detailed score breakdown across multiple criteria, identifies strengths and weaknesses, and gives actionable improvement suggestions. Helps students understand exactly how examiners will assess their answers.
+
+Evaluates student answers against the expected standard for any university exam. Provides a detailed
+score breakdown across multiple criteria, identifies strengths and weaknesses, and gives actionable
+improvement suggestions. Helps students understand exactly how examiners will assess their answers.
 
 ## How This Skill Works
 
-1. **User provides**: Question, student's answer, university, subject, marks allocated, question type, Bloom's level
+1. **User provides**: Question, student's answer, university, subject, marks allocated, question
+   type, Bloom's level
 2. **System evaluates**: Against expected answer framework using multiple criteria
 3. **System scores**: Per-criterion breakdown with commentary
 4. **System recommends**: Specific improvements with model answer comparison
@@ -19,48 +27,48 @@ Evaluates student answers against the expected standard for any university exam.
 
 ### For Theory / Descriptive Answers (3-20 marks)
 
-| Criterion | Weight | What We Assess |
-|---|---|---|
-| **Content Accuracy** | 30% | Are facts, definitions, and concepts correct? |
-| **Coverage** | 25% | Are all required points/dimensions addressed? |
-| **Structure & Organization** | 15% | Logical flow, sectioning, paragraphing |
-| **Depth of Explanation** | 10% | Are mechanisms explained? "Why" and "How" covered? |
-| **Examples / Application** | 10% | Relevant examples, diagrams, or applications |
-| **Language & Clarity** | 5% | Technical vocabulary, sentence clarity |
-| **Concision** | 5% | Answer within expected length, no irrelevant content |
+| Criterion                    | Weight | What We Assess                                       |
+| ---------------------------- | ------ | ---------------------------------------------------- |
+| **Content Accuracy**         | 30%    | Are facts, definitions, and concepts correct?        |
+| **Coverage**                 | 25%    | Are all required points/dimensions addressed?        |
+| **Structure & Organization** | 15%    | Logical flow, sectioning, paragraphing               |
+| **Depth of Explanation**     | 10%    | Are mechanisms explained? "Why" and "How" covered?   |
+| **Examples / Application**   | 10%    | Relevant examples, diagrams, or applications         |
+| **Language & Clarity**       | 5%     | Technical vocabulary, sentence clarity               |
+| **Concision**                | 5%     | Answer within expected length, no irrelevant content |
 
 ### For Numerical / Problem Answers
 
-| Criterion | Weight | What We Assess |
-|---|---|---|
-| **Formula Selection** | 20% | Correct formula chosen |
-| **Step-by-step Method** | 30% | Clear logical progression |
-| **Calculation Accuracy** | 25% | Arithmetic and algebraic correctness |
-| **Units & Notation** | 10% | Correct units throughout |
-| **Final Answer** | 15% | Correctness of final result with proper formatting |
+| Criterion                | Weight | What We Assess                                     |
+| ------------------------ | ------ | -------------------------------------------------- |
+| **Formula Selection**    | 20%    | Correct formula chosen                             |
+| **Step-by-step Method**  | 30%    | Clear logical progression                          |
+| **Calculation Accuracy** | 25%    | Arithmetic and algebraic correctness               |
+| **Units & Notation**     | 10%    | Correct units throughout                           |
+| **Final Answer**         | 15%    | Correctness of final result with proper formatting |
 
 ### For Essay / Long-Form Answers (20-100+ marks)
 
-| Criterion | Weight | What We Assess |
-|---|---|---|
-| **Introduction & Thesis** | 10% | Clear opening, strong thesis statement |
-| **Argument Quality** | 25% | Logical reasoning, evidence support |
-| **Content Knowledge** | 25% | Depth and breadth of subject understanding |
-| **Critical Analysis** | 15% | Evaluation, comparison, multiple perspectives |
-| **Structure** | 10% | Coherent paragraphing, transitions |
-| **Conclusion** | 10% | Summary, implications, closure |
-| **Referencing** | 5% | Citations where applicable |
+| Criterion                 | Weight | What We Assess                                |
+| ------------------------- | ------ | --------------------------------------------- |
+| **Introduction & Thesis** | 10%    | Clear opening, strong thesis statement        |
+| **Argument Quality**      | 25%    | Logical reasoning, evidence support           |
+| **Content Knowledge**     | 25%    | Depth and breadth of subject understanding    |
+| **Critical Analysis**     | 15%    | Evaluation, comparison, multiple perspectives |
+| **Structure**             | 10%    | Coherent paragraphing, transitions            |
+| **Conclusion**            | 10%    | Summary, implications, closure                |
+| **Referencing**           | 5%     | Citations where applicable                    |
 
 ## 2. Score Interpretation
 
-| Score % | Grade | Meaning | Action |
-|---|---|---|---|
-| 90-100 | A+ / O | Outstanding, exam-ready | Maintain, review edge cases |
-| 75-89 | A / A- | Very good, minor gaps | Address specific weak criteria |
-| 60-74 | B+ / B | Competent, moderate gaps | Focus on coverage and depth |
-| 45-59 | C+ / C | Passing, significant gaps | Systematic revision needed |
-| 30-44 | D | Below expectations | Restructure study approach |
-| 0-29 | F | Fail, major deficiencies | Re-learn from fundamentals |
+| Score % | Grade  | Meaning                   | Action                         |
+| ------- | ------ | ------------------------- | ------------------------------ |
+| 90-100  | A+ / O | Outstanding, exam-ready   | Maintain, review edge cases    |
+| 75-89   | A / A- | Very good, minor gaps     | Address specific weak criteria |
+| 60-74   | B+ / B | Competent, moderate gaps  | Focus on coverage and depth    |
+| 45-59   | C+ / C | Passing, significant gaps | Systematic revision needed     |
+| 30-44   | D      | Below expectations        | Restructure study approach     |
+| 0-29    | F      | Fail, major deficiencies  | Re-learn from fundamentals     |
 
 ## 3. Feedback Format
 
@@ -105,7 +113,9 @@ MODEL ANSWER COMPARISON:
 
 **Question**: Explain the concept of virtual memory and its benefits. [10 marks, SPPU TE Comp]
 
-**Student Answer**: "Virtual memory is a memory management technique where the computer uses hard disk space as if it were RAM. It allows programs to be larger than physical memory. The benefits are that we can run more programs and the OS handles it automatically."
+**Student Answer**: "Virtual memory is a memory management technique where the computer uses hard
+disk space as if it were RAM. It allows programs to be larger than physical memory. The benefits are
+that we can run more programs and the OS handles it automatically."
 
 ```
 Your Score: 7/10 (70%)
@@ -162,7 +172,8 @@ MODEL ANSWER (excerpt):
 ## 5. Integration with Other Skills
 
 - **universal-answer-writer**: Provides the model answer standards against which answers are graded
-- **universal-pyq-analyzer**: Identifies which question types and Bloom's levels are most frequently tested
+- **universal-pyq-analyzer**: Identifies which question types and Bloom's levels are most frequently
+  tested
 - **universal-subject-prompt-bank**: Supplies subject-specific answer standards and exemplars
 - **universal-mcq-practice-generator**: Can generate targeted MCQs based on identified weak areas
 - **universal-flashcard-generator**: Creates flashcards for concepts where the student scored low

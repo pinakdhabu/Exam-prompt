@@ -4,14 +4,14 @@
 
 ## Syllabus
 
-| Unit | Title | Hours | CO |
-|------|-------|-------|----|
-| I | Introduction to DBMS and ER Model | 06 | CO1 |
-| II | SQL and PL/SQL | 07 | CO1, CO2 |
-| III | Relational Database Design | 06 | CO1, CO3 |
-| IV | Database Transaction Management | 07 | CO3, CO4 |
-| V | NoSQL Databases | 07 | CO5, CO6 |
-| VI | Advances in Databases | 07 | CO5, CO6 |
+| Unit | Title                             | Hours | CO       |
+| ---- | --------------------------------- | ----- | -------- |
+| I    | Introduction to DBMS and ER Model | 06    | CO1      |
+| II   | SQL and PL/SQL                    | 07    | CO1, CO2 |
+| III  | Relational Database Design        | 06    | CO1, CO3 |
+| IV   | Database Transaction Management   | 07    | CO3, CO4 |
+| V    | NoSQL Databases                   | 07    | CO5, CO6 |
+| VI   | Advances in Databases             | 07    | CO5, CO6 |
 
 ## Exam Pattern
 

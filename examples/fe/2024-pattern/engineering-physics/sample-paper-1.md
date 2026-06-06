@@ -8,7 +8,9 @@ duration: "2½ Hours"
 ---
 
 # Savitribai Phule Pune University
+
 ## Engineering Physics (BSC-102-BES)
+
 ### 2024 Credit Pattern | Semester I
 
 **Total Marks:** 70 | **Time:** 2½ Hours
@@ -19,28 +21,27 @@ duration: "2½ Hours"
 
 ## Q1) Write correct option for the following. [10]
 
-a) In **semiconductor laser**, population inversion is achieved by: [2]
-   i) Optical pumping &emsp; ii) Electric current injection &emsp; iii) Gas discharge &emsp; iv) Electron beam
+a) In **semiconductor laser**, population inversion is achieved by: [2] i) Optical pumping &emsp;
+ii) Electric current injection &emsp; iii) Gas discharge &emsp; iv) Electron beam
 
-b) The **numerical aperture (NA)** of an optical fiber depends on: [2]
-   i) Core diameter &emsp; ii) Refractive indices &emsp; iii) Fiber length &emsp; iv) Cladding thickness
+b) The **numerical aperture (NA)** of an optical fiber depends on: [2] i) Core diameter &emsp; ii)
+Refractive indices &emsp; iii) Fiber length &emsp; iv) Cladding thickness
 
-c) **de Broglie wavelength** of a particle depends on: [2]
-   i) Charge &emsp; ii) Mass and velocity &emsp; iii) Temperature only &emsp; iv) Electric field
+c) **de Broglie wavelength** of a particle depends on: [2] i) Charge &emsp; ii) Mass and velocity
+&emsp; iii) Temperature only &emsp; iv) Electric field
 
-d) In **thin film interference**, condition for maxima in reflected system is: [1]
-   i) \(2\mu t\cos r = n\lambda\) &emsp; ii) \(2\mu t\cos r = (2n+1)\lambda/2\)
-   iii) \(2\mu t\cos r = (2n-1)\lambda/2\) &emsp; iv) \(\mu t\cos r = n\lambda\)
+d) In **thin film interference**, condition for maxima in reflected system is: [1] i) \(2\mu t\cos r
+= n\lambda\) &emsp; ii) \(2\mu t\cos r = (2n+1)\lambda/2\) iii) \(2\mu t\cos r = (2n-1)\lambda/2\)
+&emsp; iv) \(\mu t\cos r = n\lambda\)
 
-e) **Hall coefficient** \(R_H\) for p-type semiconductor is: [1]
-   i) Positive &emsp; ii) Negative &emsp; iii) Zero &emsp; iv) Undefined
+e) **Hall coefficient** \(R_H\) for p-type semiconductor is: [1] i) Positive &emsp; ii) Negative
+&emsp; iii) Zero &emsp; iv) Undefined
 
-f) **Type I superconductors** exhibit: [1]
-   i) Partial Meissner effect &emsp; ii) Complete Meissner effect
-   iii) No Meissner effect &emsp; iv) Vortex state
+f) **Type I superconductors** exhibit: [1] i) Partial Meissner effect &emsp; ii) Complete Meissner
+effect iii) No Meissner effect &emsp; iv) Vortex state
 
-g) The **band gap** of a typical semiconductor is: [1]
-   i) 0.1 eV &emsp; ii) 1.1 eV &emsp; iii) 6 eV &emsp; iv) 10 eV
+g) The **band gap** of a typical semiconductor is: [1] i) 0.1 eV &emsp; ii) 1.1 eV &emsp; iii) 6 eV
+&emsp; iv) 10 eV
 
 ---
 
@@ -50,7 +51,8 @@ g) The **band gap** of a typical semiconductor is: [1]
 
 a) Explain the construction and working of **CO₂ laser** with a neat diagram. [6]
 
-b) Derive the expression for **numerical aperture** of a step-index optical fiber. Also define acceptance angle and acceptance cone. [6]
+b) Derive the expression for **numerical aperture** of a step-index optical fiber. Also define
+acceptance angle and acceptance cone. [6]
 
 **OR**
 
@@ -58,7 +60,8 @@ b) Derive the expression for **numerical aperture** of a step-index optical fibe
 
 a) Explain the principle of **holography** — recording and reconstruction with diagram. [6]
 
-b) An optical fiber has core refractive index \(n_1 = 1.52\) and cladding refractive index \(n_2 = 1.48\). Calculate NA and acceptance angle. [6]
+b) An optical fiber has core refractive index \(n_1 = 1.52\) and cladding refractive index \(n_2 =
+1.48\). Calculate NA and acceptance angle. [6]
 
 ---
 
@@ -68,7 +71,8 @@ b) An optical fiber has core refractive index \(n_1 = 1.52\) and cladding refrac
 
 a) Derive **Schrödinger's time independent wave equation**. [6]
 
-b) An electron is confined in a 1D potential well of width 4 Å. Calculate the **ground state energy** and the wavelength of radiation emitted when it jumps from \(n=2\) to \(n=1\). [6]
+b) An electron is confined in a 1D potential well of width 4 Å. Calculate the **ground state
+energy** and the wavelength of radiation emitted when it jumps from \(n=2\) to \(n=1\). [6]
 
 **OR**
 
@@ -76,7 +80,8 @@ b) An electron is confined in a 1D potential well of width 4 Å. Calculate the *
 
 a) State and explain **Heisenberg's uncertainty principle**. Give two examples. [6]
 
-b) Calculate the **de Broglie wavelength** of: i) An electron accelerated through 100 V, ii) A proton of energy 1 MeV. [6]
+b) Calculate the **de Broglie wavelength** of: i) An electron accelerated through 100 V, ii) A
+proton of energy 1 MeV. [6]
 
 ---
 
@@ -84,9 +89,11 @@ b) Calculate the **de Broglie wavelength** of: i) An electron accelerated throug
 
 **Q6)** Attempt the following: [12]
 
-a) Derive conditions for maxima and minima in **thin film of uniform thickness** (reflected system). [6]
+a) Derive conditions for maxima and minima in **thin film of uniform thickness** (reflected system).
+[6]
 
-b) State and explain **Malus law**. Unpolarized light of intensity \(I_0\) is incident on two polarizers with angles \(0^\circ\) and \(60^\circ\). Find intensity of transmitted light. [6]
+b) State and explain **Malus law**. Unpolarized light of intensity \(I_0\) is incident on two
+polarizers with angles \(0^\circ\) and \(60^\circ\). Find intensity of transmitted light. [6]
 
 **OR**
 
@@ -112,7 +119,8 @@ b) Explain **I-V characteristics** of a **solar cell**. Define fill factor and e
 
 a) Derive expression for **Hall voltage** and Hall coefficient. Explain its applications. [6]
 
-b) Explain **generation of ultrasonic waves** by inverse piezoelectric effect. State any two applications. [6]
+b) Explain **generation of ultrasonic waves** by inverse piezoelectric effect. State any two
+applications. [6]
 
 ---
 

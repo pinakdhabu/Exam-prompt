@@ -2,21 +2,24 @@
 
 ## Supported Versions
 
-| Version | Supported |
-|---|---|
-| main (latest) | ✅ |
-| Other branches | ❌ |
+| Version        | Supported |
+| -------------- | --------- |
+| main (latest)  | ✅        |
+| Other branches | ❌        |
 
 ## Reporting a Vulnerability
 
-This repo contains **educational content** (exam papers, study skills, scripts). Security issues are unlikely but possible in:
+This repo contains **educational content** (exam papers, study skills, scripts). Security issues are
+unlikely but possible in:
+
 - Scripts (`scripts/*.sh`, `scripts/*.js`, `scripts/*.py`)
 - CI/CD workflows (`.github/workflows/*.yml`)
 - Dependencies (`package.json`, `requirements.txt`)
 
 ### To Report
 
-1. **Open a draft security advisory** at [github.com/pinakdhabu/Exam-prompt/security/advisories](https://github.com/pinakdhabu/Exam-prompt/security/advisories)
+1. **Open a draft security advisory** at
+   [github.com/pinakdhabu/Exam-prompt/security/advisories](https://github.com/pinakdhabu/Exam-prompt/security/advisories)
 2. **Or email**: pinakdhabu@gmail.com (mention "Exam Prompt security" in subject)
 
 ### Response

@@ -1,9 +1,12 @@
 # Engineering Physics — Sample Papers
 
 ## Syllabus Overview
-Wave optics, lasers, optical fibers, quantum mechanics, semiconductor physics, magnetism, superconductivity, NDT, nanotechnology.
+
+Wave optics, lasers, optical fibers, quantum mechanics, semiconductor physics, magnetism,
+superconductivity, NDT, nanotechnology.
 
 ## Units
+
 1. Wave Optics — Interference, diffraction, polarization (8 Hrs)
 2. Laser and Optic Fibre — Laser types, fiber parameters, communication (8 Hrs)
 3. Quantum Mechanics — de Broglie, Schrödinger equations, potential well (8 Hrs)
@@ -12,6 +15,6 @@ Wave optics, lasers, optical fibers, quantum mechanics, semiconductor physics, m
 6. NDT and Nanotechnology — Ultrasonic testing, radiography, nanoparticles (8 Hrs)
 
 ## Exam Pattern
+
 - ESE: Units 3–6, 70 marks, 2.5 hrs | ISE: Units 1–2, 30 marks, 1 hr
 - Q1 compulsory MCQs (10 marks) + 4 OR pairs
-

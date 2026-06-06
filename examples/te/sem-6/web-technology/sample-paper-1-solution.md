@@ -12,14 +12,15 @@
 **doPost():** Handles HTTP POST requests. Data is sent in the HTTP request body.
 
 **Servlet Example:**
+
 ```java
 public class MyServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         resp.getWriter().println("GET request handled");
     }
-    
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String data = req.getParameter("input");
         resp.getWriter().println("POST data: " + data);
@@ -27,22 +28,24 @@ public class MyServlet extends HttpServlet {
 }
 ```
 
-| Parameter | doGet() | doPost() |
-|-----------|---------|----------|
-| Data location | URL query string | HTTP request body |
-| Security | Less secure (data visible in URL) | More secure (data hidden in body) |
-| Bookmarking | Can be bookmarked | Cannot be bookmarked |
-| Data size limit | Limited (2048 chars approx) | Unlimited (subject to server limits) |
-| Idempotent | Yes (safe for repeated requests) | No (may have side effects) |
-| Use case | Search queries, form submissions with non-sensitive data | Login forms, file uploads, data modification |
+| Parameter       | doGet()                                                  | doPost()                                     |
+| --------------- | -------------------------------------------------------- | -------------------------------------------- |
+| Data location   | URL query string                                         | HTTP request body                            |
+| Security        | Less secure (data visible in URL)                        | More secure (data hidden in body)            |
+| Bookmarking     | Can be bookmarked                                        | Cannot be bookmarked                         |
+| Data size limit | Limited (2048 chars approx)                              | Unlimited (subject to server limits)         |
+| Idempotent      | Yes (safe for repeated requests)                         | No (may have side effects)                   |
+| Use case        | Search queries, form submissions with non-sensitive data | Login forms, file uploads, data modification |
 
 ---
 
 ## Q1) b) XML DTD and Schema [9]
 
-**XML DTD (Document Type Definition)** defines the structure and legal elements/attributes of an XML document.
+**XML DTD (Document Type Definition)** defines the structure and legal elements/attributes of an XML
+document.
 
 **DTD Example:**
+
 ```xml
 <!DOCTYPE bookstore [
   <!ELEMENT bookstore (book+)>
@@ -61,25 +64,26 @@ public class MyServlet extends HttpServlet {
 </bookstore>
 ```
 
-| Feature | XML DTD | XML Schema (XSD) |
-|---------|---------|------------------|
-| Syntax | Non-XML syntax (EBNF) | XML-based syntax |
-| Data types | Limited (PCDATA, CDATA, ID, IDREF) | Rich (string, int, date, decimal, custom types) |
-| Namespace support | Limited | Full namespace support |
-| Extensibility | Not extensible | Supports inheritance and reuse |
-| Validation | Basic structure validation | Detailed validation (type, range, pattern) |
-| XML processing | Cannot be parsed with XML parser | Can be parsed like any XML document |
+| Feature           | XML DTD                            | XML Schema (XSD)                                |
+| ----------------- | ---------------------------------- | ----------------------------------------------- |
+| Syntax            | Non-XML syntax (EBNF)              | XML-based syntax                                |
+| Data types        | Limited (PCDATA, CDATA, ID, IDREF) | Rich (string, int, date, decimal, custom types) |
+| Namespace support | Limited                            | Full namespace support                          |
+| Extensibility     | Not extensible                     | Supports inheritance and reuse                  |
+| Validation        | Basic structure validation         | Detailed validation (type, range, pattern)      |
+| XML processing    | Cannot be parsed with XML parser   | Can be parsed like any XML document             |
 
 ---
 
 ## Q2) a) Servlet Lifecycle and Session Management [12]
 
 **Servlet Lifecycle:**
+
 ```mermaid
 sequenceDiagram
     participant Container as Web Container
     participant Servlet as Servlet
-    
+
     Container->>Servlet: 1. load() — Load servlet class (on first request)
     Container->>Servlet: 2. init() — Initialize (once)
     Container->>Servlet: 3. service() — Handle client request
@@ -88,11 +92,14 @@ sequenceDiagram
 ```
 
 **Lifecycle Methods:**
-1. **init()**: Called once when servlet is first loaded. Used for initialization (DB connections, config reading)
+
+1. **init()**: Called once when servlet is first loaded. Used for initialization (DB connections,
+   config reading)
 2. **service()**: Called for each request. Dispatches to doGet/doPost based on HTTP method
 3. **destroy()**: Called when servlet is being removed. Used for cleanup
 
 **Session Management using Cookies:**
+
 ```java
 // Creating a cookie
 Cookie c = new Cookie("username", "john");
@@ -109,39 +116,45 @@ for (Cookie c : cookies) {
 ```
 
 **Session Management using URL Rewriting:**
+
 ```java
 // Encode URL with session ID
 String encodedURL = response.encodeURL("nextpage.jsp");
 // Output: nextpage.jsp;jsessionid=ABC123XYZ
 ```
 
-**Key difference:** Cookies store session ID in the browser's cookie file; URL rewriting appends session ID to every URL link in the response.
+**Key difference:** Cookies store session ID in the browser's cookie file; URL rewriting appends
+session ID to every URL link in the response.
 
 ---
 
 ## Q2) b) AJAX [6]
 
-**AJAX (Asynchronous JavaScript and XML)** enables web pages to send and receive data from a server asynchronously without reloading the page.
+**AJAX (Asynchronous JavaScript and XML)** enables web pages to send and receive data from a server
+asynchronously without reloading the page.
 
 **How AJAX works:**
+
 ```javascript
 var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("result").innerHTML = this.responseText;
-    }
+xhttp.onreadystatechange = function () {
+  if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("result").innerHTML = this.responseText;
+  }
 };
 xhttp.open("GET", "getdata.jsp?id=5", true);
 xhttp.send();
 ```
 
 **Key concepts:**
+
 - **XMLHttpRequest** object handles asynchronous communication
 - **readyState**: 0=unsent, 1=opened, 2=headers_received, 3=loading, 4=done
 - **Status**: 200=OK, 404=Not found, 500=Server error
 - **Response formats**: XML, JSON, plain text, HTML
 
-**Benefits:** Better user experience (no full page reloads), reduced bandwidth, faster interactivity.
+**Benefits:** Better user experience (no full page reloads), reduced bandwidth, faster
+interactivity.
 
 ---
 
@@ -155,7 +168,7 @@ graph LR
     C --> M[Model<br/>JavaBeans / POJO]
     M --> V[View<br/>JSP]
     V --> B
-    
+
     subgraph "MVC Pattern"
         C
         M
@@ -164,11 +177,13 @@ graph LR
 ```
 
 **JSP roles in MVC:**
+
 - **Model**: JavaBeans, POJOs — business logic and data access
 - **View**: JSP pages — presentation, HTML generation using JSP tags and expressions
 - **Controller**: Servlets — request handling, validation, flow control
 
 **JSP MVC example:**
+
 ```jsp
 <!-- View (user-list.jsp) -->
 <jsp:useBean id="userDAO" class="com.UserDAO" scope="request"/>
@@ -190,6 +205,7 @@ graph LR
 **Struts** is an open-source MVC framework for building Java web applications.
 
 **Architecture:**
+
 ```
 Controller: ActionServlet (central servlet)
   → Reads struts-config.xml
@@ -199,16 +215,19 @@ View: JSP with Struts tag libraries
 ```
 
 **Components:**
+
 - **ActionServlet**: Front controller — intercepts all requests
 - **Action**: Handles business logic, returns ActionForward
 - **ActionForm**: Captures and validates form data
 - **ActionForward**: Maps logical outcomes to JSP pages
 
 **Interceptors (Struts 2):** Interceptors wrap action execution to provide cross-cutting concerns:
+
 - Validation, file upload, exception handling, logging
 - Configured in `struts.xml` as interceptor stacks
 
 **Exception Handling:**
+
 ```xml
 <global-results>
     <result name="error">/error.jsp</result>
@@ -223,30 +242,34 @@ View: JSP with Struts tag libraries
 ## Q4) a) JSP Lifecycle and Servlet Comparison [9]
 
 **JSP Lifecycle:**
+
 1. **Translation**: JSP file (.jsp) is translated into a servlet (.java)
 2. **Compilation**: The generated servlet is compiled (.class)
 3. **Loading**: Servlet class is loaded by the container
 4. **Instantiation**: Object is created
 5. **Initialization**: `jspInit()` is called
-6. **Request processing**: `_jspService()` handles requests (includes `out`, `request`, `response` objects)
+6. **Request processing**: `_jspService()` handles requests (includes `out`, `request`, `response`
+   objects)
 7. **Destruction**: `jspDestroy()` is called
 
-| Feature | JSP | Servlet |
-|---------|-----|---------|
-| Primary use | Presentation (HTML generation) | Business logic and request control |
-| Code type | HTML with embedded Java (tags) | Java with embedded HTML |
-| Ease of development | Easier for UI developers | Requires good Java knowledge |
-| Performance | Slightly slower (translation overhead) | Faster (direct Java execution) |
-| Session management | Implicit session object | Requires explicit getSession() |
-| File extension | .jsp | .java |
+| Feature             | JSP                                    | Servlet                            |
+| ------------------- | -------------------------------------- | ---------------------------------- |
+| Primary use         | Presentation (HTML generation)         | Business logic and request control |
+| Code type           | HTML with embedded Java (tags)         | Java with embedded HTML            |
+| Ease of development | Easier for UI developers               | Requires good Java knowledge       |
+| Performance         | Slightly slower (translation overhead) | Faster (direct Java execution)     |
+| Session management  | Implicit session object                | Requires explicit getSession()     |
+| File extension      | .jsp                                   | .java                              |
 
 ---
 
 ## Q4) b) Web Services, WSDL, and SOAP [8]
 
-**Web Services** are standardized methods for communication between applications over a network, typically using XML-based protocols.
+**Web Services** are standardized methods for communication between applications over a network,
+typically using XML-based protocols.
 
 **WSDL (Web Services Description Language):** An XML document that describes:
+
 - **Types**: Data types used
 - **Messages**: Parameters and return values
 - **PortTypes/Interfaces**: Operations exposed
@@ -256,6 +279,7 @@ View: JSP with Struts tag libraries
 **SOAP (Simple Object Access Protocol):** An XML-based messaging protocol for web services.
 
 **SOAP Message Structure:**
+
 ```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Header>
@@ -280,6 +304,7 @@ View: JSP with Struts tag libraries
 ## Q5) a) PHP Arrays [9]
 
 **1. Indexed Array (Numeric keys):**
+
 ```php
 $colors = array("Red", "Green", "Blue");
 // or: $colors = ["Red", "Green", "Blue"];
@@ -288,6 +313,7 @@ $colors[] = "Yellow";  // Append
 ```
 
 **2. Associative Array (Named keys):**
+
 ```php
 $student = array(
     "name" => "Alice",
@@ -299,6 +325,7 @@ $student["city"] = "Pune";  // Add new key
 ```
 
 **3. Multidimensional Array:**
+
 ```php
 $matrix = array(
     array(1, 2, 3),
@@ -309,6 +336,7 @@ echo $matrix[1][2];  // 6
 ```
 
 **4. Array Functions:**
+
 ```php
 sort($arr);            // Sort ascending
 count($arr);           // Number of elements
@@ -323,21 +351,23 @@ in_array($v, $arr);    // Search for value
 ## Q5) b) WAP/WML and C# vs Java [9]
 
 **i) WAP and WML:**
-- **WAP (Wireless Application Protocol)**: A protocol stack for accessing internet content on mobile devices with limited bandwidth and small screens
+
+- **WAP (Wireless Application Protocol)**: A protocol stack for accessing internet content on mobile
+  devices with limited bandwidth and small screens
 - **WML (Wireless Markup Language)**: An XML-based markup language for WAP browsers
 - WAP uses **WML** instead of HTML, optimized for low-bandwidth mobile networks
 - WAP 2.0 supports XHTML MP (XHTML Mobile Profile)
 
 **ii) C# vs Java:**
 
-| Feature | C# | Java |
-|---------|----|------|
-| Platform | .NET framework (primarily Windows) | JVM (cross-platform) |
-| Properties | Built-in property syntax | getters/setters convention |
-| Delegates | Supported (function pointers) | Not directly supported |
-| Multiple inheritance | Not supported (uses interfaces) | Not supported (uses interfaces) |
-| LINQ | Yes (Language Integrated Query) | No (requires external libraries) |
-| Checked exceptions | No | Yes (compile-time checked) |
+| Feature              | C#                                 | Java                             |
+| -------------------- | ---------------------------------- | -------------------------------- |
+| Platform             | .NET framework (primarily Windows) | JVM (cross-platform)             |
+| Properties           | Built-in property syntax           | getters/setters convention       |
+| Delegates            | Supported (function pointers)      | Not directly supported           |
+| Multiple inheritance | Not supported (uses interfaces)    | Not supported (uses interfaces)  |
+| LINQ                 | Yes (Language Integrated Query)    | No (requires external libraries) |
+| Checked exceptions   | No                                 | Yes (compile-time checked)       |
 
 ---
 
@@ -389,6 +419,7 @@ $conn->close();
 ## Q6) b) Session Tracking, .NET, Node.js [12]
 
 **i) Session Tracking in PHP:**
+
 ```php
 <?php
 session_start();  // Start session
@@ -404,17 +435,18 @@ echo $_SESSION["username"];
 session_destroy();
 ?>
 ```
+
 Session data is stored server-side (default: files in /tmp/). Client receives a session cookie.
 
-**ii) .NET Framework:**
-Microsoft's framework for building Windows applications and web services.
+**ii) .NET Framework:** Microsoft's framework for building Windows applications and web services.
+
 - **CLR (Common Language Runtime)**: Executes .NET code (JIT compilation, garbage collection)
 - **FCL (Framework Class Library)**: Extensive library of classes for I/O, networking, data access
 - **ASP.NET**: Web application framework (Web Forms, MVC, Web API)
 - **Languages**: C#, VB.NET, F#
 
-**iii) Node.js:**
-A JavaScript runtime built on Chrome's V8 engine for server-side applications.
+**iii) Node.js:** A JavaScript runtime built on Chrome's V8 engine for server-side applications.
+
 - **Event-driven, non-blocking I/O**: Handles concurrent requests efficiently
 - **npm (Node Package Manager)**: Largest ecosystem of open-source libraries
 - **Common use cases**: REST APIs, real-time applications (chat, gaming), microservices
@@ -427,6 +459,7 @@ A JavaScript runtime built on Chrome's V8 engine for server-side applications.
 **Ruby** is a dynamic, object-oriented programming language known for simplicity and productivity.
 
 **Advantages of Ruby:**
+
 1. **Elegant syntax**: Readable and expressive, close to natural language
 2. **Pure OOP**: Everything is an object (including numbers and classes)
 3. **Dynamic typing**: No type declarations needed
@@ -481,9 +514,11 @@ end
 
 ## Q7) b) EJB (Enterprise JavaBeans) [7]
 
-**EJB** is a server-side component architecture for building distributed, transactional, and secure enterprise applications.
+**EJB** is a server-side component architecture for building distributed, transactional, and secure
+enterprise applications.
 
 **Types of EJBs:**
+
 1. **Session Beans**: Business logic
    - **Stateless**: No client state maintained
    - **Stateful**: Client state maintained across calls
@@ -492,6 +527,7 @@ end
 3. **Entity Beans** (deprecated — replaced by JPA)
 
 **Five basic uses of EJB:**
+
 1. **Transaction management**: Container-managed transactions (declarative via annotations)
 2. **Security**: Declarative role-based access control
 3. **Concurrency management**: Container handles concurrent access
@@ -503,6 +539,7 @@ end
 ## Q8) a) Ruby Arrays and Rails AJAX [10]
 
 **Ruby Arrays:**
+
 ```ruby
 # Creating arrays
 arr = [1, 2, 3, 4, 5]
@@ -527,6 +564,7 @@ arr.length         # Size
 ```
 
 **Rails with AJAX:**
+
 ```ruby
 # Controller action (posts_controller.rb)
 def create
@@ -556,6 +594,7 @@ $("#post_form").reset();
 ## Q8) b) Document Request in Rails [4]
 
 In Rails, document request handling involves:
+
 1. **Routes** map URLs to controller actions
 2. **Controller** processes the request and prepares data
 3. **View** renders the response (HTML, JSON, XML, PDF)
@@ -580,6 +619,7 @@ end
 ```
 
 **RESTful routing** uses the HTTP verb + URL to determine the action:
+
 - GET /documents → index
 - GET /documents/1 → show
 - POST /documents → create
@@ -608,9 +648,11 @@ built-in testing, large gem ecosystem, clean MVC architecture.
 ---
 
 ═══════════════════════════════════════════════════════
+
 ## EXAMINER COMMENTARY
 
 **Why this scores full marks:**
+
 - Code examples for servlets, PHP, Ruby arrays — practical ready-to-use snippets
 - XML DTD example shows a complete valid document
 - JSP lifecycle uses a sequence diagram format
@@ -619,14 +661,17 @@ built-in testing, large gem ecosystem, clean MVC architecture.
 - Each answer closes with a summary or key takeaway
 
 **Common Deductions:**
+
 - Not showing actual code examples when asked for PHP/Ruby concepts
-- Confusing servlet lifecycle (init → service → destroy) with JSP lifecycle (translate → compile → load → init → service → destroy)
+- Confusing servlet lifecycle (init → service → destroy) with JSP lifecycle (translate → compile →
+  load → init → service → destroy)
 - Omitting `session_start()` in PHP session management answers
 - Forgetting to mention the `remote: true` option for Rails AJAX
 - Mixing up XML DTD syntax with XML Schema syntax
 - Not distinguishing between application state and session state
 
 **Time Budget:**
+
 - Q1 (18 min): doGet/doPost 9 min + DTD/Schema 9 min
 - Q2 (18 min): Servlet lifecycle 12 min + AJAX 6 min
 - Q3 (18 min): JSP MVC 8 min + Struts 9 min

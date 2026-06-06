@@ -2,9 +2,12 @@
 
 First off, thank you for considering contributing! 🎉
 
-This is a student-built, student-run open-source project. Every contribution — whether it's a new sample paper, a bug fix, a skill improvement, or a translation — makes this better for thousands of students worldwide.
+This is a student-built, student-run open-source project. Every contribution — whether it's a new
+sample paper, a bug fix, a skill improvement, or a translation — makes this better for thousands of
+students worldwide.
 
-> **Core principle**: This repo must remain **100% free and open source forever**. No paid features, no pro tiers, no "unlock premium." Every contribution you make stays free for every student.
+> **Core principle**: This repo must remain **100% free and open source forever**. No paid features,
+> no pro tiers, no "unlock premium." Every contribution you make stays free for every student.
 
 ---
 
@@ -35,16 +38,16 @@ By participating, you agree to:
 
 ## 🧭 Ways to Contribute
 
-| Area | Skill Level | Impact |
-|---|---|---|
-| **Sample papers** — Add exam papers + solutions for missing subjects | Beginner | ★★★★★ |
-| **Subject expertise** — Review/fix existing sample paper solutions | Intermediate | ★★★★ |
-| **Skill improvement** — Improve SKILL.md files for better AI answers | Advanced | ★★★★★ |
-| **Code/scripts** — Improve setup, CI/CD, conversion tools | Advanced | ★★★★ |
-| **Docs website** — Improve docs/ HTML/CSS/JS | Intermediate | ★★★ |
-| **Bug reports** — Found something broken? Open an issue | All levels | ★★★★ |
-| **Feature requests** — Have an idea? Tell us! | All levels | ★★★ |
-| **Translations** — Translate sample papers to Marathi/Hindi/other | Intermediate | ★★★ |
+| Area                                                                 | Skill Level  | Impact |
+| -------------------------------------------------------------------- | ------------ | ------ |
+| **Sample papers** — Add exam papers + solutions for missing subjects | Beginner     | ★★★★★  |
+| **Subject expertise** — Review/fix existing sample paper solutions   | Intermediate | ★★★★   |
+| **Skill improvement** — Improve SKILL.md files for better AI answers | Advanced     | ★★★★★  |
+| **Code/scripts** — Improve setup, CI/CD, conversion tools            | Advanced     | ★★★★   |
+| **Docs website** — Improve docs/ HTML/CSS/JS                         | Intermediate | ★★★    |
+| **Bug reports** — Found something broken? Open an issue              | All levels   | ★★★★   |
+| **Feature requests** — Have an idea? Tell us!                        | All levels   | ★★★    |
+| **Translations** — Translate sample papers to Marathi/Hindi/other    | Intermediate | ★★★    |
 
 ---
 
@@ -70,7 +73,8 @@ npx playwright install chromium
 
 ### 3. Pick a Task
 
-Check [open issues](https://github.com/pinakdhabu/Exam-prompt/issues) labeled `good-first-issue` or `help-wanted`.
+Check [open issues](https://github.com/pinakdhabu/Exam-prompt/issues) labeled `good-first-issue` or
+`help-wanted`.
 
 ### 4. Create a Branch
 
@@ -125,6 +129,7 @@ examples/
 ### Template
 
 Use the existing papers as reference. Example:
+
 - `examples/te/sem-5/database-management-systems/sample-paper-1.md`
 - `examples/te/sem-5/database-management-systems/sample-paper-1-solution.md`
 
@@ -182,7 +187,8 @@ bash scripts/validate-skills.sh my-skill
 
 PYQ index entries go in `pyq-index/SKILL.md`.
 
-The actual PYQ PDFs are **not stored in this repo** (they're too large). Instead, add references to the local filesystem:
+The actual PYQ PDFs are **not stored in this repo** (they're too large). Instead, add references to
+the local filesystem:
 
 - **Path**: `~/Downloads/<collection>/...`
 - **Format**: `Subject | Year | Month | Link`
@@ -261,6 +267,7 @@ chore: update GitHub Actions workflow
 ### Good First Issues
 
 Look for issues labeled:
+
 - `good-first-issue` — Beginner-friendly
 - `help-wanted` — Needs someone to pick it up
 - `sample-paper` — Missing sample paper
@@ -271,6 +278,7 @@ Look for issues labeled:
 ## 🏆 Recognition
 
 All contributors get:
+
 - Listed in the repo's README (contributors section)
 - A GitHub badge on their profile
 - Eternal gratitude from thousands of students 📚

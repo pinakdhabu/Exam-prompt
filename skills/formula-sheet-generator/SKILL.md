@@ -1,16 +1,24 @@
 ---
 name: universal-formula-sheet-generator
-description: Generates compact, exam-ready formula sheets for ANY university worldwide. Covers engineering, mathematics, physics, chemistry, finance, statistics, and data science. Organized by unit with variable definitions, SI units, and quick-reference annotations. Optimized for closed-book recall and open-book quick lookup.
+description:
+  Generates compact, exam-ready formula sheets for ANY university worldwide. Covers engineering,
+  mathematics, physics, chemistry, finance, statistics, and data science. Organized by unit with
+  variable definitions, SI units, and quick-reference annotations. Optimized for closed-book recall
+  and open-book quick lookup.
 ---
 
 # Universal Formula Sheet Generator
 
 ## Overview
-Creates dense, well-organized formula sheets that serve as both study aids and exam-day quick references. Every formula is presented with its variables clearly defined, applicable conditions stated, and cross-referenced to related formulas.
+
+Creates dense, well-organized formula sheets that serve as both study aids and exam-day quick
+references. Every formula is presented with its variables clearly defined, applicable conditions
+stated, and cross-referenced to related formulas.
 
 ## How This Skill Works
 
-1. **User provides**: Subject, course code, university, specific units/topics, exam type (open/closed book)
+1. **User provides**: Subject, course code, university, specific units/topics, exam type
+   (open/closed book)
 2. **System collects**: All relevant formulas organized by unit and topic
 3. **System formats**: In compact, scannable layout with consistent notation
 4. **System annotates**: Variable definitions, units, applicability conditions, and common pitfalls
@@ -47,17 +55,17 @@ Subject Name
 
 ## 3. Formula Categories
 
-| Category | Subjects | Presentation Style |
-|---|---|---|
-| **Algebraic** | Mathematics, Physics | Standard equation, variable definitions |
-| **Differential/Integral** | Calculus, Physics | Standard notation with limits |
-| **Statistical** | Statistics, ML, Data Science | Summation/probability notation |
-| **Chemical** | Chemistry, Biology | Molecular structure, reaction equations |
-| **Electrical** | E&TC, Electrical, Electronics | Circuit parameters, phasors |
-| **Mechanical** | Mechanical, Civil, Aerospace | Force/momentum/energy equations |
-| **Financial** | Finance, Economics, Business | Time value of money, ratio formulas |
-| **Algorithmic** | Computer Science | Pseudocode, complexity expressions |
-| **Logical** | Mathematics, CS | Set notation, logical operators |
+| Category                  | Subjects                      | Presentation Style                      |
+| ------------------------- | ----------------------------- | --------------------------------------- |
+| **Algebraic**             | Mathematics, Physics          | Standard equation, variable definitions |
+| **Differential/Integral** | Calculus, Physics             | Standard notation with limits           |
+| **Statistical**           | Statistics, ML, Data Science  | Summation/probability notation          |
+| **Chemical**              | Chemistry, Biology            | Molecular structure, reaction equations |
+| **Electrical**            | E&TC, Electrical, Electronics | Circuit parameters, phasors             |
+| **Mechanical**            | Mechanical, Civil, Aerospace  | Force/momentum/energy equations         |
+| **Financial**             | Finance, Economics, Business  | Time value of money, ratio formulas     |
+| **Algorithmic**           | Computer Science              | Pseudocode, complexity expressions      |
+| **Logical**               | Mathematics, CS               | Set notation, logical operators         |
 
 ## 4. Sample Formula Sheet
 
@@ -106,4 +114,5 @@ F6: Integration by parts
 - **universal-notes-generator**: Provides the full context from which formulas are extracted
 - **universal-answer-writer**: Uses formula sheets for numerical problem solutions
 - **universal-last-minute-crammer**: Formula sheets are the primary cram resource
-- **universal-mcq-practice-generator**: MCQs can be generated targeting specific formula applications
+- **universal-mcq-practice-generator**: MCQs can be generated targeting specific formula
+  applications

@@ -2,7 +2,8 @@
 
 ## Syllabus Overview
 
-OOP introduces the object-oriented paradigm using C++, covering classes, inheritance, polymorphism, file handling, templates, exception handling, and the Standard Template Library (STL).
+OOP introduces the object-oriented paradigm using C++, covering classes, inheritance, polymorphism,
+file handling, templates, exception handling, and the Standard Template Library (STL).
 
 ## Units
 

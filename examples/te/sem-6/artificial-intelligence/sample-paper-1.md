@@ -18,21 +18,22 @@
 
 **Instructions to the candidates:**
 
-1) Answer Q.1 or Q.2, Q.3 or Q.4, Q.5 or Q.6, Q.7 or Q.8.
-2) Neat diagrams must be drawn wherever necessary.
-3) Figures to the right indicate full marks.
-4) Assume suitable data if necessary.
+1. Answer Q.1 or Q.2, Q.3 or Q.4, Q.5 or Q.6, Q.7 or Q.8.
+2. Neat diagrams must be drawn wherever necessary.
+3. Figures to the right indicate full marks.
+4. Assume suitable data if necessary.
 
 ---
 
 ### Unit III — Searching and Game Playing
 
-**Q1)**
-**a)** List all problem-solving strategies. What is backtracking? Explain with the N-Queens problem (N=4). [9]
+**Q1)** **a)** List all problem-solving strategies. What is backtracking? Explain with the N-Queens
+problem (N=4). [9]
 
-**b)** Write the Minimax search algorithm for two-player games. Explain how alpha-beta cutoffs improve performance. Apply Minimax with alpha-beta pruning to the following game tree:
+**b)** Write the Minimax search algorithm for two-player games. Explain how alpha-beta cutoffs
+improve performance. Apply Minimax with alpha-beta pruning to the following game tree:
 
-```
+````
                    MAX
                   /    \
               MIN       MIN
@@ -49,12 +50,17 @@
 
 **b)** What is a Constraint Satisfaction Problem (CSP)? Explain the types of consistencies (node, arc, path). Solve the following cryptarithmetic problem:
 
-```
-   B A S E
- + B A L L
- ---------
- G A M E S
-``` [8]
+````
+
+B A S E
+
+- B A L L
+
+---
+
+G A M E S
+
+```[8]
 
 ---
 
@@ -133,3 +139,4 @@ ii) Algorithm for classical planning [5]
 
 ## Examiner Commentary
 This paper follows the SPPU AI pattern seen in actual PYQs. Q1(a-b) tests game theory and search with a numerical alpha-beta pruning tree. Q2(b) involves a real cryptarithmetic puzzle. Q3(b) tests FOL representation and logical derivation. Q7(a) involves STRIPS planning with block world — a classic AI problem type.
+```

@@ -2,7 +2,9 @@
 
 ## Syllabus Overview
 
-DE&LD covers digital circuit design from Boolean algebra and minimization techniques through combinational and sequential circuits, programmable logic devices, logic families, and computer architecture.
+DE&LD covers digital circuit design from Boolean algebra and minimization techniques through
+combinational and sequential circuits, programmable logic devices, logic families, and computer
+architecture.
 
 ## Units
 

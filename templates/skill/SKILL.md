@@ -6,6 +6,7 @@ description: {{SHORT_DESCRIPTION}}. Works for ANY university worldwide, ALL subj
 # {{SKILL_TITLE}}
 
 ## Overview
+
 {{OVERVIEW_PARAGRAPH}}
 
 ## How This Skill Works
@@ -18,18 +19,21 @@ description: {{SHORT_DESCRIPTION}}. Works for ANY university worldwide, ALL subj
 ## Features
 
 ### Feature 1 — {{FEATURE_1_NAME}}
+
 {{FEATURE_1_DESCRIPTION}}
 
 ### Feature 2 — {{FEATURE_2_NAME}}
+
 {{FEATURE_2_DESCRIPTION}}
 
 ### Feature 3 — {{FEATURE_3_NAME}}
+
 {{FEATURE_3_DESCRIPTION}}
 
 ## Use Cases
 
-| Scenario | Description |
-|---|---|
+| Scenario       | Description         |
+| -------------- | ------------------- |
 | {{USE_CASE_1}} | {{USE_CASE_1_DESC}} |
 | {{USE_CASE_2}} | {{USE_CASE_2_DESC}} |
 | {{USE_CASE_3}} | {{USE_CASE_3_DESC}} |

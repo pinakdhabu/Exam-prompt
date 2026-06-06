@@ -4,14 +4,14 @@
 
 ## Syllabus
 
-| Unit | Title | Hours | CO |
-|------|-------|-------|----|
-| I | Introduction to Computer Networks | 06 | CO1 |
-| II | Data Link Layer | 08 | CO2 |
-| III | Network Layer | 08 | CO3 |
-| IV | Transport Layer | 07 | CO4 |
-| V | Application Layer | 06 | CO5 |
-| VI | Security | 07 | CO6 |
+| Unit | Title                             | Hours | CO  |
+| ---- | --------------------------------- | ----- | --- |
+| I    | Introduction to Computer Networks | 06    | CO1 |
+| II   | Data Link Layer                   | 08    | CO2 |
+| III  | Network Layer                     | 08    | CO3 |
+| IV   | Transport Layer                   | 07    | CO4 |
+| V    | Application Layer                 | 06    | CO5 |
+| VI   | Security                          | 07    | CO6 |
 
 ## Exam Pattern
 

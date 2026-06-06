@@ -4,14 +4,14 @@
 
 ## Syllabus
 
-| Unit | Title | Hours | CO |
-|------|-------|-------|----|
-| I | Web Essentials and HTML | 07 | CO1 |
-| II | Client Side Technologies: JavaScript and DOM | 07 | CO2 |
-| III | Java Servlets and XML | 07 | CO3 |
-| IV | JSP and Web Services | 07 | CO4 |
-| V | PHP and .NET | 07 | CO5 |
-| VI | Ruby and Rails | 07 | CO6 |
+| Unit | Title                                        | Hours | CO  |
+| ---- | -------------------------------------------- | ----- | --- |
+| I    | Web Essentials and HTML                      | 07    | CO1 |
+| II   | Client Side Technologies: JavaScript and DOM | 07    | CO2 |
+| III  | Java Servlets and XML                        | 07    | CO3 |
+| IV   | JSP and Web Services                         | 07    | CO4 |
+| V    | PHP and .NET                                 | 07    | CO5 |
+| VI   | Ruby and Rails                               | 07    | CO6 |
 
 ## Exam Pattern
 

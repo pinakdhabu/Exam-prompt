@@ -461,7 +461,7 @@ Subjects: dbms, toc, spos, cns, ai, dsbda, wt, daa, ml, dl, hpc,
 
   try {
     // Determine semester range (1-8 supported, default 3-8 for BE)
-    const semesterDefaults = branchFilter.includes('fe') || branchFilter.includes('first') ? 
+    const semesterDefaults = branchFilter.includes('fe') || branchFilter.includes('first') ?
       ['1', '2'] : ['3', '4', '5', '6', '7', '8'];
     const semestersToScan = semesterFilter ? [semesterFilter] : semesterDefaults;
 

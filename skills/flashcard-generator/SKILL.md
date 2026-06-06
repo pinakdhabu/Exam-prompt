@@ -1,16 +1,24 @@
 ---
 name: universal-flashcard-generator
-description: Converts any study material (notes, textbooks, syllabus topics, PYQs) into optimized flashcards for ANY university worldwide. Supports 6 flashcard types across 3 difficulty tiers with built-in Spaced Repetition System (SRS) metadata. Exports to Anki, Quizlet, CSV, and text formats. Works for ALL subjects, ALL departments.
+description:
+  Converts any study material (notes, textbooks, syllabus topics, PYQs) into optimized flashcards
+  for ANY university worldwide. Supports 6 flashcard types across 3 difficulty tiers with built-in
+  Spaced Repetition System (SRS) metadata. Exports to Anki, Quizlet, CSV, and text formats. Works
+  for ALL subjects, ALL departments.
 ---
 
 # Universal Flashcard Generator
 
 ## Overview
-Transforms any study material into exam-optimized flashcards. Uses cognitive science principles (active recall, spaced repetition, elaboration, interleaving) to maximize retention. Generates SRS-ready decks with proper scheduling metadata for long-term memory consolidation.
+
+Transforms any study material into exam-optimized flashcards. Uses cognitive science principles
+(active recall, spaced repetition, elaboration, interleaving) to maximize retention. Generates
+SRS-ready decks with proper scheduling metadata for long-term memory consolidation.
 
 ## How This Skill Works
 
-1. **User provides**: Source material (notes, textbook chapters, syllabus topics, question papers, or any text)
+1. **User provides**: Source material (notes, textbook chapters, syllabus topics, question papers,
+   or any text)
 2. **System analyzes**: Content structure, subject type, Bloom's level distribution, exam patterns
 3. **System selects**: Optimal flashcard types based on content characteristics and learning goals
 4. **System generates**: Formatted flashcard deck with SRS scheduling metadata
@@ -19,71 +27,77 @@ Transforms any study material into exam-optimized flashcards. Uses cognitive sci
 ## 1. Flashcard Types
 
 ### Type A — Basic Fact (Recall)
-| Element | Description |
-|---|---|
-| **Front** | Direct question or prompt |
-| **Back** | Concise answer (1-3 sentences) |
-| **Best for** | Definitions, dates, formulas, terminology, lists |
-| **Bloom's Level** | Remember |
-| **Example Front** | What is the time complexity of binary search? |
-| **Example Back** | O(log n) in the average and worst case |
+
+| Element           | Description                                      |
+| ----------------- | ------------------------------------------------ |
+| **Front**         | Direct question or prompt                        |
+| **Back**          | Concise answer (1-3 sentences)                   |
+| **Best for**      | Definitions, dates, formulas, terminology, lists |
+| **Bloom's Level** | Remember                                         |
+| **Example Front** | What is the time complexity of binary search?    |
+| **Example Back**  | O(log n) in the average and worst case           |
 
 ### Type B — Cloze Deletion
-| Element | Description |
-|---|---|
-| **Front** | Sentence with key term blanked: `The capital of France is {{c1::Paris}}` |
-| **Back** | Full sentence with revealed term |
-| **Best for** | Fill-in-the-blank style recall, language learning, definitions |
-| **Bloom's Level** | Remember, Understand |
+
+| Element           | Description                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------- |
+| **Front**         | Sentence with key term blanked: `The capital of France is {{c1::Paris}}`                      |
+| **Back**          | Full sentence with revealed term                                                              |
+| **Best for**      | Fill-in-the-blank style recall, language learning, definitions                                |
+| **Bloom's Level** | Remember, Understand                                                                          |
 | **Example Front** | The three pillars of {{c1::sustainable development}} are economic, social, and environmental. |
 
 ### Type C — Concept Association
-| Element | Description |
-|---|---|
-| **Front** | Concept, term, or scenario |
-| **Back** | Related concept, application, or counter-example |
-| **Best for** | Linking related ideas, compare/contrast, "why" questions |
-| **Bloom's Level** | Understand, Apply |
-| **Example Front** | How does DHCP differ from DNS? |
-| **Example Back** | DHCP assigns IP addresses dynamically; DNS resolves domain names to IP addresses. |
+
+| Element           | Description                                                                       |
+| ----------------- | --------------------------------------------------------------------------------- |
+| **Front**         | Concept, term, or scenario                                                        |
+| **Back**          | Related concept, application, or counter-example                                  |
+| **Best for**      | Linking related ideas, compare/contrast, "why" questions                          |
+| **Bloom's Level** | Understand, Apply                                                                 |
+| **Example Front** | How does DHCP differ from DNS?                                                    |
+| **Example Back**  | DHCP assigns IP addresses dynamically; DNS resolves domain names to IP addresses. |
 
 ### Type D — Multi-Step Problem
-| Element | Description |
-|---|---|
-| **Front** | Problem or calculation |
-| **Back** | Step-by-step solution with reasoning |
-| **Best for** | Numerical problems, derivations, proofs, algorithms |
-| **Bloom's Level** | Apply, Analyze |
-| **Example Front** | Solve: Find the determinant of [[2,3],[1,4]] |
-| **Example Back** | det = (2*4) - (3*1) = 8 - 3 = 5 |
+
+| Element           | Description                                         |
+| ----------------- | --------------------------------------------------- |
+| **Front**         | Problem or calculation                              |
+| **Back**          | Step-by-step solution with reasoning                |
+| **Best for**      | Numerical problems, derivations, proofs, algorithms |
+| **Bloom's Level** | Apply, Analyze                                      |
+| **Example Front** | Solve: Find the determinant of [[2,3],[1,4]]        |
+| **Example Back**  | det = (2*4) - (3*1) = 8 - 3 = 5                     |
 
 ### Type E — Application Scenario
-| Element | Description |
-|---|---|
-| **Front** | Real-world scenario or case snippet |
-| **Back** | Diagnosis, solution, or analysis |
-| **Best for** | Case studies, clinical scenarios, engineering design, business cases |
-| **Bloom's Level** | Analyze, Evaluate |
-| **Example Front** | A user reports "Connection refused" when accessing port 443 on a server. What is likely? |
-| **Example Back** | The service on port 443 (likely HTTPS) is not running or a firewall is blocking the port. |
+
+| Element           | Description                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| **Front**         | Real-world scenario or case snippet                                                       |
+| **Back**          | Diagnosis, solution, or analysis                                                          |
+| **Best for**      | Case studies, clinical scenarios, engineering design, business cases                      |
+| **Bloom's Level** | Analyze, Evaluate                                                                         |
+| **Example Front** | A user reports "Connection refused" when accessing port 443 on a server. What is likely?  |
+| **Example Back**  | The service on port 443 (likely HTTPS) is not running or a firewall is blocking the port. |
 
 ### Type F — Compare & Contrast
-| Element | Description |
-|---|---|
-| **Front** | Two related concepts |
-| **Back** | Structured comparison (similarities / differences table) |
-| **Best for** | Comparative questions, distinguishing confusable concepts |
-| **Bloom's Level** | Analyze |
-| **Example Front** | Compare TCP vs UDP |
-| **Example Back** | TCP: connection-oriented, reliable, ordered, slower | UDP: connectionless, unreliable, unordered, faster |
+
+| Element           | Description                                               |
+| ----------------- | --------------------------------------------------------- | -------------------------------------------------- |
+| **Front**         | Two related concepts                                      |
+| **Back**          | Structured comparison (similarities / differences table)  |
+| **Best for**      | Comparative questions, distinguishing confusable concepts |
+| **Bloom's Level** | Analyze                                                   |
+| **Example Front** | Compare TCP vs UDP                                        |
+| **Example Back**  | TCP: connection-oriented, reliable, ordered, slower       | UDP: connectionless, unreliable, unordered, faster |
 
 ## 2. Difficulty Tiers
 
-| Tier | Question Style | Cognitive Load | Use Case |
-|---|---|---|---|
-| **Tier 1 — Recognition** | Multiple choice, true/false, "which of the following" | Low | Initial learning, building confidence |
-| **Tier 2 — Recall** | Direct question, cloze deletion, fill-in-the-blank | Medium | Active recall practice, memory consolidation |
-| **Tier 3 — Application** | Scenario-based, problem-solving, "why/how" questions | High | Deep understanding, exam readiness |
+| Tier                     | Question Style                                        | Cognitive Load | Use Case                                     |
+| ------------------------ | ----------------------------------------------------- | -------------- | -------------------------------------------- |
+| **Tier 1 — Recognition** | Multiple choice, true/false, "which of the following" | Low            | Initial learning, building confidence        |
+| **Tier 2 — Recall**      | Direct question, cloze deletion, fill-in-the-blank    | Medium         | Active recall practice, memory consolidation |
+| **Tier 3 — Application** | Scenario-based, problem-solving, "why/how" questions  | High           | Deep understanding, exam readiness           |
 
 Each deck includes a progression path: Tier 1 -> Tier 2 -> Tier 3.
 
@@ -91,44 +105,48 @@ Each deck includes a progression path: Tier 1 -> Tier 2 -> Tier 3.
 
 Every generated flashcard includes these scheduling fields for SRS system import:
 
-| Field | Example | Description |
-|---|---|---|
-| `Deck` | Computer Networks | Subject or chapter name |
-| `Tag` | cn_3_transport | Hierarchical topic tag |
-| `Due` | 2026-05-24 | Next review date |
-| `Interval` | 1 | Days until next review (starts at 1) |
-| `Ease` | 250 | Starting ease factor (default 250%) |
-| `Difficulty` | 3 | Card difficulty (1=Easy, 5=Hard) |
-| `LastReviewed` | 2026-05-23 | Last review timestamp |
+| Field          | Example           | Description                          |
+| -------------- | ----------------- | ------------------------------------ |
+| `Deck`         | Computer Networks | Subject or chapter name              |
+| `Tag`          | cn_3_transport    | Hierarchical topic tag               |
+| `Due`          | 2026-05-24        | Next review date                     |
+| `Interval`     | 1                 | Days until next review (starts at 1) |
+| `Ease`         | 250               | Starting ease factor (default 250%)  |
+| `Difficulty`   | 3                 | Card difficulty (1=Easy, 5=Hard)     |
+| `LastReviewed` | 2026-05-23        | Last review timestamp                |
 
 ## 4. Export Formats
 
-| Format | Extension | Compatible With | Notes |
-|---|---|---|---|
-| **Anki** | .apkg | Anki desktop, AnkiDroid, AnkiMobile | Full SRS metadata preserved |
-| **CSV** | .csv | Anki import, Quizlet, Excel, custom tools | Tab-separated by default |
-| **Markdown** | .md | Any markdown renderer, Obsidian, Notion | Readable, version-controllable |
-| **Plain Text** | .txt | Any text editor | Minimal formatting |
-| **JSON** | .json | Programmatic processing | Structured data export |
+| Format         | Extension | Compatible With                           | Notes                          |
+| -------------- | --------- | ----------------------------------------- | ------------------------------ |
+| **Anki**       | .apkg     | Anki desktop, AnkiDroid, AnkiMobile       | Full SRS metadata preserved    |
+| **CSV**        | .csv      | Anki import, Quizlet, Excel, custom tools | Tab-separated by default       |
+| **Markdown**   | .md       | Any markdown renderer, Obsidian, Notion   | Readable, version-controllable |
+| **Plain Text** | .txt      | Any text editor                           | Minimal formatting             |
+| **JSON**       | .json     | Programmatic processing                   | Structured data export         |
 
 ## 5. Generation Modes
 
 ### Mode 1 — From Lecture Notes
+
 - Input: Raw notes or textbook chapters
 - Output: Comprehensive deck covering all key concepts
 - Algorithm: Extract definitions, named concepts, lists, important figures, and causal relationships
 
 ### Mode 2 — From Syllabus
+
 - Input: Syllabus topics and subtopics
 - Output: Coverage-optimized deck ensuring every syllabus point has at least one card
 - Algorithm: Map syllabus items to question templates
 
 ### Mode 3 — From PYQs
+
 - Input: Previous year question papers
 - Output: Exam-focused deck targeting historically tested concepts
 - Algorithm: Frequency-weight topics and generate cards proportional to historical importance
 
 ### Mode 4 — Exam Cram
+
 - Input: High-priority topics (from imp topics analysis)
 - Output: Condensed deck covering only high-probability questions
 - Algorithm: Selects Tier 1 and Tier 2 cards for fastest coverage
@@ -155,6 +173,7 @@ Prefix legend: `[F]` = Fact, `[C]` = Cloze, `[P]` = Problem, `[A]` = Association
 ## 7. Active Recall Triggers
 
 For each card, the system adds memory-triggering cues:
+
 - **Visual cues**: Parent diagram references "(see Fig 3.2 in textbook)"
 - **Mnemonic triggers**: Acronym hints (e.g., "PEMDAS: Parentheses, Exponents...")
 - **Association chains**: "This concept is related to X which you studied in Unit 2"
@@ -162,20 +181,22 @@ For each card, the system adds memory-triggering cues:
 
 ## 8. Common Use Cases
 
-| Scenario | Mode | Card Types | Deck Size (approx) |
-|---|---|---|---|
-| Learning a new subject | From Lecture Notes | A, B, C | 200-500 cards |
-| Exam revision (1 week) | From PYQs + Syllabus | A, B, D | 100-300 cards |
-| Last-night cramming | Exam Cram | A, B | 50-100 cards |
-| Language vocabulary | From Lecture Notes | A, B | 500-1000 cards |
-| Medical/legal memorization | From Syllabus | A, B, C, E | 500-2000 cards |
-| Formula revision | From Syllabus | D | 30-100 cards |
+| Scenario                   | Mode                 | Card Types | Deck Size (approx) |
+| -------------------------- | -------------------- | ---------- | ------------------ |
+| Learning a new subject     | From Lecture Notes   | A, B, C    | 200-500 cards      |
+| Exam revision (1 week)     | From PYQs + Syllabus | A, B, D    | 100-300 cards      |
+| Last-night cramming        | Exam Cram            | A, B       | 50-100 cards       |
+| Language vocabulary        | From Lecture Notes   | A, B       | 500-1000 cards     |
+| Medical/legal memorization | From Syllabus        | A, B, C, E | 500-2000 cards     |
+| Formula revision           | From Syllabus        | D          | 30-100 cards       |
 
 ## 9. Example
 
-**User**: Generate flashcards for Computer Networks Unit 3 (Transport Layer) for SPPU TE Comp. Include TCP, UDP, congestion control.
+**User**: Generate flashcards for Computer Networks Unit 3 (Transport Layer) for SPPU TE Comp.
+Include TCP, UDP, congestion control.
 
 **System generates**:
+
 ```
 Deck: SPPU_TE_CN_Unit3
 

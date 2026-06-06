@@ -2,7 +2,8 @@
 
 ## Syllabus Overview
 
-PPL covers the syntax, semantics, and paradigms of programming languages — including object-oriented (Java), functional (LISP), and logic programming — along with concurrency and exception handling.
+PPL covers the syntax, semantics, and paradigms of programming languages — including object-oriented
+(Java), functional (LISP), and logic programming — along with concurrency and exception handling.
 
 ## Units
 

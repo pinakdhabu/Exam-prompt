@@ -4,14 +4,14 @@
 
 ## Syllabus Overview
 
-| Unit | Title | Hours |
-|------|-------|-------|
-| I | Introduction to Information Security | 07 |
-| II | Cryptography and Encryption | 07 |
-| III | Network Security | 07 |
-| IV | System Security | 07 |
-| V | Application Security | 07 |
-| VI | Legal and Ethical Aspects | 07 |
+| Unit | Title                                | Hours |
+| ---- | ------------------------------------ | ----- |
+| I    | Introduction to Information Security | 07    |
+| II   | Cryptography and Encryption          | 07    |
+| III  | Network Security                     | 07    |
+| IV   | System Security                      | 07    |
+| V    | Application Security                 | 07    |
+| VI   | Legal and Ethical Aspects            | 07    |
 
 ## Key Topics
 

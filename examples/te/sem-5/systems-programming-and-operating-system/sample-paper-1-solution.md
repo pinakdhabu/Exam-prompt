@@ -8,20 +8,22 @@
 
 ## Q1) a) Static vs Dynamic Linking [9]
 
-**Static Linking:** All library code referenced by a program is copied into the executable at link time.
+**Static Linking:** All library code referenced by a program is copied into the executable at link
+time.
 
-**Dynamic Linking:** Library code is not copied — it is loaded at runtime from shared libraries (.so/.dll).
+**Dynamic Linking:** Library code is not copied — it is loaded at runtime from shared libraries
+(.so/.dll).
 
-| Parameter | Static Linking | Dynamic Linking |
-|-----------|---------------|-----------------|
-| Binding time | At compile/link time | At runtime |
-| Executable size | Larger (contains all libraries) | Smaller (references libraries) |
-| Memory usage | Each process has its own copy | Shared among processes |
-| Performance | Faster at startup (no runtime loading) | Slower startup (libraries must be loaded) |
-| Updates | Must re-link to update libraries | Replace library file — all programs updated |
-| Dependency | No external dependency at runtime | Library must exist on target system |
-| Portability | Self-contained executable | May fail if library version mismatches |
-| Examples | .exe (Windows), static .a (Linux) | .dll (Windows), .so (Linux) |
+| Parameter       | Static Linking                         | Dynamic Linking                             |
+| --------------- | -------------------------------------- | ------------------------------------------- |
+| Binding time    | At compile/link time                   | At runtime                                  |
+| Executable size | Larger (contains all libraries)        | Smaller (references libraries)              |
+| Memory usage    | Each process has its own copy          | Shared among processes                      |
+| Performance     | Faster at startup (no runtime loading) | Slower startup (libraries must be loaded)   |
+| Updates         | Must re-link to update libraries       | Replace library file — all programs updated |
+| Dependency      | No external dependency at runtime      | Library must exist on target system         |
+| Portability     | Self-contained executable              | May fail if library version mismatches      |
+| Examples        | .exe (Windows), static .a (Linux)      | .dll (Windows), .so (Linux)                 |
 
 ---
 
@@ -30,6 +32,7 @@
 **Loader types:** Compile-and-Go, Absolute Loader, Relocating Loader, Direct Linking Loader
 
 **Direct Linking Loader** is the most sophisticated loader that handles:
+
 - **Relocation** — adjusting addresses when loading into memory
 - **Linking** — resolving external references between modules
 - **Loading** — bringing program into memory for execution
@@ -51,9 +54,11 @@ graph TD
 ```
 
 **Example:**
+
 - Module A defines `START` at address 100, calls `SUBR` (defined in Module B)
 - Module B defines `SUBR` at relative address 0, uses data from Module A's `BUFFER`
-- Loader resolves: In Module A's code, the call to `SUBR` gets Module B's load address + entry offset
+- Loader resolves: In Module A's code, the call to `SUBR` gets Module B's load address + entry
+  offset
 - In Module B's code, the reference to `BUFFER` gets Module A's load address + buffer offset
 
 ```
@@ -66,7 +71,8 @@ relocation + linking + loading in a single pass.
 
 ## Q2) a) Absolute Loader [9]
 
-**Absolute Loader** loads a program at a fixed, predetermined memory address. The assembler produces the object code with absolute addresses already bound.
+**Absolute Loader** loads a program at a fixed, predetermined memory address. The assembler produces
+the object code with absolute addresses already bound.
 
 **Flowchart:**
 
@@ -105,7 +111,8 @@ relocation + linking + loading in a single pass.
               └─────────────────────┘
 ```
 
-**Example:** If assembler generates code for addresses 1000-1500, the absolute loader simply copies bytes from the object file to memory location 1000 onwards. No relocation is performed.
+**Example:** If assembler generates code for addresses 1000-1500, the absolute loader simply copies
+bytes from the object file to memory location 1000 onwards. No relocation is performed.
 
 **Limitation:** Program must be loaded at the exact address it was assembled for.
 
@@ -113,9 +120,11 @@ relocation + linking + loading in a single pass.
 
 ## Q2) b) Overlay Structure [9]
 
-**Overlay** is a technique that allows a program to be larger than available physical memory by keeping only the needed parts in memory at any time.
+**Overlay** is a technique that allows a program to be larger than available physical memory by
+keeping only the needed parts in memory at any time.
 
 **Structure:** A program is divided into:
+
 - **Root** — permanently resident in memory
 - **Overlay segments** — loaded on demand
 
@@ -142,6 +151,7 @@ Memory Layout:
 ```
 
 **If total size = 50 + 100 + 120 + 100 = 370 KB but physical memory = 200 KB:**
+
 - With overlay: only 50 + 120 = 170 KB at peak → fits!
 
 ```
@@ -187,6 +197,7 @@ stateDiagram-v2
 ```
 
 **Transitions explained:**
+
 - **Swap out**: Moving process from main memory to backing store
 - **Swap in**: Bringing process back from backing store to main memory
 - **Suspend**: When memory pressure requires removing processes
@@ -198,72 +209,63 @@ stateDiagram-v2
 **Given:**
 
 | Process | Arrival | Burst |
-|---------|---------|-------|
-| P1 | 0 | 8 |
-| P2 | 1 | 4 |
-| P3 | 2 | 9 |
-| P4 | 3 | 5 |
+| ------- | ------- | ----- |
+| P1      | 0       | 8     |
+| P2      | 1       | 4     |
+| P3      | 2       | 9     |
+| P4      | 3       | 5     |
 
 **i) FCFS:**
 
 Gantt Chart: `P1(0-8) | P2(8-12) | P3(12-21) | P4(21-26)`
 
-| Process | AT | BT | CT | TAT | WT |
-|---------|----|----|----|-----|----|
-| P1 | 0 | 8 | 8 | 8 | 0 |
-| P2 | 1 | 4 | 12 | 11 | 7 |
-| P3 | 2 | 9 | 21 | 19 | 10 |
-| P4 | 3 | 5 | 26 | 23 | 18 |
+| Process | AT  | BT  | CT  | TAT | WT  |
+| ------- | --- | --- | --- | --- | --- |
+| P1      | 0   | 8   | 8   | 8   | 0   |
+| P2      | 1   | 4   | 12  | 11  | 7   |
+| P3      | 2   | 9   | 21  | 19  | 10  |
+| P4      | 3   | 5   | 26  | 23  | 18  |
 
-**Avg TAT = (8+11+19+23)/4 = 15.25**
-**Avg WT = (0+7+10+18)/4 = 8.75**
+**Avg TAT = (8+11+19+23)/4 = 15.25** **Avg WT = (0+7+10+18)/4 = 8.75**
 
 **ii) SJF (Preemptive):**
 
-| Time | Event |
-|------|-------|
-| 0 | P1 arrives, executes |
-| 1 | P2 arrives, P1 remaining=7, P2=4 → P2 preempts |
-| 2 | P3 arrives, P2 remaining=3, P3=9 → P2 continues |
-| 3 | P4 arrives, P2 remaining=2, P3=9, P4=5 → P2 continues |
-| 5 | P2 completes. Ready: P1(7), P3(9), P4(5) → P4 runs |
-| 10 | P4 completes. Ready: P1(7), P3(9) → P1 runs |
-| 17 | P1 completes. P3 runs |
-| 26 | P3 completes |
+| Time | Event                                                 |
+| ---- | ----------------------------------------------------- |
+| 0    | P1 arrives, executes                                  |
+| 1    | P2 arrives, P1 remaining=7, P2=4 → P2 preempts        |
+| 2    | P3 arrives, P2 remaining=3, P3=9 → P2 continues       |
+| 3    | P4 arrives, P2 remaining=2, P3=9, P4=5 → P2 continues |
+| 5    | P2 completes. Ready: P1(7), P3(9), P4(5) → P4 runs    |
+| 10   | P4 completes. Ready: P1(7), P3(9) → P1 runs           |
+| 17   | P1 completes. P3 runs                                 |
+| 26   | P3 completes                                          |
 
 Gantt: `P1(0-1) | P2(1-5) | P4(5-10) | P1(10-17) | P3(17-26)`
 
-| Process | CT | TAT | WT |
-|---------|----|-----|----|
-| P1 | 17 | 17 | 9 |
-| P2 | 5 | 4 | 0 |
-| P3 | 26 | 24 | 15 |
-| P4 | 10 | 7 | 2 |
+| Process | CT  | TAT | WT  |
+| ------- | --- | --- | --- |
+| P1      | 17  | 17  | 9   |
+| P2      | 5   | 4   | 0   |
+| P3      | 26  | 24  | 15  |
+| P4      | 10  | 7   | 2   |
 
-**Avg TAT = (17+4+24+7)/4 = 13.0**
-**Avg WT = (9+0+15+2)/4 = 6.5**
+**Avg TAT = (17+4+24+7)/4 = 13.0** **Avg WT = (9+0+15+2)/4 = 6.5**
 
 **iii) RR (Time Quantum = 2):**
 
-| Time | Queue | Execution |
-|------|-------|-----------|
-| 0 | P1 | P1(0-2) |
-| 2 | P2,P1 | P2(2-4) |
-| 3 | P1,P3 | P3 arrives at 2 → P1(4-5)... |
+| Time | Queue | Execution                    |
+| ---- | ----- | ---------------------------- |
+| 0    | P1    | P1(0-2)                      |
+| 2    | P2,P1 | P2(2-4)                      |
+| 3    | P1,P3 | P3 arrives at 2 → P1(4-5)... |
 
 Let me do this systematically:
 
-Ready queue: [P1(8)]
-0: P1 runs for 2 → remaining=6
-1: P2 arrives
-2: P1→ready[P2(4), P1(6)], P2 runs
-3: P3 arrives
-4: P2→ready[P1(6), P3(9)], remaining=2, P1 runs
-5: no new
-6: P1→ready[P3(9)], remaining=4, P3 runs
-7: no new
-8: P3→ready[P4(5)... wait P3 remaining=7, P4 arrived at 3]
-Actually let me rebuild:
+Ready queue: [P1(8)] 0: P1 runs for 2 → remaining=6 1: P2 arrives 2: P1→ready[P2(4), P1(6)], P2 runs
+3: P3 arrives 4: P2→ready[P1(6), P3(9)], remaining=2, P1 runs 5: no new 6: P1→ready[P3(9)],
+remaining=4, P3 runs 7: no new 8: P3→ready[P4(5)... wait P3 remaining=7, P4 arrived at 3] Actually
+let me rebuild:
 
 ```
 Q = [P1(8)]
@@ -280,14 +282,11 @@ t=16: Run P3 → t=21. P3 done. Q=[]
 
 Wait, P4 arrived at time 3 and was never added! Let me redo:
 
-Ready queue:
-t=0: [P1(8)]
-t=1: [P1(8), P2(4)]
-t=2: [P1(6), P3(9), P2(4)]  ← P1 preempted, P3 added
-t=3: [P1(6), P3(9), P2(4), P4(5)]  ← P4 added
-t=3: [P1(6), P3(9), P2(4), P4(5)]
+Ready queue: t=0: [P1(8)] t=1: [P1(8), P2(4)] t=2: [P1(6), P3(9), P2(4)] ← P1 preempted, P3 added
+t=3: [P1(6), P3(9), P2(4), P4(5)] ← P4 added t=3: [P1(6), P3(9), P2(4), P4(5)]
 
-Actually, RR scheduling: at each timer interrupt (every 2 units), the running process is preempted and goes to the back of the queue. Let me retrace:
+Actually, RR scheduling: at each timer interrupt (every 2 units), the running process is preempted
+and goes to the back of the queue. Let me retrace:
 
 ```
 Ready Queue: [P1]
@@ -323,15 +322,14 @@ t=26: P3 done
 
 Completion times: P1=22, P2=12, P3=26, P4=23
 
-| Process | CT | TAT | WT |
-|---------|----|-----|----|
-| P1 | 22 | 22 | 14 |
-| P2 | 12 | 11 | 7 |
-| P3 | 26 | 24 | 15 |
-| P4 | 23 | 20 | 15 |
+| Process | CT  | TAT | WT  |
+| ------- | --- | --- | --- |
+| P1      | 22  | 22  | 14  |
+| P2      | 12  | 11  | 7   |
+| P3      | 26  | 24  | 15  |
+| P4      | 23  | 20  | 15  |
 
-**Avg TAT = (22+11+24+20)/4 = 19.25**
-**Avg WT = (14+7+15+15)/4 = 12.75**
+**Avg TAT = (22+11+24+20)/4 = 19.25** **Avg WT = (14+7+15+15)/4 = 12.75**
 
 ```
 [ANSWER BOX]
@@ -344,9 +342,11 @@ RR:    Avg TAT=19.25, Avg WT=12.75
 
 ## Q4) a) Thread and Thread Lifecycle [9]
 
-**Thread** is the smallest unit of CPU utilization — a lightweight process that shares resources (code, data, files) with other threads of the same process.
+**Thread** is the smallest unit of CPU utilization — a lightweight process that shares resources
+(code, data, files) with other threads of the same process.
 
 **Thread States (JVM model):**
+
 - **New**: Thread object created but not started
 - **Runnable**: Ready to run (waiting for CPU)
 - **Running**: Currently executing
@@ -355,22 +355,24 @@ RR:    Avg TAT=19.25, Avg WT=12.75
 
 **User-level vs Kernel-level Threads:**
 
-| Feature | User-Level Thread | Kernel-Level Thread |
-|---------|------------------|---------------------|
-| Managed by | User-space library (no kernel involvement) | Operating system kernel |
-| Context switch | Very fast (no mode switch) | Slower (mode switch to kernel) |
-| Blocking | If one blocks, entire process blocks | Only the specific thread blocks |
-| Multiprocessing | Cannot run on multiple cores in parallel | Can run on multiple cores |
-| Implementation | POSIX Pthreads (user mode) | Windows threads, Linux NPTL |
-| OS support | No special OS support required | Requires OS thread management |
+| Feature         | User-Level Thread                          | Kernel-Level Thread             |
+| --------------- | ------------------------------------------ | ------------------------------- |
+| Managed by      | User-space library (no kernel involvement) | Operating system kernel         |
+| Context switch  | Very fast (no mode switch)                 | Slower (mode switch to kernel)  |
+| Blocking        | If one blocks, entire process blocks       | Only the specific thread blocks |
+| Multiprocessing | Cannot run on multiple cores in parallel   | Can run on multiple cores       |
+| Implementation  | POSIX Pthreads (user mode)                 | Windows threads, Linux NPTL     |
+| OS support      | No special OS support required             | Requires OS thread management   |
 
 ---
 
 ## Q4) b) Process Control Block [8]
 
-**PCB** is a data structure maintained by the OS for each process, containing all information needed to manage that process.
+**PCB** is a data structure maintained by the OS for each process, containing all information needed
+to manage that process.
 
 **Major fields in PCB:**
+
 1. **Process ID (PID)** — unique integer identifier
 2. **Process State** — new, ready, running, blocked, terminated
 3. **Program Counter** — address of next instruction to execute
@@ -387,7 +389,7 @@ sequenceDiagram
     participant P1 as Process P1
     participant OS as Operating System
     participant P2 as Process P2
-    
+
     P1->>OS: Timer interrupt / System call
     OS->>OS: Save P1's state to PCB1
     OS->>OS: Update PCB1 (state → ready)
@@ -401,18 +403,20 @@ sequenceDiagram
 
 ## Q5) a) Semaphore and Producer-Consumer [9]
 
-**Semaphore** is an integer variable accessed only through two atomic operations: **wait(S)** (decrement) and **signal(S)** (increment), used for process synchronization.
+**Semaphore** is an integer variable accessed only through two atomic operations: **wait(S)**
+(decrement) and **signal(S)** (increment), used for process synchronization.
 
-| Type | Value Range | Use |
-|------|-------------|-----|
-| **Binary Semaphore (Mutex)** | 0 or 1 | Mutual exclusion |
-| **Counting Semaphore** | n ≥ 0 | Managing multiple resources |
+| Type                         | Value Range | Use                         |
+| ---------------------------- | ----------- | --------------------------- |
+| **Binary Semaphore (Mutex)** | 0 or 1      | Mutual exclusion            |
+| **Counting Semaphore**       | n ≥ 0       | Managing multiple resources |
 
 **Producer-Consumer Problem:**
 
 Shared: buffer[N], semaphore empty=N, full=0, mutex=1
 
 **Producer:**
+
 ```c
 while (true) {
     // produce item
@@ -425,6 +429,7 @@ while (true) {
 ```
 
 **Consumer:**
+
 ```c
 while (true) {
     wait(full);        // wait for filled slot
@@ -436,15 +441,18 @@ while (true) {
 }
 ```
 
-**Why it works:** `empty` ensures producer doesn't overflow the buffer. `full` ensures consumer doesn't read from empty buffer. `mutex` ensures mutual exclusion for buffer access.
+**Why it works:** `empty` ensures producer doesn't overflow the buffer. `full` ensures consumer
+doesn't read from empty buffer. `mutex` ensures mutual exclusion for buffer access.
 
 ---
 
 ## Q5) b) Dining Philosopher Problem [9]
 
-**Problem:** 5 philosophers sit at a round table with 5 forks. Each philosopher alternately thinks and eats. To eat, a philosopher needs both left and right forks.
+**Problem:** 5 philosophers sit at a round table with 5 forks. Each philosopher alternately thinks
+and eats. To eat, a philosopher needs both left and right forks.
 
-**Deadlock scenario:** All 5 philosophers pick up their left fork simultaneously → each waits for the right fork → **deadlock**.
+**Deadlock scenario:** All 5 philosophers pick up their left fork simultaneously → each waits for
+the right fork → **deadlock**.
 
 **Solution using semaphores:**
 
@@ -454,7 +462,7 @@ semaphore fork[5];  // initialized to 1
 void philosopher(int i) {
     while (true) {
         think();
-        
+
         // Deadlock-free solution:
         if (i % 2 == 0) {          // Even-numbered philosopher
             wait(fork[i]);           // pick left first
@@ -463,33 +471,40 @@ void philosopher(int i) {
             wait(fork[(i+1)%5]);    // pick right first
             wait(fork[i]);           // then left
         }
-        
+
         eat();
-        
+
         signal(fork[i]);            // release left
         signal(fork[(i+1)%5]);     // release right
     }
 }
 ```
 
-**Why this avoids deadlock:** By having different pickup orders for even and odd philosophers, at least one philosopher can always get both forks → **circular wait** condition is broken.
+**Why this avoids deadlock:** By having different pickup orders for even and odd philosophers, at
+least one philosopher can always get both forks → **circular wait** condition is broken.
 
 ---
 
 ## Q6) a) Deadlock Conditions and Detection [9]
 
-**Deadlock** is a state where every process in a set is waiting for an event that can only be caused by another process in the set.
+**Deadlock** is a state where every process in a set is waiting for an event that can only be caused
+by another process in the set.
 
 **Four Necessary Conditions (Coffman Conditions):**
+
 1. **Mutual Exclusion**: Only one process can use a resource at a time
-2. **Hold and Wait**: A process holding at least one resource is waiting for additional resources held by others
+2. **Hold and Wait**: A process holding at least one resource is waiting for additional resources
+   held by others
 3. **No Preemption**: Resources cannot be forcibly taken — they must be released voluntarily
-4. **Circular Wait**: There exists a circular chain of processes, each waiting for a resource held by the next
+4. **Circular Wait**: There exists a circular chain of processes, each waiting for a resource held
+   by the next
 
 **Resource Allocation Graph (RAG):**
+
 - **Vertices**: Processes (circles) and Resources (squares with dots)
 - **Edges**: Request edge (P → R) and Assignment edge (R → P)
-- **Cycle detection**: A cycle in RAG → possible deadlock (if each resource has single instance, cycle = deadlock)
+- **Cycle detection**: A cycle in RAG → possible deadlock (if each resource has single instance,
+  cycle = deadlock)
 
 ```mermaid
 graph LR
@@ -504,28 +519,30 @@ graph LR
 
 ## Q6) b) Banker's Algorithm [9]
 
-**Banker's Algorithm** is a deadlock avoidance algorithm that checks if a state is **safe** before granting resource requests.
+**Banker's Algorithm** is a deadlock avoidance algorithm that checks if a state is **safe** before
+granting resource requests.
 
-**Example:**
-5 processes (P0-P4), 3 resource types (A=10, B=5, C=7)
+**Example:** 5 processes (P0-P4), 3 resource types (A=10, B=5, C=7)
 
-| Process | Allocation | Max | Need (Max-Alloc) |
-|---------|-----------|-----|------------------|
-| | A B C | A B C | A B C |
-| P0 | 0 1 0 | 7 5 3 | 7 4 3 |
-| P1 | 2 0 0 | 3 2 2 | 1 2 2 |
-| P2 | 3 0 2 | 9 0 2 | 6 0 0 |
-| P3 | 2 1 1 | 2 2 2 | 0 1 1 |
-| P4 | 0 0 2 | 4 3 3 | 4 3 1 |
+| Process | Allocation | Max   | Need (Max-Alloc) |
+| ------- | ---------- | ----- | ---------------- |
+|         | A B C      | A B C | A B C            |
+| P0      | 0 1 0      | 7 5 3 | 7 4 3            |
+| P1      | 2 0 0      | 3 2 2 | 1 2 2            |
+| P2      | 3 0 2      | 9 0 2 | 6 0 0            |
+| P3      | 2 1 1      | 2 2 2 | 0 1 1            |
+| P4      | 0 0 2      | 4 3 3 | 4 3 1            |
 
 **Available:** A=3, B=3, C=2
 
 **Safety Check:**
+
 1. Can P1 run? Need(1,2,2) ≤ Available(3,3,2) → Yes. After P1: Available = (3+2, 3+0, 2+0) = (5,3,2)
 2. Can P3 run? Need(0,1,1) ≤ Available(5,3,2) → Yes. After P3: Available = (5+2, 3+1, 2+1) = (7,4,3)
 3. Can P4 run? Need(4,3,1) ≤ Available(7,4,3) → Yes. After P4: Available = (7+0, 4+0, 3+2) = (7,4,5)
 4. Can P0 run? Need(7,4,3) ≤ Available(7,4,5) → Yes. After P0: Available = (7+0, 4+1, 5+0) = (7,5,5)
-5. Can P2 run? Need(6,0,0) ≤ Available(7,5,5) → Yes. After P2: Available = (7+3, 5+0, 5+2) = (10,5,7)
+5. Can P2 run? Need(6,0,0) ≤ Available(7,5,5) → Yes. After P2: Available = (7+3, 5+0, 5+2) =
+   (10,5,7)
 
 **Safe sequence:** P1 → P3 → P4 → P0 → P2
 
@@ -539,7 +556,8 @@ Safe sequence: <P1, P3, P4, P0, P2>
 
 ## Q7) a) Paging [9]
 
-**Paging** is a memory management scheme that eliminates external fragmentation by dividing logical memory into fixed-size **pages** and physical memory into **frames** of the same size.
+**Paging** is a memory management scheme that eliminates external fragmentation by dividing logical
+memory into fixed-size **pages** and physical memory into **frames** of the same size.
 
 **Given:** 32-bit logical address, page size = 4 KB = 2¹²
 
@@ -548,6 +566,7 @@ Safe sequence: <P1, P3, P4, P0, P2>
 - **Number of pages**: 2²⁰ = **1,048,576 entries** in page table
 
 **Address Translation:**
+
 ```
 Logical Address (32-bit)
 ┌──────────────────┬──────────────┐
@@ -566,45 +585,45 @@ Logical Address (32-bit)
          Physical Address (32-bit)
 ```
 
-**TLB (Translation Lookaside Buffer):** A hardware cache that stores recent page→frame mappings, speeding up address translation (avoids memory access for page table lookup).
+**TLB (Translation Lookaside Buffer):** A hardware cache that stores recent page→frame mappings,
+speeding up address translation (avoids memory access for page table lookup).
 
 ---
 
 ## Q7) b) Page Replacement Algorithms [9]
 
-**Reference String:** 7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1
-**Frames:** 3
+**Reference String:** 7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1 **Frames:** 3
 
 **i) FIFO:**
 
-| Ref | 7 | 0 | 1 | 2 | 0 | 3 | 0 | 4 | 2 | 3 | 0 | 3 | 2 | 1 | 2 | 0 | 1 | 7 | 0 | 1 |
-|-----|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| F1 | 7 | 7 | 7 | 2 | 2 | 2 | 2 | 4 | 4 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 7 | 7 |
-| F2 |   | 0 | 0 | 0 | 0 | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 1 | 0 | 0 |
-| F3 |   |   | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 3 | 3 | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 2 | 1 |
-| PF | ✓ | ✓ | ✓ | ✓ |   | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |   |   | ✓ | ✓ |   |   | ✓ | ✓ | ✓ |
+| Ref | 7   | 0   | 1   | 2   | 0   | 3   | 0   | 4   | 2   | 3   | 0   | 3   | 2   | 1   | 2   | 0   | 1   | 7   | 0   | 1   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| F1  | 7   | 7   | 7   | 2   | 2   | 2   | 2   | 4   | 4   | 4   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 7   | 7   | 7   |
+| F2  |     | 0   | 0   | 0   | 0   | 3   | 3   | 3   | 2   | 2   | 2   | 2   | 2   | 1   | 1   | 1   | 1   | 1   | 0   | 0   |
+| F3  |     |     | 1   | 1   | 1   | 1   | 0   | 0   | 0   | 3   | 3   | 3   | 3   | 3   | 2   | 2   | 2   | 2   | 2   | 1   |
+| PF  | ✓   | ✓   | ✓   | ✓   |     | ✓   | ✓   | ✓   | ✓   | ✓   | ✓   |     |     | ✓   | ✓   |     |     | ✓   | ✓   | ✓   |
 
 Page faults: **15**
 
 **ii) LRU:**
 
-| Ref | 7 | 0 | 1 | 2 | 0 | 3 | 0 | 4 | 2 | 3 | 0 | 3 | 2 | 1 | 2 | 0 | 1 | 7 | 0 | 1 |
-|-----|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| F1 | 7 | 7 | 7 | 2 | 2 | 2 | 2 | 4 | 4 | 4 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 7 | 7 | 7 |
-| F2 |   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 0 |
-| F3 |   |   | 1 | 1 | 1 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 0 | 0 | 1 |
-| PF | ✓ | ✓ | ✓ | ✓ |   | ✓ |   | ✓ | ✓ |   | ✓ |   |   | ✓ |   | ✓ |   | ✓ | ✓ | ✓ |
+| Ref | 7   | 0   | 1   | 2   | 0   | 3   | 0   | 4   | 2   | 3   | 0   | 3   | 2   | 1   | 2   | 0   | 1   | 7   | 0   | 1   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| F1  | 7   | 7   | 7   | 2   | 2   | 2   | 2   | 4   | 4   | 4   | 0   | 0   | 0   | 1   | 1   | 1   | 1   | 7   | 7   | 7   |
+| F2  |     | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 0   | 0   |
+| F3  |     |     | 1   | 1   | 1   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 0   | 0   | 0   | 0   | 1   |
+| PF  | ✓   | ✓   | ✓   | ✓   |     | ✓   |     | ✓   | ✓   |     | ✓   |     |     | ✓   |     | ✓   |     | ✓   | ✓   | ✓   |
 
 Page faults: **12**
 
 **iii) Optimal:**
 
-| Ref | 7 | 0 | 1 | 2 | 0 | 3 | 0 | 4 | 2 | 3 | 0 | 3 | 2 | 1 | 2 | 0 | 1 | 7 | 0 | 1 |
-|-----|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| F1 | 7 | 7 | 7 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 7 | 7 | 7 |
-| F2 |   | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 4 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| F3 |   |   | 1 | 1 | 1 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| PF | ✓ | ✓ | ✓ | ✓ |   | ✓ |   | ✓ |   |   | ✓ |   |   | ✓ |   |   |   | ✓ |   |   |
+| Ref | 7   | 0   | 1   | 2   | 0   | 3   | 0   | 4   | 2   | 3   | 0   | 3   | 2   | 1   | 2   | 0   | 1   | 7   | 0   | 1   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| F1  | 7   | 7   | 7   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 7   | 7   | 7   |
+| F2  |     | 0   | 0   | 0   | 0   | 0   | 0   | 4   | 4   | 4   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| F3  |     |     | 1   | 1   | 1   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
+| PF  | ✓   | ✓   | ✓   | ✓   |     | ✓   |     | ✓   |     |     | ✓   |     |     | ✓   |     |     |     | ✓   |     |     |
 
 Page faults: **9**
 
@@ -619,18 +638,20 @@ Optimal: 9 page faults  ← Best
 
 ## Q8) a) Segmentation [9]
 
-**Segmentation** divides a program's logical address space into variable-sized segments (code, data, stack, heap) based on the programmer's view of memory.
+**Segmentation** divides a program's logical address space into variable-sized segments (code, data,
+stack, heap) based on the programmer's view of memory.
 
-| Feature | Paging | Segmentation |
-|---------|--------|-------------|
-| Size | Fixed-size pages | Variable-size segments |
-| User view | Transparent to programmer | Visible to programmer |
-| Fragmentation | Internal fragmentation | External fragmentation |
-| Address | (page#, offset) | (segment#, offset) |
-| Table | Page table (per process) | Segment table (per process) |
-| Size determination | Fixed by hardware | Defined by program's logical divisions |
+| Feature            | Paging                    | Segmentation                           |
+| ------------------ | ------------------------- | -------------------------------------- |
+| Size               | Fixed-size pages          | Variable-size segments                 |
+| User view          | Transparent to programmer | Visible to programmer                  |
+| Fragmentation      | Internal fragmentation    | External fragmentation                 |
+| Address            | (page#, offset)           | (segment#, offset)                     |
+| Table              | Page table (per process)  | Segment table (per process)            |
+| Size determination | Fixed by hardware         | Defined by program's logical divisions |
 
 **Combined Paging and Segmentation:**
+
 - Program divided into segments
 - Each segment divided into pages
 - Address: (segment#, page#, offset)
@@ -647,11 +668,13 @@ Logical Address: [Seg# | Page# | Offset]
 
 ## Q8) b) Virtual Memory [9]
 
-**Virtual Memory** is a technique that allows execution of processes that may not be completely in memory by using disk as an extension of RAM.
+**Virtual Memory** is a technique that allows execution of processes that may not be completely in
+memory by using disk as an extension of RAM.
 
 **Demand Paging:** Pages are loaded only when needed (on demand), not in advance.
 
 **Page Fault Handling:**
+
 ```
 1. MMU detects invalid page reference → trap to OS
 2. OS checks if page is valid (in process address space)
@@ -663,9 +686,11 @@ Logical Address: [Seg# | Page# | Offset]
 8. Restart the instruction that caused the fault
 ```
 
-**Thrashing:** Excessive paging activity where the system spends more time swapping pages than executing instructions.
+**Thrashing:** Excessive paging activity where the system spends more time swapping pages than
+executing instructions.
 
 **Working Set Model (Denning, 1968):**
+
 - **Working set** = set of pages referenced by a process in the last Δ time units
 - If the working set size > available frames → process will thrash
 - **Solution:** Suspend processes until their working set fits in memory
@@ -679,9 +704,11 @@ has enough frames to hold its current locality of reference.
 ---
 
 ═══════════════════════════════════════════════════════
+
 ## EXAMINER COMMENTARY
 
 **Why this scores full marks:**
+
 - Scheduling computations include Gantt charts and per-process tables
 - Page replacement shown with full trace tables
 - Numerical answers boxed with clear formatting
@@ -690,6 +717,7 @@ has enough frames to hold its current locality of reference.
 - Every comparison uses structured tables
 
 **Common Deductions:**
+
 - Forgetting that SJF is preemptive (SRTF) unless stated as non-preemptive
 - Not distinguishing between user and kernel thread blocking behavior
 - Omitting the mutex semaphore in producer-consumer solution
@@ -698,6 +726,7 @@ has enough frames to hold its current locality of reference.
 - Forgetting to handle the modulus in Dining Philosopher fork indexing
 
 **Time Budget:**
+
 - Q1 (18 min): Static/Dynamic 9 min + Loader design 9 min
 - Q2 (18 min): Absolute loader 9 min + Overlay 9 min
 - Q3 (18 min): Process states 8 min + Scheduling 9 min

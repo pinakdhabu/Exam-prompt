@@ -2,7 +2,8 @@
 
 ## Syllabus Overview
 
-FDS covers the design, analysis, and implementation of fundamental data structures including arrays, linked lists, stacks, queues, along with searching and sorting algorithms.
+FDS covers the design, analysis, and implementation of fundamental data structures including arrays,
+linked lists, stacks, queues, along with searching and sorting algorithms.
 
 ## Units
 

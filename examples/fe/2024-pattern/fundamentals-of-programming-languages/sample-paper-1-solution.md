@@ -4,13 +4,15 @@
 
 ## Q1) Multiple Choice Questions [10]
 
-a) **Option (ii) `var_2`** — C identifiers can contain letters, digits, and underscores; must start with letter or underscore.
+a) **Option (ii) `var_2`** — C identifiers can contain letters, digits, and underscores; must start
+with letter or underscore.
 
-b) **Option (iii) depends on compiler** — `int` size is 2 bytes on 16-bit and 4 bytes on 32/64-bit systems.
+b) **Option (iii) depends on compiler** — `int` size is 2 bytes on 16-bit and 4 bytes on 32/64-bit
+systems.
 
 c) **Option (ii) `&`** — Address-of operator.
 
-d) **Option (i) 11001** — \(25_{10} = 16+8+1 = 11001_2\)
+d) **Option (i) 11001** — \(25\_{10} = 16+8+1 = 11001_2\)
 
 e) **Option (ii) Diamond** — Decision/condition symbol in flowchart.
 
@@ -25,6 +27,7 @@ f) **Option (ii) 5** — `strlen` counts characters before the first `\0` (null 
 **a) Factorial algorithm and flowchart:**
 
 **Algorithm:**
+
 ```
 Step 1: Start
 Step 2: Read n
@@ -49,6 +52,7 @@ flowchart TD
 ```
 
 **b) C tokens:**
+
 1. **Keywords:** Reserved words with predefined meaning (e.g., `int`, `if`, `return`, `while`)
 2. **Identifiers:** User-defined names for variables, functions (e.g., `myVar`, `sum`, `total`)
 3. **Constants:** Fixed values that don't change (e.g., `42`, `3.14`, `'A'`, `"Hello"`)
@@ -61,6 +65,7 @@ flowchart TD
 ### Q6) [12]
 
 **a) Leap year program:**
+
 ```c
 #include <stdio.h>
 int main() {
@@ -76,6 +81,7 @@ int main() {
 ```
 
 **b) `switch` statement:** Used for multi-way branching based on integer/character expression.
+
 ```c
 switch(choice) {
     case 1: printf("Add"); break;
@@ -83,6 +89,7 @@ switch(choice) {
     default: printf("Invalid");
 }
 ```
+
 **Flow:** Expression → matched `case` → execute statements → `break` exits switch.
 
 ---
@@ -90,6 +97,7 @@ switch(choice) {
 ### Q7) [12]
 
 **a) Fibonacci series:**
+
 ```c
 #include <stdio.h>
 int main() {
@@ -109,12 +117,12 @@ int main() {
 
 **b) `while` vs `do-while`:**
 
-| Basis | while | do-while |
-|---|---|---|
-| **Condition check** | Entry controlled (before loop) | Exit controlled (after loop) |
-| **Minimum executions** | 0 (may not execute) | 1 (always executes once) |
-| **Syntax** | `while(cond) { }` | `do { } while(cond);` |
-| **Use case** | When iterations unknown | When at least one iteration needed |
+| Basis                  | while                          | do-while                           |
+| ---------------------- | ------------------------------ | ---------------------------------- |
+| **Condition check**    | Entry controlled (before loop) | Exit controlled (after loop)       |
+| **Minimum executions** | 0 (may not execute)            | 1 (always executes once)           |
+| **Syntax**             | `while(cond) { }`              | `do { } while(cond);`              |
+| **Use case**           | When iterations unknown        | When at least one iteration needed |
 
 ---
 
@@ -130,6 +138,7 @@ int main() {
 4. **With arguments, with return:** `int add(int a, int b) { return a+b; }`
 
 **b) Factorial using recursion:**
+
 ```c
 #include <stdio.h>
 int fact(int n) {
@@ -152,6 +161,7 @@ int main() {
 ### Q11) [12]
 
 **a) Structures in C:** User-defined data type grouping different types under one name.
+
 ```c
 struct Employee {
     int id;
@@ -161,6 +171,7 @@ struct Employee {
 ```
 
 **b) Student structure program:**
+
 ```c
 #include <stdio.h>
 struct Student {
@@ -181,17 +192,17 @@ int main() {
 }
 ```
 
-═══════════════════════════════════════════════════════
-EXAMINER COMMENTARY
-Why this scores full marks: Runnable C code with proper syntax. Algorithm + flowchart for factorial. Tables for comparisons (loops). Structure and recursion explained with working code. Key terms bolded.
+═══════════════════════════════════════════════════════ EXAMINER COMMENTARY Why this scores full
+marks: Runnable C code with proper syntax. Algorithm + flowchart for factorial. Tables for
+comparisons (loops). Structure and recursion explained with working code. Key terms bolded.
 
 Common Deductions:
+
 - Missing `#include` and `main()` in code snippets
 - Indentation errors in code
 - Confusing `while` and `do-while` execution counts
 - Not handling base case in recursion
 - Missing `break` in `switch` cases
 
-Time Budget:
-Q1: 10 min | Q2/Q3: 20 min | Q4/Q5: 20 min | Q6/Q7: 20 min | Q8/Q9: 20 min | Q10/Q11: 20 min
-═══════════════════════════════════════════════════════
+Time Budget: Q1: 10 min | Q2/Q3: 20 min | Q4/Q5: 20 min | Q6/Q7: 20 min | Q8/Q9: 20 min | Q10/Q11:
+20 min ═══════════════════════════════════════════════════════

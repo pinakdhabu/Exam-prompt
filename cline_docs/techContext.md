@@ -1,6 +1,7 @@
 # Technical Context — Exam-Prompt
 
 ## Architecture Overview
+
 ```
 exam-prompt/
 ├── AGENTS.md                    # XML skill registry (agent auto-discovery)
@@ -40,6 +41,7 @@ exam-prompt/
 ```
 
 ## Tech Stack
+
 - **Content**: Markdown (all skills, docs, examples)
 - **CI/CD**: GitHub Actions (8 workflows)
 - **Website**: Vanilla HTML/CSS/JS (GitHub Pages)
@@ -47,6 +49,7 @@ exam-prompt/
 - **Dev environment**: Dev Containers (Codespaces)
 
 ## Key Design Decisions
+
 1. **Skills as Markdown** — No code, no compilation. Any agent reads SKILL.md directly.
 2. **AGENTS.md registry** — XML format for universal agent auto-discovery
 3. **No dependencies** — Skills are pure instructions. No npm install needed for core functionality.
@@ -54,12 +57,13 @@ exam-prompt/
 5. **Self-healing** — Nightly CI detects orphans, missing solutions, stale deps.
 
 ## Agent Configurations
-| Agent | Config File | Purpose |
-|---|---|---|
-| Claude Code | `CLAUDE.md`, `.claude/settings.json` | Skill hub, MCP config |
-| Cursor | `.cursorrules`, `.cursor/rules/*.mdc` | Project rules |
-| Windsurf | `.windsurfrules` | Project rules |
-| Aider | `.aider.conf.yml` | CLI config |
-| Cline | `.clinerules`, `cline_docs/` | Memory bank |
-| GitHub Copilot | `.github/copilot-instructions.md` | IDE context |
-| Continue.dev | `.continue/config.yaml` | IDE config |
+
+| Agent          | Config File                           | Purpose               |
+| -------------- | ------------------------------------- | --------------------- |
+| Claude Code    | `CLAUDE.md`, `.claude/settings.json`  | Skill hub, MCP config |
+| Cursor         | `.cursorrules`, `.cursor/rules/*.mdc` | Project rules         |
+| Windsurf       | `.windsurfrules`                      | Project rules         |
+| Aider          | `.aider.conf.yml`                     | CLI config            |
+| Cline          | `.clinerules`, `cline_docs/`          | Memory bank           |
+| GitHub Copilot | `.github/copilot-instructions.md`     | IDE context           |
+| Continue.dev   | `.continue/config.yaml`               | IDE config            |

@@ -7,7 +7,9 @@ duration: "2½ Hours"
 ---
 
 # Savitribai Phule Pune University
+
 ## Systems in Mechanical Engineering (102003)
+
 ### 2019 Pattern | Semester II
 
 **Total Marks:** 70 | **Time:** 2½ Hours
@@ -20,7 +22,8 @@ duration: "2½ Hours"
 
 **Q1)** Attempt the following: [15]
 
-a) Define **vehicle specification**. Explain following engine specifications: i) Power of Engine, ii) Cylinder Capacity, iii) Type of Transmission. [7]
+a) Define **vehicle specification**. Explain following engine specifications: i) Power of Engine,
+ii) Cylinder Capacity, iii) Type of Transmission. [7]
 
 b) Classify **automobiles** based on various criteria with examples. [5]
 
@@ -46,7 +49,8 @@ a) Explain **steering system** with its types and working principle. [6]
 
 b) Explain **braking system** — disc brake vs drum brake comparison. [5]
 
-c) In a gear train, the driving gear has 20 teeth and driven gear has 60 teeth. Find speed ratio and torque ratio. [4]
+c) In a gear train, the driving gear has 20 teeth and driven gear has 60 teeth. Find speed ratio and
+torque ratio. [4]
 
 **OR**
 
@@ -86,11 +90,14 @@ c) Compare **conventional machining** vs **additive manufacturing**. [4]
 
 **Q7)** Attempt the following: [15]
 
-a) Explain working of **refrigerator** with its main components (compressor, condenser, evaporator). [6]
+a) Explain working of **refrigerator** with its main components (compressor, condenser, evaporator).
+[6]
 
-b) Explain applications of **gears**, **belts**, and **chains** in mechanical systems with examples. [5]
+b) Explain applications of **gears**, **belts**, and **chains** in mechanical systems with examples.
+[5]
 
-c) A water pump delivers 1000 L/min of water to a height of 20 m. Calculate power required if pump efficiency is 75%. [4]
+c) A water pump delivers 1000 L/min of water to a height of 20 m. Calculate power required if pump
+efficiency is 75%. [4]
 
 **OR**
 
@@ -100,7 +107,8 @@ a) Explain working of **air conditioner (split AC)** with its main components. [
 
 b) Explain applications of **springs** and **levers** in domestic appliances with examples. [5]
 
-c) An electric iron rated 1500 W is used for 3 hours/day. Calculate energy consumed in kWh per month (30 days). [4]
+c) An electric iron rated 1500 W is used for 3 hours/day. Calculate energy consumed in kWh per month
+(30 days). [4]
 
 ---
 

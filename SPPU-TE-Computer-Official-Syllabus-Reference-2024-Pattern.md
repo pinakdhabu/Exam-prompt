@@ -1,10 +1,10 @@
 # SPPU Third Year Computer Engineering — Official Syllabus Reference (2024 Pattern)
 
-> **NEP 2020 Compliant Curriculum**
-> Extracted from official SPPU syllabus documents.
+> **NEP 2020 Compliant Curriculum** Extracted from official SPPU syllabus documents.
 >
 > This document provides the exact unit-wise syllabus, course outcomes, examination structure,
-> laboratory work, practical guidelines and curriculum information for Third Year Computer Engineering.
+> laboratory work, practical guidelines and curriculum information for Third Year Computer
+> Engineering.
 >
 > Use this as the authoritative source for:
 >
@@ -24,37 +24,39 @@
 
 ## Semester V — Course Structure
 
-| Course Code | Course Type | Course Name | Teaching Scheme (Th/Tu/Pr) | Examination Scheme | Credits (Th/Tu/Pr) | Total Credits |
-|---|---|---|---|---|---|---|
-| PCC301COM | Program Core Course | Artificial Intelligence | 3/0/0 | CCE:30, ESE:70 | 3/0/0 | 3 |
-| PCC302COM | Program Core Course | Computer Networks | 3/0/0 | CCE:30, ESE:70 | 3/0/0 | 3 |
-| PCC303COM | Program Core Course | Theory of Computation | 3/0/0 | CCE:30, ESE:70 | 3/0/0 | 3 |
-| PCC304COM | Program Core Course | Artificial Intelligence Lab | 0/0/2 | TW:25, PR:25 | 0/0/1 | 1 |
-| PCC305COM | Program Core Course | Computer Networks Lab | 0/0/4 | TW:50, OR:25 | 0/0/2 | 2 |
-| PEC321COM | Programme Elective Course | Elective I | 3/0/0 | CCE:30, ESE:70 | 3/0/0 | 3 |
-| PEC322COM | Programme Elective Course | Elective I Lab | 0/0/2 | PR:50 | 0/0/1 | 1 |
-| MDM331COM | Multidisciplinary Minor | Robotics and Automation | 2/0/0 | CCE:30, ESE:70 | 2/0/0 | 2 |
-| OE | Open Elective | Open Elective | 2/0/0 | CCE:15, ESE:35 | 2/0/0 | 2 |
-| ELC342COM | Experiential Learning Course | Technical Seminar | 0/0/2 | TW:25 | 0/0/1 | 1 |
-| **Total** | | | **18/0/10** | | **18/0/4** | **22** |
+| Course Code | Course Type                  | Course Name                 | Teaching Scheme (Th/Tu/Pr) | Examination Scheme | Credits (Th/Tu/Pr) | Total Credits |
+| ----------- | ---------------------------- | --------------------------- | -------------------------- | ------------------ | ------------------ | ------------- |
+| PCC301COM   | Program Core Course          | Artificial Intelligence     | 3/0/0                      | CCE:30, ESE:70     | 3/0/0              | 3             |
+| PCC302COM   | Program Core Course          | Computer Networks           | 3/0/0                      | CCE:30, ESE:70     | 3/0/0              | 3             |
+| PCC303COM   | Program Core Course          | Theory of Computation       | 3/0/0                      | CCE:30, ESE:70     | 3/0/0              | 3             |
+| PCC304COM   | Program Core Course          | Artificial Intelligence Lab | 0/0/2                      | TW:25, PR:25       | 0/0/1              | 1             |
+| PCC305COM   | Program Core Course          | Computer Networks Lab       | 0/0/4                      | TW:50, OR:25       | 0/0/2              | 2             |
+| PEC321COM   | Programme Elective Course    | Elective I                  | 3/0/0                      | CCE:30, ESE:70     | 3/0/0              | 3             |
+| PEC322COM   | Programme Elective Course    | Elective I Lab              | 0/0/2                      | PR:50              | 0/0/1              | 1             |
+| MDM331COM   | Multidisciplinary Minor      | Robotics and Automation     | 2/0/0                      | CCE:30, ESE:70     | 2/0/0              | 2             |
+| OE          | Open Elective                | Open Elective               | 2/0/0                      | CCE:15, ESE:35     | 2/0/0              | 2             |
+| ELC342COM   | Experiential Learning Course | Technical Seminar           | 0/0/2                      | TW:25              | 0/0/1              | 1             |
+| **Total**   |                              |                             | **18/0/10**                |                    | **18/0/4**         | **22**        |
 
 **Elective I Options:**
+
 - PEC321ACOM: Data Warehousing and Data Mining
 - PEC321BCOM: Cloud Computing
 - PEC321CCOM: Mobile Computing
 - PEC321DCOM: Embedded Systems
 
-**Open Elective Options:** IPR and Cyber Laws, Sustainability Development, Digital Personal Data Protection
+**Open Elective Options:** IPR and Cyber Laws, Sustainability Development, Digital Personal Data
+Protection
 
 ---
 
 ## PCC301COM: Artificial Intelligence
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
-**Prerequisite Courses:** Discrete Mathematics, Data Structures, Linear Algebra, Probability and Statistics
+**Prerequisite Courses:** Discrete Mathematics, Data Structures, Linear Algebra, Probability and
+Statistics
 
 ### Course Objectives
 
@@ -66,13 +68,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                 |
+| --- | --------------------------------------------------------------------------- |
 | CO1 | Explain AI fundamentals, intelligent agents, and problem-solving approaches |
-| CO2 | Apply uninformed and informed search strategies to solve AI problems |
-| CO3 | Represent knowledge using logical and structured representation schemes |
-| CO4 | Apply machine learning, NLP, and computer vision techniques |
-| CO5 | Analyze ethical implications and societal impact of AI systems |
+| CO2 | Apply uninformed and informed search strategies to solve AI problems        |
+| CO3 | Represent knowledge using logical and structured representation schemes     |
+| CO4 | Apply machine learning, NLP, and computer vision techniques                 |
+| CO5 | Analyze ethical implications and societal impact of AI systems              |
 
 ### Course Contents
 
@@ -82,7 +84,7 @@
 - Intelligent Agents: Structure, Types, Environments
 - Problem Solving: Problem formulation, State space representation
 - Search Strategies: Uninformed (BFS, DFS, Depth-limited, Iterative deepening)
-- Informed Search: Best-first, A*, Heuristic functions, Admissibility
+- Informed Search: Best-first, A\*, Heuristic functions, Admissibility
 
 #### Unit II: Knowledge Representation and Reasoning (09 Hours)
 
@@ -137,9 +139,8 @@
 
 ## PCC302COM: Computer Networks
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 **Prerequisite Courses:** Data Structures, Operating Systems, Digital Electronics
 
@@ -153,13 +154,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain network architecture, reference models, and physical layer concepts |
+| CO  | Description                                                                      |
+| --- | -------------------------------------------------------------------------------- |
+| CO1 | Explain network architecture, reference models, and physical layer concepts      |
 | CO2 | Analyze data link layer protocols, error detection/correction, and MAC protocols |
-| CO3 | Apply IP addressing, subnetting, and routing algorithms for network design |
-| CO4 | Compare transport layer protocols and analyze congestion control mechanisms |
-| CO5 | Describe application layer protocols and basic network security mechanisms |
+| CO3 | Apply IP addressing, subnetting, and routing algorithms for network design       |
+| CO4 | Compare transport layer protocols and analyze congestion control mechanisms      |
+| CO5 | Describe application layer protocols and basic network security mechanisms       |
 
 ### Course Contents
 
@@ -224,9 +225,8 @@
 
 ## PCC303COM: Theory of Computation
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 **Prerequisite Courses:** Discrete Mathematics, Data Structures
 
@@ -240,12 +240,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain the hierarchy of formal languages and automata |
-| CO2 | Design finite automata, regular expressions, and context-free grammars |
-| CO3 | Analyze the equivalence of pushdown automata and context-free grammars |
-| CO4 | Design Turing machines for decision problems and understand computability |
+| CO  | Description                                                                 |
+| --- | --------------------------------------------------------------------------- |
+| CO1 | Explain the hierarchy of formal languages and automata                      |
+| CO2 | Design finite automata, regular expressions, and context-free grammars      |
+| CO3 | Analyze the equivalence of pushdown automata and context-free grammars      |
+| CO4 | Design Turing machines for decision problems and understand computability   |
 | CO5 | Classify problems into complexity classes and identify NP-complete problems |
 
 ### Course Contents
@@ -294,7 +294,8 @@
 
 #### Text Books
 
-1. John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman, "Introduction to Automata Theory, Languages, and Computation", 3rd Edition, Pearson
+1. John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman, "Introduction to Automata Theory, Languages,
+   and Computation", 3rd Edition, Pearson
 2. Michael Sipser, "Introduction to the Theory of Computation", 3rd Edition, Cengage Learning
 
 #### Reference Books
@@ -312,9 +313,8 @@
 
 ## PCC304COM: Artificial Intelligence Lab
 
-**Teaching Scheme:** Practical: 02 Hours/Week
-**Credits:** 01
-**Examination:** Term Work: 25 Marks, Practical: 25 Marks
+**Teaching Scheme:** Practical: 02 Hours/Week **Credits:** 01 **Examination:** Term Work: 25 Marks,
+Practical: 25 Marks
 
 **Companion Course:** Artificial Intelligence
 
@@ -327,17 +327,17 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Implement uninformed and informed search algorithms |
+| CO  | Description                                                         |
+| --- | ------------------------------------------------------------------- |
+| CO1 | Implement uninformed and informed search algorithms                 |
 | CO2 | Develop inference systems using propositional and first-order logic |
-| CO3 | Build machine learning models for classification and prediction |
-| CO4 | Create simple NLP and computer vision applications |
+| CO3 | Build machine learning models for classification and prediction     |
+| CO4 | Create simple NLP and computer vision applications                  |
 
 ### List of Laboratory Experiments
 
 1. Implement BFS and DFS for graph traversal problems
-2. Implement A* search algorithm for pathfinding
+2. Implement A\* search algorithm for pathfinding
 3. Implement constraint satisfaction problem (e.g., Cryptarithmetic)
 4. Implement a rule-based expert system
 5. Implement a Naive Bayes classifier for text classification
@@ -361,9 +361,8 @@
 
 ## PCC305COM: Computer Networks Lab
 
-**Teaching Scheme:** Practical: 04 Hours/Week
-**Credits:** 02
-**Examination:** Term Work: 50 Marks, Oral: 25 Marks
+**Teaching Scheme:** Practical: 04 Hours/Week **Credits:** 02 **Examination:** Term Work: 50 Marks,
+Oral: 25 Marks
 
 **Companion Course:** Computer Networks
 
@@ -376,11 +375,11 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Use network commands and tools for network analysis |
-| CO2 | Configure routers and switches using simulated environments |
-| CO3 | Implement client-server applications using socket programming |
+| CO  | Description                                                             |
+| --- | ----------------------------------------------------------------------- |
+| CO1 | Use network commands and tools for network analysis                     |
+| CO2 | Configure routers and switches using simulated environments             |
+| CO3 | Implement client-server applications using socket programming           |
 | CO4 | Analyze network traffic using Wireshark and implement security measures |
 
 ### List of Laboratory Experiments (Any 10-12)
@@ -412,9 +411,8 @@
 
 ### PEC321ACOM: Data Warehousing and Data Mining
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -426,41 +424,46 @@
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                         |
+| --- | ------------------------------------------------------------------- |
 | CO1 | Explain data warehousing architecture and multidimensional modeling |
-| CO2 | Apply ETL processes and OLAP operations for analytical processing |
-| CO3 | Implement association rule mining algorithms |
-| CO4 | Apply classification and clustering techniques for data analysis |
-| CO5 | Evaluate data mining results and interpret patterns |
+| CO2 | Apply ETL processes and OLAP operations for analytical processing   |
+| CO3 | Implement association rule mining algorithms                        |
+| CO4 | Apply classification and clustering techniques for data analysis    |
+| CO5 | Evaluate data mining results and interpret patterns                 |
 
 #### Course Contents
 
 **Unit I: Data Warehousing (09 Hours)**
+
 - Data Warehouse: Definition, Characteristics, Architecture
 - Multidimensional Data Model: Star, Snowflake, Fact Constellation
 - OLAP vs OLTP, OLAP Operations (Drill-down, Roll-up, Slice, Dice, Pivot)
 - Data Warehouse Design Process, Metadata Repository
 
 **Unit II: ETL and Data Integration (09 Hours)**
+
 - ETL Process: Extraction, Transformation, Loading
 - Data Cleaning: Missing values, Noise, Inconsistencies
 - Data Integration: Schema integration, Data matching
 - Data Reduction: Dimensionality reduction, Numerosity reduction
 
 **Unit III: Association Rule Mining (09 Hours)**
+
 - Frequent Pattern Mining: Apriori algorithm, FP-Growth
 - Association Rules: Generation, Confidence, Lift
 - Multi-level and Multi-dimensional association rules
 - Correlation analysis
 
 **Unit IV: Classification and Prediction (09 Hours)**
+
 - Decision Tree Induction: ID3, C4.5, CART
 - Bayesian Classification: Naive Bayes, Bayesian networks
 - Rule-based Classification, k-Nearest Neighbor
 - Prediction: Linear/Nonlinear regression
 
 **Unit V: Clustering and Applications (09 Hours)**
+
 - Partitioning Methods: K-Means, K-Medoids
 - Hierarchical Methods: Agglomerative, Divisive
 - Density-based Methods: DBSCAN
@@ -470,10 +473,13 @@
 #### Learning Resources
 
 **Text Books:**
-1. Jiawei Han, Micheline Kamber, "Data Mining: Concepts and Techniques", 3rd Edition, Morgan Kaufmann
+
+1. Jiawei Han, Micheline Kamber, "Data Mining: Concepts and Techniques", 3rd Edition, Morgan
+   Kaufmann
 2. W. H. Inmon, "Building the Data Warehouse", 4th Edition, Wiley
 
 **Reference Books:**
+
 1. Pang-Ning Tan, Michael Steinbach, "Introduction to Data Mining", Pearson
 2. Margaret H. Dunham, "Data Mining: Introductory and Advanced Topics", Pearson
 
@@ -481,9 +487,8 @@
 
 ### PEC321BCOM: Cloud Computing
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -495,17 +500,18 @@
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                         |
+| --- | ------------------------------------------------------------------- |
 | CO1 | Explain cloud computing models, services, and deployment strategies |
 | CO2 | Analyze virtualization techniques and cloud architecture components |
-| CO3 | Implement cloud storage solutions and data management techniques |
-| CO4 | Evaluate cloud security mechanisms and compliance requirements |
-| CO5 | Design and deploy applications on cloud platforms |
+| CO3 | Implement cloud storage solutions and data management techniques    |
+| CO4 | Evaluate cloud security mechanisms and compliance requirements      |
+| CO5 | Design and deploy applications on cloud platforms                   |
 
 #### Course Contents
 
 **Unit I: Cloud Computing Fundamentals (09 Hours)**
+
 - Cloud: Definition, Evolution, Characteristics
 - Service Models: IaaS, PaaS, SaaS
 - Deployment Models: Public, Private, Hybrid, Community
@@ -513,12 +519,14 @@
 - NIST Cloud Computing Reference Architecture
 
 **Unit II: Virtualization (09 Hours)**
+
 - Virtualization: Basics, Types (Server, Storage, Network)
 - Hypervisors: Type 1, Type 2
 - Virtual Machines: VM creation, Migration
 - Containerization: Docker, Kubernetes basics
 
 **Unit III: Cloud Architecture and Services (09 Hours)**
+
 - Cloud Infrastructure: Compute, Storage, Networking
 - AWS: EC2, S3, VPC, Lambda
 - Azure: VMs, Blob Storage, Functions
@@ -526,12 +534,14 @@
 - Load Balancing, Auto-scaling
 
 **Unit IV: Cloud Storage and Data Management (09 Hours)**
+
 - Cloud Storage: Object, Block, File storage
 - Databases: RDS, DynamoDB, Cloud SQL
 - Big Data in Cloud: Hadoop, Spark on Cloud
 - Content Delivery Networks (CDN)
 
 **Unit V: Cloud Security and Migration (09 Hours)**
+
 - Security Challenges: Data breaches, Identity management
 - Encryption: At rest, In transit, Key management
 - IAM: Users, Roles, Policies, MFA
@@ -541,10 +551,12 @@
 #### Learning Resources
 
 **Text Books:**
+
 1. Kai Hwang, "Cloud Computing for Machine Learning and Cognitive Applications", MIT Press
 2. Judith Hurwitz, "Cloud Computing for Dummies", Wiley
 
 **Reference Books:**
+
 1. Barrie Sosinsky, "Cloud Computing Bible", Wiley
 2. Rajkumar Buyya, "Mastering Cloud Computing", McGraw Hill
 
@@ -552,9 +564,8 @@
 
 ### PEC321CCOM: Mobile Computing
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -566,43 +577,50 @@
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                  |
+| --- | ---------------------------------------------------------------------------- |
 | CO1 | Explain evolution and architecture of mobile computing/wireless transmission |
-| CO2 | Compare telecommunication systems (GSM, GPRS, 5G) |
-| CO3 | Analyze mobile IP and transport layer variations |
-| CO4 | Design data management/dissemination for mobile databases |
-| CO5 | Develop mobile applications using modern frameworks and secure them |
+| CO2 | Compare telecommunication systems (GSM, GPRS, 5G)                            |
+| CO3 | Analyze mobile IP and transport layer variations                             |
+| CO4 | Design data management/dissemination for mobile databases                    |
+| CO5 | Develop mobile applications using modern frameworks and secure them          |
 
 #### Course Contents
 
 **Unit I: Introduction to Mobile Computing & Wireless Transmission (09 Hours)**
+
 - Mobile computing evolution, middleware, gateways, constraints
 - Wireless fundamentals: propagation, MAC protocols (SDMA, FDMA, TDMA, CDMA)
 
 **Unit II: Telecommunication Systems (09 Hours)**
+
 - GSM architecture, HLR/VLR, handover
 - Evolution: 1G–6G, O-RAN, Network Slicing
 
 **Unit III: Mobile Network, Transport Layer & Ad-Hoc Networks (09 Hours)**
+
 - Mobile IP, Mobile TCP (Indirect, Snooping, MPTCP)
 - MANET/VANET
 
 **Unit IV: Mobile Application Layer Protocols & Databases (09 Hours)**
+
 - WAP architecture, mobile databases, prefetching/caching
 - AI integration at the Edge
 
 **Unit V: Mobile App Development & Security (09 Hours)**
+
 - Frameworks: Android/iOS, PWA, Flutter/React Native
 - Security models, MDM, Cloud/IoT integration
 
 #### Learning Resources
 
 **Text Books:**
+
 1. William C. Y. Lee, "Mobile Communications: Design Fundamentals"
 2. Yi-Bing Lin, Imrich Chlamtac, "Wireless and Mobile Network Architectures"
 
 **Reference Books:**
+
 1. Jochen Schiller, "Mobile Communications", 2nd Edition, Pearson
 2. Prasant Kumar Pattnaik, "Mobile Computing"
 
@@ -610,9 +628,8 @@
 
 ### PEC321DCOM: Embedded Systems
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -624,41 +641,46 @@
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain embedded system architecture and design methodology |
-| CO2 | Program microcontrollers for embedded applications |
+| CO  | Description                                                         |
+| --- | ------------------------------------------------------------------- |
+| CO1 | Explain embedded system architecture and design methodology         |
+| CO2 | Program microcontrollers for embedded applications                  |
 | CO3 | Interface sensors, actuators, and peripherals with microcontrollers |
-| CO4 | Apply RTOS concepts for real-time application development |
-| CO5 | Design and implement embedded systems for real-world problems |
+| CO4 | Apply RTOS concepts for real-time application development           |
+| CO5 | Design and implement embedded systems for real-world problems       |
 
 #### Course Contents
 
 **Unit I: Introduction to Embedded Systems (09 Hours)**
+
 - Embedded System: Definition, Characteristics, Applications
 - Architecture: Processor, Memory, I/O, Buses
 - Design Metrics: Performance, Power, Cost, Size
 - Embedded vs General-purpose computing
 
 **Unit II: Microcontroller Programming (09 Hours)**
+
 - ARM Cortex-M Architecture
 - GPIO Programming: Pin configuration, Interfacing LEDs, Switches
 - Timers, Counters, PWM generation
 - Interrupts: NVIC, Interrupt priority
 
 **Unit III: Embedded Communication Protocols (09 Hours)**
+
 - UART, SPI, I2C: Protocol basics, Frame format, Multi-master
 - CAN Protocol: Architecture, Frame types
 - USB Basics
 - Wireless: Bluetooth Low Energy, Zigbee
 
 **Unit IV: Real-Time Operating Systems (09 Hours)**
+
 - RTOS vs GPOS: Scheduling, Determinism
 - Tasks, Threads, Scheduling algorithms (RMS, EDF)
 - Inter-task Communication: Semaphores, Queues, Mailboxes
 - Priority Inversion and Inheritance
 
 **Unit V: Embedded System Design and IoT (09 Hours)**
+
 - Design Methodology: Requirements, Specification, Architecture
 - Low Power Design: Sleep modes, Dynamic voltage scaling
 - Embedded IoT: Cloud connectivity, MQTT, CoAP
@@ -667,29 +689,30 @@
 #### Learning Resources
 
 **Text Books:**
-1. Frank Vahid, Tony Givargis, "Embedded System Design: A Unified Hardware/Software Introduction", Wiley
+
+1. Frank Vahid, Tony Givargis, "Embedded System Design: A Unified Hardware/Software Introduction",
+   Wiley
 2. Jonathan W. Valvano, "Embedded Systems: ARM Cortex-M Microcontrollers", CreateSpace
 
 **Reference Books:**
+
 1. Raj Kamal, "Embedded Systems: Architecture, Programming and Design", 3rd Edition, McGraw Hill
 
 ---
 
 ## PEC322COM: Elective I Lab
 
-**Teaching Scheme:** Practical: 02 Hours/Week
-**Credits:** 01
-**Examination:** Practical: 50 Marks
+**Teaching Scheme:** Practical: 02 Hours/Week **Credits:** 01 **Examination:** Practical: 50 Marks
 
-Assignments based on the chosen Elective I course. Includes hands-on implementation, case studies, and mini-projects.
+Assignments based on the chosen Elective I course. Includes hands-on implementation, case studies,
+and mini-projects.
 
 ---
 
 ## MDM331COM: Robotics and Automation
 
-**Teaching Scheme:** Theory: 02 Hours/Week
-**Credits:** 02
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 02 Hours/Week **Credits:** 02 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 ### Course Objectives
 
@@ -701,13 +724,13 @@ Assignments based on the chosen Elective I course. Includes hands-on implementat
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain robot anatomy, classifications, and applications |
-| CO2 | Apply forward and inverse kinematics for robot manipulation |
+| CO  | Description                                                  |
+| --- | ------------------------------------------------------------ |
+| CO1 | Explain robot anatomy, classifications, and applications     |
+| CO2 | Apply forward and inverse kinematics for robot manipulation  |
 | CO3 | Select appropriate sensors and actuators for robotic systems |
-| CO4 | Implement basic robot programming and control algorithms |
-| CO5 | Describe automation components and Industry 4.0 concepts |
+| CO4 | Implement basic robot programming and control algorithms     |
+| CO5 | Describe automation components and Industry 4.0 concepts     |
 
 ### Course Contents
 
@@ -760,18 +783,18 @@ Assignments based on the chosen Elective I course. Includes hands-on implementat
 
 #### Reference Books
 
-1. M. P. Groover, "Automation, Production Systems, and Computer-Integrated Manufacturing", 4th Edition, Pearson
+1. M. P. Groover, "Automation, Production Systems, and Computer-Integrated Manufacturing", 4th
+   Edition, Pearson
 2. Richard D. Klafter, "Robotic Engineering: An Integrated Approach", PHI
 
 ---
 
 ## ELC342COM: Technical Seminar
 
-**Teaching Scheme:** Practical: 02 Hours/Week
-**Credits:** 01
-**Examination:** Term Work: 25 Marks
+**Teaching Scheme:** Practical: 02 Hours/Week **Credits:** 01 **Examination:** Term Work: 25 Marks
 
-Students research a current technology topic, prepare a seminar report, and deliver a presentation. Evaluated on technical content, presentation skills, and report quality.
+Students research a current technology topic, prepare a seminar report, and deliver a presentation.
+Evaluated on technical content, presentation skills, and report quality.
 
 ---
 
@@ -779,27 +802,29 @@ Students research a current technology topic, prepare a seminar report, and deli
 
 ## Semester VI — Course Structure
 
-| Course Code | Course Type | Course Name | Teaching Scheme (Th/Tu/Pr) | Examination Scheme | Credits (Th/Tu/Pr) | Total Credits |
-|---|---|---|---|---|---|---|
-| PCC351COM | Program Core Course | Machine Learning | 3/0/0 | CCE:30, ESE:70 | 3/0/0 | 3 |
-| PCC352COM | Program Core Course | Software Engineering and Modelling | 2/0/0 | CCE:30, ESE:70 | 2/0/0 | 2 |
-| PCC353COM | Program Core Course | Machine Learning Lab | 0/0/4 | TW:25, PR:25 | 0/0/2 | 2 |
-| PCC354COM | Program Core Course | Software Engineering and Modelling Lab | 0/0/2 | TW:25, OR:25 | 0/0/1 | 1 |
-| PEC361COM | Programme Elective Course | Elective II | 3/0/0 | CCE:30, ESE:70 | 3/0/0 | 3 |
-| PEC362COM | Programme Elective Course | Elective III | 3/0/0 | CCE:30, ESE:70 | 3/0/0 | 3 |
-| PEC363COM | Programme Elective Course | Elective III Lab | 0/0/2 | PR:50 | 0/0/1 | 1 |
-| MDM371COM | Multidisciplinary Minor | Green Computing | 1/0/0 | CCE:15, ESE:25 | 1/0/0 | 1 |
-| VSE372COM | Vocational and Skill Enhancement | Solar Technology and Maintenance | 0/2/0 | TW:50 | 0/2/0 | 2 |
-| ELC381COM | Experiential Learning Course | Internship/OJT | 0/0/8 | PR:50 | 0/0/4 | 4 |
-| **Total** | | | **12/2/16** | | **12/2/8** | **22** |
+| Course Code | Course Type                      | Course Name                            | Teaching Scheme (Th/Tu/Pr) | Examination Scheme | Credits (Th/Tu/Pr) | Total Credits |
+| ----------- | -------------------------------- | -------------------------------------- | -------------------------- | ------------------ | ------------------ | ------------- |
+| PCC351COM   | Program Core Course              | Machine Learning                       | 3/0/0                      | CCE:30, ESE:70     | 3/0/0              | 3             |
+| PCC352COM   | Program Core Course              | Software Engineering and Modelling     | 2/0/0                      | CCE:30, ESE:70     | 2/0/0              | 2             |
+| PCC353COM   | Program Core Course              | Machine Learning Lab                   | 0/0/4                      | TW:25, PR:25       | 0/0/2              | 2             |
+| PCC354COM   | Program Core Course              | Software Engineering and Modelling Lab | 0/0/2                      | TW:25, OR:25       | 0/0/1              | 1             |
+| PEC361COM   | Programme Elective Course        | Elective II                            | 3/0/0                      | CCE:30, ESE:70     | 3/0/0              | 3             |
+| PEC362COM   | Programme Elective Course        | Elective III                           | 3/0/0                      | CCE:30, ESE:70     | 3/0/0              | 3             |
+| PEC363COM   | Programme Elective Course        | Elective III Lab                       | 0/0/2                      | PR:50              | 0/0/1              | 1             |
+| MDM371COM   | Multidisciplinary Minor          | Green Computing                        | 1/0/0                      | CCE:15, ESE:25     | 1/0/0              | 1             |
+| VSE372COM   | Vocational and Skill Enhancement | Solar Technology and Maintenance       | 0/2/0                      | TW:50              | 0/2/0              | 2             |
+| ELC381COM   | Experiential Learning Course     | Internship/OJT                         | 0/0/8                      | PR:50              | 0/0/4              | 4             |
+| **Total**   |                                  |                                        | **12/2/16**                |                    | **12/2/8**         | **22**        |
 
 **Elective II Options:**
+
 - PEC361ACOM: Quantum Computing
 - PEC361BCOM: Distributed Systems
 - PEC361CCOM: User Interface and User Experience Design
 - PEC361DCOM: System Programming
 
 **Elective III Options:**
+
 - PEC362ACOM: Information Retrieval
 - PEC362BCOM: Data Visualization and Analytics
 - PEC362CCOM: Cryptography and Network Security
@@ -809,29 +834,31 @@ Students research a current technology topic, prepare a seminar report, and deli
 
 ## PCC351COM: Machine Learning
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 **Prerequisite Courses:** Probability and Statistics, Data Science, Python Programming
 
 ### Course Objectives
 
 1. Provide the fundamental concepts of Machine Learning
-2. Develop an understanding of regression concepts, techniques, and evaluation metrics used for predictive modeling
-3. Imbibe knowledge of classification models and algorithms for solving real-world classification problems
+2. Develop an understanding of regression concepts, techniques, and evaluation metrics used for
+   predictive modeling
+3. Imbibe knowledge of classification models and algorithms for solving real-world classification
+   problems
 4. Familiarize students with clustering algorithms and ensemble learning techniques
-5. Give insight into reinforcement learning concepts and their use in sequential decision-making problems
+5. Give insight into reinforcement learning concepts and their use in sequential decision-making
+   problems
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Apply fundamental Machine Learning concepts in various learning paradigms and real-world engineering applications |
-| CO2 | Make use of various types of regression models for predictive modeling and data analysis |
-| CO3 | Identify different types of classification problems, including binary, multiclass, balanced, and imbalanced classification |
+| CO  | Description                                                                                                                     |
+| --- | ------------------------------------------------------------------------------------------------------------------------------- |
+| CO1 | Apply fundamental Machine Learning concepts in various learning paradigms and real-world engineering applications               |
+| CO2 | Make use of various types of regression models for predictive modeling and data analysis                                        |
+| CO3 | Identify different types of classification problems, including binary, multiclass, balanced, and imbalanced classification      |
 | CO4 | Analyze clustering algorithms for grouping similar data points and ensemble learning techniques for improving model performance |
-| CO5 | Distinguish reinforcement learning from supervised and unsupervised learning approaches |
+| CO5 | Distinguish reinforcement learning from supervised and unsupervised learning approaches                                         |
 
 ### Course Contents
 
@@ -845,7 +872,8 @@ Students research a current technology topic, prepare a seminar report, and deli
 - Feature Engineering: Feature selection, extraction, scaling
 - Dimensionality Reduction: PCA, LDA
 
-**Case Study:** Machine Learning Based Student Performance Prediction and Feature Engineering Analysis
+**Case Study:** Machine Learning Based Student Performance Prediction and Feature Engineering
+Analysis
 
 #### Unit II: Supervised Learning — Regression (09 Hours)
 
@@ -874,7 +902,8 @@ Students research a current technology topic, prepare a seminar report, and deli
 
 #### Unit IV: Unsupervised Learning and Ensemble Learning (09 Hours)
 
-- **Clustering:** Hierarchical (Agglomerative/Divisive), K-Means, K-Medoids, DBSCAN, Gaussian Mixture Model
+- **Clustering:** Hierarchical (Agglomerative/Divisive), K-Means, K-Medoids, DBSCAN, Gaussian
+  Mixture Model
 - **Ensemble Learning:** Homogeneous/Heterogeneous ensembles
 - Voting: Max, Averaging, Weighted
 - Bagging, Random Forest
@@ -917,11 +946,11 @@ Students research a current technology topic, prepare a seminar report, and deli
 
 ## PCC352COM: Software Engineering and Modelling
 
-**Teaching Scheme:** Theory: 02 Hours/Week
-**Credits:** 02
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 02 Hours/Week **Credits:** 02 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
-**Prerequisite Courses:** Programming Fundamentals, Data Structures, Object-Oriented Programming Concepts
+**Prerequisite Courses:** Programming Fundamentals, Data Structures, Object-Oriented Programming
+Concepts
 
 ### Course Objectives
 
@@ -933,13 +962,13 @@ Students research a current technology topic, prepare a seminar report, and deli
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain SDLC models and select appropriate process models for projects |
-| CO2 | Analyze and document software requirements using standard techniques |
-| CO3 | Design software systems using UML diagrams |
+| CO  | Description                                                                    |
+| --- | ------------------------------------------------------------------------------ |
+| CO1 | Explain SDLC models and select appropriate process models for projects         |
+| CO2 | Analyze and document software requirements using standard techniques           |
+| CO3 | Design software systems using UML diagrams                                     |
 | CO4 | Apply project management principles, testing strategies, and quality assurance |
-| CO5 | Evaluate advanced trends including Agile, DevOps, and CI/CD practices |
+| CO5 | Evaluate advanced trends including Agile, DevOps, and CI/CD practices          |
 
 ### Course Contents
 
@@ -1013,12 +1042,11 @@ Students research a current technology topic, prepare a seminar report, and deli
 
 ## PCC353COM: Machine Learning Lab
 
-**Teaching Scheme:** Practical: 04 Hours/Week
-**Credits:** 02
-**Examination:** Term Work: 25 Marks, Practical: 25 Marks
+**Teaching Scheme:** Practical: 04 Hours/Week **Credits:** 02 **Examination:** Term Work: 25 Marks,
+Practical: 25 Marks
 
-**Prerequisite Courses:** Probability and Statistics, Data Science, Python Programming
-**Companion Course:** Machine Learning
+**Prerequisite Courses:** Probability and Statistics, Data Science, Python Programming **Companion
+Course:** Machine Learning
 
 ### Course Objectives
 
@@ -1029,12 +1057,12 @@ Students research a current technology topic, prepare a seminar report, and deli
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Apply feature engineering, dimensionality reduction, and multiple linear regression |
-| CO2 | Demonstrate use of polynomial regression, regularization, and logistic regression |
+| CO  | Description                                                                           |
+| --- | ------------------------------------------------------------------------------------- |
+| CO1 | Apply feature engineering, dimensionality reduction, and multiple linear regression   |
+| CO2 | Demonstrate use of polynomial regression, regularization, and logistic regression     |
 | CO3 | Use SVM classifiers, K-Means clustering, and DBSCAN for classification and clustering |
-| CO4 | Evaluate predictive modeling using ensemble learning and Q-Learning algorithms |
+| CO4 | Evaluate predictive modeling using ensemble learning and Q-Learning algorithms        |
 
 ### List of Laboratory Experiments
 
@@ -1052,19 +1080,18 @@ Students research a current technology topic, prepare a seminar report, and deli
 
 ### Learning Resources
 
-**Recommended Tools:** Python, Jupyter Notebook, PyCharm, Scikit-learn, TensorFlow/PyTorch
-**OS:** 64-bit Linux or Windows
+**Recommended Tools:** Python, Jupyter Notebook, PyCharm, Scikit-learn, TensorFlow/PyTorch **OS:**
+64-bit Linux or Windows
 
 ---
 
 ## PCC354COM: Software Engineering and Modelling Lab
 
-**Teaching Scheme:** Practical: 02 Hours/Week
-**Credits:** 01
-**Examination:** Term Work: 25 Marks, Oral: 25 Marks
+**Teaching Scheme:** Practical: 02 Hours/Week **Credits:** 01 **Examination:** Term Work: 25 Marks,
+Oral: 25 Marks
 
-**Prerequisite Courses:** OOP, Data Structures, DBMS
-**Companion Course:** Software Engineering and Modelling
+**Prerequisite Courses:** OOP, Data Structures, DBMS **Companion Course:** Software Engineering and
+Modelling
 
 ### Course Objectives
 
@@ -1076,18 +1103,19 @@ Students research a current technology topic, prepare a seminar report, and deli
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                              |
+| --- | ------------------------------------------------------------------------ |
 | CO1 | Perform feasibility analysis and project estimation for software systems |
-| CO2 | Develop SRS document using standard IEEE format |
-| CO3 | Design UML diagrams using modeling tools |
-| CO4 | Prepare and execute software test cases and quality plans |
-| CO5 | Apply Agile methodology and version control tools |
-| CO6 | Develop a mini-project using complete SDLC approach |
+| CO2 | Develop SRS document using standard IEEE format                          |
+| CO3 | Design UML diagrams using modeling tools                                 |
+| CO4 | Prepare and execute software test cases and quality plans                |
+| CO5 | Apply Agile methodology and version control tools                        |
+| CO6 | Develop a mini-project using complete SDLC approach                      |
 
 ### List of Assignments
 
 **Part A (Any FIVE, 6th & 7th Mandatory):**
+
 1. Study and compare lifecycle models (Waterfall, V-Model, Spiral, Incremental)
 2. Stakeholder identification, questionnaire preparation, and usage scenarios
 3. Agile practices (Scrum/Kanban/XP), writing user stories, Jira task tracking
@@ -1098,6 +1126,7 @@ Students research a current technology topic, prepare a seminar report, and deli
 8. Agile Project Planning and Tracking using Jira
 
 **Part B (Any 3 from 1-5, and 6,7,8 Mandatory):**
+
 1. UML Modelling: Use case, DFD, and ER diagram
 2. UML Structural Modelling: Class, Package, Component diagrams
 3. UML Behavioural Modelling: Sequence, Activity, State diagrams
@@ -1107,8 +1136,9 @@ Students research a current technology topic, prepare a seminar report, and deli
 7. DevOps and CI/CD: Git and automated pipelines
 8. AI in Software Engineering / Low-Code Platform usage
 
-**Part C (Mini-Project — Team of 3-4 Students):**
-Problem identification through final report and demonstration for systems like Library Management, Online Food Ordering, Hospital Management, or Learning Management System.
+**Part C (Mini-Project — Team of 3-4 Students):** Problem identification through final report and
+demonstration for systems like Library Management, Online Food Ordering, Hospital Management, or
+Learning Management System.
 
 ---
 
@@ -1116,9 +1146,8 @@ Problem identification through final report and demonstration for systems like L
 
 ### PEC361ACOM: Quantum Computing
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -1130,29 +1159,32 @@ Problem identification through final report and demonstration for systems like L
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                       |
+| --- | ----------------------------------------------------------------- |
 | CO1 | Explain the principles of quantum mechanics relevant to computing |
-| CO2 | Describe qubit representation and quantum gate operations |
-| CO3 | Implement basic quantum circuits |
+| CO2 | Describe qubit representation and quantum gate operations         |
+| CO3 | Implement basic quantum circuits                                  |
 | CO4 | Apply quantum algorithms like Deutsch-Jozsa, Grover's, and Shor's |
-| CO5 | Evaluate the potential and limitations of quantum computing |
+| CO5 | Evaluate the potential and limitations of quantum computing       |
 
 #### Course Contents
 
 **Unit I: Introduction to Quantum Computing (09 Hours)**
+
 - Qubits: Representation, Bloch Sphere
 - Quantum Superposition and Entanglement
 - Quantum vs Classical computing
 - Quantum measurement
 
 **Unit II: Quantum Gates and Circuits (09 Hours)**
+
 - Single Qubit Gates: Pauli, Hadamard, Phase
 - Multi-Qubit Gates: CNOT, Toffoli, SWAP
 - Universal Gate Sets
 - Quantum Circuit Model
 
 **Unit III: Quantum Algorithms (09 Hours)**
+
 - Deutsch-Jozsa Algorithm
 - Grover's Search Algorithm
 - Quantum Fourier Transform
@@ -1160,6 +1192,7 @@ Problem identification through final report and demonstration for systems like L
 - Phase Estimation
 
 **Unit IV: Quantum Information Theory (09 Hours)**
+
 - Quantum Entropy and Information
 - Quantum Error Correction
 - Quantum Cryptography: BB84
@@ -1167,6 +1200,7 @@ Problem identification through final report and demonstration for systems like L
 - Superdense Coding
 
 **Unit V: Quantum Computing Applications (09 Hours)**
+
 - Quantum Machine Learning
 - Quantum Simulation
 - Quantum Optimization
@@ -1176,10 +1210,13 @@ Problem identification through final report and demonstration for systems like L
 #### Learning Resources
 
 **Text Books:**
-1. Michael A. Nielsen, Isaac L. Chuang, "Quantum Computation and Quantum Information", Cambridge University Press
+
+1. Michael A. Nielsen, Isaac L. Chuang, "Quantum Computation and Quantum Information", Cambridge
+   University Press
 2. David McMahon, "Quantum Computing Explained", Wiley
 
 **Reference Books:**
+
 1. Eleanor Rieffel, Wolfgang Polak, "Quantum Computing: A Gentle Introduction", MIT Press
 2. Chris Bernhardt, "Quantum Computing for Everyone", MIT Press
 
@@ -1187,9 +1224,8 @@ Problem identification through final report and demonstration for systems like L
 
 ### PEC361BCOM: Distributed Systems
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -1201,23 +1237,25 @@ Problem identification through final report and demonstration for systems like L
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                            |
+| --- | ---------------------------------------------------------------------- |
 | CO1 | Analyze architectural styles and system models for distributed systems |
-| CO2 | Implement communication and synchronization algorithms |
-| CO3 | Apply replication and consistency models |
-| CO4 | Develop distributed file system components |
-| CO5 | Implement algorithms on modern distributed platforms |
+| CO2 | Implement communication and synchronization algorithms                 |
+| CO3 | Apply replication and consistency models                               |
+| CO4 | Develop distributed file system components                             |
+| CO5 | Implement algorithms on modern distributed platforms                   |
 
 #### Course Contents
 
 **Unit I: Introduction and Architectures (09 Hours)**
+
 - Distributed Systems: Definition, Goals, Challenges
 - Architectural Styles: Layered, Object-based, Resource-oriented
 - Middleware organization
 - System Models: Physical, Architectural, Fundamental
 
 **Unit II: Communication and Synchronization (09 Hours)**
+
 - RPC: Design issues, Implementation
 - Message-Oriented Communication: Persistence, Ordering
 - Stream-Oriented Communication: QoS
@@ -1226,17 +1264,20 @@ Problem identification through final report and demonstration for systems like L
 - Election Algorithms: Bully, Ring
 
 **Unit III: Coordination, Consistency and Replication (09 Hours)**
+
 - Coordination: Distributed transactions, 2PC, 3PC
 - Consistency Models: Data-centric, Client-centric
 - Replication: Architecture, Protocols
 - Caching strategies
 
 **Unit IV: Distributed File Systems (09 Hours)**
+
 - DFS: Features, Models, Architecture
 - Naming: Flat, Structured, Attribute-based
 - Case Studies: NFS, HDFS, Ceph
 
 **Unit V: Advancements (09 Hours)**
+
 - Epidemic/Gossip protocols
 - Distributed Hash Tables (DHTs)
 - CAP Theorem, PACELC
@@ -1246,20 +1287,22 @@ Problem identification through final report and demonstration for systems like L
 #### Learning Resources
 
 **Text Books:**
+
 1. Andrew S. Tanenbaum, Maarten Van Steen, "Distributed Systems: Principles and Paradigms", Pearson
 2. George Coulouris, "Distributed Systems: Concepts and Design", 5th Edition, Pearson
 
 **Reference Books:**
-1. Ajay D. Kshemkalyani, Mukesh Singhal, "Distributed Computing: Principles, Algorithms, and Systems", Cambridge
+
+1. Ajay D. Kshemkalyani, Mukesh Singhal, "Distributed Computing: Principles, Algorithms, and
+   Systems", Cambridge
 2. Vijay K. Garg, "Elements of Distributed Computing", Wiley
 
 ---
 
 ### PEC361CCOM: User Interface and User Experience Design
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -1271,17 +1314,18 @@ Problem identification through final report and demonstration for systems like L
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                            |
+| --- | ------------------------------------------------------ |
 | CO1 | Explain UI/UX concepts and design thinking methodology |
-| CO2 | Apply HCI principles for interface design |
-| CO3 | Analyze user needs through research methods |
-| CO4 | Develop wireframes, prototypes, and design mockups |
-| CO5 | Evaluate industry trends and emerging UX technologies |
+| CO2 | Apply HCI principles for interface design              |
+| CO3 | Analyze user needs through research methods            |
+| CO4 | Develop wireframes, prototypes, and design mockups     |
+| CO5 | Evaluate industry trends and emerging UX technologies  |
 
 #### Course Contents
 
 **Unit I: Introduction to UI/UX (09 Hours)**
+
 - UI vs UX: Definitions, Differences
 - Design Thinking: Empathize, Define, Ideate, Prototype, Test
 - Core Principles: Consistency, Visibility, Affordance, Feedback
@@ -1289,6 +1333,7 @@ Problem identification through final report and demonstration for systems like L
 - User Research: Interviews, Surveys, Personas
 
 **Unit II: Usability Engineering (09 Hours)**
+
 - Evaluation Methods: Formative, Summative
 - Cognitive Walkthrough, Heuristic Evaluation
 - Fitts's Law, Hick's Law
@@ -1296,6 +1341,7 @@ Problem identification through final report and demonstration for systems like L
 - Mental Models, User Journey Mapping
 
 **Unit III: Web and Mobile Design (09 Hours)**
+
 - Design Strategy: Business goals, User goals
 - Agile vs Waterfall in UX
 - Content Strategy, Functionality Specification
@@ -1303,6 +1349,7 @@ Problem identification through final report and demonstration for systems like L
 - Sitemap, User Flow
 
 **Unit IV: Wireframing and Prototyping (09 Hours)**
+
 - Low-fidelity vs High-fidelity prototypes
 - Interaction Design: Micro-interactions, Animations
 - UI Tools: Figma, Adobe XD, Sketch
@@ -1310,6 +1357,7 @@ Problem identification through final report and demonstration for systems like L
 - Design Documentation
 
 **Unit V: UX for Emerging Technologies (09 Hours)**
+
 - Voice UI: Design principles for voice
 - Gesture Control: Touchless interaction
 - IoT UX: Designing for smart devices
@@ -1319,11 +1367,13 @@ Problem identification through final report and demonstration for systems like L
 #### Learning Resources
 
 **Text Books:**
+
 1. Ben Shneiderman, "Designing the User Interface", 6th Edition, Pearson
 2. Don Norman, "The Design of Everyday Things", Basic Books
 3. Russ Unger, "A Project Guide to UX Design", New Riders
 
 **Reference Books:**
+
 1. Steve Krug, "Don't Make Me Think", New Riders
 2. Alan Cooper, "About Face: The Essentials of Interaction Design", Wiley
 3. Jesse James Garrett, "The Elements of User Experience", New Riders
@@ -1332,9 +1382,8 @@ Problem identification through final report and demonstration for systems like L
 
 ### PEC361DCOM: System Programming
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -1346,23 +1395,25 @@ Problem identification through final report and demonstration for systems like L
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                            |
+| --- | ------------------------------------------------------ |
 | CO1 | Explain system software components and their functions |
-| CO2 | Analyze the design of assemblers and macroprocessors |
-| CO3 | Design and implement lexical analyzers and parsers |
-| CO4 | Differentiate compiler and interpreter phases |
-| CO5 | Use debugging tools for system software development |
+| CO2 | Analyze the design of assemblers and macroprocessors   |
+| CO3 | Design and implement lexical analyzers and parsers     |
+| CO4 | Differentiate compiler and interpreter phases          |
+| CO5 | Use debugging tools for system software development    |
 
 #### Course Contents
 
 **Unit I: Introduction to System Software (09 Hours)**
+
 - System Software vs Application Software
 - Language Processors: Compiler, Interpreter, Assembler
 - Machine Architecture: SIC, SIC/XE
 - System Software Components
 
 **Unit II: Assemblers (09 Hours)**
+
 - Basic Assembler Functions: Pass 1, Pass 2
 - Assembler Data Structures: OPTAB, SYMTAB, LITTAB
 - Machine-Dependent Features: Instruction formats, Addressing modes
@@ -1370,6 +1421,7 @@ Problem identification through final report and demonstration for systems like L
 - MASM Assembler
 
 **Unit III: Macroprocessors and Loaders (09 Hours)**
+
 - Macroprocessor: Macro definition, Expansion, Nested macros
 - Macroprocessor Design Options
 - Loaders: Functions, Types (Absolute, Relocating, Linking)
@@ -1377,6 +1429,7 @@ Problem identification through final report and demonstration for systems like L
 - Dynamic Linking
 
 **Unit IV: Compilers — Lexical and Syntax Analysis (09 Hours)**
+
 - Phases of Compiler: Overview
 - Lexical Analysis: Tokens, Patterns, Lexemes
 - Regular Expressions, Finite Automata
@@ -1385,6 +1438,7 @@ Problem identification through final report and demonstration for systems like L
 - Bottom-up Parsing: Shift-Reduce, LR Parsers
 
 **Unit V: Compiler Design and Debugging (09 Hours)**
+
 - Syntax-Directed Translation
 - Intermediate Code Generation
 - Code Optimization: Local, Global, Loop
@@ -1395,10 +1449,12 @@ Problem identification through final report and demonstration for systems like L
 #### Learning Resources
 
 **Text Books:**
+
 1. Leland L. Beck, "System Software: An Introduction to Systems Programming", 3rd Edition, Pearson
 2. Alfred V. Aho, "Compilers: Principles, Techniques, and Tools", 2nd Edition, Pearson
 
 **Reference Books:**
+
 1. John J. Donovan, "Systems Programming", McGraw Hill
 2. D. M. Dhamdhere, "System Programming and Operating Systems", McGraw Hill
 
@@ -1408,9 +1464,8 @@ Problem identification through final report and demonstration for systems like L
 
 ### PEC362ACOM: Information Retrieval
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -1422,40 +1477,45 @@ Problem identification through final report and demonstration for systems like L
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Apply text processing and clustering techniques |
-| CO2 | Study indexing structures for efficient retrieval |
+| CO  | Description                                           |
+| --- | ----------------------------------------------------- |
+| CO1 | Apply text processing and clustering techniques       |
+| CO2 | Study indexing structures for efficient retrieval     |
 | CO3 | Evaluate IR system performance using standard metrics |
-| CO4 | Map IR techniques to web search |
-| CO5 | Interpret recent trends in information retrieval |
+| CO4 | Map IR techniques to web search                       |
+| CO5 | Interpret recent trends in information retrieval      |
 
 #### Course Contents
 
 **Unit I: Introduction to IR & Text Processing (09 Hours)**
+
 - IR fundamentals, System components, Architectures
 - Document representation, Preprocessing
 - Term Weighting: TF-IDF
 - Inverted Index
 
 **Unit II: Information Retrieval Models (09 Hours)**
+
 - Boolean Model
 - Vector Space Model
 - Probabilistic Models
 - Evaluation Metrics: Precision, Recall, F-measure, MAP, NDCG
 
 **Unit III: Index Compression and Dynamic Inverted Indices (09 Hours)**
+
 - Performance evaluation
 - Data/Index compression: Huffman, Arithmetic coding
 - Dynamic index updates
 - Document deletions and modifications
 
 **Unit IV: Web Searching (09 Hours)**
+
 - Web crawling: Architecture, Policies
 - Ranking: PageRank, HITS
 - Web scraping with Python (Scrapy, Beautiful Soup)
 
 **Unit V: Advanced IR (09 Hours)**
+
 - XML retrieval
 - Recommendation Systems: Collaborative, Content-based
 - Semantic Web
@@ -1464,19 +1524,21 @@ Problem identification through final report and demonstration for systems like L
 #### Learning Resources
 
 **Text Books:**
-1. Ricardo Baeza-Yates, Berthier Ribeiro-Neto, "Modern Information Retrieval", 2nd Edition, Addison-Wesley
+
+1. Ricardo Baeza-Yates, Berthier Ribeiro-Neto, "Modern Information Retrieval", 2nd Edition,
+   Addison-Wesley
 2. C. J. van Rijsbergen, "Information Retrieval", Butterworth-Heinemann
 
 **Reference Books:**
+
 1. Christopher D. Manning, "Introduction to Information Retrieval", Cambridge University Press
 
 ---
 
 ### PEC362BCOM: Data Visualization and Analytics
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -1488,27 +1550,31 @@ Problem identification through final report and demonstration for systems like L
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Understand Data Science and Big Data concepts |
-| CO2 | Apply inferential statistics for data analysis |
-| CO3 | Implement predictive models |
-| CO4 | Analyze text data using NLP techniques |
+| CO  | Description                                                       |
+| --- | ----------------------------------------------------------------- |
+| CO1 | Understand Data Science and Big Data concepts                     |
+| CO2 | Apply inferential statistics for data analysis                    |
+| CO3 | Implement predictive models                                       |
+| CO4 | Analyze text data using NLP techniques                            |
 | CO5 | Visualize data using Python/Tableau and design Big Data solutions |
 
 #### Course Contents
 
 **Unit I: Introduction to Data Analytics and Life Cycle (09 Hours)**
+
 - Data Science vs BI, Data Wrangling
-- 6-Phase Analytics Lifecycle: Discovery, Data Prep, Model Planning, Model Building, Communicate Results, Operationalize
+- 6-Phase Analytics Lifecycle: Discovery, Data Prep, Model Planning, Model Building, Communicate
+  Results, Operationalize
 
 **Unit II: Inferential Statistics (09 Hours)**
+
 - Measures of central tendency/dispersion
 - Hypothesis testing, p-values
 - Bayes theorem
 - Correlation and Regression analysis
 
 **Unit III: Predictive Analytics (09 Hours)**
+
 - Python libraries: pandas, NumPy, scikit-learn
 - Data preprocessing
 - Association rules: Apriori
@@ -1516,12 +1582,14 @@ Problem identification through final report and demonstration for systems like L
 - K-Means clustering
 
 **Unit IV: Text Analytics and Model Evaluation (09 Hours)**
+
 - Text mining practices: Tokenization, Stop words, Stemming
 - Naive Bayes for text classification
 - Sentiment analysis
 - Model evaluation: Confusion matrix, ROC curves, Cross-validation
 
 **Unit V: Data Visualization and Big Data Processing (09 Hours)**
+
 - Visualization types: Bar, Line, Scatter, Heatmap, Box plot
 - Python libraries: Matplotlib, Seaborn, Plotly
 - Tableau: Dashboards, Stories
@@ -1531,10 +1599,12 @@ Problem identification through final report and demonstration for systems like L
 #### Learning Resources
 
 **Text Books:**
+
 1. David Dietrich, "Data Science and Big Data Analytics", Wiley
 2. Jiawei Han, "Data Mining: Concepts and Techniques", Morgan Kaufmann
 
 **Reference Books:**
+
 1. Jake VanderPlas, "Python Data Science Handbook", O'Reilly
 2. Hadley Wickham, "R for Data Science", O'Reilly
 
@@ -1542,9 +1612,8 @@ Problem identification through final report and demonstration for systems like L
 
 ### PEC362CCOM: Cryptography and Network Security
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -1556,17 +1625,18 @@ Problem identification through final report and demonstration for systems like L
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze encryption algorithms and security mechanisms |
-| CO2 | Implement authentication and key management protocols |
+| CO  | Description                                               |
+| --- | --------------------------------------------------------- |
+| CO1 | Analyze encryption algorithms and security mechanisms     |
+| CO2 | Implement authentication and key management protocols     |
 | CO3 | Evaluate information security threats and countermeasures |
-| CO4 | Apply network security protocols |
-| CO5 | Study modern network security environments |
+| CO4 | Apply network security protocols                          |
+| CO5 | Study modern network security environments                |
 
 #### Course Contents
 
 **Unit I: Introduction to Security Basics (09 Hours)**
+
 - Attacks: Passive, Active
 - Security Services: Confidentiality, Integrity, Availability
 - Security Mechanisms
@@ -1574,12 +1644,14 @@ Problem identification through final report and demonstration for systems like L
 - Classical Encryption: Caesar, Monoalphabetic, Playfair, Hill, Vigenere
 
 **Unit II: Data Encryption Techniques (09 Hours)**
+
 - Symmetric Encryption: DES, 3DES, AES
 - Block Cipher Modes: ECB, CBC, CFB, OFB, CTR
 - Asymmetric Encryption: RSA, ECC
 - Key Management
 
 **Unit III: Data Integrity Algorithms and Web Security (09 Hours)**
+
 - Hash Functions: SHA-512
 - MAC, HMAC
 - Digital Signatures: DSS, ECDSA
@@ -1587,6 +1659,7 @@ Problem identification through final report and demonstration for systems like L
 - X.509 Certificates, PKI
 
 **Unit IV: Security Protocols (09 Hours)**
+
 - IPSec: AH, ESP, IKE
 - VPNs
 - SSL/TLS: Handshake, Record Protocol
@@ -1594,6 +1667,7 @@ Problem identification through final report and demonstration for systems like L
 - SET: Secure Electronic Transaction
 
 **Unit V: Network and Emerging Security (09 Hours)**
+
 - Firewalls: Types, Packet filtering, Proxy
 - IDS/IPS: Signature-based, Anomaly-based
 - Wireless Security: WPA2, WPA3
@@ -1604,10 +1678,13 @@ Problem identification through final report and demonstration for systems like L
 #### Learning Resources
 
 **Text Books:**
-1. William Stallings, "Cryptography and Network Security: Principles and Practice", 7th Edition, Pearson
+
+1. William Stallings, "Cryptography and Network Security: Principles and Practice", 7th Edition,
+   Pearson
 2. Nina Godbole, "Information Systems Security", Wiley
 
 **Reference Books:**
+
 1. Atul Kahate, "Cryptography and Network Security", McGraw Hill
 2. Prakash C. Gupta, "Cryptography and Network Security", PHI
 
@@ -1615,9 +1692,8 @@ Problem identification through final report and demonstration for systems like L
 
 ### PEC362DCOM: Advanced Databases
 
-**Teaching Scheme:** Theory: 03 Hours/Week
-**Credits:** 03
-**Examination:** CCE: 30 Marks, End-Semester: 70 Marks
+**Teaching Scheme:** Theory: 03 Hours/Week **Credits:** 03 **Examination:** CCE: 30 Marks,
+End-Semester: 70 Marks
 
 #### Course Objectives
 
@@ -1629,23 +1705,25 @@ Problem identification through final report and demonstration for systems like L
 
 #### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                  |
+| --- | ------------------------------------------------------------ |
 | CO1 | Analyze DBMS architectures (centralized, distributed, cloud) |
-| CO2 | Design query plans and optimize query execution |
-| CO3 | Implement concurrency and recovery mechanisms |
-| CO4 | Evaluate parallel, distributed, and XML database systems |
-| CO5 | Implement security and privacy mechanisms |
+| CO2 | Design query plans and optimize query execution              |
+| CO3 | Implement concurrency and recovery mechanisms                |
+| CO4 | Evaluate parallel, distributed, and XML database systems     |
+| CO5 | Implement security and privacy mechanisms                    |
 
 #### Course Contents
 
 **Unit I: Advanced DBMS Architecture (09 Hours)**
+
 - Client-Server Architectures
 - Cloud DBaaS
 - Parallel Database Architectures: Shared Memory, Shared Disk, Shared Nothing
 - Distributed Database Design
 
 **Unit II: Query Processing and Optimization (09 Hours)**
+
 - Query Processing Steps
 - Cost Estimation
 - Selection, Join, Projection Operations
@@ -1653,18 +1731,21 @@ Problem identification through final report and demonstration for systems like L
 - Materialized Views
 
 **Unit III: Transaction Management, Concurrency and Recovery (09 Hours)**
+
 - Conflict Serializability, View Serializability
 - ARIES Recovery Algorithm
 - Write-Ahead Logging (WAL)
 - Concurrency in Distributed DBs
 
 **Unit IV: Advanced Database Models (09 Hours)**
+
 - Parallel Databases: Speedup, Scaleup
 - Distributed Databases: Fragmentation, Replication
 - XML Databases: XPath, XQuery
 - Object-Oriented Databases
 
 **Unit V: Database Security and Recent Trends (09 Hours)**
+
 - Access Control: DAC, MAC, RBAC
 - SQL Injection Prevention
 - Data Masking, Encryption
@@ -1674,9 +1755,11 @@ Problem identification through final report and demonstration for systems like L
 #### Learning Resources
 
 **Text Books:**
+
 1. Silberschatz, Korth, Sudarshan, "Database System Concepts", 7th Edition, McGraw Hill
 
 **Reference Books:**
+
 1. Raghu Ramakrishnan, "Database Management Systems", McGraw Hill
 2. Elmasri & Navathe, "Fundamentals of Database Systems", 7th Edition, Pearson
 
@@ -1684,13 +1767,13 @@ Problem identification through final report and demonstration for systems like L
 
 ## PEC363COM: Elective III Lab
 
-**Teaching Scheme:** Practical: 02 Hours/Week
-**Credits:** 01
-**Examination:** Practical: 50 Marks
+**Teaching Scheme:** Practical: 02 Hours/Week **Credits:** 01 **Examination:** Practical: 50 Marks
 
-Assignments based on the chosen Elective III course. Includes hands-on implementation of concepts, case studies, and mini-projects.
+Assignments based on the chosen Elective III course. Includes hands-on implementation of concepts,
+case studies, and mini-projects.
 
 **Sample Assignments (Information Retrieval):**
+
 - Conflation-based representation
 - Single-Pass Clustering
 - Inverted File Indexing
@@ -1698,6 +1781,7 @@ Assignments based on the chosen Elective III course. Includes hands-on implement
 - IR Metrics evaluation
 
 **Sample Assignments (Data Visualization):**
+
 - Data Wrangling using pandas
 - Data Transformation
 - Linear Regression modeling
@@ -1706,9 +1790,8 @@ Assignments based on the chosen Elective III course. Includes hands-on implement
 
 ## MDM371COM: Green Computing
 
-**Teaching Scheme:** Theory: 01 Hour/Week
-**Credits:** 01
-**Examination:** CCE: 15 Marks, End-Semester: 25 Marks
+**Teaching Scheme:** Theory: 01 Hour/Week **Credits:** 01 **Examination:** CCE: 15 Marks,
+End-Semester: 25 Marks
 
 ### Course Objectives
 
@@ -1719,11 +1802,11 @@ Assignments based on the chosen Elective III course. Includes hands-on implement
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain environmental impacts of IT |
-| CO2 | Analyze green business processes and architecture |
-| CO3 | Evaluate energy-efficient data center techniques |
+| CO  | Description                                               |
+| --- | --------------------------------------------------------- |
+| CO1 | Explain environmental impacts of IT                       |
+| CO2 | Analyze green business processes and architecture         |
+| CO3 | Evaluate energy-efficient data center techniques          |
 | CO4 | Apply AI-based approaches for sustainability optimization |
 
 ### Course Contents
@@ -1766,9 +1849,7 @@ Assignments based on the chosen Elective III course. Includes hands-on implement
 
 ## VSE372COM: Solar Technology and Maintenance
 
-**Teaching Scheme:** Tutorial: 02 Hours/Week
-**Credits:** 02
-**Examination:** Term Work: 50 Marks
+**Teaching Scheme:** Tutorial: 02 Hours/Week **Credits:** 02 **Examination:** Term Work: 50 Marks
 
 ### Course Objectives
 
@@ -1779,12 +1860,12 @@ Assignments based on the chosen Elective III course. Includes hands-on implement
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                        |
+| --- | -------------------------------------------------- |
 | CO1 | Apply safe installation and measurement techniques |
-| CO2 | Analyze performance and diagnose faults |
-| CO3 | Evaluate maintenance procedures |
-| CO4 | Create practical solutions through mini-projects |
+| CO2 | Analyze performance and diagnose faults            |
+| CO3 | Evaluate maintenance procedures                    |
+| CO4 | Create practical solutions through mini-projects   |
 
 ### Course Contents
 
@@ -1809,9 +1890,7 @@ Assignments based on the chosen Elective III course. Includes hands-on implement
 
 ## ELC381COM: Internship/On Job Training
 
-**Teaching Scheme:** Practical: 08 Hours/Week
-**Credits:** 04
-**Examination:** Practical: 50 Marks
+**Teaching Scheme:** Practical: 08 Hours/Week **Credits:** 04 **Examination:** Practical: 50 Marks
 
 ### Course Objectives
 
@@ -1822,18 +1901,20 @@ Assignments based on the chosen Elective III course. Includes hands-on implement
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                |
+| --- | ---------------------------------------------------------- |
 | CO1 | Apply theoretical knowledge in practical work environments |
-| CO2 | Demonstrate technical competency in chosen domain |
-| CO3 | Exhibit professional ethics and teamwork |
-| CO4 | Prepare technical reports and presentations |
-| CO5 | Analyze industrial processes for improvement |
+| CO2 | Demonstrate technical competency in chosen domain          |
+| CO3 | Exhibit professional ethics and teamwork                   |
+| CO4 | Prepare technical reports and presentations                |
+| CO5 | Analyze industrial processes for improvement               |
 
 ### Structure
 
-- **Phases:** Orientation, Technical learning/development, Project execution, Documentation/Presentation
-- **Domains:** Software Development, AI/ML, Data Science, Cloud/DevOps, Cyber Security, Web/Mobile, IoT, Networking, Robotics, Research
+- **Phases:** Orientation, Technical learning/development, Project execution,
+  Documentation/Presentation
+- **Domains:** Software Development, AI/ML, Data Science, Cloud/DevOps, Cyber Security, Web/Mobile,
+  IoT, Networking, Robotics, Research
 - **Duration:** Minimum specified hours as per university guidelines
 
 ### Learning Resources
@@ -1849,32 +1930,34 @@ Assignments based on the chosen Elective III course. Includes hands-on implement
 
 ## Examination Scheme
 
-**Comprehensive Continuous Evaluation (CCE):** 30/15 marks based on all Units, scheduled and conducted at institute level.
+**Comprehensive Continuous Evaluation (CCE):** 30/15 marks based on all Units, scheduled and
+conducted at institute level.
 
-| Sr. | Parameters | Marks (30) | Marks (15) |
-|-----|------------|------------|------------|
-| 1. | Unit Test | 12 Marks | 10 Marks |
-| 2. | Assignments / Case Study | 12 Marks | - |
-| 3. | Seminar / Open Book Test / Quiz | 06 Marks | 05 Marks |
+| Sr. | Parameters                      | Marks (30) | Marks (15) |
+| --- | ------------------------------- | ---------- | ---------- |
+| 1.  | Unit Test                       | 12 Marks   | 10 Marks   |
+| 2.  | Assignments / Case Study        | 12 Marks   | -          |
+| 3.  | Seminar / Open Book Test / Quiz | 06 Marks   | 05 Marks   |
 
 **End-Semester Examination (ESE):** 70/35 marks written theory examination based on all units.
 
 ## Abbreviations
 
-| Abbreviation | Full Form |
-|--------------|-----------|
-| CCE | Comprehensive Continuous Evaluation |
-| ESE | End-Semester Examination |
-| PCC | Program Core Course |
-| PEC | Programme Elective Course |
-| MDM | Multidisciplinary Minor |
-| VSE | Vocational and Skill Enhancement Course |
-| ELC | Experiential Learning Course |
-| OE | Open Elective |
-| TW | Term Work |
-| PR | Practical |
-| OR | Oral |
+| Abbreviation | Full Form                               |
+| ------------ | --------------------------------------- |
+| CCE          | Comprehensive Continuous Evaluation     |
+| ESE          | End-Semester Examination                |
+| PCC          | Program Core Course                     |
+| PEC          | Programme Elective Course               |
+| MDM          | Multidisciplinary Minor                 |
+| VSE          | Vocational and Skill Enhancement Course |
+| ELC          | Experiential Learning Course            |
+| OE           | Open Elective                           |
+| TW           | Term Work                               |
+| PR           | Practical                               |
+| OR           | Oral                                    |
 
 ---
 
-> **Disclaimer:** This document is compiled from official SPPU syllabus documents for reference purposes. For the latest updates, always refer to the official SPPU website: www.unipune.ac.in
+> **Disclaimer:** This document is compiled from official SPPU syllabus documents for reference
+> purposes. For the latest updates, always refer to the official SPPU website: www.unipune.ac.in

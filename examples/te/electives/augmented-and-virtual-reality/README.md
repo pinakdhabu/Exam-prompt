@@ -4,14 +4,14 @@
 
 ## Syllabus Overview
 
-| Unit | Title | Hours |
-|------|-------|-------|
-| I | Introduction to VR and AR | 07 |
-| II | VR Hardware and Display Technologies | 07 |
-| III | VR Interaction and Tracking | 07 |
-| IV | AR Technologies and Techniques | 07 |
-| V | Mixed Reality and Applications | 07 |
-| VI | Future Trends | 07 |
+| Unit | Title                                | Hours |
+| ---- | ------------------------------------ | ----- |
+| I    | Introduction to VR and AR            | 07    |
+| II   | VR Hardware and Display Technologies | 07    |
+| III  | VR Interaction and Tracking          | 07    |
+| IV   | AR Technologies and Techniques       | 07    |
+| V    | Mixed Reality and Applications       | 07    |
+| VI   | Future Trends                        | 07    |
 
 ## Key Topics
 

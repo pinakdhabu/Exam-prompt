@@ -4,14 +4,14 @@
 
 ## Syllabus
 
-| Unit | Title | Hours | CO |
-|------|-------|-------|----|
-| I | Introduction to Systems Programming | 08 | CO1, CO2, CO3 |
-| II | Macro Processor and Compilers | 06 | CO1, CO2, CO3 |
-| III | Linkers and Loaders | 07 | CO1, CO2, CO3 |
-| IV | Operating System and Process Scheduling | 07 | CO4 |
-| V | Synchronization and Concurrency Control | 07 | CO5 |
-| VI | Memory Management | 07 | CO6 |
+| Unit | Title                                   | Hours | CO            |
+| ---- | --------------------------------------- | ----- | ------------- |
+| I    | Introduction to Systems Programming     | 08    | CO1, CO2, CO3 |
+| II   | Macro Processor and Compilers           | 06    | CO1, CO2, CO3 |
+| III  | Linkers and Loaders                     | 07    | CO1, CO2, CO3 |
+| IV   | Operating System and Process Scheduling | 07    | CO4           |
+| V    | Synchronization and Concurrency Control | 07    | CO5           |
+| VI   | Memory Management                       | 07    | CO6           |
 
 ## Exam Pattern
 

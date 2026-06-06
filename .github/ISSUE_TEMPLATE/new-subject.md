@@ -1,9 +1,9 @@
 ---
 name: 📚 New Subject Request
 about: Request sample papers / solutions for a subject not yet covered
-title: '[New Subject] '
+title: "[New Subject] "
 labels: new-subject
-assignees: ''
+assignees: ""
 ---
 
 **Subject Details**
@@ -16,15 +16,16 @@ assignees: ''
 - **Pattern:** [e.g., 2019, 2024]
 - **Elective/Compulsory:** [e.g., Compulsory]
 
-**Syllabus (if available)**
-Paste or link to the syllabus topics per unit.
+**Syllabus (if available)** Paste or link to the syllabus topics per unit.
 
 **Do you have PYQs for this subject?**
+
 - [ ] Yes, I can share them
 - [ ] No, but they're available online
 - [ ] I need help finding them
 
 **Would you like to contribute?**
+
 - [ ] I can write sample papers
 - [ ] I can write solutions
 - [ ] I can review/fact-check

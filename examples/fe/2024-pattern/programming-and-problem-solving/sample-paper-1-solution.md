@@ -10,9 +10,11 @@
 
 **Time Budget:** 6 min | **Bloom's:** L1 (Remember)
 
-**Algorithm:** A step-by-step, unambiguous sequence of instructions to solve a problem in finite time.
+**Algorithm:** A step-by-step, unambiguous sequence of instructions to solve a problem in finite
+time.
 
-**Flowchart:** A graphical representation of an algorithm using standard symbols (oval=start/end, rectangle=process, diamond=decision, parallelogram=I/O).
+**Flowchart:** A graphical representation of an algorithm using standard symbols (oval=start/end,
+rectangle=process, diamond=decision, parallelogram=I/O).
 
 **Characteristics of a good algorithm:**
 
@@ -29,13 +31,13 @@
 
 **Time Budget:** 8 min | **Bloom's:** L2 (Understand)
 
-| Data Type | Size | Format Specifier | Range | Example |
-|-----------|------|------------------|-------|---------|
-| `int` | 2/4 bytes | `%d` | -32,768 to 32,767 | `int a = 10;` |
-| `float` | 4 bytes | `%f` | 3.4E-38 to 3.4E+38 | `float b = 3.14;` |
-| `double` | 8 bytes | `%lf` | 1.7E-308 to 1.7E+308 | `double c = 3.14159;` |
-| `char` | 1 byte | `%c` | -128 to 127 | `char d = 'A';` |
-| `void` | 0 bytes | — | No value | `void func();` |
+| Data Type | Size      | Format Specifier | Range                | Example               |
+| --------- | --------- | ---------------- | -------------------- | --------------------- |
+| `int`     | 2/4 bytes | `%d`             | -32,768 to 32,767    | `int a = 10;`         |
+| `float`   | 4 bytes   | `%f`             | 3.4E-38 to 3.4E+38   | `float b = 3.14;`     |
+| `double`  | 8 bytes   | `%lf`            | 1.7E-308 to 1.7E+308 | `double c = 3.14159;` |
+| `char`    | 1 byte    | `%c`             | -128 to 127          | `char d = 'A';`       |
+| `void`    | 0 bytes   | —                | No value             | `void func();`        |
 
 **Modifiers:** `short`, `long`, `unsigned`, `signed`
 
@@ -77,14 +79,14 @@ flowchart TD
 
 ### Q2) b) Explain operators in C with examples. [8]
 
-| Operator Type | Operators | Example | Description |
-|--------------|-----------|---------|-------------|
-| **Arithmetic** | `+`, `-`, `*`, `/`, `%` | `a + b` | Basic math operations |
-| **Relational** | `==`, `!=`, `<`, `>`, `<=`, `>=` | `a > b` | Compare values |
-| **Logical** | `&&`, `\|\|`, `!` | `(a > b) && (b > c)` | Boolean logic |
-| **Bitwise** | `&`, `\|`, `^`, `~`, `<<`, `>>` | `a & b` | Bit-level operations |
-| **Assignment** | `=`, `+=`, `-=`, `*=`, `/=` | `a += 5` | Assign values |
-| **Ternary** | `?:` | `a > b ? a : b` | Conditional expression |
+| Operator Type  | Operators                        | Example              | Description            |
+| -------------- | -------------------------------- | -------------------- | ---------------------- |
+| **Arithmetic** | `+`, `-`, `*`, `/`, `%`          | `a + b`              | Basic math operations  |
+| **Relational** | `==`, `!=`, `<`, `>`, `<=`, `>=` | `a > b`              | Compare values         |
+| **Logical**    | `&&`, `\|\|`, `!`                | `(a > b) && (b > c)` | Boolean logic          |
+| **Bitwise**    | `&`, `\|`, `^`, `~`, `<<`, `>>`  | `a & b`              | Bit-level operations   |
+| **Assignment** | `=`, `+=`, `-=`, `*=`, `/=`      | `a += 5`             | Assign values          |
+| **Ternary**    | `?:`                             | `a > b ? a : b`      | Conditional expression |
 
 ```c
 int a = 10, b = 20, c;
@@ -102,7 +104,8 @@ c = a & b;             // Bitwise AND
 
 ### Q3) a) Explain Arrays. Write program to reverse an array. [8]
 
-**Array:** A collection of elements of the same data type stored in contiguous memory locations, accessed using an index.
+**Array:** A collection of elements of the same data type stored in contiguous memory locations,
+accessed using an index.
 
 ```c
 #include <stdio.h>
@@ -123,6 +126,7 @@ int main() {
     return 0;
 }
 ```
+
 **Output:** `50 40 30 20 10`
 
 **Complexity:** `O(n)` time, `O(1)` space.
@@ -131,15 +135,16 @@ int main() {
 
 ### Q3) b) Call by value vs Call by reference. [6]
 
-| Call by Value | Call by Reference |
-|--------------|-------------------|
+| Call by Value                           | Call by Reference                  |
+| --------------------------------------- | ---------------------------------- |
 | Copies actual value to formal parameter | Passes address of actual parameter |
-| Changes don't affect original | Changes affect original |
-| Uses normal variables | Uses pointers |
-| `void swap(int a, int b)` | `void swap(int *a, int *b)` |
-| Safer (no side effects) | More memory efficient |
+| Changes don't affect original           | Changes affect original            |
+| Uses normal variables                   | Uses pointers                      |
+| `void swap(int a, int b)`               | `void swap(int *a, int *b)`        |
+| Safer (no side effects)                 | More memory efficient              |
 
 **Example:**
+
 ```c
 void swapByValue(int x, int y) {  // No swap
     int temp = x; x = y; y = temp;
@@ -167,9 +172,11 @@ int main() {
     return 0;
 }
 ```
+
 **Output:** `Factorial of 5 = 120`
 
 **Trace for n=5:**
+
 ```
 factorial(5) = 5 * factorial(4)
             = 5 * 4 * factorial(3)
@@ -184,13 +191,13 @@ factorial(5) = 5 * factorial(4)
 
 Pointers store memory addresses. Arithmetic on pointers adjusts by the size of the data type.
 
-| Operation | Meaning | Example (`int *p`, `int a[5]`) |
-|-----------|---------|----------------------|
-| `p + n` | Address + n * sizeof(type) | `p = &a[0]; p + 2 = &a[2]` |
-| `p - n` | Address - n * sizeof(type) | `p = &a[4]; p - 2 = &a[2]` |
-| `p++` | Move to next element | `p++ → points to a[1]` |
-| `p--` | Move to previous element | `p-- → points to a[3]` |
-| `p - q` | Number of elements between | `&a[4] - &a[0] = 4` |
+| Operation | Meaning                     | Example (`int *p`, `int a[5]`) |
+| --------- | --------------------------- | ------------------------------ |
+| `p + n`   | Address + n \* sizeof(type) | `p = &a[0]; p + 2 = &a[2]`     |
+| `p - n`   | Address - n \* sizeof(type) | `p = &a[4]; p - 2 = &a[2]`     |
+| `p++`     | Move to next element        | `p++ → points to a[1]`         |
+| `p--`     | Move to previous element    | `p-- → points to a[3]`         |
+| `p - q`   | Number of elements between  | `&a[4] - &a[0] = 4`            |
 
 ```c
 int arr[] = {10, 20, 30, 40, 50};
@@ -210,7 +217,8 @@ printf("%d", *p);      // Output: 20
 
 ### Q5) a) Structure and program to display student details. [8]
 
-**Structure:** A user-defined data type that groups related variables of different types under one name.
+**Structure:** A user-defined data type that groups related variables of different types under one
+name.
 
 ```c
 #include <stdio.h>
@@ -235,15 +243,15 @@ int main() {
 
 ### Q5) b) Differentiate Structure and Union. [6]
 
-| Structure | Union |
-|-----------|-------|
-| `struct { int a; float b; }` | `union { int a; float b; }` |
-| All members get separate memory | All members share same memory |
-| Size = sum of all members' sizes | Size = size of largest member |
-| `sizeof(struct) = 6` (int 2 + float 4) | `sizeof(union) = 4` (float) |
-| All members accessible simultaneously | Only one member accessible at a time |
-| `s1.a` and `s1.b` both valid | Modifying `u.a` corrupts `u.b` |
-| Used for records | Used for memory-efficient variant storage |
+| Structure                              | Union                                     |
+| -------------------------------------- | ----------------------------------------- |
+| `struct { int a; float b; }`           | `union { int a; float b; }`               |
+| All members get separate memory        | All members share same memory             |
+| Size = sum of all members' sizes       | Size = size of largest member             |
+| `sizeof(struct) = 6` (int 2 + float 4) | `sizeof(union) = 4` (float)               |
+| All members accessible simultaneously  | Only one member accessible at a time      |
+| `s1.a` and `s1.b` both valid           | Modifying `u.a` corrupts `u.b`            |
+| Used for records                       | Used for memory-efficient variant storage |
 
 ---
 
@@ -251,12 +259,12 @@ int main() {
 
 ### Q6) a) Dynamic Memory Allocation functions. [8]
 
-| Function | Syntax | Description |
-|----------|--------|-------------|
-| **malloc()** | `(type*)malloc(n * sizeof(type))` | Allocates n blocks of uninitialized memory |
-| **calloc()** | `(type*)calloc(n, sizeof(type))` | Allocates n blocks initialized to 0 |
-| **realloc()** | `realloc(ptr, new_size)` | Resizes previously allocated memory |
-| **free()** | `free(ptr)` | Deallocates memory |
+| Function      | Syntax                            | Description                                |
+| ------------- | --------------------------------- | ------------------------------------------ |
+| **malloc()**  | `(type*)malloc(n * sizeof(type))` | Allocates n blocks of uninitialized memory |
+| **calloc()**  | `(type*)calloc(n, sizeof(type))`  | Allocates n blocks initialized to 0        |
+| **realloc()** | `realloc(ptr, new_size)`          | Resizes previously allocated memory        |
+| **free()**    | `free(ptr)`                       | Deallocates memory                         |
 
 ```c
 int *arr = (int*)malloc(5 * sizeof(int));       // allocate
@@ -269,12 +277,12 @@ free(arr);                                        // deallocate
 
 ### Q6) b) File handling functions. [6]
 
-| Function | Syntax | Description |
-|----------|--------|-------------|
-| **fopen()** | `FILE *fp = fopen("file.txt", "r");` | Opens a file with mode (r/w/a/r+/w+/a+) |
-| **fclose()** | `fclose(fp);` | Closes an opened file |
-| **fread()** | `fread(&ptr, size, count, fp);` | Reads binary data from file |
-| **fwrite()** | `fwrite(&ptr, size, count, fp);` | Writes binary data to file |
+| Function     | Syntax                               | Description                             |
+| ------------ | ------------------------------------ | --------------------------------------- |
+| **fopen()**  | `FILE *fp = fopen("file.txt", "r");` | Opens a file with mode (r/w/a/r+/w+/a+) |
+| **fclose()** | `fclose(fp);`                        | Closes an opened file                   |
+| **fread()**  | `fread(&ptr, size, count, fp);`      | Reads binary data from file             |
+| **fwrite()** | `fwrite(&ptr, size, count, fp);`     | Writes binary data to file              |
 
 ```c
 FILE *fp = fopen("data.txt", "w");
@@ -344,8 +352,8 @@ int main() {
     return 0;
 }
 ```
-**Output:** `11 12 22 25 34 64 90`
-**Complexity:** `O(n²)` time, `O(1)` space.
+
+**Output:** `11 12 22 25 34 64 90` **Complexity:** `O(n²)` time, `O(1)` space.
 
 ---
 
@@ -371,14 +379,14 @@ int binarySearch(int arr[], int low, int high, int key) {
 }
 ```
 
-| Aspect | Linear Search | Binary Search |
-|--------|---------------|---------------|
-| **Precondition** | Unsorted or sorted | Must be sorted |
-| **Approach** | Sequential | Divide and conquer |
-| **Time (Best)** | `O(1)` — found at first | `O(1)` — found at middle |
-| **Time (Worst)** | `O(n)` | `O(log n)` |
-| **Space** | `O(1)` | `O(1)` iterative |
-| **When to use** | Small arrays (<100) | Large sorted arrays |
+| Aspect           | Linear Search           | Binary Search            |
+| ---------------- | ----------------------- | ------------------------ |
+| **Precondition** | Unsorted or sorted      | Must be sorted           |
+| **Approach**     | Sequential              | Divide and conquer       |
+| **Time (Best)**  | `O(1)` — found at first | `O(1)` — found at middle |
+| **Time (Worst)** | `O(n)`                  | `O(log n)`               |
+| **Space**        | `O(1)`                  | `O(1)` iterative         |
+| **When to use**  | Small arrays (<100)     | Large sorted arrays      |
 
 ---
 
@@ -405,6 +413,7 @@ int main() {
     return 0;
 }
 ```
+
 **Output:** `19 22 / 43 50`
 
 ---
@@ -417,9 +426,11 @@ int main() {
 
 ### Q9) a) Need for Problem Solving and steps. [6]
 
-**Need for Problem Solving:** Computers execute instructions but cannot think. Problem solving provides a structured methodology to convert real-world problems into computer-executable solutions.
+**Need for Problem Solving:** Computers execute instructions but cannot think. Problem solving
+provides a structured methodology to convert real-world problems into computer-executable solutions.
 
 **Steps:**
+
 1. **Define Problem** — Understand inputs, outputs, and constraints
 2. **Analyze** — Break into smaller sub-problems
 3. **Design Algorithm** — Develop step-by-step solution
@@ -456,6 +467,7 @@ int main() {
     return 0;
 }
 ```
+
 **Output:** `"Madam" is a palindrome`
 
 ---
@@ -464,12 +476,12 @@ int main() {
 
 ### Q10) a) Storage classes in C. [8]
 
-| Class | Keyword | Storage | Scope | Lifetime | Default Value |
-|-------|---------|---------|-------|----------|---------------|
-| **Automatic** | `auto` | RAM | Local | Function | Garbage |
-| **Register** | `register` | CPU Register | Local | Function | Garbage |
-| **Static** | `static` | RAM | Local (global for file) | Program execution | Zero |
-| **External** | `extern` | RAM | Global | Program execution | Zero |
+| Class         | Keyword    | Storage      | Scope                   | Lifetime          | Default Value |
+| ------------- | ---------- | ------------ | ----------------------- | ----------------- | ------------- |
+| **Automatic** | `auto`     | RAM          | Local                   | Function          | Garbage       |
+| **Register**  | `register` | CPU Register | Local                   | Function          | Garbage       |
+| **Static**    | `static`   | RAM          | Local (global for file) | Program execution | Zero          |
+| **External**  | `extern`   | RAM          | Global                  | Program execution | Zero          |
 
 ```c
 void counter() {
@@ -502,8 +514,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-**Execution:** `./sum 10 20 30 40`
-**Output:** `Number of arguments: 5` / `Sum = 100`
+**Execution:** `./sum 10 20 30 40` **Output:** `Number of arguments: 5` / `Sum = 100`
 
 ---
 
@@ -513,10 +524,10 @@ int main(int argc, char *argv[]) {
 
 ## Mnemonic Summary
 
-| Topic | Mnemonic |
-|-------|----------|
+| Topic                         | Mnemonic                                                                         |
+| ----------------------------- | -------------------------------------------------------------------------------- |
 | **Algorithm characteristics** | **DIFOEF** — Definiteness, Input, Finiteness, Output, Effectiveness, Feasibility |
-| **Storage classes** | **ARSE** — Auto, Register, Static, Extern |
-| **Dynamic allocation** | **MCRF** — Malloc, Calloc, Realloc, Free |
-| **Operator types** | **ARLBAT** — Arithmetic, Relational, Logical, Bitwise, Assignment, Ternary |
-| **File modes** | **RWA+** — Read, Write, Append, Append+Read |
+| **Storage classes**           | **ARSE** — Auto, Register, Static, Extern                                        |
+| **Dynamic allocation**        | **MCRF** — Malloc, Calloc, Realloc, Free                                         |
+| **Operator types**            | **ARLBAT** — Arithmetic, Relational, Logical, Bitwise, Assignment, Ternary       |
+| **File modes**                | **RWA+** — Read, Write, Append, Append+Read                                      |

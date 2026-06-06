@@ -8,7 +8,9 @@ duration: "2½ Hours"
 ---
 
 # Savitribai Phule Pune University
+
 ## Engineering Chemistry (BSC-103-BES)
+
 ### 2024 Credit Pattern | Semester I
 
 **Total Marks:** 70 | **Time:** 2½ Hours
@@ -19,26 +21,25 @@ duration: "2½ Hours"
 
 ## Q1) Write correct option for the following. [10]
 
-a) **Temporary hardness** is caused by: [2]
-   i) CaSO₄ &emsp; ii) Ca(HCO₃)₂ &emsp; iii) CaCl₂ &emsp; iv) CaCO₃
+a) **Temporary hardness** is caused by: [2] i) CaSO₄ &emsp; ii) Ca(HCO₃)₂ &emsp; iii) CaCl₂ &emsp;
+iv) CaCO₃
 
-b) **EDTA method** uses indicator: [2]
-   i) Methyl orange &emsp; ii) Eriochrome Black T &emsp; iii) Phenolphthalein &emsp; iv) Starch
+b) **EDTA method** uses indicator: [2] i) Methyl orange &emsp; ii) Eriochrome Black T &emsp; iii)
+Phenolphthalein &emsp; iv) Starch
 
-c) **Conductometric titration** plots: [2]
-   i) pH vs volume &emsp; ii) Conductance vs volume &emsp; iii) Absorbance vs λ &emsp; iv) Current vs voltage
+c) **Conductometric titration** plots: [2] i) pH vs volume &emsp; ii) Conductance vs volume &emsp;
+iii) Absorbance vs λ &emsp; iv) Current vs voltage
 
-d) **Polycarbonate** is a: [1]
-   i) Thermoplastic &emsp; ii) Thermosetting &emsp; iii) Elastomer &emsp; iv) Biodegradable
+d) **Polycarbonate** is a: [1] i) Thermoplastic &emsp; ii) Thermosetting &emsp; iii) Elastomer
+&emsp; iv) Biodegradable
 
-e) **Graphene** is a _______ nanomaterial: [1]
-   i) 0D &emsp; ii) 1D &emsp; iii) 2D &emsp; iv) 3D
+e) **Graphene** is a **\_\_\_** nanomaterial: [1] i) 0D &emsp; ii) 1D &emsp; iii) 2D &emsp; iv) 3D
 
-f) **HCV** of fuel is measured using: [1]
-   i) Boy's calorimeter &emsp; ii) Bomb calorimeter &emsp; iii) Junker's calorimeter &emsp; iv) None
+f) **HCV** of fuel is measured using: [1] i) Boy's calorimeter &emsp; ii) Bomb calorimeter &emsp;
+iii) Junker's calorimeter &emsp; iv) None
 
-g) **Pilling-Bedworth rule** relates to: [1]
-   i) Fuel analysis &emsp; ii) Corrosion &emsp; iii) Polymerization &emsp; iv) Spectroscopy
+g) **Pilling-Bedworth rule** relates to: [1] i) Fuel analysis &emsp; ii) Corrosion &emsp; iii)
+Polymerization &emsp; iv) Spectroscopy
 
 ---
 
@@ -46,9 +47,11 @@ g) **Pilling-Bedworth rule** relates to: [1]
 
 **Q2)** Attempt the following: [12]
 
-a) Explain **EDTA method** for determination of hardness of water. Give the chemical reactions involved. [6]
+a) Explain **EDTA method** for determination of hardness of water. Give the chemical reactions
+involved. [6]
 
-b) 100 mL of water sample required 20 mL of 0.01 M EDTA for titration. Calculate **hardness in ppm**. [6]
+b) 100 mL of water sample required 20 mL of 0.01 M EDTA for titration. Calculate **hardness in
+ppm**. [6]
 
 **OR**
 
@@ -74,7 +77,8 @@ b) Draw and explain instrumentation of **double beam UV-Visible spectrophotomete
 
 a) Explain **pH metric titration** of strong acid vs strong base with titration curve. [6]
 
-b) State and explain **Beer-Lambert law**. A solution has absorbance 0.45 at \(\lambda_{\max}\) in a 1 cm cuvette. If \(\varepsilon = 1500\) L·mol⁻¹·cm⁻¹, find concentration. [6]
+b) State and explain **Beer-Lambert law**. A solution has absorbance 0.45 at \(\lambda\_{\max}\) in
+a 1 cm cuvette. If \(\varepsilon = 1500\) L·mol⁻¹·cm⁻¹, find concentration. [6]
 
 ---
 
@@ -90,7 +94,8 @@ b) Explain **carbon nanotubes** — structure, types, properties, and applicatio
 
 **Q7)** Attempt the following: [12]
 
-a) What are **conducting polymers**? Explain **polyacetylene** — preparation, doping, and applications. [6]
+a) What are **conducting polymers**? Explain **polyacetylene** — preparation, doping, and
+applications. [6]
 
 b) Explain **quantum dots** — synthesis, properties, and applications. [6]
 
@@ -100,9 +105,11 @@ b) Explain **quantum dots** — synthesis, properties, and applications. [6]
 
 **Q8)** Attempt the following: [12]
 
-a) Explain construction and working of **Bomb calorimeter** with diagram. Derive formula for HCV. [6]
+a) Explain construction and working of **Bomb calorimeter** with diagram. Derive formula for HCV.
+[6]
 
-b) Explain **proximate analysis** of coal. Calculate % of fixed carbon from: moisture=5%, VM=30%, ash=12%. [6]
+b) Explain **proximate analysis** of coal. Calculate % of fixed carbon from: moisture=5%, VM=30%,
+ash=12%. [6]
 
 **OR**
 

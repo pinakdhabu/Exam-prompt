@@ -2,7 +2,8 @@
 
 ## Syllabus Overview
 
-DSA builds on FDS fundamentals to cover advanced data structures — hashing, trees, graphs, search trees (AVL, Red-Black), indexing (B-Tree, B+Tree), and file organization techniques.
+DSA builds on FDS fundamentals to cover advanced data structures — hashing, trees, graphs, search
+trees (AVL, Red-Black), indexing (B-Tree, B+Tree), and file organization techniques.
 
 ## Units
 

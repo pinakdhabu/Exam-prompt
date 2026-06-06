@@ -2,7 +2,8 @@
 
 ## Syllabus Overview
 
-Computer Graphics covers the fundamentals of generating and rendering graphical output — scan conversion, transformations, projections, color models, shading, curves, fractals, and animation.
+Computer Graphics covers the fundamentals of generating and rendering graphical output — scan
+conversion, transformations, projections, color models, shading, curves, fractals, and animation.
 
 ## Units
 

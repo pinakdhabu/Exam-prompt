@@ -2,7 +2,9 @@
 
 ## Syllabus Overview
 
-Microprocessor covers the architecture, programming model, memory management, protection mechanisms, multitasking, and interrupt handling of the Intel 80386 processor, along with microcontroller fundamentals.
+Microprocessor covers the architecture, programming model, memory management, protection mechanisms,
+multitasking, and interrupt handling of the Intel 80386 processor, along with microcontroller
+fundamentals.
 
 ## Units
 

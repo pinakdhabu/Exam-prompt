@@ -1,12 +1,17 @@
 ---
 name: universal-session-config
-description: Persistent session configuration for the Exam Prompt system. Stores university, subject, exam pattern, and user profile across skill calls. Eliminates redundant context detection by providing a single JSON profile that every other skill reads. Works for ANY university worldwide.
+description:
+  Persistent session configuration for the Exam Prompt system. Stores university, subject, exam
+  pattern, and user profile across skill calls. Eliminates redundant context detection by providing
+  a single JSON profile that every other skill reads. Works for ANY university worldwide.
 ---
 
 # Universal Session Configuration
 
 ## Overview
-Provides a single persistent configuration profile that all skills read. Set once, use everywhere. Eliminates the need for each skill to independently detect university, subject, and exam parameters.
+
+Provides a single persistent configuration profile that all skills read. Set once, use everywhere.
+Eliminates the need for each skill to independently detect university, subject, and exam parameters.
 
 ## How This Skill Works
 
@@ -36,12 +41,12 @@ Provides a single persistent configuration profile that all skills read. Set onc
     "name": "Database Management Systems",
     "code": "410243",
     "units": [
-      {"id": 1, "name": "Introduction to DBMS"},
-      {"id": 2, "name": "Relational Model & SQL"},
-      {"id": 3, "name": "Normalization"},
-      {"id": 4, "name": "Transaction Management"},
-      {"id": 5, "name": "File Organization & Indexing"},
-      {"id": 6, "name": "NoSQL & Advanced Topics"}
+      { "id": 1, "name": "Introduction to DBMS" },
+      { "id": 2, "name": "Relational Model & SQL" },
+      { "id": 3, "name": "Normalization" },
+      { "id": 4, "name": "Transaction Management" },
+      { "id": 5, "name": "File Organization & Indexing" },
+      { "id": 6, "name": "NoSQL & Advanced Topics" }
     ],
     "cos": ["CO1", "CO2", "CO3", "CO4", "CO5", "CO6"]
   },
@@ -60,59 +65,61 @@ Provides a single persistent configuration profile that all skills read. Set onc
     "target_gpa": 10,
     "weak_topics": []
   },
-  "active_skills": [
-    "answer-writer",
-    "notes-generator",
-    "pyq-analyzer",
-    "imp-topics-generator"
-  ]
+  "active_skills": ["answer-writer", "notes-generator", "pyq-analyzer", "imp-topics-generator"]
 }
 ```
 
 ## Commands
 
 ### Set University
+
 ```
 Set university to VTU, CSE, 5th semester, 2022 scheme
 ```
 
 ### Set Subject
+
 ```
 Set subject to Operating Systems, code 21CS52
 ```
 
 ### Set Exam
+
 ```
 Set exam to Mid-sem, 40 marks, 1 hour
 ```
 
 ### View Current Config
+
 ```
 Show my session config
 ```
 
 ### Switch University
+
 ```
 Switch to Mumbai University, IT department, 2024 pattern
 ```
 
 ## Configuration Persistence
 
-| Agent | Persistence Method |
-|---|---|
-| **Claude Code** | Session memory (AGENTS.md loaded skill) |
-| **Claude Project** | Project instructions + knowledge base |
-| **ChatGPT/Custom GPT** | GPT instructions + conversation memory |
-| **Cursor/Windsurf** | .cursorrules + session variables |
-| **Gemini Gems** | Gem instructions |
+| Agent                  | Persistence Method                      |
+| ---------------------- | --------------------------------------- |
+| **Claude Code**        | Session memory (AGENTS.md loaded skill) |
+| **Claude Project**     | Project instructions + knowledge base   |
+| **ChatGPT/Custom GPT** | GPT instructions + conversation memory  |
+| **Cursor/Windsurf**    | .cursorrules + session variables        |
+| **Gemini Gems**        | Gem instructions                        |
 
 ## Integration with Other Skills
 
 All skills in this system read the session config to determine:
+
 - University pattern (for answer formatting)
 - Subject syllabus (for content scope)
 - Exam type (for depth calibration)
 - CO alignment (for rubric matching)
 - Bloom's level targets
 
-Without session config, each skill must independently detect context. With session config, detection happens once and is reused across all skill calls.
+Without session config, each skill must independently detect context. With session config, detection
+happens once and is reused across all skill calls.

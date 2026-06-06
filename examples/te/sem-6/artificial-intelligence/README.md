@@ -4,14 +4,14 @@
 
 ## Syllabus
 
-| Unit | Title | Hours | CO |
-|------|-------|-------|----|
-| I | Problem Solving Through AI | 07 | CO1 |
-| II | Knowledge Representation | 07 | CO2 |
-| III | Searching and Game Playing | 07 | CO3 |
-| IV | Reasoning Under Uncertainty | 07 | CO4 |
-| V | Planning and Decision Making | 07 | CO5 |
-| VI | AI Applications and Advances | 07 | CO6 |
+| Unit | Title                        | Hours | CO  |
+| ---- | ---------------------------- | ----- | --- |
+| I    | Problem Solving Through AI   | 07    | CO1 |
+| II   | Knowledge Representation     | 07    | CO2 |
+| III  | Searching and Game Playing   | 07    | CO3 |
+| IV   | Reasoning Under Uncertainty  | 07    | CO4 |
+| V    | Planning and Decision Making | 07    | CO5 |
+| VI   | AI Applications and Advances | 07    | CO6 |
 
 ## Exam Pattern
 

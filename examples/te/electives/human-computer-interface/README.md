@@ -4,14 +4,14 @@
 
 ## Syllabus Overview
 
-| Unit | Title | Hours |
-|------|-------|-------|
-| I | Introduction and Foundation of HCI | 07 |
-| II | Human Perspective in Interaction Design | 07 |
-| III | Interaction Styles and HCI in Software Process | 07 |
-| IV | Usability Evaluation and Universal Design | 07 |
-| V | HCI Paradigms | 07 |
-| VI | HCI for Mobile and Handheld Devices | 07 |
+| Unit | Title                                          | Hours |
+| ---- | ---------------------------------------------- | ----- |
+| I    | Introduction and Foundation of HCI             | 07    |
+| II   | Human Perspective in Interaction Design        | 07    |
+| III  | Interaction Styles and HCI in Software Process | 07    |
+| IV   | Usability Evaluation and Universal Design      | 07    |
+| V    | HCI Paradigms                                  | 07    |
+| VI   | HCI for Mobile and Handheld Devices            | 07    |
 
 ## Key Topics
 

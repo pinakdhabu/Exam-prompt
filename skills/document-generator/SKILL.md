@@ -6,7 +6,10 @@ description: Converts Markdown study content to print-ready PDF documents with p
 # Universal Document Generator — Markdown to PDF Pipeline
 
 ## Overview
-Generates print-ready, professionally formatted PDF documents from Markdown study content. Designed for creating exam-ready printed materials — unit notes, PYQ solutions, syllabus references, formula sheets, and master solutions.
+
+Generates print-ready, professionally formatted PDF documents from Markdown study content. Designed
+for creating exam-ready printed materials — unit notes, PYQ solutions, syllabus references, formula
+sheets, and master solutions.
 
 Supports **Python** (weasyprint) and **Node.js** (Playwright) conversion backends.
 
@@ -14,9 +17,11 @@ Supports **Python** (weasyprint) and **Node.js** (Playwright) conversion backend
 
 ## How This Skill Works
 
-1. **User provides**: Markdown file(s) with study content, or PDF source material to convert through the pipeline
+1. **User provides**: Markdown file(s) with study content, or PDF source material to convert through
+   the pipeline
 2. **System converts**: MD → HTML → PDF using CSS-styled A4 formatting
-3. **System outputs**: Print-ready PDF with page numbers, styled tables, syntax-highlighted code, and diagrams
+3. **System outputs**: Print-ready PDF with page numbers, styled tables, syntax-highlighted code,
+   and diagrams
 
 ---
 
@@ -36,12 +41,17 @@ Source PDF (syllabus/PYQ)
 ```
 
 ### Stage 1: PDF → TXT
-Use `scripts/pdf-extract.py` or the `universal-document-reader` skill to extract text from source PDFs.
+
+Use `scripts/pdf-extract.py` or the `universal-document-reader` skill to extract text from source
+PDFs.
 
 ### Stage 2: TXT → MD
-Structure the extracted text into Markdown with proper headings, tables, code blocks, and exam-style formatting.
+
+Structure the extracted text into Markdown with proper headings, tables, code blocks, and exam-style
+formatting.
 
 ### Stage 3: MD → PDF
+
 Use one of the conversion scripts to generate a print-ready PDF.
 
 ---
@@ -49,6 +59,7 @@ Use one of the conversion scripts to generate a print-ready PDF.
 ## Conversion Backends
 
 ### Option A: Python (weasyprint)
+
 ```bash
 # Single file
 python3 scripts/convert-to-pdf.py notes.md
@@ -63,6 +74,7 @@ for f in *.md; do python3 scripts/convert-to-pdf.py "$f"; done
 **Requires:** `pip install markdown weasyprint`
 
 ### Option B: Node.js (Playwright)
+
 ```bash
 # Single file
 node scripts/convert-to-pdf.js notes.md
@@ -77,30 +89,30 @@ node scripts/convert-to-pdf.js notes.md output.pdf
 
 ## PDF Output Features
 
-| Feature | Detail |
-|---------|--------|
-| **Page Size** | A4 with 2cm margins |
-| **Headers** | Styled h1/h2/h3/h4 with distinct colors |
-| **Tables** | Professional styling, alternating row colors |
-| **Code Blocks** | Dark theme (GitHub Dark style), monospace font |
-| **Inline Code** | Light gray background with accent color |
-| **Page Numbers** | Centered at bottom |
-| **Blockquotes** | Left-accented blue border |
-| **Page Breaks** | Avoided inside tables, code blocks, blockquotes |
-| **Diagrams** | Mermaid or image support via HTML |
+| Feature          | Detail                                          |
+| ---------------- | ----------------------------------------------- |
+| **Page Size**    | A4 with 2cm margins                             |
+| **Headers**      | Styled h1/h2/h3/h4 with distinct colors         |
+| **Tables**       | Professional styling, alternating row colors    |
+| **Code Blocks**  | Dark theme (GitHub Dark style), monospace font  |
+| **Inline Code**  | Light gray background with accent color         |
+| **Page Numbers** | Centered at bottom                              |
+| **Blockquotes**  | Left-accented blue border                       |
+| **Page Breaks**  | Avoided inside tables, code blocks, blockquotes |
+| **Diagrams**     | Mermaid or image support via HTML               |
 
 ---
 
 ## Use Cases
 
-| Scenario | Description |
-|----------|-------------|
-| **Unit Notes → PDF** | Convert subject unit notes to printable study sheets |
-| **PYQ Solutions → PDF** | Generate print-friendly previous year question solutions |
-| **Formula Sheets → PDF** | Create compact formula reference PDFs |
-| **Syllabus Reference → PDF** | Print official syllabus with CO-PO mapping |
-| **Master Solutions → PDF** | Compile full subject solutions into one document |
-| **Flashcards → PDF** | Generate printable flashcard sheets |
+| Scenario                     | Description                                              |
+| ---------------------------- | -------------------------------------------------------- |
+| **Unit Notes → PDF**         | Convert subject unit notes to printable study sheets     |
+| **PYQ Solutions → PDF**      | Generate print-friendly previous year question solutions |
+| **Formula Sheets → PDF**     | Create compact formula reference PDFs                    |
+| **Syllabus Reference → PDF** | Print official syllabus with CO-PO mapping               |
+| **Master Solutions → PDF**   | Compile full subject solutions into one document         |
+| **Flashcards → PDF**         | Generate printable flashcard sheets                      |
 
 ---
 

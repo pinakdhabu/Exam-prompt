@@ -1,29 +1,39 @@
 ---
 name: universal-cross-subject-mapper
-description: Maps conceptual connections across subjects for ANY university worldwide. Shows how topics from one course relate to and build upon topics from other courses. Provides integrated learning paths, dependency graphs, and cross-referenced study materials. Essential for comprehensive exams and interdisciplinary understanding.
+description:
+  Maps conceptual connections across subjects for ANY university worldwide. Shows how topics from
+  one course relate to and build upon topics from other courses. Provides integrated learning paths,
+  dependency graphs, and cross-referenced study materials. Essential for comprehensive exams and
+  interdisciplinary understanding.
 ---
 
 # Universal Cross-Subject Mapper
 
 ## Overview
-Creates a semantic map showing how concepts from different subjects connect, depend on each other, and reinforce each other. Helps students develop integrated understanding rather than studying each subject in isolation. Particularly valuable for comprehensive exams, GATE, GRE subject tests, and interdisciplinary programs.
+
+Creates a semantic map showing how concepts from different subjects connect, depend on each other,
+and reinforce each other. Helps students develop integrated understanding rather than studying each
+subject in isolation. Particularly valuable for comprehensive exams, GATE, GRE subject tests, and
+interdisciplinary programs.
 
 ## How This Skill Works
 
-1. **User provides**: List of subjects in current semester and/or entire program, university, department
-2. **System identifies**: Conceptual overlap, prerequisite dependencies, shared techniques, cross-applications
+1. **User provides**: List of subjects in current semester and/or entire program, university,
+   department
+2. **System identifies**: Conceptual overlap, prerequisite dependencies, shared techniques,
+   cross-applications
 3. **System constructs**: Dependency graph showing connections between subjects/topics
 4. **System generates**: Cross-reference tables and integrated study paths
 
 ## 1. Connection Types
 
-| Connection Type | Description | Example |
-|---|---|---|
-| **Prerequisite** | Topic A must be understood before Topic B | Calculus -> Differential Equations -> Signals & Systems |
-| **Shared Concept** | Same concept appears in multiple subjects | Fourier Transform appears in: Signals, Control Systems, Image Processing |
-| **Application** | Topic A from one subject is applied in Topic B from another | Probability (Math) applied in Machine Learning (CS) |
-| **Analogy** | Similar structure in different domains | Memory management (OS) resembles cache management (Architecture) |
-| **Extension** | Concept A is generalized/specialized in another subject | Linked Lists (DS) -> Memory Allocation (OS) -> File Systems (OS) |
+| Connection Type    | Description                                                 | Example                                                                  |
+| ------------------ | ----------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **Prerequisite**   | Topic A must be understood before Topic B                   | Calculus -> Differential Equations -> Signals & Systems                  |
+| **Shared Concept** | Same concept appears in multiple subjects                   | Fourier Transform appears in: Signals, Control Systems, Image Processing |
+| **Application**    | Topic A from one subject is applied in Topic B from another | Probability (Math) applied in Machine Learning (CS)                      |
+| **Analogy**        | Similar structure in different domains                      | Memory management (OS) resembles cache management (Architecture)         |
+| **Extension**      | Concept A is generalized/specialized in another subject     | Linked Lists (DS) -> Memory Allocation (OS) -> File Systems (OS)         |
 
 ## 2. Cross-Subject Dependency Graph
 
@@ -81,7 +91,8 @@ in both subjects.
 
 ## 4. Integrated Study Paths
 
-The mapper can generate study sequences that cover related concepts from multiple subjects in an interleaved fashion:
+The mapper can generate study sequences that cover related concepts from multiple subjects in an
+interleaved fashion:
 
 ```
 INTERLEAVED STUDY PATH: Memory Systems (3 subjects)
@@ -128,6 +139,7 @@ DEPENDENCY PATH:
 ## 6. Integration with Other Skills
 
 - **universal-notes-generator**: Generates cross-subject notes that link related concepts
-- **universal-study-planner**: Creates interleaved study schedules based on cross-subject connections
+- **universal-study-planner**: Creates interleaved study schedules based on cross-subject
+  connections
 - **universal-mind-map-generator**: Visualizes cross-subject relationships in mind map format
 - **universal-pyq-analyzer**: Identifies cross-subject question patterns in comprehensive exams

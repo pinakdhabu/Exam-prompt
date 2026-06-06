@@ -8,15 +8,15 @@
 
 ## Q1) a) Circuit Switching vs Packet Switching [6]
 
-| Parameter | Circuit Switching | Packet Switching |
-|-----------|-------------------|------------------|
-| Resource allocation | Dedicated path reserved for entire call | Resources shared on demand |
-| Path | Fixed, established before communication | Dynamic, each packet may take different path |
-| Delay | Fixed (propagation only) | Variable (queuing + propagation) |
-| Efficiency | Wasted bandwidth during silence | Efficient bandwidth utilization |
-| Store-and-forward | No | Yes |
-| Call setup | Required (connection establishment) | Not required (connectionless) |
-| Example | Traditional telephone network | Internet (IP) |
+| Parameter           | Circuit Switching                       | Packet Switching                             |
+| ------------------- | --------------------------------------- | -------------------------------------------- |
+| Resource allocation | Dedicated path reserved for entire call | Resources shared on demand                   |
+| Path                | Fixed, established before communication | Dynamic, each packet may take different path |
+| Delay               | Fixed (propagation only)                | Variable (queuing + propagation)             |
+| Efficiency          | Wasted bandwidth during silence         | Efficient bandwidth utilization              |
+| Store-and-forward   | No                                      | Yes                                          |
+| Call setup          | Required (connection establishment)     | Not required (connectionless)                |
+| Example             | Traditional telephone network           | Internet (IP)                                |
 
 ---
 
@@ -31,6 +31,7 @@
 - **Versions:** RIPv1 (classful), RIPv2 (classless, supports CIDR/VLSM)
 
 **Features:**
+
 - **Split horizon**: Never advertise a route back on the interface it was learned from
 - **Poison reverse**: Advertise failed routes with metric 16
 - **Hold-down timer**: 180 seconds before accepting new routes for a failed network
@@ -45,10 +46,10 @@
 
 **/26** means 26 network bits, **6 host bits**.
 
-**i) Subnet mask:**
-255.255.255.192 (binary: 11111111.11111111.11111111.11000000)
+**i) Subnet mask:** 255.255.255.192 (binary: 11111111.11111111.11111111.11000000)
 
 **ii) Network address:**
+
 - 71 in binary = 01000111
 - With /26 mask (11000000): 01000000 = 64
 - **Network address:** 192.168.5.64
@@ -93,6 +94,7 @@ Broadcast:        192.168.5.127
 ```
 
 **Improvements over IPv4:**
+
 - Larger address space (128-bit vs 32-bit)
 - Simplified header (no checksum, no fragmentation in routers)
 - Built-in security (IPSec mandatory)
@@ -104,7 +106,8 @@ Broadcast:        192.168.5.127
 
 ## Q2) b) Border Gateway Protocol (BGP) [6]
 
-**BGP** is the **path-vector** routing protocol that governs routing between **Autonomous Systems (AS)** on the internet.
+**BGP** is the **path-vector** routing protocol that governs routing between **Autonomous Systems
+(AS)** on the internet.
 
 - **Type:** Exterior Gateway Protocol (EGP)
 - **Transport:** TCP port 179
@@ -112,12 +115,14 @@ Broadcast:        192.168.5.127
 - **Versions:** BGP-4 (current)
 
 **Key concepts:**
+
 - **eBGP**: Between different ASes
 - **iBGP**: Within the same AS
 - **Path attributes**: AS_PATH, NEXT_HOP, LOCAL_PREF, MED
 - **Route selection**: Shortest AS_PATH → lowest MED → eBGP > iBGP
 
-**Advantages:** Policy-based routing, loop-free (AS_PATH contains all ASes), scalable for global internet.
+**Advantages:** Policy-based routing, loop-free (AS_PATH contains all ASes), scalable for global
+internet.
 
 ---
 
@@ -177,6 +182,7 @@ Broadcast:        192.168.5.127
 **Hex dump:** `e2 a7 00 0d 00 20 74 9e 0e ff 00 00 00 01 00 00 00`
 
 First 8 bytes = UDP header:
+
 - **Source Port**: `e2 a7` = 58023 (decimal)
 - **Dest Port**: `00 0d` = 13 (decimal) — Daytime protocol
 - **Length**: `00 20` = 32 bytes (total UDP datagram including header)
@@ -203,8 +209,8 @@ Data Length:      24 bytes (32 - 8 header)
 └────────────────┴───────────────────────────────────────────┘
 ```
 
-**Length:** Header + data in bytes (minimum 8 for empty data).
-**Checksum:** Optional in IPv4, mandatory in IPv6.
+**Length:** Header + data in bytes (minimum 8 for empty data). **Checksum:** Optional in IPv4,
+mandatory in IPv6.
 
 **Advantages over TCP:** Lower overhead (8 bytes vs 20+), no connection setup, no ACK delay.
 **Limitations:** No reliability, no ordering, no congestion control.
@@ -213,9 +219,11 @@ Data Length:      24 bytes (32 - 8 header)
 
 ## Q4) b) Sockets [6]
 
-**Socket** is an endpoint for communication between two machines. Identified by IP address + port number.
+**Socket** is an endpoint for communication between two machines. Identified by IP address + port
+number.
 
 **Types:**
+
 1. **Stream Socket (SOCK_STREAM)**: TCP — reliable, connection-oriented, ordered
 2. **Datagram Socket (SOCK_DGRAM)**: UDP — unreliable, connectionless
 3. **Raw Socket (SOCK_RAW)**: Direct IP access (for custom protocols, ping)
@@ -226,7 +234,7 @@ Data Length:      24 bytes (32 - 8 header)
 sequenceDiagram
     participant Server
     participant Client
-    
+
     Server->>Server: socket() — create endpoint
     Server->>Server: bind() — assign address & port
     Server->>Server: listen() — wait for connections
@@ -247,27 +255,27 @@ sequenceDiagram
 **SCTP (Stream Control Transmission Protocol)** is a reliable, message-oriented transport protocol.
 
 **Features:**
+
 1. **Multihoming**: An SCTP endpoint can have multiple IP addresses for redundancy
-2. **Multistreaming**: Multiple independent streams within one connection (avoids head-of-line blocking)
+2. **Multistreaming**: Multiple independent streams within one connection (avoids head-of-line
+   blocking)
 3. **Message-oriented**: Preserves message boundaries (unlike TCP's byte stream)
 4. **Four-way handshake**: Uses COOKIE mechanism to prevent SYN flood attacks
 5. **Selective ACK**: Only missing chunks are retransmitted
 
-**Comparison:**
-| Feature | TCP | UDP | SCTP |
-|---------|-----|-----|------|
-| Reliability | Yes | No | Yes |
-| Ordered delivery | Yes | No | Optional |
-| Multistreaming | No | No | Yes |
-| Multihoming | No | No | Yes |
+**Comparison:** | Feature | TCP | UDP | SCTP | |---------|-----|-----|------| | Reliability | Yes |
+No | Yes | | Ordered delivery | Yes | No | Optional | | Multistreaming | No | No | Yes | |
+Multihoming | No | No | Yes |
 
 ---
 
 ## Q5) a) HTTP [9]
 
-**HTTP (HyperText Transfer Protocol)** is an application-layer protocol for distributed, collaborative hypermedia systems (the web).
+**HTTP (HyperText Transfer Protocol)** is an application-layer protocol for distributed,
+collaborative hypermedia systems (the web).
 
 **HTTP Request Message Format:**
+
 ```
 METHOD /path HTTP/version\r\n
 Header1: value\r\n
@@ -277,6 +285,7 @@ body (optional)
 ```
 
 **HTTP Response Message Format:**
+
 ```
 HTTP/version StatusCode StatusText\r\n
 Header1: value\r\n
@@ -286,30 +295,33 @@ body (HTML/content)
 
 **HTTP/1.1 vs HTTP/2:**
 
-| Feature | HTTP/1.1 | HTTP/2 |
-|---------|---------|--------|
-| Multiplexing | No (one request per connection) | Yes (multiple streams over one connection) |
-| Header compression | No (plain text headers) | HPACK compression |
-| Server push | No | Server can push resources proactively |
-| Binary protocol | Text-based | Binary |
-| Latency | Head-of-line blocking | Reduced latency via multiplexing |
+| Feature            | HTTP/1.1                        | HTTP/2                                     |
+| ------------------ | ------------------------------- | ------------------------------------------ |
+| Multiplexing       | No (one request per connection) | Yes (multiple streams over one connection) |
+| Header compression | No (plain text headers)         | HPACK compression                          |
+| Server push        | No                              | Server can push resources proactively      |
+| Binary protocol    | Text-based                      | Binary                                     |
+| Latency            | Head-of-line blocking           | Reduced latency via multiplexing           |
 
 ---
 
 ## Q5) b) SMTP and MIME [9]
 
 **SMTP (Simple Mail Transfer Protocol):** Used for sending emails between mail servers.
+
 - Port: 25 (default), 587 (submission)
 - Commands: HELO, MAIL FROM, RCPT TO, DATA, QUIT
 - Push protocol (sender pushes to receiver)
 
 **MIME (Multipurpose Internet Mail Extensions):** Extends SMTP to support non-text data.
+
 - Types: text/plain, text/html, image/jpeg, application/pdf
 - Encoding: Base64, quoted-printable
 
 **Email Delivery Flow:**
+
 ```
-Sender → MUA (Outlook) → MSA (port 587) → MTA (SMTP) → 
+Sender → MUA (Outlook) → MSA (port 587) → MTA (SMTP) →
   → MDA → POP3/IMAP server → MUA (Receiver)
 ```
 
@@ -320,7 +332,8 @@ Sender → MUA (Outlook) → MSA (port 587) → MTA (SMTP) →
 
 ## Q6) a) DHCP [9]
 
-**DHCP (Dynamic Host Configuration Protocol)** automatically assigns IP addresses and network configuration to hosts.
+**DHCP (Dynamic Host Configuration Protocol)** automatically assigns IP addresses and network
+configuration to hosts.
 
 **Client State Diagram:**
 
@@ -339,6 +352,7 @@ stateDiagram-v2
 ```
 
 **DORA Process:**
+
 1. **D**iscover — Client broadcasts "I need an IP"
 2. **O**ffer — DHCP server offers an IP
 3. **R**equest — Client requests the offered IP
@@ -350,17 +364,21 @@ stateDiagram-v2
 
 **i) DNS (Domain Name System):** Resolves human-readable domain names to IP addresses.
 
-**Recursive Query:** DNS server resolves the query completely (may query other servers on behalf of client).
+**Recursive Query:** DNS server resolves the query completely (may query other servers on behalf of
+client).
+
 ```
 Client → Local DNS → Root DNS → TLD DNS → Authoritative DNS → IP
 ```
 
 **Iterative Query:** DNS server returns the best answer or referral to the next server.
+
 ```
 Client → Local DNS → (referral to root) → Client queries root → (referral to .com) → ...
 ```
 
 **ii) FTP (File Transfer Protocol):** Transfers files between client and server.
+
 - **Control connection**: Port 21 (persistent, carries commands/responses)
 - **Data connection**: Port 20 (for actual file transfer, created per transfer)
 - **Active mode**: Server connects to client's data port
@@ -375,10 +393,12 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 **Three main concepts:**
 
 **1. Security Attacks:**
+
 - **Passive**: Eavesdropping, traffic analysis
 - **Active**: Masquerade, replay, modification, denial of service
 
 **2. Security Services:**
+
 - **Authentication**: Verifies identity (peer entity, data origin)
 - **Access Control**: Prevents unauthorized use
 - **Data Confidentiality**: Protects from unauthorized disclosure
@@ -386,6 +406,7 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 - **Non-repudiation**: Sender/receiver cannot deny involvement
 
 **3. Security Mechanisms:**
+
 - Encipherment, digital signatures, access control, data integrity
 - Authentication exchange, traffic padding, routing control, notarization
 
@@ -407,7 +428,8 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 
 ## Q7) b) HTTPS [6]
 
-**HTTPS (HTTP Secure)** is HTTP over TLS/SSL — encrypts all communication between browser and web server.
+**HTTPS (HTTP Secure)** is HTTP over TLS/SSL — encrypts all communication between browser and web
+server.
 
 - **Port:** 443
 - **Protocol:** HTTP + SSL/TLS
@@ -415,6 +437,7 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 - **Certificate:** X.509 digital certificate binds identity to public key
 
 **Benefits:**
+
 - Confidentiality (no eavesdropping)
 - Integrity (no tampering)
 - Authentication (verifies server identity via CA-signed certificates)
@@ -426,28 +449,31 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 **IDS** monitors network traffic and system activity for malicious behavior.
 
 **Types:**
+
 1. **NIDS (Network-based)**: Monitors network traffic passively
 2. **HIDS (Host-based)**: Monitors OS logs, file integrity on a single host
 3. **DIDS (Distributed)**: Combines NIDS + HIDS sensors with central analysis
 
 **Detection Methods:**
+
 - **Signature-based**: Matches known attack patterns (low false positives, misses zero-day)
-- **Anomaly-based**: Detects deviations from normal behavior (catches zero-day, high false positives)
+- **Anomaly-based**: Detects deviations from normal behavior (catches zero-day, high false
+  positives)
 - **Hybrid**: Combines both approaches
 
 ---
 
 ## Q8) a) Symmetric vs Asymmetric Cryptography [6]
 
-| Parameter | Symmetric | Asymmetric |
-|-----------|----------|------------|
-| Keys | Single shared key | Public/private key pair |
-| Speed | Fast (suitable for bulk data) | Slow (100-1000× slower) |
-| Key exchange | Problematic (must share securely) | No shared secret needed |
-| Key size | 128-256 bits | 2048-4096 bits |
-| Security service | Confidentiality | Confidentiality + authentication |
-| Algorithms | AES, DES, 3DES, Blowfish | RSA, ECC, Diffie-Hellman |
-| Use case | Data encryption at rest | Key exchange, digital signatures |
+| Parameter        | Symmetric                         | Asymmetric                       |
+| ---------------- | --------------------------------- | -------------------------------- |
+| Keys             | Single shared key                 | Public/private key pair          |
+| Speed            | Fast (suitable for bulk data)     | Slow (100-1000× slower)          |
+| Key exchange     | Problematic (must share securely) | No shared secret needed          |
+| Key size         | 128-256 bits                      | 2048-4096 bits                   |
+| Security service | Confidentiality                   | Confidentiality + authentication |
+| Algorithms       | AES, DES, 3DES, Blowfish          | RSA, ECC, Diffie-Hellman         |
+| Use case         | Data encryption at rest           | Key exchange, digital signatures |
 
 ---
 
@@ -456,6 +482,7 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 **SSL** provides secure communication between client and server.
 
 **SSL Protocol Stack:**
+
 ```
 ┌──────────────────────────────────────┐
 │       HTTP, FTP, SMTP, etc.          │  ← Application
@@ -472,6 +499,7 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 ```
 
 **SSL Handshake (simplified):**
+
 1. Client sends **ClientHello** (SSL version, cipher suites, random)
 2. Server responds **ServerHello** (chosen cipher, certificate, random)
 3. Client verifies certificate, generates **pre-master secret**, encrypts with server's public key
@@ -486,26 +514,32 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 
 ## Q8) c) Firewalls [5]
 
-**Firewall** is a network security system that monitors and controls incoming/outgoing traffic based on predetermined rules.
+**Firewall** is a network security system that monitors and controls incoming/outgoing traffic based
+on predetermined rules.
 
 **Types:**
+
 1. **Packet Filter Firewall**: Examines packet headers (IP, port, protocol). Fast but stateless.
 2. **Stateful Inspection Firewall**: Tracks connection state. More secure than packet filter.
 3. **Application Gateway (Proxy)**: Inspects application-layer data. Most secure but slowest.
 4. **Next-Gen Firewall (NGFW)**: Combines firewall + IDS/IPS + application awareness.
 
 **Architectures:**
+
 - **Screened host**: Single firewall protects the entire network
-- **DMZ (Demilitarized Zone)**: Three-leg firewall — public servers in DMZ, internal network protected
+- **DMZ (Demilitarized Zone)**: Three-leg firewall — public servers in DMZ, internal network
+  protected
 
 **Advantages:** Traffic filtering, network segmentation, logging, attack prevention.
 
 ---
 
 ═══════════════════════════════════════════════════════
+
 ## EXAMINER COMMENTARY
 
 **Why this scores full marks:**
+
 - Subnetting answer includes complete hex-to-decimal conversion steps
 - UDP dump parsed field-by-field from hex to decimal
 - Tables used for all comparisons (circuit vs packet, TCP vs UDP vs SCTP, symmetric vs asymmetric)
@@ -514,6 +548,7 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 - Socket programming includes sequence diagram
 
 **Common Deductions:**
+
 - Forgetting to show the binary conversion in subnetting problems
 - Mistaking UDP header length for data length
 - Confusing HTTP request vs response format
@@ -522,6 +557,7 @@ Client → Local DNS → (referral to root) → Client queries root → (referra
 - Omitting the checksum in TCP/UDP header diagrams
 
 **Time Budget:**
+
 - Q1 (18 min): Circuit/Packet 6 min + RIP 6 min + Subnetting 6 min
 - Q2 (18 min): IPv6 6 min + BGP 6 min + Network layer 6 min
 - Q3 (18 min): TCP header 6 min + Transport services 6 min + UDP parsing 6 min

@@ -2,7 +2,8 @@
 
 ## Syllabus Overview
 
-Software Engineering covers software process models, requirements engineering, estimation and scheduling, design engineering, risk management, configuration management, and software testing.
+Software Engineering covers software process models, requirements engineering, estimation and
+scheduling, design engineering, risk management, configuration management, and software testing.
 
 ## Units
 

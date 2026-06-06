@@ -31,7 +31,7 @@ function Get-InstallCmd {
     param([string]$Tool)
     $wId = $WingetPkg[$Tool]
     $wCmd = if ($wId) { "winget install $wId" } else { "winget install $Tool" }
-    
+
     $cmds = @(
         @{ Name = "winget";  Cmd = $wCmd },
         @{ Name = "choco";   Cmd = "choco install $Tool" },

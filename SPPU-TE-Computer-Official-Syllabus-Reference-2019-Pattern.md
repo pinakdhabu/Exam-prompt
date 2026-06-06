@@ -23,27 +23,29 @@
 
 ## Semester V — Course Structure
 
-| Course Code | Course Name | TH | PR | TUT | Mid-Sem | End-Sem | TW | PR | OR | Total | Credits |
-|-------------|-------------|:--:|:--:|:---:|:-------:|:-------:|:--:|:--:|:--:|:-----:|:-------:|
-| 310241 | Database Management Systems | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 310242 | Theory of Computation | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 310243 | Systems Programming and Operating System | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 310244 | Computer Networks and Security | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 310245 | Elective I | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 310246 | Database Management Systems Laboratory | -- | 04 | -- | -- | -- | 25 | 25 | -- | 50 | 02 |
-| 310247 | Computer Networks and Security Laboratory | -- | 02 | -- | -- | -- | 25 | -- | 25 | 50 | 01 |
-| 310248 | Laboratory Practice I | -- | 04 | -- | -- | -- | 25 | 25 | -- | 50 | 02 |
-| 310249 | Seminar and Technical Communication | -- | -- | 01 | -- | -- | 50 | -- | -- | 50 | 01 |
-| 310250 | Audit Course 5 | -- | -- | -- | -- | -- | -- | -- | -- | Grade | -- |
-| **Total** | | **15** | **10** | **01** | **150** | **350** | **125** | **50** | **25** | **700** | **21** |
+| Course Code | Course Name                               |   TH   |   PR   |  TUT   | Mid-Sem | End-Sem |   TW    |   PR   |   OR   |  Total  | Credits |
+| ----------- | ----------------------------------------- | :----: | :----: | :----: | :-----: | :-----: | :-----: | :----: | :----: | :-----: | :-----: |
+| 310241      | Database Management Systems               |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 310242      | Theory of Computation                     |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 310243      | Systems Programming and Operating System  |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 310244      | Computer Networks and Security            |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 310245      | Elective I                                |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 310246      | Database Management Systems Laboratory    |   --   |   04   |   --   |   --    |   --    |   25    |   25   |   --   |   50    |   02    |
+| 310247      | Computer Networks and Security Laboratory |   --   |   02   |   --   |   --    |   --    |   25    |   --   |   25   |   50    |   01    |
+| 310248      | Laboratory Practice I                     |   --   |   04   |   --   |   --    |   --    |   25    |   25   |   --   |   50    |   02    |
+| 310249      | Seminar and Technical Communication       |   --   |   --   |   01   |   --    |   --    |   50    |   --   |   --   |   50    |   01    |
+| 310250      | Audit Course 5                            |   --   |   --   |   --   |   --    |   --    |   --    |   --   |   --   |  Grade  |   --    |
+| **Total**   |                                           | **15** | **10** | **01** | **150** | **350** | **125** | **50** | **25** | **700** | **21**  |
 
 **Elective I Options:**
+
 - 310245(A): Internet of Things and Embedded Systems
 - 310245(B): Human Computer Interface
 - 310245(C): Distributed Systems
 - 310245(D): Software Project Management
 
 **Audit Course 5 Options:**
+
 - 310250(A): Cyber Security
 - 310250(B): Professional Ethics and Etiquettes
 - 310250(C): Learn New Skills
@@ -71,18 +73,19 @@
 - To understand the fundamental concepts of Database Management Systems
 - To acquire the knowledge of database query languages and transaction processing
 - To understand systematic database design approaches
-- To acquire the skills to use a powerful, flexible, and scalable general-purpose databases to handle Big Data
+- To acquire the skills to use a powerful, flexible, and scalable general-purpose databases to
+  handle Big Data
 - To be familiar with advances in databases and applications
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze and design Database Management System using ER model |
-| CO2 | Implement database queries using database languages |
-| CO3 | Normalize the database design using normal forms |
-| CO4 | Apply Transaction Management concepts in real-time situations |
-| CO5 | Use NoSQL databases for processing unstructured data |
+| CO  | Description                                                                            |
+| --- | -------------------------------------------------------------------------------------- |
+| CO1 | Analyze and design Database Management System using ER model                           |
+| CO2 | Implement database queries using database languages                                    |
+| CO3 | Normalize the database design using normal forms                                       |
+| CO4 | Apply Transaction Management concepts in real-time situations                          |
+| CO5 | Use NoSQL databases for processing unstructured data                                   |
 | CO6 | Differentiate between Complex Data Types and analyze the use of appropriate data types |
 
 ### Course Contents
@@ -104,7 +107,8 @@
 - Views: Creating, Dropping, Updating using Indexes
 - Set Operations, Predicates and Joins, Set membership, Tuple Variables
 - Set comparison, Ordering of Tuples, Aggregate Functions, SQL Functions, Nested Queries
-- PL/SQL: Concept of Stored Procedures and Functions, Cursors, Triggers, Assertions, Roles and Privileges
+- PL/SQL: Concept of Stored Procedures and Functions, Cursors, Triggers, Assertions, Roles and
+  Privileges
 
 #### Unit III: Relational Database Design (06 Hours) → CO1, CO3
 
@@ -133,32 +137,39 @@
 - Types of NoSQL Databases: Key-value store, document store, graph, wide column stores
 - BASE Properties, Data Consistency model, ACID Vs BASE
 - Comparative study of RDBMS and NoSQL
-- MongoDB (with syntax and usage): CRUD Operations, Indexing, Aggregation, MapReduce, Replication, Sharding
+- MongoDB (with syntax and usage): CRUD Operations, Indexing, Aggregation, MapReduce, Replication,
+  Sharding
 
 #### Unit VI: Advances in Databases (07 Hours) → CO5, CO6
 
 - Emerging Databases: Active and Deductive Databases, Main Memory Databases, Semantic Databases
 - Complex Data Types: Semi-Structured Data, Features of Semi-Structured Data Models
 - Nested Data Types: JSON, XML
-- Object Orientation: Object-Relational Database System, Table Inheritance, Object-Relational Mapping
+- Object Orientation: Object-Relational Database System, Table Inheritance, Object-Relational
+  Mapping
 - Spatial Data: Geographic Data, Geometric Data
 
 ### Learning Resources
 
 #### Text Books
 
-1. Silberschatz A., Korth H., Sudarshan S., "Database System Concepts", McGraw Hill Publishers, ISBN 0-07-120413-X, 6th edition
+1. Silberschatz A., Korth H., Sudarshan S., "Database System Concepts", McGraw Hill Publishers, ISBN
+   0-07-120413-X, 6th edition
 2. Connally T, Begg C., "Database Systems", Pearson Education, ISBN 81-7808-861-4
-3. Pramod J. Sadalage and Martin Fowler, "NoSQL Distilled", Addison Wesley, ISBN-10: 0321826620, ISBN-13: 978-0321826626
+3. Pramod J. Sadalage and Martin Fowler, "NoSQL Distilled", Addison Wesley, ISBN-10: 0321826620,
+   ISBN-13: 978-0321826626
 
 #### Reference Books
 
 1. C J Date, "An Introduction to Database Systems", Addison-Wesley, ISBN: 0201144719
-2. S.K.Singh, "Database Systems: Concepts, Design and Application", Pearson Education, ISBN 978-81-317-6092-5
-3. Kristina Chodorow, Michael Dierolf, "MongoDB: The Definitive Guide", O'Reilly Publications, ISBN: 978-1-449-34468-9
+2. S.K.Singh, "Database Systems: Concepts, Design and Application", Pearson Education, ISBN
+   978-81-317-6092-5
+3. Kristina Chodorow, Michael Dierolf, "MongoDB: The Definitive Guide", O'Reilly Publications, ISBN:
+   978-1-449-34468-9
 4. Adam Fowler, "NoSQL For Dummies", John Wiley & Sons, ISBN-1118905628
 5. Joy A. Kreibich, "Using SQLite", O'REILLY, ISBN: 13:978-93-5110-934-1
-6. Ivan Bayross, "SQL, PL/SQL the Programming Language of Oracle", BPB Publications ISBN: 9788176569644
+6. Ivan Bayross, "SQL, PL/SQL the Programming Language of Oracle", BPB Publications ISBN:
+   9788176569644
 7. Seema Acharya, "Demystifying NoSQL", Wiley Publications, ISBN: 9788126579969
 
 ---
@@ -176,26 +187,29 @@
 ### Course Objectives
 
 - To introduce the students to basics of Theory of Computation
-- To study abstract computing models to provide a formal connection between algorithmic problem solving and the theory of languages
-- To understand Grammar, Pushdown Automata and Turing Machine for language processing and algorithm design
+- To study abstract computing models to provide a formal connection between algorithmic problem
+  solving and the theory of languages
+- To understand Grammar, Pushdown Automata and Turing Machine for language processing and algorithm
+  design
 - To learn about the theory of computability and complexity for algorithm design
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                                                                                                          |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | CO1 | Understand formal language, translation logic, essentials of translation, alphabets, language representation and apply it to design Finite Automata and its variants |
-| CO2 | Construct regular expression to present regular language and understand pumping lemma for RE |
-| CO3 | Design Context Free Grammars and learn to simplify the grammar |
-| CO4 | Construct Pushdown Automaton model for the Context Free Language |
-| CO5 | Devise Turing Machine for the different requirements outlined by theoretical computer science |
-| CO6 | Analyze different classes of problems, and study concepts of NP completeness |
+| CO2 | Construct regular expression to present regular language and understand pumping lemma for RE                                                                         |
+| CO3 | Design Context Free Grammars and learn to simplify the grammar                                                                                                       |
+| CO4 | Construct Pushdown Automaton model for the Context Free Language                                                                                                     |
+| CO5 | Devise Turing Machine for the different requirements outlined by theoretical computer science                                                                        |
+| CO6 | Analyze different classes of problems, and study concepts of NP completeness                                                                                         |
 
 ### Course Contents
 
 #### Unit I: Formal Language Theory and Finite Automata (07 Hours) → CO1
 
-- Finite Automata (FA): An informal picture of FA, Finite State Machine (FSM), Language accepted by FA, Definition of Regular Language
+- Finite Automata (FA): An informal picture of FA, Finite State Machine (FSM), Language accepted by
+  FA, Definition of Regular Language
 - FA without output: Deterministic and Nondeterministic FA (DFA and NFA)
 - epsilon-NFA and inter-conversion
 - Minimization of DFAs
@@ -221,7 +235,8 @@
 - Sentential form, Derivation and Derivation Tree/Parse Tree
 - Context Free Language (CFL), Ambiguous Grammar
 - Writing grammar for language
-- Simplification of CFG: Eliminating ε-productions, unit productions, useless production, and useless symbols
+- Simplification of CFG: Eliminating ε-productions, unit productions, useless production, and
+  useless symbols
 - Normal Forms: Chomsky Normal Form, Greibach Normal Form
 - Pumping Lemma for CFG, Closure properties of CFL, Decision properties of CFL
 - Chomsky Hierarchy, Cock-Younger-Kasami Algorithm
@@ -238,7 +253,8 @@
 - PDA vs CFLs
 - Deterministic CFLs
 
-**Exemplar/Case Study:** Parsing and PDA: Top-Down Parsing, Bottom-up Parsing simulation showing use of PDA.
+**Exemplar/Case Study:** Parsing and PDA: Top-Down Parsing, Bottom-up Parsing simulation showing use
+of PDA.
 
 #### Unit V: Turing Machines (TM) (07 Hours) → CO5
 
@@ -270,14 +286,18 @@
 
 #### Text Books
 
-1. John E. Hopcroft, Rajeev Motwani, Jeffrey D.Ullman, "Introduction to Automata Theory Languages and Computation", Addison-Wesley, ISBN 0-201-44124-1
+1. John E. Hopcroft, Rajeev Motwani, Jeffrey D.Ullman, "Introduction to Automata Theory Languages
+   and Computation", Addison-Wesley, ISBN 0-201-44124-1
 2. Daniel Cohen, "Introduction to Computer Theory", Wiley & Sons, ISBN 97881265133454
 
 #### Reference Books
 
-1. Sanjeev Arora and Boaz Barak, "Computational Complexity: A Modern Approach", Cambridge University Press, ISBN: 0521424267 97805214242643
-2. John Martin, "Introduction to Languages and The Theory of Computation", 2nd Edition, McGrawHill Education, ISBN-13: 978-1-25-900558-9
-3. Michael Sipser, "Introduction to the Theory of Computation", Cengage Learning, ISBN-13: 97811331878137
+1. Sanjeev Arora and Boaz Barak, "Computational Complexity: A Modern Approach", Cambridge University
+   Press, ISBN: 0521424267 97805214242643
+2. John Martin, "Introduction to Languages and The Theory of Computation", 2nd Edition, McGrawHill
+   Education, ISBN-13: 978-1-25-900558-9
+3. Michael Sipser, "Introduction to the Theory of Computation", Cengage Learning, ISBN-13:
+   97811331878137
 4. Vivek Kulkarni, "Theory of Computation", Oxford University Press, ISBN 0-19-808458
 5. Kavi Mahesh, "Theory of Computation: A Problem-Solving Approach", Wiley India, ISBN 1081265331106
 
@@ -285,7 +305,8 @@
 
 ## 310243: Systems Programming and Operating System
 
-**Prerequisites Courses:** Programming and Problem Solving (110005), Data Structures and Algorithms (210252), Principles of Programming Languages (210255), Microprocessor (210254)
+**Prerequisites Courses:** Programming and Problem Solving (110005), Data Structures and Algorithms
+(210252), Principles of Programming Languages (210255), Microprocessor (210254)
 
 **Companion Course:** Laboratory Practice I (310248)
 
@@ -299,21 +320,22 @@
 
 - To get acquainted with the basics of System Programming
 - To acquire knowledge of data structures used in the design of System Software
-- To be familiar with the format of object modules, the functions of linking, relocation, and loading
+- To be familiar with the format of object modules, the functions of linking, relocation, and
+  loading
 - To comprehend the structures and functions of Operating Systems and process management
 - To deal with concurrency and deadlock in the Operating System
 - To learn and understand memory management of Operating System
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze and synthesize basic System Software and its functionality. |
-| CO2 | Identify suitable data structures and Design & Implement various System Software |
+| CO  | Description                                                                        |
+| --- | ---------------------------------------------------------------------------------- |
+| CO1 | Analyze and synthesize basic System Software and its functionality.                |
+| CO2 | Identify suitable data structures and Design & Implement various System Software   |
 | CO3 | Compare different loading schemes and analyze the performance of linker and loader |
-| CO4 | Implement and Analyze the performance of process scheduling algorithms |
-| CO5 | Identify the mechanism to deal with deadlock and concurrency issues |
-| CO6 | Demonstrate memory organization and memory management policies |
+| CO4 | Implement and Analyze the performance of process scheduling algorithms             |
+| CO5 | Identify the mechanism to deal with deadlock and concurrency issues                |
+| CO6 | Demonstrate memory organization and memory management policies                     |
 
 ### Course Contents
 
@@ -322,15 +344,20 @@
 - Introduction to Systems Programming, Need of Systems Programming
 - Software Hierarchy, Types of software: system software and application software
 - Machine structure
-- Evolution of components of Systems Programming: Text Editors, Assembler, Macros, Compiler, Interpreter, Loader, Linker, Debugger, Device Drivers, Operating System
-- Elements of Assembly Language Programming: Assembly Language statements, Benefits of Assembly Language, A simple Assembly scheme, Pass Structure of Assembler
-- Design of two pass Assembler: Processing of declaration statements, Assembler Directives and imperative statements, Advanced Assembler Directives, Intermediate code forms, Pass I and Pass II of two pass Assembler
+- Evolution of components of Systems Programming: Text Editors, Assembler, Macros, Compiler,
+  Interpreter, Loader, Linker, Debugger, Device Drivers, Operating System
+- Elements of Assembly Language Programming: Assembly Language statements, Benefits of Assembly
+  Language, A simple Assembly scheme, Pass Structure of Assembler
+- Design of two pass Assembler: Processing of declaration statements, Assembler Directives and
+  imperative statements, Advanced Assembler Directives, Intermediate code forms, Pass I and Pass II
+  of two pass Assembler
 
 **Exemplar/Case Study:** Debugging tools like GDB.
 
 #### Unit II: Macro Processor and Compilers (06 Hours) → CO1, CO2, CO3
 
-- Introduction, Features of a Macro facility: Macro instruction arguments, Conditional Macro expansion, Macro calls within Macros, Macro instructions, Defining Macro
+- Introduction, Features of a Macro facility: Macro instruction arguments, Conditional Macro
+  expansion, Macro calls within Macros, Macro instructions, Defining Macro
 - Design of two pass Macro processor, Concept of single pass Macro processor
 - Introduction to Compilers: Phases of Compiler with one example
 - Comparison of Compiler and Interpreter
@@ -339,7 +366,8 @@
 
 #### Unit III: Linkers and Loaders (07 Hours) → CO1, CO2, CO3
 
-- Introduction, Loader schemes: Compile and Go, General Loader Scheme, Absolute Loaders, Subroutine Linkages
+- Introduction, Loader schemes: Compile and Go, General Loader Scheme, Absolute Loaders, Subroutine
+  Linkages
 - Relocating Loaders, Direct linking Loaders, Overlay structure
 - Design of an Absolute Loader, Design of Direct linking Loader
 - Self-relocating programs
@@ -352,7 +380,8 @@
 - Introduction: Evolution of OS, Operating System Services, Functions of Operating System
 - Process Management: Process, Process States: 5 and 7 state model, Process control block
 - Threads, Thread lifecycle, Multithreading Model, Process control system calls
-- Process Scheduling: Uni-processor Scheduling, Scheduling: Preemptive, Non-preemptive, Long-term, Medium-term, Short term scheduling
+- Process Scheduling: Uni-processor Scheduling, Scheduling: Preemptive, Non-preemptive, Long-term,
+  Medium-term, Short term scheduling
 - Scheduling Algorithms: FCFS, SJF, RR, and Priority
 
 **Exemplar/Case Study:** Process management in Linux/Windows/Android; Readers-Writers problem.
@@ -363,7 +392,8 @@
 - Mutual Exclusion: Hardware approach, Software approach
 - Semaphore, Mutex and monitor
 - Reader writer problem, Producer Consumer problem, Dining Philosopher problem
-- Deadlocks: Principle of Deadlock, Deadlock prevention, Deadlock avoidance, Deadlock detection, Deadlock recovery
+- Deadlocks: Principle of Deadlock, Deadlock prevention, Deadlock avoidance, Deadlock detection,
+  Deadlock recovery
 
 **Exemplar/Case Study:** Concurrency Mechanism in Unix/Linux/Windows.
 
@@ -373,7 +403,8 @@
 - Memory Partitioning: Fixed Partitioning, Dynamic Partitioning, Buddy Systems, Fragmentation
 - Paging, Segmentation, Address translation
 - Placement Strategies: First Fit, Best Fit, Next Fit and Worst Fit
-- Virtual Memory (VM): Concepts, Swapping, VM with Paging, Page Table Structure, Inverted Page Table, Translation Look aside Buffer, Page Size
+- Virtual Memory (VM): Concepts, Swapping, VM with Paging, Page Table Structure, Inverted Page
+  Table, Translation Look aside Buffer, Page Size
 - VM with Segmentation, VM with Combined paging and segmentation
 - Page Replacement Policies: First In First Out (FIFO), Last Recently Used (LRU), Optimal, Thrashing
 
@@ -385,13 +416,15 @@
 
 1. John Donovan, "Systems Programming", McGraw Hill, ISBN 978-0-07-460482-3
 2. Dhamdhere D., "Systems Programming and Operating Systems", McGraw Hill, ISBN 0 07-463579-4
-3. Silberschatz, Galvin, Gagne, "Operating System Principles", 9th Edition, Wiley, ISBN 978-1-118-06333-0
+3. Silberschatz, Galvin, Gagne, "Operating System Principles", 9th Edition, Wiley, ISBN
+   978-1-118-06333-0
 
 #### Reference Books
 
 1. Leland Beck, "System Software: An Introduction to Systems Programming", Pearson
 2. John R. Levine, Tony Mason, Doug Brown, "Lex & Yacc", 1st Edition, O'REILLY, ISBN 81-7366-062-X
-3. Alfred V. Aho, Ravi Sethi, Jeffrey D. Ullman, "Compilers Principles, Techniques, and Tools", Addison Wesley, ISBN 981-235-885-4
+3. Alfred V. Aho, Ravi Sethi, Jeffrey D. Ullman, "Compilers Principles, Techniques, and Tools",
+   Addison Wesley, ISBN 981-235-885-4
 
 ---
 
@@ -417,14 +450,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                                    |
+| --- | ---------------------------------------------------------------------------------------------- |
 | CO1 | Summarize fundamental concepts of Computer Networks, architectures, protocols and technologies |
-| CO2 | Illustrate the working and functions of data link layer |
-| CO3 | Analyze the working of different routing protocols and mechanisms |
-| CO4 | Implement client-server applications using sockets |
-| CO5 | Illustrate role of application layer with its protocols, client-server architectures |
-| CO6 | Comprehend the basics of Network Security |
+| CO2 | Illustrate the working and functions of data link layer                                        |
+| CO3 | Analyze the working of different routing protocols and mechanisms                              |
+| CO4 | Implement client-server applications using sockets                                             |
+| CO5 | Illustrate role of application layer with its protocols, client-server architectures           |
+| CO6 | Comprehend the basics of Network Security                                                      |
 
 ### Course Contents
 
@@ -461,7 +494,8 @@
 - IP Protocol: Classes of IP (Network addressing), IPv4, IPv6
 - Network Address Translation, Sub-netting, CIDR
 - Network layer Protocols: ARP, RARP, ICMP, IGMP
-- Network Routing and Algorithms: Static Routing, Dynamic Routing, Distance Vector Routing, Link State Routing, Path Vector
+- Network Routing and Algorithms: Static Routing, Dynamic Routing, Distance Vector Routing, Link
+  State Routing, Path Vector
 - Routing Protocols: RIP, OSPF, BGP, MPLS
 - Routing in MANET: AODV, DSR, Mobile IP
 
@@ -470,7 +504,8 @@
 #### Unit IV: Transport Layer (07 Hours) → CO4
 
 - Process to Process Delivery, Services, Socket Programming
-- Elements of Transport Layer Protocols: Addressing, Connection establishment, Connection release, Flow control and buffering, Multiplexing, Congestion Control
+- Elements of Transport Layer Protocols: Addressing, Connection establishment, Connection release,
+  Flow control and buffering, Multiplexing, Congestion Control
 - Transport Layer Protocols: TCP and UDP, SCTP, RTP
 - Congestion control and Quality of Service (QoS)
 - Differentiated services
@@ -484,7 +519,8 @@
 - DNS, Email: SMTP, MIME, POP3, Webmail
 - FTP, TELNET, DHCP, SNMP
 
-**Exemplar/Case Study:** Study of Application Layer protocols using network protocol analyzer (e.g. Wireshark).
+**Exemplar/Case Study:** Study of Application Layer protocols using network protocol analyzer (e.g.
+Wireshark).
 
 #### Unit VI: Security (07 Hours) → CO6
 
@@ -497,19 +533,23 @@
 - Security in Network, Transport and Application: Introduction of IPSec, SSL, HTTPS, S/MIME
 - Overview of IDS and Firewalls
 
-**Exemplar/Case Study:** Study of security protocols in Network, Transport and Application Layer using Wireshark.
+**Exemplar/Case Study:** Study of security protocols in Network, Transport and Application Layer
+using Wireshark.
 
 ### Learning Resources
 
 #### Text Books
 
-1. Fourauzan B., "Data Communications and Networking", 5th Edition, Tata McGraw Hill Publications, ISBN: 0-07-058408-7
+1. Fourauzan B., "Data Communications and Networking", 5th Edition, Tata McGraw Hill Publications,
+   ISBN: 0-07-058408-7
 2. Andrew S. Tanenbaum, "Computer Networks", 5th Edition, Pearson India, 2012.
 
 #### Reference Books
 
-1. Kurose, Ross, "Computer Networking a Top Down Approach Featuring the Internet", Pearson, ISBN-10: 0132856204
-2. L. Peterson and B. Davie, "Computer Networks: A Systems Approach", 5th Edition, Morgan-Kaufmann, 2012.
+1. Kurose, Ross, "Computer Networking a Top Down Approach Featuring the Internet", Pearson, ISBN-10:
+   0132856204
+2. L. Peterson and B. Davie, "Computer Networks: A Systems Approach", 5th Edition,
+   Morgan-Kaufmann, 2012.
 3. Douglas E. Comer & M.S Narayanan, "Computer Network & Internet", Pearson Education
 4. William Stallings, "Cryptography and Network Security: Principles and Practice", 4th Edition
 5. Pachghare V. K., "Cryptography and Information Security", 3rd Edition, PHI
@@ -538,21 +578,22 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                         |
+| --- | ----------------------------------------------------------------------------------- |
 | CO1 | Understand the fundamentals and need of Embedded Systems for the Internet of Things |
-| CO2 | Apply IoT enabling technologies for developing IoT systems |
-| CO3 | Apply design methodology for designing and implementing IoT applications |
-| CO4 | Analyze IoT protocols for making IoT devices communication |
-| CO5 | Design cloud based IoT systems |
-| CO6 | Design and Develop secured IoT applications |
+| CO2 | Apply IoT enabling technologies for developing IoT systems                          |
+| CO3 | Apply design methodology for designing and implementing IoT applications            |
+| CO4 | Analyze IoT protocols for making IoT devices communication                          |
+| CO5 | Design cloud based IoT systems                                                      |
+| CO6 | Design and Develop secured IoT applications                                         |
 
 ### Course Contents
 
 #### Unit I: Introduction to Embedded Systems (07 Hours) → CO1, CO2
 
 - Definition, Characteristics of Embedded System, Real time systems, Real time tasks
-- Processor basics: General Processors vs Embedded Processors, Microcontrollers, Microcontroller Properties, Components of Microcontrollers
+- Processor basics: General Processors vs Embedded Processors, Microcontrollers, Microcontroller
+  Properties, Components of Microcontrollers
 - System-On-Chip and its examples
 - Components of Embedded Systems, Introduction to embedded processor
 
@@ -562,7 +603,8 @@
 - IoT Devices, IoT Devices Vs Computers
 - Societal Benefits of IoT, Technical Building Blocks
 - Physical Design of IoT: Things in IoT, Interoperability of IoT Devices, Sensors and Actuators
-- Logical Design of IoT: IoT functional blocks, IoT enabling technologies, IoT levels and deployment templates
+- Logical Design of IoT: IoT functional blocks, IoT enabling technologies, IoT levels and deployment
+  templates
 
 #### Unit III: IoT: Design Methodology (07 Hours) → CO3, CO4
 
@@ -603,8 +645,10 @@
 
 #### Text Books
 
-1. Arshdeep Bahga, Vijay Madisetti, "Internet of Things – A hands-on Approach", Universities Press, ISBN: 0: 0996025510, 13: 978-0996025515
-2. Olivier Hersent, David Boswarthick, Omar Elloumi, "The Internet of Things: Key Applications and Protocols", 2nd Edition, Wiley Publication
+1. Arshdeep Bahga, Vijay Madisetti, "Internet of Things – A hands-on Approach", Universities Press,
+   ISBN: 0: 0996025510, 13: 978-0996025515
+2. Olivier Hersent, David Boswarthick, Omar Elloumi, "The Internet of Things: Key Applications and
+   Protocols", 2nd Edition, Wiley Publication
 
 ---
 
@@ -626,18 +670,19 @@
 - To learn fundamental aspects of designing and implementing user interfaces
 - To study HCI with technical, cognitive and functional perspectives
 - To acquire knowledge about variety of effective human-computer-interactions
-- To co-evaluate the technology with respect to adapting changing user requirements in interacting with computer
+- To co-evaluate the technology with respect to adapting changing user requirements in interacting
+  with computer
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Design effective Human-Computer-Interfaces for all kinds of users |
-| CO2 | Apply and analyze the user-interface with respect to golden rules of interface |
-| CO3 | Analyze and evaluate the effectiveness of a user-interface design |
-| CO4 | Implement the interactive designs for feasible data search and retrieval |
+| CO  | Description                                                                                                                                |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| CO1 | Design effective Human-Computer-Interfaces for all kinds of users                                                                          |
+| CO2 | Apply and analyze the user-interface with respect to golden rules of interface                                                             |
+| CO3 | Analyze and evaluate the effectiveness of a user-interface design                                                                          |
+| CO4 | Implement the interactive designs for feasible data search and retrieval                                                                   |
 | CO5 | Analyze the scope of HCI in various paradigms like ubiquitous computing, virtual reality, multi-media, World wide web related environments |
-| CO6 | Analyze and identify user models, user support, and stakeholder requirements of HCI systems |
+| CO6 | Analyze and identify user models, user support, and stakeholder requirements of HCI systems                                                |
 
 ### Course Contents
 
@@ -660,7 +705,8 @@
 - Understanding how people interact with computers
 - Important human characteristics in Design, Human Interaction speeds
 - Miller's Law
-- Design Guidelines: Navigating the interface, Organizing the display, Getting user's attention, Data entry
+- Design Guidelines: Navigating the interface, Organizing the display, Getting user's attention,
+  Data entry
 - Design Principles: Skill level, Task identification, Interaction style, Natural Language
 - Eight Golden rules of Interface design
 - Theories: Design-by-level, Stages of action, Consistency, Contextual/Dynamic theories
@@ -695,7 +741,8 @@
 
 #### Unit V: HCI Paradigms (07 Hours) → CO1, CO3, CO4
 
-- Paradigms for Interaction: Time sharing, Video display units, Programming toolkits, Personal computing, Metaphor, Hypertext, Cooperative work, Agent based
+- Paradigms for Interaction: Time sharing, Video display units, Programming toolkits, Personal
+  computing, Metaphor, Hypertext, Cooperative work, Agent based
 - Ubiquitous Computing: Sensor-based and context-aware interaction
 - Data Integrity/Immunity, Missing data, Auditing vs. Editing, Retrieval
 - Natural Language: Five stage search, Dynamic queries
@@ -753,14 +800,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze Distributed Systems types and architectural styles |
-| CO2 | Implement communication mechanism in Distributed Systems |
+| CO  | Description                                                                 |
+| --- | --------------------------------------------------------------------------- |
+| CO1 | Analyze Distributed Systems types and architectural styles                  |
+| CO2 | Implement communication mechanism in Distributed Systems                    |
 | CO3 | Implement the synchronization algorithms in Distributed System applications |
-| CO4 | Develop the components of Distributed File System |
-| CO5 | Apply replication techniques and consistency model in Distributed Systems |
-| CO6 | Build fault tolerant Distributed Systems |
+| CO4 | Develop the components of Distributed File System                           |
+| CO5 | Apply replication techniques and consistency model in Distributed Systems   |
+| CO6 | Build fault tolerant Distributed Systems                                    |
 
 ### Course Contents
 
@@ -768,30 +815,38 @@
 
 - Defining Distributed Systems, Characteristics
 - Middleware and Distributed Systems
-- Design goals: Supporting resource sharing, Making distribution transparent, Open, Scalable, Pitfalls
+- Design goals: Supporting resource sharing, Making distribution transparent, Open, Scalable,
+  Pitfalls
 - Types: High Performance Distributed Computing, Distributed Information Systems, Pervasive Systems
-- Architectural styles: Layered architectures, Object based architectures, Publish Subscribe architectures
+- Architectural styles: Layered architectures, Object based architectures, Publish Subscribe
+  architectures
 - Middleware organization: Wrappers, Interceptors, Modifiable middleware
 - System architecture: Centralized, Decentralized, Hybrid
 - Example architectures: Network File System, Web
 
-**Exemplar/Case Study:** Case Study of Middleware System that includes Design, Architecture and Application.
+**Exemplar/Case Study:** Case Study of Middleware System that includes Design, Architecture and
+Application.
 
 #### Unit II: Communication (07 Hours) → CO2
 
 - Layered Protocols, Types of Communication
-- Remote Procedural Call (RPC): Basic RPC Operation, Parameter Passing, RPC-based application support, Variations on RPC, Example: DCE RPC
+- Remote Procedural Call (RPC): Basic RPC Operation, Parameter Passing, RPC-based application
+  support, Variations on RPC, Example: DCE RPC
 - Remote Method Invocation (RMI)
-- Message Oriented Communication: Simple Transient Messaging with Sockets, Advanced Transient Messaging, Message Oriented Persistent Communication
-- Multicast Communication: Application Level Tree-Based Multicasting, Flooding-Based Multicasting, Gossip-Based Data Dissemination
+- Message Oriented Communication: Simple Transient Messaging with Sockets, Advanced Transient
+  Messaging, Message Oriented Persistent Communication
+- Multicast Communication: Application Level Tree-Based Multicasting, Flooding-Based Multicasting,
+  Gossip-Based Data Dissemination
 
-**Exemplar/Case Study:** Apache Kafka Distributed Event Streaming Platform, gRPC Open Source RPC Framework.
+**Exemplar/Case Study:** Apache Kafka Distributed Event Streaming Platform, gRPC Open Source RPC
+Framework.
 
 #### Unit III: Synchronization (07 Hours) → CO3
 
 - Clock Synchronization: Physical Clocks, Clock Synchronization Algorithms
 - Logical Clocks: Lamport's Logical clocks, Vector Clocks
-- Mutual Exclusion: Overview, Centralized Algorithm, Distributed Algorithm, Token-Ring Algorithm, Decentralized Algorithm
+- Mutual Exclusion: Overview, Centralized Algorithm, Distributed Algorithm, Token-Ring Algorithm,
+  Decentralized Algorithm
 - Election Algorithms: Bully Algorithm, Ring Algorithm
 - Location Systems: GPS, Logical Positioning of nodes
 - Gossip-Based Contribution: Aggregation, A Peer-Sampling Service
@@ -812,7 +867,8 @@
 
 - Reasons for Replication, Replication as Scaling Technique
 - Data-Centric Consistency Models: Continuous Consistency, Consistent Ordering of Operations
-- Client-Centric Consistency Models: Eventual Consistency, Monotonic Reads, Monotonic Writes, Read Your Writes, Writes Follow Reads
+- Client-Centric Consistency Models: Eventual Consistency, Monotonic Reads, Monotonic Writes, Read
+  Your Writes, Writes Follow Reads
 - Replica Management: Content Replication and Placement, Content Distribution
 - Consistency Protocols: Continuous Consistency, Sequential Consistency, Cache Coherence Protocols
 
@@ -824,24 +880,29 @@
 - Process Resilience: Resilience by Process Groups, Failure Masking and Replication
 - Example: Paxos, Consensus in faulty systems with crash failures
 - Failure Detection
-- Reliable Client Server Communication: Point to Point Communication, RPC Semantics in the Presence of Failures
+- Reliable Client Server Communication: Point to Point Communication, RPC Semantics in the Presence
+  of Failures
 - Reliable Group Communication: Atomic multicast, Distributed commit
 - Recovery: Check pointing, Message Logging, Recovery Oriented Computing
 
-**Exemplar/Case Study:** Study of any Open Source Tool for Building Fault-Tolerant System such as Circuit Breaker/Nginx/HaProxy/Akka.
+**Exemplar/Case Study:** Study of any Open Source Tool for Building Fault-Tolerant System such as
+Circuit Breaker/Nginx/HaProxy/Akka.
 
 ### Learning Resources
 
 #### Text Books
 
 1. Maarten van Steen, Andrew S. Tanenbaum, "Distributed Systems", Third edition, version 3.
-2. George Coulouris, Jean Dollimore, Tim Kindberg, "Distributed Systems Concepts and Design", Fifth edition.
+2. George Coulouris, Jean Dollimore, Tim Kindberg, "Distributed Systems Concepts and Design", Fifth
+   edition.
 
 #### Reference Books
 
-1. Christian Cachin, Rachid Guerraoui, Luís Rodrigues, "Introduction to Reliable and Secure Distributed Programming", Springer, 2nd edition.
+1. Christian Cachin, Rachid Guerraoui, Luís Rodrigues, "Introduction to Reliable and Secure
+   Distributed Programming", Springer, 2nd edition.
 2. Vijay K. Garg, "Elements of Distributed Computing", Wiley.
-3. Maarten Van Steen and Andrew S. Tanenbaum, "Distributed Systems", Amazon Digital Services, 3rd edition.
+3. Maarten Van Steen and Andrew S. Tanenbaum, "Distributed Systems", Amazon Digital Services, 3rd
+   edition.
 4. Martin Kleppmann, "Designing Data-Intensive Applications", O'Reilly.
 
 ---
@@ -868,13 +929,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Comprehend Project Management Concepts |
-| CO2 | Use various tools of Software Project Management |
-| CO3 | Schedule various activities in software projects |
-| CO4 | Track a project and manage changes |
-| CO5 | Apply Agile Project Management |
+| CO  | Description                                                                                        |
+| --- | -------------------------------------------------------------------------------------------------- |
+| CO1 | Comprehend Project Management Concepts                                                             |
+| CO2 | Use various tools of Software Project Management                                                   |
+| CO3 | Schedule various activities in software projects                                                   |
+| CO4 | Track a project and manage changes                                                                 |
+| CO5 | Apply Agile Project Management                                                                     |
 | CO6 | Analyse staffing process for team building and decision making in Software Projects and Management |
 
 ### Course Contents
@@ -905,7 +966,8 @@
 - Objectives of Activity Planning
 - Activities: Sequencing and Scheduling
 - Network Planning Models, Formulating Network Model
-- Activity relationships: Finish to Start (FS), Start to Finish (SF), Start to Start (SS), Finish to Finish (FF)
+- Activity relationships: Finish to Start (FS), Start to Finish (SF), Start to Start (SS), Finish to
+  Finish (FF)
 - Forward Pass and Backward Pass techniques
 - Critical Path concept and remedies
 
@@ -929,7 +991,8 @@
 - Roles and Responsibilities in Agile
 - Scheduling and Tracking in Agile
 
-**Exemplar/Case Study:** Analyse the same project using Agile. Create the three stages of the project.
+**Exemplar/Case Study:** Analyse the same project using Agile. Create the three stages of the
+project.
 
 #### Unit VI: Staffing in Software Projects (07 Hours) → CO6
 
@@ -948,7 +1011,8 @@
 
 #### Text Books
 
-1. Bob Hughes, Mike Cotterell and Rajib Mall, "Software Project Management", 6th Edition, Tata McGraw Hill, 2017.
+1. Bob Hughes, Mike Cotterell and Rajib Mall, "Software Project Management", 6th Edition, Tata
+   McGraw Hill, 2017.
 2. Robert K. Wysocki, "Effective Software Project Management", Wiley, 2011.
 
 #### Reference Books
@@ -964,26 +1028,28 @@
 
 ## Semester VI — Course Structure
 
-| Course Code | Course Name | TH | PR | TUT | Mid-Sem | End-Sem | TW | PR | OR | Total | Credits |
-|-------------|-------------|:--:|:--:|:---:|:-------:|:-------:|:--:|:--:|:--:|:-----:|:-------:|
-| 310251 | Data Science and Big Data Analytics | 04 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 310252 | Web Technology | 04 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 310253 | Artificial Intelligence | 04 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 310254 | Elective II | 04 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 310255 | Internship | -- | -- | -- | -- | -- | 100 | -- | -- | 100 | 04 |
-| 310256 | Data Science and Big Data Analytics Laboratory | -- | 04 | -- | -- | -- | 50 | 25 | -- | 75 | 02 |
-| 310257 | Web Technology Laboratory | -- | 02 | -- | -- | -- | 25 | -- | 25 | 50 | 01 |
-| 310258 | Laboratory Practice II | -- | 04 | -- | -- | -- | 50 | 25 | -- | 75 | 02 |
-| 310259 | Audit Course 6 | -- | -- | -- | -- | -- | -- | -- | -- | Grade | -- |
-| **Total** | | **12** | **10** | **--** | **120** | **280** | **225** | **50** | **25** | **700** | **21** |
+| Course Code | Course Name                                    |   TH   |   PR   |  TUT   | Mid-Sem | End-Sem |   TW    |   PR   |   OR   |  Total  | Credits |
+| ----------- | ---------------------------------------------- | :----: | :----: | :----: | :-----: | :-----: | :-----: | :----: | :----: | :-----: | :-----: |
+| 310251      | Data Science and Big Data Analytics            |   04   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 310252      | Web Technology                                 |   04   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 310253      | Artificial Intelligence                        |   04   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 310254      | Elective II                                    |   04   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 310255      | Internship                                     |   --   |   --   |   --   |   --    |   --    |   100   |   --   |   --   |   100   |   04    |
+| 310256      | Data Science and Big Data Analytics Laboratory |   --   |   04   |   --   |   --    |   --    |   50    |   25   |   --   |   75    |   02    |
+| 310257      | Web Technology Laboratory                      |   --   |   02   |   --   |   --    |   --    |   25    |   --   |   25   |   50    |   01    |
+| 310258      | Laboratory Practice II                         |   --   |   04   |   --   |   --    |   --    |   50    |   25   |   --   |   75    |   02    |
+| 310259      | Audit Course 6                                 |   --   |   --   |   --   |   --    |   --    |   --    |   --   |   --   |  Grade  |   --    |
+| **Total**   |                                                | **12** | **10** | **--** | **120** | **280** | **225** | **50** | **25** | **700** | **21**  |
 
 **Elective II Options:**
+
 - 310254(A): Information Security
 - 310254(B): Augmented and Virtual Reality
 - 310254(C): Cloud Computing
 - 310254(D): Software Modeling and Architectures
 
 **Audit Course 6 Options:**
+
 - 310259(A): Digital and Social Media Marketing
 - 310259(B): Sustainable Energy Systems
 - 310259(C): Leadership and Personality Development
@@ -1019,14 +1085,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze needs and challenges for Data Science Big Data Analytics |
-| CO2 | Apply statistics for Big Data Analytics |
-| CO3 | Apply the lifecycle of Big Data analytics to real world problems |
-| CO4 | Implement Big Data Analytics using Python programming |
+| CO  | Description                                                                  |
+| --- | ---------------------------------------------------------------------------- |
+| CO1 | Analyze needs and challenges for Data Science Big Data Analytics             |
+| CO2 | Apply statistics for Big Data Analytics                                      |
+| CO3 | Apply the lifecycle of Big Data analytics to real world problems             |
+| CO4 | Implement Big Data Analytics using Python programming                        |
 | CO5 | Implement data visualization using visualization tools in Python programming |
-| CO6 | Design and implement Big Databases using the Hadoop ecosystem |
+| CO6 | Design and implement Big Databases using the Hadoop ecosystem                |
 
 ### Course Contents
 
@@ -1040,7 +1106,8 @@
 - Data Science Life Cycle
 - Data Types: Structured, Unstructured, Semi-Structured
 - Data Collection
-- Data wrangling methods: Data Cleaning, Data Integration, Data Reduction, Data Transformation, Data Discretization
+- Data wrangling methods: Data Cleaning, Data Integration, Data Reduction, Data Transformation, Data
+  Discretization
 
 **Exemplar/Case Study:** Create academic performance dataset and perform data pre-processing.
 
@@ -1074,7 +1141,8 @@
 #### Unit IV: Predictive Big Data Analytics with Python (07 Hours) → CO4
 
 - Essential Python Libraries for Data Analytics
-- Data Preprocessing: Removing Duplicates, Data Transformation, Replacing Values, Handling Missing Data
+- Data Preprocessing: Removing Duplicates, Data Transformation, Replacing Values, Handling Missing
+  Data
 - Analytics Types:
   - Predictive Analytics
   - Descriptive Analytics
@@ -1082,7 +1150,8 @@
 - Association Rules: Apriori Algorithm, FP Growth Algorithm
 - Regression Analysis: Linear Regression, Logistic Regression
 - Classification: Naive Bayes, Decision Trees
-- Scikit-learn introduction: Installation, Datasets, matplotlib, Regression and Classification using Scikit-learn
+- Scikit-learn introduction: Installation, Datasets, matplotlib, Regression and Classification using
+  Scikit-learn
 
 **Exemplar/Case Study:** Use IRIS dataset for data preprocessing.
 
@@ -1111,8 +1180,10 @@
 
 #### Text Books
 
-1. David Dietrich, Barry Hiller, "Data Science and Big Data Analytics", EMC education services, Wiley publication, 2012.
-2. Jiawei Han, Micheline Kamber, and Jian Pie, "Data Mining: Concepts and Techniques", Elsevier Publishers, Third Edition.
+1. David Dietrich, Barry Hiller, "Data Science and Big Data Analytics", EMC education services,
+   Wiley publication, 2012.
+2. Jiawei Han, Micheline Kamber, and Jian Pie, "Data Mining: Concepts and Techniques", Elsevier
+   Publishers, Third Edition.
 
 #### Reference Books
 
@@ -1146,13 +1217,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Implement and analyze behavior of web pages using HTML and CSS |
-| CO2 | Apply the client side technologies for web development |
-| CO3 | Analyze the concepts of Servlet and JSP |
-| CO4 | Analyze the Web services and frameworks |
-| CO5 | Apply the server side technologies for web development |
+| CO  | Description                                                                                               |
+| --- | --------------------------------------------------------------------------------------------------------- |
+| CO1 | Implement and analyze behavior of web pages using HTML and CSS                                            |
+| CO2 | Apply the client side technologies for web development                                                    |
+| CO3 | Analyze the concepts of Servlet and JSP                                                                   |
+| CO4 | Analyze the Web services and frameworks                                                                   |
+| CO5 | Apply the server side technologies for web development                                                    |
 | CO6 | Create the effective web applications for business functionalities using latest web development platforms |
 
 ### Course Contents
@@ -1163,7 +1234,8 @@
 - HTTP Request message, HTTP response message
 - Web clients, Web servers
 - HTML: Introduction, history and versions
-- HTML elements: headings, paragraphs, line break, colors and fonts, links, frames, lists, tables, images and forms
+- HTML elements: headings, paragraphs, line break, colors and fonts, links, frames, lists, tables,
+  images and forms
 - Difference between HTML and HTML5
 - CSS: Introduction to Style Sheet, CSS features, CSS core syntax
 - Style sheets and HTML, Style rule cascading and inheritance, text properties
@@ -1184,7 +1256,8 @@
 - jQuery overview
 - Overview of Angular JS
 
-**Exemplar/Case Study:** Enhancement in created blogging application using JavaScript (Add Entry feature).
+**Exemplar/Case Study:** Enhancement in created blogging application using JavaScript (Add Entry
+feature).
 
 #### Unit III: Java Servlets and XML (07 Hours) → CO3
 
@@ -1214,9 +1287,11 @@
 - Writing a Java Web Service, Writing a Java web service client
 - Describing Web Services: WSDL
 - Communicating Object data: SOAP
-- Struts: Overview, architecture, configuration, actions, interceptors, result types, validations, localization, exception handling, annotations
+- Struts: Overview, architecture, configuration, actions, interceptors, result types, validations,
+  localization, exception handling, annotations
 
-**Exemplar/Case Study:** Transform the blogging application from a loose collection of various resources to an integrated web application that follows the MVC paradigm.
+**Exemplar/Case Study:** Transform the blogging application from a loose collection of various
+resources to an integrated web application that follows the MVC paradigm.
 
 #### Unit V: Server Side Scripting Languages (07 Hours) → CO5
 
@@ -1250,7 +1325,8 @@
 
 ## 310253: Artificial Intelligence
 
-**Prerequisites Courses:** Database Management Systems (310241), Data Structures and Algorithms (210252)
+**Prerequisites Courses:** Database Management Systems (310241), Data Structures and Algorithms
+(210252)
 
 **Companion Course:** Laboratory Practice II (310258)
 
@@ -1262,7 +1338,8 @@
 
 ### Course Objectives
 
-- To understand the concept of Artificial Intelligence (AI) in the form of various Intellectual tasks
+- To understand the concept of Artificial Intelligence (AI) in the form of various Intellectual
+  tasks
 - To understand Problem Solving using various peculiar search strategies for AI
 - To understand multi-agent environment in competitive environment
 - To acquaint with the fundamentals of knowledge and reasoning
@@ -1271,14 +1348,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Identify and apply suitable Intelligent agents for various AI applications |
-| CO2 | Build smart system using different informed search / uninformed search or heuristic approaches |
+| CO  | Description                                                                                                         |
+| --- | ------------------------------------------------------------------------------------------------------------------- |
+| CO1 | Identify and apply suitable Intelligent agents for various AI applications                                          |
+| CO2 | Build smart system using different informed search / uninformed search or heuristic approaches                      |
 | CO3 | Identify knowledge associated and represent it by ontological engineering to plan a strategy to solve given problem |
-| CO4 | Apply the suitable algorithms to solve AI problems |
-| CO5 | Implement ideas underlying modern logical inference systems |
-| CO6 | Represent complex problems with expressive yet carefully constrained language of representation |
+| CO4 | Apply the suitable algorithms to solve AI problems                                                                  |
+| CO5 | Implement ideas underlying modern logical inference systems                                                         |
+| CO6 | Represent complex problems with expressive yet carefully constrained language of representation                     |
 
 ### Course Contents
 
@@ -1290,7 +1367,8 @@
 - Concept of Rationality, Nature of Environments
 - Structure of Agents
 
-**Exemplar/Case Study:** Kroger: How This U.S. Retail Giant Is Using AI And Robots To Prepare For The 4th Industrial Revolution.
+**Exemplar/Case Study:** Kroger: How This U.S. Retail Giant Is Using AI And Robots To Prepare For
+The 4th Industrial Revolution.
 
 #### Unit II: Problem-solving (07 Hours) → CO2
 
@@ -1314,7 +1392,8 @@
 - Constraint Propagation
 - Backtracking Search for CSPs
 
-**Exemplar/Case Study:** Machine Learning At Google: The Amazing Use Case Of Becoming A Fully Sustainable Business.
+**Exemplar/Case Study:** Machine Learning At Google: The Amazing Use Case Of Becoming A Fully
+Sustainable Business.
 
 #### Unit IV: Knowledge (07 Hours) → CO3
 
@@ -1328,7 +1407,8 @@
 - Using First-Order Logic
 - Knowledge Engineering in First-Order Logic
 
-**Exemplar/Case Study:** BBC To Launch AI - Enabled Interactive Radio Show For Amazon Echo And Google Home Chatbots.
+**Exemplar/Case Study:** BBC To Launch AI - Enabled Interactive Radio Show For Amazon Echo And
+Google Home Chatbots.
 
 #### Unit V: Reasoning (07 Hours) → CO4, CO5
 
@@ -1356,13 +1436,15 @@
 - Limits of AI, Ethics of AI, Future of AI
 - AI Components, AI Architectures
 
-**Exemplar/Case Study:** The Amazing Ways Samsung Is Using Big Data, Artificial Intelligence And Robots To Drive Performance.
+**Exemplar/Case Study:** The Amazing Ways Samsung Is Using Big Data, Artificial Intelligence And
+Robots To Drive Performance.
 
 ### Learning Resources
 
 #### Text Books
 
-1. Stuart Russell and Peter Norvig, "Artificial Intelligence: A Modern Approach", 3rd edition, Pearson, 2003.
+1. Stuart Russell and Peter Norvig, "Artificial Intelligence: A Modern Approach", 3rd edition,
+   Pearson, 2003.
 2. Deepak Khemani, "A First Course in Artificial Intelligence", McGraw Hill Education, 2013.
 3. Elaine Rich, Kevin Knight and Nair, "Artificial Intelligence", TMH.
 
@@ -1372,7 +1454,8 @@
 2. Patrick Henry Winston, "Artificial Intelligence", Addison-Wesley
 3. Andries P. Engelbrecht, "Computational Intelligence: An Introduction", Wiley
 4. Dr. Lavika Goel, "Artificial Intelligence: Concepts and Applications", Wiley
-5. Dr. Nilakshi Jain, "Artificial Intelligence: Making Machines Capable of Performing Human Tasks", Wiley
+5. Dr. Nilakshi Jain, "Artificial Intelligence: Making Machines Capable of Performing Human Tasks",
+   Wiley
 
 ---
 
@@ -1396,13 +1479,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                                 |
+| --- | ------------------------------------------------------------------------------------------- |
 | CO1 | Analyze the various threats and attacks in Information Security and Model the cyber threats |
-| CO2 | Apply the various cryptographic techniques to secure data communication |
-| CO3 | Design and develop secure web or network communication solutions |
-| CO4 | Identify vulnerabilities in existing systems and apply proper security measures |
-| CO5 | Use the standard cryptographic algorithms and protocols for ensuring security |
+| CO2 | Apply the various cryptographic techniques to secure data communication                     |
+| CO3 | Design and develop secure web or network communication solutions                            |
+| CO4 | Identify vulnerabilities in existing systems and apply proper security measures             |
+| CO5 | Use the standard cryptographic algorithms and protocols for ensuring security               |
 
 ### Course Contents
 
@@ -1410,10 +1493,12 @@
 
 - OSI Security Architecture
 - Security Attacks: Passive Attacks, Active Attacks
-- Security Services: Authentication, Access Control, Data Confidentiality, Data Integrity, Non-Repudiation, Availability
+- Security Services: Authentication, Access Control, Data Confidentiality, Data Integrity,
+  Non-Repudiation, Availability
 - Security Mechanisms
 - Model for Network Security
-- Classical Encryption Techniques: Caesar Cipher, Monoalphabetic Cipher, Playfair Cipher, Hill Cipher, Polyalphabetic Cipher
+- Classical Encryption Techniques: Caesar Cipher, Monoalphabetic Cipher, Playfair Cipher, Hill
+  Cipher, Polyalphabetic Cipher
 
 #### Unit II: Symmetric Key Cryptography (07 Hours) → CO2, CO3
 
@@ -1462,8 +1547,10 @@
 
 #### Text Books
 
-1. William Stallings, "Cryptography and Network Security: Principles and Practice", 6th Edition, Pearson, ISBN: 978-93-325-4262-0
-2. William Stallings, "Network Security Essentials: Applications and Standards", 4th Edition, Pearson, ISBN: 978-0-13-706792-3
+1. William Stallings, "Cryptography and Network Security: Principles and Practice", 6th Edition,
+   Pearson, ISBN: 978-93-325-4262-0
+2. William Stallings, "Network Security Essentials: Applications and Standards", 4th Edition,
+   Pearson, ISBN: 978-0-13-706792-3
 3. Nina Godbole, "Information Systems Security", Wiley, ISBN: 978-81-265-1692-6
 
 #### Reference Books
@@ -1494,14 +1581,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                             |
+| --- | ----------------------------------------------------------------------- |
 | CO1 | Understand the basics and applications of Virtual and Augmented Reality |
-| CO2 | Describe the various interface devices used in Virtual Reality |
-| CO3 | Explain the representation and rendering systems in Virtual Reality |
-| CO4 | Analyze the interaction and experience techniques in Virtual Reality |
-| CO5 | Summarize the concepts of Augmented Reality and its hardware |
-| CO6 | Create the mobile based Augmented Reality applications |
+| CO2 | Describe the various interface devices used in Virtual Reality          |
+| CO3 | Explain the representation and rendering systems in Virtual Reality     |
+| CO4 | Analyze the interaction and experience techniques in Virtual Reality    |
+| CO5 | Summarize the concepts of Augmented Reality and its hardware            |
+| CO6 | Create the mobile based Augmented Reality applications                  |
 
 ### Course Contents
 
@@ -1516,7 +1603,8 @@
 
 #### Unit II: Interface to the Virtual World (07 Hours) → CO2
 
-- Input Devices: Position Trackers, Navigation and Manipulation Interfaces, Gesture Interfaces, Speech Interfaces
+- Input Devices: Position Trackers, Navigation and Manipulation Interfaces, Gesture Interfaces,
+  Speech Interfaces
 - Output Devices: Visual Displays, Aural Displays, Haptic Displays
 
 #### Unit III: Representing and Rendering the Virtual World (07 Hours) → CO3
@@ -1550,8 +1638,10 @@
 
 #### Text Books
 
-1. William R. Sherman, Alan B. Craig, "Understanding Virtual Reality: Interface, Application and Design", 2nd Edition, Morgan Kaufmann, ISBN: 978-0-12-800965-9
-2. Alan B. Craig, "Understanding Augmented Reality: Concepts and Applications", Morgan Kaufmann, ISBN: 978-0-24-082408-6
+1. William R. Sherman, Alan B. Craig, "Understanding Virtual Reality: Interface, Application and
+   Design", 2nd Edition, Morgan Kaufmann, ISBN: 978-0-12-800965-9
+2. Alan B. Craig, "Understanding Augmented Reality: Concepts and Applications", Morgan Kaufmann,
+   ISBN: 978-0-24-082408-6
 
 #### Reference Books
 
@@ -1583,13 +1673,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze various Cloud Computing environments |
+| CO  | Description                                        |
+| --- | -------------------------------------------------- |
+| CO1 | Analyze various Cloud Computing environments       |
 | CO2 | Apply data storage techniques in Cloud environment |
-| CO3 | Perform Virtualization in Cloud environment |
-| CO4 | Deploy applications over a Cloud environment |
-| CO5 | Apply security mechanisms in Cloud environment |
+| CO3 | Perform Virtualization in Cloud environment        |
+| CO4 | Deploy applications over a Cloud environment       |
+| CO5 | Apply security mechanisms in Cloud environment     |
 | CO6 | Use various advanced techniques in Cloud Computing |
 
 ### Course Contents
@@ -1599,7 +1689,8 @@
 - Introduction to Cloud Computing
 - Cloud Computing vs. Traditional Computing
 - Cloud Migration Considerations
-- Service Models: Software as a Service (SaaS), Platform as a Service (PaaS), Infrastructure as a Service (IaaS)
+- Service Models: Software as a Service (SaaS), Platform as a Service (PaaS), Infrastructure as a
+  Service (IaaS)
 - Deployment Models: Public Cloud, Private Cloud, Hybrid Cloud, Community Cloud
 - Benefits and Challenges of Cloud Computing
 
@@ -1650,7 +1741,8 @@
 #### Text Books
 
 1. Srinivasan, Suresh, "Cloud Computing: A Practical Approach", Pearson, ISBN: 978-81-317-7651-3
-2. Rajkumar Buyya, James Broberg, Andrzej Goscinski, "Cloud Computing: Principles and Paradigms", Wiley, ISBN: 978-0-470-88799-8
+2. Rajkumar Buyya, James Broberg, Andrzej Goscinski, "Cloud Computing: Principles and Paradigms",
+   Wiley, ISBN: 978-0-470-88799-8
 
 #### Reference Books
 
@@ -1682,14 +1774,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze the SRS and identify the use cases |
-| CO2 | Use UML for static modeling of software systems |
-| CO3 | Use UML for dynamic modeling of software systems |
-| CO4 | Evaluate the software architecture for the system |
+| CO  | Description                                                  |
+| --- | ------------------------------------------------------------ |
+| CO1 | Analyze the SRS and identify the use cases                   |
+| CO2 | Use UML for static modeling of software systems              |
+| CO3 | Use UML for dynamic modeling of software systems             |
+| CO4 | Evaluate the software architecture for the system            |
 | CO5 | Apply architectural styles and patterns for software systems |
-| CO6 | Apply modern modeling tools for modeling software systems |
+| CO6 | Apply modern modeling tools for modeling software systems    |
 
 ### Course Contents
 
@@ -1740,14 +1832,18 @@
 
 #### Text Books
 
-1. Jim Arlow, Ila Neustadt, "UML 2 and Unified Process: Practical Object-Oriented Analysis and Design", 2nd Edition, Pearson, ISBN: 978-81-317-2643-3
-2. Len Bass, Paul Clements, Rick Kazman, "Software Architecture in Practice", 3rd Edition, Pearson, ISBN: 978-93-325-3955-2
-3. Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, "Design Patterns: Elements of Reusable Object-Oriented Software", Pearson, ISBN: 978-93-325-4324-5
+1. Jim Arlow, Ila Neustadt, "UML 2 and Unified Process: Practical Object-Oriented Analysis and
+   Design", 2nd Edition, Pearson, ISBN: 978-81-317-2643-3
+2. Len Bass, Paul Clements, Rick Kazman, "Software Architecture in Practice", 3rd Edition, Pearson,
+   ISBN: 978-93-325-3955-2
+3. Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, "Design Patterns: Elements of Reusable
+   Object-Oriented Software", Pearson, ISBN: 978-93-325-4324-5
 
 #### Reference Books
 
 1. Hassan Gomaa, "Software Modeling and Design", Cambridge University Press
-2. Grady Booch, James Rumbaugh, Ivar Jacobson, "Unified Modeling Language User Guide", 2nd Edition, Pearson
+2. Grady Booch, James Rumbaugh, Ivar Jacobson, "Unified Modeling Language User Guide", 2nd Edition,
+   Pearson
 3. Martin Fowler, "UML Distilled", 3rd Edition, Pearson
 4. Frank Buschmann, Regine Meunier, "Pattern Oriented Software Architecture", Wiley
 
@@ -1759,11 +1855,14 @@
 
 **Practical:** 04 Hours/Week | **Credits:** 02 | **TW:** 25 Marks | **PR:** 25 Marks
 
-**Group A (SQL and PL/SQL):** ER Modeling, SQL Queries (DDL, DML, Joins, Sub-Queries, Views), PL/SQL blocks, Stored Procedures/Functions, Cursors, Database Triggers, Database Connectivity
+**Group A (SQL and PL/SQL):** ER Modeling, SQL Queries (DDL, DML, Joins, Sub-Queries, Views), PL/SQL
+blocks, Stored Procedures/Functions, Cursors, Database Triggers, Database Connectivity
 
-**Group B (NoSQL):** MongoDB CRUD Operations, Aggregation and Indexing, MapReduce, MongoDB Connectivity
+**Group B (NoSQL):** MongoDB CRUD Operations, Aggregation and Indexing, MapReduce, MongoDB
+Connectivity
 
-**Group C (Mini Project):** Application development using database concepts with front-end (Java/PHP/Python/Ruby/.NET) and backend (MongoDB/MySQL/Oracle)
+**Group C (Mini Project):** Application development using database concepts with front-end
+(Java/PHP/Python/Ruby/.NET) and backend (MongoDB/MySQL/Oracle)
 
 ---
 
@@ -1771,11 +1870,14 @@
 
 **Practical:** 02 Hours/Week | **Credits:** 01 | **TW:** 25 Marks | **OR:** 25 Marks
 
-**Group A:** Wired LAN setup, Topologies and transmission media, WAN setup, Error detection/correction (Hamming/CRC), Sliding Window Protocol
+**Group A:** Wired LAN setup, Topologies and transmission media, WAN setup, Error
+detection/correction (Hamming/CRC), Sliding Window Protocol
 
-**Group B:** Sub-netting, Link state/Distance vector routing, Router configuration (RIP/OSPF/BGP), TCP/UDP Socket programming
+**Group B:** Sub-netting, Link state/Distance vector routing, Router configuration (RIP/OSPF/BGP),
+TCP/UDP Socket programming
 
-**Group C:** DNS lookup, DHCP server, Wireshark packet analysis, HTTP/HTTPS/FTP analysis, SSL/IPSEC study
+**Group C:** DNS lookup, DHCP server, Wireshark packet analysis, HTTP/HTTPS/FTP analysis, SSL/IPSEC
+study
 
 ---
 
@@ -1784,6 +1886,7 @@
 **Practical:** 04 Hours/Week | **Credits:** 02 | **TW:** 25 Marks | **PR:** 25 Marks
 
 **Part A — Systems Programming and Operating System:**
+
 - Assembler design (Pass I and II)
 - Macro processor design
 - Linker/Loader design
@@ -1805,7 +1908,9 @@
 
 **Credits:** 04 | **TW:** 100 Marks
 
-Internship of 4-6 weeks after Semester V and before Semester VI. Industrial training to provide students with an opportunity to apply conceptual knowledge from academics to the realities of the field work/training.
+Internship of 4-6 weeks after Semester V and before Semester VI. Industrial training to provide
+students with an opportunity to apply conceptual knowledge from academics to the realities of the
+field work/training.
 
 ---
 
@@ -1813,11 +1918,14 @@ Internship of 4-6 weeks after Semester V and before Semester VI. Industrial trai
 
 **Practical:** 04 Hours/Week | **Credits:** 02 | **TW:** 50 Marks | **PR:** 25 Marks
 
-**Group A (Data Science):** Data Wrangling (I & II), Descriptive Statistics, Data Analytics (I, II & III), Text Analytics, Data Visualization (I, II & III)
+**Group A (Data Science):** Data Wrangling (I & II), Descriptive Statistics, Data Analytics (I, II &
+III), Text Analytics, Data Visualization (I, II & III)
 
-**Group B (Big Data Analytics):** Word Count using Hadoop MapReduce, Log file processing, Weather data analysis using Apache Spark
+**Group B (Big Data Analytics):** Word Count using Hadoop MapReduce, Log file processing, Weather
+data analysis using Apache Spark
 
-**Group C (Mini Projects):** Case studies/projects (e.g., Global Innovation Network Analysis, Tweet classification, Movie recommendation, COVID-19 analytics)
+**Group C (Mini Projects):** Case studies/projects (e.g., Global Innovation Network Analysis, Tweet
+classification, Movie recommendation, COVID-19 analytics)
 
 ---
 
@@ -1837,17 +1945,25 @@ Assignments from Artificial Intelligence and Elective II.
 
 # General Guidelines
 
-1. Every undergraduate program has its own objectives and educational outcomes. These Program Outcomes (POs) are categorically mentioned at the beginning of the curriculum.
-2. @: CO and PO Mapping Matrix indicates correlation levels of 3 (high), 2 (medium), 1 (low) and '-' (no correlation).
-3. #: Elaborated examples/Case Studies are included at the end of each unit. May be assigned as self-study, excluded from theory examinations.
-4. For laboratory courses, set of suggested assignments is provided for reference. Beyond curriculum assignments and mini-project may be included.
-5. For each laboratory assignment, students must draw/write/generate flowchart, algorithm, test cases, mathematical model, Test data set and comparative/complexity analysis.
+1. Every undergraduate program has its own objectives and educational outcomes. These Program
+   Outcomes (POs) are categorically mentioned at the beginning of the curriculum.
+2. @: CO and PO Mapping Matrix indicates correlation levels of 3 (high), 2 (medium), 1 (low) and '-'
+   (no correlation).
+3. #: Elaborated examples/Case Studies are included at the end of each unit. May be assigned as
+   self-study, excluded from theory examinations.
+4. For laboratory courses, set of suggested assignments is provided for reference. Beyond curriculum
+   assignments and mini-project may be included.
+5. For each laboratory assignment, students must draw/write/generate flowchart, algorithm, test
+   cases, mathematical model, Test data set and comparative/complexity analysis.
 6. Term Work is continuous assessment that evaluates a student's progress throughout the semester.
-7. Laboratory Journal — Program codes with sample output submitted as softcopy. Use of DVD is encouraged.
+7. Laboratory Journal — Program codes with sample output submitted as softcopy. Use of DVD is
+   encouraged.
 8. Audit Course — Students registered shall be awarded grade AP/PP. No grade points associated.
-9. **Internship:** Engineering internships provide students with an opportunity to apply conceptual knowledge from academics to the realities of the field work/training.
+9. **Internship:** Engineering internships provide students with an opportunity to apply conceptual
+   knowledge from academics to the realities of the field work/training.
 
 **Abbreviations:**
+
 - TH: Theory
 - TUT: Tutorial
 - PR: Practical

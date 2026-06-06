@@ -1,20 +1,22 @@
 ---
 name: sppu-pyq-index
 description: >
-  Complete index of SPPU Previous Year Question Paper collection (2019–2025) across all Computer Engineering subjects.
-  References a local PDF collection organized by year, semester, and subject.
-  Use this skill to locate PYQ PDFs for any SPPU Computer Engineering subject before running analysis or generating answers.
+  Complete index of SPPU Previous Year Question Paper collection (2019–2025) across all Computer
+  Engineering subjects. References a local PDF collection organized by year, semester, and subject.
+  Use this skill to locate PYQ PDFs for any SPPU Computer Engineering subject before running
+  analysis or generating answers.
 ---
 
 # SPPU PYQ Collection Index
 
 ## Overview
 
-This index references a comprehensive collection of **SPPU Previous Year Question Papers** (2019–2025) across all Computer Engineering subjects, FE, and Honors programs.
+This index references a comprehensive collection of **SPPU Previous Year Question Papers**
+(2019–2025) across all Computer Engineering subjects, FE, and Honors programs.
 
-**Total Collection:** ~1,800 PDFs across 3 directories
-**Coverage:** 2019–2025 | **Patterns:** 2019 & 2024
-**Location:** `~/Downloads/Computer Engineering/`, `~/Downloads/F.E./`, `~/Downloads/Other branch/`, `~/Downloads/VL Computer Engineering/`
+**Total Collection:** ~1,800 PDFs across 3 directories **Coverage:** 2019–2025 | **Patterns:** 2019
+& 2024 **Location:** `~/Downloads/Computer Engineering/`, `~/Downloads/F.E./`,
+`~/Downloads/Other branch/`, `~/Downloads/VL Computer Engineering/`
 
 ---
 
@@ -143,63 +145,63 @@ PYQ PDFs are organized on the local filesystem as follows:
 
 ### SE (Second Year) — Sem III
 
-| Subject | End Sem Papers | In Sem Papers |
-|---|---|---|
-| **Computer Graphics** | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22, 23, 24 |
+| Subject                                | End Sem Papers                               | In Sem Papers  |
+| -------------------------------------- | -------------------------------------------- | -------------- |
+| **Computer Graphics**                  | April 22, 23, 24, 25; Nov 22, 23, 24         | Oct 22, 23, 24 |
 | **Digital Electronics & Logic Design** | April 22, 23, 24, 25; Nov 22, 23, 24; Oct 23 | Oct 22, 23, 24 |
-| **Discrete Mathematics** | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22, 23, 24 |
-| **Fundamentals of Data Structures** | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 23, 24 |
-| **Object Oriented Programming** | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22, 23, 24 |
+| **Discrete Mathematics**               | April 22, 23, 24, 25; Nov 22, 23, 24         | Oct 22, 23, 24 |
+| **Fundamentals of Data Structures**    | April 22, 23, 24, 25; Nov 22, 23, 24         | Oct 23, 24     |
+| **Object Oriented Programming**        | April 22, 23, 24, 25; Nov 22, 23, 24         | Oct 22, 23, 24 |
 
 ### SE (Second Year) — Sem IV
 
-| Subject | End Sem Papers | In Sem Papers |
-|---|---|---|
-| **Data Structures & Algorithms** | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
-| **Engineering Mathematics III** | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
-| **Microprocessor** | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
+| Subject                           | End Sem Papers                       | In Sem Papers  |
+| --------------------------------- | ------------------------------------ | -------------- |
+| **Data Structures & Algorithms**  | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
+| **Engineering Mathematics III**   | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
+| **Microprocessor**                | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
 | **Principles of Prog. Languages** | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
-| **Software Engineering** | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
+| **Software Engineering**          | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
 
 ### TE (Third Year) — Sem V
 
-| Subject | End Sem Papers | In Sem Papers |
-|---|---|---|
-| **Computer Networks & Security** | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 24, 25; Aug 25 |
-| **Database Management Systems** | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
+| Subject                             | End Sem Papers                       | In Sem Papers              |
+| ----------------------------------- | ------------------------------------ | -------------------------- |
+| **Computer Networks & Security**    | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 24, 25; Aug 25 |
+| **Database Management Systems**     | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
 | **System Prog. & Operating System** | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
-| **Theory of Computation** | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
+| **Theory of Computation**           | April 22, 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
 
 ### TE (Third Year) — Sem VI
 
-| Subject | End Sem Papers | In Sem Papers |
-|---|---|---|
-| **Artificial Intelligence** | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
+| Subject                               | End Sem Papers                       | In Sem Papers  |
+| ------------------------------------- | ------------------------------------ | -------------- |
+| **Artificial Intelligence**           | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
 | **Data Science & Big Data Analytics** | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
-| **Web Technology** | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
+| **Web Technology**                    | April 22, 23, 24, 25; Nov 22, 23, 24 | Mar 23, 24, 25 |
 
 ### TE Elective I (Sem V)
 
-| Subject | End Sem Papers |
-|---|---|
-| **Distributed Systems** | April 22, 23, 25; Nov 22, 23, 24 |
-| **Human Computer Interface** | April 22, 23, 24, 25; Nov 22, 23, 24 |
-| **IoT & Embedded Systems** | April 22, 23, 24, 25; Nov 22, 23, 24 |
+| Subject                         | End Sem Papers                       |
+| ------------------------------- | ------------------------------------ |
+| **Distributed Systems**         | April 22, 23, 25; Nov 22, 23, 24     |
+| **Human Computer Interface**    | April 22, 23, 24, 25; Nov 22, 23, 24 |
+| **IoT & Embedded Systems**      | April 22, 23, 24, 25; Nov 22, 23, 24 |
 | **Software Project Management** | April 22, 23, 24, 25; Nov 22, 23, 24 |
 
 ### BE (Fourth Year) — Sem VII
 
-| Subject | End Sem Papers | In Sem Papers |
-|---|---|---|
-| **Blockchain Technology** | April 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
+| Subject                             | End Sem Papers                   | In Sem Papers              |
+| ----------------------------------- | -------------------------------- | -------------------------- |
+| **Blockchain Technology**           | April 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
 | **Design & Analysis of Algorithms** | April 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
-| **Machine Learning** | April 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
+| **Machine Learning**                | April 23, 24, 25; Nov 22, 23, 24 | Oct 22; Sep 23, 24; Aug 25 |
 
 ### BE (Fourth Year) — Sem VIII
 
-| Subject | End Sem Papers | In Sem Papers |
-|---|---|---|
-| **Deep Learning** | April 23, 24, 25; Nov 23, 24 | Mar 23, 24, 25 |
+| Subject                        | End Sem Papers               | In Sem Papers  |
+| ------------------------------ | ---------------------------- | -------------- |
+| **Deep Learning**              | April 23, 24, 25; Nov 23, 24 | Mar 23, 24, 25 |
 | **High Performance Computing** | April 23, 24, 25; Nov 23, 24 | Mar 23, 24, 25 |
 
 ---
@@ -240,14 +242,18 @@ Use `scripts/pdf-extract.py` or `scripts/process-document.sh` to convert PDFs to
 
 ### Step 4: Analyze
 
-Feed the extracted text to `universal-pyq-analyzer` skill for frequency analysis, Bloom's mapping, trend analysis, and exam prediction.
+Feed the extracted text to `universal-pyq-analyzer` skill for frequency analysis, Bloom's mapping,
+trend analysis, and exam prediction.
 
 ---
 
 ## Tips for AI Agents
 
-1. **Syllabus-first**: Always read the syllabus PDF first to get the official unit structure and COs before analyzing PYQs.
+1. **Syllabus-first**: Always read the syllabus PDF first to get the official unit structure and COs
+   before analyzing PYQs.
 2. **Recent-weighted**: PYQs from 2024-2025 are more predictive than 2019-2020 papers.
 3. **Elective coverage**: TE electives have fewer PYQs than core subjects; focus on recent papers.
-4. **VL collection**: The VL Computer Engineering folder (156 MB, 1,080 PDFs) has additional papers from other exam patterns (2015, 2012) that can supplement analysis.
-5. **Merged collections**: The FE folder has merged PYQ PDFs (e.g., "FE AIO MERGED PYQP_s.pdf") that contain all subjects in one file.
+4. **VL collection**: The VL Computer Engineering folder (156 MB, 1,080 PDFs) has additional papers
+   from other exam patterns (2015, 2012) that can supplement analysis.
+5. **Merged collections**: The FE folder has merged PYQ PDFs (e.g., "FE AIO MERGED PYQP_s.pdf") that
+   contain all subjects in one file.

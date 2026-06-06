@@ -6,9 +6,11 @@
 
 ### a) Binary search
 
-**Binary search** is an efficient searching algorithm for sorted arrays that repeatedly divides the search interval in half.
+**Binary search** is an efficient searching algorithm for sorted arrays that repeatedly divides the
+search interval in half.
 
 **Pseudo-code:**
+
 ```
 Algorithm: Binary_Search(A, n, key)
 1. low ← 0
@@ -27,10 +29,12 @@ Algorithm: Binary_Search(A, n, key)
 **Apply on array** [9, 17, 23, 40, 45, 52, 58, 80, 85, 95, 100]:
 
 Search for **23**:
+
 - low=0, high=10, mid=5 → A[5]=52 > 23 → high=4
 - low=0, high=4, mid=2 → A[2]=23 → found at index 2
 
 Search for **100**:
+
 - low=0, high=10, mid=5 → A[5]=52 < 100 → low=6
 - low=6, high=10, mid=8 → A[8]=85 < 100 → low=9
 - low=9, high=10, mid=9 → A[9]=95 < 100 → low=10
@@ -43,6 +47,7 @@ Search for **100**:
 **Selection sort** iteratively finds the minimum element and swaps it to its correct position.
 
 **Algorithm:**
+
 ```
 Algorithm: Selection_Sort(A, n)
 1. for i ← 0 to n−2:
@@ -55,17 +60,17 @@ Algorithm: Selection_Sort(A, n)
 
 Sort [27, 76, 17, 9, 45, 58, 90, 79, 100]:
 
-| Pass | Array State |
-|------|-------------|
-| Initial | [27, 76, 17, 9, 45, 58, 90, 79, 100] |
-| Pass 1 | [**9**, 76, 17, 27, 45, 58, 90, 79, 100] |
-| Pass 2 | [9, **17**, 76, 27, 45, 58, 90, 79, 100] |
-| Pass 3 | [9, 17, **27**, 76, 45, 58, 90, 79, 100] |
-| Pass 4 | [9, 17, 27, **45**, 76, 58, 90, 79, 100] |
-| Pass 5 | [9, 17, 27, 45, **58**, 76, 90, 79, 100] |
-| Pass 6 | [9, 17, 27, 45, 58, **76**, 90, 79, 100] |
-| Pass 7 | [9, 17, 27, 45, 58, 76, **79**, 90, 100] |
-| Pass 8 | [9, 17, 27, 45, 58, 76, 79, **90**, 100] |
+| Pass    | Array State                              |
+| ------- | ---------------------------------------- |
+| Initial | [27, 76, 17, 9, 45, 58, 90, 79, 100]     |
+| Pass 1  | [**9**, 76, 17, 27, 45, 58, 90, 79, 100] |
+| Pass 2  | [9, **17**, 76, 27, 45, 58, 90, 79, 100] |
+| Pass 3  | [9, 17, **27**, 76, 45, 58, 90, 79, 100] |
+| Pass 4  | [9, 17, 27, **45**, 76, 58, 90, 79, 100] |
+| Pass 5  | [9, 17, 27, 45, **58**, 76, 90, 79, 100] |
+| Pass 6  | [9, 17, 27, 45, 58, **76**, 90, 79, 100] |
+| Pass 7  | [9, 17, 27, 45, 58, 76, **79**, 90, 100] |
+| Pass 8  | [9, 17, 27, 45, 58, 76, 79, **90**, 100] |
 
 **Answer: Sorted array — [9, 17, 27, 45, 58, 76, 79, 90, 100]**
 
@@ -75,9 +80,11 @@ Sort [27, 76, 17, 9, 45, 58, 90, 79, 100]:
 
 ### a) Quick sort
 
-**Quick sort** uses the divide-and-conquer strategy. It selects a pivot, partitions the array around it, and recursively sorts the sub-arrays.
+**Quick sort** uses the divide-and-conquer strategy. It selects a pivot, partitions the array around
+it, and recursively sorts the sub-arrays.
 
 Example: [27, 76, 17, 9, 45, 58, 90, 79, 100] with pivot = last element.
+
 - Partition → elements < 100 on left, > 100 on right
 - Recursively sort left partition
 
@@ -85,9 +92,11 @@ Example: [27, 76, 17, 9, 45, 58, 90, 79, 100] with pivot = last element.
 
 ### b) Sentinel search and Indexed sequential search
 
-**Sentinel search** places the key as the last element (sentinel) to eliminate the boundary check, reducing comparisons to exactly one per iteration.
+**Sentinel search** places the key as the last element (sentinel) to eliminate the boundary check,
+reducing comparisons to exactly one per iteration.
 
-**Indexed sequential search** combines sequential access with an index table. The index stores key-pointer pairs for blocks, reducing the search range.
+**Indexed sequential search** combines sequential access with an index table. The index stores
+key-pointer pairs for blocks, reducing the search range.
 
 ---
 
@@ -96,6 +105,7 @@ Example: [27, 76, 17, 9, 45, 58, 90, 79, 100] with pivot = last element.
 ### a) Insert into singly linked list
 
 **At the beginning:**
+
 ```
 Algorithm: Insert_Begin(head, data)
 1. new_node ← allocate memory
@@ -106,6 +116,7 @@ Algorithm: Insert_Begin(head, data)
 ```
 
 **At the end:**
+
 ```
 Algorithm: Insert_End(head, data)
 1. new_node ← allocate memory
@@ -119,6 +130,7 @@ Algorithm: Insert_End(head, data)
 ```
 
 **At a given position:**
+
 ```
 Algorithm: Insert_Pos(head, data, pos)
 1. if pos = 1: return Insert_Begin(head, data)
@@ -132,9 +144,11 @@ Algorithm: Insert_Pos(head, data, pos)
 
 ### b) Polynomial representation using GLL
 
-**Generalized Linked List (GLL)** represents polynomials with multiple variables efficiently. Each node has three fields: tag, data/pointer, and next.
+**Generalized Linked List (GLL)** represents polynomials with multiple variables efficiently. Each
+node has three fields: tag, data/pointer, and next.
 
 For polynomial P(x,y) = 3x²y + 5xy² + 2y:
+
 - Each term is represented as a node with coefficient, exponent pairs
 - GLL allows nested list structure for multi-variable polynomials
 - The list head points to the first term node
@@ -170,10 +184,14 @@ Algorithm: IsEmpty(top)
 
 ### b) Variants of recursion
 
-1. **Direct recursion**: A function calls itself directly. Example: factorial(n) = n × factorial(n−1).
-2. **Indirect recursion**: Function A calls function B, which calls function A. Example: is_even(n) calls is_odd(n−1), is_odd(n) calls is_even(n−1).
-3. **Tail recursion**: The recursive call is the last statement. Example: print_list(node) where the recursive call is the final operation.
-4. **Tree recursion**: Multiple recursive calls within a function. Example: Fibonacci(n) = Fibonacci(n−1) + Fibonacci(n−2).
+1. **Direct recursion**: A function calls itself directly. Example: factorial(n) = n ×
+   factorial(n−1).
+2. **Indirect recursion**: Function A calls function B, which calls function A. Example: is_even(n)
+   calls is_odd(n−1), is_odd(n) calls is_even(n−1).
+3. **Tail recursion**: The recursive call is the last statement. Example: print_list(node) where the
+   recursive call is the final operation.
+4. **Tree recursion**: Multiple recursive calls within a function. Example: Fibonacci(n) =
+   Fibonacci(n−1) + Fibonacci(n−2).
 
 Thus, understanding recursion variants is essential for algorithm optimization.
 
@@ -208,9 +226,11 @@ Algorithm: CQ_IsFull(front, rear, size)
 
 ### b) Priority queue using array
 
-**Priority queue** is a data structure where each element has a priority. Higher-priority elements are dequeued before lower-priority ones.
+**Priority queue** is a data structure where each element has a priority. Higher-priority elements
+are dequeued before lower-priority ones.
 
 **Array implementation:**
+
 - Maintain array of elements with priority values
 - Enqueue: insert at rear (O(1))
 - Dequeue: scan for highest priority element (O(n))
@@ -220,10 +240,10 @@ Thus, priority queues are used in CPU scheduling, Dijkstra's algorithm, and Huff
 
 ---
 
-═══════════════════════════════════════════════════════
-EXAMINER COMMENTARY
+═══════════════════════════════════════════════════════ EXAMINER COMMENTARY
 
 Why this scores full marks:
+
 - Algorithms are presented in clear pseudo-code with numbered steps
 - Every numerical pass/step is shown in tabular form
 - Technical terms (binary search, pivot, GLL, tail recursion) are bolded
@@ -232,6 +252,7 @@ Why this scores full marks:
 - Both array and linked implementations covered
 
 Common Deductions:
+
 - Writing pseudo-code without proper indentation or step numbers
 - Not showing intermediate passes for sorting algorithms
 - Missing edge cases (empty list, full stack) in algorithm pseudo-code
@@ -239,6 +260,7 @@ Common Deductions:
 - Not stating time complexity where expected
 
 Time Budget:
+
 - Q1 (18 marks): 42 min → 14 min each for binary search + selection sort working
 - Q3 (17 marks): 40 min → 20 min for insert operations + 20 min for GLL
 - Q5 (18 marks): 42 min → 20 min for stack + 22 min for recursion

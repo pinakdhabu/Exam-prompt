@@ -4,14 +4,14 @@
 
 ## Syllabus
 
-| Unit | Title | Hours | CO |
-|------|-------|-------|----|
-| I | Formal Language Theory and Finite Automata | 07 | CO1 |
-| II | Regular Expressions | 07 | CO2 |
-| III | Context Free Grammar and Context Free Language | 07 | CO3 |
-| IV | Pushdown Automata | 07 | CO4 |
-| V | Turing Machines | 07 | CO5 |
-| VI | Computability and Complexity Theory | 07 | CO6 |
+| Unit | Title                                          | Hours | CO  |
+| ---- | ---------------------------------------------- | ----- | --- |
+| I    | Formal Language Theory and Finite Automata     | 07    | CO1 |
+| II   | Regular Expressions                            | 07    | CO2 |
+| III  | Context Free Grammar and Context Free Language | 07    | CO3 |
+| IV   | Pushdown Automata                              | 07    | CO4 |
+| V    | Turing Machines                                | 07    | CO5 |
+| VI   | Computability and Complexity Theory            | 07    | CO6 |
 
 ## Exam Pattern
 

@@ -8,7 +8,9 @@ duration: "2½ Hours"
 ---
 
 # Savitribai Phule Pune University
+
 ## Fundamentals of Programming Languages (ESC-105-COM)
+
 ### 2024 Credit Pattern | Semester I
 
 **Total Marks:** 70 | **Time:** 2½ Hours
@@ -19,23 +21,22 @@ duration: "2½ Hours"
 
 ## Q1) Write correct option for the following. [10]
 
-a) Which of the following is a valid **C identifier**? [2]
-   i) 2var &emsp; ii) var_2 &emsp; iii) var-2 &emsp; iv) int
+a) Which of the following is a valid **C identifier**? [2] i) 2var &emsp; ii) var_2 &emsp; iii)
+var-2 &emsp; iv) int
 
-b) The **size of `int`** in C is: [2]
-   i) 2 bytes &emsp; ii) 4 bytes &emsp; iii) depends on compiler &emsp; iv) 8 bytes
+b) The **size of `int`** in C is: [2] i) 2 bytes &emsp; ii) 4 bytes &emsp; iii) depends on compiler
+&emsp; iv) 8 bytes
 
-c) Which operator is used to access the **address of a variable**? [2]
-   i) `*` &emsp; ii) `&` &emsp; iii) `#` &emsp; iv) `->`
+c) Which operator is used to access the **address of a variable**? [2] i) `*` &emsp; ii) `&` &emsp;
+iii) `#` &emsp; iv) `->`
 
-d) The **binary equivalent** of decimal 25 is: [2]
-   i) 11001 &emsp; ii) 10011 &emsp; iii) 11100 &emsp; iv) 10101
+d) The **binary equivalent** of decimal 25 is: [2] i) 11001 &emsp; ii) 10011 &emsp; iii) 11100
+&emsp; iv) 10101
 
-e) A **flowchart** uses _______ symbol for decision: [1]
-   i) Rectangle &emsp; ii) Diamond &emsp; iii) Oval &emsp; iv) Parallelogram
+e) A **flowchart** uses **\_\_\_** symbol for decision: [1] i) Rectangle &emsp; ii) Diamond &emsp;
+iii) Oval &emsp; iv) Parallelogram
 
-f) `strlen("Hello\0World")` returns: [1]
-   i) 11 &emsp; ii) 5 &emsp; iii) 12 &emsp; iv) 7
+f) `strlen("Hello\0World")` returns: [1] i) 11 &emsp; ii) 5 &emsp; iii) 12 &emsp; iv) 7
 
 ---
 
@@ -43,15 +44,18 @@ f) `strlen("Hello\0World")` returns: [1]
 
 **Q2)** Attempt the following: [12]
 
-a) Draw a **flowchart** and write an **algorithm** to find the factorial of a given number \(n\). [6]
+a) Draw a **flowchart** and write an **algorithm** to find the factorial of a given number \(n\).
+[6]
 
-b) Explain the following **C tokens** with examples: keywords, identifiers, constants, operators. [6]
+b) Explain the following **C tokens** with examples: keywords, identifiers, constants, operators.
+[6]
 
 **OR**
 
 **Q3)** Attempt the following: [12]
 
-a) Explain the **compilation process** of a C program (preprocessing, compilation, assembly, linking). [6]
+a) Explain the **compilation process** of a C program (preprocessing, compilation, assembly,
+linking). [6]
 
 b) Explain **data types** in C with their size and range (int, char, float, double). [6]
 
@@ -69,9 +73,10 @@ b) Explain the **operator precedence** and **associativity** in C with an exampl
 
 **Q5)** Attempt the following: [12]
 
-a) Explain **bitwise operators** in C with examples (AND, OR, XOR, NOT, left shift, right shift). [6]
+a) Explain **bitwise operators** in C with examples (AND, OR, XOR, NOT, left shift, right shift).
+[6]
 
-b) Evaluate the expression: \(5 + 3 * 2 \ \% \ 4 - 1\) showing precedence order. [6]
+b) Evaluate the expression: \(5 + 3 \* 2 \ \% \ 4 - 1\) showing precedence order. [6]
 
 ---
 
@@ -107,7 +112,8 @@ b) Explain **string handling functions**: `strlen`, `strcpy`, `strcmp`, `strcat`
 
 a) Write a C program to perform **linear search** on an array of \(n\) elements. [6]
 
-b) Explain **two-dimensional arrays** with syntax, initialization, and example (matrix multiplication). [6]
+b) Explain **two-dimensional arrays** with syntax, initialization, and example (matrix
+multiplication). [6]
 
 ---
 
@@ -115,7 +121,8 @@ b) Explain **two-dimensional arrays** with syntax, initialization, and example (
 
 **Q10)** Attempt the following: [12]
 
-a) Explain **categories of functions** in C: with/without arguments, with/without return values. Give examples. [6]
+a) Explain **categories of functions** in C: with/without arguments, with/without return values.
+Give examples. [6]
 
 b) Write a C program to find **factorial of a number using recursion**. [6]
 
@@ -125,7 +132,8 @@ b) Write a C program to find **factorial of a number using recursion**. [6]
 
 a) Explain **structures** in C with syntax and example (employee record). [6]
 
-b) Write a C program to define a structure `Student` with `name`, `roll_no`, `marks` and display details of 3 students. [6]
+b) Write a C program to define a structure `Student` with `name`, `roll_no`, `marks` and display
+details of 3 students. [6]
 
 ---
 

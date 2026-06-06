@@ -2,7 +2,8 @@
 
 ## Syllabus Overview
 
-Discrete Mathematics covers foundational mathematical structures used in computer science — logic, set theory, combinatorics, graph theory, trees, and algebraic structures.
+Discrete Mathematics covers foundational mathematical structures used in computer science — logic,
+set theory, combinatorics, graph theory, trees, and algebraic structures.
 
 ## Units
 

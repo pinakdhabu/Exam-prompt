@@ -1,9 +1,12 @@
 # Basic Electrical Engineering — Sample Papers
 
 ## Syllabus Overview
-Electromagnetism, AC fundamentals, single/three-phase circuits, transformers, DC networks, batteries.
+
+Electromagnetism, AC fundamentals, single/three-phase circuits, transformers, DC networks,
+batteries.
 
 ## Units
+
 1. Electromagnetism — Magnetic circuits, Faraday's laws, self/mutual inductance (6 Hrs)
 2. Electrostatics and AC Fundamentals — Capacitors, sinusoidal quantities, phasors (6 Hrs)
 3. Single Phase AC Circuits — R-L-C series/parallel, resonance, power factor (6 Hrs)
@@ -12,5 +15,5 @@ Electromagnetism, AC fundamentals, single/three-phase circuits, transformers, DC
 6. Work, Power, Energy, Batteries — Temperature coefficient, lead-acid, Li-ion (6 Hrs)
 
 ## Exam Pattern
-- ESE: Units 3–6, 70 marks, 2.5 hrs | ISE: Units 1–2, 30 marks, 1 hr
 
+- ESE: Units 3–6, 70 marks, 2.5 hrs | ISE: Units 1–2, 30 marks, 1 hr

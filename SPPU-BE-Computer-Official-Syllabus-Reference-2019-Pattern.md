@@ -23,20 +23,21 @@
 
 ## Semester VII — Course Structure
 
-| Course Code | Course Name | TH | PR | TUT | Mid-Sem | End-Sem | TW | PR | OR | Total | Credits |
-|-------------|-------------|:--:|:--:|:---:|:-------:|:-------:|:--:|:--:|:--:|:-----:|:-------:|
-| 410241 | Design and Analysis of Algorithms | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 410242 | Machine Learning | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 410243 | Blockchain Technology | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 410244 | Elective III | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 410245 | Elective IV | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 410246 | Laboratory Practice III | -- | 04 | -- | -- | -- | 50 | 50 | -- | 100 | 02 |
-| 410247 | Laboratory Practice IV | -- | 02 | -- | -- | -- | 50 | -- | -- | 50 | 01 |
-| 410248 | Project Stage I | -- | 02 | -- | -- | -- | 50 | -- | -- | 50 | 02 |
-| 410249 | Audit Course 7 | -- | -- | -- | -- | -- | -- | -- | -- | Grade | -- |
-| **Total** | | **15** | **08** | **--** | **150** | **350** | **150** | **50** | **--** | **700** | **20** |
+| Course Code | Course Name                       |   TH   |   PR   |  TUT   | Mid-Sem | End-Sem |   TW    |   PR   |   OR   |  Total  | Credits |
+| ----------- | --------------------------------- | :----: | :----: | :----: | :-----: | :-----: | :-----: | :----: | :----: | :-----: | :-----: |
+| 410241      | Design and Analysis of Algorithms |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 410242      | Machine Learning                  |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 410243      | Blockchain Technology             |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 410244      | Elective III                      |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 410245      | Elective IV                       |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 410246      | Laboratory Practice III           |   --   |   04   |   --   |   --    |   --    |   50    |   50   |   --   |   100   |   02    |
+| 410247      | Laboratory Practice IV            |   --   |   02   |   --   |   --    |   --    |   50    |   --   |   --   |   50    |   01    |
+| 410248      | Project Stage I                   |   --   |   02   |   --   |   --    |   --    |   50    |   --   |   --   |   50    |   02    |
+| 410249      | Audit Course 7                    |   --   |   --   |   --   |   --    |   --    |   --    |   --   |   --   |  Grade  |   --    |
+| **Total**   |                                   | **15** | **08** | **--** | **150** | **350** | **150** | **50** | **--** | **700** | **20**  |
 
 **Elective III Options:**
+
 - 410244(A): Pervasive Computing
 - 410244(B): Multimedia Techniques
 - 410244(C): Cyber Security and Digital Forensics
@@ -44,16 +45,18 @@
 - 410244(E): Digital Signal Processing
 
 **Elective IV Options:**
+
 - 410245(A): Information Retrieval
 - 410245(B): GPU Programming and Architecture
 - 410245(C): Mobile Computing
 - 410245(D): Software Testing and Quality Assurance
 - 410245(E): Compilers
 
-**Laboratory Practice III:** Assignments from 410241, 410242, 410243
-**Laboratory Practice IV:** Assignments from 410244, 410245
+**Laboratory Practice III:** Assignments from 410241, 410242, 410243 **Laboratory Practice IV:**
+Assignments from 410244, 410245
 
 **Audit Course 7 Options:**
+
 - AC7-I: MOOC — Learn New Skills
 - AC7-II: Entrepreneurship Development
 - AC7-III: Botnet of Things
@@ -64,7 +67,8 @@
 
 ## 410241: Design and Analysis of Algorithms
 
-**Prerequisites Courses:** Discrete Mathematics (210241), Fundamentals of Data Structures (210242), Data Structures and Algorithms (210252), Theory of Computation (310242)
+**Prerequisites Courses:** Discrete Mathematics (210241), Fundamentals of Data Structures (210242),
+Data Structures and Algorithms (210252), Theory of Computation (310242)
 
 **Companion Course:** Laboratory Practice III (410246)
 
@@ -85,13 +89,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Formulate the problem |
-| CO2 | Analyze the asymptotic performance of algorithms |
-| CO3 | Decide and apply algorithmic strategies to solve given problem |
-| CO4 | Find optimal solution by applying various methods |
-| CO5 | Analyze and Apply Scheduling and Sorting Algorithms |
+| CO  | Description                                                             |
+| --- | ----------------------------------------------------------------------- |
+| CO1 | Formulate the problem                                                   |
+| CO2 | Analyze the asymptotic performance of algorithms                        |
+| CO3 | Decide and apply algorithmic strategies to solve given problem          |
+| CO4 | Find optimal solution by applying various methods                       |
+| CO5 | Analyze and Apply Scheduling and Sorting Algorithms                     |
 | CO6 | Solve problems for multi-core or distributed or concurrent environments |
 
 ### Course Contents
@@ -145,24 +149,32 @@
 
 #### Unit VI: Multithreaded and Distributed Algorithms (07 Hours) → CO6
 
-- Multithreaded Algorithms — Introduction, Performance measures, Analyzing multithreaded algorithms, Parallel loops, Race conditions
-- Problem Solving using Multithreaded Algorithms — Multithreaded matrix multiplication, Multithreaded merge sort
-- Distributed Algorithms — Introduction, Distributed breadth first search, Distributed Minimum Spanning Tree
+- Multithreaded Algorithms — Introduction, Performance measures, Analyzing multithreaded algorithms,
+  Parallel loops, Race conditions
+- Problem Solving using Multithreaded Algorithms — Multithreaded matrix multiplication,
+  Multithreaded merge sort
+- Distributed Algorithms — Introduction, Distributed breadth first search, Distributed Minimum
+  Spanning Tree
 - String Matching — Introduction, The Naive string matching algorithm, The Rabin-Karp algorithm
 
 ### Learning Resources
 
 #### Text Books
 
-1. Parag Himanshu Dave, Himanshu Bhalchandra Dave, "Design And Analysis of Algorithms", Pearson Education, ISBN 81-7758-595-9
+1. Parag Himanshu Dave, Himanshu Bhalchandra Dave, "Design And Analysis of Algorithms", Pearson
+   Education, ISBN 81-7758-595-9
 2. Gilles Brassard, Paul Bratley, "Fundamentals of Algorithmics", PHI, ISBN 978-81-203-1131-2
 
 #### Reference Books
 
-1. Michael T. Goodrich, Roberto Tamassia, "Algorithm Design: Foundations, Analysis and Internet Examples", Wiley, ISBN 978-81-265-0986-7
-2. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein, "Introduction to Algorithms", MIT Press, ISBN 978-0-262-03384-8
-3. Horowitz and Sahani, "Fundamentals of Computer Algorithms", University Press, ISBN: 978 817371 6126
-4. Rajeev Motwani and Prabhakar Raghavan, "Randomized Algorithms", Cambridge University Press, ISBN: 978-0-521-61390-3
+1. Michael T. Goodrich, Roberto Tamassia, "Algorithm Design: Foundations, Analysis and Internet
+   Examples", Wiley, ISBN 978-81-265-0986-7
+2. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein, "Introduction to
+   Algorithms", MIT Press, ISBN 978-0-262-03384-8
+3. Horowitz and Sahani, "Fundamentals of Computer Algorithms", University Press, ISBN: 978 817371
+   6126
+4. Rajeev Motwani and Prabhakar Raghavan, "Randomized Algorithms", Cambridge University Press, ISBN:
+   978-0-521-61390-3
 
 ---
 
@@ -189,14 +201,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Identify the needs and challenges of machine learning for real time applications. |
+| CO  | Description                                                                                        |
+| --- | -------------------------------------------------------------------------------------------------- |
+| CO1 | Identify the needs and challenges of machine learning for real time applications.                  |
 | CO2 | Apply various data pre-processing techniques to simplify and speed up machine learning algorithms. |
-| CO3 | Select and apply appropriately supervised machine learning algorithms for real time applications. |
-| CO4 | Implement variants of multi-class classifier and measure its performance. |
-| CO5 | Compare and contrast different clustering algorithms. |
-| CO6 | Design a neural network for solving engineering problems. |
+| CO3 | Select and apply appropriately supervised machine learning algorithms for real time applications.  |
+| CO4 | Implement variants of multi-class classifier and measure its performance.                          |
+| CO5 | Compare and contrast different clustering algorithms.                                              |
+| CO6 | Design a neural network for solving engineering problems.                                          |
 
 ### Course Contents
 
@@ -207,7 +219,8 @@
 - Types of learning: Supervised, Unsupervised, Semi-supervised, Reinforcement learning
 - Models of Machine learning: Geometric, Probabilistic, Logical, Grouping and grading models
 - Parametric and non-parametric models
-- Important Elements of Machine Learning — Data formats, Learnability, Statistical learning approaches
+- Important Elements of Machine Learning — Data formats, Learnability, Statistical learning
+  approaches
 
 #### Unit II: Feature Engineering (07 Hours) → CO2
 
@@ -216,7 +229,8 @@
 - Introduction to Dimensionality Reduction: Principal Component Analysis (PCA)
 - Feature Extraction: Kernel PCA, Local Binary Pattern
 - Feature Selection Techniques: Sequential Forward Selection, Sequential Backward Selection
-- Statistical feature engineering: count-based, Length, Mean, Median, Mode based feature vector creation
+- Statistical feature engineering: count-based, Length, Mean, Median, Mode based feature vector
+  creation
 - Multidimensional Scaling, Matrix Factorization Techniques
 
 #### Unit III: Supervised Learning: Regression (06 Hours) → CO3
@@ -259,15 +273,19 @@
 
 #### Text Books
 
-1. Bishop, Christopher M., and Nasser M. Nasrabadi, "Pattern recognition and machine learning", Vol. 4. No. 4. New York: springer, 2006.
+1. Bishop, Christopher M., and Nasser M. Nasrabadi, "Pattern recognition and machine learning",
+   Vol. 4. No. 4. New York: springer, 2006.
 2. Ethem Alpaydin, "Introduction to Machine Learning", PHI 2nd Edition-2013
 
 #### Reference Books
 
 1. Tom Mitchell, "Machine learning", McGraw-Hill series in Computer Science, 1997
-2. Shalev-Shwartz, Shai, and Shai Ben-David, "Understanding machine learning: From theory to algorithms", Cambridge university press, 2014.
-3. Jiawei Han, Micheline Kamber, and Jian Pei, "Data Mining: Concepts and Techniques", Elsevier Publishers, 3rd Edition
-4. Hastie, Trevor, et al., "The elements of statistical learning: data mining, inference, and prediction", Vol. 2. New York: springer, 2009.
+2. Shalev-Shwartz, Shai, and Shai Ben-David, "Understanding machine learning: From theory to
+   algorithms", Cambridge university press, 2014.
+3. Jiawei Han, Micheline Kamber, and Jian Pei, "Data Mining: Concepts and Techniques", Elsevier
+   Publishers, 3rd Edition
+4. Hastie, Trevor, et al., "The elements of statistical learning: data mining, inference, and
+   prediction", Vol. 2. New York: springer, 2009.
 5. Goodfellow I., Bengio Y. and Courville, "Deep Learning", MIT Press, 2016
 
 ---
@@ -295,13 +313,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Interpret the fundamentals and basic concepts in Blockchain |
-| CO2 | Compare the working of different blockchain platforms |
-| CO3 | Use Crypto wallet for cryptocurrency based transactions |
-| CO4 | Analyze the importance of blockchain in finding the solution to the real-world problems |
-| CO5 | Illustrate the Ethereum public block chain platform |
+| CO  | Description                                                                                        |
+| --- | -------------------------------------------------------------------------------------------------- |
+| CO1 | Interpret the fundamentals and basic concepts in Blockchain                                        |
+| CO2 | Compare the working of different blockchain platforms                                              |
+| CO3 | Use Crypto wallet for cryptocurrency based transactions                                            |
+| CO4 | Analyze the importance of blockchain in finding the solution to the real-world problems            |
+| CO5 | Illustrate the Ethereum public block chain platform                                                |
 | CO6 | Identify relative application where block chain technology can be effectively used and implemented |
 
 ### Course Contents
@@ -317,7 +335,8 @@
 #### Unit II: Blockchain Fundamentals (07 Hours) → CO1
 
 - History, Centralized Vs. Decentralized Systems
-- Layers of Blockchain: Application Layer, Execution Layer, Semantic Layer, Propagation Layer, Consensus Layer
+- Layers of Blockchain: Application Layer, Execution Layer, Semantic Layer, Propagation Layer,
+  Consensus Layer
 - Why is Blockchain important?
 - Limitations of Centralized Systems
 - Blockchain Adoption So Far
@@ -358,17 +377,22 @@
 
 #### Text Books
 
-1. Martin Quest, "Blockchain Dynamics: A Quick Beginner's Guide on Understanding the Foundations of Bitcoin and Other Cryptocurrencies", Create Space Independent Publishing Platform, 15-May-2018
-2. Imran Bashir, "Mastering Blockchain: Distributed Ledger Technology, Decentralization and Smart Contracts Explained", Second Edition, Packt Publishing, 2018
+1. Martin Quest, "Blockchain Dynamics: A Quick Beginner's Guide on Understanding the Foundations of
+   Bitcoin and Other Cryptocurrencies", Create Space Independent Publishing Platform, 15-May-2018
+2. Imran Bashir, "Mastering Blockchain: Distributed Ledger Technology, Decentralization and Smart
+   Contracts Explained", Second Edition, Packt Publishing, 2018
 3. Alex Leverington, "Ethereum Programming", Packt Publishing, 2017
 
 #### Reference Books
 
-1. Bikramaditya Singhal, Gautam Dhameja, Priyansu Sekhar Panda, "Beginning Blockchain — A Beginner's Guide to Building Blockchain Solutions", 2018
-2. Chris Dannen, "Introducing Ethereum and Solidity", Foundations of Cryptocurrency and Blockchain Programming for Beginners
+1. Bikramaditya Singhal, Gautam Dhameja, Priyansu Sekhar Panda, "Beginning Blockchain — A Beginner's
+   Guide to Building Blockchain Solutions", 2018
+2. Chris Dannen, "Introducing Ethereum and Solidity", Foundations of Cryptocurrency and Blockchain
+   Programming for Beginners
 3. Daniel Drescher, "Blockchain Basics", A Non-Technical Introduction in 25 Steps
 4. Ritesh Modi, "Solidity Programming Essentials", Packt Publishing, 2018
-5. Chandramouli Subramanian, Asha A George, Abhilash K A and Meena Karthikeyan, "Blockchain Technology", Universities Press, ISBN-9789389211634
+5. Chandramouli Subramanian, Asha A George, Abhilash K A and Meena Karthikeyan, "Blockchain
+   Technology", Universities Press, ISBN-9789389211634
 
 ---
 
@@ -395,14 +419,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Demonstrate fundamental concepts in pervasive computing. |
+| CO  | Description                                                                                     |
+| --- | ----------------------------------------------------------------------------------------------- |
+| CO1 | Demonstrate fundamental concepts in pervasive computing.                                        |
 | CO2 | Explain pervasive devices and decide appropriate one as per the need of real time applications. |
-| CO3 | Classify and analyze context aware systems for their efficiency in different ICT systems. |
-| CO4 | Illustrate intelligent systems and generic intelligent interactive applications. |
-| CO5 | Design HCI systems in pervasive computing environment. |
-| CO6 | Explore the security challenges and know the role of ethics in pervasive computing. |
+| CO3 | Classify and analyze context aware systems for their efficiency in different ICT systems.       |
+| CO4 | Illustrate intelligent systems and generic intelligent interactive applications.                |
+| CO5 | Design HCI systems in pervasive computing environment.                                          |
+| CO6 | Explore the security challenges and know the role of ethics in pervasive computing.             |
 
 ### Course Contents
 
@@ -478,14 +502,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Describe the media and supporting devices commonly associated with multimedia information and systems. |
-| CO2 | Demonstrate the use of content-based information analysis in a multimedia information system. |
+| CO  | Description                                                                                                                                        |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CO1 | Describe the media and supporting devices commonly associated with multimedia information and systems.                                             |
+| CO2 | Demonstrate the use of content-based information analysis in a multimedia information system.                                                      |
 | CO3 | Critique multimedia presentations in terms of their appropriate use of audio, video, graphics, color, and other information presentation concepts. |
-| CO4 | Implement a multimedia application using an authoring system. |
-| CO5 | Understanding of technologies for tracking, navigation and gestural control. |
-| CO6 | Implement Multimedia Internet of Things Architectures. |
+| CO4 | Implement a multimedia application using an authoring system.                                                                                      |
+| CO5 | Understanding of technologies for tracking, navigation and gestural control.                                                                       |
+| CO6 | Implement Multimedia Internet of Things Architectures.                                                                                             |
 
 ### Course Contents
 
@@ -564,13 +588,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze threats in order to protect or defend in cyberspace from cyber-attacks. |
-| CO2 | Build appropriate security solutions against cyber-attacks. |
-| CO3 | Underline the need of digital forensic and role of digital evidences. |
-| CO4 | Explain rules and types of evidence collection |
-| CO5 | Analyze, validate and process crime scenes |
+| CO  | Description                                                                           |
+| --- | ------------------------------------------------------------------------------------- |
+| CO1 | Analyze threats in order to protect or defend in cyberspace from cyber-attacks.       |
+| CO2 | Build appropriate security solutions against cyber-attacks.                           |
+| CO3 | Underline the need of digital forensic and role of digital evidences.                 |
+| CO4 | Explain rules and types of evidence collection                                        |
+| CO5 | Analyze, validate and process crime scenes                                            |
 | CO6 | Identify the methods to generate legal evidence and supporting investigation reports. |
 
 ### Course Contents
@@ -579,7 +603,8 @@
 
 - Introduction and Overview of Cyber Crime
 - Nature and Scope of Cyber Crime
-- Types of Cyber Crime: crime against individual, property, cyber extortion, drug trafficking, cyber terrorism
+- Types of Cyber Crime: crime against individual, property, cyber extortion, drug trafficking, cyber
+  terrorism
 - Need for Information security, Threats to Information Systems
 - Information Assurance, Cyber Security, Security Risk Analysis
 
@@ -652,14 +677,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Describe the concepts of object-oriented and basic class modelling. |
+| CO  | Description                                                                        |
+| --- | ---------------------------------------------------------------------------------- |
+| CO1 | Describe the concepts of object-oriented and basic class modelling.                |
 | CO2 | Draw class diagrams, sequence diagrams and interaction diagrams to solve problems. |
-| CO3 | Choose and apply a befitting design pattern for the given problem |
-| CO4 | Analyze applications, architectural styles and software control strategies |
-| CO5 | Develop class design models and choose legacy systems. |
-| CO6 | Understand Design Patterns |
+| CO3 | Choose and apply a befitting design pattern for the given problem                  |
+| CO4 | Analyze applications, architectural styles and software control strategies         |
+| CO5 | Develop class design models and choose legacy systems.                             |
+| CO6 | Understand Design Patterns                                                         |
 
 ### Course Contents
 
@@ -734,14 +759,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Understand the mathematical models and representations of DT Signals and Systems |
+| CO  | Description                                                                             |
+| --- | --------------------------------------------------------------------------------------- |
+| CO1 | Understand the mathematical models and representations of DT Signals and Systems        |
 | CO2 | Apply different transforms like Fourier and Z-Transform from applications point of view |
-| CO3 | Understand the design and implementation of DT systems as DT filters |
-| CO4 | Demonstrate the knowledge of signals and systems for design and analysis |
-| CO5 | Apply knowledge and use the signal transforms for digital processing applications |
-| CO6 | Understand Filtering and Different Filter Structures |
+| CO3 | Understand the design and implementation of DT systems as DT filters                    |
+| CO4 | Demonstrate the knowledge of signals and systems for design and analysis                |
+| CO5 | Apply knowledge and use the signal transforms for digital processing applications       |
+| CO6 | Understand Filtering and Different Filter Structures                                    |
 
 ### Course Contents
 
@@ -808,21 +833,22 @@
 
 ### Course Objectives
 
-- To understand the basic concepts, indexing, and performance analysis of Information Retrieval systems
+- To understand the basic concepts, indexing, and performance analysis of Information Retrieval
+  systems
 - To study classification, clustering, and filtering techniques for IR
 - To understand evaluation methods and transition to large-scale search services
 - To explore parallel IR and web search structures
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Implement the concept of Information Retrieval |
-| CO2 | Generate quality information out of retrieved information |
+| CO  | Description                                                                        |
+| --- | ---------------------------------------------------------------------------------- |
+| CO1 | Implement the concept of Information Retrieval                                     |
+| CO2 | Generate quality information out of retrieved information                          |
 | CO3 | Apply techniques such as classification, clustering, and filtering over multimedia |
-| CO4 | Evaluate and analyze retrieved information |
-| CO5 | Understand the data in various Application and Extensions of IR |
-| CO6 | Understand Parallel information retrieving and web structure |
+| CO4 | Evaluate and analyze retrieved information                                         |
+| CO5 | Understand the data in various Application and Extensions of IR                    |
+| CO6 | Understand Parallel information retrieving and web structure                       |
 
 ### Course Contents
 
@@ -868,13 +894,17 @@
 
 #### Text Books
 
-1. Stefan Büttcher, Charles L.A. Clarke, Gordon V. Cormack, "Information Retrieval: Implementing and Evaluating Search Engines", MIT Press
-2. Christopher D. Manning, Prabhakar Raghavan, Hinrich Schütze, "Introduction to Information Retrieval", Cambridge University Press
-3. Ricardo Baeza-Yates, Berthier Ribeiro-Neto, "Modern Information Retrieval", 2nd Edition, Addison-Wesley
+1. Stefan Büttcher, Charles L.A. Clarke, Gordon V. Cormack, "Information Retrieval: Implementing and
+   Evaluating Search Engines", MIT Press
+2. Christopher D. Manning, Prabhakar Raghavan, Hinrich Schütze, "Introduction to Information
+   Retrieval", Cambridge University Press
+3. Ricardo Baeza-Yates, Berthier Ribeiro-Neto, "Modern Information Retrieval", 2nd Edition,
+   Addison-Wesley
 
 #### Reference Books
 
-1. W. Bruce Croft, Donald Metzler, Trevor Strohman, "Search Engines: Information Retrieval in Practice", Pearson
+1. W. Bruce Croft, Donald Metzler, Trevor Strohman, "Search Engines: Information Retrieval in
+   Practice", Pearson
 2. C. J. van Rijsbergen, "Information Retrieval", Butterworth-Heinemann
 
 ---
@@ -900,14 +930,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Describe GPU architecture |
-| CO2 | Write programs using CUDA, identify issues, and debug them |
+| CO  | Description                                                           |
+| --- | --------------------------------------------------------------------- |
+| CO1 | Describe GPU architecture                                             |
+| CO2 | Write programs using CUDA, identify issues, and debug them            |
 | CO3 | Implement efficient algorithms in GPUs for common application kernels |
-| CO4 | Write simple programs using OpenCL |
-| CO5 | Identify efficient parallel programming patterns to solve problems |
-| CO6 | Explore the modern GPUs architecture and its applications |
+| CO4 | Write simple programs using OpenCL                                    |
+| CO5 | Identify efficient parallel programming patterns to solve problems    |
+| CO6 | Explore the modern GPUs architecture and its applications             |
 
 ### Course Contents
 
@@ -923,7 +953,8 @@
 
 - Using CUDA
 - Multi-GPU solutions
-- Optimizing CUDA Applications: Problem decomposition, Memory considerations, Transfers, Thread usage, Resource contentions
+- Optimizing CUDA Applications: Problem decomposition, Memory considerations, Transfers, Thread
+  usage, Resource contentions
 
 #### Unit III: Programming Issues (07 Hours) → CO3
 
@@ -980,7 +1011,8 @@
 
 ### Course Objectives
 
-- To introduce basic concepts, principles, techniques and systems/networking issues for mobile computing
+- To introduce basic concepts, principles, techniques and systems/networking issues for mobile
+  computing
 - To demonstrate protocols of mobile communication
 - To cover GSM architecture and support services
 - To study location and handoff management
@@ -989,14 +1021,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Develop a strong grounding in mobile network fundamentals |
+| CO  | Description                                                                          |
+| --- | ------------------------------------------------------------------------------------ |
+| CO1 | Develop a strong grounding in mobile network fundamentals                            |
 | CO2 | Apply knowledge in MAC, Network, and Transport Layer protocols for wireless networks |
-| CO3 | Illustrate the Global System for Mobile Communications (GSM) |
-| CO4 | Use 3G/4G technology-based networks with bandwidth planning, VLR and HLR algorithms |
-| CO5 | Classify network and transport layers of mobile communication |
-| CO6 | Design and develop wireless network protocols using simulation tools |
+| CO3 | Illustrate the Global System for Mobile Communications (GSM)                         |
+| CO4 | Use 3G/4G technology-based networks with bandwidth planning, VLR and HLR algorithms  |
+| CO5 | Classify network and transport layers of mobile communication                        |
+| CO6 | Design and develop wireless network protocols using simulation tools                 |
 
 ### Course Contents
 
@@ -1086,14 +1118,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Describe fundamental concepts like manual testing, automation testing, and SQA |
-| CO2 | Design and develop project test plans, test cases, test data, and conduct test operations |
-| CO3 | Apply recent automation tools for various testing types |
+| CO  | Description                                                                                    |
+| --- | ---------------------------------------------------------------------------------------------- |
+| CO1 | Describe fundamental concepts like manual testing, automation testing, and SQA                 |
+| CO2 | Design and develop project test plans, test cases, test data, and conduct test operations      |
+| CO3 | Apply recent automation tools for various testing types                                        |
 | CO4 | Apply different approaches of quality management, assurance, and standards to software systems |
-| CO5 | Apply and analyze effectiveness of Software Quality Tools |
-| CO6 | Apply tools necessary for efficient testing frameworks |
+| CO5 | Apply and analyze effectiveness of Software Quality Tools                                      |
+| CO6 | Apply tools necessary for efficient testing frameworks                                         |
 
 ### Course Contents
 
@@ -1149,8 +1181,10 @@
 
 #### Text Books
 
-1. M G Limaye, "Software Testing Principles, Techniques and Tools", McGraw Hill, ISBN: 978-0-07-013990-5
-2. Srinivasan Desikan, Gopal Swamy Ramesh, "Software Testing Principles and Practices", Pearson, ISBN: 978-81-775-8848-3
+1. M G Limaye, "Software Testing Principles, Techniques and Tools", McGraw Hill, ISBN:
+   978-0-07-013990-5
+2. Srinivasan Desikan, Gopal Swamy Ramesh, "Software Testing Principles and Practices", Pearson,
+   ISBN: 978-81-775-8848-3
 
 #### Reference Books
 
@@ -1161,7 +1195,8 @@
 
 ### 410245(E): Elective IV — Compilers
 
-**Prerequisite Courses:** Theory of Computation (310242), Systems Programming and Operating System (310243)
+**Prerequisite Courses:** Theory of Computation (310242), Systems Programming and Operating System
+(310243)
 
 **Companion Course:** Laboratory Practice IV (410247)
 
@@ -1181,14 +1216,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze the phases of a compiler and design lexical analyzers |
-| CO2 | Design and implement top-down and bottom-up parsers |
-| CO3 | Apply syntax-directed translation to generate intermediate code |
+| CO  | Description                                                      |
+| --- | ---------------------------------------------------------------- |
+| CO1 | Analyze the phases of a compiler and design lexical analyzers    |
+| CO2 | Design and implement top-down and bottom-up parsers              |
+| CO3 | Apply syntax-directed translation to generate intermediate code  |
 | CO4 | Analyze symbol table organization and runtime storage management |
-| CO5 | Apply code optimization techniques |
-| CO6 | Design and implement a code generator |
+| CO5 | Apply code optimization techniques                               |
+| CO6 | Design and implement a code generator                            |
 
 ### Course Contents
 
@@ -1247,8 +1282,10 @@
 
 #### Text Books
 
-1. Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman, "Compilers: Principles, Techniques, and Tools", 2nd Edition, Pearson, ISBN: 978-81-317-2101-0
-2. Kenneth C. Louden, "Compiler Construction: Principles and Practice", Cengage Learning, ISBN: 978-81-315-0115-3
+1. Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman, "Compilers: Principles, Techniques,
+   and Tools", 2nd Edition, Pearson, ISBN: 978-81-317-2101-0
+2. Kenneth C. Louden, "Compiler Construction: Principles and Practice", Cengage Learning, ISBN:
+   978-81-315-0115-3
 
 #### Reference Books
 
@@ -1262,19 +1299,20 @@
 
 ## Semester VIII — Course Structure
 
-| Course Code | Course Name | TH | PR | TUT | Mid-Sem | End-Sem | TW | PR | OR | Total | Credits |
-|-------------|-------------|:--:|:--:|:---:|:-------:|:-------:|:--:|:--:|:--:|:-----:|:-------:|
-| 410250 | High Performance Computing | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 410251 | Deep Learning | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 410252 | Elective V | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 410253 | Elective VI | 03 | -- | -- | 30 | 70 | -- | -- | -- | 100 | 03 |
-| 410254 | Laboratory Practice V | -- | 02 | -- | -- | -- | 50 | 50 | -- | 100 | 01 |
-| 410255 | Laboratory Practice VI | -- | 02 | -- | -- | -- | 50 | -- | -- | 50 | 01 |
-| 410256 | Project Stage II | -- | 06 | -- | -- | -- | 100 | -- | 50 | 150 | 06 |
-| 410257 | Audit Course 8 | -- | -- | -- | -- | -- | -- | -- | -- | Grade | -- |
-| **Total** | | **12** | **10** | **--** | **120** | **280** | **200** | **50** | **50** | **700** | **20** |
+| Course Code | Course Name                |   TH   |   PR   |  TUT   | Mid-Sem | End-Sem |   TW    |   PR   |   OR   |  Total  | Credits |
+| ----------- | -------------------------- | :----: | :----: | :----: | :-----: | :-----: | :-----: | :----: | :----: | :-----: | :-----: |
+| 410250      | High Performance Computing |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 410251      | Deep Learning              |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 410252      | Elective V                 |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 410253      | Elective VI                |   03   |   --   |   --   |   30    |   70    |   --    |   --   |   --   |   100   |   03    |
+| 410254      | Laboratory Practice V      |   --   |   02   |   --   |   --    |   --    |   50    |   50   |   --   |   100   |   01    |
+| 410255      | Laboratory Practice VI     |   --   |   02   |   --   |   --    |   --    |   50    |   --   |   --   |   50    |   01    |
+| 410256      | Project Stage II           |   --   |   06   |   --   |   --    |   --    |   100   |   --   |   50   |   150   |   06    |
+| 410257      | Audit Course 8             |   --   |   --   |   --   |   --    |   --    |   --    |   --   |   --   |  Grade  |   --    |
+| **Total**   |                            | **12** | **10** | **--** | **120** | **280** | **200** | **50** | **50** | **700** | **20**  |
 
 **Elective V Options:**
+
 - 410252(A): Natural Language Processing
 - 410252(B): Image Processing
 - 410252(C): Software Defined Networks
@@ -1282,16 +1320,18 @@
 - 410252(E): Open Elective I
 
 **Elective VI Options:**
+
 - 410253(A): Pattern Recognition
 - 410253(B): Soft Computing
 - 410253(C): Business Intelligence
 - 410253(D): Quantum Computing
 - 410253(E): Open Elective II
 
-**Laboratory Practice V:** Assignments from 410250, 410251
-**Laboratory Practice VI:** Assignments from 410252, 410253
+**Laboratory Practice V:** Assignments from 410250, 410251 **Laboratory Practice VI:** Assignments
+from 410252, 410253
 
 **Audit Course 8 Options:**
+
 - AC8-I: Usability Engineering
 - AC8-II: Conversational Interfaces
 - AC8-III: Social Media and Analytics
@@ -1321,21 +1361,22 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Understand various Parallel Paradigm |
+| CO  | Description                                                               |
+| --- | ------------------------------------------------------------------------- |
+| CO1 | Understand various Parallel Paradigm                                      |
 | CO2 | Design and Develop an efficient parallel algorithm to solve given problem |
 | CO3 | Illustrate data communication operations on various parallel architecture |
-| CO4 | Analyze and measure performance of modern parallel computing systems |
-| CO5 | Apply CUDA architecture for parallel programming |
-| CO6 | Analyze the performance of HPC applications |
+| CO4 | Analyze and measure performance of modern parallel computing systems      |
+| CO5 | Apply CUDA architecture for parallel programming                          |
+| CO6 | Analyze the performance of HPC applications                               |
 
 ### Course Contents
 
 #### Unit I: Introduction to Parallel Computing (07 Hours) → CO1
 
 - Motivating Parallelism
-- Modern Processor: Stored-program computer architecture, General-purpose Cache-based Microprocessor architecture
+- Modern Processor: Stored-program computer architecture, General-purpose Cache-based Microprocessor
+  architecture
 - Parallel Programming Platforms: Implicit Parallelism, Dichotomy of Parallel Computing Platforms
 - Physical Organization of Parallel Platforms, Communication Costs in Parallel Machines
 - Levels of parallelism
@@ -1406,17 +1447,22 @@
 
 #### Text Books
 
-1. Ananth Grama, Anshul Gupta, George Karypis, and Vipin Kumar, "Introduction to Parallel Computing", 2nd edition, Addison-Wesley, 2003.
-2. Seyed H. Roosta, "Parallel Processing and Parallel Algorithms Theory and Computation", Springer-Verlag 2000.
-3. John Cheng, Max Grossman, and Ty McKercher, "Professional CUDA C Programming", John Wiley & Sons, Inc.
+1. Ananth Grama, Anshul Gupta, George Karypis, and Vipin Kumar, "Introduction to Parallel
+   Computing", 2nd edition, Addison-Wesley, 2003.
+2. Seyed H. Roosta, "Parallel Processing and Parallel Algorithms Theory and Computation",
+   Springer-Verlag 2000.
+3. John Cheng, Max Grossman, and Ty McKercher, "Professional CUDA C Programming", John Wiley & Sons,
+   Inc.
 
 #### Reference Books
 
 1. Kai Hwang, "Scalable Parallel Computing", McGraw Hill 1998.
-2. George S. Almasi and Alan Gottlieb, "Highly Parallel Computing", The Benjamin and Cummings Pub. Co., Inc.
+2. George S. Almasi and Alan Gottlieb, "Highly Parallel Computing", The Benjamin and Cummings Pub.
+   Co., Inc.
 3. Jason Sanders, Edward Kandrot, "CUDA by Example", Addison-Wesley.
 4. Pacheco, Peter S., "An Introduction to Parallel Programming", Morgan Kaufmann Publishers.
-5. Ajay D. Kshemkalyani, Mukesh Singhal, "Distributed Computing: Principles, Algorithms, and Systems", Cambridge March 2011.
+5. Ajay D. Kshemkalyani, Mukesh Singhal, "Distributed Computing: Principles, Algorithms, and
+   Systems", Cambridge March 2011.
 
 ---
 
@@ -1443,14 +1489,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Understand the basics of Deep Learning and apply the tools to implement deep learning applications |
+| CO  | Description                                                                                                                                                 |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CO1 | Understand the basics of Deep Learning and apply the tools to implement deep learning applications                                                          |
 | CO2 | Evaluate the performance of deep learning models (e.g., with respect to the bias-variance tradeoff, overfitting and underfitting, estimation of test error) |
-| CO3 | Apply the technique of Convolution (CNN) and Recurrent Neural Network (RNN) for implementing Deep Learning models |
-| CO4 | To implement and apply deep generative models |
-| CO5 | Construct and apply on-policy reinforcement learning algorithms |
-| CO6 | Understand Reinforcement Learning Process |
+| CO3 | Apply the technique of Convolution (CNN) and Recurrent Neural Network (RNN) for implementing Deep Learning models                                           |
+| CO4 | To implement and apply deep generative models                                                                                                               |
+| CO5 | Construct and apply on-policy reinforcement learning algorithms                                                                                             |
+| CO6 | Understand Reinforcement Learning Process                                                                                                                   |
 
 ### Course Contents
 
@@ -1563,14 +1609,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Describe the fundamental concepts and techniques of Natural Language Processing |
+| CO  | Description                                                                            |
+| --- | -------------------------------------------------------------------------------------- |
+| CO1 | Describe the fundamental concepts and techniques of Natural Language Processing        |
 | CO2 | Analyze the structure of natural language in terms of morphology, syntax and semantics |
-| CO3 | Apply appropriate NLP techniques for various linguistic tasks |
-| CO4 | Integrate various NLP techniques for comprehensive language processing |
-| CO5 | Use various NLP tools and libraries for language processing tasks |
-| CO6 | Develop real-world applications involving Natural Language Processing |
+| CO3 | Apply appropriate NLP techniques for various linguistic tasks                          |
+| CO4 | Integrate various NLP techniques for comprehensive language processing                 |
+| CO5 | Use various NLP tools and libraries for language processing tasks                      |
+| CO6 | Develop real-world applications involving Natural Language Processing                  |
 
 ### Course Contents
 
@@ -1625,8 +1671,10 @@
 
 #### Text Books
 
-1. Daniel Jurafsky, James H. Martin, "Speech and Language Processing", 3rd Edition, Pearson, ISBN: 978-93-325-3553-0
-2. Christopher D. Manning, Hinrich Schütze, "Foundations of Statistical Natural Language Processing", MIT Press, ISBN: 978-0-262-13360-9
+1. Daniel Jurafsky, James H. Martin, "Speech and Language Processing", 3rd Edition, Pearson, ISBN:
+   978-93-325-3553-0
+2. Christopher D. Manning, Hinrich Schütze, "Foundations of Statistical Natural Language
+   Processing", MIT Press, ISBN: 978-0-262-13360-9
 
 #### Reference Books
 
@@ -1654,14 +1702,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                    |
+| --- | ------------------------------------------------------------------------------ |
 | CO1 | Apply mathematics and fundamental algorithms for image processing applications |
-| CO2 | Apply image enhancement methods in spatial and frequency domain |
-| CO3 | Apply algorithmic approaches for image segmentation |
-| CO4 | Summarize image compression and object recognition techniques |
-| CO5 | Apply image restoration techniques |
-| CO6 | Explore specialized domain-specific image processing applications |
+| CO2 | Apply image enhancement methods in spatial and frequency domain                |
+| CO3 | Apply algorithmic approaches for image segmentation                            |
+| CO4 | Summarize image compression and object recognition techniques                  |
+| CO5 | Apply image restoration techniques                                             |
+| CO6 | Explore specialized domain-specific image processing applications              |
 
 ### Course Contents
 
@@ -1715,13 +1763,15 @@
 
 #### Text Books
 
-1. Rafael C. Gonzalez, Richard E. Woods, "Digital Image Processing", 4th Edition, Pearson, ISBN: 978-0-13-335672-4
+1. Rafael C. Gonzalez, Richard E. Woods, "Digital Image Processing", 4th Edition, Pearson, ISBN:
+   978-0-13-335672-4
 2. Anil K. Jain, "Fundamentals of Digital Image Processing", PHI, ISBN: 978-81-203-0929-6
 
 #### Reference Books
 
 1. William K. Pratt, "Digital Image Processing", 4th Edition, Wiley
-2. Milan Sonka, Vaclav Hlavac, Roger Boyle, "Image Processing, Analysis, and Machine Vision", Cengage
+2. Milan Sonka, Vaclav Hlavac, Roger Boyle, "Image Processing, Analysis, and Machine Vision",
+   Cengage
 3. S. Jayaraman, S. Esakkirajan, T. Veerakumar, "Digital Image Processing", McGraw Hill
 
 ---
@@ -1744,14 +1794,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                          |
+| --- | ---------------------------------------------------- |
 | CO1 | Interpret the need and requirements of SDN solutions |
-| CO2 | Analyze different methodologies for SDN |
-| CO3 | Design best practices for SDN deployment |
-| CO4 | Program network elements using SDN |
-| CO5 | Understand network virtualization using OpenFlow |
-| CO6 | Develop applications using SDN |
+| CO2 | Analyze different methodologies for SDN              |
+| CO3 | Design best practices for SDN deployment             |
+| CO4 | Program network elements using SDN                   |
+| CO5 | Understand network virtualization using OpenFlow     |
+| CO6 | Develop applications using SDN                       |
 
 ### Course Contents
 
@@ -1799,13 +1849,15 @@
 
 #### Text Books
 
-1. Paul Goransson, Chuck Black, "Software Defined Networks: A Comprehensive Approach", 2nd Edition, Morgan Kaufmann, ISBN: 978-0-12-416684-8
+1. Paul Goransson, Chuck Black, "Software Defined Networks: A Comprehensive Approach", 2nd Edition,
+   Morgan Kaufmann, ISBN: 978-0-12-416684-8
 2. Thomas D. Nadeau, Ken Gray, "SDN: Software Defined Networks", O'Reilly, ISBN: 978-1-449-34230-2
 
 #### Reference Books
 
 1. William Stallings, "Foundations of Modern Networking: SDN, NFV, QoE, IoT, and Cloud", Pearson
-2. Patricia A. Morreale, James M. Anderson, "Software Defined Networking: Design and Deployment", CRC Press
+2. Patricia A. Morreale, James M. Anderson, "Software Defined Networking: Design and Deployment",
+   CRC Press
 3. Vivek Tiwari, "SDN and OpenFlow for Beginners", Amazon Digital Services
 
 ---
@@ -1828,20 +1880,22 @@
 - To study adaptive filtering techniques and applications of adaptive filtering
 - To learn and understand Multi-rate DSP and applications
 - To explore appropriate transforms
-- To understand basic concepts of speech production, speech analysis, speech coding and parametric representation of speech
-- To acquire knowledge about different methods used for speech coding and understand various applications of speech processing
+- To understand basic concepts of speech production, speech analysis, speech coding and parametric
+  representation of speech
+- To acquire knowledge about different methods used for speech coding and understand various
+  applications of speech processing
 - To learn and understand basics of Image Processing and various image filters with its applications
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Understand and apply different transforms for the design of DT/Digital systems |
-| CO2 | Explore the knowledge of adaptive filtering and Multi-rate DSP |
+| CO  | Description                                                                                       |
+| --- | ------------------------------------------------------------------------------------------------- |
+| CO1 | Understand and apply different transforms for the design of DT/Digital systems                    |
+| CO2 | Explore the knowledge of adaptive filtering and Multi-rate DSP                                    |
 | CO3 | Design DT systems in the field/area of adaptive filtering, spectral estimation and multi-rate DSP |
-| CO4 | Explore use of DCT and WT in speech and image processing |
-| CO5 | Develop algorithms in the field of speech, image processing and other DSP applications |
-| CO6 | Identify Image Processing Techniques |
+| CO4 | Explore use of DCT and WT in speech and image processing                                          |
+| CO5 | Develop algorithms in the field of speech, image processing and other DSP applications            |
+| CO6 | Identify Image Processing Techniques                                                              |
 
 ### Course Contents
 
@@ -1872,7 +1926,8 @@
 - Forward and Backward linear prediction, Solution of the Normal Equations
 - Properties of linear prediction Error Filter, AR Lattice and ARMA Lattice-Ladder Filters
 
-**Exemplar/Case Study:** Implementation for sampling rate Conversion Multi-rate Digital Signal Processing.
+**Exemplar/Case Study:** Implementation for sampling rate Conversion Multi-rate Digital Signal
+Processing.
 
 #### Unit IV: Spectral Estimation (07 Hours) → CO1, CO4
 
@@ -1892,7 +1947,8 @@
 - Text-to-speech conversion, speech enhancement
 - Speaker Verification, Applications
 
-**Exemplar/Case Study:** Investigation of data augmentation techniques for disordered speech recognition.
+**Exemplar/Case Study:** Investigation of data augmentation techniques for disordered speech
+recognition.
 
 #### Unit VI: Image Processing (07 Hours) → CO6
 
@@ -1907,18 +1963,22 @@
 
 #### Text Books
 
-1. J. G. Proakis, D. G. Manolakis, "Digital Signal Processing: Principles, Algorithms, and Applications", Prentice Hall, 2007
+1. J. G. Proakis, D. G. Manolakis, "Digital Signal Processing: Principles, Algorithms, and
+   Applications", Prentice Hall, 2007
 2. Dr. Shaila D. Apate, "Advanced Digital Signal Processing", Wiley Publ., 2013
-3. S. K. Mitra, "Digital Signal Processing: A Computer Based Approach", McGraw Hill Higher Education, 2006
+3. S. K. Mitra, "Digital Signal Processing: A Computer Based Approach", McGraw Hill Higher
+   Education, 2006
 4. Rabiner and Juang, "Fundamentals of Speech Recognition", Prentice Hall, 1994
-5. Rafael C. Gonzalez, Richard E. Woods, "Digital Image Processing and Analysis", Pearson Education, 2007
+5. Rafael C. Gonzalez, Richard E. Woods, "Digital Image Processing and Analysis", Pearson Education,
+   2007
 
 #### Reference Books
 
 1. Tarun Rawat, "Digital Signal Processing", Oxford University Press
 2. Roberto Crist, "Modern Digital Signal Processing", Cengage Learning
 3. Nelson Morgan, Ben Gold, "Speech and Audio Signal Processing", Wiley
-4. Raghuveer M. Rao, Ajit S. Bopardikar, "Wavelet Transforms: Introduction to Theory and Applications", Pearson
+4. Raghuveer M. Rao, Ajit S. Bopardikar, "Wavelet Transforms: Introduction to Theory and
+   Applications", Pearson
 
 ---
 
@@ -1940,14 +2000,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Analyze different pattern recognition techniques |
+| CO  | Description                                               |
+| --- | --------------------------------------------------------- |
+| CO1 | Analyze different pattern recognition techniques          |
 | CO2 | Identify and apply various pattern recognition approaches |
-| CO3 | Evaluate statistical and structural pattern recognition |
-| CO4 | Perceive recent advances in pattern recognition |
-| CO5 | Implement dynamic programming for pattern recognition |
-| CO6 | Analyze patterns using Genetic Algorithms |
+| CO3 | Evaluate statistical and structural pattern recognition   |
+| CO4 | Perceive recent advances in pattern recognition           |
+| CO5 | Implement dynamic programming for pattern recognition     |
+| CO6 | Analyze patterns using Genetic Algorithms                 |
 
 ### Course Contents
 
@@ -2010,8 +2070,10 @@
 
 #### Text Books
 
-1. Richard O. Duda, Peter E. Hart, David G. Stork, "Pattern Classification", 2nd Edition, Wiley, ISBN: 978-0-471-05669-0
-2. Sergios Theodoridis, Konstantinos Koutroumbas, "Pattern Recognition", 4th Edition, Academic Press, ISBN: 978-1-59749-272-0
+1. Richard O. Duda, Peter E. Hart, David G. Stork, "Pattern Classification", 2nd Edition, Wiley,
+   ISBN: 978-0-471-05669-0
+2. Sergios Theodoridis, Konstantinos Koutroumbas, "Pattern Recognition", 4th Edition, Academic
+   Press, ISBN: 978-1-59749-272-0
 
 #### Reference Books
 
@@ -2038,14 +2100,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                          |
+| --- | -------------------------------------------------------------------- |
 | CO1 | Be aware of various soft computing techniques and their applications |
-| CO2 | Understand and implement Artificial Neural Networks |
-| CO3 | Implement Evolutionary Computing techniques |
-| CO4 | Implement Fuzzy Logic for problem solving |
-| CO5 | Apply Genetic Algorithms for optimization |
-| CO6 | Develop hybrid soft computing systems |
+| CO2 | Understand and implement Artificial Neural Networks                  |
+| CO3 | Implement Evolutionary Computing techniques                          |
+| CO4 | Implement Fuzzy Logic for problem solving                            |
+| CO5 | Apply Genetic Algorithms for optimization                            |
+| CO6 | Develop hybrid soft computing systems                                |
 
 ### Course Contents
 
@@ -2114,14 +2176,19 @@
 
 #### Text Books
 
-1. S. N. Sivanandam, S. N. Deepa, "Principles of Soft Computing", 3rd Edition, Wiley, ISBN: 978-81-265-3767-9
-2. Jyh-Shing Roger Jang, Chuen-Tsai Sun, Eiji Mizutani, "Neuro-Fuzzy and Soft Computing", PHI, ISBN: 978-81-203-2243-1
+1. S. N. Sivanandam, S. N. Deepa, "Principles of Soft Computing", 3rd Edition, Wiley, ISBN:
+   978-81-265-3767-9
+2. Jyh-Shing Roger Jang, Chuen-Tsai Sun, Eiji Mizutani, "Neuro-Fuzzy and Soft Computing", PHI, ISBN:
+   978-81-203-2243-1
 
 #### Reference Books
 
-1. Leandro N. de Castro, "Fundamentals of Natural Computing: Basic Concepts, Algorithms, and Applications", CRC Press
-2. S. Rajasekaran, G. A. Vijayalakshmi Pai, "Neural Networks, Fuzzy Logic and Genetic Algorithms: Synthesis and Applications", PHI
-3. Nikola K. Kasabov, "Foundations of Neural Networks, Fuzzy Systems, and Knowledge Engineering", MIT Press
+1. Leandro N. de Castro, "Fundamentals of Natural Computing: Basic Concepts, Algorithms, and
+   Applications", CRC Press
+2. S. Rajasekaran, G. A. Vijayalakshmi Pai, "Neural Networks, Fuzzy Logic and Genetic Algorithms:
+   Synthesis and Applications", PHI
+3. Nikola K. Kasabov, "Foundations of Neural Networks, Fuzzy Systems, and Knowledge Engineering",
+   MIT Press
 4. Timothy J. Ross, "Fuzzy Logic with Engineering Applications", 3rd Edition, Wiley
 
 ---
@@ -2145,14 +2212,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                      |
+| --- | ---------------------------------------------------------------- |
 | CO1 | Differentiate Decision Support Systems and Business Intelligence |
-| CO2 | Design and develop BI systems |
-| CO3 | Build graphical reports for BI applications |
-| CO4 | Apply data pre-processing techniques for business data |
-| CO5 | Implement machine learning models for BI |
-| CO6 | Identify role of BI in various business sectors |
+| CO2 | Design and develop BI systems                                    |
+| CO3 | Build graphical reports for BI applications                      |
+| CO4 | Apply data pre-processing techniques for business data           |
+| CO5 | Implement machine learning models for BI                         |
+| CO6 | Identify role of BI in various business sectors                  |
 
 ### Course Contents
 
@@ -2217,15 +2284,18 @@
 
 #### Text Books
 
-1. R. Grossmann, S. Rinderle-Ma, "Fundamentals of Business Intelligence", Springer, ISBN: 978-3-662-46333-4
-2. R. Sharda, D. Delen, E. Turban, "Business Intelligence and Analytics: Systems for Decision Support", 10th Edition, Pearson, ISBN: 978-0-13-340143-1
+1. R. Grossmann, S. Rinderle-Ma, "Fundamentals of Business Intelligence", Springer, ISBN:
+   978-3-662-46333-4
+2. R. Sharda, D. Delen, E. Turban, "Business Intelligence and Analytics: Systems for Decision
+   Support", 10th Edition, Pearson, ISBN: 978-0-13-340143-1
 
 #### Reference Books
 
 1. Paulraj Ponniah, "Data Warehousing: Fundamentals for IT Professionals", Wiley
 2. Carlo Vercellis, "Business Intelligence: Data Mining and Optimization for Decision Making", Wiley
 3. EMC Education Services, "Data Science and Big Data Analytics", Wiley
-4. Ken W. Collier, "Agile Analytics: A Value-Driven Approach to Business Intelligence and Analytics", Addison-Wesley
+4. Ken W. Collier, "Agile Analytics: A Value-Driven Approach to Business Intelligence and
+   Analytics", Addison-Wesley
 
 ---
 
@@ -2247,14 +2317,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Understand the concepts of Quantum Computing |
-| CO2 | Understand mathematical foundation and quantum mechanics |
-| CO3 | Understand building blocks of quantum circuits |
+| CO  | Description                                               |
+| --- | --------------------------------------------------------- |
+| CO1 | Understand the concepts of Quantum Computing              |
+| CO2 | Understand mathematical foundation and quantum mechanics  |
+| CO3 | Understand building blocks of quantum circuits            |
 | CO4 | Understand quantum information processing and simulations |
-| CO5 | Understand basic signal processing on quantum |
-| CO6 | Solve examples of Quantum Fourier Transform |
+| CO5 | Understand basic signal processing on quantum             |
+| CO6 | Solve examples of Quantum Fourier Transform               |
 
 ### Course Contents
 
@@ -2306,8 +2376,10 @@
 
 #### Text Books
 
-1. Michael A. Nielsen, Isaac L. Chuang, "Quantum Computation and Quantum Information", Cambridge University Press, ISBN: 978-1-107-00217-3
-2. Peter Wittek, "Quantum Machine Learning: What Quantum Computing Means for Data Mining", Academic Press, ISBN: 978-0-12-800953-6
+1. Michael A. Nielsen, Isaac L. Chuang, "Quantum Computation and Quantum Information", Cambridge
+   University Press, ISBN: 978-1-107-00217-3
+2. Peter Wittek, "Quantum Machine Learning: What Quantum Computing Means for Data Mining", Academic
+   Press, ISBN: 978-0-12-800953-6
 
 #### Reference Books
 
@@ -2323,7 +2395,8 @@
 
 **Practical:** 04 Hours/Week | **Credits:** 02 | **TW:** 50 Marks | **PR:** 50 Marks
 
-**Assignments from:** Design and Analysis of Algorithms (410241), Machine Learning (410242), Blockchain Technology (410243)
+**Assignments from:** Design and Analysis of Algorithms (410241), Machine Learning (410242),
+Blockchain Technology (410243)
 
 ### 410247: Laboratory Practice IV
 
@@ -2335,7 +2408,8 @@
 
 **Practical:** 02 Hours/Week | **Credits:** 02 | **TW:** 50 Marks
 
-Project work to be carried out individually or in groups under faculty supervision. Includes problem identification, literature survey, requirement specification, and initial design.
+Project work to be carried out individually or in groups under faculty supervision. Includes problem
+identification, literature survey, requirement specification, and initial design.
 
 ### 410254: Laboratory Practice V
 
@@ -2353,22 +2427,30 @@ Project work to be carried out individually or in groups under faculty supervisi
 
 **Practical:** 06 Hours/Week | **Credits:** 06 | **TW:** 100 Marks | **OR:** 50 Marks
 
-Final year project continuation from Project Stage I. Includes implementation, testing, deployment, and final project report submission with oral presentation.
+Final year project continuation from Project Stage I. Includes implementation, testing, deployment,
+and final project report submission with oral presentation.
 
 ---
 
 # General Guidelines
 
-1. Every undergraduate program has its own objectives and educational outcomes. The Program Outcomes (POs) for Engineering are categorically mentioned at the beginning of the curriculum.
-2. @: CO and PO Mapping Matrix indicates correlation levels of 3 (high), 2 (medium), 1 (low) and '-' (no correlation).
-3. #: Elaborated examples/Case Studies are included at the end of each unit. May be assigned as self-study, excluded from theory examinations.
-4. For laboratory courses, set of suggested assignments is provided for reference. Beyond curriculum assignments and mini-project may be included.
-5. For each laboratory assignment, students must draw/write/generate flowchart, algorithm, test cases, mathematical model, Test data set and comparative/complexity analysis (as applicable).
+1. Every undergraduate program has its own objectives and educational outcomes. The Program Outcomes
+   (POs) for Engineering are categorically mentioned at the beginning of the curriculum.
+2. @: CO and PO Mapping Matrix indicates correlation levels of 3 (high), 2 (medium), 1 (low) and '-'
+   (no correlation).
+3. #: Elaborated examples/Case Studies are included at the end of each unit. May be assigned as
+   self-study, excluded from theory examinations.
+4. For laboratory courses, set of suggested assignments is provided for reference. Beyond curriculum
+   assignments and mini-project may be included.
+5. For each laboratory assignment, students must draw/write/generate flowchart, algorithm, test
+   cases, mathematical model, Test data set and comparative/complexity analysis (as applicable).
 6. Term Work is continuous assessment that evaluates a student's progress throughout the semester.
-7. Laboratory Journal — Program codes with sample output submitted as softcopy. Use of DVD is encouraged.
+7. Laboratory Journal — Program codes with sample output submitted as softcopy. Use of DVD is
+   encouraged.
 8. Audit Course — Students registered shall be awarded grade AP/PP. No grade points associated.
 
 **Abbreviations:**
+
 - TH: Theory
 - TUT: Tutorial
 - PR: Practical

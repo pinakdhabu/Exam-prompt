@@ -1,6 +1,7 @@
 # Progress — Exam-Prompt
 
 ## ✅ Done
+
 - 24 universal skills (all SKILL.md files)
 - Community infrastructure (CONTRIBUTING, issues, PRs, Discussions, SECURITY)
 - Rolling release (self-update.sh, 0.0.0 versioning, nightly improve)
@@ -17,9 +18,11 @@
 - .gitignore + .gitkeep for PYQ downloads
 
 ## 🚧 In Progress
+
 - Agent configuration testing across platforms
 
 ## 📋 Next Up
+
 1. MCP server for real-time skill/PYQ querying
 2. Sample papers for TE electives (HCI, IoT, AR/VR, Cloud, Info Security, Software Modeling)
 3. Honors track papers (AI&ML, Cyber Security, Data Science, IoT, VAR)
@@ -28,6 +31,7 @@
 6. RAG pipeline for instant PYQ semantic search
 
 ## 📊 Metrics
+
 - 24 skills
 - 33 use cases
 - 8 CI/CD workflows

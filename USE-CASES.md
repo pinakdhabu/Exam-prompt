@@ -1,7 +1,7 @@
 # Use Cases & Real-World Workflows
 
-This document covers **every possible use case** for the Exam Prompt system.
-Each use case follows a complete workflow from start to finish.
+This document covers **every possible use case** for the Exam Prompt system. Each use case follows a
+complete workflow from start to finish.
 
 ---
 
@@ -39,12 +39,14 @@ Prompt: "Explain ACID properties with example [6 marks] — SPPU 2019 pattern"
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/answer-writer/SKILL.md`
 2. Detects: SPPU 2019 pattern, Theory-Explanation type, 6 marks, L2 Understand
 3. Generates: Definition → 6 points → Example → Diagram → Closing
 4. Includes: Bolded keywords, CO mapping, Bloom's level, time budget
 
-**Output:** Structured answer with `**Atomicity**`, `**Consistency**`, `**Isolation**`, `**Durability**`, a transaction example, and a mnemonic ("All Cars In Drive").
+**Output:** Structured answer with `**Atomicity**`, `**Consistency**`, `**Isolation**`,
+`**Durability**`, a transaction example, and a mnemonic ("All Cars In Drive").
 
 ---
 
@@ -57,6 +59,7 @@ Prompt: "Solve: Given schedule S = {R1(A),W2(A),R2(B),W1(B)}, check if it's conf
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/answer-writer/SKILL.md`
 2. Detects: Numerical type, 6 marks, L3 Apply
 3. Generates: Given data → Precedence graph → Check cycles → Conclusion
@@ -75,6 +78,7 @@ Prompt: "Compare TCP and UDP [6 marks] — in table format"
 ```
 
 **Workflow:**
+
 1. Agent detects: Comparison type, table format requested
 2. Generates: Definition of both → 6-row comparison table → When to use each → Closing
 3. Bold: Connection-oriented, Connectionless, Reliable, Unreliable, etc.
@@ -92,8 +96,10 @@ Prompt: "Draw and explain the architecture of 8051 Microcontroller [8 marks]"
 ```
 
 **Workflow:**
+
 1. Agent loads answer-writer, activates diagram mode for 8 marks
-2. Generates: Mermaid diagram of 8051 architecture → Component descriptions → Bus structure → Closing
+2. Generates: Mermaid diagram of 8051 architecture → Component descriptions → Bus structure →
+   Closing
 3. Bold: ALU, Accumulator, Program Counter, Stack Pointer, etc.
 
 **Output:** Mermaid diagram + 8 explained components.
@@ -109,6 +115,7 @@ Prompt: "a) Define Normalization [2 marks]  b) Explain 1NF, 2NF, 3NF with exampl
 ```
 
 **Workflow:**
+
 1. Agent treats each sub-part independently with correct mark allocation
 2. Part (a): 1-sentence definition (2 marks)
 3. Part (b): 9 points with 3 examples and diagrams
@@ -129,6 +136,7 @@ Prompt: "Generate Cornell notes for Unit 3 of DBMS — Normalization. Exam type:
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/notes-generator/SKILL.md`
 2. Auto-selects: Cornell format (best for closed-book + 5 days)
 3. Generates: Cue column (questions) + Notes column (content) + Summary
@@ -147,6 +155,7 @@ Prompt: "Generate Rapid Revision notes for Operating Systems — all units. Exam
 ```
 
 **Workflow:**
+
 1. Agent auto-selects: Rapid Revision format (for < 1 day)
 2. Each unit → 5 definitions + 5 key points + 1 comparison + 1 mnemonic
 3. One page per unit, maximum density
@@ -164,6 +173,7 @@ Prompt: "Generate flowchart notes for Sorting Algorithms in DSA"
 ```
 
 **Workflow:**
+
 1. Agent auto-selects: Flowchart format (for algorithms/procedures)
 2. Each algorithm → Flowchart + step list + complexity table + code snippet
 
@@ -182,6 +192,7 @@ Prompt: "I have 5 years of DBMS PYQ PDFs at /home/student/pyqs/dbms/. Analyze th
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/pyq-analyzer/SKILL.md`
 2. Also loads `skills/universal-document-reader/SKILL.md` if PDFs need extraction
 3. Runs 13+ analysis types: Frequency, Weightage, Bloom's, Trends, Gap Analysis
@@ -200,6 +211,7 @@ Prompt: "I'm uploading my PYQs for TOC. Tell me what's important."
 ```
 
 **Workflow:**
+
 1. Agent reads PDFs from chat attachments
 2. Runs frequency + weightage analysis only (faster, fewer PYQs)
 3. Generates: Top 10 topics, likely question types, mark distribution
@@ -219,6 +231,7 @@ Prompt: "Give me IMP topics for SPOS exam. I have 7 days to prepare. Target GPA:
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/imp-topics-generator/SKILL.md`
 2. Loads PYQ data (from user or built-in index)
 3. Generates: Must-Prepare (L1→L2), Selective (L3→L4), Safe-to-Skim (L5→L6)
@@ -238,6 +251,7 @@ Prompt: "I have 3 days for DBMS. Give me a minimal prep plan to pass."
 ```
 
 **Workflow:**
+
 1. Agent generates: GPA-targeted plan for "Pass" (must-prepare only)
 2. Prioritizes: High-weightage units, frequently asked topics
 3. Day 1-2: Theory topics, Day 3: Numerical + Diagram practice
@@ -257,6 +271,7 @@ Prompt: "Write an assignment on Cloud Computing service models (IaaS, PaaS, SaaS
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/assignment-writer/SKILL.md`
 2. Generates: Full assignment with structure, marking scheme, Bloom's levels, CO alignment
 3. Includes: Comparison table, real-world examples (AWS, Azure, GCP)
@@ -275,6 +290,7 @@ Prompt: "Write a numerical assignment on Time Complexity Analysis — solve 5 pr
 ```
 
 **Workflow:**
+
 1. Agent loads assignment-writer, detects numerical type
 2. 5 problems of increasing difficulty
 3. Each: Problem → Given → Formula → Working → Answer (boxed)
@@ -294,6 +310,7 @@ Prompt: "Generate a full question paper for DBMS — SPPU 2019 pattern. Include 
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/exam-paper-generator/SKILL.md`
 2. Generates: 4 OR pairs (Q1-Q8) with exact SPPU 2019 format
 3. Each question: Sub-parts (a) theory + (b) numerical/diagram
@@ -312,6 +329,7 @@ Prompt: "Generate a practice paper for Computer Networks — 50 marks, 2 hours, 
 ```
 
 **Workflow:**
+
 1. Agent detects: Generic pattern with custom parameters
 2. Generates: Part A (short/compulsory) + Part B (long/choice)
 3. Follows: Detailed mark allocation as specified
@@ -331,6 +349,7 @@ Prompt: "Create Anki flashcards from these DBMS notes. 3 difficulty tiers."
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/flashcard-generator/SKILL.md`
 2. Extracts: Key concepts → Fact cards (easy), Cloze cards (medium), Problem cards (hard)
 3. Adds: SRS metadata (D1, D2, D4, D8, D16 intervals)
@@ -351,6 +370,7 @@ Prompt: "Generate 10 MCQs on Normalization in DBMS — mix of L1, L2, L3 difficu
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/mcq-practice-generator/SKILL.md`
 2. 3 easy (L1): Basic definitions
 3. 4 medium (L2): Apply normalization rules
@@ -372,6 +392,7 @@ Prompt: "Prepare me for a DBMS lab viva. I've done SQL queries, PL/SQL, and trig
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/viva-oral-exam-prep/SKILL.md`
 2. Generates: 15 likely questions with CLAIM-EVIDENCE-LINK answers
 3. Includes: Follow-up question predictions, common traps
@@ -392,8 +413,10 @@ Prompt: "Write a complete lab report for: Implementation of Stack using Arrays i
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/lab-report-writer/SKILL.md`
-2. Generates: Aim → Apparatus → Theory → Procedure → Code → Observations → Result → Conclusion → Viva questions
+2. Generates: Aim → Apparatus → Theory → Procedure → Code → Observations → Result → Conclusion →
+   Viva questions
 3. Includes: Sample input/output, time complexity analysis
 
 **Output:** Complete lab report ready for submission.
@@ -411,6 +434,7 @@ Prompt: "Create a formula sheet for Engineering Mathematics 3 — all units."
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/formula-sheet-generator/SKILL.md`
 2. Per unit: Key formulas with variable definitions and SI units
 3. Compact A4 design, exam-ready
@@ -428,6 +452,7 @@ Prompt: "Generate a mind map for Operating System concepts — all 6 units."
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/mind-map-generator/SKILL.md`
 2. Root: Operating Systems
 3. Branches: Process Management, Memory Management, File Systems, I/O, Security, Case Studies
@@ -449,6 +474,7 @@ Prompt: "Grade my answer: [paste answer]. Question: Explain ACID properties [6 m
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/essay-grader/SKILL.md`
 2. Scores: 7 criteria (definition quality, points coverage, examples, structure, keywords, etc.)
 3. Generates: Score per criterion, strengths list, improvement priorities, model answer comparison
@@ -468,6 +494,7 @@ Prompt: "Map connections between DBMS, DSA, and Operating Systems for Computer E
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/cross-subject-mapper/SKILL.md`
 2. Maps: DBMS indexing ↔ B-Tree (DSA) ↔ File Systems (OS)
 3. Creates: Dependency graph, shared concepts, learning path
@@ -487,6 +514,7 @@ Prompt: "My TOC exam is in 3 hours! Give me a cram plan!"
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/last-minute-crammer/SKILL.md`
 2. Detects: 3-hour timeframe → Ultra-high-density mode
 3. Generates: Memory palace for key concepts, acronym chains for definitions
@@ -508,6 +536,7 @@ Prompt: "Solve this case study: A startup wants to choose between MongoDB and Po
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/case-study-solver/SKILL.md`
 2. Applies: SWOT framework
 3. Generates: Problem ID → Analysis (SWOT) → Recommendation → Justification
@@ -527,6 +556,7 @@ Prompt: "I'm a Mechanical Engineering student at VTU. My PYQs are at /home/stude
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/universal-university-adapter/SKILL.md`
 2. Detects: VTU = 5 modules, 100 marks, 3 hours, OR within module
 3. Routes to: `skills/exam-paper-generator/SKILL.md` with VTU context
@@ -545,6 +575,7 @@ Prompt: "I'm studying History at Oxford. I need to write an essay on 'Causes of 
 ```
 
 **Workflow:**
+
 1. Agent loads university-adapter, detects Oxford pattern (essay-based, 3 hours)
 2. Routes to answer-writer with Oxford context
 3. Generates: Full essay with thesis, arguments, evidence, counterarguments, conclusion
@@ -562,6 +593,7 @@ Prompt: "I have a midterm in CS 101 at my university. 50 minutes, mix of MCQs an
 ```
 
 **Workflow:**
+
 1. Agent detects: US pattern (midterm format, MCQs + short answer, partial credit)
 2. Generates: Practice midterm with MCQs + short answer questions
 3. Includes: Time allocation per section, partial credit guidance
@@ -581,6 +613,7 @@ Prompt: "Simulate a full SPPU 2019 pattern DBMS exam. 2.5 hours, 70 marks. Gener
 ```
 
 **Workflow:**
+
 1. Agent loads `skills/sppu-exam-simulator/SKILL.md`
 2. Loads `skills/exam-paper-generator/SKILL.md`
 3. Generates: Full question paper with time budget
@@ -602,6 +635,7 @@ Prompt: "I want to prepare for DBMS. Here are my PYQs [upload]. Give me a comple
 ```
 
 **Workflow:**
+
 ```
 Step 1: Load pyq-analyzer → Analyze PYQs
 Step 2: Load imp-topics-generator → Generate IMP topics with 2-week plan
@@ -624,6 +658,7 @@ Prompt: "I got this assignment PDF [upload]. I need it written and submitted as 
 ```
 
 **Workflow:**
+
 ```
 Step 1: Load document-reader → Extract text from PDF
 Step 2: Load assignment-writer → Write complete assignment
@@ -643,6 +678,7 @@ Prompt: "My OS exam is tomorrow at 9 AM. It's 8 PM now. HELP!"
 ```
 
 **Workflow:**
+
 ```
 12 hours total:
   Hours 1-2: Load crammer → Memory palace setup
@@ -659,25 +695,25 @@ Prompt: "My OS exam is tomorrow at 9 AM. It's 8 PM now. HELP!"
 
 ## Summary
 
-| Use Case | Skills Used | Time Required |
-|---|---|---|
-| Standard answer | answer-writer | 15 min |
-| Numerical answer | answer-writer | 20 min |
-| Notes generation | notes-generator | 30 min |
-| PYQ analysis | pyq-analyzer | 45 min |
-| IMP topics + plan | imp-topics-generator + study-planner | 30 min |
-| Assignment | assignment-writer | 1-2 hours |
-| Exam paper | exam-paper-generator | 30 min |
-| Flashcards | flashcard-generator | 20 min |
-| MCQs | mcq-practice-generator | 15 min |
-| Viva prep | viva-oral-exam-prep | 30 min |
-| Lab report | lab-report-writer | 45 min |
-| Formula sheet | formula-sheet-generator | 20 min |
-| Mind map | mind-map-generator | 15 min |
-| Essay grading | essay-grader | 10 min |
-| Cross-subject | cross-subject-mapper | 20 min |
-| Cram plan | last-minute-crammer | 5 min |
-| Case study | case-study-solver | 30 min |
-| Different university | university-adapter + any skill | Varies |
-| Full exam simulation | sppu-exam-simulator + answer-writer + essay-grader | 2.5 hrs |
-| Complete prep (all) | All skills | 1-2 weeks |
+| Use Case             | Skills Used                                        | Time Required |
+| -------------------- | -------------------------------------------------- | ------------- |
+| Standard answer      | answer-writer                                      | 15 min        |
+| Numerical answer     | answer-writer                                      | 20 min        |
+| Notes generation     | notes-generator                                    | 30 min        |
+| PYQ analysis         | pyq-analyzer                                       | 45 min        |
+| IMP topics + plan    | imp-topics-generator + study-planner               | 30 min        |
+| Assignment           | assignment-writer                                  | 1-2 hours     |
+| Exam paper           | exam-paper-generator                               | 30 min        |
+| Flashcards           | flashcard-generator                                | 20 min        |
+| MCQs                 | mcq-practice-generator                             | 15 min        |
+| Viva prep            | viva-oral-exam-prep                                | 30 min        |
+| Lab report           | lab-report-writer                                  | 45 min        |
+| Formula sheet        | formula-sheet-generator                            | 20 min        |
+| Mind map             | mind-map-generator                                 | 15 min        |
+| Essay grading        | essay-grader                                       | 10 min        |
+| Cross-subject        | cross-subject-mapper                               | 20 min        |
+| Cram plan            | last-minute-crammer                                | 5 min         |
+| Case study           | case-study-solver                                  | 30 min        |
+| Different university | university-adapter + any skill                     | Varies        |
+| Full exam simulation | sppu-exam-simulator + answer-writer + essay-grader | 2.5 hrs       |
+| Complete prep (all)  | All skills                                         | 1-2 weeks     |

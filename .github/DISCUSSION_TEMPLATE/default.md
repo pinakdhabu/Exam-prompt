@@ -4,14 +4,14 @@ Welcome to the Exam Prompt community! 🎉
 
 ## Discussion Categories
 
-| Category | Description | When to Use |
-|---|---|---|
-| 💡 **Ideas** | Suggestions for new features or improvements | Feature brainstorming |
-| 📚 **Subjects** | Discuss specific subjects (DBMS, TOC, etc.) | Per-subject Q&A |
-| 🏫 **Universities** | Discuss different university patterns (VTU, JNTU, etc.) | University-specific help |
-| 🧠 **Skills** | Discussion about SKILL.md files | Skill improvements |
-| ❓ **Q&A** | Questions about using the repo | General help |
-| 🙌 **Show and Tell** | Share what you've built | Showcase contributions |
+| Category             | Description                                             | When to Use              |
+| -------------------- | ------------------------------------------------------- | ------------------------ |
+| 💡 **Ideas**         | Suggestions for new features or improvements            | Feature brainstorming    |
+| 📚 **Subjects**      | Discuss specific subjects (DBMS, TOC, etc.)             | Per-subject Q&A          |
+| 🏫 **Universities**  | Discuss different university patterns (VTU, JNTU, etc.) | University-specific help |
+| 🧠 **Skills**        | Discussion about SKILL.md files                         | Skill improvements       |
+| ❓ **Q&A**           | Questions about using the repo                          | General help             |
+| 🙌 **Show and Tell** | Share what you've built                                 | Showcase contributions   |
 
 ## Before Posting
 
@@ -22,6 +22,7 @@ Welcome to the Exam Prompt community! 🎉
 ## Subject Tags
 
 When discussing a subject, tag it with:
+
 - `subject:dbms` — Database Management Systems
 - `subject:toc` — Theory of Computation
 - `subject:spos` — Systems Programming & OS

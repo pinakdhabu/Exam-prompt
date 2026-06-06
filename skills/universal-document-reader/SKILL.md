@@ -1,16 +1,22 @@
 ---
 name: universal-document-reader
-description: Converts any document (PDF, DOCX, images, scanned docs) to clean, LLM-friendly text. First step before any skill processing. Works for ANY university, ANY document type.
+description:
+  Converts any document (PDF, DOCX, images, scanned docs) to clean, LLM-friendly text. First step
+  before any skill processing. Works for ANY university, ANY document type.
 ---
 
 # Universal Document Reader & Converter
 
 ## Overview
-**Base preprocessing skill** — Converts any document format to clean, structured text that LLMs can process effectively. Must be run BEFORE any other skill (notes, answers, analysis, etc.) when working with documents.
+
+**Base preprocessing skill** — Converts any document format to clean, structured text that LLMs can
+process effectively. Must be run BEFORE any other skill (notes, answers, analysis, etc.) when
+working with documents.
 
 ## Why This Skill Exists
 
 LLMs cannot directly read:
+
 - PDF files (especially scanned/image-based)
 - DOCX/DOC files
 - Scanned documents (images)
@@ -23,16 +29,16 @@ This skill converts them all to clean text first.
 
 ## Supported Input Formats
 
-| Format | Extension | Conversion Method | Notes |
-|--------|-----------|-------------------|-------|
-| **PDF (text-based)** | `.pdf` | `pdftotext` or PyPDF2 | Direct text extraction |
-| **PDF (scanned/image)** | `.pdf` | OCR via `tesseract` | Requires image preprocessing |
-| **Word Document** | `.docx`, `.doc` | `pandoc` or `python-docx` | Preserves structure |
-| **Plain Text** | `.txt`, `.md` | Direct read | No conversion needed |
-| **Images** | `.png`, `.jpg`, `.jpeg`, `.tiff` | OCR via `tesseract` | For handwritten/printed text |
-| **PowerPoint** | `.pptx` | `pandoc` | Extracts slide content |
-| **EPUB** | `.epub` | `pandoc` | E-books |
-| **HTML** | `.html`, `.htm` | `pandoc` or `lynx` | Web pages |
+| Format                  | Extension                        | Conversion Method         | Notes                        |
+| ----------------------- | -------------------------------- | ------------------------- | ---------------------------- |
+| **PDF (text-based)**    | `.pdf`                           | `pdftotext` or PyPDF2     | Direct text extraction       |
+| **PDF (scanned/image)** | `.pdf`                           | OCR via `tesseract`       | Requires image preprocessing |
+| **Word Document**       | `.docx`, `.doc`                  | `pandoc` or `python-docx` | Preserves structure          |
+| **Plain Text**          | `.txt`, `.md`                    | Direct read               | No conversion needed         |
+| **Images**              | `.png`, `.jpg`, `.jpeg`, `.tiff` | OCR via `tesseract`       | For handwritten/printed text |
+| **PowerPoint**          | `.pptx`                          | `pandoc`                  | Extracts slide content       |
+| **EPUB**                | `.epub`                          | `pandoc`                  | E-books                      |
+| **HTML**                | `.html`, `.htm`                  | `pandoc` or `lynx`        | Web pages                    |
 
 ---
 
@@ -131,14 +137,14 @@ def clean_text(text):
     # 1. Remove excessive whitespace
     text = re.sub(r'\n\s*\n', '\n\n', text)
     text = re.sub(r' +', ' ', text)
-    
+
     # 2. Remove page numbers/headers/footers (common patterns)
     text = re.sub(r'(?m)^\d+\s*$', '', text)  # Page numbers
     text = re.sub(r'(?m)^Page \d+.*$', '', text)
-    
+
     # 3. Fix broken words (hyphenation at line breaks)
     text = re.sub(r'(\w)-\n(\w)', r'\1\2', text)
-    
+
     # 4. Merge lines that belong together
     lines = text.split('\n')
     merged = []
@@ -147,7 +153,7 @@ def clean_text(text):
             merged[-1] += ' ' + line.strip()
         else:
             merged.append(line)
-    
+
     return '\n'.join(merged)
 ```
 
@@ -183,9 +189,10 @@ END OF DOCUMENT
 ## Usage Examples
 
 ### Example 1: Basic PDF to Text
+
 ```
 User: "Read this PDF: /path/to/syllabus.pdf"
-Skill: 
+Skill:
   1. Detects PDF format
   2. Runs pdftotext
   3. Cleans output
@@ -193,6 +200,7 @@ Skill:
 ```
 
 ### Example 2: Scanned Document
+
 ```
 User: "Convert this scanned PDF: /path/to/old-notes.pdf"
 Skill:
@@ -203,6 +211,7 @@ Skill:
 ```
 
 ### Example 3: Multi-format Input
+
 ```
 User: "Process these files: syllabus.pdf, notes.docx, formulae.png"
 Skill:
@@ -217,21 +226,22 @@ Skill:
 
 After document conversion, pass the text to:
 
-| Next Skill | How to Use |
-|------------|------------|
-| **universal-notes-generator** | Feed extracted syllabus/topics |
-| **universal-answer-writer** | Use content for answer generation |
-| **universal-pyq-analyzer** | Process question papers |
-| **universal-imp-topics-generator** | Analyze extracted content |
-| **universal-flashcard-generator** | Create flashcards from text |
-| **universal-formula-sheet-generator** | Extract formulas |
-| **universal-mcq-practice-generator** | Generate MCQs from content |
+| Next Skill                            | How to Use                        |
+| ------------------------------------- | --------------------------------- |
+| **universal-notes-generator**         | Feed extracted syllabus/topics    |
+| **universal-answer-writer**           | Use content for answer generation |
+| **universal-pyq-analyzer**            | Process question papers           |
+| **universal-imp-topics-generator**    | Analyze extracted content         |
+| **universal-flashcard-generator**     | Create flashcards from text       |
+| **universal-formula-sheet-generator** | Extract formulas                  |
+| **universal-mcq-practice-generator**  | Generate MCQs from content        |
 
 ---
 
 ## Installation Requirements
 
 ### Linux (Ubuntu/Debian)
+
 ```bash
 sudo apt update
 sudo apt install -y poppler-utils tesseract-ocr pandoc python3 python3-pip
@@ -239,12 +249,14 @@ sudo apt install -y python3-pypdf python3-pytesseract python3-pil python3-docx
 ```
 
 ### Linux (Fedora/RHEL/CentOS)
+
 ```bash
 sudo dnf install -y poppler-utils tesseract pandoc python3 python3-pip
 sudo dnf install -y python3-pypdf python3-pytesseract python3-pillow python3-docx
 ```
 
 ### Linux (Arch/Manjaro)
+
 ```bash
 sudo pacman -S poppler tesseract tesseract-data-eng pandoc python python-pip
 sudo pacman -S python-pypdf python-pytesseract python-pillow
@@ -252,24 +264,28 @@ sudo pacman -S python-pypdf python-pytesseract python-pillow
 ```
 
 ### Linux (Alpine)
+
 ```bash
 sudo apk add poppler tesseract-ocr pandoc python3 py3-pip
 sudo apk add py3-pypdf py3-pytesseract py3-pillow py3-docx
 ```
 
 ### Linux (openSUSE)
+
 ```bash
 sudo zypper install poppler-tools tesseract pandoc python3 python3-pip
 sudo zypper install python3-pypdf python3-pytesseract python3-pillow python3-docx
 ```
 
 ### macOS
+
 ```bash
 brew install poppler tesseract pandoc python3
 pip3 install pypdf pytesseract Pillow python-docx
 ```
 
 ### Windows (PowerShell Admin)
+
 ```powershell
 # Option A: winget (built-in Windows 10/11 — recommended)
 winget install XP89DCGQ3K6VLD   # poppler (pdftotext)
@@ -288,6 +304,7 @@ pip install pypdf pytesseract Pillow python-docx
 ```
 
 ### Windows (WSL/Ubuntu)
+
 ```bash
 # Same as Linux Ubuntu/Debian instructions
 sudo apt update && sudo apt install -y poppler-utils tesseract-ocr pandoc python3-pip
@@ -295,41 +312,48 @@ sudo apt install -y python3-pypdf python3-pytesseract python3-pil python3-docx
 ```
 
 ### Check Dependencies
+
 ```bash
 ./scripts/check-deps.sh
 ```
 
 ### Linux (Fedora/RHEL/CentOS)
+
 ```bash
 sudo dnf install -y poppler-utils tesseract pandoc python3-pip
 pip3 install pypdf pytesseract Pillow python-docx
 ```
 
 ### Linux (Arch/Manjaro)
+
 ```bash
 sudo pacman -S poppler tesseract tesseract-data-eng pandoc python python-pip
 pip install pypdf pytesseract Pillow python-docx
 ```
 
 ### Linux (Alpine)
+
 ```bash
 sudo apk add poppler tesseract-ocr pandoc python3 py3-pip
 pip3 install pypdf pytesseract Pillow python-docx
 ```
 
 ### Linux (openSUSE)
+
 ```bash
 sudo zypper install poppler-tools tesseract pandoc python3-pip
 pip3 install pypdf pytesseract Pillow python-docx
 ```
 
 ### macOS
+
 ```bash
 brew install poppler tesseract pandoc python3
 pip3 install pypdf pytesseract Pillow python-docx
 ```
 
 ### Windows (PowerShell Admin)
+
 ```powershell
 # Option A: winget (built-in Windows 10/11 — recommended)
 winget install XP89DCGQ3K6VLD   # poppler (pdftotext)
@@ -348,6 +372,7 @@ pip install pypdf pytesseract Pillow python-docx
 ```
 
 ### Windows (WSL/Ubuntu)
+
 ```bash
 # Same as Linux Ubuntu/Debian instructions
 sudo apt update && sudo apt install -y poppler-utils tesseract-ocr pandoc python3-pip
@@ -355,6 +380,7 @@ pip3 install pypdf pytesseract Pillow python-docx
 ```
 
 ### Check Dependencies
+
 ```bash
 ./scripts/check-deps.sh
 ```
@@ -378,6 +404,7 @@ python3 -c "import pytesseract; print('pytesseract OK')"
 ```
 
 ### Auto-Install (Ubuntu/Debian)
+
 ```bash
 # Install all dependencies at once (system packages preferred)
 sudo apt update && sudo apt install -y poppler-utils tesseract-ocr pandoc python3-pip
@@ -385,6 +412,7 @@ sudo apt install -y python3-pypdf python3-pytesseract python3-pil python3-docx
 ```
 
 ### Auto-Install (Arch)
+
 ```bash
 sudo pacman -S poppler tesseract tesseract-data-eng pandoc python python-pip
 sudo pacman -S python-pypdf python-pytesseract python-pillow
@@ -392,6 +420,7 @@ sudo pacman -S python-pypdf python-pytesseract python-pillow
 ```
 
 ### Auto-Install (Fedora)
+
 ```bash
 sudo dnf install -y poppler-utils tesseract pandoc python3-pip
 sudo dnf install -y python3-pypdf python3-pytesseract python3-pillow python3-docx
@@ -401,23 +430,24 @@ sudo dnf install -y python3-pypdf python3-pytesseract python3-pillow python3-doc
 
 ## Error Handling
 
-| Error | Cause | Solution |
-|-------|-------|----------|
-| "PDF is encrypted" | Password-protected PDF | Provide password or use decrypted version |
-| "No text extracted" | Scanned/image PDF | Use OCR mode (see Method 3) |
-| "File not found" | Wrong path | Check file path, use absolute paths |
-| "Corrupt file" | Damaged document | Re-download or get clean copy |
-| "OCR failed" | Poor image quality | Improve image quality: contrast, DPI > 300 |
-| "pdftotext not found" | Missing poppler-utils | `sudo apt install poppler-utils` |
-| "tesseract not found" | Missing OCR | `sudo apt install tesseract-ocr` |
-| "pandoc not found" | Missing converter | `sudo apt install pandoc` |
-| "Permission denied" | File locked | Check file permissions |
+| Error                 | Cause                  | Solution                                   |
+| --------------------- | ---------------------- | ------------------------------------------ |
+| "PDF is encrypted"    | Password-protected PDF | Provide password or use decrypted version  |
+| "No text extracted"   | Scanned/image PDF      | Use OCR mode (see Method 3)                |
+| "File not found"      | Wrong path             | Check file path, use absolute paths        |
+| "Corrupt file"        | Damaged document       | Re-download or get clean copy              |
+| "OCR failed"          | Poor image quality     | Improve image quality: contrast, DPI > 300 |
+| "pdftotext not found" | Missing poppler-utils  | `sudo apt install poppler-utils`           |
+| "tesseract not found" | Missing OCR            | `sudo apt install tesseract-ocr`           |
+| "pandoc not found"    | Missing converter      | `sudo apt install pandoc`                  |
+| "Permission denied"   | File locked            | Check file permissions                     |
 
 ---
 
 ## Quick Reference
 
 ### Linux/macOS
+
 ```bash
 # Text-based PDF
 pdftotext input.pdf output.txt
@@ -436,6 +466,7 @@ tesseract image.png output -l eng
 ```
 
 ### Windows (PowerShell)
+
 ```powershell
 # Install tools (pick one)
 winget install XP89DCGQ3K6VLD    # pdftotext via winget
@@ -456,6 +487,7 @@ python -c "from pypdf import PdfReader; open('output.txt','w').write(''.join((p.
 ```
 
 ### Python (Any OS)
+
 ```python
 from pypdf import PdfReader
 
@@ -475,12 +507,14 @@ with open('output.txt', 'w') as out:
 ### Step 1: Install Dependencies
 
 **Linux (Ubuntu/Debian):**
+
 ```bash
 sudo apt install -y poppler-utils tesseract-ocr pandoc python3 python3-pip
 sudo apt install -y python3-pypdf python3-pytesseract python3-pil python3-docx
 ```
 
 **Linux (Arch/Manjaro):**
+
 ```bash
 sudo pacman -S poppler tesseract tesseract-data-eng pandoc python python-pip
 sudo pacman -S python-pypdf python-pytesseract python-pillow
@@ -488,12 +522,14 @@ yay -S python-docx  # or: pip install python-docx
 ```
 
 **macOS:**
+
 ```bash
 brew install poppler tesseract pandoc python3
 pip3 install pypdf pytesseract Pillow python-docx
 ```
 
 **Windows:**
+
 ```powershell
 winget install XP89DCGQ3K6VLD
 winget install UBMFFKJRRR9W2K
@@ -503,12 +539,14 @@ pip install pypdf pytesseract Pillow python-docx
 ```
 
 **macOS:**
+
 ```bash
 brew install poppler tesseract pandoc python3
 pip3 install pypdf pytesseract Pillow python-docx
 ```
 
 **Windows:**
+
 ```powershell
 # Option A: winget (built-in, recommended)
 winget install XP89DCGQ3K6VLD
@@ -563,6 +601,7 @@ Stage 3: MD → PDF           [universal-document-generator / scripts/convert-to
 ```
 
 After extracting text with this skill:
+
 1. Structure it into Markdown notes
 2. Convert to print-ready PDF using `scripts/convert-to-pdf.py` or `scripts/convert-to-pdf.js`
 3. See the `universal-document-generator` skill for full instructions

@@ -7,7 +7,9 @@ duration: "2½ Hours"
 ---
 
 # Savitribai Phule Pune University
+
 ## Basic Electronics Engineering (104010)
+
 ### 2019 Pattern | Semester I/II
 
 **Total Marks:** 70 | **Time:** 2½ Hours
@@ -20,7 +22,9 @@ duration: "2½ Hours"
 
 **Q1)** Attempt the following: [15]
 
-a) Convert the following: i) \((10100.1011)_2\) to decimal, ii) \((832.24)_{10}\) to hexadecimal, iii) \((556.27)_8\) to hexadecimal, iv) \((2C6.1B)_{16}\) to octal, v) \((D43A.03)_{16}\) to decimal. [6]
+a) Convert the following: i) \((10100.1011)_2\) to decimal, ii) \((832.24)_{10}\) to hexadecimal,
+iii) \((556.27)_8\) to hexadecimal, iv) \((2C6.1B)_{16}\) to octal, v) \((D43A.03)\_{16}\) to
+decimal. [6]
 
 b) Define **Universal Logic Gates**. Why are they known as universal gates? [6]
 
@@ -32,7 +36,8 @@ c) Compare **Microprocessor** and **Microcontroller**. [3]
 
 a) State and prove **De-Morgan's theorems**. [5]
 
-b) Implement **Half Adder** and **Full Adder** using logic gates. Draw truth tables and logic diagrams. [6]
+b) Implement **Half Adder** and **Full Adder** using logic gates. Draw truth tables and logic
+diagrams. [6]
 
 c) Explain **SR Flip Flop** with truth table and logic diagram. [4]
 
@@ -64,9 +69,11 @@ c) Compare **Analog** and **Digital** voltmeters. [4]
 
 **Q5)** Attempt the following: [15]
 
-a) Explain working principle and application of **LVDT** (Linear Variable Differential Transformer). [6]
+a) Explain working principle and application of **LVDT** (Linear Variable Differential Transformer).
+[6]
 
-b) Classify sensors into **Active vs Passive** and **Analog vs Digital**. Give one example of each. [5]
+b) Classify sensors into **Active vs Passive** and **Analog vs Digital**. Give one example of each.
+[5]
 
 c) Explain working of **Thermocouple** as a temperature sensor. [4]
 
@@ -88,7 +95,8 @@ c) Explain working principle of **strain gauge**. [4]
 
 a) Draw and explain block diagram of a basic **communication system**. Explain each block. [6]
 
-b) Explain **AM (Amplitude Modulation)** and **FM (Frequency Modulation)** transmitter block diagrams. Compare AM and FM. [5]
+b) Explain **AM (Amplitude Modulation)** and **FM (Frequency Modulation)** transmitter block
+diagrams. Compare AM and FM. [5]
 
 c) Explain **cellular concept** in mobile communication. [4]
 

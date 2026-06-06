@@ -4,14 +4,14 @@
 
 ## Syllabus
 
-| Unit | Title | Hours | CO |
-|------|-------|-------|----|
-| I | Introduction to Data Science and Big Data | 07 | CO1 |
-| II | Statistical Inference | 07 | CO2 |
-| III | Big Data Analytics Life Cycle | 07 | CO3 |
-| IV | Predictive Big Data Analytics with Python | 07 | CO4 |
-| V | Big Data Analytics and Model Evaluation | 07 | CO5 |
-| VI | Data Visualization and Hadoop | 07 | CO6 |
+| Unit | Title                                     | Hours | CO  |
+| ---- | ----------------------------------------- | ----- | --- |
+| I    | Introduction to Data Science and Big Data | 07    | CO1 |
+| II   | Statistical Inference                     | 07    | CO2 |
+| III  | Big Data Analytics Life Cycle             | 07    | CO3 |
+| IV   | Predictive Big Data Analytics with Python | 07    | CO4 |
+| V    | Big Data Analytics and Model Evaluation   | 07    | CO5 |
+| VI   | Data Visualization and Hadoop             | 07    | CO6 |
 
 ## Exam Pattern
 

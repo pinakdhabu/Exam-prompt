@@ -2,7 +2,9 @@
 
 ## Syllabus Overview
 
-Engineering Mathematics III covers linear differential equations, Fourier and Z-transforms, probability and statistics, and numerical methods for algebraic equations, interpolation, integration, and ODEs.
+Engineering Mathematics III covers linear differential equations, Fourier and Z-transforms,
+probability and statistics, and numerical methods for algebraic equations, interpolation,
+integration, and ODEs.
 
 ## Units
 

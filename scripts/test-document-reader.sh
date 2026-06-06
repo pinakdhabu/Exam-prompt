@@ -44,7 +44,7 @@ INPUT_FILE="${1:-}"
 
 if [ -z "$INPUT_FILE" ]; then
     echo -e "${BLUE}Step 2: Creating sample test document...${NC}"
-    
+
     # Create a sample text file
     SAMPLE_FILE="$TEMP_DIR/sample-syllabus.txt"
     cat > "$SAMPLE_FILE" << 'EOF'
@@ -94,7 +94,7 @@ REFERENCE BOOKS:
 2. "Introduction to Algorithms" by Cormen et al. (CLRS)
 3. "Data Structures using C" by Reema Thareja
 EOF
-    
+
     INPUT_FILE="$SAMPLE_FILE"
     echo -e "${GREEN}Created sample: $SAMPLE_FILE${NC}"
     echo ""
@@ -109,21 +109,21 @@ if [ -f "$INPUT_FILE" ]; then
     echo -e "Input file: ${CYAN}$INPUT_FILE${NC}"
     echo -e "Extension: ${CYAN}.$EXTENSION${NC}"
     echo ""
-    
+
     # Get file stats
     WORD_COUNT=$(wc -w < "$INPUT_FILE")
     LINE_COUNT=$(wc -l < "$INPUT_FILE")
     echo -e "Words: ${GREEN}$WORD_COUNT${NC}"
     echo -e "Lines: ${GREEN}$LINE_COUNT${NC}"
     echo ""
-    
+
     # Show preview
     echo -e "${BLUE}Step 4: Document preview (first 20 lines):${NC}"
     echo "----------------------------------------------------"
     head -n 20 "$INPUT_FILE"
     echo "----------------------------------------------------"
     echo ""
-    
+
     # If it's a text file, copy it as "converted"
     if [[ "$EXTENSION" =~ ^(txt|md|text)$ ]]; then
         OUTPUT_FILE="$TEMP_DIR/converted.txt"
@@ -138,7 +138,7 @@ if [ -f "$INPUT_FILE" ]; then
             cp "$INPUT_FILE" "$OUTPUT_FILE" 2>/dev/null || true
         fi
     fi
-    
+
     if [ -f "$OUTPUT_FILE" ]; then
         echo ""
         echo -e "${GREEN}✓ Document converted successfully!${NC}"
@@ -148,7 +148,7 @@ if [ -f "$INPUT_FILE" ]; then
         head -n 10 "$OUTPUT_FILE"
         echo "----------------------------------------------------"
         echo ""
-        
+
         echo -e "${GREEN}Output saved to: $OUTPUT_FILE${NC}"
     fi
 else

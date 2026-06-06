@@ -4,14 +4,14 @@
 
 ## Syllabus Overview
 
-| Unit | Title | Hours |
-|------|-------|-------|
-| I | Introduction to Embedded Systems | 07 |
-| II | Internet of Things: Concepts | 07 |
-| III | IoT Design Methodology | 07 |
-| IV | IoT Protocols | 07 |
-| V | Cloud Platforms for IoT | 07 |
-| VI | Security in IoT | 07 |
+| Unit | Title                            | Hours |
+| ---- | -------------------------------- | ----- |
+| I    | Introduction to Embedded Systems | 07    |
+| II   | Internet of Things: Concepts     | 07    |
+| III  | IoT Design Methodology           | 07    |
+| IV   | IoT Protocols                    | 07    |
+| V    | Cloud Platforms for IoT          | 07    |
+| VI   | Security in IoT                  | 07    |
 
 ## Key Topics
 
