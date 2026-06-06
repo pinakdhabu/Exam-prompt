@@ -1,5 +1,7 @@
 # Universal Exam Prompt — Ultimate A+ Answer System for Any University Worldwide
 
+![Skills](https://img.shields.io/badge/skills-24-blue) ![Papers](https://img.shields.io/badge/sample_papers-96-green) ![Solutions](https://img.shields.io/badge/solutions-48-orange) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4) ![License](https://img.shields.io/badge/license-MIT-brightgreen)
+
 ![Skills](https://img.shields.io/badge/skills-24-blue)
 ![Papers](https://img.shields.io/badge/sample_papers-84-green)
 ![Solutions](https://img.shields.io/badge/solutions-42-orange)
