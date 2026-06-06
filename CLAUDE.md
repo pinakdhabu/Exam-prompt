@@ -23,6 +23,8 @@ All skills are in the `skills/` directory with `SKILL.md` files. See `AGENTS.md`
 | universal-exam-paper-generator | `skills/exam-paper-generator/SKILL.md` | 11+ university paper patterns |
 | universal-sppu-exam-simulator | `skills/sppu-exam-simulator/SKILL.md` | Physical exam constraints, page/time budgeting, moderator checks |
 | universal-subject-prompt-bank | `skills/subject-prompt-bank/SKILL.md` | 8 discipline templates, 16 samples |
+| universal-document-reader | `skills/universal-document-reader/SKILL.md` | PDF/DOCX/image to clean text |
+| universal-document-generator | `skills/document-generator/SKILL.md` | Markdown to print-ready PDF |
 | universal-university-adapter | `skills/universal-university-adapter/SKILL.md` | University detection & routing |
 | pyq-index | `pyq-index/SKILL.md` | PYQ PDF collection index |
 

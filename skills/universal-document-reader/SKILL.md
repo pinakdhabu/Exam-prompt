@@ -552,6 +552,23 @@ pdftotext pyq.pdf - | pyq-analyzer
 
 ---
 
+## Full Document Pipeline
+
+This skill is Stage 1 of a 3-stage pipeline:
+
+```
+Stage 1: PDF/DOCX → TXT    [universal-document-reader]  ← You are here
+Stage 2: TXT → MD           [Manual or AI authoring]
+Stage 3: MD → PDF           [universal-document-generator / scripts/convert-to-pdf.*]
+```
+
+After extracting text with this skill:
+1. Structure it into Markdown notes
+2. Convert to print-ready PDF using `scripts/convert-to-pdf.py` or `scripts/convert-to-pdf.js`
+3. See the `universal-document-generator` skill for full instructions
+
+---
+
 ## Integration Workflow
 
 ```
@@ -561,22 +578,28 @@ pdftotext pyq.pdf - | pyq-analyzer
 └────────┬────────┘
          │
          ▼
-┌─────────────────┐
-│  document-reader│ ← This skill
-│  (Convert to    │
-│   clean text)   │
-└────────┬────────┘
+┌─────────────────────────┐
+│  universal-document-    │
+│  reader                 │ ← Stage 1: Convert to clean text
+│  (PDF/DOCX → TXT)       │
+└────────┬────────────────┘
+         │
+         ▼
+┌─────────────────────────┐
+│  Manual / AI Authoring  │ ← Stage 2: Structure into MD
+│  (TXT → MD)             │
+└────────┬────────────────┘
+         │
+         ▼
+┌─────────────────────────┐
+│  universal-document-    │
+│  generator              │ ← Stage 3: Convert to PDF
+│  (MD → PDF)             │
+└────────┬────────────────┘
          │
          ▼
 ┌─────────────────┐
-│  Target Skill   │
-│  (notes/answers │
-│   /flashcards)  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Final Output   │
-│  (Ready to use) │
+│  Print-Ready    │
+│  PDF Output     │
 └─────────────────┘
 ```
