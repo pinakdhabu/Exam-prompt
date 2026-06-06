@@ -1,5 +1,8 @@
 # Universal Exam Prompt — Ultimate A+ Answer System for Any University Worldwide
 
+![Skills](https://img.shields.io/badge/skills-24-blue) ![Papers](https://img.shields.io/badge/sample_papers-84-green) ![Solutions](https://img.shields.io/badge/solutions-42-orange) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4) ![License](https://img.shields.io/badge/license-MIT-brightgreen)
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![SPPU 2019 Pattern](https://img.shields.io/badge/SPPU-2019%20Pattern-blue)](https://www.unipune.ac.in)
 [![SPPU 2024 Pattern](https://img.shields.io/badge/SPPU-2024%20Pattern-green)](https://www.unipune.ac.in)
