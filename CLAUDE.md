@@ -40,6 +40,22 @@ Cline, Copilot, Continue.dev) — see [`AGENT-GUIDE.md`](AGENT-GUIDE.md).
 
 A collection of SPPU PYQ PDFs (2019–2025) is referenced by `pyq-index/SKILL.md`.
 
+## Dependency Auto-Resolution
+
+Run `bash deps/resolve.sh` to auto-detect and resolve all project dependencies. This scans the
+project (package.json, requirements.txt, scripts), detects your OS and package manager, checks
+what's installed, and outputs `deps/manifest.json` — an agent-readable manifest that AI agents
+(Claude Code, OpenCode, Cursor) can read to understand the dependency landscape automatically.
+
+```bash
+# Check dependency status
+bash deps/resolve.sh
+# Output: deps/manifest.json with installed/missing/health status
+
+# Install missing required deps
+bash deps/resolve.sh --install
+```
+
 ## Usage
 
 Load the relevant skill from the `skills/` directory. For non-SPPU universities, first load the

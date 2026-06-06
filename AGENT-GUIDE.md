@@ -59,6 +59,9 @@ exam-prompt/
 │
 ├── examples/                   # Sample papers + solutions
 ├── scripts/                    # Utility scripts
+├── deps/                       # Dependency resolution system
+│   ├── resolve.sh              # Auto-detects OS, scans project, resolves best deps
+│   └── manifest.json           # Agent-readable dependency manifest
 ├── docs/                       # GitHub Pages website
 └── USE-CASES.md               # 33 documented workflow examples
 ```

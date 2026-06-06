@@ -16,6 +16,7 @@ const { marked } = require('marked');
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const CSS = `
   @page {
@@ -101,7 +102,45 @@ async function main() {
 
   console.log(`Converting: ${path.basename(mdPath)} -> ${path.basename(pdfPath)}`);
 
-  const md = fs.readFileSync(mdPath, 'utf-8').replace(/\u{1f31f}/ug, '');
+  let md = fs.readFileSync(mdPath, 'utf-8').replace(/\u{1f31f}/ug, '');
+
+  // --- Preprocess: Render Mermaid diagrams to SVG ---
+  const mermaidBlocks = md.match(/```mermaid\s*\n([\s\S]*?)```/g);
+  if (mermaidBlocks && mermaidBlocks.length > 0) {
+    const diagDir = path.join(path.dirname(pdfPath), '_diagrams');
+    fs.mkdirSync(diagDir, { recursive: true });
+    console.log(`  Rendering ${mermaidBlocks.length} Mermaid diagram(s)...`);
+
+    mermaidBlocks.forEach((block, idx) => {
+      const code = block.replace(/```mermaid\s*\n/, '').replace(/```$/, '').trim();
+      if (!code) return;
+
+      const mmdFile = path.join('/tmp', `_md_${idx}_${Date.now()}.mmd`);
+      const svgFile = path.join(diagDir, `mermaid-${idx}.svg`);
+      const relPath = path.join('_diagrams', `mermaid-${idx}.svg`);
+
+      try {
+        fs.writeFileSync(mmdFile, code, 'utf-8');
+        execSync(
+          `npx @mermaid-js/mermaid-cli -i "${mmdFile}" -o "${svgFile}" --backgroundColor white --width 1200 2>&1`,
+          { stdio: 'pipe', timeout: 30000 }
+        );
+        if (fs.existsSync(svgFile)) {
+          // Replace Mermaid code block with img tag
+          const imgTag = `<p><img src="${relPath}" alt="mermaid-diagram-${idx}" style="max-width:100%;height:auto;display:block;margin:1em auto;"/></p>`;
+          md = md.replace(block, imgTag);
+          console.log(`  ✅ Diagram ${idx + 1}/${mermaidBlocks.length}`);
+        }
+      } catch (e) {
+        console.error(`  ❌ Diagram ${idx + 1} failed: ${e.message.split('\n')[0]}`);
+      } finally {
+        if (fs.existsSync(mmdFile)) fs.unlinkSync(mmdFile);
+        const pdfFile = mmdFile.replace('.mmd', '.pdf');
+        if (fs.existsSync(pdfFile)) fs.unlinkSync(pdfFile);
+      }
+    });
+  }
+
   const htmlBody = marked.parse(md, { breaks: true });
   const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><style>${CSS}</style></head><body>${htmlBody}</body></html>`;
 
