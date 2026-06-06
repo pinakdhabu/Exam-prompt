@@ -34,46 +34,60 @@ jobs:
           AGENTS="AGENTS.md"
           SKILLS_DIR="skills"
 
-          # Build <available_skills> XML block
-          xml_start='<available_skills>'
-          xml_end='</available_skills>'
-
           # Extract header (everything before <available_skills>)
-          sed -n '1,/<available_skills>/p' "$AGENTS" | head -n -1 > /tmp/agents_new.md
-          echo "" >> /tmp/agents_new.md
-          echo "$xml_start" >> /tmp/agents_new.md
-          echo "" >> /tmp/agents_new.md
+          HEADER=$(sed '/<available_skills>/q' "$AGENTS" | sed '$d')
+          # Extract footer (everything after </available_skills>)
+          FOOTER=$(sed -n '/<\/available_skills>/,$$p' "$AGENTS" | sed '1d')
 
-          for dir in "$SKILLS_DIR"/*/; do
-            name=$(basename "$dir")
-            skill_file="$dir/SKILL.md"
-            if [ ! -f "$skill_file" ]; then
-              continue
-            fi
+          # Build the new <available_skills> block
+          {
+            echo "$HEADER"
+            echo ""
+            echo "<available_skills>"
+            echo ""
+            for dir in "$SKILLS_DIR"/*/; do
+              name=$(basename "$dir")
+              skill_file="$dir/SKILL.md"
+              [ ! -f "$skill_file" ] && continue
 
-            # Extract name from frontmatter
-            fm_name=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^name:' | sed 's/^name: //' | tr -d '[:space:]' || echo "$name")
+              # Extract name from YAML frontmatter
+              fm_name=$(sed -n '/^---$/,/^---$/p' "$skill_file" | grep '^name:' | sed 's/^name: *//' | tr -d '[:space:]')
+              [ -z "$fm_name" ] && fm_name="$name"
 
-            # Extract description (handles multiline YAML)
-            fm_desc=$(sed -n '/^---$/,/^---$/p' "$skill_file" | \
-              sed -n '/^description:/,/^[a-z]/p' | head -n -1 | \
-              sed 's/^description: *> *//' | sed 's/^description: *//' | \
-              sed 's/^ *//' | tr '\n' ' ' | sed 's/ *$//' || echo "No description.")
+              # Extract description from YAML frontmatter (handles > block scalar)
+              fm_desc=$(awk '
+                /^---$/ { count++; next }
+                count == 1 { desc = desc sep $0; sep = " " }
+                count == 2 { exit }
+                END { print desc }
+              ' "$skill_file" | grep -v '^name:' | sed 's/^description: *> *//; s/^description: *//' | xargs)
+              [ -z "$fm_desc" ] && fm_desc="No description provided."
 
-            {
-              echo "<skill>"
-              echo "<name>$fm_name</name>"
-              echo "<description>$fm_desc</description>"
-              echo "<location>project</location>"
-              echo ""
-            } >> /tmp/agents_new.md
-          done
+              cat <<SKILL_EOF
+            <skill>
+            <name>$fm_name</name>
+            <description>$fm_desc</description>
+            <location>project</location>
 
-          echo "$xml_end" >> /tmp/agents_new.md
-          echo '<!-- SKILLS_TABLE_END -->' >> /tmp/agents_new.md
+            SKILL_EOF
+            done
+            echo "</available_skills>"
+            echo ""
+            echo "$FOOTER"
+          } > /tmp/agents_new.md
 
-          # Append rest after </available_skills> in original
-          tail -n +$(($(grep -n '</available_skills>' "$AGENTS" | head -1 | cut -d: -f1) + 3)) "$AGENTS" >> /tmp/agents_new.md
+          # Preserve the <!-- SKILLS_TABLE_END --> comment at the end of the block
+          if grep -q 'SKILLS_TABLE_END' /tmp/agents_new.md; then
+            : # already has it
+          else
+            echo "<!-- SKILLS_TABLE_START -->" >> /tmp/agents_new.md
+            echo "<!-- SKILLS_TABLE_START -->" >> /tmp/agents_new.md
+            echo "<!-- SKILLS_TABLE_START -->" >> /tmp/agents_new.md
+            echo "<!-- SKILLS_TABLE_START -->" >> /tmp/agents_new.md
+            cat /tmp/agents_new.md > /tmp/agents_final.md
+            # Actually just add it after </available_skills>
+            sed -i '/<\/available_skills>/a <!-- SKILLS_TABLE_END -->' /tmp/agents_new.md
+          fi
 
           mv /tmp/agents_new.md "$AGENTS"
           echo "Regenerated AGENTS.md"
@@ -92,26 +106,37 @@ jobs:
           BADGES="$BADGES ![License](https://img.shields.io/badge/license-MIT-brightgreen)"
 
           # Update or insert the badge line in README.md
-          if grep -q '\[!\[Skills\]' README.md 2>/dev/null; then
-            sed -i "s|\[!\[Skills\].*|$BADGES|" README.md
+          if grep -q '!\\[Skills\\]' README.md 2>/dev/null; then
+            # Update existing badge line (matches the first ![Skills] badge)
+            sed -i '0,/!\\[Skills\\].*/s/!\\[Skills\\].*/BADGES_PLACEHOLDER/' README.md
+            sed -i "s|BADGES_PLACEHOLDER|$BADGES|" README.md
           else
-            # Insert after the first heading
-            sed -i "1a\\\n$BADGES\n" README.md
+            # Insert after the title
+            sed -i '2i\\n'"$BADGES" README.md
           fi
           echo "Updated README badges"
 
-      - name: Generate docs skills list
+      - name: Update docs skill count
         run: |
           COUNT=$(ls -d skills/*/ 2>/dev/null | wc -l)
-          # Update the skills count in docs/skills.html
-          if [ -f docs/skills.html ]; then
-            sed -i "s/SKILL_COUNT/$COUNT/g" docs/skills.html
-            echo "Updated docs/skills.html"
+          # Update all visible references in the docs site
+          for html_file in docs/index.html docs/skills.html; do
+            if [ -f "$html_file" ]; then
+              # Update stat blocks: "24 skills" or "20 skills" pattern
+              sed -i "s/[0-9]\\+ skills/$COUNT skills/g" "$html_file"
+              # Update footer: "24 academic skills"
+              sed -i "s/[0-9]\\+ academic skills/$COUNT academic skills/g" "$html_file"
+              echo "Updated $html_file skill count to $COUNT"
+            fi
+          done
+
+          # Update the skills array count in docs/skills.html JS if needed
+          if grep -q 'new Array' docs/skills.html 2>/dev/null; then
+            sed -i "s/const skills = new Array([0-9]\\+)/const skills = new Array($COUNT)/" docs/skills.html
           fi
 
       - name: Commit auto-registration
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "nightly: auto-register skills and update badges"
+          commit_message: "nightly: auto-register skills, update badges and docs"
           add_options: '-A'
-          file_pattern: AGENTS.md README.md docs/skills.html

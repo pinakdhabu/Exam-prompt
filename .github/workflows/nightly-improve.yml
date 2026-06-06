@@ -76,6 +76,8 @@ jobs:
               echo "stale=false" >> $GITHUB_OUTPUT
               echo "Dependencies look current"
             fi
+          else
+            echo "stale=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Check for TODO/FIXME/HACK comments
@@ -93,7 +95,6 @@ jobs:
           ORPHANS=${{ steps.orphans.outputs.count }}
           MISSING=${{ steps.missing-solutions.outputs.count }}
           TODOS=${{ steps.todos.outputs.count }}
-
           STALE=${{ steps.deps.outputs.stale }}
 
           ISSUES=()
@@ -112,12 +113,11 @@ jobs:
               echo "|-------|--------|"
               echo "| Orphan skills | $ORPHANS |"
               echo "| Missing solutions | $MISSING |"
-              echo "| Stale dependencies | $(echo $STALE) |"
+              echo "| Stale dependencies | $STALE |"
               echo "| TODO/FIXME comments | $TODOS |"
               echo ""
               if [ "$ORPHANS" -gt 0 ]; then
                 echo "### Orphan Skill Directories"
-                echo "These directories in skills/ have no SKILL.md:"
                 echo '```'
                 for dir in skills/*/; do
                   if [ ! -f "$dir/SKILL.md" ]; then
