@@ -37,7 +37,7 @@ jobs:
           # Extract header (everything before <available_skills>)
           HEADER=$(sed '/<available_skills>/q' "$AGENTS" | sed '$d')
           # Extract footer (everything after </available_skills>)
-          FOOTER=$(sed -n '/<\/available_skills>/,$$p' "$AGENTS" | sed '1d')
+          FOOTER=$(sed -n '/<\/available_skills>/,\$p' "$AGENTS" | sed '1d')
 
           # Build the new <available_skills> block
           {
@@ -62,13 +62,11 @@ jobs:
                 sed ':a;N;$!ba;s/\n/ /g' | xargs)
               [ -z "$fm_desc" ] && fm_desc="No description provided."
 
-              cat <<SKILL_EOF
-            <skill>
-            <name>$fm_name</name>
-            <description>$fm_desc</description>
-            <location>project</location>
-
-            SKILL_EOF
+              echo '<skill>'
+              echo "<name>$fm_name</name>"
+              echo "<description>$fm_desc</description>"
+              echo '<location>project</location>'
+              echo ''
             done
             echo "</available_skills>"
             echo ""
