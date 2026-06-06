@@ -399,9 +399,9 @@ Adapt:  OR structure, CO mapping, Bloom's distribution, marks allocation
 6. **Run university detection** using Part 1 detection tables
 7. **Determine exam pattern** using Part 2 pattern database
 8. **Present findings to user** briefly:
-   > "I identified your university as **[Name]**, department **[Dept]**, following a **[Pattern >
+   > "I identified your university as **[Name]**, department **[Dept]**, following a **[Pattern > >
    > Type]** pattern with **[Assessment Split]** assessment. Subjects found: [Subject 1], [Subject >
-   > 2]..."
+   > > 2]..."
 9. **Ask user what they need**: answer writing, notes, PYQ analysis, IMP topics, assignment, or
    practice paper
 10. **Route to correct universal skill** using Part 3 routing matrix

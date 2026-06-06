@@ -475,10 +475,9 @@ viewpoint defines the language, notation, and modeling techniques for a view.
 ```markdown
 # ADR-001: Use PostgreSQL for Primary Database
 
-**Status:** Accepted
-**Context:** Need a reliable, ACID-compliant database for financial transactions.
-**Decision:** PostgreSQL 16 with pgBouncer for connection pooling.
-**Consequences:** +ACID compliance, +JSON support, -Requires DBA expertise.
+**Status:** Accepted **Context:** Need a reliable, ACID-compliant database for financial
+transactions. **Decision:** PostgreSQL 16 with pgBouncer for connection pooling. **Consequences:**
++ACID compliance, +JSON support, -Requires DBA expertise.
 ```
 
 **iii) SAAM (Software Architecture Analysis Method):**

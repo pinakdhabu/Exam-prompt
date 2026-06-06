@@ -480,8 +480,7 @@ _No syllabus documents found._
 
 **SOFT COMPUTING AND DEEP LEARNING (BE-8)**
 
-- In Sem (1 papers)
-  -
+- ## In Sem (1 papers)
 - End Sem (5 papers)
   - SC&DL (H) April 23
   - SC&DL (H) April 24
@@ -516,8 +515,7 @@ _No syllabus documents found._
 
 **INFORMATION SYSTEMS MANAGEMENT (BE-8)**
 
-- In Sem (1 papers)
-  -
+- ## In Sem (1 papers)
 - End Sem (5 papers)
   - ISM (H) April 23
   - ISM (H) April 24
@@ -540,8 +538,7 @@ _No syllabus documents found._
 
 **ARTIFICIAL INTELLIGENCE FOR BIG DATA ANALYTICS (BE-8)**
 
-- In Sem (1 papers)
-  -
+- ## In Sem (1 papers)
 - End Sem (5 papers)
   - AIBDA (H) April 23
   - AIBDA (H) April 24
@@ -595,8 +592,7 @@ _No syllabus documents found._
 
 **EMBEDED SYSTEMS AND INTERNET OF THINGS (TE-5)**
 
-- In Sem (1 papers)
-  -
+- ## In Sem (1 papers)
 - End Sem (7 papers)
   - ES&IOT (H) April 22
   - ES&IOT (H) April 23
@@ -621,8 +617,7 @@ _No syllabus documents found._
 
 **INTERNET OF THINGS SECURITY (BE-8)**
 
-- In Sem (1 papers)
-  -
+- ## In Sem (1 papers)
 - End Sem (5 papers)
   - IOTS (H) April 23
   - IOTS (H) April 24
@@ -648,8 +643,7 @@ _No syllabus documents found._
 
 **APPLICATION DEVELOPMENT USING AUGMENTED REALITY AND VIRTUAL REALITY (BE-8)**
 
-- In Sem (1 papers)
-  -
+- ## In Sem (1 papers)
 - End Sem (5 papers)
   - App Dev Using AR&VR (H) April 23
   - App Dev Using AR&VR (H) April 24
@@ -659,8 +653,7 @@ _No syllabus documents found._
 
 **AUGMENTED REALITY (TE-6)**
 
-- In Sem (1 papers)
-  -
+- ## In Sem (1 papers)
 - End Sem (7 papers)
   - AR (H) April 22
   - AR (H) April 23
