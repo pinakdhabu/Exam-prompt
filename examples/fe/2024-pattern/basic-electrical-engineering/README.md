@@ -4,13 +4,13 @@
 
 ## Syllabus Overview
 
-| Unit | Title                                     | Hours |
-| ---- | ----------------------------------------- | ----- |
-| I    | DC Circuits                               | 08    |
-| II   | AC Circuits                               | 08    |
-| III  | Transformers                              | 08    |
-| IV   | Electrical Machines                       | 08    |
-| V    | Electrical Installations and Safety       | 08    |
+| Unit | Title                               | Hours |
+| ---- | ----------------------------------- | ----- |
+| I    | DC Circuits                         | 08    |
+| II   | AC Circuits                         | 08    |
+| III  | Transformers                        | 08    |
+| IV   | Electrical Machines                 | 08    |
+| V    | Electrical Installations and Safety | 08    |
 
 ## Key Topics
 

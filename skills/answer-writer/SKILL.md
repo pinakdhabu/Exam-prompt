@@ -431,6 +431,7 @@ This arises from [root cause].
 - Use **Mermaid syntax** for diagrams when the environment supports it (markdown code blocks with
   ```mermaid). This produces professional, renderable diagrams in GitHub, VS Code, and most AI chat
   tools.
+  ```
 - Use **ASCII diagrams** as fallback when Mermaid is not supported or when the user specifically
   needs a hand-drawable reference.
 - Include ` ```mermaid ` blocks for: flowcharts, sequence diagrams, class diagrams, ER diagrams,

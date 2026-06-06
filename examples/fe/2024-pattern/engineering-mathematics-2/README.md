@@ -4,13 +4,13 @@
 
 ## Syllabus Overview
 
-| Unit | Title                                       | Hours |
-| ---- | ------------------------------------------- | ----- |
-| I    | Differential Equations of First Order       | 08    |
-| II   | Higher Order Linear Differential Equations  | 08    |
+| Unit | Title                                      | Hours |
+| ---- | ------------------------------------------ | ----- |
+| I    | Differential Equations of First Order      | 08    |
+| II   | Higher Order Linear Differential Equations | 08    |
 | III  | Partial Differentiation and Applications   | 08    |
-| IV   | Vector Calculus                             | 08    |
-| V    | Multiple Integrals and Applications         | 08    |
+| IV   | Vector Calculus                            | 08    |
+| V    | Multiple Integrals and Applications        | 08    |
 
 ## Key Topics
 

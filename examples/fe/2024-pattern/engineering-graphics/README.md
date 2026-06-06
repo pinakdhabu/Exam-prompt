@@ -4,13 +4,13 @@
 
 ## Syllabus Overview
 
-| Unit | Title                                        | Hours |
-| ---- | -------------------------------------------- | ----- |
-| I    | Introduction to Engineering Drawing          | 08    |
-| II   | Projections of Points, Lines and Planes      | 08    |
-| III  | Projections of Solids                        | 08    |
-| IV   | Section of Solids and Development of Surfaces| 08    |
-| V    | Isometric Projections and Orthographic Views | 08    |
+| Unit | Title                                         | Hours |
+| ---- | --------------------------------------------- | ----- |
+| I    | Introduction to Engineering Drawing           | 08    |
+| II   | Projections of Points, Lines and Planes       | 08    |
+| III  | Projections of Solids                         | 08    |
+| IV   | Section of Solids and Development of Surfaces | 08    |
+| V    | Isometric Projections and Orthographic Views  | 08    |
 
 ## Key Topics
 

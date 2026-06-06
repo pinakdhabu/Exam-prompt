@@ -913,7 +913,7 @@ Following the embedded learning methods produces:
 <div align="center">
 
 **Made for SPPU Engineering students, by students — now universal for any university worldwide.**
-*Zero guidebook dependency. Maximum exam readiness. Any university. Any subject.*
+_Zero guidebook dependency. Maximum exam readiness. Any university. Any subject._
 
 </div>
 
