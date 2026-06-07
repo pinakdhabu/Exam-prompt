@@ -1,0 +1,38 @@
+# Exam Prompt — Simplified System Architecture
+# Clean, readable layout with essential components only
+
+direction: right
+
+input: "Input Sources" {
+  syllabus: "Syllabus PDFs"
+  pyqs: "PYQ PDFs"
+  query: "User Questions"
+}
+
+pipeline: "Processing Pipeline" {
+  ingest: "Document\nIngestion"
+  knowledge: "Knowledge\nLayer"
+  orchestrator: "AI\nOrchestrator"
+  llm: "LLM\nModels"
+  validate: "Validation\nEngine"
+}
+
+skills: "24 Skill Modules" {
+  core: "⭐ Core (4)"
+  writing: "✍️ Writing (6)"
+  analysis: "📊 Analysis (3)"
+  practice: "🎯 Practice (4)"
+  planning: "📅 Planning (2)"
+  infra: "🔧 Infra (5)"
+}
+
+output: "Output Formats" {
+  answers: "Exam\nAnswers"
+  notes: "Study\nNotes"
+  mcqs: "MCQs &\nFlashcards"
+  papers: "Question\nPapers"
+}
+
+input -> pipeline
+pipeline -> skills
+skills -> output

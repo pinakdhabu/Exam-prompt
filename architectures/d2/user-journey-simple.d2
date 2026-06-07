@@ -1,0 +1,29 @@
+# Exam Prompt — User Journey
+# Clean flow: Setup → Choose → Get Results
+
+direction: right
+
+setup: "🛠️\nSetup" {
+  univ: "Pick University"
+  subject: "Pick Subject"
+  pattern: "Pick Pattern"
+}
+
+actions: "🎯\nChoose Action" {
+  write: "✍️ Write\nAnswer"
+  notes: "📓 Generate\nNotes"
+  pyq: "📊 Analyze\nPYQs"
+  imp: "🎯 Get IMP\nTopics"
+  mcq: "✅ Practice\nMCQs"
+  plan: "📅 Plan\nStudy"
+}
+
+results: "📤\nGet Results" {
+  answer: "10/10 Answer"
+  study_notes: "Complete Notes"
+  predictions: "Predictions"
+  schedule: "Study Schedule"
+}
+
+setup -> actions
+actions -> results
