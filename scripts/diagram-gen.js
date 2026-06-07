@@ -151,7 +151,7 @@ function processFile(inputPath, options = {}) {
       let match;
       // Reset lastIndex
       pattern.lastIndex = 0;
-      
+
       while ((match = pattern.exec(result)) !== null) {
         const code = match[1].trim();
         if (!code) continue;
@@ -164,16 +164,16 @@ function processFile(inputPath, options = {}) {
         process.stdout.write(`  [${diagramIndex}] ${typeName}: rendering "${name}"... `);
 
         const success = typeConfig.render(code, svgFile);
-        
+
         if (success && fs.existsSync(svgFile)) {
           const svgSize = fs.statSync(svgFile).size;
           const alt = `${typeName} diagram: ${name}`;
-          
+
           // Replace the code block with an image tag
           const oldBlock = match[0];
           const imgTag = `<p align="center"><img src="${relPath}" alt="${alt}" width="100%"/></p>\n\n<!-- ${typeName} source:\n\`\`\`${typeName}\n${code}\n\`\`\` -->\n`;
           result = result.replace(oldBlock, imgTag);
-          
+
           console.log(`✅ ${(svgSize / 1024).toFixed(1)} KB`);
           totalRendered++;
         } else {
@@ -201,9 +201,9 @@ function processFile(inputPath, options = {}) {
 function watchFile(inputPath) {
   console.log(`👀 Watching: ${inputPath}`);
   console.log('   Press Ctrl+C to stop\n');
-  
+
   processFile(inputPath);
-  
+
   fs.watch(inputPath, (eventType) => {
     if (eventType === 'change') {
       console.log(`\n🔄 File changed, re-rendering...\n`);
@@ -215,7 +215,7 @@ function watchFile(inputPath) {
 // === Main ===
 function main() {
   const args = process.argv.slice(2);
-  
+
   if (args.includes('--list-formats') || args.includes('--formats')) {
     console.log('\n📐 Supported Diagram Formats:\n');
     for (const [name, config] of Object.entries(DIAGRAM_TYPES)) {
@@ -236,12 +236,12 @@ function main() {
       console.error('ERROR: --code requires a diagram code string');
       process.exit(1);
     }
-    
+
     // Auto-detect type from code content
     let typeName = 'mermaid'; // default
     if (code.includes('->>') || code.includes('->')) typeName = 'mermaid';
     else if (code.includes('->')) typeName = 'd2';
-    
+
     const tmpFile = tempFile(`\`\`\`${typeName}\n${code}\n\`\`\``, '.md');
     processFile(tmpFile);
     if (fs.existsSync(tmpFile)) fs.unlinkSync(tmpFile);

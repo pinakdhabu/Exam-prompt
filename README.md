@@ -31,28 +31,28 @@
 
 ## 🌐 Live Website
 
-Check out the **[Exam Prompt website](https://pinakdhabu.github.io/Exam-prompt/)** — a fully interactive
-landing page built with the project's dark terminal aesthetic:
+Check out the **[Exam Prompt website](https://pinakdhabu.github.io/Exam-prompt/)** — a fully
+interactive landing page built with the project's dark terminal aesthetic:
 
-- **Homepage** ([`docs/index.html`](docs/index.html)) — Animated hero with typing effect, floating orb background,
-  scroll-triggered reveals, sample output showcase with real AI-generated answers, stats counters, FAQ section,
-  and an architecture gallery with colorful D2 diagrams
-- **Skills Directory** ([`docs/skills.html`](docs/skills.html)) — Browse all 24 skills with search, filter by
-  category, and live count badges
-- **App Tool** ([`docs/app.html`](docs/app.html)) — One-click copy: select a skill, paste your question, and
-  open ChatGPT/Claude/Gemini with everything pre-loaded
+- **Homepage** ([`docs/index.html`](docs/index.html)) — Animated hero with typing effect, floating
+  orb background, scroll-triggered reveals, sample output showcase with real AI-generated answers,
+  stats counters, FAQ section, and an architecture gallery with colorful D2 diagrams
+- **Skills Directory** ([`docs/skills.html`](docs/skills.html)) — Browse all 24 skills with search,
+  filter by category, and live count badges
+- **App Tool** ([`docs/app.html`](docs/app.html)) — One-click copy: select a skill, paste your
+  question, and open ChatGPT/Claude/Gemini with everything pre-loaded
 
 ### Architecture Gallery
 
 The website features auto-rendered D2 diagrams with vibrant color coding:
 
-| Diagram | Description |
-|---|---|
+| Diagram                                                                 | Description                                                                                      |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | [📐 System Architecture](architectures/exports/system-architecture.svg) | Full pipeline: Input → Ingestion → Knowledge → Orchestrator → Skills → LLM → Validation → Output |
-| [🧭 User Journey](architectures/exports/user-journey.svg) | Student flow: Setup (blue) → Choose Action (orange) → Get Results (green) |
-| [🧠 Skills Ecosystem](architectures/exports/skills-ecosystem.svg) | All 24 skills color-coded by category (teal, fuchsia, violet, orange, amber, blue) |
-| [🔍 RAG Pipeline](architectures/exports/rag-pipeline.svg) | Retrieval-augmented generation data flow |
-| [🚀 Deployment](architectures/exports/deployment.svg) | GitHub → AI Agents → Users flow |
+| [🧭 User Journey](architectures/exports/user-journey.svg)               | Student flow: Setup (blue) → Choose Action (orange) → Get Results (green)                        |
+| [🧠 Skills Ecosystem](architectures/exports/skills-ecosystem.svg)       | All 24 skills color-coded by category (teal, fuchsia, violet, orange, amber, blue)               |
+| [🔍 RAG Pipeline](architectures/exports/rag-pipeline.svg)               | Retrieval-augmented generation data flow                                                         |
+| [🚀 Deployment](architectures/exports/deployment.svg)                   | GitHub → AI Agents → Users flow                                                                  |
 
 ---
 

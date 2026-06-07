@@ -2,10 +2,10 @@
 name: setup-exam-prompt
 description: >
   First-time project configuration for the Exam Prompt skill system. Scaffolds per-repo config:
-  university detection, subject/pattern selection, PYQ path setup, dependency validation, and session
-  profile creation. Run ONCE per repo before using any other exam prompt skill. Works for any
-  university worldwide. Run when: user says "setup", "configure", "first time", "get started", or
-  "onboard".
+  university detection, subject/pattern selection, PYQ path setup, dependency validation, and
+  session profile creation. Run ONCE per repo before using any other exam prompt skill. Works for
+  any university worldwide. Run when: user says "setup", "configure", "first time", "get started",
+  or "onboard".
 version: 1.0.0
 ---
 
@@ -47,20 +47,20 @@ bash deps/resolve.sh --install
 
 ### Q1 — Which university are you studying under?
 
-| University | Pattern Years |
-|---|---|
-| **SPPU** (Savitribai Phule Pune University) | 2019, 2024 |
-| **VTU** (Visvesvaraya Technological University) | 2018, 2021, 2022 |
-| **JNTU** (Jawaharlal Nehru Technological University) | R19, R20, R22 |
-| **Mumbai University** | 2019, 2024 |
-| **AKTU** (Dr. A.P.J. Abdul Kalam Technical University) | 2020, 2021 |
-| **RGPV** (Rajiv Gandhi Proudyogiki Vishwavidyalaya) | 2020, 2021 |
-| **IIT/NIT** | Semester-based |
-| **US/Canada** | Midterm + Final |
-| **UK (Oxford/Cambridge/etc.)** | Written papers |
-| **European (ECTS)** | Module exams |
-| **Australian** | Semester-based |
-| **Other** | I'll describe my pattern |
+| University                                             | Pattern Years            |
+| ------------------------------------------------------ | ------------------------ |
+| **SPPU** (Savitribai Phule Pune University)            | 2019, 2024               |
+| **VTU** (Visvesvaraya Technological University)        | 2018, 2021, 2022         |
+| **JNTU** (Jawaharlal Nehru Technological University)   | R19, R20, R22            |
+| **Mumbai University**                                  | 2019, 2024               |
+| **AKTU** (Dr. A.P.J. Abdul Kalam Technical University) | 2020, 2021               |
+| **RGPV** (Rajiv Gandhi Proudyogiki Vishwavidyalaya)    | 2020, 2021               |
+| **IIT/NIT**                                            | Semester-based           |
+| **US/Canada**                                          | Midterm + Final          |
+| **UK (Oxford/Cambridge/etc.)**                         | Written papers           |
+| **European (ECTS)**                                    | Module exams             |
+| **Australian**                                         | Semester-based           |
+| **Other**                                              | I'll describe my pattern |
 
 ### Q2 — What is your department/program?
 
@@ -76,13 +76,13 @@ bash deps/resolve.sh --install
 
 ### Q3 — Which semester are you in?
 
-| Program | Semesters |
-|---|---|
-| BE / B.Tech | 1–8 |
-| ME / M.Tech | 1–4 |
-| B.Sc / B.Com / BA | 1–6 |
-| Diploma | 1–6 |
-| Other | Specify |
+| Program           | Semesters |
+| ----------------- | --------- |
+| BE / B.Tech       | 1–8       |
+| ME / M.Tech       | 1–4       |
+| B.Sc / B.Com / BA | 1–6       |
+| Diploma           | 1–6       |
+| Other             | Specify   |
 
 ### Q4 — Which subjects are you currently studying?
 
@@ -122,20 +122,20 @@ Once you answer these, the system will:
 
 ### What You Can Do Next
 
-| Command | What It Does |
-|---|---|
-| `/answer` | Write an exam answer for any question |
-| `/notes` | Generate syllabus-locked study notes |
-| `/pyq-analysis` | Analyze trends from previous year papers |
-| `/imp-topics` | Get high-probability topics for the next exam |
-| `/study-plan` | Generate a personalized study schedule |
-| `/mcq-practice` | Practice with exam-style MCQs |
-| `/exam-paper` | Generate a practice question paper |
-| `/flashcards` | Create Anki/CSV flashcards from your material |
-| `/formula-sheet` | Build a compact formula reference sheet |
-| `/mind-map` | Visualize topic hierarchies and connections |
-| `/assignment` | Write an assignment solution with marking scheme |
-| `/viva-prep` | Prepare for oral exams and viva voce |
+| Command          | What It Does                                     |
+| ---------------- | ------------------------------------------------ |
+| `/answer`        | Write an exam answer for any question            |
+| `/notes`         | Generate syllabus-locked study notes             |
+| `/pyq-analysis`  | Analyze trends from previous year papers         |
+| `/imp-topics`    | Get high-probability topics for the next exam    |
+| `/study-plan`    | Generate a personalized study schedule           |
+| `/mcq-practice`  | Practice with exam-style MCQs                    |
+| `/exam-paper`    | Generate a practice question paper               |
+| `/flashcards`    | Create Anki/CSV flashcards from your material    |
+| `/formula-sheet` | Build a compact formula reference sheet          |
+| `/mind-map`      | Visualize topic hierarchies and connections      |
+| `/assignment`    | Write an assignment solution with marking scheme |
+| `/viva-prep`     | Prepare for oral exams and viva voce             |
 
 ---
 
@@ -151,9 +151,7 @@ Your profile is stored in `deps/session-profile.json`:
     "department": "Computer Engineering",
     "semester": 6
   },
-  "subjects": [
-    { "name": "Database Management Systems", "code": "210241" }
-  ],
+  "subjects": [{ "name": "Database Management Systems", "code": "210241" }],
   "target": "good-score",
   "pyq_path": "/path/to/pyqs",
   "setup_date": "2026-06-06"
@@ -166,12 +164,12 @@ To change any setting, run `/setup` again.
 
 ## Troubleshooting
 
-| Problem | Solution |
-|---|---|
-| `deps/resolve.sh: command not found` | You're not in the repo root. `cd Exam-prompt` |
-| `python3 not found` | Install Python 3 — see `deps/resolve.sh` output for per-OS instructions |
-| `pdftotext not found` | `sudo apt install poppler-utils` (Linux) / `brew install poppler` (macOS) |
-| Skills not loading in agent | Make sure `CLAUDE.md` and `AGENTS.md` are in the repo root that your agent reads |
+| Problem                              | Solution                                                                         |
+| ------------------------------------ | -------------------------------------------------------------------------------- |
+| `deps/resolve.sh: command not found` | You're not in the repo root. `cd Exam-prompt`                                    |
+| `python3 not found`                  | Install Python 3 — see `deps/resolve.sh` output for per-OS instructions          |
+| `pdftotext not found`                | `sudo apt install poppler-utils` (Linux) / `brew install poppler` (macOS)        |
+| Skills not loading in agent          | Make sure `CLAUDE.md` and `AGENTS.md` are in the repo root that your agent reads |
 
 ---
 
@@ -179,12 +177,12 @@ To change any setting, run `/setup` again.
 
 Every skill in this system reads your session profile from `setup-exam-prompt`:
 
-| Skill | What It Reads |
-|---|---|
-| `answer-writer` | University pattern, marks format, command words |
-| `notes-generator` | Subject, unit structure, exam type |
-| `pyq-analyzer` | PYQ path, university pattern |
-| `imp-topics-generator` | PYQ path, target GPA |
-| `study-planner` | Subjects, available time, target |
-| `exam-paper-generator` | University pattern, CO/Bloom distribution |
-| `session-config` | Full profile for reconfiguration |
+| Skill                  | What It Reads                                   |
+| ---------------------- | ----------------------------------------------- |
+| `answer-writer`        | University pattern, marks format, command words |
+| `notes-generator`      | Subject, unit structure, exam type              |
+| `pyq-analyzer`         | PYQ path, university pattern                    |
+| `imp-topics-generator` | PYQ path, target GPA                            |
+| `study-planner`        | Subjects, available time, target                |
+| `exam-paper-generator` | University pattern, CO/Bloom distribution       |
+| `session-config`       | Full profile for reconfiguration                |

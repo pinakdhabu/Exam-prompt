@@ -1,6 +1,9 @@
 ---
 name: universal-diagram-generator
-description: Generates professional diagrams (flowcharts, mind maps, architecture, UML, graphs) from Mermaid, D2, and Graphviz code. Renders to SVG for GitHub Markdown and embeds into PDFs automatically. Supports ALL diagram types for ANY university, ANY subject.
+description:
+  Generates professional diagrams (flowcharts, mind maps, architecture, UML, graphs) from Mermaid,
+  D2, and Graphviz code. Renders to SVG for GitHub Markdown and embeds into PDFs automatically.
+  Supports ALL diagram types for ANY university, ANY subject.
 ---
 
 # Universal Diagram Generator
@@ -9,13 +12,14 @@ description: Generates professional diagrams (flowcharts, mind maps, architectur
 
 Generates publication-quality diagrams from code blocks in Markdown files. Supports three syntaxes:
 
-| Syntax | Best For | Tool |
-|---|---|---|
-| **Mermaid** | Flowcharts, sequence diagrams, class diagrams, mind maps, Gantt, state diagrams, pie charts | `@mermaid-js/mermaid-cli` |
-| **D2** | Cloud architecture, network topology, AWS diagrams, system design | `d2` CLI |
-| **Graphviz (DOT)** | Directed/undirected graphs, trees, automata, dependency graphs | `dot` CLI |
+| Syntax             | Best For                                                                                    | Tool                      |
+| ------------------ | ------------------------------------------------------------------------------------------- | ------------------------- |
+| **Mermaid**        | Flowcharts, sequence diagrams, class diagrams, mind maps, Gantt, state diagrams, pie charts | `@mermaid-js/mermaid-cli` |
+| **D2**             | Cloud architecture, network topology, AWS diagrams, system design                           | `d2` CLI                  |
+| **Graphviz (DOT)** | Directed/undirected graphs, trees, automata, dependency graphs                              | `dot` CLI                 |
 
-All diagrams render as SVG — natively viewable in GitHub Markdown AND embedded into PDF when converted with `scripts/convert-to-pdf.js`.
+All diagrams render as SVG — natively viewable in GitHub Markdown AND embedded into PDF when
+converted with `scripts/convert-to-pdf.js`.
 
 ---
 
@@ -78,9 +82,10 @@ digraph Dependencies {
 
 ## Pipeline Integration
 
-When `scripts/convert-to-pdf.js` runs, **Mermaid code blocks are automatically detected and rendered**:
+When `scripts/convert-to-pdf.js` runs, **Mermaid code blocks are automatically detected and
+rendered**:
 
-```
+````
 Source MD (with ```mermaid blocks)
        │
        ▼  diagram-gen.js
@@ -88,9 +93,10 @@ Source MD (with ```mermaid blocks)
        │
        ▼  convert-to-pdf.js (Playwright)
     Print-ready PDF with diagrams
-```
+````
 
-The PDF renderer (Playwright Chromium) can render SVGs directly — all diagrams appear in the final PDF.
+The PDF renderer (Playwright Chromium) can render SVGs directly — all diagrams appear in the final
+PDF.
 
 ---
 
@@ -126,16 +132,16 @@ node scripts/diagram-gen.js --list-formats
 
 ## Best Practices
 
-| Diagram Type | Use Case | Max Elements |
-|---|---|---|
-| **flowchart** | Algorithms, processes, workflows | < 50 nodes |
-| **sequenceDiagram** | API calls, user flows, protocols | < 20 actors |
-| **classDiagram** | OOP design, DB schemas | < 30 classes |
-| **mindmap** | Subject overviews, topic hierarchies | < 100 nodes |
-| **stateDiagram** | State machines, protocols | < 30 states |
-| **gantt** | Project timelines, study schedules | < 30 tasks |
-| **D2** | System architecture, cloud infra | < 40 components |
-| **DOT** | Dependency graphs, trees | < 100 nodes |
+| Diagram Type        | Use Case                             | Max Elements    |
+| ------------------- | ------------------------------------ | --------------- |
+| **flowchart**       | Algorithms, processes, workflows     | < 50 nodes      |
+| **sequenceDiagram** | API calls, user flows, protocols     | < 20 actors     |
+| **classDiagram**    | OOP design, DB schemas               | < 30 classes    |
+| **mindmap**         | Subject overviews, topic hierarchies | < 100 nodes     |
+| **stateDiagram**    | State machines, protocols            | < 30 states     |
+| **gantt**           | Project timelines, study schedules   | < 30 tasks      |
+| **D2**              | System architecture, cloud infra     | < 40 components |
+| **DOT**             | Dependency graphs, trees             | < 100 nodes     |
 
 ---
 

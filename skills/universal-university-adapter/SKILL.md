@@ -400,7 +400,9 @@ Adapt:  OR structure, CO mapping, Bloom's distribution, marks allocation
 7. **Determine exam pattern** using Part 2 pattern database
 8. **Present findings to user** briefly:
    > "I identified your university as **[Name]**, department **[Dept]**, following a **[Pattern > >
-   > Type]** pattern with **[Assessment Split]** assessment. Subjects found: [Subject 1], [Subject >
+   > > Type]** pattern with **[Assessment Split]** assessment. Subjects found: [Subject 1],
+   > [Subject >
+   >
    > > 2]..."
 9. **Ask user what they need**: answer writing, notes, PYQ analysis, IMP topics, assignment, or
    practice paper
