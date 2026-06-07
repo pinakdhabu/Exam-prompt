@@ -1,34 +1,24 @@
 # Universal Exam Prompt — Ultimate A+ Answer System for Any University Worldwide
 
-![Skills](https://img.shields.io/badge/skills-26-blue) ![Papers](https://img.shields.io/badge/sample_papers-96-green) ![Solutions](https://img.shields.io/badge/solutions-48-orange) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4) ![License](https://img.shields.io/badge/license-MIT-brightgreen)
+<p align="center">
+  <a href="https://pinakdhabu.github.io/Exam-prompt/">
+    <img src="https://img.shields.io/badge/🌐_Live_Website-visit-22d3ee?style=for-the-badge" alt="Live Website">
+  </a>
+  <a href="https://github.com/pinakdhabu/Exam-prompt">
+    <img src="https://img.shields.io/badge/Skills-24-blue?style=for-the-badge" alt="24 Skills">
+  </a>
+  <a href="https://github.com/pinakdhabu/Exam-prompt/stargazers">
+    <img src="https://img.shields.io/github/stars/pinakdhabu/Exam-prompt?style=for-the-badge&logo=github" alt="Stars">
+  </a>
+</p>
 
-![Skills](https://img.shields.io/badge/skills-26-blue) ![Papers](https://img.shields.io/badge/sample_papers-96-green) ![Solutions](https://img.shields.io/badge/solutions-48-orange) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4) ![License](https://img.shields.io/badge/license-MIT-brightgreen)
-
-![Skills](https://img.shields.io/badge/skills-25-blue) ![Papers](https://img.shields.io/badge/sample_papers-96-green) ![Solutions](https://img.shields.io/badge/solutions-48-orange) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4) ![License](https://img.shields.io/badge/license-MIT-brightgreen)
-
-![Skills](https://img.shields.io/badge/skills-24-blue)
-![Papers](https://img.shields.io/badge/sample_papers-96-green)
-![Solutions](https://img.shields.io/badge/solutions-48-orange)
-![Rolling](https://img.shields.io/badge/release-rolling-ff69b4)
-![License](https://img.shields.io/badge/license-MIT-brightgreen)
-
-![Skills](https://img.shields.io/badge/skills-24-blue)
-![Papers](https://img.shields.io/badge/sample_papers-84-green)
-![Solutions](https://img.shields.io/badge/solutions-42-orange)
-![Rolling](https://img.shields.io/badge/release-rolling-ff69b4)
-![License](https://img.shields.io/badge/license-MIT-brightgreen)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![SPPU 2019 Pattern](https://img.shields.io/badge/SPPU-2019%20Pattern-blue)](https://www.unipune.ac.in)
-[![SPPU 2024 Pattern](https://img.shields.io/badge/SPPU-2024%20Pattern-green)](https://www.unipune.ac.in)
-[![Universities](https://img.shields.io/badge/Universities-Any-success)](skills/universal-university-adapter/SKILL.md)
-[![Subjects](https://img.shields.io/badge/Subjects-Any-orange)](skills/)
-[![Question Types](https://img.shields.io/badge/Question%20Types-All-ff69b4)](skills/answer-writer/SKILL.md)
-
-[![Agent Compatible](https://img.shields.io/badge/Agent-Claude%20%7C%20Cursor%20%7C%20Windsurf%20%7C%20Aider-purple)](AGENTS.md)
-[![Built By](https://img.shields.io/badge/Built%20By-AI-blueviolet)](#-how-this-repo-was-built)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-success)](https://pinakdhabu.github.io/Exam-prompt/)
-[![Stars](https://img.shields.io/github/stars/pinakdhabu/Exam-prompt?style=social)](https://github.com/pinakdhabu/Exam-prompt)
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow" alt="MIT"></a>
+  <a href="skills/universal-university-adapter/SKILL.md"><img src="https://img.shields.io/badge/Universities-Any-success" alt="Any University"></a>
+  <a href="skills/"><img src="https://img.shields.io/badge/Subjects-Any-orange" alt="Any Subject"></a>
+  <a href="AGENTS.md"><img src="https://img.shields.io/badge/Agent-Claude%20%7C%20Cursor%20%7C%20Windsurf%20%7C%20Aider-purple" alt="AI Compatible"></a>
+  <a href="https://pinakdhabu.github.io/Exam-prompt/"><img src="https://img.shields.io/badge/GitHub%20Pages-live-success" alt="GitHub Pages"></a>
+</p>
 
 > **The world's most comprehensive AI-powered exam preparation system — works for ANY university,
 > ANY department, ANY subject worldwide.**
@@ -36,6 +26,33 @@
 > Pre-configured for SPPU Computer Engineering. Adapts to any syllabus PDF.
 >
 > Skills-based architecture. Universal agent compatibility. Zero lecture dependency.
+
+---
+
+## 🌐 Live Website
+
+Check out the **[Exam Prompt website](https://pinakdhabu.github.io/Exam-prompt/)** — a fully interactive
+landing page built with the project's dark terminal aesthetic:
+
+- **Homepage** ([`docs/index.html`](docs/index.html)) — Animated hero with typing effect, floating orb background,
+  scroll-triggered reveals, sample output showcase with real AI-generated answers, stats counters, FAQ section,
+  and an architecture gallery with colorful D2 diagrams
+- **Skills Directory** ([`docs/skills.html`](docs/skills.html)) — Browse all 24 skills with search, filter by
+  category, and live count badges
+- **App Tool** ([`docs/app.html`](docs/app.html)) — One-click copy: select a skill, paste your question, and
+  open ChatGPT/Claude/Gemini with everything pre-loaded
+
+### Architecture Gallery
+
+The website features auto-rendered D2 diagrams with vibrant color coding:
+
+| Diagram | Description |
+|---|---|
+| [📐 System Architecture](architectures/exports/system-architecture.svg) | Full pipeline: Input → Ingestion → Knowledge → Orchestrator → Skills → LLM → Validation → Output |
+| [🧭 User Journey](architectures/exports/user-journey.svg) | Student flow: Setup (blue) → Choose Action (orange) → Get Results (green) |
+| [🧠 Skills Ecosystem](architectures/exports/skills-ecosystem.svg) | All 24 skills color-coded by category (teal, fuchsia, violet, orange, amber, blue) |
+| [🔍 RAG Pipeline](architectures/exports/rag-pipeline.svg) | Retrieval-augmented generation data flow |
+| [🚀 Deployment](architectures/exports/deployment.svg) | GitHub → AI Agents → Users flow |
 
 ---
 
@@ -148,11 +165,14 @@ exam-prompt/
 │
 ├── architectures/               #  Architecture-as-Code (D2 language)
 │   ├── d2/                      #    → Source .d2 files
-│   │   ├── system.d2
+│   │   ├── system.d2            #    → Legacy system architecture
+│   │   ├── system-architecture-simple.d2  # → Compact, colorful system architecture
+│   │   ├── user-journey-simple.d2         # → Colorful user journey flow
+│   │   ├── skills-ecosystem-simple.d2     # → Colorful skills mind map
 │   │   ├── rag-pipeline.d2
 │   │   ├── student-flow.d2
 │   │   └── deployment.d2
-│   └── exports/                 #    → Auto-rendered SVGs
+│   └── exports/                 #    → Auto-rendered SVGs (view on website)
 │
 ├── scripts/                      #  Utilities & conversion tools
 │   ├── create-skill.sh           #    → Generate new skill from template
