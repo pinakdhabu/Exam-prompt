@@ -1,29 +1,107 @@
-# Exam Prompt — User Journey
-# Clean flow: Setup → Choose → Get Results
-
 direction: right
 
-setup: "🛠️\nSetup" {
-  univ: "Pick University"
-  subject: "Pick Subject"
-  pattern: "Pick Pattern"
-}
+setup: Setup
+setup.style.fill: "#0284c7"
+setup.style.stroke: "#7dd3fc"
+setup.style.stroke-width: 3
+setup.style.font-color: "#f0f9ff"
+setup.style.font-size: 20
 
-actions: "🎯\nChoose Action" {
-  write: "✍️ Write\nAnswer"
-  notes: "📓 Generate\nNotes"
-  pyq: "📊 Analyze\nPYQs"
-  imp: "🎯 Get IMP\nTopics"
-  mcq: "✅ Practice\nMCQs"
-  plan: "📅 Plan\nStudy"
-}
+actions: Choose Action
+actions.style.fill: "#ea580c"
+actions.style.stroke: "#fdba74"
+actions.style.stroke-width: 3
+actions.style.font-color: "#fff7ed"
+actions.style.font-size: 20
 
-results: "📤\nGet Results" {
-  answer: "10/10 Answer"
-  study_notes: "Complete Notes"
-  predictions: "Predictions"
-  schedule: "Study Schedule"
-}
+results: Get Results
+results.style.fill: "#16a34a"
+results.style.stroke: "#86efac"
+results.style.stroke-width: 3
+results.style.font-color: "#f0fdf4"
+results.style.font-size: 20
 
+setup.uni: Pick University
+setup.uni.style.fill: "#0e7490"
+setup.uni.style.stroke: "#67e8f9"
+setup.uni.style.stroke-width: 2
+setup.uni.style.font-color: "#ecfeff"
+setup.uni.style.font-size: 14
+
+setup.sub: Pick Subject
+setup.sub.style.fill: "#0e7490"
+setup.sub.style.stroke: "#67e8f9"
+setup.sub.style.stroke-width: 2
+setup.sub.style.font-color: "#ecfeff"
+setup.sub.style.font-size: 14
+
+setup.pat: Pick Pattern
+setup.pat.style.fill: "#0e7490"
+setup.pat.style.stroke: "#67e8f9"
+setup.pat.style.stroke-width: 2
+setup.pat.style.font-color: "#ecfeff"
+setup.pat.style.font-size: 14
+
+actions.write: Write Answer
+actions.write.style.fill: "#c2410c"
+actions.write.style.stroke: "#fb923c"
+actions.write.style.font-color: "#fff7ed"
+actions.write.style.font-size: 14
+
+actions.notes: Generate Notes
+actions.notes.style.fill: "#c2410c"
+actions.notes.style.stroke: "#fb923c"
+actions.notes.style.font-color: "#fff7ed"
+actions.notes.style.font-size: 14
+
+actions.pyq: Analyze PYQs
+actions.pyq.style.fill: "#c2410c"
+actions.pyq.style.stroke: "#fb923c"
+actions.pyq.style.font-color: "#fff7ed"
+actions.pyq.style.font-size: 14
+
+actions.imp: Get IMP Topics
+actions.imp.style.fill: "#b45309"
+actions.imp.style.stroke: "#fbbf24"
+actions.imp.style.font-color: "#fffbeb"
+actions.imp.style.font-size: 14
+
+actions.mcq: Practice MCQs
+actions.mcq.style.fill: "#c2410c"
+actions.mcq.style.stroke: "#fb923c"
+actions.mcq.style.font-color: "#fff7ed"
+actions.mcq.style.font-size: 14
+
+actions.plan: Plan Study
+actions.plan.style.fill: "#b45309"
+actions.plan.style.stroke: "#fbbf24"
+actions.plan.style.font-color: "#fffbeb"
+actions.plan.style.font-size: 14
+
+results.answer: 10/10 Answer
+results.answer.style.fill: "#15803d"
+results.answer.style.stroke: "#4ade80"
+results.answer.style.font-color: "#f0fdf4"
+results.answer.style.font-size: 14
+
+results.notes: Complete Notes
+results.notes.style.fill: "#15803d"
+results.notes.style.stroke: "#4ade80"
+results.notes.style.font-color: "#f0fdf4"
+results.notes.style.font-size: 14
+
+results.pred: Topic Predictions
+results.pred.style.fill: "#15803d"
+results.pred.style.stroke: "#4ade80"
+results.pred.style.font-color: "#f0fdf4"
+results.pred.style.font-size: 14
+
+results.sched: Study Schedule
+results.sched.style.fill: "#15803d"
+results.sched.style.stroke: "#4ade80"
+results.sched.style.font-color: "#f0fdf4"
+results.sched.style.font-size: 14
+
+setup.uni -> setup.sub -> setup.pat
 setup -> actions
 actions -> results
