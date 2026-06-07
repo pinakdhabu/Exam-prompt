@@ -483,6 +483,9 @@
     width: 100%; height: auto; border-radius: var(--radius-sm);
     display: block; background: var(--surface-alt); padding: 8px;
   }
+  .arch-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
   .arch-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; justify-content: center; }
   .arch-links a {
     font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent);
@@ -544,6 +547,7 @@
     .hero-buttons { flex-direction: column; align-items: center; }
     .hero-buttons .btn { width: 100%; max-width: 280px; justify-content: center; }
     .trust-grid { grid-template-columns: 1fr; }
+    .arch-grid { grid-template-columns: 1fr; }
     .gems-grid { grid-template-columns: 1fr; }
     .section-header .term-line .line-accent { display: none; }
   }
@@ -555,6 +559,7 @@
     .hero h1 { font-size: 2rem; }
     .hero { padding: 48px 0 24px; }
     .hero-sub { font-size: 0.75rem; max-width: 100%; }
+    .arch-grid { gap: 12px; }
     .stat-card { min-width: 100%; }
     .step-num { width: 28px; height: 28px; font-size: 0.65rem; }
     .step-body h3 { font-size: 0.78rem; }
@@ -982,27 +987,92 @@ C) T1 deleted A...
 
 <hr class="section-divider">
 
-<!-- Architecture -->
-<section class="section">
+<!-- Architecture Gallery -->
+<section class="section" id="architecture">
   <div class="container">
     <div class="section-header reveal">
-      <div class="term-line"><span class="arrow">&gt;</span> cat architectures/system.d2 <span class="line-accent"></span></div>
-      <h2>Architecture</h2>
-      <p>System diagrams from D2 source, auto-rendered via GitHub Actions.</p>
+      <div class="term-line"><span class="arrow">&gt;</span> ls architectures/ <span class="line-accent"></span></div>
+      <h2>Architecture Gallery</h2>
+      <p>System diagrams from D2 source — auto-rendered via <code>d2</code> CLI with <code>elk</code> layout. Each diagram is a living document tied to the actual code.</p>
     </div>
-    <div class="arch-card reveal reveal-delay-1">
-      <div style="max-height:420px;overflow-y:auto;border-radius:var(--radius-sm);">
-        <img src="architectures/exports/system.svg" alt="System Architecture" loading="lazy">
+
+    <!-- System Architecture -->
+    <div class="arch-card reveal reveal-delay-1" style="margin-bottom:20px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <h3 style="font-family:var(--font-mono);font-size:0.85rem;font-weight:600">📐 System Architecture <span style="font-size:0.65rem;color:var(--muted);font-weight:400">— Full pipeline: input → ingestion → knowledge → orchestrator → skills → LLM → validation → output</span></h3>
+        <a href="architectures/exports/system-architecture.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.65rem;color:var(--accent)">open full →</a>
       </div>
-      <div class="arch-links">
-        <span style="color:var(--muted)">diagrams:</span>
-        <a href="architectures/exports/system.svg">system</a>
-        <a href="architectures/exports/student-flow.svg">student-flow</a>
-        <a href="architectures/exports/rag-pipeline.svg">rag-pipeline</a>
-        <a href="architectures/exports/deployment.svg">deployment</a>
-        <span style="color:var(--muted)">|</span>
-        <a href="https://github.com/pinakdhabu/Exam-prompt/blob/main/architectures/d2/system.d2">source.d2</a>
+      <div style="max-height:480px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:8px">
+        <img src="architectures/exports/system-architecture.svg" alt="Complete System Architecture" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
       </div>
+      <div class="arch-links" style="margin-top:8px">
+        <a href="architectures/d2/system-architecture.d2">source.d2</a>
+      </div>
+    </div>
+
+    <!-- Two-column layout for smaller diagrams -->
+    <div class="arch-grid reveal reveal-delay-2">
+      <!-- RAG Pipeline -->
+      <div class="arch-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">🔍 RAG Pipeline</h3>
+          <a href="architectures/exports/rag-pipeline.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open →</a>
+        </div>
+        <div style="max-height:260px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
+          <img src="architectures/exports/rag-pipeline.svg" alt="RAG Pipeline" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
+        </div>
+        <div class="arch-links" style="margin-top:6px">
+          <a href="architectures/d2/rag-pipeline.d2">source.d2</a>
+        </div>
+      </div>
+
+      <!-- User Journey -->
+      <div class="arch-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">🧭 User Journey</h3>
+          <a href="architectures/exports/user-journey.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open →</a>
+        </div>
+        <div style="max-height:260px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
+          <img src="architectures/exports/user-journey.svg" alt="User Journey" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
+        </div>
+        <div class="arch-links" style="margin-top:6px">
+          <a href="architectures/d2/user-journey.d2">source.d2</a>
+        </div>
+      </div>
+
+      <!-- Skills Ecosystem -->
+      <div class="arch-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">🧠 Skills Ecosystem</h3>
+          <a href="architectures/exports/skills-ecosystem.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open →</a>
+        </div>
+        <div style="max-height:260px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
+          <img src="architectures/exports/skills-ecosystem.svg" alt="Skills Ecosystem" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
+        </div>
+        <div class="arch-links" style="margin-top:6px">
+          <a href="architectures/d2/skills-ecosystem.d2">source.d2</a>
+        </div>
+      </div>
+
+      <!-- Deployment -->
+      <div class="arch-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">🚀 Deployment</h3>
+          <a href="architectures/exports/deployment.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open →</a>
+        </div>
+        <div style="max-height:260px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
+          <img src="architectures/exports/deployment.svg" alt="Deployment" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
+        </div>
+        <div class="arch-links" style="margin-top:6px">
+          <a href="architectures/d2/deployment.d2">source.d2</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="arch-links reveal" style="margin-top:20px;justify-content:center;gap:16px">
+      <a href="architectures/exports/student-flow.svg" style="font-size:0.7rem">student-flow.svg</a>
+      <a href="architectures/exports/system.svg" style="font-size:0.7rem">system.svg (legacy)</a>
+      <a href="https://github.com/pinakdhabu/Exam-prompt/blob/main/architectures/d2/" style="font-size:0.7rem">all D2 sources →</a>
     </div>
   </div>
 </section>

@@ -1,0 +1,135 @@
+# Exam Prompt — Complete System Architecture
+# Rendered via d2 CLI
+
+direction: right
+
+layers: [
+  input: "Input Sources"
+  ingestion: "Document Ingestion"
+  knowledge: "Knowledge Layer"
+  orchestrator: "AI Orchestrator"
+  skills: "Skill Modules"
+  llm: "LLM Layer"
+  validation: "Validation Engine"
+  output: "Output Generator"
+  export: "Export Engine"
+]
+
+input: "Input Sources" {
+  syllabus: Syllabus PDFs
+  pyqs: PYQ PDFs
+  notes: Student Notes
+  query: User Questions
+}
+
+ingestion: "Document Ingestion" {
+  ocr: OCR Engine
+  parser: PDF Parser
+  chunker: Text Chunker
+  metadata: Metadata Extractor
+  ocr -> parser: Extract text
+  parser -> chunker: Split
+  chunker -> metadata: Tag
+}
+
+knowledge: "Knowledge Layer" {
+  embed: Embedding Engine
+  vector_db: Vector Database
+  semantic: Semantic Index
+  cache: Response Cache
+  embed -> vector_db: Store vectors
+  vector_db -> semantic: Index
+}
+
+orchestrator: "AI Orchestrator" {
+  context_builder: Context Builder
+  skill_router: Skill Router
+  university_adapter: University Adapter
+  prompt_engine: Prompt Constructor
+  retrieval: Retrieval Engine
+
+  university_adapter -> context_builder: Config
+  context_builder -> skill_router: Context
+  skill_router -> prompt_engine: Skill
+  retrieval -> context_builder: Retrieved data
+}
+
+plugins: "University Plugins" {
+  sppu: SPPU
+  vtu: VTU
+  jntu: JNTU
+  mumbai: Mumbai
+  aktu: AKTU
+  iit: IIT/NIT
+  uk: Oxford/Cambridge
+  us: North American
+}
+
+skills: "Skill Modules" {
+  answer_writer: ✍️ Answer Writer
+  notes_gen: 📝 Notes Generator
+  pyq_analyzer: 📊 PYQ Analyzer
+  imp_topics: 🎯 IMP Topics
+  mcq_gen: ✅ MCQ Generator
+  flashcards: 🃏 Flashcards
+  study_planner: 📅 Study Planner
+  viva_prep: 🎤 Viva Prep
+  lab_report: 🔬 Lab Report
+  mind_map: 🧠 Mind Map
+  cross_subject: 🔗 Cross-Subject Mapper
+  formula_sheet: 📐 Formula Sheet
+  case_study: 📚 Case Study
+  essay_grader: ⭐ Essay Grader
+  crammer: ⚡ Crammer
+  exam_paper: 📋 Exam Paper
+  assignment: 📝 Assignment Writer
+}
+
+llm: "LLM Layer" {
+  claude: Claude
+  gpt: GPT-4o
+  gemini: Gemini
+  local: Local Models
+}
+
+validation: "Validation Engine" {
+  syllabus_align: Syllabus Alignment
+  co_map: CO Mapping
+  bloom_check: Bloom's Verification
+  hallucination: Hallucination Check
+  format: Format Validator
+}
+
+output: "Output Generator" {
+  answers: Exam Answers
+  notes: Notes
+  reports: Analysis Reports
+  mcqs: Practice MCQs
+  flashcards: Flashcard Decks
+  schedules: Study Schedules
+  diagrams: Mind Maps
+  papers: Question Papers
+  lab: Lab Reports
+}
+
+export: "Export Engine" {
+  pdf: PDF
+  docx: DOCX
+  md: Markdown
+  anki: Anki APKG
+  csv: CSV
+  svg: SVG
+}
+
+# Data flows
+input -> ingestion: Raw documents
+ingestion -> knowledge: Chunked text
+knowledge -> orchestrator: Retrieved context
+orchestrator -> plugins: University detection
+plugins -> orchestrator: Pattern config
+orchestrator -> skills: Selected skill
+skills -> llm: Prompt + context
+llm -> validation: Raw output
+validation -> output: Validated output
+output -> export: Formatted content
+
