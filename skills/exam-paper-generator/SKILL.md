@@ -519,8 +519,8 @@ Final compliance table showing every question mapped to CO + Bloom level + marks
 
 ## Mathematics & LaTeX Formatting
 
-For question papers involving mathematical expressions, output equations using **LaTeX syntax**
-for compatibility with the KaTeX/PDF rendering pipeline:
+For question papers involving mathematical expressions, output equations using **LaTeX syntax** for
+compatibility with the KaTeX/PDF rendering pipeline:
 
 ### Display Math (for equations, integrals, matrices)
 
@@ -550,17 +550,17 @@ The partial derivative \(\frac{\partial u}{\partial x}\) is given by...
 
 ### Supported LaTeX Constructs
 
-| Construct      | LaTeX Example                             | Renders As                      |
-| -------------- | ----------------------------------------- | ------------------------------- |
-| Fractions      | `\frac{a}{b}`                             | a/b fraction                    |
-| Integrals      | `\int_{0}^{1} x dx`                       | ∫₀¹ x dx                        |
-| Summations     | `\sum_{i=1}^{n} i`                        | Σᵢ₌₁ⁿ i                         |
-| Matrices       | `\begin{bmatrix} a & b \\ c & d \end{bmatrix}` | 2×2 matrix               |
-| Determinants   | `\begin{vmatrix} a & b \\ c & d \end{vmatrix}` | 2×2 determinant          |
-| Greek symbols  | `\alpha`, `\beta`, `\lambda`              | α, β, λ                         |
-| Derivatives    | `\frac{dy}{dx}`, `\frac{\partial u}{\partial x}` | dy/dx, ∂u/∂x               |
-| Fourier Series | `a_0 + \sum_{n=1}^{\infty} (a_n \cos(nx) + b_n \sin(nx))` | Fourier series       |
-| Eigenvalues    | `\lambda I - A`                            | λI - A                          |
+| Construct      | LaTeX Example                                             | Renders As      |
+| -------------- | --------------------------------------------------------- | --------------- |
+| Fractions      | `\frac{a}{b}`                                             | a/b fraction    |
+| Integrals      | `\int_{0}^{1} x dx`                                       | ∫₀¹ x dx        |
+| Summations     | `\sum_{i=1}^{n} i`                                        | Σᵢ₌₁ⁿ i         |
+| Matrices       | `\begin{bmatrix} a & b \\ c & d \end{bmatrix}`            | 2×2 matrix      |
+| Determinants   | `\begin{vmatrix} a & b \\ c & d \end{vmatrix}`            | 2×2 determinant |
+| Greek symbols  | `\alpha`, `\beta`, `\lambda`                              | α, β, λ         |
+| Derivatives    | `\frac{dy}{dx}`, `\frac{\partial u}{\partial x}`          | dy/dx, ∂u/∂x    |
+| Fourier Series | `a_0 + \sum_{n=1}^{\infty} (a_n \cos(nx) + b_n \sin(nx))` | Fourier series  |
+| Eigenvalues    | `\lambda I - A`                                           | λI - A          |
 
 ### Math Rendering Pipeline
 
@@ -580,8 +580,8 @@ SPPU-style PDF (Times New Roman)
 
 ### Rules
 
-- All mathematical expressions MUST use proper LaTeX syntax — never plain text approximations
-  (e.g., write `\(x^2\)` not `x^2`).
+- All mathematical expressions MUST use proper LaTeX syntax — never plain text approximations (e.g.,
+  write `\(x^2\)` not `x^2`).
 - Use `$$...$$` for display math (equations on their own line).
 - Use `\(...\)` for inline math (variables and formulas within text).
 - Matrices use `\begin{bmatrix}...\end{bmatrix}`.

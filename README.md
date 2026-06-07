@@ -23,9 +23,11 @@
   <img src="https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square" alt="Last Commit">
 </p>
 
-> **The world's most comprehensive AI-powered exam preparation system — works for ANY university, ANY department, ANY subject worldwide.**
+> **The world's most comprehensive AI-powered exam preparation system — works for ANY university,
+> ANY department, ANY subject worldwide.**
 >
-> Pre-configured for SPPU Computer Engineering. Adapts to any syllabus PDF. Skills-based architecture. Universal agent compatibility.
+> Pre-configured for SPPU Computer Engineering. Adapts to any syllabus PDF. Skills-based
+> architecture. Universal agent compatibility.
 
 ---
 
@@ -45,21 +47,25 @@ npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
 
 **That's it.** No config files, no API keys, no setup. The AI auto-loads the right skill.
 
-> **Want one-click access?** Use the [Gemini Gems](#-quick-start-with-gemini-gems) below — zero setup required.
+> **Want one-click access?** Use the [Gemini Gems](#-quick-start-with-gemini-gems) below — zero
+> setup required.
 
 ---
 
 ## 📸 Generated Question Papers
 
-**16 professionally formatted PDFs** — real output from the pipeline, not mockups. Times New Roman, KaTeX math, SPPU layout with seat-number box, right-aligned marks, and OR separators.
+**16 professionally formatted PDFs** — real output from the pipeline, not mockups. Times New Roman,
+KaTeX math, SPPU layout with seat-number box, right-aligned marks, and OR separators.
 
 ### First Year (FE)
+
 <p align="center">
   <a href="generated-examples/pdfs/fe-2024-maths1-qp.pdf"><img src="docs/images/pdf-previews/fe-2024-maths1-qp.png" width="200" alt="FE Maths 2024"></a>
   <a href="generated-examples/pdfs/fe-2019-programming-qp.pdf"><img src="docs/images/pdf-previews/fe-2019-programming-qp.png" width="200" alt="FE Programming 2019"></a>
 </p>
 
 ### Second Year (SE)
+
 <p align="center">
   <a href="generated-examples/pdfs/se-sem3-data-structures-qp.pdf"><img src="docs/images/pdf-previews/se-sem3-data-structures-qp.png" width="200" alt="SE DS"></a>
   <a href="generated-examples/pdfs/se-sem3-data-structures-solution.pdf"><img src="docs/images/pdf-previews/se-sem3-data-structures-solution.png" width="200" alt="SE DS Solution"></a>
@@ -67,6 +73,7 @@ npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
 </p>
 
 ### Third Year (TE)
+
 <p align="center">
   <a href="generated-examples/pdfs/te-sem5-computer-networks-qp.pdf"><img src="docs/images/pdf-previews/te-sem5-computer-networks-qp.png" width="200" alt="TE CN"></a>
   <a href="generated-examples/pdfs/te-sem5-dbms-qp.pdf"><img src="docs/images/pdf-previews/te-sem5-dbms-qp.png" width="200" alt="TE DBMS"></a>
@@ -75,6 +82,7 @@ npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
 </p>
 
 ### Fourth Year (BE)
+
 <p align="center">
   <a href="generated-examples/pdfs/be-sem7-machine-learning-qp.pdf"><img src="docs/images/pdf-previews/be-sem7-machine-learning-qp.png" width="200" alt="BE ML"></a>
   <a href="generated-examples/pdfs/be-sem7-daa-qp.pdf"><img src="docs/images/pdf-previews/be-sem7-daa-qp.png" width="200" alt="BE DAA"></a>
@@ -83,26 +91,31 @@ npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
 
 > **📄 View all 16 PDFs:** [`generated-examples/pdfs/`](generated-examples/pdfs/)
 >
-> **🔧 Generate your own:** `node scripts/convert-to-pdf.js examples/be/sem-7/machine-learning/sample-paper-1.md output.pdf`
+> **🔧 Generate your own:**
+> `node scripts/convert-to-pdf.js examples/be/sem-7/machine-learning/sample-paper-1.md output.pdf`
 
 ---
 
 ## 🎯 Example: Question Paper (Input) → Model Answer (Generated)
 
-| Question Paper (Input) | AI-Generated Model Answer |
-|:---:|:---:|
-| ![QP](docs/images/pdf-previews/be-sem7-machine-learning-qp.png) | ![Answer](docs/images/pdf-previews/be-sem7-machine-learning-solution.png) |
-| Raw SPPU-format question paper | Professionally structured answer with definition, diagram, example, marking scheme |
+|                     Question Paper (Input)                      |                             AI-Generated Model Answer                              |
+| :-------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
+| ![QP](docs/images/pdf-previews/be-sem7-machine-learning-qp.png) |     ![Answer](docs/images/pdf-previews/be-sem7-machine-learning-solution.png)      |
+|                 Raw SPPU-format question paper                  | Professionally structured answer with definition, diagram, example, marking scheme |
 
-> A normal AI answer without this prompt would be generic and unstructured. The prompt adds SPPU formatting, examiner psychology, anti-deduction rules, and Bloom's level alignment.
+> A normal AI answer without this prompt would be generic and unstructured. The prompt adds SPPU
+> formatting, examiner psychology, anti-deduction rules, and Bloom's level alignment.
 
-See the full solution PDF: [`be-sem7-machine-learning-solution.pdf`](generated-examples/pdfs/be-sem7-machine-learning-solution.pdf)
+See the full solution PDF:
+[`be-sem7-machine-learning-solution.pdf`](generated-examples/pdfs/be-sem7-machine-learning-solution.pdf)
 
 ---
 
 ## 📖 What Is This?
 
-This is a **universal skill hub** that transforms any AI coding agent into a personal **10/10 GPA exam tutor** for **any university worldwide**. Pre-configured with **SPPU Computer Engineering** intelligence. Instantly adapts to any other university's syllabus and exam pattern when provided.
+This is a **universal skill hub** that transforms any AI coding agent into a personal **10/10 GPA
+exam tutor** for **any university worldwide**. Pre-configured with **SPPU Computer Engineering**
+intelligence. Instantly adapts to any other university's syllabus and exam pattern when provided.
 
 The system includes **26 skills** for:
 
@@ -113,19 +126,22 @@ The system includes **26 skills** for:
 - **Create exam papers** — 11+ university patterns (SPPU, VTU, JNTU, Oxford, Cambridge, etc.)
 - **Generate flashcards, MCQs, study plans, formula sheets, mind maps, lab reports**
 
-All powered by a **universal skills-based architecture** inspired by [Anthropic's Agent Skills](https://github.com/anthropics/skills) specification.
+All powered by a **universal skills-based architecture** inspired by
+[Anthropic's Agent Skills](https://github.com/anthropics/skills) specification.
 
 ---
 
 ## 🔧 Generated PDF Pipeline
 
-The repo includes a production-ready pipeline to convert sample papers into professionally formatted PDFs:
+The repo includes a production-ready pipeline to convert sample papers into professionally formatted
+PDFs:
 
 ```
 Sample Paper (Markdown) → Preprocessor → marked (HTML) → KaTeX (Math) → Playwright → A4 PDF
 ```
 
 **Features:**
+
 - **Times New Roman** font (system-installed Microsoft fonts)
 - **KaTeX math rendering** — integrals, matrices, fractions, derivatives, Greek letters
 - **SPPU layout** — seat-number box, right-aligned marks `[6]`, OR separators
@@ -151,12 +167,12 @@ node scripts/gen-pdf-previews.js
 
 One-click access to specialized AI agents — no setup required.
 
-| Tool | Link | What It Does |
-|------|------|:-------------|
+| Tool                   | Link                                                                               | What It Does                                        |
+| ---------------------- | ---------------------------------------------------------------------------------- | :-------------------------------------------------- |
 | **Q.P. Analysis Tool** | [Open Gemini Gem](https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh) | Analyzes PYQs and syllabus to predict exam patterns |
-| **Notes Generator** | [Open Gemini Gem](https://gemini.google.com/gem/bf5b14582187) | Generates 100% syllabus-locked revision notes |
-| **Important Topics** | [Open Gemini Gem](https://gemini.google.com/gem/4266a7e8000e) | Outputs must-prepare IMP topics & questions |
-| **Answer Generator** | [Open Gemini Gem](https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK) | Writes full-marks theory answers |
+| **Notes Generator**    | [Open Gemini Gem](https://gemini.google.com/gem/bf5b14582187)                      | Generates 100% syllabus-locked revision notes       |
+| **Important Topics**   | [Open Gemini Gem](https://gemini.google.com/gem/4266a7e8000e)                      | Outputs must-prepare IMP topics & questions         |
+| **Answer Generator**   | [Open Gemini Gem](https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK) | Writes full-marks theory answers                    |
 
 > **Pro tip:** Upload your syllabus PDF + PYQ PDFs for best results.
 
@@ -188,12 +204,12 @@ exam-prompt/
 
 ## 🎓 Covered Subjects (50+ across 4 years)
 
-| Year | Semesters | Key Subjects |
-|:-----|:----------|:-------------|
-| **FE** | I & II | Maths I & II, Physics, Chemistry, BEE, Programming, Mechanics |
-| **SE** | III & IV | Discrete Math, FDS, OOP, DSA, DBMS, M3, Microprocessor |
-| **TE** | V & VI | **DBMS**, **TOC**, **SPOS**, **CN**, Data Science, **AI**, Web Tech |
-| **BE** | VII & VIII | **DAA**, **ML**, **Deep Learning**, **HPC**, Blockchain |
+| Year   | Semesters  | Key Subjects                                                        |
+| :----- | :--------- | :------------------------------------------------------------------ |
+| **FE** | I & II     | Maths I & II, Physics, Chemistry, BEE, Programming, Mechanics       |
+| **SE** | III & IV   | Discrete Math, FDS, OOP, DSA, DBMS, M3, Microprocessor              |
+| **TE** | V & VI     | **DBMS**, **TOC**, **SPOS**, **CN**, Data Science, **AI**, Web Tech |
+| **BE** | VII & VIII | **DAA**, **ML**, **Deep Learning**, **HPC**, Blockchain             |
 
 [Full subject list →](README.md#covered-subjects)
 
@@ -201,16 +217,16 @@ exam-prompt/
 
 ## 📊 Key Features
 
-| Feature | Detail |
-|:--------|:--------|
-| **Universities** | Any worldwide (SPPU, VTU, JNTU, Oxford, MIT, etc.) |
-| **Question Types** | ALL: theory, numerical, MCQ, case study, derivation, diagram, design, oral, lab |
-| **Command Words** | 50+ (Define → Invent), all 6 Bloom's levels |
-| **Mark Ranges** | 1 → 100+, with universal lines-per-mark formula |
-| **Pattern Support** | 11+ patterns: SPPU 2019/2024, VTU, JNTU, Mumbai, UK/Oxford |
-| **PYQ Coverage** | 2019–2025, all semesters |
-| **Note Formats** | 12+ formats: Outline, Cornell, Mind Map, Flowchart, Q&A |
-| **Time Plans** | 7 options: emergency (1 night) → 1-month |
+| Feature             | Detail                                                                          |
+| :------------------ | :------------------------------------------------------------------------------ |
+| **Universities**    | Any worldwide (SPPU, VTU, JNTU, Oxford, MIT, etc.)                              |
+| **Question Types**  | ALL: theory, numerical, MCQ, case study, derivation, diagram, design, oral, lab |
+| **Command Words**   | 50+ (Define → Invent), all 6 Bloom's levels                                     |
+| **Mark Ranges**     | 1 → 100+, with universal lines-per-mark formula                                 |
+| **Pattern Support** | 11+ patterns: SPPU 2019/2024, VTU, JNTU, Mumbai, UK/Oxford                      |
+| **PYQ Coverage**    | 2019–2025, all semesters                                                        |
+| **Note Formats**    | 12+ formats: Outline, Cornell, Mind Map, Flowchart, Q&A                         |
+| **Time Plans**      | 7 options: emergency (1 night) → 1-month                                        |
 
 ---
 

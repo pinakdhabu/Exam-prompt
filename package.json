@@ -43,7 +43,7 @@
     "diagram:render": "node scripts/diagram-gen.js",
     "diagram:watch": "node scripts/diagram-gen.js --watch",
     "diagram:formats": "node scripts/diagram-gen.js --list-formats",
-    
+
     "codespaces": "echo 'Ready! Run: bash scripts/validate-skills.sh'",
     "test:fetch": "node scripts/fetch-qp.js --semester 5 --list"
   },

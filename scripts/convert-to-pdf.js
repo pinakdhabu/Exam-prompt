@@ -240,7 +240,7 @@ function usage() {
   console.log('Convert Markdown to SPPU-style PDF (Times New Roman + KaTeX math)');
   console.log('');
   console.log('Usage:  node scripts/convert-to-pdf.js <input.md> [output.pdf]');
-  console.log('');  
+  console.log('');
   console.log('Features: Times New Roman, KaTeX math (integrals, matrices, fractions)');
   console.log('          SPPU layout (seat-box, marks, OR), Mermaid diagrams');
   console.log('Deps: npm install marked playwright katex  &&  npx playwright install chromium');
