@@ -122,6 +122,7 @@ const UNICODE_TO_LATEX = {
   '⇒': '\\Rightarrow', '⇐': '\\Leftarrow', '⇔': '\\Leftrightarrow',
   '≈': '\\approx', '≡': '\\equiv', '∝': '\\propto',
   '⊗': '\\otimes', '⊕': '\\oplus', '⊙': '\\odot',
+  '∠': '\\angle', '∅': '\\emptyset', '⊢': '\\vdash',
   'ℕ': '\\mathbb{N}', 'ℤ': '\\mathbb{Z}', 'ℚ': '\\mathbb{Q}',
   'ℝ': '\\mathbb{R}', 'ℂ': '\\mathbb{C}',
 };
@@ -134,7 +135,7 @@ function looksLikeMath(text) {
   if (/[A-Za-z]\^[A-Za-z0-9{}]/.test(text)) return true;
   if (/[A-Za-z]_[A-Za-z0-9{}]/.test(text)) return true;
   if (/\[\[.*?\]\]/.test(text)) return true;
-  const mathUnicode = 'αβγδεζηθικλμνξπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ∞∂∇∫∑∏√≠≤≥∈∩∪⊂⊃⊆⊇∀∃∂';
+  const mathUnicode = 'αβγδεζηθικλμνξπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ∞∂∇∫∑∏√≠≤≥∈∩∪⊂⊃⊆⊇∀∃∠∅⊢∂';
   for (const ch of text) { if (mathUnicode.includes(ch)) return true; }
   return false;
 }
