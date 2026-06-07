@@ -92,11 +92,60 @@ function renderMathServerSide(html) {
 }
 
 /**
+ * Convert Unicode math characters to LaTeX commands.
+ * This maps common Unicode math symbols to their LaTeX equivalents
+ * so existing papers with plain text math render via KaTeX.
+ */
+const UNICODE_TO_LATEX = {
+  'α': '\\alpha', 'β': '\\beta', 'γ': '\\gamma', 'δ': '\\delta',
+  'ε': '\\varepsilon', 'ζ': '\\zeta', 'η': '\\eta', 'θ': '\\theta',
+  'ι': '\\iota', 'κ': '\\kappa', 'λ': '\\lambda', 'μ': '\\mu',
+  'ν': '\\nu', 'ξ': '\\xi', 'π': '\\pi', 'ρ': '\\rho',
+  'σ': '\\sigma', 'τ': '\\tau', 'υ': '\\upsilon', 'φ': '\\phi',
+  'χ': '\\chi', 'ψ': '\\psi', 'ω': '\\omega',
+  'Α': '\\Alpha', 'Β': '\\Beta', 'Γ': '\\Gamma', 'Δ': '\\Delta',
+  'Ε': '\\Epsilon', 'Ζ': '\\Zeta', 'Η': '\\Eta', 'Θ': '\\Theta',
+  'Ι': '\\Iota', 'Κ': '\\Kappa', 'Λ': '\\Lambda', 'Μ': '\\Mu',
+  'Ν': '\\Nu', 'Ξ': '\\Xi', 'Ο': '\\Omicron', 'Π': '\\Pi',
+  'Ρ': '\\Rho', 'Σ': '\\Sigma', 'Τ': '\\Tau', 'Υ': '\\Upsilon',
+  'Φ': '\\Phi', 'Χ': '\\Chi', 'Ψ': '\\Psi', 'Ω': '\\Omega',
+  '∞': '\\infty', '∂': '\\partial', '∇': '\\nabla',
+  '∫': '\\int', '∑': '\\sum', '∏': '\\prod',
+  '√': '\\sqrt', '∛': '\\sqrt[3]',
+  '≠': '\\neq', '≤': '\\leq', '≥': '\\geq',
+  '∈': '\\in', '∉': '\\notin', '∋': '\\ni',
+  '∩': '\\cap', '∪': '\\cup', '⊂': '\\subset', '⊃': '\\supset',
+  '⊆': '\\subseteq', '⊇': '\\supseteq',
+  '∧': '\\land', '∨': '\\lor', '¬': '\\lnot',
+  '∀': '\\forall', '∃': '\\exists', '∄': '\\nexists',
+  '→': '\\to', '←': '\\leftarrow', '↔': '\\leftrightarrow',
+  '⇒': '\\Rightarrow', '⇐': '\\Leftarrow', '⇔': '\\Leftrightarrow',
+  '≈': '\\approx', '≡': '\\equiv', '∝': '\\propto',
+  '⊗': '\\otimes', '⊕': '\\oplus', '⊙': '\\odot',
+  'ℕ': '\\mathbb{N}', 'ℤ': '\\mathbb{Z}', 'ℚ': '\\mathbb{Q}',
+  'ℝ': '\\mathbb{R}', 'ℂ': '\\mathbb{C}',
+};
+
+/**
+ * Check if a segment of text looks like plain-text math.
+ * Returns true if it contains exponents, subscripts, matrices, or math Unicode.
+ */
+function looksLikeMath(text) {
+  if (/[A-Za-z]\^[A-Za-z0-9{}]/.test(text)) return true;
+  if (/[A-Za-z]_[A-Za-z0-9{}]/.test(text)) return true;
+  if (/\[\[.*?\]\]/.test(text)) return true;
+  const mathUnicode = 'αβγδεζηθικλμνξπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ∞∂∇∫∑∏√≠≤≥∈∩∪⊂⊃⊆⊇∀∃∂';
+  for (const ch of text) { if (mathUnicode.includes(ch)) return true; }
+  return false;
+}
+
+/**
  * Preprocess Markdown to add SPPU QP structure.
  * - Skips content inside fenced code blocks (```).
  * - Adds seat-number box + QP header.
  * - Wraps [N] marks in <span class="marks">.
  * - Wraps OR variants in <div class="question-or">.
+ * - Converts plain-text math to LaTeX for KaTeX rendering.
  */
 function preprocessQP(md) {
   if (!(/Q\s*\.?\s*1\s*\)/i.test(md) || /Q\.\s*1\b/i.test(md))) return md;
@@ -125,6 +174,64 @@ function preprocessQP(md) {
     parts[i] = part;
   }
 
+  return parts.join('');
+}
+
+/**
+ * Convert plain-text math expressions to LaTeX-wrapped ones.
+ * - Runs on Markdown BEFORE marked parses it.
+ * - Detects lines/paragraphs with math patterns (exponents, unicode math chars)
+ * - Converts Unicode math symbols to LaTeX
+ * - Wraps converted content in \(...\) or $$...$$
+ * - Skips fenced code blocks
+ */
+function convertPlainTextMath(md) {
+  const parts = md.split(/(```[\s\S]*?```)/g);
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i].startsWith('```') || parts[i].startsWith('<')) continue;
+    let part = parts[i];
+
+    // Process paragraph by paragraph
+    const paragraphs = part.split(/\n\n+/);
+    for (let j = 0; j < paragraphs.length; j++) {
+      const para = paragraphs[j];
+
+      // Skip empty paragraphs, headings, lists, tables, HTML
+      if (!para.trim() || /^#/.test(para.trim()) || /^[*\-]/.test(para.trim()) || /^\d+\./.test(para.trim()) || /^\|/.test(para.trim())) continue;
+      // Skip if already has LaTeX delimiters or HTML
+      if (/\$\$/.test(para) || /\\\(/.test(para)) continue;
+      if (para.trim().startsWith('<')) continue;
+
+      // Skip paragraphs containing HTML (e.g., already-processed marks spans)
+      if (/<[a-z][^>]*>/.test(para)) continue;
+      // Check looksLikeMath on ORIGINAL text, not after conversion
+      if (!looksLikeMath(para)) continue;
+
+      let converted = para;
+
+      // Replace Unicode math characters with LaTeX (add space after to avoid command merging)
+      for (const [uni, latex] of Object.entries(UNICODE_TO_LATEX)) {
+        const re = new RegExp(uni.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+        converted = converted.replace(re, latex + ' ');
+      }
+      // Clean up extra spaces from replacements
+      converted = converted.replace(/  +/g, ' ');
+
+      // Wrap matrix patterns
+      converted = converted.replace(/\[\[([^\]]+(?:\][^\]]+)*)\]\]/g, (_, content) => {
+        const rows = content.split(/\],\[/).map(r => r.split(',').map(t => t.trim()).join(' & '));
+        return '\\begin{bmatrix}' + rows.join('\\\\') + '\\end{bmatrix}';
+      });
+
+      // Wrap in LaTeX delimiters based on length and content
+      if (converted.length > 100 || /\\sum|\\int|\\prod|\\begin/.test(converted)) {
+        paragraphs[j] = '$$ ' + converted + ' $$';
+      } else {
+        paragraphs[j] = '\\(' + converted + '\\)';
+      }
+    }
+    parts[i] = paragraphs.join('\n\n');
+  }
   return parts.join('');
 }
 
@@ -164,8 +271,9 @@ async function main() {
     .replace(/\u2013/g, '--')
     .replace(/\u2014/g, '---');
 
-  // ── Preprocess QP structure ──
+  // ── Preprocess QP structure (includes plain-text math → LaTeX) ──
   md = preprocessQP(md);
+  md = convertPlainTextMath(md);
 
   // ── Mermaid diagrams ──
   const mermaidBlocks = md.match(/```mermaid\s*\n([\s\S]*?)```/g);
