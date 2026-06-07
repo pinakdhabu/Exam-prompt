@@ -48,8 +48,8 @@
     "test:fetch": "node scripts/fetch-qp.js --semester 5 --list"
   },
   "dependencies": {
-    "marked": "^15.0.0",
-    "playwright": "^1.52.0"
+    "marked": "^15.0.12",
+    "playwright": "^1.60.0"
   },
   "devDependencies": {
     "prettier": "^3.0.0"
