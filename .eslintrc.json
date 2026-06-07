@@ -1,0 +1,30 @@
+{
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "es2022": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022
+  },
+  "rules": {
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+    "no-undef": "error",
+    "no-redeclare": "error",
+    "no-constant-condition": "warn",
+    "no-empty": ["warn", { "allowEmptyCatch": true }],
+    "no-extra-semi": "warn",
+    "no-unreachable": "error",
+    "eqeqeq": ["warn", "smart"],
+    "no-var": "warn",
+    "prefer-const": "warn",
+    "no-process-exit": "off"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "architectures/",
+    "generated-examples/",
+    "cline_docs/",
+    "templates/"
+  ]
+}

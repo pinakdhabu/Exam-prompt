@@ -6,3 +6,35 @@ node_modules/
 .codegraph/
 .agents/
 skills-lock.json
+
+# Generated outputs
+pdf_output/
+_diagrams/
+test-diagrams/
+
+
+# Typst temp/debug files
+*.typ
+!scripts/*.typ
+
+# Mermaid temp files
+*.mmd
+
+# Environment files
+.env
+.env.*
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+
+
+# Test artifacts
+coverage/
+.nyc_output/

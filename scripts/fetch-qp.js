@@ -29,6 +29,7 @@
  * Cross-platform: Linux, macOS, Windows
  * Dependencies: node, playwright (npx playwright install chromium)
  */
+/* globals document */
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');

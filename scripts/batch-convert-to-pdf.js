@@ -68,31 +68,18 @@ console.log('============================================================');
 console.log('');
 
 // Check dependencies
-let hasMarked = false;
-let hasPlaywright = false;
-let hasKatex = false;
+let hasTypst = false;
 try {
-  require.resolve('marked');
-  hasMarked = true;
-} catch { /* not installed */ }
-try {
-  require.resolve('playwright');
-  hasPlaywright = true;
-} catch { /* not installed */ }
-try {
-  require.resolve('katex');
-  hasKatex = true;
+  const { execSync } = require('child_process');
+  execSync('typst --version', { stdio: 'pipe' });
+  hasTypst = true;
 } catch { /* not installed */ }
 
-if (!hasMarked || !hasPlaywright || !hasKatex) {
-  console.log('⚠ Missing dependencies. Install with:');
+if (!hasTypst) {
+  console.log('⚠ typst is required for PDF conversion.');
   console.log('');
-  if (!hasMarked) console.log('  npm install marked');
-  if (!hasPlaywright) console.log('  npm install playwright');
-  if (!hasKatex) console.log('  npm install katex');
-  console.log('  npx playwright install chromium');
-  console.log('');
-  console.log('Or just run:  npm install');
+  console.log('  Install: https://typst.app (v0.14+)');
+  console.log('  Or:     curl -fsSL https://typst.community/typst-install/install.sh | sh');
   console.log('');
   if (!DRY_RUN) {
     console.log('Aborting. Run with --dry-run to see what would convert.');

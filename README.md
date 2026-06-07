@@ -55,7 +55,7 @@ npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
 ## 📸 Generated Question Papers
 
 **16 professionally formatted PDFs** — real output from the pipeline, not mockups. Times New Roman,
-KaTeX math, SPPU layout with seat-number box, right-aligned marks, and OR separators.
+native Typst math rendering, SPPU layout with seat-number box, right-aligned marks, and OR separators.
 
 ### First Year (FE)
 
@@ -137,29 +137,29 @@ The repo includes a production-ready pipeline to convert sample papers into prof
 PDFs:
 
 ```
-Sample Paper (Markdown) → Preprocessor → marked (HTML) → KaTeX (Math) → Playwright → A4 PDF
+Sample Paper (Markdown) → md-to-Typst converter → typst compile → A4 PDF
 ```
 
 **Features:**
-
-- **Times New Roman** font (system-installed Microsoft fonts)
-- **KaTeX math rendering** — integrals, matrices, fractions, derivatives, Greek letters
+- **Times New Roman + Cambria Math** (native Typst math rendering)
+- **Native math rendering** — integrals, matrices, fractions, derivatives, Greek letters
 - **SPPU layout** — seat-number box, right-aligned marks `[6]`, OR separators
-- **Mermaid diagrams** — auto-rendered to SVG
-- **Plain-text math detection** — Unicode Σ, ∂, ∫, Greek letters auto-converted to LaTeX
+- **Dynamic page breaks** — proper spacing, justified paragraphs
+- **LaTeX → Typst conversion** — Unicode math symbols auto-mapped
 
 ```bash
 # Single file
 node scripts/convert-to-pdf.js examples/te/sem-5/dbms/sample-paper-1.md output.pdf
 
-# All 48 sample papers
+# All sample papers
 node scripts/batch-convert-to-pdf.js
 
 # Generate preview thumbnails
 node scripts/gen-pdf-previews.js
 ```
 
-**Dependencies:** `npm install marked playwright katex && npx playwright install chromium`
+**Dependencies:** `typst` (v0.14+) — install from https://typst.app
+**Optional:** `npm install marked playwright` (for preview thumbnails and QP fetching)
 
 ---
 
@@ -191,7 +191,7 @@ exam-prompt/
 │   └── ... (20 more skills)
 ├── generated-examples/          # 16 real PDFs generated from the pipeline
 ├── scripts/                     # Conversion & utility tools
-│   ├── convert-to-pdf.js        # MD → PDF (Node/Playwright + KaTeX)
+│   ├── convert-to-pdf.js        # MD → PDF (Typst pipeline)
 │   ├── batch-convert-to-pdf.js  # Batch convert all sample papers
 │   └── gen-pdf-previews.js      # Generate PNG preview thumbnails
 ├── docs/                        # GitHub Pages website
