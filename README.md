@@ -55,7 +55,8 @@ npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
 ## 📸 Generated Question Papers
 
 **16 professionally formatted PDFs** — real output from the pipeline, not mockups. Times New Roman,
-native Typst math rendering, SPPU layout with seat-number box, right-aligned marks, and OR separators.
+native Typst math rendering, SPPU layout with seat-number box, right-aligned marks, and OR
+separators.
 
 ### First Year (FE)
 
@@ -141,6 +142,7 @@ Sample Paper (Markdown) → md-to-Typst converter → typst compile → A4 PDF
 ```
 
 **Features:**
+
 - **Times New Roman + Cambria Math** (native Typst math rendering)
 - **Native math rendering** — integrals, matrices, fractions, derivatives, Greek letters
 - **SPPU layout** — seat-number box, right-aligned marks `[6]`, OR separators
@@ -158,8 +160,8 @@ node scripts/batch-convert-to-pdf.js
 node scripts/gen-pdf-previews.js
 ```
 
-**Dependencies:** `typst` (v0.14+) — install from https://typst.app
-**Optional:** `npm install marked playwright` (for preview thumbnails and QP fetching)
+**Dependencies:** `typst` (v0.14+) — install from https://typst.app **Optional:**
+`npm install marked playwright` (for preview thumbnails and QP fetching)
 
 ---
 
