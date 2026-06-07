@@ -4,80 +4,171 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Exam Prompt — Skill App</title>
+<meta name="description" content="Copy any skill prompt + your question in one click. Open ChatGPT, Claude, or Gemini ready to go.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0c0c0e;
-    --surface: #18181b;
-    --surface-alt: #1f1f23;
+    --bg: #0a0a0d;
+    --surface: #141418;
+    --surface-alt: #1a1a20;
     --text: #f4f4f5;
     --secondary: #a1a1aa;
     --muted: #52525b;
     --accent: #22d3ee;
-    --accent-dim: rgba(34,211,238,0.12);
+    --accent-dim: rgba(34,211,238,0.10);
     --warm: #fb923c;
-    --success: #4ade80;
+    --green: #4ade80;
     --border: #27272a;
     --border-bright: #3f3f46;
     --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
     --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --radius: 6px;
-    --radius-sm: 4px;
+    --radius: 8px;
+    --radius-sm: 5px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: var(--font-sans); height: 100vh; display: flex; flex-direction: column; font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
-  header { padding: 0 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; gap: 8px; height: 52px; background: rgba(12,12,14,0.88); backdrop-filter: blur(16px); position: sticky; top: 0; z-index: 100; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: var(--font-sans); height: 100vh; display: flex; flex-direction: column;
+    font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+
+  /* Mesh background */
+  .mesh-bg {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  }
+  .mesh-bg .orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.2;
+    animation: orbFloat 20s ease-in-out infinite;
+  }
+  .mesh-bg .orb:nth-child(1) { width: 400px; height: 400px; background: var(--accent-dim); top: -10%; left: -10%; }
+  .mesh-bg .orb:nth-child(2) { width: 300px; height: 300px; background: rgba(232,121,249,0.05); bottom: -5%; right: -5%; animation-delay: -7s; }
+  @keyframes orbFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(40px, -30px) scale(1.05); }
+    50% { transform: translate(-20px, 40px) scale(0.95); }
+    75% { transform: translate(30px, 20px) scale(1.02); }
+  }
+  .mesh-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  header {
+    padding: 0 16px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-shrink: 0; gap: 8px; min-height: 52px;
+    background: rgba(10,10,13,0.85); backdrop-filter: blur(20px) saturate(1.5);
+    position: sticky; top: 0; z-index: 100;
+  }
   header .left { display: flex; align-items: center; gap: 10px; min-width: 0; }
   header .left a { color: var(--text); text-decoration: none; font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem; letter-spacing: -0.02em; }
   header .left a span { color: var(--accent); }
   header .left .sep { color: var(--muted); font-size: 0.7rem; font-family: var(--font-mono); }
-  header .left .label { color: var(--secondary); font-family: var(--font-mono); font-size: 0.72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  header .left .label {
+    color: var(--secondary); font-family: var(--font-mono); font-size: 0.72rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    transition: opacity 0.3s;
+  }
   .controls { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
   button, select {
     background: transparent; border: 1px solid var(--border); color: var(--text);
-    padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.72rem; cursor: pointer;
-    font-family: var(--font-mono); font-weight: 500; line-height: 1.5; transition: all 0.15s;
+    padding: 5px 14px; border-radius: var(--radius-sm); font-size: 0.72rem; cursor: pointer;
+    font-family: var(--font-mono); font-weight: 500; line-height: 1.5;
+    transition: all 0.2s; outline: none;
   }
   button:hover, select:hover { border-color: var(--border-bright); }
-  button.primary { background: var(--accent); border-color: var(--accent); color: #0c0c0e; }
-  button.primary:hover { box-shadow: 0 0 20px var(--accent-dim); }
-  main { flex: 1; display: flex; flex-direction: column; max-width: 960px; margin: 0 auto; padding: 12px 16px; width: 100%; min-height: 0; }
+  select:focus { border-color: var(--accent); }
+  button.primary {
+    background: linear-gradient(135deg, var(--accent), #06b6d4);
+    border-color: var(--accent); color: #0a0a0d;
+  }
+  button.primary:hover { box-shadow: 0 0 30px var(--accent-dim); transform: translateY(-1px); }
+  main {
+    flex: 1; display: flex; flex-direction: column;
+    max-width: 960px; margin: 0 auto; padding: 16px 16px 8px;
+    width: 100%; min-height: 0; position: relative; z-index: 1;
+  }
   textarea {
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-    color: var(--text); padding: 10px 12px; font-size: 0.8rem; font-family: var(--font-mono);
-    resize: vertical; width: 100%;
+    color: var(--text); padding: 12px 14px; font-size: 0.82rem; font-family: var(--font-mono);
+    resize: vertical; width: 100%; transition: border-color 0.2s, box-shadow 0.2s;
   }
-  textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 20px var(--accent-dim); }
+  textarea:focus {
+    outline: none; border-color: var(--accent);
+    box-shadow: 0 0 24px rgba(34,211,238,0.06);
+  }
   #question { min-height: 70px; margin: 6px 0; flex-shrink: 0; }
-  #prompt { flex: 1; min-height: 100px; font-size: 0.72rem; color: var(--secondary); }
-  .hint { color: var(--muted); font-family: var(--font-mono); font-size: 0.68rem; margin: 3px 0 6px; }
-  .result {
-    display: none; background: var(--surface); border: 1px solid var(--accent-dim);
-    padding: 12px; margin-top: 10px; white-space: pre-wrap;
-    line-height: 1.6; font-size: 0.78rem; max-height: 250px; overflow-y: auto; flex-shrink: 0;
-    border-radius: var(--radius); color: var(--text); font-family: var(--font-mono);
+  #prompt {
+    flex: 1; min-height: 100px; font-size: 0.72rem; color: var(--secondary);
+    transition: opacity 0.3s;
   }
+  .hint { color: var(--muted); font-family: var(--font-mono); font-size: 0.68rem; margin: 3px 0 6px; }
+  .hint .accent { color: var(--accent); }
+
+  /* Toast notification */
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 10px 20px; border-radius: var(--radius);
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--secondary); z-index: 200;
+    opacity: 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none; display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast .toast-icon { color: var(--green); }
+
   .row { display: flex; gap: 6px; flex-shrink: 0; flex-wrap: wrap; align-items: center; }
   .row label { font-family: var(--font-mono); font-weight: 600; font-size: 0.75rem; color: var(--secondary); margin-right: 4px; }
-  footer { border-top: 1px solid var(--border); padding: 8px 16px; font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); text-align: center; flex-shrink: 0; }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 8px 16px;
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted);
+    text-align: center; flex-shrink: 0;
+    background: rgba(10,10,13,0.5);
+  }
   a { color: var(--accent); }
 
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--border-bright); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  main > * { animation: fadeIn 0.4s ease both; }
+  main > *:nth-child(2) { animation-delay: 0.05s; }
+  main > *:nth-child(3) { animation-delay: 0.1s; }
+  main > *:nth-child(4) { animation-delay: 0.15s; }
+  main > *:nth-child(5) { animation-delay: 0.2s; }
+  main > *:nth-child(6) { animation-delay: 0.25s; }
+
   @media (max-width: 640px) {
-    header { flex-wrap: wrap; height: auto; padding: 8px 12px; gap: 6px; }
+    header { flex-wrap: wrap; min-height: auto; padding: 8px 12px; gap: 6px; }
     .controls { flex-wrap: wrap; }
     main { padding: 8px; }
+    .toast { max-width: 90%; font-size: 0.68rem; }
   }
 </style>
 </head>
 <body>
 
+<div class="mesh-bg">
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
 <header>
   <div class="left">
     <a href="index.html">exam<span>~</span>prompt</a>
     <span class="sep">/</span>
-    <span class="label" id="currentSkillLabel">answer-writer</span>
+    <span class="label" id="currentSkillLabel">A+ Answer Writer</span>
   </div>
   <div class="controls">
     <select id="skillSelect">
@@ -125,38 +216,40 @@
 <main>
   <div class="row">
     <label>Your Question</label>
+    <span style="color:var(--muted);font-size:0.65rem;font-family:var(--font-mono)">Include subject, marks, university, and exam type</span>
   </div>
-  <div class="hint">Include subject, marks, university, and exam type.</div>
-  <div class="hint" style="color:var(--accent)">$ 24 skills available — 19 quick-start prompts here, 5 reference prompts below</div>
-  <div class="hint" style="color:var(--accent)">$ The skill prompt + your question get copied together</div>
+  <div class="hint"><span class="accent">$</span> 24 skills available — skill prompt + question copied together</div>
   <textarea id="question" placeholder="Paste your exam question here..."></textarea>
 
-  <div class="row" style="margin-top:6px">
+  <div class="row" style="margin-top:10px">
     <label>Skill Prompt</label>
     <span style="color:var(--muted);font-size:0.68rem;font-family:var(--font-mono)">// stays active for follow-ups</span>
   </div>
   <textarea id="prompt" readonly></textarea>
 
-  <div class="row" style="margin-top:6px">
+  <div class="row" style="margin-top:8px">
     <button id="openChatGPT" class="primary">Open in ChatGPT</button>
     <button id="openClaude">Open in Claude</button>
     <button id="openGemini">Open in Gemini</button>
     <button id="openGem" style="color:var(--warm);border-color:var(--warm);font-size:0.68rem">Open Gemini Gem</button>
   </div>
-
-  <div class="result" id="result"></div>
 </main>
 
 <footer>
-  <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; <a href="skills.html">skills/</a>
+  <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; <a href="skills.html">skills/</a> &middot; <a href="index.html">home</a>
 </footer>
+
+<div class="toast" id="toast">
+  <span class="toast-icon">&#10003;</span>
+  <span id="toastMsg">Copied to clipboard</span>
+</div>
 
 <script>
 const SKILLS = {
   "answer-writer": {
     name: "A+ Answer Writer",
     gem: "https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK",
-    desc: "You are a 10/10 GPA Exam Answer Generator operating at Senior Examiner + University Moderator level.",
+    desc: "10/10 GPA Exam Answer Generator at Senior Examiner + University Moderator level.",
     text: `# Universal Exam A+ System — Any University, Any Subject, 10/10 GPA
 
 Full repository: https://github.com/pinakdhabu/Exam-prompt
@@ -235,7 +328,7 @@ Remain in this role for the entire conversation.` },
   "notes": {
     name: "Notes Generator",
     gem: "https://gemini.google.com/gem/bf5b14582187",
-    desc: "You are an academic notes generator that produces exam-ready study material.",
+    desc: "Academic Notes Specialist producing exam-ready study material.",
     text: `# Notes Generator — Exam-Ready Study Notes
 
 You are an Academic Notes Specialist. Generate structured, exam-ready notes from the given topic or syllabus.
@@ -262,7 +355,7 @@ Remain in this role for the entire conversation.` },
   "pyq": {
     name: "PYQ Analyzer",
     gem: "https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh",
-    desc: "You are a statistical exam analyst. Analyze past question papers to find patterns.",
+    desc: "Statistical Exam Analyst for previous year question papers.",
     text: `# PYQ Analyzer — Previous Year Question Paper Analysis
 
 You are a Statistical Exam Analyst. Analyze the provided question papers and syllabus to generate strategic insights.
@@ -291,7 +384,7 @@ Remain in this role for the entire conversation.` },
   "imp-topics": {
     name: "IMP Topics",
     gem: "https://gemini.google.com/gem/4266a7e8000e",
-    desc: "You are an exam strategist. Generate high-probability important topics.",
+    desc: "Exam Strategist for high-probability important topics.",
     text: `# IMP Topics Generator — Exam Strategy
 
 You are an Exam Strategist. Generate prioritized important topics based on past papers and syllabus.
@@ -318,7 +411,7 @@ Remain in this role for the entire conversation.` },
 
   "assignment": {
     name: "Assignment Writer",
-    desc: "You are an academic assignment writer. Produce structured assignment content.",
+    desc: "Academic Assignment Writer for structured assignment content.",
     text: `# Assignment Writer — Academic Assignment Generator
 
 You are an Academic Assignment Writer. Produce well-structured, referenced assignments.
@@ -343,7 +436,7 @@ Remain in this role for the entire conversation.` },
 
   "exam-paper": {
     name: "Exam Paper Generator",
-    desc: "You are a university examiner. Generate exam question papers.",
+    desc: "University Examiner generating complete exam question papers.",
     text: `# Exam Paper Generator — Question Paper Creator
 
 You are a University Examiner. Generate complete exam question papers matching the specified university pattern.
@@ -366,7 +459,7 @@ Remain in this role for the entire conversation.` },
 
   "prompt-bank": {
     name: "Subject Prompt Bank",
-    desc: "You are a subject-matter expert. Generate optimized sample answers for any discipline.",
+    desc: "Subject-Matter Expert for optimized sample answers.",
     text: `# Subject Prompt Bank — Optimized Sample Answers
 
 You are a Subject-Matter Expert. Generate optimized sample answers calibrated for the specified discipline and mark level.
@@ -391,7 +484,7 @@ Remain in this role for the entire conversation.` },
 
   "flashcard": {
     name: "Flashcard Generator",
-    desc: "You are a flashcard creator. Generate optimized flashcards for spaced repetition.",
+    desc: "Flashcard Specialist for SRS-optimized flashcards.",
     text: `# Flashcard Generator — SRS-Optimized Flashcards
 
 You are a Flashcard Specialist. Convert the given material into optimized flashcards following spaced repetition principles.
@@ -417,7 +510,7 @@ Remain in this role for the entire conversation.` },
 
   "study-planner": {
     name: "Study Planner",
-    desc: "You are a study strategist. Generate personalized study schedules.",
+    desc: "Study Strategist for personalized study schedules.",
     text: `# Study Planner — Personalized Study Schedule
 
 You are a Study Strategist. Generate a day-by-day study plan based on the syllabus, exam date, available hours, and difficulty ratings.
@@ -439,7 +532,7 @@ Remain in this role for the entire conversation.` },
 
   "mcq": {
     name: "MCQ Generator",
-    desc: "You are an MCQ creator. Generate exam-style multiple choice questions.",
+    desc: "MCQ Specialist for exam-style multiple choice questions.",
     text: `# MCQ Practice Generator — Exam-Style Questions
 
 You are an MCQ Specialist. Generate multiple choice questions matching the specified exam pattern and difficulty level.
@@ -464,7 +557,7 @@ Remain in this role for the entire conversation.` },
 
   "viva": {
     name: "Viva / Oral Prep",
-    desc: "You are a viva examiner. Simulate oral exam scenarios.",
+    desc: "Viva Examiner simulating realistic oral exam scenarios.",
     text: `# Viva / Oral Exam Preparation
 
 You are a Viva Examiner. Simulate realistic oral exam scenarios for the given subject and viva type.
@@ -488,7 +581,7 @@ Remain in this role for the entire conversation.` },
 
   "crammer": {
     name: "Last-Minute Crammer",
-    desc: "You are an emergency exam prep specialist. Ultra-compressed study plans.",
+    desc: "Emergency Exam Specialist for ultra-compressed study plans.",
     text: `# Last-Minute Crammer — Emergency Exam Preparation
 
 You are an Emergency Exam Specialist. Generate ultra-compressed study plans for extreme time constraints.
@@ -516,7 +609,7 @@ Remain in this role for the entire conversation.` },
 
   "lab-report": {
     name: "Lab Report Writer",
-    desc: "You are a lab report specialist. Generate complete lab report structures.",
+    desc: "Lab Report Specialist for complete laboratory report structures.",
     text: `# Lab Report Writer — Complete Laboratory Reports
 
 You are a Lab Report Specialist. Generate structured laboratory reports for engineering, science, medical, or research labs.
@@ -538,7 +631,7 @@ Remain in this role for the entire conversation.` },
 
   "formula": {
     name: "Formula Sheet",
-    desc: "You are a formula sheet generator. Compact, exam-ready formula references.",
+    desc: "Formula Sheet Specialist for compact exam-ready references.",
     text: `# Formula Sheet Generator — Exam-Ready Formulas
 
 You are a Formula Sheet Specialist. Generate compact, organized formula sheets for quick exam reference.
@@ -562,7 +655,7 @@ Remain in this role for the entire conversation.` },
 
   "mindmap": {
     name: "Mind Map Generator",
-    desc: "You are a concept visualizer. Generate hierarchical mind maps.",
+    desc: "Concept Visualizer for hierarchical mind maps.",
     text: `# Mind Map Generator — Visual Concept Maps
 
 You are a Concept Visualizer. Generate hierarchical mind maps that show relationships between topics.
@@ -590,7 +683,7 @@ Remain in this role for the entire conversation.` },
 
   "case-study": {
     name: "Case Study Solver",
-    desc: "You are a case analyst. Solve cases using structured frameworks.",
+    desc: "Case Analyst solving cases using structured frameworks.",
     text: `# Case Study Solver — Structured Case Analysis
 
 You are a Case Analyst. Solve case studies using established analytical frameworks.
@@ -615,7 +708,7 @@ Remain in this role for the entire conversation.` },
 
   "essay-grader": {
     name: "Essay Grader",
-    desc: "You are an examiner. Score answers against rubrics with detailed feedback.",
+    desc: "Senior Examiner scoring answers against university rubrics.",
     text: `# Essay Grader — Answer Evaluation System
 
 You are a Senior Examiner. Evaluate student answers against university-specific rubrics.
@@ -642,7 +735,7 @@ Remain in this role for the entire conversation.` },
 
   "cross-subject": {
     name: "Cross-Subject Mapper",
-    desc: "You are a curriculum analyst. Map concepts across subjects.",
+    desc: "Curriculum Analyst for interdisciplinary concept mapping.",
     text: `# Cross-Subject Mapper — Interdisciplinary Concept Mapping
 
 You are a Curriculum Analyst. Show how topics from one subject connect to and build upon topics from other subjects.
@@ -663,7 +756,7 @@ Remain in this role for the entire conversation.` },
 
   "adapter": {
     name: "University Adapter",
-    desc: "You are a university detection specialist. Identify exam patterns and route to correct format.",
+    desc: "University Detection Specialist identifying exam patterns.",
     text: `# University Adapter — Auto-Detect Any University
 
 You are a University Detection Specialist. Identify the user's university from provided information and configure the exam format.
@@ -689,7 +782,7 @@ Remain in this role for the entire conversation.` },
 
   "doc-reader": {
     name: "Document Reader",
-    desc: "You are a document extraction specialist. Convert PDFs/images to clean text.",
+    desc: "Document Extraction Specialist for PDFs and images.",
     text: `# Document Reader — PDF/Image to Text
 
 Convert the provided document to clean, LLM-friendly text.
@@ -705,7 +798,7 @@ See skills/universal-document-reader/SKILL.md for complete instructions.` },
 
   "doc-generator": {
     name: "Document Generator",
-    desc: "You are a document formatter. Convert Markdown to print-ready PDF.",
+    desc: "Document Formatter converting Markdown to print-ready PDF.",
     text: `# Document Generator — Markdown to PDF
 
 Convert the generated Markdown content to a print-ready document.
@@ -725,7 +818,7 @@ See skills/document-generator/SKILL.md for complete instructions.` },
 
   "session-config": {
     name: "Session Config",
-    desc: "You are a configuration manager. Set up persistent student profiles.",
+    desc: "Configuration Manager for persistent student profiles.",
     text: `# Session Config — Persistent Student Profile
 
 Configure a persistent profile for the student across all skills.
@@ -747,7 +840,7 @@ See skills/session-config/SKILL.md for complete instructions.` },
 
   "qp-fetcher": {
     name: "QP Fetcher",
-    desc: "You are a question paper downloader. Auto-fetch PYQs from websites.",
+    desc: "Question Paper Downloader for auto-fetching PYQs.",
     text: `# QP Fetcher — Auto-Fetch Question Papers
 
 Automatically download previous year question papers from university websites.
@@ -765,7 +858,7 @@ See skills/qp-fetcher/SKILL.md for complete instructions.` },
 
   "sppu-simulator": {
     name: "SPPU Exam Simulator",
-    desc: "You are an exam hall simulator. Model real exam constraints.",
+    desc: "Exam Hall Simulator for real physical exam constraints.",
     text: `# SPPU Exam Simulator — Physical Exam Constraints
 
 Simulate real examination hall conditions.
@@ -780,30 +873,43 @@ Simulate real examination hall conditions.
 Load alongside Answer Writer for realistic exam practice.
 
 ## Full Skill
-See skills/sppu-exam-simulator/SKILL.md for complete instructions.` }
+See skills/sppu-simulator/SKILL.md for complete instructions.` }
 };
 
 const skillSelect = document.getElementById('skillSelect');
 const univSelect = document.getElementById('univ');
 const promptArea = document.getElementById('prompt');
 const questionArea = document.getElementById('question');
-const resultArea = document.getElementById('result');
 const copyBtn = document.getElementById('copyBtn');
 const clearBtn = document.getElementById('clearBtn');
 const label = document.getElementById('currentSkillLabel');
+const toast = document.getElementById('toast');
+const toastMsg = document.getElementById('toastMsg');
+
+let toastTimer = null;
+
+function showToast(msg) {
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+}
 
 function loadSkill(id) {
   const skill = SKILLS[id];
   if (!skill) return;
-  promptArea.value = skill.text;
-  label.textContent = skill.name;
+  promptArea.style.opacity = '0';
+  setTimeout(() => {
+    promptArea.value = skill.text;
+    label.textContent = skill.name;
+    promptArea.style.opacity = '1';
+  }, 150);
 }
 
 loadSkill('answer-writer');
 
 skillSelect.addEventListener('change', () => {
   loadSkill(skillSelect.value);
-  resultArea.style.display = 'none';
 });
 
 function buildClipboardText() {
@@ -824,35 +930,29 @@ async function copyToClipboard() {
   }
 }
 
-function showResult(msg) {
-  resultArea.textContent = msg;
-  resultArea.style.display = 'block';
-}
-
 copyBtn.onclick = async () => {
   const ok = await copyToClipboard();
   if (!ok) {
-    showResult('Copy failed. Select all text manually (Ctrl+A, Ctrl+C).');
+    showToast('Copy failed. Use Ctrl+A, Ctrl+C');
     return;
   }
   copyBtn.textContent = 'Copied!';
-  const skill = SKILLS[skillSelect.value].name;
-  showResult('copied to clipboard\n\n$ paste into your AI — skill + question included\n$ follow-ups keep the same role active');
-  setTimeout(() => copyBtn.textContent = 'Copy All', 2000);
+  showToast('Copied! Skill + question ready to paste');
+  setTimeout(() => copyBtn.textContent = 'Copy All', 2500);
 };
 
 clearBtn.onclick = () => {
   questionArea.value = '';
-  resultArea.style.display = 'none';
+  showToast('Question cleared');
 };
 
 async function copyAndOpen(url) {
   const ok = await copyToClipboard();
   if (!ok) {
-    showResult('Copy failed. Select all manually (Ctrl+A, Ctrl+C).');
+    showToast('Copy failed. Use Ctrl+A, Ctrl+C');
     return;
   }
-  showResult('Copied! Paste into the chat that just opened.');
+  showToast('Copied! Opening AI chat...');
   window.open(url, '_blank');
 }
 
@@ -863,9 +963,9 @@ document.getElementById('openGem').onclick = () => {
   const skill = SKILLS[skillSelect.value];
   if (skill && skill.gem) {
     window.open(skill.gem, '_blank');
-    showResult('opening gemini gem: ' + skill.name);
+    showToast('Opening Gemini Gem: ' + skill.name);
   } else {
-    showResult('no gemini gem available for this skill. try: answer-writer, notes, pyq, or imp-topics.');
+    showToast('No Gemini Gem for this skill. Try Answer Writer, Notes, PYQ, or IMP Topics.');
   }
 };
 </script>

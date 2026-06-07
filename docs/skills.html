@@ -4,27 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Skills — Exam Prompt</title>
+<meta name="description" content="Browse all 24 academic AI skills — answer writer, notes, PYQ analysis, flashcards, exam papers, and more.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0c0c0e;
-    --surface: #18181b;
-    --surface-alt: #1f1f23;
+    --bg: #0a0a0d;
+    --surface: #141418;
+    --surface-alt: #1a1a20;
     --text: #f4f4f5;
     --secondary: #a1a1aa;
     --muted: #52525b;
     --accent: #22d3ee;
-    --accent-dim: rgba(34,211,238,0.12);
+    --accent-dim: rgba(34,211,238,0.10);
     --warm: #fb923c;
-    --success: #4ade80;
+    --pink: #e879f9;
+    --green: #4ade80;
+    --yellow: #eab308;
     --border: #27272a;
     --border-bright: #3f3f46;
     --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
     --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --radius: 6px;
-    --radius-sm: 4px;
+    --radius: 8px;
+    --radius-sm: 5px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -32,61 +35,134 @@
     font-family: var(--font-sans); line-height: 1.65; font-size: 15px;
     -webkit-font-smoothing: antialiased;
   }
-  body::before {
-    content: ''; position: fixed; inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
-    background-size: 28px 28px; pointer-events: none; z-index: 0;
+
+  /* Mesh background */
+  .mesh-bg {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
   }
+  .mesh-bg .orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.25;
+    animation: orbFloat 20s ease-in-out infinite;
+  }
+  .mesh-bg .orb:nth-child(1) { width: 400px; height: 400px; background: var(--accent-dim); top: -10%; left: -10%; }
+  .mesh-bg .orb:nth-child(2) { width: 300px; height: 300px; background: rgba(232,121,249,0.06); bottom: -5%; right: -5%; animation-delay: -7s; }
+  @keyframes orbFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(40px, -30px) scale(1.05); }
+    50% { transform: translate(-20px, 40px) scale(0.95); }
+    75% { transform: translate(30px, 20px) scale(1.02); }
+  }
+  .mesh-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
   .container { max-width: 1040px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+
+  /* Scroll reveals */
+  .reveal {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.05s; }
+  .reveal-delay-2 { transition-delay: 0.1s; }
+  .reveal-delay-3 { transition-delay: 0.15s; }
 
   /* Header */
   header {
     border-bottom: 1px solid var(--border);
     position: sticky; top: 0; z-index: 100;
-    background: rgba(12,12,14,0.88); backdrop-filter: blur(16px);
+    background: rgba(10,10,13,0.85); backdrop-filter: blur(20px) saturate(1.5);
   }
   header .container { display: flex; align-items: center; justify-content: space-between; height: 52px; }
   header .logo { font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem; letter-spacing: -0.02em; }
   header .logo a { color: var(--text); text-decoration: none; }
   header .logo span { color: var(--accent); }
+  header .logo .logo-dot {
+    display: inline-block; width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent); margin-left: 2px; vertical-align: middle;
+    animation: pulseDot 2s ease-in-out infinite;
+  }
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
   header nav { display: flex; gap: 2px; }
   header nav a {
     color: var(--secondary); text-decoration: none; padding: 6px 14px;
     font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500;
-    border-radius: var(--radius-sm); transition: color 0.15s, background 0.15s;
+    border-radius: var(--radius-sm); transition: color 0.2s, background 0.2s;
   }
   header nav a:hover { color: var(--text); background: var(--surface); }
 
   /* Page header */
-  .page-head { padding: 48px 0 28px; }
+  .page-head { padding: 48px 0 24px; }
   .page-head .term-line { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); margin-bottom: 8px; }
   .page-head .term-line .arrow { color: var(--accent); }
-  .page-head h1 { font-family: var(--font-mono); font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; }
-  .page-head p { color: var(--secondary); font-size: 0.9rem; max-width: 560px; }
+  .page-head h1 { font-family: var(--font-mono); font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .page-head p { color: var(--secondary); font-size: 0.88rem; max-width: 560px; line-height: 1.6; }
   .page-head .count { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); margin-top: 8px; }
 
-  /* Filter */
-  .filter-bar { display: flex; gap: 6px; padding: 20px 0; flex-wrap: wrap; }
+  /* Search + Filter */
+  .controls-bar { display: flex; gap: 8px; padding: 20px 0; flex-wrap: wrap; align-items: center; }
+  .search-box {
+    position: relative; flex: 1; min-width: 200px;
+  }
+  .search-box input {
+    width: 100%; background: var(--surface); border: 1px solid var(--border);
+    color: var(--text); padding: 7px 14px 7px 34px; border-radius: var(--radius-sm);
+    font-family: var(--font-mono); font-size: 0.72rem; outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-box input:focus { border-color: var(--accent); }
+  .search-box input::placeholder { color: var(--muted); }
+  .search-box .search-icon {
+    position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+    color: var(--muted); font-size: 0.7rem; font-family: var(--font-mono);
+    pointer-events: none;
+  }
+  .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; }
   .filter-btn {
     background: transparent; border: 1px solid var(--border); color: var(--secondary);
-    padding: 5px 16px; border-radius: var(--radius-sm); font-size: 0.72rem; cursor: pointer;
-    font-family: var(--font-mono); font-weight: 500; transition: all 0.15s;
+    padding: 5px 16px; border-radius: 20px; font-size: 0.72rem; cursor: pointer;
+    font-family: var(--font-mono); font-weight: 500; transition: all 0.2s;
   }
-  .filter-btn:hover { border-color: var(--border-bright); color: var(--text); }
-  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #0c0c0e; }
+  .filter-btn:hover { border-color: var(--border-bright); color: var(--text); transform: translateY(-1px); }
+  .filter-btn.active {
+    background: var(--accent); border-color: var(--accent); color: #0a0a0d;
+    box-shadow: 0 0 20px rgba(34,211,238,0.15);
+  }
+  .filter-btn .count-badge {
+    display: inline-block; background: rgba(255,255,255,0.08);
+    padding: 0 6px; border-radius: 10px; font-size: 0.6rem; margin-left: 4px;
+    color: var(--muted);
+  }
+  .filter-btn.active .count-badge { background: rgba(0,0,0,0.15); color: #0a0a0d; }
 
   /* Skills list */
-  .skills-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 48px; }
+  .skills-list {
+    display: flex; flex-direction: column; gap: 1px;
+    background: var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 48px;
+  }
   .skill-item {
-    background: var(--surface); padding: 24px; transition: background 0.15s;
+    background: var(--surface); padding: 24px; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .skill-item::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-dim), transparent);
+    opacity: 0; transition: opacity 0.3s;
   }
   .skill-item:hover { background: var(--surface-alt); }
+  .skill-item:hover::before { opacity: 1; }
 
   .skill-item h3 { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
   .skill-item h3 .tag {
-    display: inline-block; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 500;
-    padding: 1px 10px; border: 1px solid var(--border); margin-left: 10px;
-    color: var(--muted); border-radius: var(--radius-sm); vertical-align: middle;
+    display: inline-block; font-family: var(--font-mono); font-size: 0.58rem; font-weight: 600;
+    padding: 2px 12px; border: 1px solid var(--border); margin-left: 10px;
+    color: var(--muted); border-radius: 20px; vertical-align: middle;
     letter-spacing: 0.02em;
   }
 
@@ -94,14 +170,15 @@
   .skill-meta span {
     font-family: var(--font-mono); font-size: 0.63rem; font-weight: 500;
     color: var(--muted); border: 1px solid var(--border);
-    padding: 2px 10px; border-radius: var(--radius-sm);
+    padding: 2px 10px; border-radius: 20px; transition: all 0.2s;
   }
+  .skill-meta span:hover { border-color: var(--border-bright); color: var(--secondary); }
   .skill-meta a {
     font-family: var(--font-mono); font-size: 0.63rem; color: var(--accent);
-    text-decoration: none; padding: 2px 10px; border: 1px solid var(--border);
-    border-radius: var(--radius-sm); transition: all 0.15s;
+    text-decoration: none; padding: 2px 12px; border: 1px solid var(--border);
+    border-radius: 20px; transition: all 0.2s;
   }
-  .skill-meta a:hover { border-color: var(--accent); }
+  .skill-meta a:hover { border-color: var(--accent); box-shadow: 0 0 12px var(--accent-dim); }
 
   .skill-detail {
     display: grid;
@@ -110,10 +187,10 @@
     margin-top: 6px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, margin 0.3s ease;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), margin 0.3s ease;
   }
   .skill-detail.open {
-    max-height: 300px;
+    max-height: 200px;
   }
   .skill-detail p {
     color: var(--secondary); font-size: 0.82rem; line-height: 1.6;
@@ -124,30 +201,62 @@
   .toggle-btn {
     background: none; border: none; color: var(--muted); cursor: pointer;
     font-family: var(--font-mono); font-size: 0.65rem; padding: 0;
-    transition: color 0.15s;
+    transition: color 0.2s;
   }
   .toggle-btn:hover { color: var(--accent); }
+
+  .empty-state {
+    background: var(--surface); padding: 48px; text-align: center;
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted);
+  }
+  .empty-state span { color: var(--accent); }
 
   /* Footer */
   footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
   footer p { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
   footer a { color: var(--accent); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
+  footer .footer-links {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px;
+  }
+  footer .footer-links a {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  footer .footer-links a:hover { color: var(--text); text-decoration: none; }
+
   a { color: var(--accent); }
   .hidden { display: none; }
 
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--border-bright); }
+
+  @keyframes fadeInItem {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   @media (max-width: 768px) {
     header nav a { padding: 4px 8px; font-size: 0.7rem; }
-    .page-head { padding: 32px 0 20px; }
+    .page-head { padding: 32px 0 16px; }
     .skill-item { padding: 18px; }
+    .controls-bar { flex-direction: column; align-items: stretch; }
+    .search-box { min-width: auto; }
   }
 </style>
 </head>
 <body>
 
+<div class="mesh-bg">
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
 <header>
   <div class="container">
-    <div class="logo"><a href="index.html">exam<span>~</span>prompt</a></div>
+    <div class="logo"><a href="index.html">exam<span>~</span>prompt<span class="logo-dot"></span></a></div>
     <nav>
       <a href="index.html">home</a>
       <a href="app.html">app</a>
@@ -160,32 +269,41 @@
   <div class="container">
     <div class="term-line"><span class="arrow">&gt;</span> ls skills/</div>
     <h1>Academic Skills</h1>
-    <p>24 SKILL.md files — one per exam task. Self-contained, portable, exam-ready.</p>
-    <div class="count">26 skills · 6 categories</div>
+    <p>24 purpose-built <code>SKILL.md</code> files — one per exam task. Self-contained, portable, exam-ready across all AI platforms.</p>
+    <div class="count" id="skillCount">24 skills · 6 categories</div>
+  </div>
+</div>
+
+<div class="container reveal">
+  <div class="controls-bar">
+    <div class="search-box">
+      <span class="search-icon">/</span>
+      <input type="text" id="searchInput" placeholder="search skills..." autocomplete="off" aria-label="Search skills">
+    </div>
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">all <span class="count-badge" id="countAll">24</span></button>
+      <button class="filter-btn" data-filter="core">core <span class="count-badge" id="countCore">4</span></button>
+      <button class="filter-btn" data-filter="writing">writing <span class="count-badge" id="countWriting">6</span></button>
+      <button class="filter-btn" data-filter="analysis">analysis <span class="count-badge" id="countAnalysis">3</span></button>
+      <button class="filter-btn" data-filter="practice">practice <span class="count-badge" id="countPractice">4</span></button>
+      <button class="filter-btn" data-filter="planning">planning <span class="count-badge" id="countPlanning">2</span></button>
+      <button class="filter-btn" data-filter="infra">infrastructure <span class="count-badge" id="countInfra">5</span></button>
+    </div>
   </div>
 </div>
 
 <div class="container">
-  <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-filter="all">all</button>
-    <button class="filter-btn" data-filter="core">core</button>
-    <button class="filter-btn" data-filter="writing">writing</button>
-    <button class="filter-btn" data-filter="analysis">analysis</button>
-    <button class="filter-btn" data-filter="practice">practice</button>
-    <button class="filter-btn" data-filter="planning">planning</button>
-    <button class="filter-btn" data-filter="infra">infrastructure</button>
-  </div>
-</div>
-
-<div class="container">
-
   <div class="skills-list" id="skillsList"></div>
-
 </div>
 
 <footer>
   <div class="container">
-    <p>MIT &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; 26 academic skills</p>
+    <div class="footer-links">
+      <a href="index.html">home</a>
+      <a href="app.html">app</a>
+      <a href="https://github.com/pinakdhabu/Exam-prompt">github</a>
+    </div>
+    <p>MIT · <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> · 24 academic skills</p>
   </div>
 </footer>
 
@@ -248,7 +366,7 @@ const skills = [
     name: 'Lab Report Writer',
     cat: 'writing',
     tags: ['writing'],
-    desc: '4 lab templates: Engineering (Aim-Apparatus-Theory- Procedure-Observations-Calculations-Results-Conclusion), Science (Hypothesis-Materials-Method-Analysis), Medical (Patient-Method-Results-Discussion), and Research (Abstract-Introduction-Methodology-Results). Each includes error analysis and viva questions.',
+    desc: '4 lab templates: Engineering (Aim-Apparatus-Theory-Procedure-Observations-Calculations-Results-Conclusion), Science (Hypothesis-Materials-Method-Analysis), Medical (Patient-Method-Results-Discussion), and Research (Abstract-Introduction-Methodology-Results). Each includes error analysis and viva questions.',
     url: 'lab-report-writer'
   },
   {
@@ -332,7 +450,7 @@ const skills = [
     name: 'Session Config',
     cat: 'infra',
     tags: ['infra'],
-    desc: 'Persistent session configuration stored as a JSON profile. Stores university, subject, exam pattern, and user preferences across all 26 skills. Set once via bash scripts/profile.sh — shared across every skill. Eliminates redundant context detection.',
+    desc: 'Persistent session configuration stored as a JSON profile. Stores university, subject, exam pattern, and user preferences across all 24 skills. Set once via bash scripts/profile.sh — shared across every skill. Eliminates redundant context detection.',
     url: 'session-config'
   },
   {
@@ -366,11 +484,34 @@ const skills = [
 ];
 
 const list = document.getElementById('skillsList');
+const searchInput = document.getElementById('searchInput');
+let currentFilter = 'all';
+let currentSearch = '';
 
-function render(filter) {
-  const filtered = filter === 'all' ? skills : skills.filter(s => s.cat === filter);
-  list.innerHTML = filtered.map(s => `
-    <div class="skill-item">
+function getFiltered() {
+  let filtered = skills;
+  if (currentFilter !== 'all') {
+    filtered = filtered.filter(s => s.cat === currentFilter);
+  }
+  if (currentSearch) {
+    const q = currentSearch.toLowerCase();
+    filtered = filtered.filter(s =>
+      s.name.toLowerCase().includes(q) ||
+      s.desc.toLowerCase().includes(q) ||
+      s.tags.some(t => t.includes(q))
+    );
+  }
+  return filtered;
+}
+
+function render() {
+  const filtered = getFiltered();
+  if (filtered.length === 0) {
+    list.innerHTML = `<div class="empty-state">no skills match <span>"${currentSearch}"</span></div>`;
+    return;
+  }
+  list.innerHTML = filtered.map((s, i) => `
+    <div class="skill-item" style="animation: fadeInItem 0.3s ease ${i * 0.03}s both">
       <h3>${s.name} <span class="tag">${s.cat}</span></h3>
       <div class="skill-detail open">
         <p>${s.desc}</p>
@@ -382,17 +523,38 @@ function render(filter) {
       </div>
     </div>
   `).join('');
+  document.getElementById('skillCount').textContent = `${filtered.length} skills · 6 categories`;
 }
 
-render('all');
+render();
 
 // Filter buttons
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    render(btn.dataset.filter);
+    currentFilter = btn.dataset.filter;
+    render();
   });
+});
+
+// Search
+searchInput.addEventListener('input', () => {
+  currentSearch = searchInput.value;
+  render();
+});
+
+// Scroll reveals
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 });
 </script>
 </body>
