@@ -44,7 +44,26 @@
     position: relative;
   }
 
-  /* Animated mesh background */
+  /* ── Scroll Progress Bar ── */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; z-index: 999;
+    width: 0%; height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--pink), var(--warm));
+    transition: none;
+  }
+
+  /* ── Grain / Noise Texture Overlay ── */
+  .grain-overlay {
+    position: fixed; inset: 0; z-index: 9998;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+
+  /* ── Animated Mesh Background ── */
   .mesh-bg {
     position: fixed; inset: 0; z-index: 0; pointer-events: none;
     overflow: hidden;
@@ -80,21 +99,72 @@
     background-size: 24px 24px;
   }
 
+  /* ── Floating Particles ── */
+  .particles {
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none; overflow: hidden;
+  }
+  .particle {
+    position: absolute; width: 2px; height: 2px;
+    background: var(--accent); border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 15s linear infinite;
+  }
+  .particle:nth-child(odd) {
+    width: 1px; height: 1px;
+    animation-duration: 12s;
+  }
+  .particle:nth-child(3n) {
+    animation-duration: 18s;
+    animation-delay: -5s;
+  }
+  .particle:nth-child(5n+2) {
+    animation-delay: -3s;
+    background: var(--pink);
+  }
+  .particle:nth-child(7n+3) {
+    animation-delay: -8s;
+    background: var(--warm);
+  }
+  @keyframes particleFloat {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
+  }
+
   .container { max-width: 1040px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
 
-  /* Scroll-triggered reveal */
-  .reveal {
-    opacity: 0; transform: translateY(24px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  /* ── Cursor Glow ── */
+  .cursor-glow {
+    position: fixed; width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,211,238,0.06) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    opacity: 0;
   }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
 
-  /* Header */
+  /* ── Scroll-triggered reveals with scale+blur ── */
+  .reveal {
+    opacity: 0; transform: translateY(28px) scale(0.97);
+    filter: blur(4px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1; transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.06s; }
+  .reveal-delay-2 { transition-delay: 0.12s; }
+  .reveal-delay-3 { transition-delay: 0.18s; }
+  .reveal-delay-4 { transition-delay: 0.24s; }
+  .reveal-delay-5 { transition-delay: 0.3s; }
+
+  /* ── Header ── */
   header {
     border-bottom: 1px solid var(--border);
     position: sticky; top: 0; z-index: 100;
@@ -139,7 +209,7 @@
   }
   header nav a:hover::after { transform: translateX(-50%) scaleX(1); }
 
-  /* Hero */
+  /* ── Hero ── */
   .hero {
     padding: 120px 0 64px; text-align: center; position: relative;
     overflow: hidden;
@@ -158,6 +228,10 @@
     padding: 4px 14px; border-radius: 20px; font-family: var(--font-mono);
     font-size: 0.65rem; color: var(--accent); margin-bottom: 24px;
     animation: fadeInDown 0.6s ease;
+    transition: box-shadow 0.3s;
+  }
+  .hero-badge:hover {
+    box-shadow: 0 0 30px rgba(34,211,238,0.12);
   }
   .hero-badge .live-dot {
     width: 6px; height: 6px; border-radius: 50%; background: var(--green);
@@ -173,9 +247,16 @@
     line-height: 1; margin-bottom: 8px; letter-spacing: -0.04em;
   }
   .hero h1 .gradient-text {
-    background: linear-gradient(135deg, var(--accent), var(--pink), var(--warm));
+    background: linear-gradient(135deg, var(--accent), var(--pink), var(--warm), var(--green), var(--accent));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
+    background-size: 300% 300%;
+    animation: gradientShift 6s ease-in-out infinite;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
   .hero h1 .slash { color: var(--muted); }
   .hero-sub {
@@ -200,11 +281,12 @@
   .hero-platforms span:hover {
     color: var(--accent); border-color: var(--accent);
     box-shadow: 0 0 20px rgba(34,211,238,0.08);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
 
   .hero-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 
+  /* ── Buttons with ripple ── */
   .btn {
     display: inline-flex; align-items: center; gap: 8px; padding: 11px 28px;
     border-radius: var(--radius-sm); font-weight: 600; font-size: 0.82rem;
@@ -217,6 +299,16 @@
     background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.06) 100%);
     pointer-events: none;
   }
+  .btn .ripple {
+    position: absolute; border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    transform: scale(0);
+    animation: rippleEffect 0.6s ease-out;
+    pointer-events: none;
+  }
+  @keyframes rippleEffect {
+    to { transform: scale(4); opacity: 0; }
+  }
   .btn-primary {
     background: linear-gradient(135deg, var(--accent), #06b6d4);
     color: #0c0c0e;
@@ -225,19 +317,25 @@
     box-shadow: 0 0 40px rgba(34,211,238,0.25);
     transform: translateY(-2px);
   }
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
+  }
   .btn-secondary {
     background: transparent; color: var(--text); border: 1px solid var(--border);
   }
   .btn-secondary:hover {
     border-color: var(--border-bright); background: var(--surface);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+  }
+  .btn-secondary:active {
+    transform: translateY(0) scale(0.98);
   }
   .btn .arrow {
     display: inline-block; transition: transform 0.3s;
   }
   .btn:hover .arrow { transform: translateX(4px); }
 
-  /* Stats bar */
+  /* ── Stats bar ── */
   .stats-bar {
     display: flex; justify-content: center; gap: 1px; max-width: 760px;
     margin: 0 auto; border-radius: var(--radius); overflow: hidden;
@@ -245,9 +343,19 @@
   }
   .stat-card {
     background: var(--surface); padding: 20px 28px; text-align: center;
-    flex: 1; min-width: 120px; transition: background 0.3s;
+    flex: 1; min-width: 120px; transition: all 0.3s;
+    cursor: default; position: relative; overflow: hidden;
   }
-  .stat-card:hover { background: var(--surface-alt); }
+  .stat-card:hover {
+    background: var(--surface-alt);
+    transform: translateY(-1px);
+  }
+  .stat-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-dim), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .stat-card:hover::before { opacity: 1; }
   .stat-num {
     font-family: var(--font-mono); font-size: 2rem; font-weight: 700; line-height: 1;
     display: flex; align-items: center; justify-content: center; gap: 2px;
@@ -259,7 +367,7 @@
     font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); margin-top: 5px;
   }
 
-  /* Section common */
+  /* ── Section common ── */
   .section { padding: 80px 0; }
   .section-header { margin-bottom: 36px; }
   .section-header .term-line {
@@ -279,21 +387,21 @@
     color: var(--secondary); max-width: 600px; font-size: 0.88rem; line-height: 1.6;
   }
 
-  /* Divider */
+  /* ── Divider ── */
   .section-divider {
     border: none; height: 1px;
     background: linear-gradient(90deg, transparent, var(--border), transparent);
     margin: 0;
   }
 
-  /* Showcase / Sample Outputs */
+  /* ── Showcase / Sample Outputs ── */
   .showcase-grid {
     display: grid; grid-template-columns: repeat(2, 1fr);
     gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden;
   }
   .showcase-item {
     background: var(--surface); padding: 24px;
-    transition: all 0.3s; cursor: default;
+    transition: all 0.4s; cursor: default;
     position: relative; overflow: hidden;
   }
   .showcase-item::before {
@@ -302,11 +410,21 @@
     opacity: 0; transition: opacity 0.3s;
   }
   .showcase-item:hover::before { opacity: 1; }
-  .showcase-item:hover { background: var(--surface-alt); }
+  .showcase-item:hover {
+    background: var(--surface-alt);
+    transform: scale(1.01);
+  }
+  .showcase-item:active {
+    transform: scale(0.99);
+  }
   .showcase-tag {
     font-family: var(--font-mono); font-size: 0.58rem; font-weight: 600;
     padding: 2px 10px; border-radius: 20px; display: inline-block;
     margin-bottom: 10px; letter-spacing: 0.03em;
+    transition: box-shadow 0.3s;
+  }
+  .showcase-item:hover .showcase-tag {
+    box-shadow: 0 0 16px rgba(34,211,238,0.08);
   }
   .showcase-tag.tag-core { background: rgba(34,211,238,0.12); color: var(--accent); border: 1px solid rgba(34,211,238,0.2); }
   .showcase-tag.tag-practice { background: rgba(234,179,8,0.12); color: var(--yellow); border: 1px solid rgba(234,179,8,0.2); }
@@ -320,27 +438,37 @@
     border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-mono);
     font-size: 0.68rem; line-height: 1.5; color: var(--secondary);
     max-height: 120px; overflow-y: auto; white-space: pre-wrap;
+    transition: border-color 0.3s;
+  }
+  .showcase-item:hover .sample-output {
+    border-color: var(--border-bright);
   }
   .showcase-item .sample-output .highlight { color: var(--accent); }
   .showcase-item .sample-output .highlight-warm { color: var(--warm); }
   .showcase-item .sample-output .highlight-green { color: var(--green); }
 
-  /* Skills grid (homepage) */
+  /* ── Skills grid ── */
   .skills-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden;
   }
   .skill-card {
     background: var(--surface); padding: 22px; display: flex; flex-direction: column;
-    transition: all 0.3s; position: relative; overflow: hidden;
+    transition: all 0.4s; position: relative; overflow: hidden;
   }
   .skill-card::after {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent-dim), transparent);
     opacity: 0; transition: opacity 0.3s;
   }
-  .skill-card:hover { background: var(--surface-alt); }
+  .skill-card:hover {
+    background: var(--surface-alt);
+    transform: translateY(-2px);
+  }
   .skill-card:hover::after { opacity: 1; }
+  .skill-card:active {
+    transform: translateY(0);
+  }
   .skill-card h3 {
     font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; margin-bottom: 7px;
   }
@@ -353,12 +481,20 @@
   .skill-card .source {
     font-family: var(--font-mono); font-size: 0.63rem; color: var(--muted);
     margin-top: 12px; border-top: 1px solid var(--border); padding-top: 9px;
+    transition: color 0.3s;
   }
+  .skill-card:hover .source { color: var(--secondary); }
 
-  /* Steps / How it works */
+  /* ── Steps / How it works ── */
   .steps { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; }
-  .step { display: flex; gap: 16px; align-items: flex-start; background: var(--surface); padding: 24px; transition: all 0.3s; }
-  .step:hover { background: var(--surface-alt); }
+  .step { display: flex; gap: 16px; align-items: flex-start; background: var(--surface); padding: 24px; transition: all 0.4s; }
+  .step:hover {
+    background: var(--surface-alt);
+    transform: translateX(4px);
+  }
+  .step:active {
+    transform: translateX(0);
+  }
   .step-num {
     font-family: var(--font-mono); width: 32px; height: 32px;
     border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
@@ -375,14 +511,18 @@
     color: var(--muted); border: 1px solid var(--border);
     padding: 2px 12px; border-radius: 20px;
   }
+  .step-body .pills a { text-decoration: none; }
 
-  /* Code block */
+  /* ── Code block ── */
   .code-block {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: var(--radius); padding: 20px; margin: 14px 0; position: relative;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
   }
-  .code-block:hover { border-color: var(--border-bright); }
+  .code-block:hover {
+    border-color: var(--border-bright);
+    box-shadow: 0 0 30px rgba(34,211,238,0.03);
+  }
   .code-block pre {
     font-family: var(--font-mono); font-size: 0.8rem; color: var(--text);
     white-space: pre; overflow-x: auto; line-height: 1.65;
@@ -400,30 +540,34 @@
     font-family: var(--font-mono); font-weight: 500; transition: all 0.2s;
   }
   .code-block .copy-btn:hover { color: var(--text); border-color: var(--border-bright); }
+  .code-block .copy-btn:active { transform: scale(0.95); }
 
-  /* Trust / Testimonials */
+  /* ── Trust / Testimonials ── */
   .trust-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden;
   }
   .trust-card {
     background: var(--surface); padding: 24px;
-    transition: all 0.3s; position: relative;
+    transition: all 0.4s; position: relative;
   }
-  .trust-card:hover { background: var(--surface-alt); }
+  .trust-card:hover {
+    background: var(--surface-alt);
+    transform: translateY(-2px);
+  }
   .trust-card .quote {
     font-size: 0.82rem; color: var(--secondary); line-height: 1.6;
     font-style: italic;
   }
-  .trust-card .quote::before { content: '"'; color: var(--accent); }
-  .trust-card .quote::after { content: '"'; color: var(--accent); }
+  .trust-card .quote::before { content: '\u201c'; color: var(--accent); }
+  .trust-card .quote::after { content: '\u201d'; color: var(--accent); }
   .trust-card .author {
     font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted);
     margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px;
   }
   .trust-card .author .role { color: var(--secondary); }
 
-  /* FAQ */
+  /* ── FAQ ── */
   .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; }
   .faq-item { background: var(--surface); }
   .faq-question {
@@ -431,12 +575,13 @@
     padding: 18px 22px; cursor: pointer; display: flex; align-items: center;
     justify-content: space-between; gap: 12px; text-align: left;
     font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
   }
   .faq-question:hover { background: var(--surface-alt); }
+  .faq-question:active { transform: scale(0.99); }
   .faq-question .faq-icon {
     flex-shrink: 0; font-size: 0.7rem; color: var(--muted);
-    transition: transform 0.3s;
+    transition: transform 0.4s, color 0.3s;
   }
   .faq-item.open .faq-question .faq-icon { transform: rotate(45deg); color: var(--accent); }
   .faq-answer {
@@ -449,39 +594,57 @@
     line-height: 1.6;
   }
 
-  /* Gems grid */
+  /* ── Gems grid ── */
   .gems-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden;
   }
   .gem-card {
     text-decoration: none; background: var(--surface); padding: 22px;
-    transition: all 0.3s; display: block; position: relative; overflow: hidden;
+    transition: all 0.4s; display: block; position: relative; overflow: hidden;
   }
   .gem-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(90deg, transparent, var(--warm), transparent);
     opacity: 0; transition: opacity 0.3s;
   }
-  .gem-card:hover { background: var(--surface-alt); }
+  .gem-card:hover {
+    background: var(--surface-alt);
+    transform: translateY(-2px);
+  }
   .gem-card:hover::before { opacity: 1; }
+  .gem-card:active { transform: translateY(0); }
   .gem-card h4 { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; margin-bottom: 4px; }
   .gem-card p { color: var(--secondary); font-size: 0.72rem; line-height: 1.5; }
   .gem-card .link-arrow {
     font-family: var(--font-mono); font-size: 0.6rem; color: var(--warm);
-    margin-top: 10px; display: inline-block; transition: gap 0.3s;
+    margin-top: 10px; display: inline-flex; align-items: center; gap: 4px;
+    transition: gap 0.3s;
   }
-  .gem-card:hover .link-arrow { gap: 6px; }
+  .gem-card:hover .link-arrow { gap: 8px; }
 
-  /* Architecture */
+  /* ── Architecture Cards with 3D Tilt ── */
   .arch-card {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 16px; transition: all 0.3s;
+    border-radius: var(--radius); padding: 16px; transition: all 0.4s;
+    perspective: 800px;
   }
-  .arch-card:hover { border-color: var(--border-bright); }
+  .arch-card:hover {
+    border-color: var(--border-bright);
+    box-shadow: 0 0 40px rgba(34,211,238,0.04);
+  }
+  .arch-card .arch-inner {
+    transition: transform 0.3s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
   .arch-card img {
     width: 100%; height: auto; border-radius: var(--radius-sm);
     display: block; background: var(--surface-alt); padding: 8px;
+    transition: transform 0.3s;
+  }
+  .arch-card:hover img {
+    transform: scale(1.01);
   }
   .arch-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
@@ -489,11 +652,14 @@
   .arch-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; justify-content: center; }
   .arch-links a {
     font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent);
-    text-decoration: none; transition: color 0.2s;
+    text-decoration: none; transition: all 0.2s;
   }
-  .arch-links a:hover { color: var(--text); }
+  .arch-links a:hover {
+    color: var(--text);
+    text-decoration: underline;
+  }
 
-  /* Footer */
+  /* ── Footer ── */
   footer {
     border-top: 1px solid var(--border); padding: 36px 0; text-align: center;
   }
@@ -513,11 +679,20 @@
   a:hover { text-decoration: underline; }
   code { font-family: var(--font-mono); font-size: 0.8rem; color: var(--warm); }
 
-  /* Scrollbar */
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--border-bright); }
+
+  @media (hover: none) {
+    .cursor-glow { display: none !important; }
+    .grain-overlay { opacity: 0.02; }
+    .showcase-item:hover { transform: none; }
+    .skill-card:hover { transform: none; }
+    .arch-card:hover img { transform: none; }
+    .gem-card:hover { transform: none; }
+    .step:hover { transform: none; }
+  }
 
   @media (max-width: 768px) {
     .container { padding: 0 16px; }
@@ -538,6 +713,7 @@
     .skill-card { padding: 16px; }
     .section { padding: 48px 0; }
     .step { flex-direction: column; gap: 8px; padding: 16px; }
+    .step:hover { transform: none; }
     .section-header h2 { font-size: 1rem; }
     .section-header p { font-size: 0.8rem; }
     .code-block { padding: 14px; margin: 10px 0; }
@@ -571,11 +747,15 @@
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="grain-overlay"></div>
 <div class="mesh-bg">
   <div class="orb"></div>
   <div class="orb"></div>
   <div class="orb"></div>
 </div>
+<div class="particles" id="particles"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <header id="header">
   <div class="container">
@@ -594,7 +774,7 @@
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="container">
-    <div class="hero-badge"><span class="live-dot"></span> 24 academic skills • live &amp; open source</div>
+    <div class="hero-badge"><span class="live-dot"></span> 24 academic skills &bull; live &amp; open source</div>
     <h1>10<span class="slash">/</span><span class="gradient-text">10</span></h1>
     <div class="hero-sub">
       <span id="typingText">Academic AI skills for any university, any exam</span><span class="typing-cursor"></span>
@@ -609,9 +789,9 @@
       <span>openai</span>
     </div>
     <div class="hero-buttons">
-      <a href="app.html" class="btn btn-primary">open app <span class="arrow">→</span></a>
-      <a href="skills.html" class="btn btn-secondary">ls skills/</a>
-      <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/PROMPT.md" class="btn btn-secondary">cat PROMPT.md</a>
+      <a href="app.html" class="btn btn-primary" data-ripple>open app <span class="arrow">&rarr;</span></a>
+      <a href="skills.html" class="btn btn-secondary" data-ripple>ls skills/</a>
+      <a href="https://raw.githubusercontent.com/pinakdhabu/Exam-prompt/main/PROMPT.md" class="btn btn-secondary" data-ripple>cat PROMPT.md</a>
     </div>
   </div>
 </section>
@@ -633,80 +813,80 @@
     <div class="section-header reveal">
       <div class="term-line"><span class="arrow">&gt;</span> cat showcase/ <span class="line-accent"></span></div>
       <h2>See It In Action</h2>
-      <p>Real sample outputs from the skill library — no cherry-picking. What you see is what your AI produces.</p>
+      <p>Real sample outputs from the skill library &mdash; no cherry-picking. What you see is what your AI produces.</p>
     </div>
     <div class="showcase-grid reveal reveal-delay-1">
       <div class="showcase-item">
         <span class="showcase-tag tag-core">A+ Answer Writer</span>
         <h3>What is an Operating System?</h3>
-        <p>10-mark SPPU-level answer — complete with structure, diagram, and Bloom's alignment.</p>
+        <p>10-mark SPPU-level answer &mdash; complete with structure, diagram, and Bloom's alignment.</p>
         <div class="sample-output"><span class="highlight">Definition:</span> An Operating System (OS) is a system software that acts as an intermediary between user programs and computer hardware.
 
 <span class="highlight">Functions:</span>
-1. Process Management — creation, scheduling, termination
-2. Memory Management — allocation, deallocation, protection
-3. File System Management — organization, storage, access control
-4. Device Management — I/O device control via drivers
-5. Security & Protection — authentication, access control
+1. Process Management &mdash; creation, scheduling, termination
+2. Memory Management &mdash; allocation, deallocation, protection
+3. File System Management &mdash; organization, storage, access control
+4. Device Management &mdash; I/O device control via drivers
+5. Security &amp; Protection &mdash; authentication, access control
 
 <span class="highlight">Types:</span> Batch, Time-Sharing, Distributed, Real-Time, Embedded
 
-<span class="highlight-green">[DIAGRAM: Layered architecture of OS — User → App → OS → Hardware]</span></div>
+<span class="highlight-green">[DIAGRAM: Layered architecture of OS &mdash; User &rarr; App &rarr; OS &rarr; Hardware]</span></div>
       </div>
       <div class="showcase-item">
         <span class="showcase-tag tag-core">Notes Generator</span>
-        <h3>Data Structures — Unit 2</h3>
+        <h3>Data Structures &mdash; Unit 2</h3>
         <p>Cornell-format notes on Stacks &amp; Queues with active recall prompts.</p>
         <div class="sample-output"><span class="highlight">[Cue Column]</span>
-• Stack LIFO? — Last In, First Out
-• Queue FIFO? — First In, First Out
-• Push/Pop O(1)? — Amortized
-• Stack applications? — Expression eval, backtracking
+&bull; Stack LIFO? &mdash; Last In, First Out
+&bull; Queue FIFO? &mdash; First In, First Out
+&bull; Push/Pop O(1)? &mdash; Amortized
+&bull; Stack applications? &mdash; Expression eval, backtracking
 
 <span class="highlight">[Notes Column]</span>
 Stack: ADT with push()/pop()/top(). Implemented via array (fixed) or linked list (dynamic).
 Queue: ADT with enqueue()/dequeue(). Circular queue avoids false overflow.
 
 <span class="highlight-green">[Recall Questions]</span>
-1. Why circular queue over linear? → Memory reuse
-2. Stack vs Heap allocation? → Lifetime difference</div>
+1. Why circular queue over linear? &rarr; Memory reuse
+2. Stack vs Heap allocation? &rarr; Lifetime difference</div>
       </div>
       <div class="showcase-item">
         <span class="showcase-tag tag-analysis">PYQ Analyzer</span>
-        <h3>Computer Networks — Last 5 Years</h3>
+        <h3>Computer Networks &mdash; Last 5 Years</h3>
         <p>Frequency analysis of 10 question papers + predicted topics.</p>
         <div class="sample-output"><span class="highlight">Unit-wise Weightage (avg/paper):</span>
-• Unit 1 — OSI & TCP/IP: <span class="highlight">12 marks</span> [HIGH]
-• Unit 2 — Data Link Layer: <span class="highlight">14 marks</span> [HIGH]
-• Unit 3 — Network Layer: <span class="highlight">10 marks</span> [MED]
-• Unit 4 — Transport Layer: <span class="highlight">16 marks</span> [HIGH]
-• Unit 5 — Application Layer: <span class="highlight">8 marks</span> [MED]
+&bull; Unit 1 &mdash; OSI &amp; TCP/IP: <span class="highlight">12 marks</span> [HIGH]
+&bull; Unit 2 &mdash; Data Link Layer: <span class="highlight">14 marks</span> [HIGH]
+&bull; Unit 3 &mdash; Network Layer: <span class="highlight">10 marks</span> [MED]
+&bull; Unit 4 &mdash; Transport Layer: <span class="highlight">16 marks</span> [HIGH]
+&bull; Unit 5 &mdash; Application Layer: <span class="highlight">8 marks</span> [MED]
 
 <span class="highlight-green">Top Predicted Topics (90%+):</span>
 1. TCP 3-way handshake (repeated 4/5 exams)
 2. CSMA/CD vs CSMA/CA comparison
 3. Congestion control algorithms
-4. IPv4 vs IPv6 (new — 2024 pattern)</div>
+4. IPv4 vs IPv6 (new &mdash; 2024 pattern)</div>
       </div>
       <div class="showcase-item">
         <span class="showcase-tag tag-practice">MCQ Generator</span>
-        <h3>DBMS — Transaction Management</h3>
+        <h3>DBMS &mdash; Transaction Management</h3>
         <p>10 MCQs with Bloom's-calibrated difficulty and distractor explanations.</p>
         <div class="sample-output"><span class="highlight">Q1.</span> Which property ensures that either all operations of a transaction are completed or none?
-A) Atomicity  <span class="highlight-green">[✓ Correct]</span>
+A) Atomicity  <span class="highlight-green">[&check; Correct]</span>
 B) Consistency
 C) Isolation
 D) Durability
 
 <span class="highlight-warm">[Distractor: B ensures DB state correctness, C ensures concurrency transparency,
-D ensures persistence — but Atomicity is the all-or-nothing property]</span>
+D ensures persistence &mdash; but Atomicity is the all-or-nothing property]</span>
 
-<span class="highlight">Q2. [Bloom's L4 — Analyze]</span>
-In the log <T1, A, 100, 200>, what does this represent?
+<span class="highlight">Q2. [Bloom's L4 &mdash; Analyze]</span>
+In the log &lt;T1, A, 100, 200&gt;, what does this represent?
 A) T1 updated A from 100 to 200
 B) T1 updated A from 200 to 100
 C) T1 deleted A...
-<span class="highlight-green">[✓ A — This is an UNDO-type log record]</span></div>
+<span class="highlight-green">[&check; A &mdash; This is an UNDO-type log record]</span></div>
       </div>
     </div>
   </div>
@@ -720,22 +900,22 @@ C) T1 deleted A...
     <div class="section-header reveal">
       <div class="term-line"><span class="arrow">&gt;</span> ls skills/ <span class="line-accent"></span></div>
       <h2>All Academic Skills</h2>
-      <p>24 purpose-built <code>SKILL.md</code> files — self-contained, cross-platform, exam-ready. <a href="skills.html" style="font-family:var(--font-mono);font-size:0.7rem">view all →</a></p>
+      <p>24 purpose-built <code>SKILL.md</code> files &mdash; self-contained, cross-platform, exam-ready. <a href="skills.html" style="font-family:var(--font-mono);font-size:0.7rem">view all &rarr;</a></p>
     </div>
     <div class="skills-grid reveal reveal-delay-1">
       <div class="skill-card">
         <h3>A+ Answer Writer <span class="tag">core</span></h3>
-        <p>15-phase answer pipeline. Every question type, every mark level (1–100+), every Bloom's level.</p>
+        <p>15-phase answer pipeline. Every question type, every mark level (1&ndash;100+), every Bloom's level.</p>
         <div class="source">exam-prompt/answer-writer</div>
       </div>
       <div class="skill-card">
         <h3>Notes Generator <span class="tag">core</span></h3>
-        <p>12+ formats — Cornell, Mind Map, Flowchart, Q&A, Rapid Revision, Cheat Sheet. Auto-selected.</p>
+        <p>12+ formats &mdash; Cornell, Mind Map, Flowchart, Q&A, Rapid Revision, Cheat Sheet. Auto-selected.</p>
         <div class="source">exam-prompt/notes-generator</div>
       </div>
       <div class="skill-card">
         <h3>PYQ Analyzer <span class="tag">core</span></h3>
-        <p>13 statistical analyses — frequency, weightage, Bloom's heatmap, trend regression, predictions.</p>
+        <p>13 statistical analyses &mdash; frequency, weightage, Bloom's heatmap, trend regression, predictions.</p>
         <div class="source">exam-prompt/pyq-analyzer</div>
       </div>
       <div class="skill-card">
@@ -745,7 +925,7 @@ C) T1 deleted A...
       </div>
       <div class="skill-card">
         <h3>Exam Paper Generator</h3>
-        <p>11+ university patterns — SPPU, VTU, JNTU, Mumbai, IIT, Oxford, Cambridge. Answer keys included.</p>
+        <p>11+ university patterns &mdash; SPPU, VTU, JNTU, Mumbai, IIT, Oxford, Cambridge. Answer keys included.</p>
         <div class="source">exam-prompt/exam-paper-generator</div>
       </div>
       <div class="skill-card">
@@ -775,7 +955,7 @@ C) T1 deleted A...
       </div>
       <div class="skill-card">
         <h3>Lab Report Writer</h3>
-        <p>4 templates — Engineering, Science, Medical, Research. Error analysis + viva questions.</p>
+        <p>4 templates &mdash; Engineering, Science, Medical, Research. Error analysis + viva questions.</p>
         <div class="source">exam-prompt/lab-report-writer</div>
       </div>
       <div class="skill-card">
@@ -790,7 +970,7 @@ C) T1 deleted A...
       </div>
       <div class="skill-card">
         <h3>Case Study Solver</h3>
-        <p>10+ frameworks — SWOT, PESTEL, 5 Whys, Fishbone, IRAC, Ethical Matrix, Decision Tree.</p>
+        <p>10+ frameworks &mdash; SWOT, PESTEL, 5 Whys, Fishbone, IRAC, Ethical Matrix, Decision Tree.</p>
         <div class="source">exam-prompt/case-study-solver</div>
       </div>
       <div class="skill-card">
@@ -810,12 +990,12 @@ C) T1 deleted A...
       </div>
       <div class="skill-card">
         <h3>Session Config</h3>
-        <p>Persistent JSON profile — set once, shared across all 24 skills.</p>
+        <p>Persistent JSON profile &mdash; set once, shared across all 24 skills.</p>
         <div class="source">exam-prompt/session-config</div>
       </div>
       <div class="skill-card">
         <h3>Document Reader</h3>
-        <p>PDF, DOCX, images, scanned docs → clean LLM-friendly text. First step before any skill.</p>
+        <p>PDF, DOCX, images, scanned docs &rarr; clean LLM-friendly text. First step before any skill.</p>
         <div class="source">exam-prompt/universal-document-reader</div>
       </div>
       <div class="skill-card">
@@ -825,12 +1005,12 @@ C) T1 deleted A...
       </div>
       <div class="skill-card">
         <h3>SPPU Exam Simulator</h3>
-        <p>Real exam hall constraints — 36-page booklet, time pressure, examiner psychology.</p>
+        <p>Real exam hall constraints &mdash; 36-page booklet, time pressure, examiner psychology.</p>
         <div class="source">exam-prompt/sppu-exam-simulator</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:24px" class="reveal reveal-delay-2">
-      <a href="skills.html" class="btn btn-secondary">view all 24 skills →</a>
+      <a href="skills.html" class="btn btn-secondary" data-ripple>view all 24 skills &rarr;</a>
     </div>
   </div>
 </section>
@@ -843,31 +1023,31 @@ C) T1 deleted A...
     <div class="section-header reveal">
       <div class="term-line"><span class="arrow">&gt;</span> ./setup.sh <span class="line-accent"></span></div>
       <h2>How It Works</h2>
-      <p>Three ways in — pick the one that fits your workflow. No account needed.</p>
+      <p>Three ways in &mdash; pick the one that fits your workflow. No account needed.</p>
     </div>
     <div class="steps reveal reveal-delay-1">
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-body">
-          <h3>Chat — paste and ask</h3>
-          <p>Open ChatGPT, Claude.ai, or Gemini. Copy PROMPT.md, paste it in, then type your question. The system prompt transforms the AI into a subject-expert examiner. Or use the Gemini Gems below for one-click access.</p>
+          <h3>Chat &mdash; paste and ask</h3>
+          <p>Open ChatGPT, Claude.ai, or Gemini. Copy PROMPT.md, paste it in, then type your question. The system prompt transforms the AI into a subject-expert examiner.</p>
           <div class="pills"><span>chatgpt</span><span>claude.ai</span><span>gemini</span><span>deepseek</span></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-body">
-          <h3>Agent — install skills</h3>
-          <p>One command installs all 24 skills into your coding agent (Claude Code, Cursor, Copilot). The agent reads the right SKILL.md automatically when you ask a relevant question.</p>
+          <h3>Agent &mdash; install skills</h3>
+          <p>One command installs all 24 skills into your coding agent (Claude Code, Cursor, Copilot). The agent reads the right SKILL.md automatically.</p>
           <div class="pills"><span>claude code</span><span>cursor</span><span>copilot</span><span>codex</span></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-body">
-          <h3>Browser — quick tool</h3>
+          <h3>Browser &mdash; quick tool</h3>
           <p>The web app copies skill instructions + your question to clipboard in one click. Open your AI of choice and paste. No setup, no terminal.</p>
-          <div class="pills"><a href="app.html" class="btn btn-primary" style="padding:6px 18px;font-size:0.72rem">open app →</a></div>
+          <div class="pills"><a href="app.html" class="btn btn-primary" style="padding:6px 18px;font-size:0.72rem" data-ripple>open app &rarr;</a></div>
         </div>
       </div>
     </div>
@@ -892,7 +1072,7 @@ C) T1 deleted A...
 
 <hr class="section-divider">
 
-<!-- FAQ: Credibility / Transparency -->
+<!-- FAQ -->
 <section class="section" id="faq">
   <div class="container">
     <div class="section-header reveal">
@@ -903,11 +1083,11 @@ C) T1 deleted A...
     <div class="faq-list reveal reveal-delay-1">
       <div class="faq-item open">
         <button class="faq-question" onclick="toggleFaq(this)">
-          How accurate are the "predicted" topics?
+          How accurate are the &ldquo;predicted&rdquo; topics?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Predictions are probability-ranked based on historical patterns — frequency, recency, and syllabus alignment from past question papers. They're analytical estimates, not guarantees. The 90%+ tier has historically been ~85% accurate in post-exam validation.</div>
+          <div class="faq-answer-inner">Predictions are probability-ranked based on historical patterns &mdash; frequency, recency, and syllabus alignment from past question papers. They're analytical estimates, not guarantees. The 90%+ tier has historically been ~85% accurate in post-exam validation.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -916,7 +1096,7 @@ C) T1 deleted A...
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Yes — the architecture is university-agnostic. SPPU is the reference implementation with the most testing, but every skill is designed to work with any university pattern. The University Adapter skill handles auto-detection from syllabus PDFs.</div>
+          <div class="faq-answer-inner">Yes &mdash; the architecture is university-agnostic. SPPU is the reference implementation with the most testing, but every skill is designed to work with any university pattern. The University Adapter skill handles auto-detection from syllabus PDFs.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -925,7 +1105,7 @@ C) T1 deleted A...
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Claude 4 (Sonnet/Opus) and GPT-4o produce the most accurate outputs. DeepSeek and Gemini are good alternatives. The skills are prompt-based, so any LLM with decent instruction-following works — but larger models produce richer answers for high-mark questions.</div>
+          <div class="faq-answer-inner">Claude 4 (Sonnet/Opus) and GPT-4o produce the most accurate outputs. DeepSeek and Gemini are good alternatives. The skills are prompt-based, so any LLM with decent instruction-following works &mdash; but larger models produce richer answers for high-mark questions.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -934,7 +1114,7 @@ C) T1 deleted A...
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">No. These skills are study aids — they generate practice material, model answers, and revision notes. The best results come from using them <em>alongside</em> active learning: attempt questions yourself first, then compare with the AI output.</div>
+          <div class="faq-answer-inner">No. These skills are study aids &mdash; they generate practice material, model answers, and revision notes. The best results come from using them <em>alongside</em> active learning: attempt questions yourself first, then compare with the AI output.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -957,29 +1137,29 @@ C) T1 deleted A...
   <div class="container">
     <div class="section-header reveal">
       <div class="term-line"><span class="arrow">&gt;</span> gemini.google.com/gem/ <span class="line-accent"></span></div>
-      <h2>Gemini Gems — One-Click Access</h2>
+      <h2>Gemini Gems &mdash; One-Click Access</h2>
       <p>No setup, no PROMPT.md paste. Open any Gem in Gemini and start asking questions immediately.</p>
     </div>
     <div class="gems-grid reveal reveal-delay-1">
       <a href="https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK" target="_blank" class="gem-card">
         <h4>A+ Answer Writer</h4>
         <p>Full-marks theory answers for any question type and mark level.</p>
-        <span class="link-arrow">open gem →</span>
+        <span class="link-arrow">open gem &rarr;</span>
       </a>
       <a href="https://gemini.google.com/gem/bf5b14582187" target="_blank" class="gem-card">
         <h4>Notes Generator</h4>
         <p>Syllabus-locked revision notes in 12+ formats.</p>
-        <span class="link-arrow">open gem →</span>
+        <span class="link-arrow">open gem &rarr;</span>
       </a>
       <a href="https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh" target="_blank" class="gem-card">
         <h4>PYQ Analysis Tool</h4>
         <p>Statistical analysis of past papers with topic predictions.</p>
-        <span class="link-arrow">open gem →</span>
+        <span class="link-arrow">open gem &rarr;</span>
       </a>
       <a href="https://gemini.google.com/gem/4266a7e8000e" target="_blank" class="gem-card">
         <h4>IMP Topics Generator</h4>
         <p>Prioritized topics with probability levels and time plans.</p>
-        <span class="link-arrow">open gem →</span>
+        <span class="link-arrow">open gem &rarr;</span>
       </a>
     </div>
   </div>
@@ -993,20 +1173,22 @@ C) T1 deleted A...
     <div class="section-header reveal">
       <div class="term-line"><span class="arrow">&gt;</span> ls architectures/ <span class="line-accent"></span></div>
       <h2>Architecture Gallery</h2>
-      <p>System diagrams from D2 source — auto-rendered via <code>d2</code> CLI with <code>elk</code> layout. Each diagram is a living document tied to the actual code.</p>
+      <p>System diagrams from D2 source &mdash; auto-rendered via <code>d2</code> CLI with <code>elk</code> layout.</p>
     </div>
 
     <!-- System Architecture -->
     <div class="arch-card reveal reveal-delay-1" style="margin-bottom:20px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <h3 style="font-family:var(--font-mono);font-size:0.85rem;font-weight:600">📐 System Architecture <span style="font-size:0.65rem;color:var(--muted);font-weight:400">— Full pipeline: input → ingestion → knowledge → orchestrator → skills → LLM → validation → output</span></h3>
-        <a href="architectures/exports/system-architecture.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.65rem;color:var(--accent)">open full →</a>
-      </div>
-      <div style="max-height:360px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:8px">
-        <img src="architectures/exports/system-architecture.svg" alt="Complete System Architecture" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
-      </div>
-      <div class="arch-links" style="margin-top:8px">
-        <a href="architectures/d2/system-architecture-simple.d2">source.d2</a>
+      <div class="arch-inner" data-tilt>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <h3 style="font-family:var(--font-mono);font-size:0.85rem;font-weight:600">&#x1F4D0; System Architecture <span style="font-size:0.65rem;color:var(--muted);font-weight:400">&mdash; Full pipeline: input &rarr; ingestion &rarr; knowledge &rarr; orchestrator &rarr; skills &rarr; LLM &rarr; validation &rarr; output</span></h3>
+          <a href="architectures/exports/system-architecture.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.65rem;color:var(--accent)">open full &rarr;</a>
+        </div>
+        <div style="max-height:360px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:8px">
+          <img src="architectures/exports/system-architecture.svg" alt="Complete System Architecture" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
+        </div>
+        <div class="arch-links" style="margin-top:8px">
+          <a href="architectures/d2/system-architecture-simple.d2">source.d2</a>
+        </div>
       </div>
     </div>
 
@@ -1014,63 +1196,71 @@ C) T1 deleted A...
     <div class="arch-grid reveal reveal-delay-2">
       <!-- RAG Pipeline -->
       <div class="arch-card">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-          <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">🔍 RAG Pipeline</h3>
-          <a href="architectures/exports/rag-pipeline.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open →</a>
-        </div>
-        <div style="max-height:260px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
-          <img src="architectures/exports/rag-pipeline.svg" alt="RAG Pipeline" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
-        </div>
-        <div class="arch-links" style="margin-top:6px">
-          <a href="architectures/d2/rag-pipeline.d2">source.d2</a>
+        <div class="arch-inner" data-tilt>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+            <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">&#x1F50D; RAG Pipeline</h3>
+            <a href="architectures/exports/rag-pipeline.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open &rarr;</a>
+          </div>
+          <div style="max-height:260px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
+            <img src="architectures/exports/rag-pipeline.svg" alt="RAG Pipeline" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
+          </div>
+          <div class="arch-links" style="margin-top:6px">
+            <a href="architectures/d2/rag-pipeline.d2">source.d2</a>
+          </div>
         </div>
       </div>
 
       <!-- User Journey -->
       <div class="arch-card">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-          <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">🧭 User Journey</h3>
-          <a href="architectures/exports/user-journey.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open full →</a>
-        </div>
-        <div style="max-height:480px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
-          <img src="architectures/exports/user-journey.svg" alt="User Journey" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
-        </div>
-        <div class="arch-links" style="margin-top:6px">
-          <a href="architectures/d2/user-journey-simple.d2">source.d2</a>
+        <div class="arch-inner" data-tilt>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+            <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">&#x1F9ED; User Journey</h3>
+            <a href="architectures/exports/user-journey.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open full &rarr;</a>
+          </div>
+          <div style="max-height:480px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
+            <img src="architectures/exports/user-journey.svg" alt="User Journey" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
+          </div>
+          <div class="arch-links" style="margin-top:6px">
+            <a href="architectures/d2/user-journey-simple.d2">source.d2</a>
+          </div>
         </div>
       </div>
 
       <!-- Skills Ecosystem -->
       <div class="arch-card" style="grid-column:1/-1">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-          <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">🧠 Skills Ecosystem</h3>
-          <a href="architectures/exports/skills-ecosystem.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open full →</a>
-        </div>
-        <div style="max-height:400px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
-          <img src="architectures/exports/skills-ecosystem.svg" alt="Skills Ecosystem" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
-        </div>
-        <div class="arch-links" style="margin-top:6px">
-          <a href="architectures/d2/skills-ecosystem-simple.d2">source.d2</a>
+        <div class="arch-inner" data-tilt>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+            <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">&#x1F9E0; Skills Ecosystem</h3>
+            <a href="architectures/exports/skills-ecosystem.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open full &rarr;</a>
+          </div>
+          <div style="max-height:400px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
+            <img src="architectures/exports/skills-ecosystem.svg" alt="Skills Ecosystem" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
+          </div>
+          <div class="arch-links" style="margin-top:6px">
+            <a href="architectures/d2/skills-ecosystem-simple.d2">source.d2</a>
+          </div>
         </div>
       </div>
 
       <!-- Deployment -->
       <div class="arch-card">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-          <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">🚀 Deployment</h3>
-          <a href="architectures/exports/deployment.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open →</a>
-        </div>
-        <div style="max-height:260px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
-          <img src="architectures/exports/deployment.svg" alt="Deployment" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
-        </div>
-        <div class="arch-links" style="margin-top:6px">
-          <a href="architectures/d2/deployment.d2">source.d2</a>
+        <div class="arch-inner" data-tilt>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+            <h3 style="font-family:var(--font-mono);font-size:0.8rem;font-weight:600">&#x1F680; Deployment</h3>
+            <a href="architectures/exports/deployment.svg" target="_blank" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent)">open &rarr;</a>
+          </div>
+          <div style="max-height:260px;overflow-y:auto;border-radius:var(--radius-sm);background:var(--surface-alt);padding:6px">
+            <img src="architectures/exports/deployment.svg" alt="Deployment" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-sm);display:block">
+          </div>
+          <div class="arch-links" style="margin-top:6px">
+            <a href="architectures/d2/deployment.d2">source.d2</a>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="arch-links reveal" style="margin-top:20px;justify-content:center;gap:16px">
-      <a href="https://github.com/pinakdhabu/Exam-prompt/blob/main/architectures/d2/" style="font-size:0.7rem">all D2 sources →</a>
+      <a href="https://github.com/pinakdhabu/Exam-prompt/blob/main/architectures/d2/" style="font-size:0.7rem">all D2 sources &rarr;</a>
     </div>
   </div>
 </section>
@@ -1088,17 +1278,17 @@ C) T1 deleted A...
       <a href="https://github.com/pinakdhabu/Exam-prompt/issues">issues</a>
       <a href="https://github.com/pinakdhabu/Exam-prompt/blob/main/CONTRIBUTING.md">contribute</a>
     </div>
-    <p>MIT · <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> · 24 academic skills</p>
+    <p>MIT &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; 24 academic skills</p>
   </div>
 </footer>
 
 <script>
-// Typing animation
+// ── Typing animation ──
 const textEl = document.getElementById('typingText');
 const phrases = [
   'Academic AI skills for any university, any exam',
-  'A+ answers · notes · flashcards · exam papers',
-  'SPPU · VTU · JNTU · Mumbai · IIT · Oxford · +50',
+  'A+ answers &middot; notes &middot; flashcards &middot; exam papers',
+  'SPPU &middot; VTU &middot; JNTU &middot; Mumbai &middot; IIT &middot; Oxford &middot; +50',
   'One skill library. Every AI. Any university.'
 ];
 let phraseIdx = 0;
@@ -1108,7 +1298,7 @@ let isDeleting = false;
 function typeEffect() {
   const current = phrases[phraseIdx];
   if (!isDeleting) {
-    textEl.textContent = current.substring(0, charIdx + 1);
+    textEl.innerHTML = current.substring(0, charIdx + 1);
     charIdx++;
     if (charIdx === current.length) {
       setTimeout(() => { isDeleting = true; typeEffect(); }, 3000);
@@ -1116,7 +1306,7 @@ function typeEffect() {
     }
     setTimeout(typeEffect, 40 + Math.random() * 30);
   } else {
-    textEl.textContent = current.substring(0, charIdx - 1);
+    textEl.innerHTML = current.substring(0, charIdx - 1);
     charIdx--;
     if (charIdx === 0) {
       isDeleting = false;
@@ -1129,7 +1319,16 @@ function typeEffect() {
 }
 typeEffect();
 
-// Scroll-triggered reveals
+// ── Scroll progress bar ──
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+}, { passive: true });
+
+// ── Scroll-triggered reveals ──
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1137,21 +1336,18 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// Header scroll effect
+// ── Header scroll effect ──
 const header = document.getElementById('header');
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
-  const scroll = window.scrollY;
-  if (scroll > 20) header.classList.add('scrolled');
+  if (window.scrollY > 20) header.classList.add('scrolled');
   else header.classList.remove('scrolled');
-  lastScroll = scroll;
 }, { passive: true });
 
-// Counter animation
+// ── Counter animation ──
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1175,13 +1371,78 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
-// FAQ toggle
+// ── FAQ toggle ──
 function toggleFaq(btn) {
   const item = btn.parentElement;
   item.classList.toggle('open');
 }
 
-// Copy button feedback — skip code block buttons (they have inline handlers)
+// ── Ripple effect on buttons ──
+document.querySelectorAll('[data-ripple]').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    this.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+
+// ── Cursor glow ──
+const cursorGlow = document.getElementById('cursorGlow');
+let cursorVisible = false;
+let cursorTimer;
+
+document.addEventListener('mousemove', (e) => {
+  cursorGlow.style.left = e.clientX + 'px';
+  cursorGlow.style.top = e.clientY + 'px';
+  if (!cursorVisible) {
+    cursorVisible = true;
+    cursorGlow.style.opacity = '1';
+  }
+  clearTimeout(cursorTimer);
+  cursorTimer = setTimeout(() => {
+    cursorGlow.style.opacity = '0';
+    cursorVisible = false;
+  }, 3000);
+});
+
+// ── Floating particles ──
+const particlesContainer = document.getElementById('particles');
+for (let i = 0; i < 20; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + '%';
+  p.style.animationDelay = (Math.random() * 10) + 's';
+  p.style.animationDuration = (12 + Math.random() * 10) + 's';
+  p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
+  particlesContainer.appendChild(p);
+}
+
+// ── 3D Tilt on architecture cards ──
+document.querySelectorAll('[data-tilt]').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -6;
+    const rotateY = ((x - centerX) / centerX) * 6;
+    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+  });
+});
+
+// ── Copy button feedback ──
 document.querySelectorAll('.copy-btn:not(.code-block .copy-btn)').forEach(btn => {
   btn.addEventListener('click', function() {
     const pre = this.parentElement.querySelector('pre');

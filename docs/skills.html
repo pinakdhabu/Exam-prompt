@@ -36,6 +36,50 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* Scroll progress */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; z-index: 999;
+    width: 0%; height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--pink), var(--warm));
+    transition: none;
+  }
+
+  /* Grain */
+  .grain-overlay {
+    position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+    opacity: 0.035; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+    background-repeat: repeat; background-size: 256px 256px;
+  }
+
+  /* Particles */
+  .particles {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  }
+  .particle {
+    position: absolute; width: 2px; height: 2px;
+    background: var(--accent); border-radius: 50%; opacity: 0;
+    animation: particleFloat 15s linear infinite;
+  }
+  .particle:nth-child(odd) { width: 1px; height: 1px; animation-duration: 12s; }
+  .particle:nth-child(3n) { animation-duration: 18s; animation-delay: -5s; }
+  .particle:nth-child(5n+2) { animation-delay: -3s; background: var(--pink); }
+  .particle:nth-child(7n+3) { animation-delay: -8s; background: var(--warm); }
+  @keyframes particleFloat {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
+  }
+
+  /* Cursor glow */
+  .cursor-glow {
+    position: fixed; width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,211,238,0.06) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+    transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.3s;
+  }
+
   /* Mesh background */
   .mesh-bg {
     position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
@@ -60,12 +104,14 @@
 
   .container { max-width: 1040px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
 
-  /* Scroll reveals */
+  /* Scroll reveals with scale+blur */
   .reveal {
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0; transform: translateY(20px) scale(0.97); filter: blur(3px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal.visible { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
   .reveal-delay-1 { transition-delay: 0.05s; }
   .reveal-delay-2 { transition-delay: 0.1s; }
   .reveal-delay-3 { transition-delay: 0.15s; }
@@ -116,7 +162,7 @@
     font-family: var(--font-mono); font-size: 0.72rem; outline: none;
     transition: border-color 0.2s;
   }
-  .search-box input:focus { border-color: var(--accent); }
+  .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 24px rgba(34,211,238,0.06); }
   .search-box input::placeholder { color: var(--muted); }
   .search-box .search-icon {
     position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
@@ -127,9 +173,10 @@
   .filter-btn {
     background: transparent; border: 1px solid var(--border); color: var(--secondary);
     padding: 5px 16px; border-radius: 20px; font-size: 0.72rem; cursor: pointer;
-    font-family: var(--font-mono); font-weight: 500; transition: all 0.2s;
+    font-family: var(--font-mono); font-weight: 500; transition: all 0.3s;
   }
   .filter-btn:hover { border-color: var(--border-bright); color: var(--text); transform: translateY(-1px); }
+  .filter-btn:active { transform: translateY(0) scale(0.97); }
   .filter-btn.active {
     background: var(--accent); border-color: var(--accent); color: #0a0a0d;
     box-shadow: 0 0 20px rgba(34,211,238,0.15);
@@ -147,7 +194,7 @@
     background: var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 48px;
   }
   .skill-item {
-    background: var(--surface); padding: 24px; transition: all 0.3s;
+    background: var(--surface); padding: 24px; transition: all 0.4s;
     position: relative; overflow: hidden;
   }
   .skill-item::before {
@@ -155,8 +202,12 @@
     background: linear-gradient(90deg, transparent, var(--accent-dim), transparent);
     opacity: 0; transition: opacity 0.3s;
   }
-  .skill-item:hover { background: var(--surface-alt); }
+  .skill-item:hover {
+    background: var(--surface-alt);
+    transform: translateX(3px);
+  }
   .skill-item:hover::before { opacity: 1; }
+  .skill-item:active { transform: translateX(0); }
 
   .skill-item h3 { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
   .skill-item h3 .tag {
@@ -170,13 +221,13 @@
   .skill-meta span {
     font-family: var(--font-mono); font-size: 0.63rem; font-weight: 500;
     color: var(--muted); border: 1px solid var(--border);
-    padding: 2px 10px; border-radius: 20px; transition: all 0.2s;
+    padding: 2px 10px; border-radius: 20px; transition: all 0.3s;
   }
   .skill-meta span:hover { border-color: var(--border-bright); color: var(--secondary); }
   .skill-meta a {
     font-family: var(--font-mono); font-size: 0.63rem; color: var(--accent);
     text-decoration: none; padding: 2px 12px; border: 1px solid var(--border);
-    border-radius: 20px; transition: all 0.2s;
+    border-radius: 20px; transition: all 0.3s;
   }
   .skill-meta a:hover { border-color: var(--accent); box-shadow: 0 0 12px var(--accent-dim); }
 
@@ -238,10 +289,17 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  @media (hover: none) {
+    .cursor-glow { display: none !important; }
+    .grain-overlay { opacity: 0.02; }
+    .skill-item:hover { transform: none; }
+  }
+
   @media (max-width: 768px) {
     header nav a { padding: 4px 8px; font-size: 0.7rem; }
     .page-head { padding: 32px 0 16px; }
     .skill-item { padding: 18px; }
+    .skill-item:hover { transform: none; }
     .controls-bar { flex-direction: column; align-items: stretch; }
     .search-box { min-width: auto; }
   }
@@ -249,10 +307,14 @@
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="grain-overlay"></div>
 <div class="mesh-bg">
   <div class="orb"></div>
   <div class="orb"></div>
 </div>
+<div class="particles" id="particles"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <header>
   <div class="container">
@@ -269,8 +331,8 @@
   <div class="container">
     <div class="term-line"><span class="arrow">&gt;</span> ls skills/</div>
     <h1>Academic Skills</h1>
-    <p>24 purpose-built <code>SKILL.md</code> files — one per exam task. Self-contained, portable, exam-ready across all AI platforms.</p>
-    <div class="count" id="skillCount">24 skills · 6 categories</div>
+    <p>24 purpose-built <code>SKILL.md</code> files &mdash; one per exam task. Self-contained, portable, exam-ready across all AI platforms.</p>
+    <div class="count" id="skillCount">24 skills &middot; 6 categories</div>
   </div>
 </div>
 
@@ -303,7 +365,7 @@
       <a href="app.html">app</a>
       <a href="https://github.com/pinakdhabu/Exam-prompt">github</a>
     </div>
-    <p>MIT · <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> · 24 academic skills</p>
+    <p>MIT &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; 24 academic skills</p>
   </div>
 </footer>
 
@@ -337,7 +399,7 @@ const skills = [
     name: 'IMP Topics Generator',
     cat: 'core',
     tags: ['strategy', 'core'],
-    desc: '5 probability levels (90%+, 70%+, 50%+, 30%+, 10%+), 7 time-plan options (from 7 days to 1 hour), and GPA-targeted tracks for 10/10, 8/10, and pass goals. Per-unit strategies with exact question predictions. Requires PYQ analysis output as input. Never generates answers — focuses on what to study.',
+    desc: '5 probability levels (90%+, 70%+, 50%+, 30%+, 10%+), 7 time-plan options (from 7 days to 1 hour), and GPA-targeted tracks for 10/10, 8/10, and pass goals. Per-unit strategies with exact question predictions. Requires PYQ analysis output as input. Never generates answers &mdash; focuses on what to study.',
     url: 'imp-topics-generator',
     gem: 'https://gemini.google.com/gem/4266a7e8000e'
   },
@@ -450,7 +512,7 @@ const skills = [
     name: 'Session Config',
     cat: 'infra',
     tags: ['infra'],
-    desc: 'Persistent session configuration stored as a JSON profile. Stores university, subject, exam pattern, and user preferences across all 24 skills. Set once via bash scripts/profile.sh — shared across every skill. Eliminates redundant context detection.',
+    desc: 'Persistent session configuration stored as a JSON profile. Stores university, subject, exam pattern, and user preferences across all 24 skills. Set once via bash scripts/profile.sh &mdash; shared across every skill. Eliminates redundant context detection.',
     url: 'session-config'
   },
   {
@@ -464,7 +526,7 @@ const skills = [
     name: 'Document Generator',
     cat: 'infra',
     tags: ['infra'],
-    desc: 'Converts Markdown study content to print-ready PDF documents with A4 professional formatting. Two backends: Python (weasyprint) and Node.js (Playwright). Completes the 3-stage pipeline: PDF → TXT → MD → PDF.',
+    desc: 'Converts Markdown study content to print-ready PDF documents with A4 professional formatting. Two backends: Python (weasyprint) and Node.js (Playwright). Completes the 3-stage pipeline: PDF &rarr; TXT &rarr; MD &rarr; PDF.',
     url: 'document-generator'
   },
   {
@@ -523,7 +585,7 @@ function render() {
       </div>
     </div>
   `).join('');
-  document.getElementById('skillCount').textContent = `${filtered.length} skills · 6 categories`;
+  document.getElementById('skillCount').textContent = `${filtered.length} skills &middot; 6 categories`;
 }
 
 render();
@@ -544,7 +606,7 @@ searchInput.addEventListener('input', () => {
   render();
 });
 
-// Scroll reveals
+// Scroll reveal
 document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -555,6 +617,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+});
+
+// Scroll progress
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = docHeight > 0 ? ((scrollTop / docHeight) * 100) + '%' : '0%';
+}, { passive: true });
+
+// Particles
+const particlesContainer = document.getElementById('particles');
+for (let i = 0; i < 15; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + '%';
+  p.style.animationDelay = (Math.random() * 10) + 's';
+  p.style.animationDuration = (12 + Math.random() * 10) + 's';
+  p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
+  particlesContainer.appendChild(p);
+}
+
+// Cursor glow
+const cursorGlow = document.getElementById('cursorGlow');
+let cursorTimer;
+document.addEventListener('mousemove', (e) => {
+  cursorGlow.style.left = e.clientX + 'px';
+  cursorGlow.style.top = e.clientY + 'px';
+  cursorGlow.style.opacity = '1';
+  clearTimeout(cursorTimer);
+  cursorTimer = setTimeout(() => { cursorGlow.style.opacity = '0'; }, 3000);
 });
 </script>
 </body>

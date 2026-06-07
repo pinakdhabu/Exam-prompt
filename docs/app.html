@@ -34,6 +34,41 @@
     font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased;
   }
 
+  /* Grain */
+  .grain-overlay {
+    position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+    opacity: 0.035; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+    background-repeat: repeat; background-size: 256px 256px;
+  }
+
+  /* Particles */
+  .particles {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  }
+  .particle {
+    position: absolute; width: 2px; height: 2px;
+    background: var(--accent); border-radius: 50%; opacity: 0;
+    animation: particleFloat 15s linear infinite;
+  }
+  .particle:nth-child(odd) { width: 1px; height: 1px; animation-duration: 12s; }
+  .particle:nth-child(3n) { animation-duration: 18s; animation-delay: -5s; }
+  .particle:nth-child(5n+2) { animation-delay: -3s; background: var(--pink); }
+  @keyframes particleFloat {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
+  }
+
+  /* Cursor glow */
+  .cursor-glow {
+    position: fixed; width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,211,238,0.06) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+    transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.3s;
+  }
+
   /* Mesh background */
   .mesh-bg {
     position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
@@ -80,12 +115,14 @@
     transition: all 0.2s; outline: none;
   }
   button:hover, select:hover { border-color: var(--border-bright); }
+  button:active, select:active { transform: scale(0.97); }
   select:focus { border-color: var(--accent); }
   button.primary {
     background: linear-gradient(135deg, var(--accent), #06b6d4);
     border-color: var(--accent); color: #0a0a0d;
   }
   button.primary:hover { box-shadow: 0 0 30px var(--accent-dim); transform: translateY(-1px); }
+  button.primary:active { transform: translateY(0) scale(0.97); }
   main {
     flex: 1; display: flex; flex-direction: column;
     max-width: 960px; margin: 0 auto; padding: 16px 16px 8px;
@@ -149,6 +186,11 @@
   main > *:nth-child(5) { animation-delay: 0.2s; }
   main > *:nth-child(6) { animation-delay: 0.25s; }
 
+  @media (hover: none) {
+    .cursor-glow { display: none !important; }
+    .grain-overlay { opacity: 0.02; }
+  }
+
   @media (max-width: 640px) {
     header { flex-wrap: wrap; min-height: auto; padding: 8px 12px; gap: 6px; }
     .controls { flex-wrap: wrap; }
@@ -159,10 +201,13 @@
 </head>
 <body>
 
+<div class="grain-overlay"></div>
 <div class="mesh-bg">
   <div class="orb"></div>
   <div class="orb"></div>
 </div>
+<div class="particles" id="particles"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <header>
   <div class="left">
@@ -218,7 +263,7 @@
     <label>Your Question</label>
     <span style="color:var(--muted);font-size:0.65rem;font-family:var(--font-mono)">Include subject, marks, university, and exam type</span>
   </div>
-  <div class="hint"><span class="accent">$</span> 24 skills available — skill prompt + question copied together</div>
+  <div class="hint"><span class="accent">$</span> 24 skills available &mdash; skill prompt + question copied together</div>
   <textarea id="question" placeholder="Paste your exam question here..."></textarea>
 
   <div class="row" style="margin-top:10px">
@@ -250,7 +295,7 @@ const SKILLS = {
     name: "A+ Answer Writer",
     gem: "https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK",
     desc: "10/10 GPA Exam Answer Generator at Senior Examiner + University Moderator level.",
-    text: `# Universal Exam A+ System — Any University, Any Subject, 10/10 GPA
+    text: `# Universal Exam A+ System \u2014 Any University, Any Subject, 10/10 GPA
 
 Full repository: https://github.com/pinakdhabu/Exam-prompt
 
@@ -258,8 +303,8 @@ You are now a 10/10 GPA Exam Answer Generator operating at Senior Examiner + Uni
 
 ## Universal Answer Rules
 
-1. Direct answer only — no "Here is your answer", no preamble, no section labels
-2. Third-person academic voice — assertive, no hedging
+1. Direct answer only \u2014 no "Here is your answer", no preamble, no section labels
+2. Third-person academic voice \u2014 assertive, no hedging
 3. Bold every technical term on first use only
 4. Numbered points for body. Tables for comparisons. Boxed answers for numericals.
 5. For 4+ marks: definition + points + diagram (if structural) + example (if applicable) + closing line
@@ -329,7 +374,7 @@ Remain in this role for the entire conversation.` },
     name: "Notes Generator",
     gem: "https://gemini.google.com/gem/bf5b14582187",
     desc: "Academic Notes Specialist producing exam-ready study material.",
-    text: `# Notes Generator — Exam-Ready Study Notes
+    text: `# Notes Generator \u2014 Exam-Ready Study Notes
 
 You are an Academic Notes Specialist. Generate structured, exam-ready notes from the given topic or syllabus.
 
@@ -356,7 +401,7 @@ Remain in this role for the entire conversation.` },
     name: "PYQ Analyzer",
     gem: "https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh",
     desc: "Statistical Exam Analyst for previous year question papers.",
-    text: `# PYQ Analyzer — Previous Year Question Paper Analysis
+    text: `# PYQ Analyzer \u2014 Previous Year Question Paper Analysis
 
 You are a Statistical Exam Analyst. Analyze the provided question papers and syllabus to generate strategic insights.
 
@@ -385,7 +430,7 @@ Remain in this role for the entire conversation.` },
     name: "IMP Topics",
     gem: "https://gemini.google.com/gem/4266a7e8000e",
     desc: "Exam Strategist for high-probability important topics.",
-    text: `# IMP Topics Generator — Exam Strategy
+    text: `# IMP Topics Generator \u2014 Exam Strategy
 
 You are an Exam Strategist. Generate prioritized important topics based on past papers and syllabus.
 
@@ -412,7 +457,7 @@ Remain in this role for the entire conversation.` },
   "assignment": {
     name: "Assignment Writer",
     desc: "Academic Assignment Writer for structured assignment content.",
-    text: `# Assignment Writer — Academic Assignment Generator
+    text: `# Assignment Writer \u2014 Academic Assignment Generator
 
 You are an Academic Assignment Writer. Produce well-structured, referenced assignments.
 
@@ -437,7 +482,7 @@ Remain in this role for the entire conversation.` },
   "exam-paper": {
     name: "Exam Paper Generator",
     desc: "University Examiner generating complete exam question papers.",
-    text: `# Exam Paper Generator — Question Paper Creator
+    text: `# Exam Paper Generator \u2014 Question Paper Creator
 
 You are a University Examiner. Generate complete exam question papers matching the specified university pattern.
 
@@ -460,7 +505,7 @@ Remain in this role for the entire conversation.` },
   "prompt-bank": {
     name: "Subject Prompt Bank",
     desc: "Subject-Matter Expert for optimized sample answers.",
-    text: `# Subject Prompt Bank — Optimized Sample Answers
+    text: `# Subject Prompt Bank \u2014 Optimized Sample Answers
 
 You are a Subject-Matter Expert. Generate optimized sample answers calibrated for the specified discipline and mark level.
 
@@ -485,7 +530,7 @@ Remain in this role for the entire conversation.` },
   "flashcard": {
     name: "Flashcard Generator",
     desc: "Flashcard Specialist for SRS-optimized flashcards.",
-    text: `# Flashcard Generator — SRS-Optimized Flashcards
+    text: `# Flashcard Generator \u2014 SRS-Optimized Flashcards
 
 You are a Flashcard Specialist. Convert the given material into optimized flashcards following spaced repetition principles.
 
@@ -511,7 +556,7 @@ Remain in this role for the entire conversation.` },
   "study-planner": {
     name: "Study Planner",
     desc: "Study Strategist for personalized study schedules.",
-    text: `# Study Planner — Personalized Study Schedule
+    text: `# Study Planner \u2014 Personalized Study Schedule
 
 You are a Study Strategist. Generate a day-by-day study plan based on the syllabus, exam date, available hours, and difficulty ratings.
 
@@ -533,7 +578,7 @@ Remain in this role for the entire conversation.` },
   "mcq": {
     name: "MCQ Generator",
     desc: "MCQ Specialist for exam-style multiple choice questions.",
-    text: `# MCQ Practice Generator — Exam-Style Questions
+    text: `# MCQ Practice Generator \u2014 Exam-Style Questions
 
 You are an MCQ Specialist. Generate multiple choice questions matching the specified exam pattern and difficulty level.
 
@@ -582,7 +627,7 @@ Remain in this role for the entire conversation.` },
   "crammer": {
     name: "Last-Minute Crammer",
     desc: "Emergency Exam Specialist for ultra-compressed study plans.",
-    text: `# Last-Minute Crammer — Emergency Exam Preparation
+    text: `# Last-Minute Crammer \u2014 Emergency Exam Preparation
 
 You are an Emergency Exam Specialist. Generate ultra-compressed study plans for extreme time constraints.
 
@@ -610,7 +655,7 @@ Remain in this role for the entire conversation.` },
   "lab-report": {
     name: "Lab Report Writer",
     desc: "Lab Report Specialist for complete laboratory report structures.",
-    text: `# Lab Report Writer — Complete Laboratory Reports
+    text: `# Lab Report Writer \u2014 Complete Laboratory Reports
 
 You are a Lab Report Specialist. Generate structured laboratory reports for engineering, science, medical, or research labs.
 
@@ -632,7 +677,7 @@ Remain in this role for the entire conversation.` },
   "formula": {
     name: "Formula Sheet",
     desc: "Formula Sheet Specialist for compact exam-ready references.",
-    text: `# Formula Sheet Generator — Exam-Ready Formulas
+    text: `# Formula Sheet Generator \u2014 Exam-Ready Formulas
 
 You are a Formula Sheet Specialist. Generate compact, organized formula sheets for quick exam reference.
 
@@ -656,7 +701,7 @@ Remain in this role for the entire conversation.` },
   "mindmap": {
     name: "Mind Map Generator",
     desc: "Concept Visualizer for hierarchical mind maps.",
-    text: `# Mind Map Generator — Visual Concept Maps
+    text: `# Mind Map Generator \u2014 Visual Concept Maps
 
 You are a Concept Visualizer. Generate hierarchical mind maps that show relationships between topics.
 
@@ -684,7 +729,7 @@ Remain in this role for the entire conversation.` },
   "case-study": {
     name: "Case Study Solver",
     desc: "Case Analyst solving cases using structured frameworks.",
-    text: `# Case Study Solver — Structured Case Analysis
+    text: `# Case Study Solver \u2014 Structured Case Analysis
 
 You are a Case Analyst. Solve case studies using established analytical frameworks.
 
@@ -709,7 +754,7 @@ Remain in this role for the entire conversation.` },
   "essay-grader": {
     name: "Essay Grader",
     desc: "Senior Examiner scoring answers against university rubrics.",
-    text: `# Essay Grader — Answer Evaluation System
+    text: `# Essay Grader \u2014 Answer Evaluation System
 
 You are a Senior Examiner. Evaluate student answers against university-specific rubrics.
 
@@ -736,7 +781,7 @@ Remain in this role for the entire conversation.` },
   "cross-subject": {
     name: "Cross-Subject Mapper",
     desc: "Curriculum Analyst for interdisciplinary concept mapping.",
-    text: `# Cross-Subject Mapper — Interdisciplinary Concept Mapping
+    text: `# Cross-Subject Mapper \u2014 Interdisciplinary Concept Mapping
 
 You are a Curriculum Analyst. Show how topics from one subject connect to and build upon topics from other subjects.
 
@@ -757,7 +802,7 @@ Remain in this role for the entire conversation.` },
   "adapter": {
     name: "University Adapter",
     desc: "University Detection Specialist identifying exam patterns.",
-    text: `# University Adapter — Auto-Detect Any University
+    text: `# University Adapter \u2014 Auto-Detect Any University
 
 You are a University Detection Specialist. Identify the user's university from provided information and configure the exam format.
 
@@ -783,7 +828,7 @@ Remain in this role for the entire conversation.` },
   "doc-reader": {
     name: "Document Reader",
     desc: "Document Extraction Specialist for PDFs and images.",
-    text: `# Document Reader — PDF/Image to Text
+    text: `# Document Reader \u2014 PDF/Image to Text
 
 Convert the provided document to clean, LLM-friendly text.
 
@@ -799,7 +844,7 @@ See skills/universal-document-reader/SKILL.md for complete instructions.` },
   "doc-generator": {
     name: "Document Generator",
     desc: "Document Formatter converting Markdown to print-ready PDF.",
-    text: `# Document Generator — Markdown to PDF
+    text: `# Document Generator \u2014 Markdown to PDF
 
 Convert the generated Markdown content to a print-ready document.
 
@@ -819,7 +864,7 @@ See skills/document-generator/SKILL.md for complete instructions.` },
   "session-config": {
     name: "Session Config",
     desc: "Configuration Manager for persistent student profiles.",
-    text: `# Session Config — Persistent Student Profile
+    text: `# Session Config \u2014 Persistent Student Profile
 
 Configure a persistent profile for the student across all skills.
 
@@ -841,7 +886,7 @@ See skills/session-config/SKILL.md for complete instructions.` },
   "qp-fetcher": {
     name: "QP Fetcher",
     desc: "Question Paper Downloader for auto-fetching PYQs.",
-    text: `# QP Fetcher — Auto-Fetch Question Papers
+    text: `# QP Fetcher \u2014 Auto-Fetch Question Papers
 
 Automatically download previous year question papers from university websites.
 
@@ -859,7 +904,7 @@ See skills/qp-fetcher/SKILL.md for complete instructions.` },
   "sppu-simulator": {
     name: "SPPU Exam Simulator",
     desc: "Exam Hall Simulator for real physical exam constraints.",
-    text: `# SPPU Exam Simulator — Physical Exam Constraints
+    text: `# SPPU Exam Simulator \u2014 Physical Exam Constraints
 
 Simulate real examination hall conditions.
 
@@ -968,6 +1013,31 @@ document.getElementById('openGem').onclick = () => {
     showToast('No Gemini Gem for this skill. Try Answer Writer, Notes, PYQ, or IMP Topics.');
   }
 };
+
+// Particles
+(function() {
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 12; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    p.style.animationDuration = (12 + Math.random() * 10) + 's';
+    p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
+    container.appendChild(p);
+  }
+})();
+
+// Cursor glow
+const cursorGlow = document.getElementById('cursorGlow');
+let cursorTimer;
+document.addEventListener('mousemove', (e) => {
+  cursorGlow.style.left = e.clientX + 'px';
+  cursorGlow.style.top = e.clientY + 'px';
+  cursorGlow.style.opacity = '1';
+  clearTimeout(cursorTimer);
+  cursorTimer = setTimeout(() => { cursorGlow.style.opacity = '0'; }, 3000);
+});
 </script>
 </body>
 </html>
