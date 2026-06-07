@@ -517,6 +517,79 @@ Final compliance table showing every question mapped to CO + Bloom level + marks
 
 ---
 
+## Mathematics & LaTeX Formatting
+
+For question papers involving mathematical expressions, output equations using **LaTeX syntax**
+for compatibility with the KaTeX/PDF rendering pipeline:
+
+### Display Math (for equations, integrals, matrices)
+
+Use `$$...$$` blocks for standalone equations:
+
+```
+Find:
+$$\int_{0}^{\infty} x^2 e^{-x} dx$$
+
+Solve:
+$$\begin{bmatrix} 2 & -1 \\ 1 & 3 \end{bmatrix} \times \begin{bmatrix} x \\ y \end{bmatrix} =
+\begin{bmatrix} 5 \\ 7 \end{bmatrix}$$
+
+Evaluate:
+$$\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$
+```
+
+### Inline Math (for variables, formulas in text)
+
+Use `\(...\)` for math within a sentence:
+
+```
+Find the value of \(x\) such that \(f(x) = x^2 + 3x - 5\).
+
+The partial derivative \(\frac{\partial u}{\partial x}\) is given by...
+```
+
+### Supported LaTeX Constructs
+
+| Construct      | LaTeX Example                             | Renders As                      |
+| -------------- | ----------------------------------------- | ------------------------------- |
+| Fractions      | `\frac{a}{b}`                             | a/b fraction                    |
+| Integrals      | `\int_{0}^{1} x dx`                       | ∫₀¹ x dx                        |
+| Summations     | `\sum_{i=1}^{n} i`                        | Σᵢ₌₁ⁿ i                         |
+| Matrices       | `\begin{bmatrix} a & b \\ c & d \end{bmatrix}` | 2×2 matrix               |
+| Determinants   | `\begin{vmatrix} a & b \\ c & d \end{vmatrix}` | 2×2 determinant          |
+| Greek symbols  | `\alpha`, `\beta`, `\lambda`              | α, β, λ                         |
+| Derivatives    | `\frac{dy}{dx}`, `\frac{\partial u}{\partial x}` | dy/dx, ∂u/∂x               |
+| Fourier Series | `a_0 + \sum_{n=1}^{\infty} (a_n \cos(nx) + b_n \sin(nx))` | Fourier series       |
+| Eigenvalues    | `\lambda I - A`                            | λI - A                          |
+
+### Math Rendering Pipeline
+
+```
+Question Paper (Markdown + LaTeX)
+        │
+        ▼
+scripts/convert-to-pdf.js
+        │
+        ├── marked (Markdown → HTML)
+        ├── KaTeX (server-side: $$...$$, \(...\) → rendered HTML)
+        └── Playwright Chromium (HTML → A4 PDF)
+        │
+        ▼
+SPPU-style PDF (Times New Roman)
+```
+
+### Rules
+
+- All mathematical expressions MUST use proper LaTeX syntax — never plain text approximations
+  (e.g., write `\(x^2\)` not `x^2`).
+- Use `$$...$$` for display math (equations on their own line).
+- Use `\(...\)` for inline math (variables and formulas within text).
+- Matrices use `\begin{bmatrix}...\end{bmatrix}`.
+- Integrals use `\int_{lower}^{upper}`.
+- Fractions use `\frac{numerator}{denominator}`.
+- Greek letters use backslash notation: `\alpha`, `\beta`, `\theta`, etc.
+- Partial derivatives use `\frac{\partial}{\partial x}`.
+
 ## Output Format
 
 ```

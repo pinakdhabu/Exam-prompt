@@ -1,81 +1,141 @@
 #!/usr/bin/env node
 /**
- * Convert Markdown files to PDF using marked + Playwright (headless Chromium).
- * Works on: Linux, macOS, Windows
+ * Convert Markdown -> professional SPPU-style PDF.
  *
- * Usage:
- *   node scripts/convert-to-pdf.js <input.md> [output.pdf]
+ * Pipeline: Markdown -> marked -> HTML -> KaTeX (server-side) -> Playwright Chromium -> A4 PDF
  *
- * Dependencies:
- *   npm install marked playwright
+ * Features:
+ *   - Times New Roman (matches official SPPU QPs)
+ *   - LaTeX math via server-side KaTeX (integrals, matrices, fractions, derivatives)
+ *   - SPPU layout: seat-number box, QP header, right-aligned marks, OR separators
+ *   - Mermaid diagram support
  *
- * Install Playwright browser:
- *   npx playwright install chromium
+ * Usage:  node scripts/convert-to-pdf.js <input.md> [output.pdf]
+ * Deps:  npm install marked playwright katex  &&  npx playwright install chromium
  */
 const { marked } = require('marked');
 const { chromium } = require('playwright');
+let katex = null;
+try { katex = require('katex'); }
+catch (e) {
+  console.error('  ERROR: katex is required. Install with:  npm install katex');
+  process.exit(1);
+}
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const CSS = `
-  @page {
-    size: A4;
-    margin: 2cm 2.2cm;
-    @bottom-center {
-      content: counter(page);
-      font-family: 'Segoe UI', 'Calibri', sans-serif;
-      font-size: 9pt;
-      color: #888;
-    }
-  }
+const KATEX_CSS = fs.readFileSync(
+  path.join(require.resolve('katex'), '..', '..', 'dist', 'katex.min.css'), 'utf-8'
+);
 
+const CSS = KATEX_CSS + `
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
   body {
-    font-family: 'Segoe UI', 'Calibri', sans-serif;
-    font-size: 10.5pt;
-    line-height: 1.6;
-    color: #1a1a1a;
-    padding: 0;
-    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt; line-height: 1.15; color: #000;
+    padding: 0; margin: 0; orphans: 3; widows: 3;
   }
-
-  h1 { font-size: 18pt; color: #0d3b66; border-bottom: 3px solid #0d3b66; padding-bottom: 6px; margin-top: 0; page-break-before: avoid; page-break-after: avoid; }
-  h2 { font-size: 14pt; color: #1b5a8c; border-bottom: 1px solid #cde0f0; padding-bottom: 4px; margin-top: 28px; page-break-before: avoid; page-break-after: avoid; }
-  h3 { font-size: 12pt; color: #2c5f2d; margin-top: 20px; page-break-before: avoid; page-break-after: avoid; }
-  h4 { font-size: 11pt; color: #444; margin-top: 16px; page-break-before: avoid; page-break-after: avoid; }
-
-  p { margin: 6px 0; text-align: justify; }
-  strong { color: #0d3b66; }
-
-  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9.5pt; page-break-inside: avoid; }
-  th { background: #0d3b66; color: white; padding: 7px 10px; text-align: left; font-weight: 600; }
-  td { padding: 6px 10px; border: 1px solid #d0d7de; }
-  tr:nth-child(even) { background: #f6f8fa; }
-
-  pre { background: #0d1117; color: #e6edf3; padding: 12px 14px; border-radius: 6px; font-family: 'Cascadia Code', 'Fira Code', 'Consolas', 'Courier New', monospace; font-size: 8.5pt; line-height: 1.45; white-space: pre-wrap; word-break: break-word; page-break-inside: avoid; }
-  pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
-  code { font-family: 'Cascadia Code', 'Fira Code', 'Consolas', 'Courier New', monospace; font-size: 9pt; }
-  p > code, li > code { background: #eef1f5; padding: 1px 5px; border-radius: 3px; color: #c7254e; }
-
-  ul, ol { margin: 6px 0; padding-left: 22px; }
-  li { margin: 3px 0; }
-
-  hr { border: none; border-top: 1px dashed #bbb; margin: 20px 0; }
-
-  blockquote { margin: 10px 0; padding: 8px 14px; border-left: 4px solid #0d3b66; background: #f0f6fb; page-break-inside: avoid; }
-
-  img { max-width: 100%; }
+  .seat-box {
+    float: right; width: 140px;
+    border: 2px solid #000; padding: 6px 8px;
+    text-align: center; font-size: 10pt; font-weight: bold;
+    margin: 0 0 12px 12px;
+  }
+  .seat-box .seat-label {
+    font-size: 8pt; font-weight: normal;
+    border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 4px;
+  }
+  .qp-header { text-align: center; margin-bottom: 8px; clear: both; }
+  .qp-header .qp-title { font-size: 14pt; font-weight: bold; margin: 0 0 2px 0; text-transform: uppercase; }
+  .qp-header .qp-subtitle, .qp-header .qp-code { font-size: 11pt; margin: 0 0 2px 0; }
+  .qp-header .qp-meta { font-size: 10pt; margin: 0; color: #333; }
+  .qp-divider { border: none; border-top: 1.5px solid #000; margin: 10px 0; clear: both; }
+  .instructions { font-size: 11pt; margin: 10px 0; }
+  .instructions p { margin: 2px 0; line-height: 1.3; }
+  .marks { float: right; font-weight: normal; white-space: nowrap; margin-left: 8px; }
+  h1 { font-size: 14pt; font-weight: bold; margin: 16px 0 6px 0; page-break-after: avoid; }
+  h2 { font-size: 13pt; font-weight: bold; margin: 14px 0 4px 0; page-break-after: avoid; }
+  h3 { font-size: 12pt; font-weight: bold; margin: 12px 0 4px 0; page-break-after: avoid; }
+  p { margin: 4px 0; } strong { font-weight: bold; } em { font-style: italic; }
+  p > strong:first-child { display: inline; }
+  p:has(> strong:first-child) { font-weight: bold; margin: 8px 0 2px 0; }
+  p:has(> strong:only-child) { text-align: center; margin: 6px 0; color: #333; }
+  .qp-header + p, .qp-header + p + p, .qp-header + p + p + p { font-size: 11pt; margin: 2px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 11pt; page-break-inside: avoid; }
+  th { background: #e0e0e0; font-weight: bold; padding: 5px 8px; border: 1px solid #000; text-align: center; }
+  td { padding: 4px 8px; border: 1px solid #000; }
+  pre { background: #f5f5f5; border: 0.5px solid #ccc; padding: 8px 10px; font-family: 'Courier New', Courier, monospace; font-size: 9.5pt; line-height: 1.35; white-space: pre-wrap; page-break-inside: avoid; margin: 6px 0; }
+  code { font-family: 'Courier New', Courier, monospace; font-size: 10pt; }
+  p > code, li > code { background: #f0f0f0; padding: 1px 3px; }
+  ul, ol { margin: 4px 0; padding-left: 28px; } li { margin: 2px 0; }
+  blockquote { margin: 6px 0; padding: 4px 10px; border-left: 3px solid #333; background: #fafafa; font-style: italic; page-break-inside: avoid; }
+  hr { border: none; border-top: 1px dashed #999; margin: 14px 0; }
+  .katex { font-size: 1.1em; } .katex-display { margin: 6px 0; text-align: center; }
+  img { max-width: 100%; height: auto; }
+  .page-break { page-break-before: always; }
+  .keep-together { page-break-inside: avoid; }
 `;
 
+/** Server-side KaTeX rendering: $$...$$ (display) and \\(...\\) (inline) */
+function renderMathServerSide(html) {
+  html = html.replace(/\$\$([\s\S]*?)\$\$/g, (_, expr) => {
+    try { return katex.renderToString(expr.trim(), { displayMode: true, throwOnError: false }); }
+    catch (e) { return '<div class="katex-error">[Math: ' + expr.trim() + ']</div>'; }
+  });
+  html = html.replace(/\\\(([\s\S]*?)\\\)/g, (_, expr) => {
+    try { return katex.renderToString(expr.trim(), { displayMode: false, throwOnError: false }); }
+    catch (e) { return '<span class="katex-error">[' + expr.trim() + ']</span>'; }
+  });
+  return html;
+}
+
+/**
+ * Preprocess Markdown to add SPPU QP structure.
+ * - Skips content inside fenced code blocks (```).
+ * - Adds seat-number box + QP header.
+ * - Wraps [N] marks in <span class="marks">.
+ * - Wraps OR variants in <div class="question-or">.
+ */
+function preprocessQP(md) {
+  if (!(/Q\s*\.?\s*1\s*\)/i.test(md) || /Q\.\s*1\b/i.test(md))) return md;
+
+  // Split into fenced blocks and non-fenced content
+  const parts = md.split(/(```[\s\S]*?```)/g);
+
+  for (let i = 0; i < parts.length; i++) {
+    // Skip fenced code blocks (``` ```)
+    if (parts[i].startsWith('```')) continue;
+
+    let part = parts[i];
+
+    // 1. Seat-number box + QP header (first heading)
+    part = part.replace(/^#\s+(.+)$/m, (_, title) => {
+      return '<div class="seat-box"><div class="seat-label">Seat No.</div></div>\n\n'
+           + '<div class="qp-header"><p class="qp-title">' + title.trim() + '</p></div>';
+    });
+
+    // 2. Wrap marks [N] or [N Marks] in <span class="marks">
+    part = part.replace(/\[(\d+)\s*(?:[Mm]arks?)?\]/g, '<span class="marks">[$1]</span>');
+
+    // 3. Wrap OR variants: **OR**, *OR*, O.R., or plain OR on its own line
+    part = part.replace(/^(\s*\*{0,2}O\.?R\.?\*{0,2}\s*)$/gim, '<div class="question-or">OR</div>');
+
+    parts[i] = part;
+  }
+
+  return parts.join('');
+}
+
 function usage() {
-  console.log('Convert Markdown to PDF using Playwright');
+  console.log('Convert Markdown to SPPU-style PDF (Times New Roman + KaTeX math)');
   console.log('');
-  console.log('Usage:');
-  console.log('  node scripts/convert-to-pdf.js <input.md> [output.pdf]');
-  console.log('');
-  console.log('Examples:');
-  console.log('  node scripts/convert-to-pdf.js notes.md');
-  console.log('  node scripts/convert-to-pdf.js notes.md output.pdf');
+  console.log('Usage:  node scripts/convert-to-pdf.js <input.md> [output.pdf]');
+  console.log('');  
+  console.log('Features: Times New Roman, KaTeX math (integrals, matrices, fractions)');
+  console.log('          SPPU layout (seat-box, marks, OR), Mermaid diagrams');
+  console.log('Deps: npm install marked playwright katex  &&  npx playwright install chromium');
   process.exit(1);
 }
 
@@ -84,82 +144,80 @@ async function main() {
   if (args.length < 1) usage();
 
   const mdPath = path.resolve(args[0]);
-  if (!fs.existsSync(mdPath)) {
-    console.error(`ERROR: Input file not found: ${mdPath}`);
-    process.exit(1);
-  }
+  if (!fs.existsSync(mdPath)) { console.error('  ERROR: File not found: ' + mdPath); process.exit(1); }
 
   let pdfPath;
-  if (args.length >= 2) {
-    pdfPath = path.resolve(args[1]);
-  } else {
-    const pdfDir = path.join(path.dirname(mdPath), 'pdf_output');
-    fs.mkdirSync(pdfDir, { recursive: true });
-    pdfPath = path.join(pdfDir, path.basename(mdPath).replace(/\.md$/, '.pdf'));
+  if (args.length >= 2) { pdfPath = path.resolve(args[1]); }
+  else {
+    const d = path.join(path.dirname(mdPath), 'pdf_output');
+    fs.mkdirSync(d, { recursive: true });
+    pdfPath = path.join(d, path.basename(mdPath).replace(/\.md$/, '.pdf'));
   }
-
   fs.mkdirSync(path.dirname(pdfPath), { recursive: true });
 
-  console.log(`Converting: ${path.basename(mdPath)} -> ${path.basename(pdfPath)}`);
+  console.log('  Input: ' + path.basename(mdPath));
+  console.log('  Output: ' + path.basename(pdfPath));
 
-  let md = fs.readFileSync(mdPath, 'utf-8').replace(/\u{1f31f}/ug, '');
+  let md = fs.readFileSync(mdPath, 'utf-8')
+    .replace(/\u{1f31f}/ug, '')
+    .replace(/[\u201c\u201d]/g, '"')
+    .replace(/\u2013/g, '--')
+    .replace(/\u2014/g, '---');
 
-  // --- Preprocess: Render Mermaid diagrams to SVG ---
+  // ── Preprocess QP structure ──
+  md = preprocessQP(md);
+
+  // ── Mermaid diagrams ──
   const mermaidBlocks = md.match(/```mermaid\s*\n([\s\S]*?)```/g);
   if (mermaidBlocks && mermaidBlocks.length > 0) {
     const diagDir = path.join(path.dirname(pdfPath), '_diagrams');
     fs.mkdirSync(diagDir, { recursive: true });
-    console.log(`  Rendering ${mermaidBlocks.length} Mermaid diagram(s)...`);
-
+    console.log('  Diagrams: ' + mermaidBlocks.length);
     mermaidBlocks.forEach((block, idx) => {
       const code = block.replace(/```mermaid\s*\n/, '').replace(/```$/, '').trim();
       if (!code) return;
-
-      const mmdFile = path.join('/tmp', `_md_${idx}_${Date.now()}.mmd`);
-      const svgFile = path.join(diagDir, `mermaid-${idx}.svg`);
-      const relPath = path.join('_diagrams', `mermaid-${idx}.svg`);
-
+      const mmd = '/tmp/_md_' + idx + '_' + Date.now() + '.mmd';
+      const svg = path.join(diagDir, 'mermaid-' + idx + '.svg');
+      const rel = path.join('_diagrams', 'mermaid-' + idx + '.svg');
       try {
-        fs.writeFileSync(mmdFile, code, 'utf-8');
-        execSync(
-          `npx @mermaid-js/mermaid-cli -i "${mmdFile}" -o "${svgFile}" --backgroundColor white --width 1200 2>&1`,
-          { stdio: 'pipe', timeout: 30000 }
-        );
-        if (fs.existsSync(svgFile)) {
-          // Replace Mermaid code block with img tag
-          const imgTag = `<p><img src="${relPath}" alt="mermaid-diagram-${idx}" style="max-width:100%;height:auto;display:block;margin:1em auto;"/></p>`;
-          md = md.replace(block, imgTag);
-          console.log(`  ✅ Diagram ${idx + 1}/${mermaidBlocks.length}`);
+        fs.writeFileSync(mmd, code, 'utf-8');
+        execSync('npx @mermaid-js/mermaid-cli -i "' + mmd + '" -o "' + svg + '" --backgroundColor white --width 1200 2>&1', { stdio: 'pipe', timeout: 30000 });
+        if (fs.existsSync(svg)) {
+          md = md.replace(block, '<p style="text-align:center"><img src="' + rel + '" alt="diagram" style="max-width:100%;height:auto;margin:1em auto;"/></p>');
+          console.log('    Diagram ' + (idx + 1) + ' OK');
         }
-      } catch (e) {
-        console.error(`  ❌ Diagram ${idx + 1} failed: ${e.message.split('\n')[0]}`);
-      } finally {
-        if (fs.existsSync(mmdFile)) fs.unlinkSync(mmdFile);
-        const pdfFile = mmdFile.replace('.mmd', '.pdf');
-        if (fs.existsSync(pdfFile)) fs.unlinkSync(pdfFile);
-      }
+      } catch (e) { console.error('    Diagram ' + (idx + 1) + ' skipped'); }
+      finally { if (fs.existsSync(mmd)) fs.unlinkSync(mmd); }
     });
   }
 
-  const htmlBody = marked.parse(md, { breaks: true });
-  const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><style>${CSS}</style></head><body>${htmlBody}</body></html>`;
+  // ── Markdown -> HTML ──
+  let htmlBody = marked.parse(md, { breaks: true, gfm: true });
 
-  const browser = await chromium.launch();
+  // ── KaTeX server-side ──
+  htmlBody = renderMathServerSide(htmlBody);
+
+  // ── Assemble final HTML ──
+  const html = '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<style>' + CSS + '</style>\n</head>\n<body>\n' + htmlBody + '\n</body>\n</html>';
+
+  // ── PDF via Playwright ──
+  const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   await page.setContent(html, { waitUntil: 'networkidle' });
   await page.pdf({
     path: pdfPath,
     format: 'A4',
-    margin: { top: '2cm', bottom: '2cm', left: '2.2cm', right: '2.2cm' },
+    margin: { top: '20mm', bottom: '20mm', left: '18mm', right: '18mm' },
     printBackground: true,
     displayHeaderFooter: true,
     headerTemplate: '<span></span>',
-    footerTemplate: '<div style="font-size:9pt;color:#888;width:100%;text-align:center;"><span class="pageNumber"></span></div>',
+    footerTemplate: '<div style="font-size:10pt;font-family:\'Times New Roman\',Times,serif;color:#333;width:100%;text-align:center;"><span class="pageNumber"></span></div>',
   });
   await page.close();
   await browser.close();
 
-  console.log(`  Saved to: ${pdfPath}`);
+  const size = (fs.statSync(pdfPath).size / 1024).toFixed(0);
+  console.log('  Saved: ' + path.basename(pdfPath) + ' (' + size + 'K)');
 }
 
 main().catch(err => { console.error(err); process.exit(1); });

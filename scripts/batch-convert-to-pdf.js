@@ -70,6 +70,7 @@ console.log('');
 // Check dependencies
 let hasMarked = false;
 let hasPlaywright = false;
+let hasKatex = false;
 try {
   require.resolve('marked');
   hasMarked = true;
@@ -78,12 +79,17 @@ try {
   require.resolve('playwright');
   hasPlaywright = true;
 } catch { /* not installed */ }
+try {
+  require.resolve('katex');
+  hasKatex = true;
+} catch { /* not installed */ }
 
-if (!hasMarked || !hasPlaywright) {
+if (!hasMarked || !hasPlaywright || !hasKatex) {
   console.log('⚠ Missing dependencies. Install with:');
   console.log('');
   if (!hasMarked) console.log('  npm install marked');
   if (!hasPlaywright) console.log('  npm install playwright');
+  if (!hasKatex) console.log('  npm install katex');
   console.log('  npx playwright install chromium');
   console.log('');
   console.log('Or just run:  npm install');

@@ -43,11 +43,12 @@
     "diagram:render": "node scripts/diagram-gen.js",
     "diagram:watch": "node scripts/diagram-gen.js --watch",
     "diagram:formats": "node scripts/diagram-gen.js --list-formats",
-    "diagram:convert": "node scripts/convert-to-pdf.js",
+    
     "codespaces": "echo 'Ready! Run: bash scripts/validate-skills.sh'",
     "test:fetch": "node scripts/fetch-qp.js --semester 5 --list"
   },
   "dependencies": {
+    "katex": "^0.17.0",
     "marked": "^15.0.12",
     "playwright": "^1.60.0"
   },
