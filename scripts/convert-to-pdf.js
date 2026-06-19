@@ -1,330 +1,150 @@
 #!/usr/bin/env node
-/**
- * Convert Markdown → Structured Typst → Professional SPPU-style PDF.
- *
- * Pipeline: Markdown → Node.js converter → Typst (.typ) → typst compile → A4 PDF
- *
- * Features:
- *   - Times New Roman + Cambria Math (native Typst math rendering)
- *   - SPPU layout: seat-number box, QP header, right-aligned marks, OR separators
- *   - Dynamic page breaks, proper spacing, justified paragraphs
- *   - Complete integration with existing sample papers
- *
- * Usage:  node scripts/convert-to-pdf.js <input.md> [output.pdf]
- * Deps:   typst (installed via: curl -fsSL ... or package manager)
- */
+const { marked } = require('marked');
+const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
-/**
- * Convert Markdown content to Typst content for SPPU QP template.
- * Handles headings, bold, math delimiters, marks, lists, and SPPU structure.
- */
-function mdToTypst(md) {
-  let t = md;
+// ── Unicode math → KaTeX map ──
+const UNICODE_MATH = {
+  '\u0391': '\\Alpha ', '\u0392': '\\Beta ', '\u0393': '\\Gamma ', '\u0394': '\\Delta ',
+  '\u0395': '\\Epsilon ', '\u0398': '\\Theta ', '\u039B': '\\Lambda ', '\u039E': '\\Xi ',
+  '\u03A0': '\\Pi ', '\u03A3': '\\Sigma ', '\u03A6': '\\Phi ', '\u03A8': '\\Psi ',
+  '\u03A9': '\\Omega ',
+  '\u03B1': '\\alpha ', '\u03B2': '\\beta ', '\u03B3': '\\gamma ', '\u03B4': '\\delta ',
+  '\u03B5': '\\varepsilon ', '\u03B6': '\\zeta ', '\u03B7': '\\eta ', '\u03B8': '\\theta ',
+  '\u03B9': '\\iota ', '\u03BA': '\\kappa ', '\u03BB': '\\lambda ', '\u03BC': '\\mu ',
+  '\u03BD': '\\nu ', '\u03BE': '\\xi ', '\u03BF': 'o ', '\u03C0': '\\pi ',
+  '\u03C1': '\\rho ', '\u03C3': '\\sigma ', '\u03C4': '\\tau ', '\u03C5': '\\upsilon ',
+  '\u03C6': '\\phi ', '\u03C7': '\\chi ', '\u03C8': '\\psi ', '\u03C9': '\\omega ',
+  '\u2202': '\\partial ', '\u2207': '\\nabla ', '\u221E': '\\infty ',
+  '\u222B': '\\int ', '\u2211': '\\sum ', '\u220F': '\\prod ',
+  '\u2260': '\\neq ', '\u2264': '\\leq ', '\u2265': '\\geq ',
+  '\u2208': '\\in ', '\u2229': '\\cap ', '\u222A': '\\cup ',
+  '\u2192': '\\to ', '\u21D2': '\\Rightarrow ', '\u2248': '\\approx ',
+  '\u2261': '\\equiv ', '\u2220': '\\angle ', '\u2205': '\\emptyset ',
+  '\u22A2': '\\vdash ',
+};
 
-  // 1. Extract and replace math delimiters
-  // Display math: $$...$$ → $ ... $
-  t = t.replace(/\$\$([\s\S]*?)\$\$/g, (_, expr) => {
-    let e = expr.trim();
-    // Convert LaTeX to Typst equivalents
-    e = e.replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, ' frac($1, $2)');
-    e = e.replace(/\\int/g, ' integral');
-    e = e.replace(/\\sum/g, ' sum');
-    e = e.replace(/\\prod/g, ' product');
-    e = e.replace(/\\partial/g, ' partial');
-    e = e.replace(/\\infty/g, ' oo');
-    e = e.replace(/\\alpha/g, ' alpha');
-    e = e.replace(/\\beta/g, ' beta');
-    e = e.replace(/\\gamma/g, ' gamma');
-    e = e.replace(/\\theta/g, ' theta');
-    e = e.replace(/\\lambda/g, ' lambda');
-    e = e.replace(/\\mu/g, ' mu');
-    e = e.replace(/\\pi/g, ' pi');
-    e = e.replace(/\\sigma/g, ' sigma');
-    e = e.replace(/\\Delta/g, ' Delta');
-    e = e.replace(/\\Sigma/g, ' Sigma');
-    e = e.replace(/\\Omega/g, ' Omega');
-    e = e.replace(/\\Phi/g, ' Phi');
-    e = e.replace(/\\nabla/g, ' nabla');
-    e = e.replace(/\\sqrt\{([^}]+)\}/g, ' sqrt($1)');
-    e = e.replace(/\\sqrt\\[(\\d+)\\]\{([^}]+)\}/g, ' root($1, $2)');
-    e = e.replace(/\\rightarrow/g, '->');
-    e = e.replace(/\\leftarrow/g, '<-');
-    e = e.replace(/\\Rightarrow/g, '=>');
-    e = e.replace(/\\Leftarrow/g, '<=');
-    e = e.replace(/\\to/g, '->');
-    e = e.replace(/\\neq/g, '<>');
-    e = e.replace(/\\leq/g, '<=');
-    e = e.replace(/\\geq/g, '>=');
-    e = e.replace(/\\approx/g, '~~');
-    e = e.replace(/\\equiv/g, '==');
-    e = e.replace(/\\in/g, ' in');
-    e = e.replace(/\\notin/g, ' in.not');
-    e = e.replace(/\\subset/g, ' subset');
-    e = e.replace(/\\supset/g, ' supset');
-    e = e.replace(/\\subseteq/g, ' subset.eq');
-    e = e.replace(/\\supseteq/g, ' supset.eq');
-    e = e.replace(/\\cap/g, ' sect');
-    e = e.replace(/\\cup/g, ' union');
-    e = e.replace(/\\forall/g, ' forall');
-    e = e.replace(/\\exists/g, ' exists');
-    e = e.replace(/\\angle/g, ' angle');
-    e = e.replace(/\\emptyset/g, ' empty');
-    e = e.replace(/\\vdash/g, ' vdash');
-    e = e.replace(/\\mathbb\{N\}/g, ' NN');
-    e = e.replace(/\\mathbb\{Z\}/g, ' ZZ');
-    e = e.replace(/\\mathbb\{Q\}/g, ' QQ');
-    e = e.replace(/\\mathbb\{R\}/g, ' RR');
-    e = e.replace(/\\mathbb\{C\}/g, ' CC');
-    e = e.replace(/\\begin\{bmatrix\}([\s\S]*?)\\end\{bmatrix\}/g, (_, m) => {
-      const rows = m.split(/\\/).map(r => r.trim()).filter(r => r);
-      const typstRows = rows.map(r => r.split('&').map(c => c.trim()).join(', '));
-      return 'mat(' + typstRows.join('; ') + ')';
-    });
-    e = e.replace(/\\sin/g, ' sin');
-    e = e.replace(/\\cos/g, ' cos');
-    e = e.replace(/\\tan/g, ' tan');
-    e = e.replace(/\\log/g, ' log');
-    e = e.replace(/\\ln/g, ' ln');
-    e = e.replace(/\\lim/g, ' lim');
-    e = e.replace(/\\det/g, ' det');
-    e = e.replace(/\\to/g, '->');
-    e = e.replace(/\\cdot/g, ' dot');
-    e = e.replace(/\\times/g, ' times');
-    e = e.replace(/\\ldots/g, ' ...');
-    e = e.replace(/\\cdots/g, ' ...');
-    e = e.replace(/\\left/g, '');
-    e = e.replace(/\\right/g, '');
-    // Handle bare subscripts without base (e.g., _i → {}_i)
-    e = e.replace(/(^|[^A-Za-z0-9}])_([A-Za-z])/g, '$1{}_$2');
-    // Add space between consecutive single-letter variables (e.g., xy -> x y)
-    // Preserve known math identifiers
-    e = e.replace(/([a-zA-Z])([a-zA-Z]+)/g, (m, a, b) => {
-      if (['sin','cos','tan','log','ln','lim','det','integral','sum','product','partial','nabla','alpha','beta','gamma','theta','lambda','mu','pi','sigma','Delta','Sigma','Omega','Phi','forall','exists','angle','empty','vdash','NN','ZZ','QQ','RR','CC','frac','sqrt','root','mat','oo','dot','times','in','not','sect','union','subset','supset'].includes(m)) return m;
-      return a + ' ' + b;
-    });
-    // Strip any remaining backslash-prefixed LaTeX commands
-    e = e.replace(/\\[A-Za-z]+/g, '');
-    return '$ ' + e + ' $';
-  });
+const MATH_CHARS = new RegExp('[' + Object.keys(UNICODE_MATH).join('').replace(/[\[\]]/g, '\\$&') + ']', 'g');
+const MATH_DETECT = /(?:\\\(|\\\[|\$\$|\$[^$])/;
 
-  // Inline math: \(...\) → $...$
-  t = t.replace(/\\\(([\s\S]*?)\\\)/g, (_, expr) => {
-    let e = expr.trim();
-    e = e.replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, ' frac($1, $2)');
-    e = e.replace(/\\int/g, ' integral');
-    e = e.replace(/\\sum/g, ' sum');
-    e = e.replace(/\\partial/g, ' partial');
-    e = e.replace(/\\infty/g, ' oo');
-    e = e.replace(/\\alpha/g, ' alpha');
-    e = e.replace(/\\beta/g, ' beta');
-    e = e.replace(/\\gamma/g, ' gamma');
-    e = e.replace(/\\theta/g, ' theta');
-    e = e.replace(/\\lambda/g, ' lambda');
-    e = e.replace(/\\mu/g, ' mu');
-    e = e.replace(/\\pi/g, ' pi');
-    e = e.replace(/\\to/g, '->');
-    e = e.replace(/\\neq/g, '<>');
-    e = e.replace(/\\leq/g, '<=');
-    e = e.replace(/\\geq/g, '>=');
-    e = e.replace(/\\cdot/g, ' dot');
-    e = e.replace(/\\times/g, ' times');
-    e = e.replace(/\\sin/g, ' sin');
-    e = e.replace(/\\cos/g, ' cos');
-    e = e.replace(/\\tan/g, ' tan');
-    e = e.replace(/\\log/g, ' log');
-    e = e.replace(/\\ln/g, ' ln');
-    e = e.replace(/\\lim/g, ' lim');
-    e = e.replace(/\\det/g, ' det');
-    e = e.replace(/\\prod/g, ' product');
-    e = e.replace(/\\ldots/g, ' ...');
-    e = e.replace(/\\cdots/g, ' ...');
-    e = e.replace(/\\left/g, '');
-    e = e.replace(/\\right/g, '');
-    // Matrices: \begin{bmatrix}...\end{bmatrix} → mat(...)
-    e = e.replace(/\\begin\{bmatrix\}([\s\S]*?)\\end\{bmatrix\}/g, (_, m) => {
-      const rows = m.split(/\\/).map(r => r.trim()).filter(r => r);
-      const typstRows = rows.map(r => r.split('&').map(c => c.trim()).join(', '));
-      return 'mat(' + typstRows.join('; ') + ')';
-    });
-    // Handle bare subscripts without base (e.g., _i → {}_i)
-    e = e.replace(/(^|[^A-Za-z0-9}])_([A-Za-z])/g, '$1{}_$2');
-    // Add space between consecutive single-letter variables (e.g., xy -> x y)
-    // Preserve known math identifiers
-    e = e.replace(/([a-zA-Z])([a-zA-Z]+)/g, (m, a, b) => {
-      if (['sin','cos','tan','log','ln','lim','det','integral','sum','product','partial','nabla','alpha','beta','gamma','theta','lambda','mu','pi','sigma','Delta','Sigma','Omega','Phi','forall','exists','angle','empty','vdash','NN','ZZ','QQ','RR','CC','frac','sqrt','root','mat','oo','dot','times','in','not','sect','union','subset','supset'].includes(m)) return m;
-      return a + ' ' + b;
-    });
-    // Strip any remaining backslash-prefixed LaTeX commands (not needed in Typst)
-    e = e.replace(/\\[A-Za-z]+/g, '');
-    return '$' + e + '$';
-  });
+function convertUnicodeMath(text) {
+  return text.replace(MATH_CHARS, ch => UNICODE_MATH[ch] || ch);
+}
 
-  // 2. Handle Unicode math chars (convert to Typst)
-  const unicodeMap = {
-    'α': 'alpha', 'β': 'beta', 'γ': 'gamma', 'δ': 'delta',
-    'θ': 'theta', 'λ': 'lambda', 'μ': 'mu', 'π': 'pi',
-    'σ': 'sigma', 'τ': 'tau', 'φ': 'phi', 'ω': 'omega',
-    'Δ': 'Delta', 'Θ': 'Theta', 'Λ': 'Lambda', 'Σ': 'Sigma',
-    'Φ': 'Phi', 'Ω': 'Omega',
-    '∞': 'oo', '∂': 'partial', '∇': 'nabla',
-    '∫': 'integral', '∑': 'sum', '∏': 'product',
-    '≠': '<>', '≤': '<=', '≥': '>=',
-    '∈': 'in', '∩': 'sect', '∪': 'union',
-    '→': '->', '⇒': '=>', '≈': '~~', '≡': '==',
-    '∠': 'angle', '∅': 'empty', '⊢': 'vdash',
-    '√': 'sqrt',
-  };
-  t = t.replace(/[αβγδεθλμπρστφωΔΘΛΣΦΩ∞∂∇∫∑∏≠≤≥∈∩∪→⇒≈≡∠∅⊢√]/g, (ch) => {
-    if (unicodeMap[ch]) return '$' + unicodeMap[ch] + '$';
-    return ch;
-  });
+function hasMathContent(md) {
+  return MATH_DETECT.test(md) || MATH_CHARS.test(md);
+}
 
-  // 3. Extract title and metadata from first heading
-  let title = 'QUESTION PAPER';
-  let subjectCode = '';
-  let qpTime = '2½ Hours';
-  let qpMarks = '70';
-  t = t.replace(/^#\s+(.+)$/m, (_, m) => {
-    title = m.trim().toUpperCase();
-    return '';
-  });
+function preprocessMd(md) {
+  md = md.replace(/^---[\s\S]*?---\n*/m, '');
+  md = md.replace(/\u{1f31f}/ug, '');
+  md = md.replace(/[\u201c\u201d]/g, '"');
+  md = md.replace(/\u2013/g, '--');
+  md = md.replace(/\u2014/g, '---');
+  md = md.replace(/\u2747\s*/g, '');
+  md = md.replace(/\\newpage/g, '<div style="page-break-before: always;"></div>');
+  md = md.replace(/^`{4,}/gm, '```');
+  md = md.replace(/^```\s*\[(\d+)\]\s*$/gm, '```\n[$1]');
+  md = md.replace(/\\\[([\s\S]*?)\\\]/g, (_, c) => '$$ ' + c.trim().replace(/\s*\n\s*/g, ' ') + ' $$');
+  md = md.replace(/\\\(([\s\S]*?)\\\)/g, (_, c) => '$' + c.trim().replace(/\s*\n\s*/g, ' ') + '$');
+  md = md.replace(/^\$\$\n([\s\S]*?)\n\$\$$/gm, (_, c) => '$$ ' + c.replace(/\n+/g, ' ').trim() + ' $$');
+  md = md.replace(/[αβγδεθλμπρστφωΔΘΛΣΦΩ∞∂∇∫∑∏≠≤≥∈∩∪→⇒≈≡∠∅⊢√²³¹₀₁₂₃₄₅₆₇₈₉×÷\u0391-\u03C9\u2070-\u209F\u00B2\u00B3\u00B9\u2080-\u2089\u00D7\u00F7\u2200-\u22FF\u2190-\u21FF\u2260-\u2265\u2229-\u222B]{2,}/g,
+    (m) => '$' + convertUnicodeMath(m) + '$');
+  md = md.replace(MATH_CHARS, (ch) => '$' + UNICODE_MATH[ch] + '$');
+  md = md.replace(/^\*{0,2}O\.?\s*R\.?\*{0,2}\s*$/gim, '**OR**');
+  return md;
+}
 
-  // 4. Extract subject code from text like "207003" or "BSC-101-BES"
-  const codeMatch = t.match(/^([A-Z0-9]+[-][A-Z0-9-]+)\b/m) || t.match(/^(\d{4,8})\b/m);
-  if (codeMatch) subjectCode = codeMatch[1];
+function b64font(p) {
+  return fs.readFileSync(p).toString('base64');
+}
 
-  // 5. Extract time and marks
-  const timeMatch = t.match(/Time[:\s]+([\d½¼¾]+)\s*(Hours?|Hrs?)/i);
-  if (timeMatch) {
-    qpTime = timeMatch[1].replace('½', '.5').replace('¼', '.25').replace('¾', '.75') + ' ' + timeMatch[2];
-  }
-  const marksMatch = t.match(/Total[:\s]*[Marks]+[:\s]*(\d+)/i) || t.match(/(\d+)\s*[Mm]arks\b/);
-  if (marksMatch) qpMarks = marksMatch[1];
-
-  // 6. Convert Markdown headings to Typst
-  t = t.replace(/^###\s+(.+)$/gm, '==== $1\n');
-  t = t.replace(/^##\s+(.+)$/gm, '=== $1\n');
-  t = t.replace(/^#\s+(.+)$/gm, '== $1\n');
-
-  // 7. Convert bold/italic
-  t = t.replace(/\*\*\*(.+?)\*\*\*/g, '*_$1_*');
-  t = t.replace(/\*\*(.+?)\*\*/g, '*$1*');
-  t = t.replace(/_(.+?)_/g, '_$1_');
-
-  // 8. Handle marks [N] → right-aligned
-  t = t.replace(/\[(\d+)\s*(?:[Mm]arks?)?\]/g, '#marks_badge($1)');
-
-  // 9. Handle OR separators
-  t = t.replace(/^\s*\*{0,2}O\.?R\.?\*{0,2}\s*$/gim, '#or_block');
-
-  // 10. Convert horizontal rules
-  t = t.replace(/^---+\s*$/gm, '#line(length: 100%, stroke: 0.5pt + black)');
-
-  // 11. Convert lists
-  t = t.replace(/^[\*\-]\s+(.+)$/gm, '- $1');
-  t = t.replace(/^\d+\.\s+(.+)$/gm, '+ $1');
-
-  // 12. Handle code blocks
-  t = t.replace(/```(\w*)\s*\n([\s\S]*?)```/g, (_, lang, code) => {
-    if (lang === 'mermaid') return ''; // Skip mermaid for now
-    return '```typst\n' + code.trim() + '\n```';
-  });
-
-  // 13. Handle tables
-  t = t.replace(/^\|(.+)\|$/gm, (_, row) => {
-    const cells = row.split('|').map(c => c.trim()).filter(c => c);
-    return cells.join('\t') + ' \\';
-  });
-
-  // 14. Join broken lines (lines ending mid-expression, continuing on next line)
-  // A line continues if the next line starts with lowercase, number, or symbol
-  // and current line doesn't end with a period or colon
-  let lines = t.split('\n');
-  let joined = [];
-  for (let i = 0; i < lines.length; i++) {
-    if (i > 0 && !/^\s*$/.test(lines[i]) && !/^[A-Z#\-*\d]/.test(lines[i]) && !/[.:]\s*$/.test(lines[i-1]) && !/^(Q\d|===|====)/.test(lines[i])) {
-      joined[joined.length - 1] += ' ' + lines[i].trimStart();
-    } else {
-      joined.push(lines[i]);
-    }
-  }
-  t = joined.join('\n');
-
-  // 15. Escape literal brackets in remaining text to avoid breaking Typst content blocks
-  // Marks [N] already converted to #marks-badge(N), so remaining [] are literal brackets
-  // Skip math blocks ($...$) — brackets inside math don't need escaping
-  t = t.replace(/(\$[^$]*\$)|\[(?!#)|(?<!\\)\]/g, (match, mathBlock) => {
-    if (mathBlock) return mathBlock;
-    if (match === '[') return '\\[';
-    return '\\]';
-  });
-
-  // Strip leading bold and list markers from Q-lines before question detection
-  // *Q2)* → Q2) (template adds bold via text(weight: "bold"))
-  t = t.replace(/^\*(Q\d+)\)/gm, '$1)');
-  // Strip leading * (list marker) from content after Qn) — safe to remove
-  t = t.replace(/^(Q\d+)\)\s*\*\s*/gm, '$1) ');
-
-  // Helper: sanitize content for Typst content blocks [...]
-  // Step 15 already escapes [ ] brackets, so we only strip * bold markers
-  function sanitizeContent(text) {
-    return text.replace(/\*/g, '');
-  }
-
-  // 16. Convert main questions (Q1), Q2) → #main_question
-  t = t.replace(/^(Q\d+)\)\s*(.+)$/gm, (_, num, content) => {
-    return `#main_question("${num}", [${sanitizeContent(content)}])`;
-  });
-
-  // 17. Convert sub-questions (a), b), c) → #sub_question
-  t = t.replace(/^([a-z])\)\s+(.+)$/gm, (_, label, content) => {
-    return `#sub_question("${label}", [${sanitizeContent(content)}])`;
-  });
-
-  // Build the Typst content (template is embedded by main() via concatenation)
-  // No #import needed — sppu-qp.typ code is prepended by the converter
+function buildCSS(hasMath) {
+  const f = b64font;
   return `
-#show: doc => {
-  sppu_qp(
-    title: "${title.replace(/"/g, '\\"')}",
-    time: "${qpTime.replace(/"/g, '\\"')}",
-    marks: "${qpMarks.replace(/"/g, '\\"')}",
-    body: doc
-  )
-}
+    @page {
+      size: A4;
+      margin: 2cm 2.2cm 2.2cm 2.2cm;
+      @bottom-center {
+        content: counter(page);
+        font-family: 'TNR', serif;
+        font-size: 9pt;
+        color: #555;
+      }
+    }
 
-#set text(size: 12pt)
+    @font-face { font-family: 'TNR'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/Times.TTF')}) format('truetype'); font-weight: normal; font-style: normal; }
+    @font-face { font-family: 'TNR'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/Timesbd.TTF')}) format('truetype'); font-weight: bold; font-style: normal; }
+    @font-face { font-family: 'TNR'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/Timesi.TTF')}) format('truetype'); font-weight: normal; font-style: italic; }
+    @font-face { font-family: 'TNR'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/Timesbi.TTF')}) format('truetype'); font-weight: bold; font-style: italic; }
 
-// ── Instructions ──
-${t.replace(/^Instructions?:?\s*$/m, '#text(size: 11pt, weight: "bold")[Instructions:]')}
+    @font-face { font-family: 'Cask NFM'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/CaskaydiaCoveNerdFontMono-Regular.ttf')}) format('truetype'); font-weight: normal; font-style: normal; }
+    @font-face { font-family: 'Cask NFM'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/CaskaydiaCoveNerdFontMono-Bold.ttf')}) format('truetype'); font-weight: bold; font-style: normal; }
+    @font-face { font-family: 'Cask NFM'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/CaskaydiaCoveNerdFontMono-Italic.ttf')}) format('truetype'); font-weight: normal; font-style: italic; }
+    @font-face { font-family: 'Cask NFM'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/CaskaydiaCoveNerdFontMono-BoldItalic.ttf')}) format('truetype'); font-weight: bold; font-style: italic; }
 
-// ── Questions ──
-`;
-}
+    @font-face { font-family: 'Cambria Math'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/cambria-math.ttf')}) format('truetype'); font-weight: normal; font-style: normal; }
+    @font-face { font-family: 'Cambria'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/cambria.ttf')}) format('truetype'); font-weight: normal; font-style: normal; }
+    @font-face { font-family: 'Cambria'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/cambriab.ttf')}) format('truetype'); font-weight: bold; font-style: normal; }
+    @font-face { font-family: 'Cambria'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/cambriai.ttf')}) format('truetype'); font-weight: normal; font-style: italic; }
+    @font-face { font-family: 'Cambria'; src: url(data:font/truetype;base64,${f('/usr/share/fonts/TTF/cambriaz.ttf')}) format('truetype'); font-weight: bold; font-style: italic; }
 
-function usage() {
-  console.log('SPPU Question Paper Generator (Typst pipeline)');
-  console.log('');
-  console.log('Usage:  node scripts/convert-to-pdf.js <input.md> [output.pdf]');
-  console.log('');
-  console.log('Pipeline: Markdown → Typst → typst compile → A4 PDF');
-  console.log('Features: Times New Roman, native math rendering, SPPU layout');
-  console.log('Deps:    typst (v0.14+) — install from https://typst.app');
-  process.exit(1);
+    body {
+      font-family: 'TNR', 'Cambria', serif;
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 { font-size: 15pt; font-weight: bold; text-align: center; margin: 8px 0 3px 0; border: none; text-transform: uppercase; letter-spacing: 1pt; }
+    h2 { font-size: 13pt; font-weight: bold; text-align: center; margin: 5px 0 2px 0; border: none; }
+    h3 { font-size: 12pt; font-weight: bold; margin: 16px 0 6px 0; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+    h4 { font-size: 11pt; font-weight: bold; margin: 10px 0 4px 0; }
+    p { margin: 3px 0; }
+    strong { font-weight: bold; }
+
+    .marks { float: right; font-size: 10pt; color: #000; }
+    .question-or { text-align: center; font-weight: bold; margin: 8px 0; font-size: 11pt; }
+
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 10pt; }
+    th { background: #eee; padding: 4px 8px; border: 1px solid #999; text-align: left; font-weight: bold; }
+    td { padding: 3px 8px; border: 1px solid #bbb; }
+    tr:nth-child(even) { background: #fafafa; }
+
+    ul, ol { margin: 4px 0; padding-left: 22px; }
+    li { margin: 2px 0; }
+
+    pre {
+      background: #f4f4f4; border: 1px solid #ddd; padding: 8px 10px; font-size: 8.5pt;
+      line-height: 1.3; overflow-x: auto; white-space: pre-wrap; margin: 6px 0;
+    }
+    code {
+      font-family: 'Cask NFM', 'CaskaydiaCove Nerd Font Mono', monospace;
+      font-size: 8.5pt;
+    }
+    p > code, li > code { background: #f0f0f0; padding: 1px 4px; }
+
+    hr { border: none; border-top: 1px solid #888; margin: 10px 0; }
+
+    ${hasMath ? '.katex { font-size: 1.05em; } .katex-display { margin: 4px 0; text-align: center; }' : ''}
+  `;
 }
 
 async function main() {
   const args = process.argv.slice(2);
-  if (args.length < 1) usage();
-
-  const mdPath = path.resolve(args[0]);
-  if (!fs.existsSync(mdPath)) {
-    console.error('  ERROR: File not found: ' + mdPath);
+  if (args.length < 1) {
+    console.log('Convert Markdown to QP-styled PDF with rendered math.');
+    console.log('');
+    console.log('Usage:  node scripts/convert-to-pdf.js <input.md> [output.pdf]');
+    console.log('Deps:   npm install marked playwright && npx playwright install chromium');
     process.exit(1);
   }
+
+  const mdPath = path.resolve(args[0]);
+  if (!fs.existsSync(mdPath)) { console.error('ERROR:', mdPath, 'not found'); process.exit(1); }
 
   let pdfPath;
   if (args.length >= 2) {
@@ -339,50 +159,57 @@ async function main() {
   console.log('  Input: ' + path.basename(mdPath));
   console.log('  Output: ' + path.basename(pdfPath));
 
-  // Read the Markdown
-  let md = fs.readFileSync(mdPath, 'utf-8')
-    // Strip YAML frontmatter FIRST (before em-dash replacement which creates false ---)
-    .replace(/^---[\s\S]*?---\n*/m, '')
-    .replace(/\u{1f31f}/ug, '')
-    .replace(/[\u201c\u201d]/g, '"')
-    .replace(/\u2013/g, '--')
-    .replace(/\u2014/g, '---');
+  let md = fs.readFileSync(mdPath, 'utf-8');
+  const useMath = hasMathContent(md);
+  md = preprocessMd(md);
 
-  // Convert to Typst
-  const typstContent = mdToTypst(md);
+  const htmlBody = marked.parse(md, { breaks: true, gfm: true });
 
-  // Write temporary .typ file
-  const scriptDir = __dirname;
-  const typPath = '/tmp/sppu-output-' + Date.now() + '.typ';
-  const typstSrc = fs.readFileSync(path.join(scriptDir, 'sppu-qp.typ'), 'utf-8');
-  fs.writeFileSync(typPath, typstSrc + '\n' + typstContent, 'utf-8');
+  let html = htmlBody
+    .replace(/\[(\d+)\]/g, '<span class="marks">[$1]</span>')
+    .replace(/<p>\*\*OR\*\*<\/p>/g, '<div class="question-or">OR</div>');
 
-  // Compile with typst
-  try {
-    execSync('typst compile "' + typPath + '" "' + pdfPath + '"', {
-      stdio: 'pipe',
-      timeout: 120000,
-      cwd: path.dirname(typPath),
-    });
-  } catch (e) {
-    const stderr = (e.stderr || e.stdout || Buffer.from(e.message || '')).toString();
-    console.error('    Typst compile error:');
-    console.error('    ' + stderr.split('\n').slice(0, 15).join('\n    '));
-    // Write the debug .typ file for inspection
-    const debugPath = typPath.replace('.typ', '-debug.typ');
-    try { fs.copyFileSync(typPath, debugPath); } catch (_) {}
-    console.error('    Debug file saved to: ' + debugPath);
-    process.exit(1);
+  let page = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">';
+
+  if (useMath) {
+    page += '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">'
+      + '<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>'
+      + '<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>';
   }
 
-  // Clean up temp file
-  try { fs.unlinkSync(typPath); } catch (_) {}
+  page += '<style>' + buildCSS(useMath) + '</style></head><body>'
+    + html;
+
+  if (useMath) {
+    page += '<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:\'$$\',right:\'$$\',display:true},{left:\'$\',right:\'$\',display:false}],throwOnError:false})});</script>';
+  }
+
+  page += '</body></html>';
+
+  const browser = await chromium.launch();
+  const pageContext = await browser.newPage();
+  await pageContext.setContent(page, { waitUntil: 'networkidle', timeout: 30000 });
+
+  if (useMath) {
+    await pageContext.waitForFunction(() => typeof renderMathInElement !== 'undefined', { timeout: 15000 }).catch(() => {});
+    await pageContext.waitForTimeout(2000);
+  }
+
+  await pageContext.pdf({
+    path: pdfPath,
+    format: 'A4',
+    margin: { top: '2cm', bottom: '2.2cm', left: '2.2cm', right: '2.2cm' },
+    printBackground: true,
+    displayHeaderFooter: true,
+    headerTemplate: '<span></span>',
+    footerTemplate: '<div style="font-size:9pt;color:#555;text-align:center;width:100%"><span class="pageNumber"></span></div>',
+  });
+
+  await pageContext.close();
+  await browser.close();
 
   const size = (fs.statSync(pdfPath).size / 1024).toFixed(0);
   console.log('  Saved: ' + path.basename(pdfPath) + ' (' + size + 'K)');
 }
 
-main().catch(err => {
-  console.error(err.message);
-  process.exit(1);
-});
+main().catch(err => { console.error(err.message); process.exit(1); });

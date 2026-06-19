@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "marked": "^15.0.12",
-    "playwright": "^1.60.0"
+    "playwright": "^1.61.0"
   },
   "devDependencies": {
     "eslint": "^8.56.0",

@@ -165,33 +165,48 @@ All powered by a **universal skills-based architecture** inspired by
 ## 🔧 Generated PDF Pipeline
 
 The repo includes a production-ready pipeline to convert sample papers into professionally formatted
-PDFs:
+PDFs with rendered equations, Times New Roman, and proper QP layout:
 
 ```
-Sample Paper (Markdown) → md-to-Typst converter → typst compile → A4 PDF
+Sample Paper (Markdown) → marked → KaTeX + Playwright → A4 PDF
 ```
 
-**Features:**
+| Tool                        | Link                                                                               | What It Does                                        |
+| --------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------- |
+| Q.P. Analysis Tool          | [Open Gemini Gem](https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh) | Analyzes PYQs and syllabus to predict exam patterns |
+| Notes Generator             | [Open Gemini Gem](https://gemini.google.com/gem/bf5b14582187)                      | Generates 100% syllabus-locked revision notes       |
+| Important Topics Generator  | [Open Gemini Gem](https://gemini.google.com/gem/4266a7e8000e)                      | Outputs must-prepare IMP topics & questions         |
+| Exam-Style Answer Generator | [Open Gemini Gem](https://gemini.google.com/gem/1PGOZXhIROLOGU88epT7JGgV3bnXDTcJK) | Writes full-marks theory answers                    |
 
-- **Times New Roman + Cambria Math** (native Typst math rendering)
-- **Native math rendering** — integrals, matrices, fractions, derivatives, Greek letters
-- **SPPU layout** — seat-number box, right-aligned marks `[6]`, OR separators
-- **Dynamic page breaks** — proper spacing, justified paragraphs
-- **LaTeX → Typst conversion** — Unicode math symbols auto-mapped
+> **Pro tip:** Upload your syllabus PDF + previous year question papers to any Gemini Gem for best
+> results. The skills now work for ANY university worldwide.
+
+---
+
+## Quick Install (All AI Coding Agents)
+
+Install all 27 exam-prep skills globally for your AI coding agent:
 
 ```bash
-# Single file
-node scripts/convert-to-pdf.js examples/te/sem-5/dbms/sample-paper-1.md output.pdf
+# ✅ Recommended — targets OpenCode + universal agents
+npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
 
-# All sample papers
-node scripts/batch-convert-to-pdf.js
-
-# Generate preview thumbnails
-node scripts/gen-pdf-previews.js
+# Or use the helper script (handles agent targeting automatically)
+bash scripts/install.sh
 ```
 
-**Dependencies:** `typst` (v0.14+) — install from https://typst.app **Optional:**
-`npm install marked playwright` (for preview thumbnails and QP fetching)
+> ⚠️ **Important:** Always use the `-a opencode` flag. Running without it may cause
+> `PromptScript does not support global skill installation` errors — this is expected because
+> PromptScript is a project-only agent that doesn't support global (`-g`) installation.
+> Skills still install correctly to OpenCode, Amp, Cline, and all other universal agents.
+>
+> **To target a different agent:**
+> ```bash
+> npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a claude-code
+> npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a cursor
+> ```
+>
+> Skills install to `~/.agents/skills/` — shared by all universal agents automatically.
 
 ---
 

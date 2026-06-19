@@ -68,18 +68,16 @@ console.log('============================================================');
 console.log('');
 
 // Check dependencies
-let hasTypst = false;
+let hasPlaywright = false;
 try {
-  const { execSync } = require('child_process');
-  execSync('typst --version', { stdio: 'pipe' });
-  hasTypst = true;
+  require('playwright');
+  hasPlaywright = true;
 } catch { /* not installed */ }
 
-if (!hasTypst) {
-  console.log('⚠ typst is required for PDF conversion.');
+if (!hasPlaywright) {
+  console.log('⚠ Playwright is required for PDF conversion.');
   console.log('');
-  console.log('  Install: https://typst.app (v0.14+)');
-  console.log('  Or:     curl -fsSL https://typst.community/typst-install/install.sh | sh');
+  console.log('  Install: npm install && npx playwright install chromium');
   console.log('');
   if (!DRY_RUN) {
     console.log('Aborting. Run with --dry-run to see what would convert.');

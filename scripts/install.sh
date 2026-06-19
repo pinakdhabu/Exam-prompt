@@ -2,12 +2,13 @@
 set -euo pipefail
 
 SOURCE="https://github.com/pinakdhabu/Exam-prompt"
-AGENTS=$(npx skills add "$SOURCE" --list 2>/dev/null | head -1 || true)
 
-npx skills add "$SOURCE" -g -y -a opencode 2>&1 | grep -v "PromptScript"
+echo "Installing skills to OpenCode (universal agents)..."
+npx skills add "$SOURCE" -g -y -a opencode 2>&1 | grep -v "PromptScript" || true
 
 if ls ~/.astrbot &>/dev/null 2>&1; then
-  npx skills add "$SOURCE" -g -y -a astrbot 2>&1 | grep -v "PromptScript"
+  echo "Installing skills to AstrBot..."
+  npx skills add "$SOURCE" -g -y -a astrbot 2>&1 | grep -v "PromptScript" || true
 fi
 
 echo ""
