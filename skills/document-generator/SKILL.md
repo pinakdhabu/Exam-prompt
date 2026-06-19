@@ -15,7 +15,8 @@ Generates print-ready, professionally formatted PDF documents from Markdown stud
 for creating exam-ready printed materials — unit notes, PYQ solutions, syllabus references, formula
 sheets, and master solutions.
 
-Supports **Python** (weasyprint) and **Node.js** (Playwright) conversion backends.
+Supports **Python** (weasyprint) and **Node.js** (Playwright) conversion backends.  
+Includes a **QP (Question Paper) variant** that renders LaTeX equations via KaTeX and uses Times New Roman for authentic exam-paper formatting.
 
 ---
 
@@ -58,6 +59,23 @@ formatting.
 
 Use one of the conversion scripts to generate a print-ready PDF.
 
+### Stage 3b: MD → QP-Styled PDF (KaTeX + Times New Roman)
+
+For authentic question-paper formatting with equations rendered via KaTeX:
+
+```bash
+# Node.js (recommended — renders LaTeX via KaTeX)
+node scripts/convert-qp-to-pdf.js paper.md paper.pdf
+
+# Python (basic — Unicode math fallback)
+python3 scripts/convert-qp-to-pdf.py paper.md paper.pdf
+```
+
+**Requires (Node):** `npm install marked playwright && npx playwright install chromium`  
+**Requires (Python):** `pip install markdown weasyprint`
+
+> **Note**: The QP variant uses `@font-face` to load Times New Roman from system fonts and converts `[ ... ]` math blocks to `$$ ... $$` KaTeX delimiters. Inline `\mu`, `\alpha`, etc. are rendered via CDN-loaded KaTeX auto-render.
+
 ---
 
 ## Conversion Backends
@@ -65,11 +83,11 @@ Use one of the conversion scripts to generate a print-ready PDF.
 ### Option A: Python (weasyprint)
 
 ```bash
-# Single file
+# Notes/study material
 python3 scripts/convert-to-pdf.py notes.md
 
-# Single file with custom output path
-python3 scripts/convert-to-pdf.py notes.md output.pdf
+# Question paper (with QP formatting)
+python3 scripts/convert-qp-to-pdf.py paper.md paper.pdf
 
 # Batch: wrap in a loop
 for f in *.md; do python3 scripts/convert-to-pdf.py "$f"; done
@@ -80,11 +98,11 @@ for f in *.md; do python3 scripts/convert-to-pdf.py "$f"; done
 ### Option B: Node.js (Playwright)
 
 ```bash
-# Single file
+# Notes/study material
 node scripts/convert-to-pdf.js notes.md
 
-# Single file with custom output path
-node scripts/convert-to-pdf.js notes.md output.pdf
+# Question paper (with KaTeX math + Times New Roman)
+node scripts/convert-qp-to-pdf.js paper.md paper.pdf
 ```
 
 **Requires:** `npm install marked playwright && npx playwright install chromium`
