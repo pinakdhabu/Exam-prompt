@@ -186,9 +186,8 @@ function extractHeaderMetadata(lines) {
 
 function generateHeaderHtml(meta) {
   const tq = meta.totalQuestions || '8';
-  const pp = meta.totalPages || '2';
-  const code = meta.paperCode || 'P-7539';
-  const identifier = meta.paperIdentifier || '[0000]-00';
+  const code = meta.paperCode || '';
+  const identifier = meta.paperIdentifier || '';
   const dept = meta.department || '';
   const subj = meta.subject || '';
   const patternInfo = [
@@ -197,8 +196,9 @@ function generateHeaderHtml(meta) {
     meta.subjectCode ? '(' + meta.subjectCode + ')' : '',
   ].filter(Boolean).join(' ');
   const time = meta.time || '';
-  const marks = meta.maxMarks ? '[Max. Marks : ' + meta.maxMarks + ']' : '';
+  const marks = meta.maxMarks ? '[Max. Marks : ' + meta.maxMarks : '';
   const inst = meta.instructions || HEADER_DEFAULTS.instructions;
+  const bi = 'font-weight:bold;font-style:italic';
 
   // Build instructions HTML
   let instHtml = '';
@@ -208,68 +208,71 @@ function generateHeaderHtml(meta) {
       const text = item.replace(/\n\s*/g, ' ').trim();
       return num + '. ' + text;
     });
-    instHtml = '<div style="margin:8px 0 4px 0;">\n' +
-      '<b>Instructions to the candidates :</b>\n' +
+    instHtml = '<div style="margin:8px 0 6px 0;' + bi + ';">\n' +
+      'Instructions to the candidates :\n' +
       '</div>\n' +
-      '<div style="margin:0;line-height:1.8;">\n' +
+      '<div style="margin:0;line-height:1.8;' + bi + ';">\n' +
       items.join('<br>\n') + '\n' +
       '</div>';
   }
 
-  // Escape brackets in identifier with HTML entities
+  // Escape brackets in identifier with HTML entities to avoid .marks CSS interference
   const escapedId = identifier.replace(/\[/g, '&#91;').replace(/\]/g, '&#93;');
-  const escapedPages = '[Total No. of Pages : ' + pp + ']'.replace(/\[/g, '&#91;').replace(/\]/g, '&#93;');
-  const escapedMarks = marks.replace(/\[/g, '&#91;').replace(/\]/g, '&#93;');
-  const escapedTime = time.replace(/½/g, '&#189;');
+
+  // Paper identifier with HTML entities for safety
+  const idDisplay = escapedId || '';
+
+  // Build paper identifier comment for footer extraction
+  // Use HTML entities to avoid .marks CSS interference from renderer.js
+  const escPid = identifier.replace(/\[/g, '&#91;').replace(/\]/g, '&#93;');
+  const paperComment = identifier ? '<!-- PAPER_ID:' + escPid + ' -->\n' : '';
 
   return (
-    '<div style="font-family:\'TNR\',\'Times New Roman\',serif;width:100%;margin:0 auto;">\n' +
+    '<div style="font-family:\'TNR\',\'Times New Roman\',serif;width:100%;margin:0 auto;font-size:11pt;">\n' +
+    paperComment +
     '\n' +
-    '<!-- Row 1: Total Questions + SEAT No. -->\n' +
-    '<table style="width:100%;border-collapse:collapse;margin:0 0 4px 0;font-size:11pt;">\n' +
+    '<!-- Row 1: Total Questions (left) + SEAT No. with inline box (right) -->\n' +
+    '<table style="width:100%;border-collapse:collapse;margin:0 0 2px 0;font-size:11pt;">\n' +
     '<tr>\n' +
-    '<td style="width:50%;border:none;padding:0;text-align:left;font-weight:bold;vertical-align:top;">\n' +
-    'Total No. of Questions : ' + tq + '\n' +
+    '<td style="width:50%;border:none;padding:0;text-align:left;font-weight:bold;vertical-align:middle;">\n' +
+    'Total No. of Questions : ' + tq + ']\n' +
     '</td>\n' +
-    '<td style="width:50%;border:none;padding:0;text-align:right;font-weight:bold;vertical-align:top;">\n' +
-    'SEAT No. :<br>\n' +
-    '<div style="border:2px solid black;width:160px;height:32px;margin:4px 0 0 auto;"></div>\n' +
+    '<td style="width:50%;border:none;padding:0;text-align:right;font-weight:bold;vertical-align:middle;white-space:nowrap;">\n' +
+    'SEAT No. :' +
+    '<span style="display:inline-block;border:2px solid black;width:130px;height:22px;margin:0 0 0 8px;vertical-align:middle;"></span>\n' +
     '</td>\n' +
     '</tr>\n' +
     '</table>\n' +
     '\n' +
-    '<!-- Row 2: Paper Code + Total Pages -->\n' +
-    '<table style="width:100%;border-collapse:collapse;margin:0 0 4px 0;font-size:11pt;">\n' +
+    '<!-- Row 2: Paper code (right) -->\n' +
+    (code ? '<table style="width:100%;border-collapse:collapse;margin:0 0 2px 0;font-size:11pt;">\n' +
     '<tr>\n' +
-    '<td style="width:50%;border:none;padding:0;text-align:left;">\n' +
+    '<td style="width:100%;border:none;padding:0;text-align:right;font-weight:bold;">\n' +
     code + '\n' +
     '</td>\n' +
-    '<td style="width:50%;border:none;padding:0;text-align:right;">\n' +
-    escapedPages + '\n' +
-    '</td>\n' +
     '</tr>\n' +
-    '</table>\n' +
+    '</table>\n' : '') +
     '\n' +
     '<!-- Row 3: Paper identifier centered -->\n' +
-    '<div style="text-align:center;font-size:12pt;font-weight:bold;margin:6px 0;">\n' +
-    escapedId + '\n' +
-    '</div>\n' +
+    (idDisplay ? '<div style="text-align:center;font-size:12pt;font-weight:bold;margin:4px 0;">\n' +
+    idDisplay + '\n' +
+    '</div>\n' : '') +
     '\n' +
-    '<!-- Title Block -->\n' +
-    '<div style="text-align:center;font-size:12pt;font-weight:bold;line-height:1.8;margin:6px 0;">\n' +
+    '<!-- Title Block centered -->\n' +
+    '<div style="text-align:center;font-size:12pt;font-weight:bold;line-height:1.8;margin:4px 0;">\n' +
     (dept ? dept + '<br>' : '') +
     (subj ? subj.replace(/&/g, '&amp;') + '<br>' : '') +
-    patternInfo +
+    patternInfo + '\n' +
     '</div>\n' +
     '\n' +
-    '<!-- Time/Marks -->\n' +
-    '<table style="width:100%;border-collapse:collapse;margin:4px 0;font-size:11pt;">\n' +
+    '<!-- Time / Marks row -->\n' +
+    '<table style="width:100%;border-collapse:collapse;margin:2px 0;font-size:11pt;">\n' +
     '<tr>\n' +
     '<td style="width:50%;border:none;padding:0;text-align:left;font-weight:bold;">\n' +
-    'Time : ' + escapedTime + '\n' +
+    'Time : ' + time + ']\n' +
     '</td>\n' +
     '<td style="width:50%;border:none;padding:0;text-align:right;font-weight:bold;">\n' +
-    escapedMarks + '\n' +
+    marks + '\n' +
     '</td>\n' +
     '</tr>\n' +
     '</table>\n' +
@@ -278,6 +281,8 @@ function generateHeaderHtml(meta) {
     instHtml + '\n' +
     '\n' +
     '<hr style="border-top:1px solid #000;margin:12px 0;">\n' +
+    '\n' +
+    '<div style="text-align:right;font-style:italic;font-size:10pt;margin:0 0 8px 0;">P.T.O.</div>\n' +
     '\n' +
     '</div>'
   );

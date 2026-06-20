@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { execSync } = require('child_process');
 const { marked } = require('marked');
 const markedKatex = require('marked-katex-extension');
 const pino = require('pino');
@@ -39,9 +40,33 @@ async function convertMdToPdf(mdPath, pdfPath, options = {}) {
   const renderer = new HtmlRenderer(processor.hasMath);
   const html = renderer.render(htmlBody);
   logger.debug({ documentSize: html.length }, 'Document assembled');
-  const generator = new PdfGenerator({ logger });
+
+  // Extract paper identifier from HTML for footer
+  const idMatch = html.match(/<!-- PAPER_ID:&#91;(\d+)&#93;-(\S+) -->/);
+  const paperIdentifier = idMatch ? '[' + idMatch[1] + ']-' + idMatch[2] : '';
+
+  const generator = new PdfGenerator({ logger, paperIdentifier });
   const start = Date.now();
   await generator.generate(html, pdfPath);
+
+  // Two-pass: if HTML has __TOTAL_PAGES__ placeholder, count pages and regenerate
+  if (html.includes('__TOTAL_PAGES__')) {
+    let pageCount = 0;
+    try {
+      const script = 'from pypdf import PdfReader; print(len(PdfReader(' + JSON.stringify(pdfPath) + ').pages))';
+      const result = execSync('python3 -c ' + JSON.stringify(script), { timeout: 10000 }).toString().trim();
+      pageCount = parseInt(result, 10) || 0;
+    } catch {
+      pageCount = 0;
+    }
+
+    if (pageCount > 0) {
+      logger.info({ pageCount }, 'Page count detected, regenerating with correct total');
+      const correctedHtml = html.replace(/__TOTAL_PAGES__/g, String(pageCount));
+      await generator.generate(correctedHtml, pdfPath);
+    }
+  }
+
   const duration = Date.now() - start;
 
   const size = fs.statSync(pdfPath).size;
