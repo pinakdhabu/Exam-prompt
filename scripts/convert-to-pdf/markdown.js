@@ -1,4 +1,5 @@
 const { stripYaml } = require('./src/transforms/yaml');
+const { processHeader } = require('./src/transforms/header');
 const { normalizeFences, normalizeQuotes, normalizeDashes, normalizeArrows, removeUnicodeChars } = require('./src/transforms/cleanup');
 const { convertNewpage } = require('./src/transforms/newpage');
 const { convertLaTeXDelimiters } = require('./src/transforms/delimiters');
@@ -27,6 +28,7 @@ class MarkdownProcessor {
 
     let md = raw;
     md = stripYaml(md);
+    md = processHeader(md);
     md = normalizeArrows(md);
     md = removeUnicodeChars(md);
     md = normalizeQuotes(md);
