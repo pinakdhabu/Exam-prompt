@@ -41,6 +41,34 @@ The `cline_docs/` directory contains persistent project knowledge:
 - `systemPatterns.md` — How the skills architecture works
 - `progress.md` — What's been built, what's next
 
+## File Format Guidelines
+
+### Source of Truth
+- **DOCX** is the master/edit format. All solved papers originate as `.docx`.
+- **Markdown (`.md`)** is the intermediate format — generated from docx, used for PDF conversion.
+- **PDF** is the final publishable output — generated from markdown via the Node.js pipeline.
+
+### Pipeline: DOCX → MD → PDF
+```
+*.docx  ──(python3 /tmp/extract.py)──>  *.md  ──(node scripts/convert-to-pdf.js)──>  *.pdf
+```
+
+### Markdown Formatting Rules
+1. **Paper header**: Use `---` delimiters with bold text for course code, title, instructions.
+2. **Question numbering**: Use `### Q1) a)` for questions, `**OR**` for alternatives.
+3. **ASCII diagrams**: Always wrap in triple backtick fenced code blocks (`` ``` ``).
+4. **Code blocks**: Use language tags: ` ```sql`, ` ```java`, ` ```javascript`, ` ```json`.
+5. **Tables**: Standard pipe syntax, with `|---|` separator row after header.
+6. **Key terms**: Bold on first mention with `**...**`.
+7. **Headings**: Use proper hierarchy — `###` for questions, `####` for sub-parts.
+8. **Marking schemes**: End each answer with a table showing point-wise marks.
+9. **Never use `##` for content under a question** — use `###` or `####`.
+
+### Git Workflow
+- Stage all three files together: `.docx` + `.md` + `.pdf`.
+- The `.docx` is the source; never delete it.
+- PDF is generated using: `node scripts/convert-to-pdf.js input.md output.pdf`
+
 ## Constraints
 - Never edit SKILL.md files without user request
 - Always read the relevant SKILL.md before generating output
