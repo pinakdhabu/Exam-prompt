@@ -100,10 +100,10 @@ class PdfGenerator {
           displayHeaderFooter: true,
           headerTemplate: '<span></span>',
           footerTemplate:
-            '<div style="font-size:9pt;color:#666;text-align:center;width:100%;display:flex;justify-content:space-between;padding:0 20px;">' +
-            '<span>' + this.paperIdentifier + '</span>' +
-            '<span class="pageNumber"></span>' +
-            '<span>' + this.paperIdentifier + '</span></div>',
+            '<div style="font-family:Times New Roman,Times,serif;width:100%;display:flex;align-items:baseline;padding:0 0.7cm;">' +
+            '<span style="font-size:17pt;font-weight:bold;">' + this.paperIdentifier + '</span>' +
+            '<span style="flex:1;text-align:center;font-size:12pt;" class="pageNumber"></span>' +
+            '<span style="font-size:0;">&#160;</span></div>',
         }));
 
         if (!pdfResult.ok) {
