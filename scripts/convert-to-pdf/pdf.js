@@ -1,5 +1,6 @@
+const fs = require('fs');
 const { chromium } = require('playwright');
-const { PAGE, MERMAID } = require('./config');
+const { FONTS, PAGE, MERMAID } = require('./config');
 const { tryCatchAsync } = require('./src/result');
 
 const RETRY_CONFIG = {
@@ -10,6 +11,22 @@ const RETRY_CONFIG = {
 
 function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
+}
+
+function _b64(p) {
+  return fs.readFileSync(p).toString('base64');
+}
+
+function _footerFontCss() {
+  const tnr = FONTS.tnr;
+  if (!tnr) return '';
+  const faces = [];
+  for (const v of Object.values(tnr.variants)) {
+    faces.push(
+      `@font-face{font-family:'${tnr.family}';src:url(data:font/truetype;base64,${_b64(v.file)})format('truetype');font-weight:${v.weight};font-style:${v.style}}`
+    );
+  }
+  return faces.join('');
 }
 
 class PdfGenerator {
@@ -100,7 +117,8 @@ class PdfGenerator {
           displayHeaderFooter: true,
           headerTemplate: '<span></span>',
           footerTemplate:
-            '<div style="font-family:Times New Roman,Times,serif;width:100%;display:flex;align-items:baseline;padding:0 0.7cm;">' +
+            '<style>' + _footerFontCss() + '</style>' +
+            '<div style="font-family:\'TNR\',\'Times New Roman\',Times,serif;width:100%;display:flex;align-items:baseline;padding:0 0.7cm;">' +
             '<span style="font-size:17pt;font-weight:bold;">' + this.paperIdentifier + '</span>' +
             '<span style="flex:1;text-align:center;font-size:12pt;" class="pageNumber"></span></div>',
         }));
