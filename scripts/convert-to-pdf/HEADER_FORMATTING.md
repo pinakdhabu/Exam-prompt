@@ -173,6 +173,40 @@ markdown source header block (between `---` delimiters).
 
 If a field cannot be detected from the markdown, sensible defaults are used.
 
+## How to Verify / Debug Header Output
+
+If you are unsure about exact positioning, font sizes, margins, spacing, or any
+visual property of the generated header:
+
+1. **Ask for the reference question paper PDF** — the actual SPPU question paper
+   PDF for the same subject/pattern (e.g., `Nov_Dec_2025.pdf`).
+
+2. **Run the extraction script** to measure its exact properties:
+   ```bash
+   python3 << 'EOF'
+   import re
+   from pypdf import PdfReader
+   r = PdfReader('/path/to/reference.pdf')
+   page = r.pages[0]
+   cs = page.get_contents()
+   raw = cs.get_data()
+   text = raw.decode('latin-1')
+   lines = text.split('\n')
+   for i, l in enumerate(lines):
+       s = l.strip()
+       if s and ('Tf' in s or 'Tm' in s or 'Td' in s or 'TJ' in s or 'Tj' in s):
+           print(f'{i}: {s[:130]}')
+   EOF
+   ```
+   This extracts font selections (`Tf`), font sizes + positions (`Tm`), and
+   text content (`TJ`/`Tj`) from the reference PDF's content stream.
+
+3. **Cross-check these extracted values** against the Font Specifications table
+   in this document. Update the table if the reference differs.
+
+4. **Regenerate the PDF** and verify visually that the output matches the
+   reference.
+
 ## Implementation Notes
 
 - Uses HTML `<table>` elements with inline styles for layout precision
