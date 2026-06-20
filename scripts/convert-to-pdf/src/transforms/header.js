@@ -206,12 +206,12 @@ function generateHeaderHtml(meta) {
     const items = inst.map((item, idx) => {
       const num = idx + 1;
       const text = item.replace(/\n\s*/g, ' ').trim();
-      return num + '. ' + text;
+      return num + ') ' + text;
     });
     instHtml = '<div style="margin:8px 0 6px 0;' + bi + ';">\n' +
       'Instructions to the candidates :\n' +
       '</div>\n' +
-      '<div style="margin:0;line-height:1.8;' + bi + ';">\n' +
+      '<div style="margin:0;line-height:1.8;font-style:italic;">\n' +
       items.join('<br>\n') + '\n' +
       '</div>';
   }
