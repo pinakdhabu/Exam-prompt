@@ -282,8 +282,6 @@ function generateHeaderHtml(meta) {
     '\n' +
     '<hr style="border-top:1px solid #000;margin:12px 0;">\n' +
     '\n' +
-    '<div style="text-align:right;font-style:italic;font-size:10pt;margin:0 0 8px 0;">P.T.O.</div>\n' +
-    '\n' +
     '</div>'
   );
 }
