@@ -208,10 +208,10 @@ function generateHeaderHtml(meta) {
       const text = item.replace(/\n\s*/g, ' ').trim();
       return num + ') ' + text;
     });
-    instHtml = '<div style="margin:8px 0 6px 0;' + bi + ';">\n' +
+    instHtml = '<div style="font-size:13pt;margin:10px 0 4px 0;' + bi + ';">\n' +
       'Instructions to the candidates :\n' +
       '</div>\n' +
-      '<div style="margin:0;line-height:1.8;font-style:italic;">\n' +
+      '<div style="font-size:13pt;margin:0;line-height:1.8;font-style:italic;">\n' +
       items.join('<br>\n') + '\n' +
       '</div>';
   }
@@ -228,11 +228,11 @@ function generateHeaderHtml(meta) {
   const paperComment = identifier ? '<!-- PAPER_ID:' + escPid + ' -->\n' : '';
 
   return (
-    '<div style="font-family:\'TNR\',\'Times New Roman\',serif;width:100%;margin:0 auto;font-size:11pt;">\n' +
+    '<div style="font-family:\'TNR\',\'Times New Roman\',serif;width:100%;margin:0 auto;">\n' +
     paperComment +
     '\n' +
-    '<!-- Row 1: Total Questions (left) + SEAT No. with inline box (right) -->\n' +
-    '<table style="width:100%;border-collapse:collapse;margin:0 0 2px 0;font-size:11pt;">\n' +
+    '<!-- Row 1: Total Questions (left, 12pt Bold) + SEAT No. with inline box (right) -->\n' +
+    '<table style="width:100%;border-collapse:collapse;margin:0 0 3px 0;font-size:12pt;">\n' +
     '<tr>\n' +
     '<td style="width:50%;border:none;padding:0;text-align:left;font-weight:bold;vertical-align:middle;">\n' +
     'Total No. of Questions : ' + tq + ']\n' +
@@ -244,8 +244,8 @@ function generateHeaderHtml(meta) {
     '</tr>\n' +
     '</table>\n' +
     '\n' +
-    '<!-- Row 2: Paper code (right) -->\n' +
-    (code ? '<table style="width:100%;border-collapse:collapse;margin:0 0 2px 0;font-size:11pt;">\n' +
+    '<!-- Row 2: Paper code (16pt Bold, right) -->\n' +
+    (code ? '<table style="width:100%;border-collapse:collapse;margin:0 0 3px 0;font-size:16pt;">\n' +
     '<tr>\n' +
     '<td style="width:100%;border:none;padding:0;text-align:right;font-weight:bold;">\n' +
     code + '\n' +
@@ -253,20 +253,20 @@ function generateHeaderHtml(meta) {
     '</tr>\n' +
     '</table>\n' : '') +
     '\n' +
-    '<!-- Row 3: Paper identifier centered -->\n' +
-    (idDisplay ? '<div style="text-align:center;font-size:12pt;font-weight:bold;margin:4px 0;">\n' +
+    '<!-- Row 3: Paper identifier centered (17pt Bold) -->\n' +
+    (idDisplay ? '<div style="text-align:center;font-size:17pt;font-weight:bold;margin:5px 0;">\n' +
     idDisplay + '\n' +
     '</div>\n' : '') +
     '\n' +
-    '<!-- Title Block centered -->\n' +
-    '<div style="text-align:center;font-size:12pt;font-weight:bold;line-height:1.8;margin:4px 0;">\n' +
-    (dept ? dept + '<br>' : '') +
-    (subj ? subj.replace(/&/g, '&amp;') + '<br>' : '') +
-    patternInfo + '\n' +
+    '<!-- Title Block centered: dept=17pt, subject/pattern=16pt -->\n' +
+    '<div style="text-align:center;font-weight:bold;margin:3px 0;">\n' +
+    (dept ? '<div style="font-size:17pt;">' + dept + '</div>\n' : '') +
+    (subj ? '<div style="font-size:16pt;">' + subj.replace(/&/g, '&amp;') + '</div>\n' : '') +
+    (patternInfo ? '<div style="font-size:16pt;">' + patternInfo + '</div>\n' : '') +
     '</div>\n' +
     '\n' +
-    '<!-- Time / Marks row -->\n' +
-    '<table style="width:100%;border-collapse:collapse;margin:2px 0;font-size:11pt;">\n' +
+    '<!-- Time / Marks row (13pt Bold) -->\n' +
+    '<table style="width:100%;border-collapse:collapse;margin:4px 0;font-size:13pt;">\n' +
     '<tr>\n' +
     '<td style="width:50%;border:none;padding:0;text-align:left;font-weight:bold;">\n' +
     'Time : ' + time + ']\n' +
@@ -277,7 +277,7 @@ function generateHeaderHtml(meta) {
     '</tr>\n' +
     '</table>\n' +
     '\n' +
-    '<!-- Instructions -->\n' +
+    '<!-- Instructions (13pt) -->\n' +
     instHtml + '\n' +
     '\n' +
     '<hr style="border-top:1px solid #000;margin:12px 0;">\n' +
