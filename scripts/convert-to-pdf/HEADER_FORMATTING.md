@@ -40,6 +40,11 @@ P.T.O. positioning which the blank templates lack.
 All measurements in PDF points (1 pt = 1/72 inch). Positions use bottom-left
 origin (y=0 at page bottom). Page height = 842 pt.
 
+**IMPORTANT:** The body font family is `'TNR', 'Times New Roman', serif`.
+Do NOT add 'Cambria' or other fallback fonts — the answer paper must render
+entirely in Times New Roman (except code blocks, which use CaskaydiaCove Nerd
+Font Mono for monospace preservation).
+
 ### Header Block (y positions from bottom of page)
 
 | Element | Font | Size (pt) | Y-pos (from bottom) | Notes |
@@ -71,7 +76,7 @@ origin (y=0 at page bottom). Page height = 842 pt.
 | Paper identifier [XXXX]-XX | Bold (TT0/F2) | 17 | Left, last page only | SPOS QP style |
 | Page number | Regular (TT1/F3) | 12 | Center, last page only | SPOS QP style |
 | Page number + [paper-code] | Regular | ~13 | Bottom every page (2+) | FE Math QP style e.g. "2[6260]-1" |
-| P.T.O. | Regular (TT1/F3) | 12-14 | Bottom-right page 1 | In footer area (y ~77-96) |
+| P.T.O. | Italic (TT3/F1) | 12 | Right-aligned below header `<hr>` | Body HTML, page 1 only (not in footer) |
 
 **Font file locations (from config.js):**
 - Times Regular: `/usr/share/fonts/TTF/Times.TTF`
@@ -189,14 +194,20 @@ Unlike the official blank QP templates (which have no footer), solved/answer
 papers MUST include a running footer on every page for identification:
 
 ```
-Left: [paper-identifier]        Center: page-number        Right: P.T.O.
+Left: [paper-identifier]        Center: page-number
 ```
 
 - Paper identifier: Times Bold, 17pt (left)
 - Page number: Times Regular, 12pt (center)
-- P.T.O.: Times Italic, 12pt (right)
 - Footer is rendered via Puppeteer's `displayHeaderFooter` with `footerTemplate`
 - The footer template is in `pdf.js`
+
+### P.T.O. RULE (answer/solved papers)
+
+`P.T.O.` (Please Turn Over) is placed in the HTML body RIGHT AFTER the header
+`<hr>` separator, as a right-aligned italic element. This means it appears ONLY
+on page 1 of the document. It is NOT part of the footer template, which avoids
+the illogical case of "P.T.O." on the last page.
 
 ## Metadata Extraction
 
@@ -297,8 +308,8 @@ Regenerate the PDF and check that the output matches both the official template
 - **Footer** (rendered via Puppeteer `displayHeaderFooter` in `pdf.js`):
   - `[paper-identifier]` left: 17pt Times Bold
   - Page number center: 12pt Times Regular
-  - `P.T.O.` right: 12pt Times Italic
   - Appears on every page
+- **P.T.O.** is in the HTML body (right after header `<hr>`) — page 1 only
 - The footer paper identifier is extracted via `<!-- PAPER_ID:[...] -->` HTML comment
   after bracket entity escaping in the header transformation
 - Official blank QP templates have NO footer — answer/solved papers add one for

@@ -70,7 +70,7 @@ class HtmlRenderer {
       }
       ${this._fontFaces()}
       body {
-        font-family: 'TNR', 'Cambria', serif;
+        font-family: 'TNR', 'Times New Roman', serif;
         font-size: 11pt;
         line-height: 1.4;
         color: #000;
