@@ -2,7 +2,7 @@
 
 ## ✅ Done
 
-- 24 universal skills (all SKILL.md files)
+- 26 universal skills (all SKILL.md files)
 - Community infrastructure (CONTRIBUTING, issues, PRs, Discussions, SECURITY)
 - Rolling release (self-update.sh, 0.0.0 versioning, nightly improve)
 - Agent configs (Claude Code, Cursor, Windsurf, Aider, Cline, Copilot, Continue.dev)
@@ -32,7 +32,7 @@
 
 ## 📊 Metrics
 
-- 24 skills
+- 26 skills
 - 33 use cases
 - 8 CI/CD workflows
 - 8 agent platforms configured

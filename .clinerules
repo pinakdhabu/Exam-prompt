@@ -1,7 +1,7 @@
 # Cline Project Rules — Exam-Prompt
 
 ## Project Overview
-This is a **universal skill hub** for AI-powered exam preparation. It contains 24 reusable skills that transform any AI coding agent into a personal exam tutor for any university worldwide.
+This is a **universal skill hub** for AI-powered exam preparation. It contains 26 reusable skills that transform any AI coding agent into a personal exam tutor for any university worldwide.
 
 ## Key Directories
 - `skills/<name>/SKILL.md` — Skill instructions (the "brain" of each skill)
@@ -33,27 +33,17 @@ This is a **universal skill hub** for AI-powered exam preparation. It contains 2
 2. Detect university from uploaded PDFs or description
 3. Route to correct universal skill
 
+## Quick Start (for new contributors)
+
+```bash
+git clone https://github.com/pinakdhabu/Exam-prompt.git
+cd Exam-prompt
+npm run quickstart   # Installs deps + generates a sample PDF
+```
+
 ## Memory Bank
-The `cline_docs/` directory contains persistent project knowledge:
-- `productContext.md` — Why this project exists, what problem it solves
-- `techContext.md` — Architecture, tech stack, skills system design
-- `activeContext.md` — Current state, recent changes, next steps
-- `systemPatterns.md` — How the skills architecture works
-- `progress.md` — What's been built, what's next
 
-## File Format Guidelines
-
-### Source of Truth
-- **DOCX** is the master/edit format. All solved papers originate as `.docx`.
-- **Markdown (`.md`)** is the intermediate format — generated from docx, used for PDF conversion.
-- **PDF** is the final publishable output — generated from markdown via the Node.js pipeline.
-
-### Pipeline: DOCX → MD → PDF
-```
-*.docx  ──(python3 /tmp/extract.py)──>  *.md  ──(node scripts/convert-to-pdf.js)──>  *.pdf
-```
-
-### Markdown Formatting Rules
+## Markdown Formatting Rules
 1. **Paper header**: Use `---` delimiters with bold text for course code, title, instructions.
 2. **Question numbering**: Use `### Q1) a)` for questions, `**OR**` for alternatives.
 3. **ASCII diagrams**: Always wrap in triple backtick fenced code blocks (`` ``` ``).

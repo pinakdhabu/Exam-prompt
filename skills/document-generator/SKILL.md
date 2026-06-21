@@ -15,9 +15,13 @@ Generates print-ready, professionally formatted PDF documents from Markdown stud
 for creating exam-ready printed materials — unit notes, PYQ solutions, syllabus references, formula
 sheets, and master solutions.
 
-Supports **Python** (weasyprint) and **Node.js** (Playwright) conversion backends. Includes a **QP
-(Question Paper) variant** that renders LaTeX equations via KaTeX and uses Times New Roman for
-authentic exam-paper formatting.
+Supports **Node.js** (Playwright — primary, renders LaTeX via KaTeX) and **Python** (weasyprint —
+fallback, Unicode math only). Includes a **QP (Question Paper) variant** that renders LaTeX equations
+via KaTeX and uses Times New Roman for authentic exam-paper formatting.
+
+> **Dependency note:** The core MD→QP-PDF pipeline runs on **Node.js only** (`marked` + `playwright`).
+> Python is **optional** — only needed for PDF text extraction (`pdf-extract.py`) or the weasyprint fallback.
+> See [`DEPENDENCIES.md`](../../DEPENDENCIES.md) for full install instructions.
 
 ---
 

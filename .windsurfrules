@@ -12,7 +12,7 @@ Skills are in `skills/<name>/SKILL.md` — each is a complete instruction set fo
 - `USE-CASES.md` — 33 real-world workflow examples
 - `skills/<name>/SKILL.md` — Full skill instructions
 
-## All 24 Skills
+## All 26 Skills
 
 1. universal-a-plus-answer-writer — Exam answers (every type, mark, condition)
 2. universal-notes-generator — 12+ note formats
@@ -38,6 +38,8 @@ Skills are in `skills/<name>/SKILL.md` — each is a complete instruction set fo
 22. universal-sppu-exam-simulator — Full exam simulation
 23. universal-session-config — User profile config
 24. universal-qp-fetcher — Auto-fetch PYQs from website
+25. universal-diagram-generator — Mermaid/D2/Graphviz diagrams
+26. setup-exam-prompt — First-time project configuration
 
 ## Quick Start
 

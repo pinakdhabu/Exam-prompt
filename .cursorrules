@@ -21,7 +21,7 @@ This is a universal skill hub for AI-powered exam preparation. It works for ANY 
 
 ## Quick Reference
 
-All 24 skills:
+All 26 skills:
 
 1. **universal-a-plus-answer-writer** — Exam answers (all types, all marks, all conditions)
 2. **universal-notes-generator** — 12+ note formats
@@ -47,6 +47,8 @@ All 24 skills:
 22. **universal-sppu-exam-simulator** — Full exam hall simulation
 23. **universal-session-config** — Persistent user profile config
 24. **universal-qp-fetcher** — Auto-fetch PYQs from websites
+25. **universal-diagram-generator** — Mermaid/D2/Graphviz diagrams
+26. **setup-exam-prompt** — First-time project configuration
 
 ## Conversation Starters (Copy-Paste)
 

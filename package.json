@@ -22,6 +22,7 @@
   "author": "Pinak Dhabu",
   "type": "commonjs",
   "scripts": {
+    "quickstart": "node scripts/quickstart.js",
     "setup": "bash scripts/setup.sh",
     "setup:win": "powershell -ExecutionPolicy Bypass -File scripts/setup.ps1",
     "profile": "bash scripts/profile.sh",

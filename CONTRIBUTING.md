@@ -62,13 +62,15 @@ cd Exam-prompt
 
 ### 2. Set Up Dependencies
 
-```bash
-# Auto-install everything (Node.js + Python + system tools)
-bash scripts/setup.sh --check
+See [`DEPENDENCIES.md`](DEPENDENCIES.md) for full details. Quick start:
 
-# Or just Node.js (for most tools)
+```bash
+# Node.js (required for MD→PDF pipeline)
 npm install
 npx playwright install chromium
+
+# Python (optional — PDF extraction only)
+pip install -r requirements.txt
 ```
 
 ### 3. Pick a Task

@@ -2,12 +2,12 @@
 
 ## Current State
 
-The repo is complete with 24 skills, community infrastructure, CI/CD, rolling release, and agent
+The repo is complete with 26 skills, community infrastructure, CI/CD, rolling release, and agent
 configurations for all major AI coding platforms.
 
 ## Recent Changes
 
-- Added 24 universal SKILL.md modules for all exam tasks
+- Added 26 universal SKILL.md modules for all exam tasks
 - Built community infrastructure (CONTRIBUTING.md, issue/PR templates, Discussions)
 - Created rolling release system (self-update.sh, nightly-improve.yml)
 - Added sample papers for FE/SE/TE/BE with solutions
@@ -22,7 +22,7 @@ configurations for all major AI coding platforms.
 ## Current Focus
 
 Making the repo optimized for AI coding agents — ensuring every major agent platform can
-auto-discover and load the 24 skills seamlessly.
+auto-discover and load the 26 skills seamlessly.
 
 ## Open Questions
 

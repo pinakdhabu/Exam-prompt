@@ -1,7 +1,14 @@
 # Exam Prompt — Python Dependencies
 # Install: pip install -r requirements.txt
+#
+# NOTE: Python is OPTIONAL. The core MD→PDF pipeline (with KaTeX math rendering)
+# runs on Node.js + Playwright only. These Python packages are only needed for:
+#   - PDF text extraction (scripts/pdf-extract.py)
+#   - WeasyPrint PDF backend (scripts/convert-to-pdf.py)
+#   - OCR pipeline for scanned documents
+# See README.md for Node.js setup instructions.
 
-# Markdown to PDF conversion
+# Markdown to PDF conversion (Node.js recommended instead)
 markdown>=3.6
 weasyprint>=62.0
 

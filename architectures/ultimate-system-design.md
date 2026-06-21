@@ -1,5 +1,12 @@
 # Ultimate System Design — Exam-prompt PDF Framework
 
+> **⚠️ PLANNED ARCHITECTURE — Not Yet Implemented**
+>
+> This document describes a *future* refactored CLI tool with config profiles, browser pooling,
+> caching, structured logging, and comprehensive error handling. The **current** pipeline lives in
+> `scripts/convert-to-pdf.js` (single file, Playwright-only, no config layer). See
+> [`DEPENDENCIES.md`](../DEPENDENCIES.md) and `scripts/convert-to-pdf/index.js` for current state.
+>
 > **Goal:** Production-grade markdown→PDF pipeline with proper math rendering, error handling,
 > logging, caching, concurrency, and extensibility — for academic exam papers.
 

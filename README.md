@@ -52,6 +52,33 @@ npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
 
 ---
 
+## ⚡ Try It Now (30 seconds)
+
+```bash
+git clone https://github.com/pinakdhabu/Exam-prompt.git
+cd Exam-prompt
+npm run quickstart    # Install deps + generate a sample PDF
+```
+
+Opens instantly — Node.js + Playwright only (no Python needed).
+
+**Then use any AI coding agent** (OpenCode, Claude Code, Cursor, Codex, etc.) to:
+
+```bash
+# "Generate Cornell notes for DBMS Unit 3"
+# "Write a model answer: Explain ACID properties [6 marks]"
+# "Create a question paper for Machine Learning"
+# "Convert my notes.md to a print-ready PDF"
+```
+
+Your agent reads the 26 skills from `skills/` and generates exam-ready output automatically.
+
+> 🐛 **Found a bug?** [Open an issue](https://github.com/pinakdhabu/Exam-prompt/issues)
+> 💡 **Have an idea?** [Start a discussion](https://github.com/pinakdhabu/Exam-prompt/discussions)
+> 🔧 **Want to contribute?** Fork the repo and open a PR — see [`CONTRIBUTING.md`](CONTRIBUTING.md)
+
+---
+
 ## 📸 Generated Question Papers
 
 **16 professionally formatted PDFs** — real output from the pipeline, not mockups. Times New Roman,
@@ -141,6 +168,9 @@ PDFs with rendered equations, Times New Roman, and proper QP layout:
 Sample Paper (Markdown) → marked → KaTeX + Playwright → A4 PDF
 ```
 
+> **See full dependency guide:** [`DEPENDENCIES.md`](DEPENDENCIES.md) — Node.js required, Python
+> optional.
+
 | Tool                        | Link                                                                               | What It Does                                        |
 | --------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------- |
 | Q.P. Analysis Tool          | [Open Gemini Gem](https://gemini.google.com/gem/1W8EC9fMchTr3bVl_X4ncnPGWNsEM5heh) | Analyzes PYQs and syllabus to predict exam patterns |
@@ -155,7 +185,7 @@ Sample Paper (Markdown) → marked → KaTeX + Playwright → A4 PDF
 
 ## Quick Install (All AI Coding Agents)
 
-Install all 27 exam-prep skills globally for your AI coding agent:
+Install all 26 exam-prep skills globally for your AI coding agent:
 
 ```bash
 # ✅ Recommended — targets OpenCode + universal agents

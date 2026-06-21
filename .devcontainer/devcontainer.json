@@ -13,7 +13,7 @@
     "ghcr.io/devcontainers/features/git:1": {}
   },
 
-  "postCreateCommand": "npm install && pip install --user weasyprint markdown pyyaml && npm install -g prettier && git config --global core.autocrlf input",
+  "postCreateCommand": "npm install && npx playwright install chromium && pip install --user weasyprint markdown pyyaml && npm install -g prettier && git config --global core.autocrlf input",
 
   "postStartCommand": "echo 'Exam-Prompt dev environment ready. Run: bash scripts/validate-skills.sh'",
 

@@ -2,7 +2,7 @@
 
 > **Purpose**: This document tells **any AI coding agent** (Claude Code, Cursor, Windsurf, Aider,
 > Cline, GitHub Copilot, OpenCode, Codex, Continue.dev, Cline, etc.) exactly how to discover, load,
-> and use the 24 universal exam preparation skills in this repository.
+> and use the 26 universal exam preparation skills in this repository.
 
 ---
 
@@ -51,11 +51,11 @@ exam-prompt/
 ├── .github/copilot-instructions.md  # GitHub Copilot configuration
 ├── .continue/config.yaml       # Continue.dev configuration
 │
-├── skills/                     # 24 skill modules (THE BRAIN)
+├── skills/                     # 26 skill modules (THE BRAIN)
 │   ├── answer-writer/SKILL.md
 │   ├── notes-generator/SKILL.md
 │   ├── pyq-analyzer/SKILL.md
-│   └── ... (24 total)
+│   └── ... (26 total)
 │
 ├── examples/                   # Sample papers + solutions
 ├── scripts/                    # Utility scripts
@@ -72,7 +72,7 @@ exam-prompt/
 
 ### Method 1: Read AGENTS.md (Recommended)
 
-`AGENTS.md` contains an XML `<available_skills>` block with ALL 24 skills listed. Each entry has:
+`AGENTS.md` contains an XML `<available_skills>` block with ALL 26 skills listed. Each entry has:
 
 ```xml
 <skill>
@@ -91,7 +91,7 @@ descriptions.
 
 ### Method 3: Read AGENT-GUIDE.md
 
-You're reading it. The section below lists all 24 skills.
+You're reading it. The section below lists all 26 skills.
 
 ---
 
@@ -149,6 +149,8 @@ precedence over general knowledge.
 | 22  | **Exam Simulator**          | User wants a full SPPU exam simulation                                  | `skills/sppu-exam-simulator/SKILL.md`          |
 | 23  | **Session Config**          | User sets up their profile for persistent preferences                   | `skills/session-config/SKILL.md`               |
 | 24  | **QP Fetcher**              | User wants to download PYQs from websites                               | `skills/qp-fetcher/SKILL.md`                   |
+| 25  | **Setup Exam Prompt**       | User says "setup", "configure", "first time", "get started"             | `skills/setup-exam-prompt/SKILL.md`            |
+| 26  | **Diagram Generator**       | User wants flowcharts, mind maps, architecture diagrams, UML            | `skills/diagram-generator/SKILL.md`            |
 
 ---
 
