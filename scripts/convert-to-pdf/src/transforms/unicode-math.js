@@ -41,8 +41,10 @@ const MATH_DELIM_DETECT = /(?:\\\(|\\\[|\$\$|\$[^$])/;
 
 const UNICODE_RUN = /[\u0391-\u03C9\u2070-\u209F\u00B2\u00B3\u00B9\u2080-\u2089\u00D7\u00F7\u2200-\u22FF\u2190-\u21FF\u2260-\u2265\u2229-\u222B\u03B1-\u03C9\u2202\u221E\u222B\u2211\u220F\u2260\u2264\u2265\u2208\u2229\u222A\u2192\u21D2\u2248\u2261\u2220\u2205\u22A2\u221A\u00B2\u00B3\u00B9\u2080\u2081\u2082\u2083\u2084\u2085\u2086\u2087\u2088\u2089\u00D7\u00F7]{2,}/g;
 
+const BRACKET_MATH_DETECT = /^\[\s*$/m;
+
 function detectMath(raw) {
-  return MATH_DELIM_DETECT.test(raw) || MATH_CHARS_REGEX.test(raw);
+  return MATH_DELIM_DETECT.test(raw) || MATH_CHARS_REGEX.test(raw) || BRACKET_MATH_DETECT.test(raw);
 }
 
 function convertMathChars(text) {

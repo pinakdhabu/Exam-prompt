@@ -7,6 +7,7 @@ const { detectMath, convertUnicodeRuns, convertStandaloneMathChars } = require('
 const { normalizeOr } = require('./src/transforms/or');
 const { wrapFdBraces } = require('./src/transforms/fds');
 const { convertMermaidBlocks, hasMermaid } = require('./src/transforms/mermaid');
+const { convertBracketMath } = require('./src/transforms/bracket-math');
 
 class MarkdownProcessor {
   constructor() {
@@ -38,6 +39,7 @@ class MarkdownProcessor {
     md = convertMermaidBlocks(md);
 
     if (this._hasMath) {
+      md = convertBracketMath(md);
       md = convertLaTeXDelimiters(md);
       md = convertUnicodeRuns(md);
       md = convertStandaloneMathChars(md);
