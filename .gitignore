@@ -1,3 +1,6 @@
+# OpenCode internal state
+.opencode/
+
 archive/
 *.pyc
 __pycache__/
@@ -6,6 +9,9 @@ node_modules/
 .codegraph/
 .agents/
 skills-lock.json
+
+# Personal study files
+ps.md
 
 # Generated outputs
 pdf_output/

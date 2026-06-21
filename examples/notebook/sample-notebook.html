@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Handwritten Notes — DBMS Revision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Caveat', 'Segoe Print', cursive;
+    font-size: 18px;
+    line-height: 1.75;
+    color: #222;
+    background: #fff8f0;
+    padding: 0;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 60px 50px 50px 55px;
+    position: relative;
+    background:
+      repeating-linear-gradient(
+        #fff8f0,
+        #fff8f0 27px,
+        #d4d9e6 27px,
+        #d4d9e6 28px
+      );
+    background-attachment: local;
+    break-after: page;
+  }
+
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 42px;
+    width: 2px;
+    height: 100%;
+    background: #f0c0c0;
+    opacity: 0.6;
+  }
+
+  .page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 44px;
+    width: 1px;
+    height: 100%;
+    background: #f0c0c0;
+    opacity: 0.4;
+  }
+
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    background: #1a1aff;
+    color: #fff;
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    padding: 8px 50px 8px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .fixed-header a {
+    color: #ffd700;
+    text-decoration: none;
+  }
+  .fixed-header a:hover {
+    text-decoration: underline;
+  }
+
+  .page-content {
+    padding-top: 10px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1a1aff;
+    margin: 16px 0 8px 0;
+    border-bottom: 2px solid #1a1aff;
+    padding-bottom: 2px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1aff;
+    margin: 14px 0 6px 0;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1aff;
+    margin: 10px 0 4px 0;
+  }
+
+  p {
+    margin: 4px 0;
+    text-indent: 0;
+  }
+
+  .highlight {
+    color: #cc0000;
+    font-weight: 600;
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-color: #1a1aff;
+    text-underline-offset: 3px;
+  }
+
+  .strikethrough {
+    text-decoration: line-through;
+    text-decoration-color: #cc0000;
+  }
+
+  ul, ol {
+    margin: 4px 0 4px 28px;
+  }
+  li {
+    margin: 2px 0;
+    list-style-type: '→ ';
+  }
+  li li {
+    list-style-type: '◦ ';
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+  }
+  th {
+    border-bottom: 2px solid #1a1aff;
+    padding: 4px 8px;
+    text-align: left;
+    font-weight: 700;
+    color: #1a1aff;
+  }
+  td {
+    border-bottom: 1px solid #bbb;
+    padding: 3px 8px;
+  }
+  tr:last-child td {
+    border-bottom: 1px solid #999;
+  }
+
+  code {
+    font-family: 'Caveat', cursive;
+    background: #e8e4f0;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 17px;
+  }
+
+  .diagram {
+    text-align: center;
+    margin: 12px 0;
+  }
+  .diagram svg,
+  .diagram img {
+    max-width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    background: #fff;
+  }
+
+  .diagram-caption {
+    font-size: 15px;
+    color: #666;
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  blockquote {
+    margin: 8px 0 8px 24px;
+    padding: 4px 12px;
+    border-left: 3px solid #1a1aff;
+    color: #444;
+    font-size: 17px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px dashed #bbb;
+    margin: 12px 0;
+  }
+
+  .formula {
+    text-align: center;
+    margin: 8px 0;
+    font-size: 20px;
+    color: #1a1aff;
+  }
+
+  .todo-check {
+    list-style: none;
+    margin-left: 4px;
+  }
+  .todo-check li::before {
+    content: '☐ ';
+    color: #1a1aff;
+  }
+  .todo-check li.done::before {
+    content: '☑ ';
+    color: #1a1aff;
+  }
+</style>
+</head>
+<body>
+
+<div class="fixed-header">
+  <span>📓 DBMS Revision Notes — Pinak Dhabu</span>
+  <span><a href="https://github.com/pinakdhabu/Exam-prompt">github.com/pinakdhabu/Exam-prompt</a></span>
+</div>
+
+<div class="page">
+<div class="page-content">
+
+<h1>Chapter 1 — Normalization</h1>
+
+<p>Functional dependencies are the backbone of normalization. A <span class="highlight">functional dependency</span> X → Y means X uniquely determines Y.</p>
+
+<h2>Armstrong's Axioms</h2>
+
+<ol>
+  <li><span class="highlight">Reflexivity:</span> If Y ⊆ X, then X → Y</li>
+  <li><span class="highlight">Augmentation:</span> If X → Y, then XZ → YZ</li>
+  <li><span class="highlight">Transitivity:</span> If X → Y and Y → Z, then X → Z</li>
+</ol>
+
+<div class="formula">F<sup>+</sup> = { X → Y | F ⊨ X → Y }</div>
+
+<h2>1NF, 2NF, 3NF, BCNF</h2>
+
+<table>
+  <tr><th>Normal Form</th><th>Condition</th><th>Eliminates</th></tr>
+  <tr><td>1NF</td><td>Atomic values only</td><td>Repeating groups</td></tr>
+  <tr><td>2NF</td><td>1NF + no partial dependency</td><td>Redundancy (partial)</td></tr>
+  <tr><td>3NF</td><td>2NF + no transitive dependency</td><td>Transitive redundancy</td></tr>
+  <tr><td>BCNF</td><td>3NF + every determinant is a key</td><td>All FD anomalies</td></tr>
+</table>
+
+<p><span class="highlight">Key insight:</span> 3NF is <span class="underline">dependency-preserving</span>, but BCNF may lose some FDs. In practice, 3NF is often preferred for transactional systems.</p>
+
+<h2>Lossless Decomposition</h2>
+
+<p>A decomposition R → {R₁, R₂} is <span class="highlight">lossless</span> iff:</p>
+<blockquote>R₁ ∩ R₂ → R₁ or R₁ ∩ R₂ → R₂</blockquote>
+
+<div class="diagram">
+<svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="380" height="40" rx="6" fill="#e0e8ff" stroke="#1a1aff" stroke-width="1.5"/>
+  <text x="200" y="36" text-anchor="middle" font-family="Caveat, sans-serif" font-size="18" fill="#1a1aff">R(A, B, C, D, E)</text>
+  <line x1="200" y1="50" x2="100" y2="100" stroke="#1a1aff" stroke-width="1.5"/>
+  <line x1="200" y1="50" x2="300" y2="100" stroke="#1a1aff" stroke-width="1.5"/>
+  <rect x="20" y="100" width="160" height="40" rx="6" fill="#ffe0e0" stroke="#cc0000" stroke-width="1.5"/>
+  <text x="100" y="126" text-anchor="middle" font-family="Caveat, sans-serif" font-size="18" fill="#cc0000">R₁(A, B, C)</text>
+  <rect x="220" y="100" width="160" height="40" rx="6" fill="#e0ffe0" stroke="#1a1aff" stroke-width="1.5"/>
+  <text x="300" y="126" text-anchor="middle" font-family="Caveat, sans-serif" font-size="18" fill="#1a1aff">R₂(C, D, E)</text>
+  <text x="200" y="165" text-anchor="middle" font-family="Caveat, sans-serif" font-size="15" fill="#888" font-style="italic">Lossless if C → {A,B} or C → {D,E}</text>
+</svg>
+<div class="diagram-caption">Figure 1: Lossless decomposition example</div>
+</div>
+
+</div>
+</div>
+
+<div class="page">
+<div class="page-content">
+
+<h1>Chapter 2 — Transaction Management</h1>
+
+<h2>ACID Properties</h2>
+
+<ul>
+  <li><span class="highlight">Atomicity:</span> All or nothing</li>
+  <li><span class="highlight">Consistency:</span> DB remains valid before &amp; after</li>
+  <li><span class="highlight">Isolation:</span> Concurrent transactions don't interfere</li>
+  <li><span class="highlight">Durability:</span> Committed changes persist</li>
+</ul>
+
+<h2>Schedule Classifications</h2>
+
+<table>
+  <tr><th>Schedule</th><th>Characteristic</th><th>Viewable</th></tr>
+  <tr><td>Serial</td><td>No interleaving</td><td>Always consistent</td></tr>
+  <tr><td>Conflict Serializable</td><td>Equivalent to some serial schedule</td><td>Yes</td></tr>
+  <tr><td>View Serializable</td><td>Weaker than conflict serializable</td><td>Sometimes</td></tr>
+  <tr><td>Recoverable</td><td>Commit only after reading from committed</td><td>Yes</td></tr>
+</table>
+
+<h2>Conflict Serializability Test</h2>
+
+<p>Build a <span class="highlight">precedence graph</span> — if there's a cycle, the schedule is <span class="highlight">not</span> conflict serializable.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 350 130" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="65" r="28" fill="#e0e8ff" stroke="#1a1aff" stroke-width="2"/>
+  <text x="80" y="71" text-anchor="middle" font-family="Caveat, sans-serif" font-size="20" fill="#1a1aff">T₁</text>
+  <circle cx="180" cy="65" r="28" fill="#ffe0e0" stroke="#cc0000" stroke-width="2"/>
+  <text x="180" y="71" text-anchor="middle" font-family="Caveat, sans-serif" font-size="20" fill="#cc0000">T₂</text>
+  <circle cx="280" cy="65" r="28" fill="#e0ffe0" stroke="#1a1aff" stroke-width="2"/>
+  <text x="280" y="71" text-anchor="middle" font-family="Caveat, sans-serif" font-size="20" fill="#1a1aff">T₃</text>
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1aff"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#cc0000"/>
+    </marker>
+  </defs>
+  <line x1="108" y1="65" x2="152" y2="65" stroke="#1a1aff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="208" y1="65" x2="252" y2="65" stroke="#1a1aff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="180" y1="37" x2="180" y2="93" stroke="#cc0000" stroke-width="2" marker-end="url(#arrowRed)" transform="rotate(20, 180, 65)"/>
+  <text x="155" y="46" font-family="Caveat, sans-serif" font-size="13" fill="#1a1aff">W₁(A)</text>
+  <text x="255" y="46" font-family="Caveat, sans-serif" font-size="13" fill="#1a1aff">W₂(B)</text>
+  <text x="190" y="112" font-family="Caveat, sans-serif" font-size="13" fill="#cc0000">Cycle → Not serializable</text>
+</svg>
+<div class="diagram-caption">Figure 2: Precedence graph with a cycle</div>
+</div>
+
+<h2>Recovery Techniques</h2>
+
+<ul>
+  <li><span class="highlight">Undo Logging:</span> Write old values before modifying</li>
+  <li><span class="highlight">Redo Logging:</span> Write new values after modifying</li>
+  <li><span class="highlight">Checkpointing:</span> Periodic sync to reduce recovery time</li>
+</ul>
+
+<h2>To-Do</h2>
+
+<ul class="todo-check">
+  <li class="done">Practice 3NF decomposition problems</li>
+  <li class="done">Solve BCNF examples</li>
+  <li>Study multi-version concurrency control</li>
+  <li>Read about ARIES recovery algorithm</li>
+  <li>Practice serializability graph exercises</li>
+</ul>
+
+<hr>
+<p style="text-align:center;font-size:16px;color:#888;margin-top:20px;">
+— End of notes —
+</p>
+
+</div>
+</div>
+
+</body>
+</html>
