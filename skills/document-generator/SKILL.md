@@ -15,8 +15,9 @@ Generates print-ready, professionally formatted PDF documents from Markdown stud
 for creating exam-ready printed materials — unit notes, PYQ solutions, syllabus references, formula
 sheets, and master solutions.
 
-Supports **Python** (weasyprint) and **Node.js** (Playwright) conversion backends.
-Includes a **QP (Question Paper) variant** that renders LaTeX equations via KaTeX and uses Times New Roman for authentic exam-paper formatting.
+Supports **Python** (weasyprint) and **Node.js** (Playwright) conversion backends. Includes a **QP
+(Question Paper) variant** that renders LaTeX equations via KaTeX and uses Times New Roman for
+authentic exam-paper formatting.
 
 ---
 
@@ -71,10 +72,12 @@ node scripts/convert-qp-to-pdf.js paper.md paper.pdf
 python3 scripts/convert-qp-to-pdf.py paper.md paper.pdf
 ```
 
-**Requires (Node):** `npm install marked playwright && npx playwright install chromium`
-**Requires (Python):** `pip install markdown weasyprint`
+**Requires (Node):** `npm install marked playwright && npx playwright install chromium` **Requires
+(Python):** `pip install markdown weasyprint`
 
-> **Note**: The QP variant uses `@font-face` to load Times New Roman from system fonts and converts `[ ... ]` math blocks to `$$ ... $$` KaTeX delimiters. Inline `\mu`, `\alpha`, etc. are rendered via CDN-loaded KaTeX auto-render.
+> **Note**: The QP variant uses `@font-face` to load Times New Roman from system fonts and converts
+> `[ ... ]` math blocks to `$$ ... $$` KaTeX delimiters. Inline `\mu`, `\alpha`, etc. are rendered
+> via CDN-loaded KaTeX auto-render.
 
 ---
 

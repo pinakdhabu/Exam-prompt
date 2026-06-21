@@ -1,6 +1,7 @@
 # Ultimate System Design — Exam-prompt PDF Framework
 
-> **Goal:** Production-grade markdown→PDF pipeline with proper math rendering, error handling, logging, caching, concurrency, and extensibility — for academic exam papers.
+> **Goal:** Production-grade markdown→PDF pipeline with proper math rendering, error handling,
+> logging, caching, concurrency, and extensibility — for academic exam papers.
 
 ---
 
@@ -47,21 +48,21 @@
 
 ## 2. Technology Decisions
 
-| Concern | Choice | Rationale | Source |
-|---------|--------|-----------|--------|
-| Markdown parser | **marked + marked-katex-extension** | 18× faster than unified, already working, tokenizes math before escape processing | bench: marked ~2950 ops/s vs remark ~164 ops/s |
-| Math engine | **KaTeX server-side** via extension | Deterministic, no browser JS needed, synchronous | — |
-| PDF engine | **Playwright** | BrowserContext isolation model best for concurrent PDF gen | — |
-| Config loader | **cosmiconfig** | Industry standard (ESLint, Prettier), searches up directory tree | npm: 15M/week |
-| Config validation | **ajv** | Fastest JSON Schema validator, fail-fast on boot | npm: 40M/week |
-| CLI framework | **commander** | Zero deps, best DX, Vue CLI / CRA standard | npm: 70M/week |
-| Logging | **pino + pino-pretty** | 7M ops/sec vs Winston's 200K, worker thread transport | npm: 8M/week |
-| Concurrency | **p-queue** | Promise-based, no Redis needed for CLI, rate limiting | npm: 8M/week |
-| Caching | **cacache** | Content-addressable, integrity-verified, npm's own cache | npm: 4M/week |
-| Progress | **cli-progress** | Multi-bar, ETA, stable | npm: 2M/week |
-| ANSI colors | **picocolors** | 1/10th size of chalk, same API | npm: 5M/week |
-| Browser pool | **Custom semaphore** | Single browser, max 4-8 concurrent contexts, restart every 500 renders | Playwright perf guide |
-| Error handling | **Homegrown Result type** | ~10 lines, no fp-ts overhead, clear discriminated unions | — |
+| Concern           | Choice                              | Rationale                                                                         | Source                                         |
+| ----------------- | ----------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Markdown parser   | **marked + marked-katex-extension** | 18× faster than unified, already working, tokenizes math before escape processing | bench: marked ~2950 ops/s vs remark ~164 ops/s |
+| Math engine       | **KaTeX server-side** via extension | Deterministic, no browser JS needed, synchronous                                  | —                                              |
+| PDF engine        | **Playwright**                      | BrowserContext isolation model best for concurrent PDF gen                        | —                                              |
+| Config loader     | **cosmiconfig**                     | Industry standard (ESLint, Prettier), searches up directory tree                  | npm: 15M/week                                  |
+| Config validation | **ajv**                             | Fastest JSON Schema validator, fail-fast on boot                                  | npm: 40M/week                                  |
+| CLI framework     | **commander**                       | Zero deps, best DX, Vue CLI / CRA standard                                        | npm: 70M/week                                  |
+| Logging           | **pino + pino-pretty**              | 7M ops/sec vs Winston's 200K, worker thread transport                             | npm: 8M/week                                   |
+| Concurrency       | **p-queue**                         | Promise-based, no Redis needed for CLI, rate limiting                             | npm: 8M/week                                   |
+| Caching           | **cacache**                         | Content-addressable, integrity-verified, npm's own cache                          | npm: 4M/week                                   |
+| Progress          | **cli-progress**                    | Multi-bar, ETA, stable                                                            | npm: 2M/week                                   |
+| ANSI colors       | **picocolors**                      | 1/10th size of chalk, same API                                                    | npm: 5M/week                                   |
+| Browser pool      | **Custom semaphore**                | Single browser, max 4-8 concurrent contexts, restart every 500 renders            | Playwright perf guide                          |
+| Error handling    | **Homegrown Result type**           | ~10 lines, no fp-ts overhead, clear discriminated unions                          | —                                              |
 
 ## 3. File Structure
 
@@ -183,19 +184,19 @@ scripts/convert-to-pdf/
 ### 4.1 Config Layer — `src/config/index.js`
 
 ```javascript
-const cosmiconfig = require('cosmiconfig');
-const Ajv = require('ajv');
-const { deepmerge } = require('smol-merge');
-const schema = require('./schema.json');
-const defaults = require('./defaults.yaml');
+const cosmiconfig = require("cosmiconfig");
+const Ajv = require("ajv");
+const { deepmerge } = require("smol-merge");
+const schema = require("./schema.json");
+const defaults = require("./defaults.yaml");
 
-const EXPLORER = cosmiconfig('exam-prompt-pdf', {
+const EXPLORER = cosmiconfig("exam-prompt-pdf", {
   searchPlaces: [
-    'package.json',
-    '.exam-prompt-pdfrc',
-    '.exam-prompt-pdfrc.yaml',
-    '.exam-prompt-pdfrc.json',
-    'exam-prompt-pdf.config.js',
+    "package.json",
+    ".exam-prompt-pdfrc",
+    ".exam-prompt-pdfrc.yaml",
+    ".exam-prompt-pdfrc.json",
+    "exam-prompt-pdf.config.js",
   ],
 });
 
@@ -203,8 +204,8 @@ function validate(config) {
   const ajv = new Ajv({ useDefaults: true, strict: false });
   const valid = ajv.validate(schema, config);
   if (!valid) {
-    console.error('Config validation errors:');
-    ajv.errors.forEach(e => console.error(`  ${e.instancePath}: ${e.message}`));
+    console.error("Config validation errors:");
+    ajv.errors.forEach((e) => console.error(`  ${e.instancePath}: ${e.message}`));
     process.exit(1);
   }
   return config;
@@ -213,9 +214,7 @@ function validate(config) {
 async function loadConfig(cliFlags = {}) {
   const explorerResult = await EXPLORER.search();
   const fileConfig = explorerResult?.config ?? {};
-  const profileConfig = cliFlags.profile
-    ? loadProfile(cliFlags.profile)
-    : {};
+  const profileConfig = cliFlags.profile ? loadProfile(cliFlags.profile) : {};
 
   const merged = deepmerge(defaults, profileConfig, fileConfig, cliFlags);
   return validate(merged);
@@ -223,6 +222,7 @@ async function loadConfig(cliFlags = {}) {
 ```
 
 **Schema validation catches these at boot:**
+
 - `pdf.margins.top` is a valid CSS length
 - `fonts.serif.variants` has all four required weights
 - `math.katex.cssSource` is one of `cdn | embed | inline`
@@ -238,7 +238,10 @@ class Pipeline {
     this.stages = [];
   }
 
-  use(fn) { this.stages.push(fn); return this; }
+  use(fn) {
+    this.stages.push(fn);
+    return this;
+  }
 
   async run(ctx) {
     let index = 0;
@@ -259,14 +262,14 @@ pipeline.use(stageMarkdown);
 pipeline.use(stageDocument);
 pipeline.use(stagePdf);
 
-const ctx = await pipeline.run({ source: 'input.md', config });
+const ctx = await pipeline.run({ source: "input.md", config });
 // ctx.pdf ← Buffer
 ```
 
 ### 4.3 Browser Pool — `src/pdf/pool.js`
 
 ```javascript
-const { chromium } = require('playwright');
+const { chromium } = require("playwright");
 
 class BrowserPool {
   constructor({ maxPages = 4, restartAfter = 500 }) {
@@ -281,12 +284,12 @@ class BrowserPool {
   async start() {
     this.browser = await chromium.launch({
       args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu',
-        '--disable-extensions',
-        '--disable-background-networking',
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-gpu",
+        "--disable-extensions",
+        "--disable-background-networking",
       ],
     });
     this.startTime = Date.now();
@@ -299,7 +302,7 @@ class BrowserPool {
 
     // Semaphore: wait if at capacity
     if (this.active >= this.maxPages) {
-      await new Promise(r => this.queue.push(r));
+      await new Promise((r) => this.queue.push(r));
     }
 
     this.active++;
@@ -307,15 +310,15 @@ class BrowserPool {
     const page = await context.newPage();
 
     try {
-      await page.setContent(html, { waitUntil: 'load', timeout: 30000 });
-      await page.evaluateHandle('document.fonts.ready');
+      await page.setContent(html, { waitUntil: "load", timeout: 30000 });
+      await page.evaluateHandle("document.fonts.ready");
       this.renderCount++;
       return await page.pdf({
-        format: 'A4',
-        margin: { top: '2cm', bottom: '2.2cm', left: '2.2cm', right: '2.2cm' },
+        format: "A4",
+        margin: { top: "2cm", bottom: "2.2cm", left: "2.2cm", right: "2.2cm" },
         printBackground: true,
         displayHeaderFooter: true,
-        headerTemplate: '<span></span>',
+        headerTemplate: "<span></span>",
         footerTemplate:
           '<div style="font-size:9pt;color:#555;text-align:center;width:100%">' +
           '<span class="pageNumber"></span></div>',
@@ -331,14 +334,14 @@ class BrowserPool {
   async _restart() {
     await this.browser.close();
     this.browser = await chromium.launch({
-      args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
+      args: ["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"],
     });
     this.renderCount = 0;
   }
 
   async shutdown() {
     while (this.active > 0) {
-      await new Promise(r => setTimeout(r, 100));
+      await new Promise((r) => setTimeout(r, 100));
     }
     await this.browser?.close();
   }
@@ -349,20 +352,24 @@ class BrowserPool {
 
 ```javascript
 const ERROR_CODES = {
-  BROWSER_CRASH:     { retryable: true,  recoverable: true,  message: 'Browser crashed' },
-  KATEX_ERROR:       { retryable: false, recoverable: true,  message: 'KaTeX parse error' },
-  FONT_LOAD_FAIL:    { retryable: true,  recoverable: true,  message: 'Font loading failed' },
-  INVALID_INPUT:     { retryable: false, recoverable: true,  message: 'Invalid input file' },
-  CONFIG_ERROR:      { retryable: false, recoverable: false, message: 'Configuration error' },
-  TIMEOUT:           { retryable: true,  recoverable: true,  message: 'Operation timed out' },
-  OUTPUT_ERROR:      { retryable: true,  recoverable: true,  message: 'Output write failed' },
+  BROWSER_CRASH: { retryable: true, recoverable: true, message: "Browser crashed" },
+  KATEX_ERROR: { retryable: false, recoverable: true, message: "KaTeX parse error" },
+  FONT_LOAD_FAIL: { retryable: true, recoverable: true, message: "Font loading failed" },
+  INVALID_INPUT: { retryable: false, recoverable: true, message: "Invalid input file" },
+  CONFIG_ERROR: { retryable: false, recoverable: false, message: "Configuration error" },
+  TIMEOUT: { retryable: true, recoverable: true, message: "Operation timed out" },
+  OUTPUT_ERROR: { retryable: true, recoverable: true, message: "Output write failed" },
 };
 
 class PipelineError extends Error {
   constructor(code, details = {}) {
-    const def = ERROR_CODES[code] || { message: 'Unknown error', retryable: false, recoverable: false };
+    const def = ERROR_CODES[code] || {
+      message: "Unknown error",
+      retryable: false,
+      recoverable: false,
+    };
     super(def.message);
-    this.name = 'PipelineError';
+    this.name = "PipelineError";
     this.code = code;
     this.retryable = def.retryable;
     this.recoverable = def.recoverable;
@@ -376,15 +383,17 @@ module.exports = { PipelineError, ERROR_CODES };
 ### 4.5 Result Type — `src/utils/result.js`
 
 ```javascript
-const ok = value => ({ ok: true, value });
-const err = error => ({ ok: false, error });
+const ok = (value) => ({ ok: true, value });
+const err = (error) => ({ ok: false, error });
 
 async function tryCatch(fn) {
   try {
     const value = await fn();
     return ok(value);
   } catch (error) {
-    return err(error instanceof PipelineError ? error : new PipelineError('UNKNOWN', { cause: error }));
+    return err(
+      error instanceof PipelineError ? error : new PipelineError("UNKNOWN", { cause: error }),
+    );
   }
 }
 
@@ -394,9 +403,9 @@ module.exports = { ok, err, tryCatch };
 ### 4.6 Caching — `src/cache/index.js`
 
 ```javascript
-const cacache = require('cacache');
-const crypto = require('crypto');
-const { hashElement } = require('folder-hash');
+const cacache = require("cacache");
+const crypto = require("crypto");
+const { hashElement } = require("folder-hash");
 
 class PipelineCache {
   constructor(cacheDir) {
@@ -406,12 +415,11 @@ class PipelineCache {
   async key(sourcePath, config) {
     const sourceHash = await this._hashFile(sourcePath);
     const depHash = await this._hashDeps();
-    const configHash = crypto.createHash('sha256')
-      .update(JSON.stringify(config))
-      .digest('hex');
-    return crypto.createHash('sha256')
+    const configHash = crypto.createHash("sha256").update(JSON.stringify(config)).digest("hex");
+    return crypto
+      .createHash("sha256")
       .update(sourceHash + depHash + configHash)
-      .digest('hex');
+      .digest("hex");
   }
 
   async get(key) {
@@ -428,17 +436,17 @@ class PipelineCache {
   }
 
   async _hashFile(path) {
-    const content = require('fs').readFileSync(path);
-    return crypto.createHash('sha256').update(content).digest('hex');
+    const content = require("fs").readFileSync(path);
+    return crypto.createHash("sha256").update(content).digest("hex");
   }
 
   async _hashDeps() {
     try {
-      const pkg = require('path').join(process.cwd(), 'package.json');
-      const hash = await hashElement(pkg, { folders: { exclude: ['.*', 'node_modules'] } });
+      const pkg = require("path").join(process.cwd(), "package.json");
+      const hash = await hashElement(pkg, { folders: { exclude: [".*", "node_modules"] } });
       return hash.hash;
     } catch {
-      return 'no-deps';
+      return "no-deps";
     }
   }
 }
@@ -480,6 +488,7 @@ Examples:
 ```
 
 **JSON mode output:** `--json` flag emits NDJSON for tooling:
+
 ```json
 {"event":"start","file":"input.md","timestamp":1712345678000}
 {"event":"complete","file":"input.md","duration":1234,"pages":3,"size":102400,"cacheHit":false}
@@ -489,6 +498,7 @@ Examples:
 ## 6. Configuration Profiles
 
 ### `quick.yaml` — Rapid draft preview
+
 ```yaml
 pdf:
   format: A4
@@ -504,6 +514,7 @@ pipeline:
 ```
 
 ### `print.yaml` — Production print-ready
+
 ```yaml
 pdf:
   format: A4
@@ -550,7 +561,7 @@ logging:
                    │BROWSER   │ │FONT    │ │TIMEOUT │ │CONFIG    │          │KATEX     │
                    │CRASH     │ │LOAD    │ │        │ │ERROR     │          │ERROR     │
                    └──────────┘ └────────┘ └────────┘ └──────────┘          └──────────┘
-                                                                   
+
 Retry policy: Retryable → 3 attempts, exponential backoff (1s, 2s, 4s)
 Non-retryable → Skip file, continue batch, report in summary
 Warning → Log with file reference, include in output (KaTeX errors render as red text)
@@ -559,15 +570,15 @@ Warning → Log with file reference, include in output (KaTeX errors render as r
 ## 8. Logging — Structured with pino
 
 ```javascript
-const pino = require('pino');
+const pino = require("pino");
 
 function createLogger(options = {}) {
   const logger = pino({
-    level: options.level || 'info',
+    level: options.level || "info",
     transport: options.pretty
-      ? { target: 'pino-pretty', options: { colorize: true, translateTime: 'HH:MM:ss' } }
+      ? { target: "pino-pretty", options: { colorize: true, translateTime: "HH:MM:ss" } }
       : undefined,
-    redact: ['config.fonts.*.file'],  // Never log absolute font paths
+    redact: ["config.fonts.*.file"], // Never log absolute font paths
   });
 
   return {
@@ -582,42 +593,42 @@ function createLogger(options = {}) {
 
 ```javascript
 // test/unit/markdown/yaml.test.js
-test('strips YAML frontmatter', () => {
-  const input = '---\ntitle: Test\n---\n# Hello';
+test("strips YAML frontmatter", () => {
+  const input = "---\ntitle: Test\n---\n# Hello";
   const result = stripYaml(input);
-  expect(result).toBe('# Hello');
+  expect(result).toBe("# Hello");
 });
 
 // test/unit/markdown/delimiters.test.js
-test('converts \\(...\\) to $$...$$ for display math', () => {
-  const input = '\\( \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} \\)';
+test("converts \\(...\\) to $$...$$ for display math", () => {
+  const input = "\\( \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} \\)";
   const result = convertDelimiters(input);
-  expect(result).toContain('$$');
-  expect(result).toContain('\\begin{bmatrix}');
+  expect(result).toContain("$$");
+  expect(result).toContain("\\begin{bmatrix}");
 });
 
 // test/unit/markdown/display.test.js
-test('upgrades matrix inline math to display', () => {
-  const input = '\\( \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} \\)';
+test("upgrades matrix inline math to display", () => {
+  const input = "\\( \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} \\)";
   const result = upgradeDisplayMath(input);
   expect(result).toMatch(/^\n\n\$\$/);
 });
 
 // test/integration/pipeline.test.js
-test('full pipeline preserves \\\\ in matrices', async () => {
-  const input = '\\[ \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} \\]';
-  const ctx = await pipeline.run({ source: { content: input, path: 'test.md' }, config });
+test("full pipeline preserves \\\\ in matrices", async () => {
+  const input = "\\[ \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} \\]";
+  const ctx = await pipeline.run({ source: { content: input, path: "test.md" }, config });
   const html = ctx.html;
-  expect(html).toContain('katex-display');
-  expect(html).not.toContain('ParseError');
+  expect(html).toContain("katex-display");
+  expect(html).not.toContain("ParseError");
 }, 30000);
 
 // test/integration/fonts.test.js
-test('fonts are embedded in PDF', async () => {
-  const ctx = await pipeline.run({ source: { content: 'Hello World', path: 'test.md' }, config });
+test("fonts are embedded in PDF", async () => {
+  const ctx = await pipeline.run({ source: { content: "Hello World", path: "test.md" }, config });
   const pdf = ctx.pdf;
   const text = await extractTextFromPdf(pdf);
-  expect(text).toContain('Hello World');
+  expect(text).toContain("Hello World");
   // Check font metrics via pdf-lib
   const doc = await PDFDocument.load(pdf);
   // Verify Times New Roman is embedded
@@ -627,6 +638,7 @@ test('fonts are embedded in PDF', async () => {
 ## 10. Migration Path (Current → Ultimate)
 
 ### Phase 1: Structural (do NOW — no functionality change)
+
 - [ ] Move `transforms/` into separate files (currently in `markdown.js`)
 - [ ] Add `Result` type to `pdf.js` for error handling
 - [ ] Add `pino` logging with job IDs
@@ -635,6 +647,7 @@ test('fonts are embedded in PDF', async () => {
 - **Files changed:** markdown.js → transforms/, index.js, pdf.js, config.js
 
 ### Phase 2: Robustness (next)
+
 - [ ] Add `ajv` JSON Schema validation for config
 - [ ] Add `cacache` for PDF caching
 - [ ] Implement `BrowserPool` with semaphore + restart
@@ -643,6 +656,7 @@ test('fonts are embedded in PDF', async () => {
 - **Files changed:** config/, pdf/pool.js, cache/, bin/exam-prompt-pdf
 
 ### Phase 3: DX (after)
+
 - [ ] Add `--init` to generate config file
 - [ ] Add `--list-fonts` command
 - [ ] HTML & PNG output writers
@@ -651,6 +665,7 @@ test('fonts are embedded in PDF', async () => {
 - **Files changed:** output/, bin/exam-prompt-pdf
 
 ### Phase 4: Quality (ongoing)
+
 - [ ] Unit tests for all transforms
 - [ ] Integration tests with Playwright
 - [ ] PDF pixel-diff snapshots for regression
@@ -661,11 +676,11 @@ test('fonts are embedded in PDF', async () => {
 
 ## 11. Performance Budget
 
-| Operation | Current | Target | Measurement |
-|-----------|---------|--------|-------------|
-| Single file (no cache) | ~4s | <3s | wall clock |
-| Batch 96 files (cold) | ~3min | <90s | wall clock |
-| Batch 96 files (warm cache) | — | <10s | wall clock |
-| Browser restart | — | <1s | time to ready |
-| Cache hit serve | — | <50ms | cache.get + buffer write |
-| Memory per browser | — | <500MB RSS | process.memoryUsage() |
+| Operation                   | Current | Target     | Measurement              |
+| --------------------------- | ------- | ---------- | ------------------------ |
+| Single file (no cache)      | ~4s     | <3s        | wall clock               |
+| Batch 96 files (cold)       | ~3min   | <90s       | wall clock               |
+| Batch 96 files (warm cache) | —       | <10s       | wall clock               |
+| Browser restart             | —       | <1s        | time to ready            |
+| Cache hit serve             | —       | <50ms      | cache.get + buffer write |
+| Memory per browser          | —       | <500MB RSS | process.memoryUsage()    |

@@ -1,11 +1,15 @@
 # Notebook Aesthetic — Formatting Rules
 
 ## Overview
-Converts Markdown to an HTML page styled as handwritten notebook notes, then exports to PDF (A4). Designed for revision notes, study summaries, and quick reference sheets that mimic physical notebook pages.
+
+Converts Markdown to an HTML page styled as handwritten notebook notes, then exports to PDF (A4).
+Designed for revision notes, study summaries, and quick reference sheets that mimic physical
+notebook pages.
 
 ## Page Structure
 
 ### Page Size & Margins
+
 - A4 (210mm × 297mm)
 - Left margin: 55px (includes 10px for red margin line)
 - Right margin: 50px
@@ -13,6 +17,7 @@ Converts Markdown to an HTML page styled as handwritten notebook notes, then exp
 - Bottom margin: 50px
 
 ### Ruled Background
+
 - Light cream/tan paper color (`#fff8f0`)
 - Horizontal ruled lines every 28px (measured from top of content area)
 - Line color: subtle blue-gray (`#d4d9e6`), 1px height
@@ -21,6 +26,7 @@ Converts Markdown to an HTML page styled as handwritten notebook notes, then exp
 - The ruled lines must align with text baselines (line-height matches ruled spacing)
 
 ### Fixed Header
+
 - Height: 44px
 - Background: `#1a1aff` (blue ink)
 - Text: white, Caveat font
@@ -31,46 +37,53 @@ Converts Markdown to an HTML page styled as handwritten notebook notes, then exp
 ## Typography
 
 ### Font
+
 - Primary: `Caveat` (Google Font, weights 400/600/700)
 - Fallback: `'Segoe Print', cursive`
 - Base size: 18px
 - Line height: 1.75 (28px — matches ruled line spacing)
 
 ### Headings
+
 - H1: 30px, bold, blue (`#1a1aff`), underlined with 2px blue border
 - H2: 24px, semibold, blue
 - H3: 20px, semibold, blue
 - All headings: aligned left, not centered
 
 ### Body Text
+
 - Color: `#222` (near-black, softer than pure black for handwriting feel)
 - Indentation: none (zero text-indent)
 - Paragraph spacing: 4px margin top/bottom
 
 ## Color Scheme
 
-| Use | Color | Hex |
-|-----|-------|-----|
-| Headings | Blue ink | `#1a1aff` |
-| Body | Near-black | `#222` |
-| Highlights | Red ink | `#cc0000` |
-| Background | Cream paper | `#fff8f0` |
-| Ruled lines | Blue-gray | `#d4d9e6` |
-| Margin line | Pink/red | `#f0c0c0` |
-| Header bg | Blue ink | `#1a1aff` |
-| Header text | White | `#fff` |
-| Header link | Gold | `#ffd700` |
-| Table borders | Gray | `#bbb`, `#999` |
-| Blockquote border | Blue ink | `#1a1aff` |
+| Use               | Color       | Hex            |
+| ----------------- | ----------- | -------------- |
+| Headings          | Blue ink    | `#1a1aff`      |
+| Body              | Near-black  | `#222`         |
+| Highlights        | Red ink     | `#cc0000`      |
+| Background        | Cream paper | `#fff8f0`      |
+| Ruled lines       | Blue-gray   | `#d4d9e6`      |
+| Margin line       | Pink/red    | `#f0c0c0`      |
+| Header bg         | Blue ink    | `#1a1aff`      |
+| Header text       | White       | `#fff`         |
+| Header link       | Gold        | `#ffd700`      |
+| Table borders     | Gray        | `#bbb`, `#999` |
+| Blockquote border | Blue ink    | `#1a1aff`      |
 
 ## Typography Markers
 
 ### Highlights & Ink Effects
-- **`<span class="highlight">`** — Red ink (`#cc0000`, font-weight 600). Use for key terms, important concepts, exam tips
-- **`<span class="underline">`** — Blue underline (`#1a1aff`, offset 3px). Use for book titles, foreign words, emphasis
+
+- **`<span class="highlight">`** — Red ink (`#cc0000`, font-weight 600). Use for key terms,
+  important concepts, exam tips
+- **`<span class="underline">`** — Blue underline (`#1a1aff`, offset 3px). Use for book titles,
+  foreign words, emphasis
 - **`<span class="strikethrough">`** — Red strikethrough. Use for crossed-out items, corrections
 
 ### Lists
+
 - Unordered: `→` prefix (→ item), sub-items use `◦` prefix
 - Ordered: Standard 1., 2., 3. with blue color
 - To-do lists: `☐` unchecked, `☑` done — blue color
@@ -78,6 +91,7 @@ Converts Markdown to an HTML page styled as handwritten notebook notes, then exp
 ## Tables
 
 ### Style
+
 - No outer border
 - No vertical borders (thin-line notebook style)
 - Header row: 2px bottom border in blue ink
@@ -88,12 +102,14 @@ Converts Markdown to an HTML page styled as handwritten notebook notes, then exp
 - Text align: left
 
 ### Structure
+
 - Markdown tables render directly to `<table>`
 - First row becomes `<th>`, rest become `<td>`
 
 ## Diagrams & Images
 
 ### SVG Diagrams
+
 - Use inline SVG for simple diagrams (architecture, graphs, trees)
 - Centered via `<div class="diagram">`
 - SVG: `max-width: 90%`, centered
@@ -102,16 +118,19 @@ Converts Markdown to an HTML page styled as handwritten notebook notes, then exp
 - Text in SVG should use Caveat font for consistency
 
 ### PNG Images
+
 - Use `<img>` with same `.diagram` wrapper
 - Same styling as SVG diagrams
 
 ### Captions
+
 - `<div class="diagram-caption">` below each diagram
 - Font: Caveat italic, 15px, gray (`#666`)
 
 ## Other Elements
 
 ### Blockquotes
+
 - Left border: 3px solid blue ink
 - Left margin: 24px
 - Padding: 4px 12px
@@ -119,16 +138,19 @@ Converts Markdown to an HTML page styled as handwritten notebook notes, then exp
 - Font size: 17px
 
 ### Horizontal Rules
+
 - Dashed line (`1px dashed #bbb`)
 - Margin: 12px 0
 
 ### Inline Code
+
 - Font: Caveat (not monospace — handwriting consistency)
 - Background: `#e8e4f0` (light lavender)
 - Padding: 1px 6px
 - Border radius: 3px
 
 ### Formulas
+
 - Centered block via `<div class="formula">`
 - Font size: 20px
 - Color: blue ink
@@ -138,6 +160,7 @@ Converts Markdown to an HTML page styled as handwritten notebook notes, then exp
 ## Export Rules
 
 ### PDF Export (Playwright)
+
 - Use `page.pdf()` with `format: 'A4'`
 - `printBackground: true` (rules background is essential)
 - `displayHeaderFooter: false` (notebook has its own fixed header)
@@ -145,6 +168,7 @@ Converts Markdown to an HTML page styled as handwritten notebook notes, then exp
 - `preferCSSPageSize: true`
 
 ### Page Breaks
+
 - `.page` div with `break-after: page`
 - Each `.page` represents one notebook page
 - Content overflows naturally within page; start new `.page` for new sections
@@ -174,6 +198,7 @@ input.md
 ```
 
 ### Differences from Exam-Paper Pipeline
+
 1. Uses `NotebookHtmlRenderer` instead of `HtmlRenderer`
 2. Caveat font instead of TNR/Caskaydia
 3. Ruled background instead of plain white

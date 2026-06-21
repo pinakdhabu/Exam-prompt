@@ -167,10 +167,11 @@ bash scripts/install.sh
 
 > ⚠️ **Important:** Always use the `-a opencode` flag. Running without it may cause
 > `PromptScript does not support global skill installation` errors — this is expected because
-> PromptScript is a project-only agent that doesn't support global (`-g`) installation.
-> Skills still install correctly to OpenCode, Amp, Cline, and all other universal agents.
+> PromptScript is a project-only agent that doesn't support global (`-g`) installation. Skills still
+> install correctly to OpenCode, Amp, Cline, and all other universal agents.
 >
 > **To target a different agent:**
+>
 > ```bash
 > npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a claude-code
 > npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a cursor
