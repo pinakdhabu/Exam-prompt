@@ -1,6 +1,7 @@
 # Universal Exam Prompt — Ultimate A+ Answer System for Any University Worldwide
 
-![Skills](https://img.shields.io/badge/skills-26-blue) ![Papers](https://img.shields.io/badge/sample_papers-96-green) ![Solutions](https://img.shields.io/badge/solutions-48-orange) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4) ![License](https://img.shields.io/badge/license-MIT-brightgreen)
+<!-- prettier-ignore -->
+![Skills](https://img.shields.io/badge/skills-26-blue?style=flat-square) ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square) ![Papers](https://img.shields.io/badge/sample_papers-96-green?style=flat-square) ![PDFs](https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square) ![Solutions](https://img.shields.io/badge/solutions-48-orange?style=flat-square) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square) ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)
 
 <p align="center">
   <a href="https://pinakdhabu.github.io/Exam-prompt/">
@@ -12,17 +13,6 @@
   <a href="https://github.com/pinakdhabu/Exam-prompt/forks">
     <img src="https://img.shields.io/github/forks/pinakdhabu/Exam-prompt?style=for-the-badge&logo=github" alt="Forks">
   </a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/github/license/pinakdhabu/Exam-prompt?style=flat-square" alt="MIT">
-  <img src="https://img.shields.io/badge/universities-any-success?style=flat-square" alt="Any University">
-  <img src="https://img.shields.io/badge/subjects-50+-orange?style=flat-square" alt="50+ Subjects">
-  <img src="https://img.shields.io/badge/skills-26-blue?style=flat-square" alt="26 Skills">
-  <img src="https://img.shields.io/badge/sample_papers-96-green?style=flat-square" alt="96 Sample Papers">
-  <img src="https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square" alt="16 Generated PDFs">
-  <img src="https://img.shields.io/badge/release-rolling-ff69b4?style=flat-square" alt="Rolling Release">
-  <img src="https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square" alt="Last Commit">
 </p>
 
 > **The world's most comprehensive AI-powered exam preparation system — works for ANY university,

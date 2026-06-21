@@ -40,21 +40,21 @@ jobs:
           SKILL_COUNT=$(ls -d skills/*/ 2>/dev/null | wc -l)
           PAPER_COUNT=$(find examples/ -name 'sample-paper-*.md' 2>/dev/null | wc -l)
           SOLUTION_COUNT=$(find examples/ -name '*-solution.md' 2>/dev/null | wc -l)
+          PDF_COUNT=$(find generated-examples/pdfs/ -name '*.pdf' 2>/dev/null | wc -l)
 
-          # Generate a dynamic status badge line
-          BADGES="![Skills](https://img.shields.io/badge/skills-$SKILL_COUNT-blue)"
-          BADGES="$BADGES ![Papers](https://img.shields.io/badge/sample_papers-$PAPER_COUNT-green)"
-          BADGES="$BADGES ![Solutions](https://img.shields.io/badge/solutions-$SOLUTION_COUNT-orange)"
-          BADGES="$BADGES ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4)"
-          BADGES="$BADGES ![License](https://img.shields.io/badge/license-MIT-brightgreen)"
+          BADGES="![Skills](https://img.shields.io/badge/skills-$SKILL_COUNT-blue?style=flat-square)"
+          BADGES="$BADGES ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square)"
+          BADGES="$BADGES ![Papers](https://img.shields.io/badge/sample_papers-$PAPER_COUNT-green?style=flat-square)"
+          BADGES="$BADGES ![PDFs](https://img.shields.io/badge/generated_pdfs-$PDF_COUNT-red?style=flat-square)"
+          BADGES="$BADGES ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4?style=flat-square)"
+          BADGES="$BADGES ![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square)"
+          BADGES="$BADGES ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)"
 
           # Update or insert the badge line in README.md
           if grep -q '!\\[Skills\\]' README.md 2>/dev/null; then
-            # Update existing badge line (matches the first ![Skills] badge)
             sed -i '0,/!\\[Skills\\].*/s/!\\[Skills\\].*/BADGES_PLACEHOLDER/' README.md
             sed -i "s|BADGES_PLACEHOLDER|$BADGES|" README.md
           else
-            # Insert after the title
             sed -i '2i\\n'"$BADGES" README.md
           fi
           echo "Updated README badges"
