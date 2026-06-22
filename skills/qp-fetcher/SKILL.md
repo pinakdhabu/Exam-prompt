@@ -239,26 +239,28 @@ If not found → ask user for links/files.
 
 ### Option B: Generate University-Style Question Paper
 
-When the user says "Generate a question paper for [subject]", the AI generates a properly formatted
-question paper using the official SPPU pattern with:
+When the user says "Generate a question paper for [subject]", the AI generates a question paper
+matching the **Real QP Style Reference** section below (PDF analysis of 200+ actual SPPU QPs):
 
-1. **University Header**: SPPU logo placeholder, subject code, subject name, program, semester,
-   pattern
-2. **Exam Details**: Time, Max Marks, proper instruction set
-3. **Question Structure**: OR pairs with (a)+(b) or (a)+(b)+(c) format
-4. **Mark Distribution**: Unit-wise as per SPPU pattern
-5. **CO/Bloom Mapping**: Each question tagged with CO and Bloom's level
-6. **Proper Typography**: Monospace for code, serif for body, bold for headings
+1. **Page Layout**: A4, margins ~70pt left/right, ~56pt top, ~60pt bottom (matching real QPs)
+2. **Header**: Paper code + SEAT No. + pages on first line, centered paper number/program/subject
+3. **Exam Details**: Time on left, Max Marks on right, proper instruction set as seen in real QPs
+4. **Question Structure**: OR pairs with (a)+(b)+(c) format, marks in brackets
+5. **Mark Distribution**: Unit-wise as per SPPU pattern
+6. **CO/Bloom Mapping**: Each question tagged with CO and Bloom's level
+7. **Typography**: ALL CAPS for subject, brackets for marks, bold for headings
 
 ---
 
 ## Supported Patterns
 
-| Pattern       | Units                   | OR Pairs | Total Marks | Time    |
-| ------------- | ----------------------- | -------- | ----------- | ------- |
-| **SPPU 2019** | 6 units (U3-U6 for ESE) | 4 pairs  | 70          | 2.5 hrs |
-| **SPPU 2024** | 5 units                 | 5 pairs  | 70          | 2.5 hrs |
-| **SPPU 2015** | 8 units                 | 4 pairs  | 70          | 3 hrs   |
+| Pattern            | Level     | Units                   | OR Pairs          | Total Marks | Time    |
+| ------------------ | --------- | ----------------------- | ----------------- | ----------- | ------- |
+| **SPPU 2019**      | SE/TE/BE  | 6 units (U3-U6 for ESE) | 4 pairs           | 70          | 2.5 hrs |
+| **SPPU 2024**      | FE        | 5 units                 | 5 pairs (M1/M2)   | 70          | 2.5 hrs |
+| **SPPU 2024**      | FE        | 5 units                 | 5 pairs (no comp) | 70          | 2.5 hrs |
+| **SPPU 2015**      | SE/TE/BE  | 8 units                 | 4 pairs           | 70          | 3 hrs   |
+| **SPPU 2012**      | SE/TE/BE  | 8 units                 | 4 pairs           | 70          | 2.5 hrs |
 
 ---
 
@@ -328,27 +330,147 @@ The fetcher supports fuzzy subject matching:
 
 ## Question Paper Generation Format
 
-When generating a question paper (not fetching), use this format:
+When generating a question paper (not fetching), replicate the **exact visual style** of real SPPU
+question papers. The generated markdown should be structured so that when rendered to PDF, it matches
+the official layout properties documented below.
 
+### Real QP Style Reference (from 200+ VL + FE Computer Engineering PDFs)
+
+These properties were extracted via `pdfminer`/`pdf2txt.py` + `pdftotext` analysis of representative
+samples across FE/SE/TE/BE and 2012/2015/2019/2024 patterns. Use this as the authoritative style
+guide.
+
+**Page Properties:**
+
+| Property              | FE/SE/TE/BE 2019 & 2015 Pattern   | BE 2012 Pattern          | SE 2012 Pattern           | FE 2024 Pattern (normalized) |
+|-----------------------|------------------------------------|--------------------------|---------------------------|------------------------------|
+| Page size             | A4 (595.3×841.9 pt / 8.27×11.69″) | A4 (595.3×841.9 pt)     | Letter (612×792 pt)       | A4 (595.3×841.9 pt)          |
+| Left margin           | ~70.8 pt (~1″)                     | ~70.8 pt                 | ~86.5 pt                  | ~70.8 pt                     |
+| Right margin          | ~48.1 pt                           | ~48.1 pt                 | varies                    | ~48.1 pt                     |
+| Top margin            | ~56.3 pt                           | ~56.3 pt                 | ~114.6 pt                 | ~56.3 pt                     |
+| Bottom edge           | ~59–63 pt                          | ~62.9 pt                 | ~194.5 pt                 | ~59–63 pt                    |
+| Text area             | ~476 × 723 pt                      | ~476 × 723 pt            | varies                    | ~476 × 723 pt                |
+| Paper code format     | `PC####` (no hyphen, e.g. PC1675)  | `P####` (e.g. P3220)    | —                         | `PC-####` or `PD####`        |
+| Paper number format   | `[XXXX]-XXX` (e.g. [6352]-35)      | `[XXXX]-XXX`            | —                         | `[XXXX]-XXX` or `[XXXX]-XXXX` |
+| Creator               | Adobe PageMaker 7.0                | — (Microsoft Print)     | PDFCreator 1.7.1          | Adobe PageMaker 7.0 / cairo 1.18.4 |
+| Producer              | Acrobat Distiller 11.0 + iTextSharp 5.5.9 | iTextSharp 5.5.9 | GPL Ghostscript 9.07 + iTextSharp 5.2.1 | Acrobat Distiller 11.0 / cairo 1.18.4 |
+
+**Note on FE 2024 Pattern:** Normalized to **A4** (same layout as 2019 SE/TE/BE pattern) for
+generation. Original source PDFs used Letter (PageMaker) or non-standard 560×792 pt (cairo), but A4
+production is the target. Paper code format varies: `PC-####` / `[6351]-XXX` (PageMaker variant, Nov
+2024) or `PD####` / `[6401]-XXXX` (cairo variant, April 2025).
+
+**Common Layout Elements (all patterns):**
 ```
+[Left-aligned header]                           [Right-aligned header]
+Total No. of Questions : N]                     SEAT No. : [number]
+[Paper Code]                                    [Total No. of Pages : N]
+
+           [Paper Number] e.g., [6352]-35
+           [Program Name] e.g., S.E. (Computer Engineering)
+           [SUBJECT NAME IN ALL CAPS]
+           (Pattern) (Semester) (Subject Code)
+
+Time : [X] Hours]                               [Max. Marks : XX]
+
+Instructions to the candidates:
+  1) [Instruction 1]
+  2) [Instruction 2]
+  ...
+
+[Question body with marks in brackets]
+```
+
+**Typographic Rules:**
+- Paper number like `[6352]-35` — **bold**, centered, larger than body
+- Subject name — **ALL CAPS**, bold
+- Pattern/semester info — in **parentheses**, regular weight
+- Time and marks — **bold**, same line, left/right justified
+- Instructions — numbered with `)`, indent 3 spaces
+- Question numbers — **bold** like `**Q1)**` or `**Q.1**`
+- Sub-question labels — lowercase `a)` `b)` `c)`, bold, indent
+- Marks — in `[N]` brackets after question text, right-aligned or inline
+- OR separator — `**OR**` centered on its own line
+
+**Mark Structure (SPPU 2019 Pattern):**
+- End Sem: 70 marks, 2.5 hrs, 8 questions (4 OR pairs), single compulsory at Q.1
+- In Sem: 30 marks, 1 hr, 3 questions (all compulsory)
+- Each question: 2–3 sub-questions with marks [2]–[8] each
+
+**Question body format:**
+```
+**Q1)** State the following with justification.                      [6]
+    a) [statement]                                                   [2]
+    b) [statement]                                                   [2]
+    c) [statement]                                                   [2]
+
+**OR**
+
+**Q2)** a) [question text]                                            [6]
+        b) [question text]                                            [6]
+        c) [question text]                                            [6]
+```
+
+### Generation Templates
+
+Use the following markdown templates when generating question papers. The template aligns with the
+official PDF layout above.
+
+**Outer box header** (for visual rendering or markdown-to-PDF conversion):
+```markdown
 ╔══════════════════════════════════════════════════════════════╗
 ║              SAVITRIBAI PHULE PUNE UNIVERSITY               ║
 ║                                                              ║
 ║     [Subject Code]: [Subject Name]                           ║
-║     B.E. ([Branch]) ([Semester]) ([Pattern])                ║
+║     [Program] ([Pattern]) ([Semester])                      ║
 ║                                                              ║
-║  Time: [X] Hours                    Max. Marks: [XX]        ║
+║  Time: [X] Hours                  Total Marks: [XX]         ║
 ╚══════════════════════════════════════════════════════════════╝
-
-Instructions:
-  1) Answer Q.1 or Q.2, Q.3 or Q.4, Q.5 or Q.6, Q.7 or Q.8.
-  2) Neat diagrams must be drawn wherever necessary.
-  3) Figures to the right indicate full marks.
-  4) Assume suitable data, if necessary. (If applicable)
 ```
 
-Then continue with 8 questions (4 OR pairs) following the SPPU 2019 pattern or 10 questions (5 OR
-pairs) for SPPU 2024 pattern.
+**Inner header** (for inclusion in a larger document):
+```markdown
+Total No. of Questions : [N]                  SEAT No. :
+
+         **[Paper Number]**
+         **[Program Name]**
+         **[SUBJECT NAME]**
+         ([Pattern]) ([Semester]) ([Subject Code])
+
+Time : [X] Hours]                             [Max. Marks : XX]
+
+**Instructions to the candidates:**
+  1) [instruction]
+  2) [instruction]
+```
+
+**Question body (8 questions, 4 OR pairs — 2019 pattern):**
+```markdown
+**Q1)** [Question text]                                              [M]
+    a) [sub-question]                                                [m]
+    b) [sub-question]                                                [m]
+    c) [sub-question]                                                [m]
+
+**OR**
+
+**Q2)** a) [sub-question]                                             [m]
+        b) [sub-question]                                             [m]
+        c) [sub-question]                                             [m]
+
+**Q3)** ... (same pattern)
+
+...through Q8.
+```
+
+**Question body (10 questions, 5 OR pairs — 2024 pattern):**
+Same as above but 5 OR pairs (Q1/Q2, Q3/Q4, Q5/Q6, Q7/Q8, Q9/Q10).
+
+**Question body (10 questions, 5 OR pairs — 2015 pattern):**
+10 questions, 5 OR pairs, 3 hrs duration. Same format.
+
+**Question body (8 questions, 4 OR pairs — 2012 pattern):**
+8 questions, 4 OR pairs, 2.5 hrs. Note: SE 2012 may have different formatting; verify against
+actual PDFs if available.
 
 ---
 
