@@ -114,6 +114,20 @@ install_deps() {
   ok "Dependencies installed"
 }
 
+# ─── Step 2b: Install pre-commit hooks ─────────────────────
+install_hooks() {
+  if [ "$DRY_RUN" = true ]; then
+    info "[DRY-RUN] Would configure git hooks path"
+    return
+  fi
+  if [ -d ".git" ] && [ -f ".githooks/pre-commit" ]; then
+    git config core.hooksPath .githooks 2>/dev/null && ok "Git hooks installed (.githooks/)" || warn "Could not set hooks path"
+    chmod +x .githooks/pre-commit
+  else
+    info "Skipping hooks — no .git or .githooks/pre-commit found"
+  fi
+}
+
 # ─── Step 3: Create Necessary Directories ────────────────────
 create_dirs() {
   info "Creating project directories..."
@@ -245,19 +259,23 @@ echo "── Step 2: Installing Dependencies ──"
 install_deps
 
 echo ""
-echo "── Step 3: Creating Directories ──"
+echo "── Step 3: Installing Git Hooks ──"
+install_hooks
+
+echo ""
+echo "── Step 4: Creating Directories ──"
 create_dirs
 
 echo ""
-echo "── Step 4: Validating Skills ──"
+echo "── Step 5: Validating Skills ──"
 validate_skills
 
 echo ""
-echo "── Step 5: Generating AGENTS.md ──"
+echo "── Step 6: Generating AGENTS.md ──"
 generate_agents
 
 echo ""
-echo "── Step 6: Session Profile ──"
+echo "── Step 7: Session Profile ──"
 create_session_profile
 
 echo ""

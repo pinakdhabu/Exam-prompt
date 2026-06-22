@@ -1,34 +1,73 @@
 {
   "$schema": "exam-prompt-university-v1",
   "meta": {
-    "template_version": "1.0.0",
-    "description": "Template for adding a new university to the Exam Prompt system. Copy this directory, rename it to your university's FULL NAME, and fill in the details below."
+    "version": "1.0.0",
+    "description": "University of Delhi — India's premier central university."
   },
   "id": "university-of-delhi",
   "full_name": "University of Delhi",
   "short_name": "DU",
-  "aliases": [
-    "Common Name",
-    "Also Known As"
-  ],
+  "aliases": ["Delhi University", "DU"],
   "country": "India",
-  "region": "asia-pacific | north-america | europe | middle-east | africa | latin-america | oceania",
+  "region": "asia-pacific",
   "type": "central",
-  "website": "https://www.university.edu",
-  "established": 1949,
-  "description": "Brief description of the university",
-  "exam_system": "semester | yearly | trimester | module",
-  "grading_system": "SGPA/CGPA | GPA (4.0) | ECTS | percentage | classification",
+  "website": "https://www.du.ac.in",
+  "established": 1922,
+  "description": "India's premier central university with 90+ colleges. Offers B.A., B.Sc., B.Com, B.Tech, B.E., B.A. (Hons), M.A., M.Sc., M.Com, M.Tech, MBA, and Ph.D. programs. Follows CBCS with 7-point/10-point grading (O/A+/A/B+/B/C/F). Semester system. Recently adopted NEP 2020 Four Year Undergraduate Programme (FYUP).",
+  "exam_system": "semester",
+  "grading_system": "SGPA/CGPA",
   "academic_calendar": {
-    "type": "semester | trimester | yearly",
-    "details": "Odd semester: Jul-Dec, Even semester: Jan-Jun"
+    "type": "semester",
+    "details": "Odd semester: Jul-Dec, Even semester: Jan-Jun. End semester exams in Dec and May respectively."
   },
   "patterns": {
-    "default": "latest-pattern-id",
-    "available": []
+    "default": "du-cbcs-2022",
+    "available": [
+      {
+        "id": "du-cbcs-2019",
+        "name": "DU CBCS 2019 Pattern",
+        "description": "Choice Based Credit System with 7-point grading, 25 IA + 75 ESE for core subjects"
+      },
+      {
+        "id": "du-cbcs-2022",
+        "name": "DU CBCS 2022 Pattern (FYUP/NEP)",
+        "description": "NEP-aligned Four Year Undergraduate Programme (FYUP) with multiple entry-exit options"
+      }
+    ]
   },
   "branches": {
-    "departments": []
+    "departments": [
+      "Computer Science",
+      "Electronics",
+      "Physics & Astrophysics",
+      "Chemistry",
+      "Mathematics",
+      "Statistics",
+      "Operational Research",
+      "Biochemistry",
+      "Botany",
+      "Zoology",
+      "Microbiology",
+      "Geology",
+      "Economics",
+      "Commerce",
+      "English",
+      "Hindi",
+      "History",
+      "Political Science",
+      "Philosophy",
+      "Psychology",
+      "Sociology",
+      "Geography",
+      "Business Economics",
+      "B.Com (Hons)",
+      "B.A. (Hons) in various subjects",
+      "B.Sc. (Hons) in various subjects",
+      "B.Tech in Computer Engineering (with FOTE)",
+      "B.Tech in Electronics & Communication (with FOTE)",
+      "MBA",
+      "MCA"
+    ]
   },
   "contributing": {
     "how_to_add": "See how-to-add.md in this directory",

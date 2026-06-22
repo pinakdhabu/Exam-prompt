@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "University Config",
+  "description": "Schema for university configuration files in universities/<name>/config.json",
+  "type": "object",
+  "required": ["id", "full_name", "short_name", "country", "type", "exam_system", "patterns"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "URL-friendly ID (e.g., 'savitribai-phule-pune-university')"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Full official name of the university"
+    },
+    "short_name": {
+      "type": "string",
+      "description": "Abbreviation (e.g., 'SPPU', 'VTU')"
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alternative names"
+    },
+    "country": { "type": "string" },
+    "region": {
+      "type": "string",
+      "enum": ["asia-pacific", "north-america", "europe", "middle-east", "africa", "latin-america", "oceania", "unknown"]
+    },
+    "type": {
+      "type": "string",
+      "enum": ["public", "private", "central", "state", "deemed", "ivy-league", "russell-group", "go8"]
+    },
+    "website": { "type": "string", "format": "uri" },
+    "established": { "type": "integer", "minimum": 1000, "maximum": 2100 },
+    "exam_system": {
+      "type": "string",
+      "enum": ["semester", "yearly", "trimester", "module"]
+    },
+    "grading_system": {
+      "type": "string",
+      "enum": ["SGPA/CGPA", "GPA (4.0)", "ECTS", "percentage", "classification"]
+    },
+    "patterns": {
+      "type": "object",
+      "required": ["default", "available"],
+      "properties": {
+        "default": { "type": "string" },
+        "available": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/pattern" }
+        }
+      }
+    },
+    "branches": {
+      "type": "object",
+      "properties": {
+        "departments": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "definitions": {
+    "pattern": {
+      "type": "object",
+      "required": ["id", "name", "total_units", "or_pairs", "total_marks", "time_hours"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "total_units": { "type": "integer", "minimum": 1 },
+        "or_pairs": { "type": "integer", "minimum": 1 },
+        "total_marks": { "type": "integer", "minimum": 1 },
+        "time_hours": { "type": "number", "minimum": 0.5 }
+      }
+    }
+  }
+}

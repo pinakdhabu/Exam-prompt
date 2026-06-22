@@ -27,6 +27,9 @@
     "detect:university": "node scripts/detect-university.js",
     "detect:university:list": "node scripts/detect-university.js --list",
     "detect:university:active": "node scripts/detect-university.js --active",
+    "detect:agent": "node scripts/detect-agent.js",
+    "detect:agent:json": "node scripts/detect-agent.js --json",
+    "detect:agent:all": "node scripts/detect-agent.js --all",
     "quickstart": "node scripts/quickstart.js",
     "setup": "bash scripts/setup.sh",
     "setup:win": "powershell -ExecutionPolicy Bypass -File scripts/setup.ps1",
@@ -55,7 +58,12 @@
     "diagram:watch": "node scripts/diagram-gen.js --watch",
     "diagram:formats": "node scripts/diagram-gen.js --list-formats",
     "codespaces": "echo 'Ready! Run: bash scripts/validate-skills.sh'",
-    "test:fetch": "node scripts/fetch-qp.js --semester 5 --list"
+    "test:fetch": "node scripts/fetch-qp.js --semester 5 --list",
+    "check:schemas": "npm run validate:skills -- --json && node -e \"try{require('ajv')}catch(e){console.log('Install ajv: npm install ajv');process.exit(1)}\"",
+    "sync:registry": "bash scripts/update-registry.sh",
+    "sync:registry:check": "bash scripts/update-registry.sh --dry-run",
+    "scaffold:university": "bash scripts/generate-university-scaffold.sh",
+    "test": "bash scripts/validate-skills.sh && bash scripts/update-registry.sh --dry-run"
   },
   "dependencies": {
     "marked": "^15.0.12",

@@ -1,0 +1,79 @@
+{
+  "$schema": "exam-prompt-university-v1",
+  "meta": {
+    "version": "1.0.0",
+    "description": "University of Mumbai — one of India's oldest and largest universities, affiliating 700+ colleges."
+  },
+  "id": "university-of-mumbai",
+  "full_name": "University of Mumbai",
+  "short_name": "MU",
+  "aliases": ["Mumbai University", "Bombay University"],
+  "country": "India",
+  "region": "asia-pacific",
+  "type": "state",
+  "website": "https://mu.ac.in",
+  "established": 1857,
+  "description": "One of India's premier universities with 700+ affiliated colleges. Offers B.E., B.Tech, B.Sc., B.Com, B.A., M.E., M.Tech, M.Sc., MBA, MCA, and Ph.D. programs. Follows CBCS with a 7-point/10-point grading system. Recently adopted NEP 2020 curriculum.",
+  "exam_system": "semester",
+  "grading_system": "SGPA/CGPA",
+  "academic_calendar": {
+    "type": "semester",
+    "details": "Odd semester: Jun-Nov, Even semester: Dec-May. Exams typically in Nov (odd) and May (even)."
+  },
+  "patterns": {
+    "default": "mu-cbcs-2019",
+    "available": [
+      {
+        "id": "mu-cbcs-2019",
+        "name": "Mumbai University CBCS 2019 Pattern",
+        "description": "Choice Based Credit System with 40% IA + 60% ESE, 7-point grading"
+      },
+      {
+        "id": "mu-nep-2023",
+        "name": "Mumbai University NEP 2023 Pattern",
+        "description": "NEP-aligned pattern with 5 units, 100 marks per subject (40 IA + 60 ESE)"
+      },
+      {
+        "id": "mu-rev-2016",
+        "name": "Mumbai University Revised 2016 Pattern",
+        "description": "Pre-NEP pattern for engineering with 5 units, 80 marks ESE + 20 marks IA"
+      }
+    ]
+  },
+  "branches": {
+    "departments": [
+      "Computer Engineering",
+      "Information Technology",
+      "Electronics & Telecommunication Engineering",
+      "Electronics Engineering",
+      "Electrical Engineering",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Chemical Engineering",
+      "Artificial Intelligence & Data Science",
+      "Computer Science & Engineering (AI & ML)",
+      "Computer Science & Engineering (Data Science)",
+      "Computer Science & Engineering (Cyber Security)",
+      "Computer Science & Engineering (IoT)",
+      "Bio-Medical Engineering",
+      "Bio-Technology",
+      "Instrumentation Engineering",
+      "Production Engineering",
+      "Textile Engineering",
+      "Automobile Engineering",
+      "MBA",
+      "MCA",
+      "B.Sc. Computer Science",
+      "B.Sc. Information Technology",
+      "B.Com",
+      "B.A.",
+      "B.M.S.",
+      "B.B.A.",
+      "B.Arch"
+    ]
+  },
+  "contributing": {
+    "how_to_add": "See how-to-add.md in this directory",
+    "maintainers_needed": true
+  }
+}

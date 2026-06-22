@@ -1,8 +1,14 @@
 {
   "$schema": "exam-prompt-skills-v1",
-  "generated": "2026-06-22T10:06:08Z",
-  "total_skills": 26,
+  "generated": "2026-06-22T10:37:06Z",
+  "total_skills": 27,
   "skills": [
+    {
+      "name": "universal-agent-normalizer",
+      "description": "Universal agent normalizer that detects which AI coding agent is running (OpenCode, Claude Code, Cursor, Windsurf, Cline, Aider, GitHub Copilot, Continue.dev) and maps the Exam Prompt skill system to the agent's native configuration format. Ensures every agent can discover, load, and invoke all 26+ skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load.\n",
+      "version": "1.0.0",
+      "directory": "agent-normalizer"
+    },
     {
       "name": "universal-a-plus-answer-writer",
       "description": "Generates exam-ready A+ answers for ANY university worldwide — SPPU, VTU, IITs, NITs, MIT, Oxford, Cambridge, Harvard, NUS, and 50+ more. Covers ALL question types (theory, numerical, MCQ, case study, derivation, diagram, design, etc.), ALL mark levels (1-100+), ALL exam conditions (closed/open book, online, oral, lab, take-home), ALL Bloom's levels, and ALL command words. Pre-configured with SPPU Computer Engineering intelligence. Universally adaptable via syllabus PDF input. Trigger on ANY exam answer request. Never trigger for lab practical reports, project documentation, or coding assignments unless asked.\n",

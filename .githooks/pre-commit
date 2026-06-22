@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# ============================================================
+# pre-commit hook — Runs validation before every commit
+#
+# Checks: skill validation, AGENTS.md freshness, registry sync
+# ============================================================
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
+
+echo "=== Pre-commit: Validating skills ==="
+if ! bash scripts/validate-skills.sh 2>/dev/null | grep -q "Errors:   0"; then
+  bash scripts/validate-skills.sh 2>&1 | tail -5
+  echo ""
+  echo "FAIL: Validation errors found. Commit blocked."
+  echo "Run 'bash scripts/validate-skills.sh' to see details."
+  exit 1
+fi
+
+echo "=== Pre-commit: Checking AGENTS.md freshness ==="
+if command -v python3 &>/dev/null; then
+  TMP_AGENTS=$(mktemp)
+  bash scripts/generate-agents-md.sh --dry-run > "$TMP_AGENTS" 2>/dev/null
+  if ! diff -q AGENTS.md "$TMP_AGENTS" &>/dev/null; then
+    echo "WARN: AGENTS.md is out of date. Run 'bash scripts/generate-agents-md.sh' to regenerate."
+  fi
+  rm -f "$TMP_AGENTS"
+fi
+
+echo "=== Pre-commit: Checking registry sync ==="
+bash scripts/update-registry.sh --dry-run 2>&1 | grep -E 'NEW:|REMOVED:|UPDATED:' || echo "  Registry is in sync"
+
+echo "=== Pre-commit checks passed ==="

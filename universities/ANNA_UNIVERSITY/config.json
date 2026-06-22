@@ -1,34 +1,72 @@
 {
   "$schema": "exam-prompt-university-v1",
   "meta": {
-    "template_version": "1.0.0",
-    "description": "Template for adding a new university to the Exam Prompt system. Copy this directory, rename it to your university's FULL NAME, and fill in the details below."
+    "version": "1.0.0",
+    "description": "Anna University, Chennai — Tamil Nadu's premier technical university."
   },
   "id": "anna-university",
   "full_name": "Anna University",
   "short_name": "AU",
-  "aliases": [
-    "Common Name",
-    "Also Known As"
-  ],
+  "aliases": ["Anna University Chennai", "Guindy Engineering College"],
   "country": "India",
-  "region": "asia-pacific | north-america | europe | middle-east | africa | latin-america | oceania",
+  "region": "asia-pacific",
   "type": "state",
-  "website": "https://www.university.edu",
-  "established": 1949,
-  "description": "Brief description of the university",
-  "exam_system": "semester | yearly | trimester | module",
-  "grading_system": "SGPA/CGPA | GPA (4.0) | ECTS | percentage | classification",
+  "website": "https://www.annauniv.edu",
+  "established": 1978,
+  "description": "Tamil Nadu's leading technical university with 4 constituent colleges and 500+ affiliated colleges. Offers B.E., B.Tech, M.E., M.Tech, MBA, MCA, M.Sc., and Ph.D. programs. Follows CBCS with 10-point UGC grading (O/A+/A/B+/B/C/P/F). Semester system.",
+  "exam_system": "semester",
+  "grading_system": "SGPA/CGPA",
   "academic_calendar": {
-    "type": "semester | trimester | yearly",
-    "details": "Odd semester: Jul-Dec, Even semester: Jan-Jun"
+    "type": "semester",
+    "details": "Odd semester: Jun-Nov, Even semester: Dec-May. End semester exams in Nov and May respectively."
   },
   "patterns": {
-    "default": "latest-pattern-id",
-    "available": []
+    "default": "au-cbcs-2017",
+    "available": [
+      {
+        "id": "au-cbcs-2017",
+        "name": "Anna University CBCS 2017 Pattern",
+        "description": "Choice Based Credit System with 5 units, 100 marks per subject (50 ESE + 50 CIA)"
+      },
+      {
+        "id": "au-cbcs-2021",
+        "name": "Anna University CBCS 2021 Pattern (R2021)",
+        "description": "Curriculum 2021 with 5 units, outcome-based education, enhanced continuous assessment"
+      }
+    ]
   },
   "branches": {
-    "departments": []
+    "departments": [
+      "Computer Science & Engineering",
+      "Information Technology",
+      "Electronics & Communication Engineering",
+      "Electrical & Electronics Engineering",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Chemical Engineering",
+      "Aerospace Engineering",
+      "Artificial Intelligence & Data Science",
+      "Computer Science & Engineering (AI & ML)",
+      "Computer Science & Engineering (Data Science)",
+      "Computer Science & Engineering (Cyber Security)",
+      "Biomedical Engineering",
+      "Bio-Technology",
+      "Food Technology",
+      "Industrial Engineering",
+      "Instrumentation Engineering",
+      "Manufacturing Engineering",
+      "Materials Science & Engineering",
+      "Mining Engineering",
+      "Ocean Engineering",
+      "Petroleum Engineering",
+      "Pharmaceutical Technology",
+      "Production Engineering",
+      "Rubber & Plastics Technology",
+      "Textile Technology",
+      "Architecture",
+      "MBA",
+      "MCA"
+    ]
   },
   "contributing": {
     "how_to_add": "See how-to-add.md in this directory",

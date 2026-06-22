@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skills Manifest",
+  "description": "Schema for skills/skills.json manifest",
+  "type": "object",
+  "required": ["$schema", "generated", "total_skills", "skills"],
+  "properties": {
+    "$schema": { "type": "string", "pattern": "^exam-prompt-skills-v1$" },
+    "generated": { "type": "string", "format": "date-time" },
+    "total_skills": { "type": "integer", "minimum": 0 },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "description", "directory"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "description": { "type": "string" },
+          "version": { "type": "string" },
+          "directory": { "type": "string" },
+          "skill_path": { "type": "string" }
+        }
+      }
+    },
+    "compatible_with": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

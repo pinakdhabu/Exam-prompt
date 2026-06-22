@@ -1,0 +1,73 @@
+{
+  "$schema": "exam-prompt-university-v1",
+  "meta": {
+    "version": "1.0.0",
+    "description": "Visvesvaraya Technological University, Belagavi — Karnataka's primary technical university."
+  },
+  "id": "visvesvaraya-technological-university",
+  "full_name": "Visvesvaraya Technological University",
+  "short_name": "VTU",
+  "aliases": ["VTU Belagavi", "Visveswaraiah Technological University"],
+  "country": "India",
+  "region": "asia-pacific",
+  "type": "state",
+  "website": "https://vtu.ac.in",
+  "established": 1998,
+  "description": "Karnataka's largest technical university affiliating 200+ colleges. Named after Sir M. Visvesvaraya. Offers B.E., B.Tech, M.Tech, MBA, MCA, M.Arch, and Ph.D. programs. Follows CBCS with absolute grading (SGPA/CGPA).",
+  "exam_system": "semester",
+  "grading_system": "SGPA/CGPA",
+  "academic_calendar": {
+    "type": "semester",
+    "details": "Odd semester: Aug-Dec, exams in Dec-Jan. Even semester: Jan-Jun, exams in May-Jun."
+  },
+  "patterns": {
+    "default": "vtu-cbcs-2022",
+    "available": [
+      {
+        "id": "vtu-cbcs-2018",
+        "name": "VTU CBCS 2018 Scheme",
+        "description": "Choice Based Credit System with 50 marks IA + 100 marks SEE"
+      },
+      {
+        "id": "vtu-cbcs-2022",
+        "name": "VTU CBCS 2022 Scheme (NEP)",
+        "description": "NEP-aligned with 50 marks IA + 100 marks SEE, 5 units"
+      }
+    ]
+  },
+  "branches": {
+    "departments": [
+      "Computer Science & Engineering",
+      "Information Science & Engineering",
+      "Electronics & Communication Engineering",
+      "Electrical & Electronics Engineering",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Artificial Intelligence & Machine Learning",
+      "Computer Science & Engineering (AI & ML)",
+      "Computer Science & Engineering (Data Science)",
+      "Computer Science & Engineering (Cyber Security)",
+      "Computer Science & Engineering (IoT & Cyber Security)",
+      "Aerospace Engineering",
+      "Automobile Engineering",
+      "Biotechnology",
+      "Chemical Engineering",
+      "Construction Technology & Management",
+      "Environmental Engineering",
+      "Industrial & Production Engineering",
+      "Instrumentation Technology",
+      "Mining Engineering",
+      "Medical Electronics",
+      "Robotics & Automation",
+      "Textile Engineering",
+      "Transportation Engineering",
+      "Architecture",
+      "MBA",
+      "MCA"
+    ]
+  },
+  "contributing": {
+    "how_to_add": "See how-to-add.md in this directory",
+    "maintainers_needed": true
+  }
+}

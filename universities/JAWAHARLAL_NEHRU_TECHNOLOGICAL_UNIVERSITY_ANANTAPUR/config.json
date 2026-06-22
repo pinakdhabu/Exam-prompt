@@ -1,0 +1,77 @@
+{
+  "$schema": "exam-prompt-university-v1",
+  "meta": {
+    "version": "1.0.0",
+    "description": "Jawaharlal Nehru Technological University Anantapur — Andhra Pradesh's leading technical university."
+  },
+  "id": "jntu-anantapur",
+  "full_name": "Jawaharlal Nehru Technological University Anantapur",
+  "short_name": "JNTUA",
+  "aliases": ["JNTU Anantapur", "JNTUA CEA"],
+  "country": "India",
+  "region": "asia-pacific",
+  "type": "state",
+  "website": "https://www.jntua.ac.in",
+  "established": 2008,
+  "description": "State technical university with 4 constituent colleges and 160+ affiliated colleges. Offers B.Tech across 15+ branches, B.Pharm, M.Tech, M.Pharm, MBA, MCA, and Ph.D. programs. Follows CBCS with UGC 10-point grading. Uses R-series regulation system (R15, R19, R20, R23).",
+  "exam_system": "semester",
+  "grading_system": "SGPA/CGPA",
+  "academic_calendar": {
+    "type": "semester",
+    "details": "Odd semester: Aug-Dec, Even semester: Jan-May. End exams in Nov-Dec and Apr-May respectively."
+  },
+  "patterns": {
+    "default": "jntua-r23",
+    "available": [
+      {
+        "id": "jntua-r15",
+        "name": "JNTUA R15 Regulation",
+        "description": "Older regulation with 70 marks ESE + 30 marks internal for theory subjects"
+      },
+      {
+        "id": "jntua-r19",
+        "name": "JNTUA R19 Regulation",
+        "description": "Revised CBCS pattern with 5 units, 70 marks ESE + 30 marks internal"
+      },
+      {
+        "id": "jntua-r20",
+        "name": "JNTUA R20 Regulation",
+        "description": "Updated pattern with 70 marks ESE + 30 marks internal, elective system"
+      },
+      {
+        "id": "jntua-r23",
+        "name": "JNTUA R23 Regulation (NEP)",
+        "description": "NEP-aligned pattern with 5 units, enhanced internal assessment"
+      }
+    ]
+  },
+  "branches": {
+    "departments": [
+      "Computer Science & Engineering",
+      "Information Technology",
+      "Electronics & Communication Engineering",
+      "Electrical & Electronics Engineering",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Chemical Engineering",
+      "Artificial Intelligence & Data Science",
+      "Computer Science & Engineering (AI & ML)",
+      "Computer Science & Engineering (Data Science)",
+      "Computer Science & Engineering (Cyber Security)",
+      "Computer Science & Engineering (IoT)",
+      "Aeronautical Engineering",
+      "Biotechnology",
+      "Mining Engineering",
+      "Petroleum Technology",
+      "Pharmaceutical Chemistry",
+      "Pharmaceutics",
+      "Pharmacology",
+      "MBA",
+      "MCA"
+    ]
+  },
+  "contributing": {
+    "how_to_add": "See how-to-add.md in this directory",
+    "maintainers_needed": true
+  }
+}

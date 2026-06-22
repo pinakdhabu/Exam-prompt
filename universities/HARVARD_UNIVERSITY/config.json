@@ -1,0 +1,66 @@
+{
+  "$schema": "exam-prompt-university-v1",
+  "meta": {
+    "version": "1.0.0",
+    "description": "Harvard University, Cambridge, Massachusetts — oldest institution of higher education in the United States."
+  },
+  "id": "harvard-university",
+  "full_name": "Harvard University",
+  "short_name": "Harvard",
+  "aliases": ["Harvard College", "Harvard University"],
+  "country": "United States",
+  "region": "north-america",
+  "type": "ivy-league",
+  "website": "https://www.harvard.edu",
+  "established": 1636,
+  "description": "World's leading Ivy League research university. Comprises Harvard College (undergraduate), 12 graduate/professional schools, and the Harvard Radcliffe Institute. Uses 4.0 GPA scale with letter grades A-F. Follows semester system with fall and spring terms.",
+  "exam_system": "semester",
+  "grading_system": "GPA (4.0)",
+  "academic_calendar": {
+    "type": "semester",
+    "details": "Fall semester: Sep-Dec, Spring semester: Jan-May. Reading period before final exams each term."
+  },
+  "patterns": {
+    "default": "harvard-semester",
+    "available": [
+      {
+        "id": "harvard-semester",
+        "name": "Harvard Standard Semester Pattern",
+        "description": "Standard US semester pattern with letter grades A-F on 4.0 GPA scale. Final exams after reading period."
+      }
+    ]
+  },
+  "branches": {
+    "departments": [
+      "Computer Science",
+      "Electrical Engineering",
+      "Mechanical Engineering",
+      "Bioengineering",
+      "Applied Mathematics",
+      "Physics",
+      "Chemistry & Chemical Biology",
+      "Molecular & Cellular Biology",
+      "Economics",
+      "Government",
+      "History",
+      "English",
+      "Philosophy",
+      "Psychology",
+      "Sociology",
+      "Statistics",
+      "Earth & Planetary Sciences",
+      "Organismic & Evolutionary Biology",
+      "Linguistics",
+      "Anthropology",
+      "Art, Film, & Visual Studies",
+      "Music",
+      "East Asian Languages & Civilizations",
+      "Romance Languages & Literatures",
+      "African & African American Studies"
+    ]
+  },
+  "contributing": {
+    "how_to_add": "See how-to-add.md in this directory",
+    "maintainers_needed": true
+  }
+}

@@ -62,10 +62,15 @@ SKILL_COUNT=$(python3 -c "import json; print(len(json.load(open('$TMP_DATA'))))"
 # ─── Generate AGENTS.md ────────────────────────────────────────
 generate_agents_md() {
   # Read everything before <!-- SKILLS_TABLE_START -->
-  sed '/<!-- SKILLS_TABLE_START -->/q' "$AGENTS_MD"
+  sed '/<!-- SKILLS_TABLE_START -->/q' "$AGENTS_MD" | sed '$d'
+  echo '<!-- SKILLS_TABLE_START -->'
 
   # Read the <usage> block between SKILLS_TABLE_START and <available_skills>
-  sed -n '/<!-- SKILLS_TABLE_START -->/,/<available_skills>/p' "$AGENTS_MD" | sed '$d'
+  local usage
+  usage=$(sed -n '/<!-- SKILLS_TABLE_START -->/,/<available_skills>/p' "$AGENTS_MD" | tail -n +2 | sed '$d')
+  if [ -n "$usage" ]; then
+    echo "$usage"
+  fi
 
   # Generate available_skills block from JSON data
   python3 << PYEOF
@@ -83,15 +88,15 @@ for skill in skills:
 <name>{name}</name>
 <description>{desc}</description>
 <location>project</location>
-''')
+</skill>''')
+    print()
 
 print('</available_skills>')
 print('<!-- SKILLS_TABLE_END -->')
-print()
 PYEOF
 
-  # Read everything after </available_skills>
-  sed -n '/<\/available_skills>/,$p' "$AGENTS_MD" | tail -n +2
+  # Read everything after <!-- SKILLS_TABLE_END -->
+  sed '1,/<!-- SKILLS_TABLE_END -->/d' "$AGENTS_MD"
 }
 
 # ─── Generate skills.json ──────────────────────────────────────

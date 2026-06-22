@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Session Profile",
+  "description": "Schema for deps/session-profile.json — per-user session configuration",
+  "type": "object",
+  "required": ["university", "university_dir", "branch", "exam_pattern", "user_profile"],
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "university": { "type": "string" },
+    "university_dir": { "type": "string" },
+    "branch": { "type": "string" },
+    "exam_pattern": { "type": "string" },
+    "user_profile": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "target_gpa": { "type": "number", "minimum": 0, "maximum": 10 },
+        "preferred_language": { "type": "string" }
+      }
+    },
+    "pyq_path": { "type": "string" },
+    "subject": { "type": "string" },
+    "semester": { "type": "integer", "minimum": 1, "maximum": 12 }
+  }
+}

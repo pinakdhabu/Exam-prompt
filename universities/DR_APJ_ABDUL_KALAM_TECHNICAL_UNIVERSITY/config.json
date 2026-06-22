@@ -1,0 +1,66 @@
+{
+  "$schema": "exam-prompt-university-v1",
+  "meta": {
+    "version": "1.0.0",
+    "description": "Dr. A.P.J. Abdul Kalam Technical University, Lucknow — formerly Uttar Pradesh Technical University (UPTU)."
+  },
+  "id": "dr-apj-abdul-kalam-technical-university",
+  "full_name": "Dr. A.P.J. Abdul Kalam Technical University",
+  "short_name": "AKTU",
+  "aliases": ["AKTU Lucknow", "UPTU", "Uttar Pradesh Technical University"],
+  "country": "India",
+  "region": "asia-pacific",
+  "type": "state",
+  "website": "https://aktu.ac.in",
+  "established": 2000,
+  "description": "State technical university affiliating ~800 colleges across Uttar Pradesh. Offers B.Tech, M.Tech, MBA, MCA, Pharmacy, and Architecture programs. Follows CBCS with UGC 10-point grading.",
+  "exam_system": "semester",
+  "grading_system": "SGPA/CGPA",
+  "academic_calendar": {
+    "type": "semester",
+    "details": "Odd semester: Jul-Dec, Even semester: Jan-Jun. Exams typically in Nov-Dec (odd) and May-Jun (even)."
+  },
+  "patterns": {
+    "default": "aktu-2019",
+    "available": [
+      {
+        "id": "aktu-2019",
+        "name": "AKTU 2019 Pattern",
+        "description": "Current CBCS pattern with 5 units, 100 marks per subject (70 ESE + 30 internal)"
+      },
+      {
+        "id": "aktu-2021",
+        "name": "AKTU 2021 Pattern (NEP)",
+        "description": "NEP-aligned pattern with 5 units, 100 marks per subject, enhanced internal assessment"
+      }
+    ]
+  },
+  "branches": {
+    "departments": [
+      "Computer Science & Engineering",
+      "Information Technology",
+      "Electronics & Communication Engineering",
+      "Electrical Engineering",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Chemical Engineering",
+      "Biotechnology",
+      "Computer Science & Engineering (AI & ML)",
+      "Computer Science & Engineering (Data Science)",
+      "Computer Science & Engineering (IoT)",
+      "Computer Science & Business Systems",
+      "Artificial Intelligence & Machine Learning",
+      "Electronics Engineering (VLSI Design & Technology)",
+      "Automobile Engineering",
+      "Aeronautical Engineering",
+      "Pharmacy",
+      "Architecture",
+      "Management (MBA)",
+      "Computer Applications (MCA)"
+    ]
+  },
+  "contributing": {
+    "how_to_add": "See how-to-add.md in this directory",
+    "maintainers_needed": true
+  }
+}

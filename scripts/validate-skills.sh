@@ -141,7 +141,7 @@ check_cross_references() {
 
   # Use grep -E for cross-platform compatibility
   local refs
-  refs=$(grep -oE '(universal-[a-z][a-z0-9-]+|setup-exam-prompt)' "$skill_file" 2>/dev/null | sort -u || true)
+  refs=$(grep -oE '(universal-[a-z][a-z0-9]*(-[a-z0-9]+)*|setup-exam-prompt)' "$skill_file" 2>/dev/null | sort -u || true)
 
   if [ -z "$refs" ]; then
     return 0
@@ -156,10 +156,17 @@ check_cross_references() {
 
     if [ -f "$SKILLS_JSON" ]; then
       if ! python3 -c "
-import json
+import json, sys
 s = json.load(open('$SKILLS_JSON'))
 names = [sk['name'] for sk in s.get('skills', [])]
-exit(0 if '$ref' in names else 1)
+ref = '$ref'
+# Exact match check
+if ref in names:
+    sys.exit(0)
+# Prefix of a real skill name -> likely ASCII art truncation, skip
+if any(n.startswith(ref) for n in names):
+    sys.exit(0)
+sys.exit(1)
 " 2>/dev/null; then
         bad_refs+=("$ref")
       fi

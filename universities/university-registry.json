@@ -12,11 +12,11 @@
       "short_name": "AU",
       "country": "India",
       "type": "state",
-      "status": "template-only",
+      "status": "active",
       "maintained_by": null,
-      "config_exists": false,
-      "subjects_data": false,
-      "patterns_data": false,
+      "config_exists": true,
+      "subjects_data": true,
+      "patterns_data": true,
       "pyqs_available": false
     },
     {
@@ -26,11 +26,11 @@
       "short_name": "AKTU",
       "country": "India",
       "type": "state",
-      "status": "template-only",
+      "status": "active",
       "maintained_by": null,
-      "config_exists": false,
-      "subjects_data": false,
-      "patterns_data": false,
+      "config_exists": true,
+      "subjects_data": true,
+      "patterns_data": true,
       "pyqs_available": false
     },
     {
@@ -40,11 +40,11 @@
       "short_name": "Harvard",
       "country": "United States",
       "type": "private",
-      "status": "template-only",
+      "status": "active",
       "maintained_by": null,
-      "config_exists": false,
-      "subjects_data": false,
-      "patterns_data": false,
+      "config_exists": true,
+      "subjects_data": true,
+      "patterns_data": true,
       "pyqs_available": false
     },
     {
@@ -54,11 +54,11 @@
       "short_name": "IIT Bombay",
       "country": "India",
       "type": "central",
-      "status": "template-only",
+      "status": "active",
       "maintained_by": null,
-      "config_exists": false,
-      "subjects_data": false,
-      "patterns_data": false,
+      "config_exists": true,
+      "subjects_data": true,
+      "patterns_data": true,
       "pyqs_available": false
     },
     {
@@ -68,11 +68,11 @@
       "short_name": "JNTUA",
       "country": "India",
       "type": "state",
-      "status": "template-only",
+      "status": "active",
       "maintained_by": null,
-      "config_exists": false,
-      "subjects_data": false,
-      "patterns_data": false,
+      "config_exists": true,
+      "subjects_data": true,
+      "patterns_data": true,
       "pyqs_available": false
     },
     {
@@ -87,7 +87,7 @@
       "config_exists": true,
       "subjects_data": true,
       "patterns_data": true,
-      "pyqs_available": true
+      "pyqs_available": false
     },
     {
       "id": "university-of-delhi",
@@ -96,11 +96,11 @@
       "short_name": "DU",
       "country": "India",
       "type": "central",
-      "status": "template-only",
+      "status": "active",
       "maintained_by": null,
-      "config_exists": false,
-      "subjects_data": false,
-      "patterns_data": false,
+      "config_exists": true,
+      "subjects_data": true,
+      "patterns_data": true,
       "pyqs_available": false
     },
     {
@@ -110,11 +110,11 @@
       "short_name": "Mumbai University",
       "country": "India",
       "type": "state",
-      "status": "template-only",
+      "status": "active",
       "maintained_by": null,
-      "config_exists": false,
-      "subjects_data": false,
-      "patterns_data": false,
+      "config_exists": true,
+      "subjects_data": true,
+      "patterns_data": true,
       "pyqs_available": false
     },
     {
@@ -124,11 +124,11 @@
       "short_name": "Oxford",
       "country": "United Kingdom",
       "type": "public",
-      "status": "template-only",
+      "status": "active",
       "maintained_by": null,
-      "config_exists": false,
-      "subjects_data": false,
-      "patterns_data": false,
+      "config_exists": true,
+      "subjects_data": true,
+      "patterns_data": true,
       "pyqs_available": false
     },
     {
@@ -138,12 +138,13 @@
       "short_name": "VTU",
       "country": "India",
       "type": "state",
-      "status": "template-only",
+      "status": "active",
       "maintained_by": null,
-      "config_exists": false,
-      "subjects_data": false,
-      "patterns_data": false,
+      "config_exists": true,
+      "subjects_data": true,
+      "patterns_data": true,
       "pyqs_available": false
     }
-  ]
+  ],
+  "last_synced": "2026-06-22T16:03:47.431375"
 }

@@ -1,0 +1,71 @@
+{
+  "$schema": "exam-prompt-university-v1",
+  "meta": {
+    "version": "1.0.0",
+    "description": "University of Oxford — oldest university in the English-speaking world (c. 1096)."
+  },
+  "id": "oxford-university",
+  "full_name": "University of Oxford",
+  "short_name": "Oxford",
+  "aliases": ["Oxford University", "Oxbridge"],
+  "country": "United Kingdom",
+  "region": "europe",
+  "type": "russell-group",
+  "website": "https://ox.ac.uk",
+  "established": 1096,
+  "description": "World's second-oldest university in continuous operation. Collegiate research university with 43 colleges. Uses classification system (First, 2:1, 2:2, Third, Pass). Three terms per year: Michaelmas (Oct-Dec), Hilary (Jan-Mar), Trinity (Apr-Jun).",
+  "exam_system": "trimester",
+  "grading_system": "classification",
+  "academic_calendar": {
+    "type": "trimester",
+    "details": "Michaelmas Term (Oct-Dec), Hilary Term (Jan-Mar), Trinity Term (Apr-Jun). Each term has 8-week Full Term. Final exams (Prelims/Finals) at end of academic year."
+  },
+  "patterns": {
+    "default": "oxford-standard",
+    "available": [
+      {
+        "id": "oxford-standard",
+        "name": "Oxford Standard Pattern",
+        "description": "Undergraduate classification degree with First Class Honours (70%+), Upper Second (60-69%), Lower Second (50-59%), Third (45-49%), Pass (40-44%)."
+      },
+      {
+        "id": "oxford-postgrad",
+        "name": "Oxford Postgraduate Pattern",
+        "description": "Postgraduate grading: Distinction (70%+), Merit (65-69%), Pass (50-64%), Fail (below 50%)."
+      }
+    ]
+  },
+  "branches": {
+    "departments": [
+      "Computer Science",
+      "Engineering Science",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Biochemistry",
+      "Materials Science",
+      "Economics",
+      "Philosophy, Politics & Economics (PPE)",
+      "Law",
+      "Medicine",
+      "History",
+      "English Language & Literature",
+      "Modern Languages",
+      "Classics",
+      "Oriental Studies",
+      "Geography",
+      "Theology & Religion",
+      "Music",
+      "Fine Art",
+      "Archaeology & Anthropology",
+      "Earth Sciences",
+      "Statistics",
+      "Psychology & Linguistics"
+    ]
+  },
+  "contributing": {
+    "how_to_add": "See how-to-add.md in this directory",
+    "maintainers_needed": true
+  }
+}

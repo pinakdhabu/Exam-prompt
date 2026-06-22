@@ -1,0 +1,63 @@
+{
+  "$schema": "exam-prompt-university-v1",
+  "meta": {
+    "version": "1.0.0",
+    "description": "Indian Institute of Technology Bombay — one of India's premier engineering institutes."
+  },
+  "id": "iit-bombay",
+  "full_name": "Indian Institute of Technology Bombay",
+  "short_name": "IIT Bombay",
+  "aliases": ["IITB", "IIT Mumbai"],
+  "country": "India",
+  "region": "asia-pacific",
+  "type": "central",
+  "website": "https://www.iitb.ac.in",
+  "established": 1958,
+  "description": "India's top-ranked engineering institute (NIRF #3 overall). Offers B.Tech, B.S., M.Tech, M.Sc., MBA, and Ph.D. programs. Uses IIT 10-point grading (AA/AB/BB/BC/CC/CD/DD/FR) with SPI/CPI system. Semester system with Autumn (Jul-Nov) and Spring (Jan-Apr) terms.",
+  "exam_system": "semester",
+  "grading_system": "CPI (10.0)",
+  "academic_calendar": {
+    "type": "semester",
+    "details": "Autumn semester: Jul-Nov, Spring semester: Jan-Apr. Summer term: May-Jun for internships/projects."
+  },
+  "patterns": {
+    "default": "iitb-standard",
+    "available": [
+      {
+        "id": "iitb-standard",
+        "name": "IIT Bombay Standard Pattern",
+        "description": "10-point letter grade system (AA/AB/BB/BC/CC/CD/DD/FR). SPI per semester, CPI cumulative. Min DD to pass. 40% IA + 60% ESE typical."
+      }
+    ]
+  },
+  "branches": {
+    "departments": [
+      "Computer Science & Engineering",
+      "Electrical Engineering",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Chemical Engineering",
+      "Aerospace Engineering",
+      "Metallurgical Engineering & Materials Science",
+      "Engineering Physics",
+      "Environmental Science & Engineering",
+      "Energy Science & Engineering",
+      "Biosciences & Bioengineering",
+      "Systems & Control Engineering",
+      "Industrial Engineering & Operations Research",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Earth Sciences",
+      "Humanities & Social Sciences",
+      "Management Studies",
+      "Design",
+      "Computer Science & Engineering (AI)",
+      "Computer Science & Engineering (Data Science)"
+    ]
+  },
+  "contributing": {
+    "how_to_add": "See how-to-add.md in this directory",
+    "maintainers_needed": true
+  }
+}
