@@ -85,6 +85,19 @@ sources:
 | **US/UK Universities** | `"{subject}" "past exam papers" "{university}"`                                        |
 | **Generic**            | `"{subject}" "previous year question paper" "{year}"` then extract university from page |
 
+### If LLM Web Search Fails (any non-SPPU university)
+
+If the LLM cannot find enough PYQs on the web after reasonable searching, ask the user for:
+
+| What to ask for | Why | What LLM does with it |
+|----------------|-----|-----------------------|
+| **PDF attachments** | User may have scanned/downloaded papers | LLM reads PDF directly, extracts questions |
+| **A directory path** | User may have a local PYQ collection | LLM scans directory for PDFs, reads each one |
+| **An internet link** | User may know a repository/portal URL | LLM fetches page, finds and extracts papers |
+| **Any other format** | Whatever the user has | LLM adapts and converts to structured markdown |
+
+Then retry the original task with the user-provided material.
+
 ### SPPU Internet Sources
 
 These are the **known working sources** for SPPU question papers. LLM should search these in order

@@ -11,23 +11,25 @@ description: >
 ## Overview
 
 This index provides Previous Year Question Papers for **SPPU Computer Engineering** (2019–2025)
-via two methods:
+via these methods, in priority order:
 
 1. **LLM Web Search → Structured Markdown (PRIMARY)** — AI agent searches the web, extracts
-   questions, writes `.md` files to `pyq-index/{subject}/`. No site dependency, clean text, any
-   university.
-2. **Automated Fetch Script (FALLBACK, SPPU-only)** — `node scripts/fetch-qp.js` downloads PDFs
+   questions, writes `.md` files to `pyq-index/{subject}/`. Works for ANY university.
+2. **User-provided material (FALLBACK)** — If LLM cannot find PYQs on the web, ask user for:
+   attachments (PDFs/docs), a directory path, or an internet link.
+3. **Automated Fetch Script (SPPU-only)** — `node scripts/fetch-qp.js` downloads PDFs
    to `pyq-downloads/` from sppuquestionpapers.com.
 
-**Coverage:** 2019–2025 | **Patterns:** 2019 & 2024
+**Coverage:** 2019–2025 (SPPU) | **Patterns:** 2019 & 2024
 
 **PYQ Sources (in priority order):**
 
 | Priority | Type                           | Location                      | Contents                                    |
 | -------- | ------------------------------ | ----------------------------- | ------------------------------------------- |
 | 1        | **LLM-collected markdown**     | `pyq-index/{subject}/*.md`    | Structured questions (web-scraped by LLM)   |
-| 2        | **University PYQ dir**         | `universities/<UNIV>/PYQs/`   | Per-university organized PDFs               |
-| 3        | **Project downloads**          | `pyq-downloads/`              | Fetched via automated scripts (SPPU)        |
+| 2        | **User-provided material**     | Any path/URL/user attachment  | PDFs, docs, links user shares               |
+| 3        | **University PYQ dir**         | `universities/<UNIV>/PYQs/`   | Per-university organized PDFs               |
+| 4        | **Project downloads**          | `pyq-downloads/`              | Fetched via automated scripts (SPPU)        |
 
 ---
 
@@ -227,7 +229,26 @@ cat pyq-index/database-management-systems/end-sem-april-2024.md
 If no markdown files exist yet, the AI agent searches the web, finds PDFs, reads them, and writes
 structured markdown to `pyq-index/{subject}/`. This populates the index for future use.
 
-### Step 3: Fallback to Automated Fetch (SPPU only)
+**For SPPU:** Use the dynamic discovery process above. All exam periods from 2015 through current
+are available on the official portal.
+
+**For other universities:** LLM scrapes the web using generic queries
+(`"{subject}" "{university}" question paper`). If the LLM cannot find PYQs after reasonable
+searching, it should ask the user for:
+- Attached PYQ PDF files or documents
+- A local directory path where PYQs are stored
+- An internet link to a PYQ repository or download page
+Whatever the user provides, the LLM converts it to structured markdown.
+
+### Step 3: User-Provided Material
+
+If web search fails to yield enough papers, ask the user for:
+- **PDF/DOCX attachments** — read them directly, extract questions
+- **A directory path** — scan for PDFs, extract text from each
+- **An internet URL** — fetch the page, find and download papers
+LLM reads and converts whatever is provided into structured markdown.
+
+### Step 4: Fallback to Automated Fetch (SPPU only)
 
 ```bash
 # Download real question papers to pyq-downloads/
