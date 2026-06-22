@@ -106,42 +106,47 @@ until enough papers are found.
 | 8 | **Filo** | `https://askfilo.com/higher-education/savitribai-phule-pune-university/` | PYQ solutions with answers |
 | 9 | **Collegedunia** | `https://collegedunia.com/university/25732-savitribai-phule-pune-university-sppu-pune` | Old exam papers index |
 
-#### Official SPPU Portal — URL Patterns
+#### Official SPPU Portal — Dynamic URL Discovery
 
-**Known archive periods** (format varies by year):
+**Don't hardcode folder names.** They change every exam season. Instead, **discover dynamically:**
+
 ```
-APRIL - 2025       → http://collegecirculars.unipune.ac.in/sites/examdocs/APRIL%20%202025/
-November - 2024    → .../sites/examdocs/November%20-%202024/
-April-2024         → .../sites/examdocs/April2024/
-OCTOBER - 2023     → .../sites/examdocs/OCTOBER%20%202023/
-APRIL - 2023       → .../sites/examdocs/APRIL%20%202023/
-OCTOBER - 2022     → .../sites/examdocs/OCTOBER%20%202022/
-APRIL-2022         → .../sites/examdocs/APRIL-2022/
-APRIL-2019 through November/December 2015 — same base URL
+http://collegecirculars.unipune.ac.in/sites/examdocs/
 ```
 
-**PDF download pattern** (merged all-branch files per year level):
-```
-{PERIOD}/{YEAR_LEVEL} ({PATTERN} PATTERN).pdf
-```
-Examples:
-- `APRIL%20%202025/S.E%20(2019%20PATTERN).pdf` — SE all branches merged
-- `APRIL%20%202025/T.E%20(2019%20PATTERN).pdf` — TE all branches merged
-- `APRIL%20%202025/B.E%20(2019%20PATTERN).pdf` — BE all branches merged
-- `APRIL%20%202025/F.E%20(2019%20PATTERN).pdf` — FE all branches merged
-- `November%20%202024/F.E%20(2024%20PATTERN).pdf` — FE 2024 pattern
-- `April2024/B.E%20(2019%20PATTERN).pdf` — BE 2019 pattern
+**Step 1 — Browse the site structure:**
+Fetch the base URL above. The SharePoint sidebar lists all available libraries. Look for:
+- `Archive Question Papers` section — these are the QP folders
+- `Time Tables {SEASON} {YEAR}` — timetable folders (each exam season gets a new one)
+- Each archive folder is named after its exam period (e.g., `APRIL - 2025`, `November - 2024`)
 
-**Timetables** (same site, different library):
+**Step 2 — Derive the folder URL pattern:**
 ```
-http://collegecirculars.unipune.ac.in/sites/examdocs/Time%20Tables%20{PERIOD}/Forms/AllItems.aspx
+http://collegecirculars.unipune.ac.in/sites/examdocs/{FOLDER_NAME}/Forms/AllItems.aspx
 ```
-Known periods: `APRMAY%202026`, `OCT/NOV%202025`, `MAR/APR%202025`, `OCT/NOV%202024`,
-`MAR/APR%202024`, `OCT/NOV%202023`, and older.
+URL-encode spaces in folder names. Common encoding patterns seen:
+- `APRIL - 2025` → `APRIL%20%202025` (double space after month)
+- `November - 2024` → `November%20-%202024`
+- `April-2024` → `April2024` (no encoding needed)
 
-**Guessing newer periods:** If the current date is near an exam season, the new folder might be
-`APRIL%20%20{CURRENT_YEAR}` or `Time%20Tables%20{SEASON}%20{CURRENT_YEAR}`. Always try both with
-current and next exam period names.
+Try multiple encodings if the first fails. **The site is inconsistent year-to-year.**
+
+**Step 3 — Download PDFs using the known pattern:**
+Each period folder contains merged all-branch PDFs named by year level:
+```
+{PERIOD_URL}/{YEAR_LEVEL} ({PATTERN} PATTERN).pdf
+```
+- `YEAR_LEVEL` = `F.E`, `S.E`, `T.E`, or `B.E`
+- `PATTERN` = `2019 PATTERN` or `2024 PATTERN`
+
+Try: `S.E%20(2019%20PATTERN).pdf`, `T.E%20(2019%20PATTERN).pdf`, `B.E%20(2019%20PATTERN).pdf`,
+`F.E%20(2019%20PATTERN).pdf`, `F.E%20(2024%20PATTERN).pdf`, etc.
+
+**Step 4 — Timetables (same dynamic approach):**
+```
+http://collegecirculars.unipune.ac.in/sites/examdocs/Time%20Tables%20{SEASON}%20{YEAR}/Forms/AllItems.aspx
+```
+Current/known patterns: `APRMAY`, `OCT/NOV`, `MAR/APR` + year. Browse sidebar to find latest.
 
 **Limitations of official portal:**
 - Only **End Semester** papers (no In Sem)

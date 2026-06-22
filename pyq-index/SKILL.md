@@ -109,39 +109,35 @@ These are the **known working sources** for SPPU question papers. Search them in
 | 8 | **Filo** | `https://askfilo.com/higher-education/savitribai-phule-pune-university/` | PYQ with answer solutions |
 | 9 | **Collegedunia** | `https://collegedunia.com/university/25732-savitribai-phule-pune-university-sppu-pune` | Old papers index |
 
-#### Official SPPU Portal — URL Patterns
+#### Official SPPU Portal — Dynamic URL Discovery
 
-**Base URL:** `http://collegecirculars.unipune.ac.in/sites/examdocs/`
+**Don't hardcode folder names.** They change every exam season. Instead, **discover dynamically:**
 
-**Archive Question Papers** (navigate to `{PERIOD}/Forms/AllItems.aspx`):
-| Period | URL Fragment | Notes |
-|--------|-------------|-------|
-| APRIL - 2025 | `APRIL%20%202025/` | Has FE, SE, TE, BE merged PDFs |
-| November - 2024 | `November%20-%202024/` | 2019 + 2024 pattern |
-| April-2024 | `April2024/` | 2019 pattern |
-| OCTOBER - 2023 | `OCTOBER%20%202023/` | |
-| APRIL - 2023 through NOV/DEC 2015 | pattern varies by year | Check navigation sidebar |
+```
+http://collegecirculars.unipune.ac.in/sites/examdocs/
+```
 
-**PDF download pattern** (merged all-branch files per year level):
+**Step 1** — Fetch the base URL. The SharePoint sidebar lists all available libraries. Look for:
+- `Archive Question Papers` section — QP folders for every exam period (2015 through present)
+- `Time Tables {SEASON} {YEAR}` — timetable folders (one per exam season)
+
+**Step 2** — Navigate to a folder URL using pattern:
+```
+{base_url}/{FOLDER_NAME}/Forms/AllItems.aspx
+```
+URL-encode spaces. Try multiple encodings. Folder naming is inconsistent year-to-year.
+
+**Step 3** — Download merged PDFs per year level:
 ```
 {PERIOD_URL}/{YEAR_LEVEL} ({PATTERN} PATTERN).pdf
 ```
-Year levels: `F.E`, `S.E`, `T.E`, `B.E` | Patterns: `2019 PATTERN`, `2024 PATTERN`
+Try all combos of `F.E`/`S.E`/`T.E`/`B.E` × `2019 PATTERN`/`2024 PATTERN`.
 
-Examples:
-- `APRIL%20%202025/S.E%20(2019%20PATTERN).pdf` — SE all branches merged
-- `APRIL%20%202025/B.E%20(2019%20PATTERN).pdf` — BE all branches merged
-- `November%20%202024/F.E%20(2024%20PATTERN).pdf` — FE 2024 pattern
-- `April2024/B.E%20(2019%20PATTERN).pdf` — BE 2019 pattern
-
-**Timetables** (same site, different library):
+**Step 4** — Timetables at:
 ```
-http://collegecirculars.unipune.ac.in/sites/examdocs/Time%20Tables%20{PERIOD}/Forms/AllItems.aspx
+{base_url}/Time%20Tables%20{SEASON}%20{YEAR}/Forms/AllItems.aspx
 ```
-Known periods: `APRMAY%202026`, `OCT/NOV%202025`, `MAR/APR%202025`, and older.
-
-**Guessing newer periods:** Near exam season, try `APRIL%20%20{current_year}`, or
-`Time%20Tables%20{SEASON}%20{current_year}` (SEASON = APRMAY, OCT/NOV, MAR/APR).
+Browse sidebar to find latest season name.
 
 **Limitations of official portal:**
 - Only **End Semester** papers (no In Sem papers)
