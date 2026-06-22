@@ -88,34 +88,82 @@ sources:
 ### SPPU Internet Sources
 
 These are the **known working sources** for SPPU question papers. LLM should search these in order
-until enough papers are found:
+until enough papers are found.
+
+> ⚠️ **Links change every exam season.** SPPU creates new folders per exam period on all sites.
+> If a URL 404s, try the next source or search for the current exam period's folder.
+> **Always update these instructions** when you discover new URLs or find broken ones.
 
 | # | Source | URL Pattern | Best For |
 |---|--------|-------------|----------|
-| 1 | **SPPU Question Papers** | `https://sppuquestionpapers.com/be/{branch}/semester-{N}` | Per-semester papers for all branches |
-| 2 | **SPPU QP Mirror** | `https://sppuquestionpaper.page.gd/program/be/` | Direct PDF links, mirror of #1 |
-| 3 | **Official SPPU Portal** | `http://collegecirculars.unipune.ac.in/sites/examdocs/` | Official merged PDFs per exam season |
+| 1 | **SPPU Official Portal ⭐** | `http://collegecirculars.unipune.ac.in/sites/examdocs/{PERIOD}/Forms/AllItems.aspx` | **Only official source.** Merged PDFs per exam season (all branches in one file), End Sem only, 2019 & 2024 pattern |
+| 2 | **SPPU Question Papers** | `https://sppuquestionpapers.com/be/{branch}/semester-{N}` | Per-semester papers for all branches |
+| 3 | **SPPU QP Mirror** | `https://sppuquestionpaper.page.gd/program/be/` | Direct PDF links, mirror of #2 |
 | 4 | **SPPU Study Hub** | `https://www.sppustudyhub.in/` | Notes + question papers |
 | 5 | **Last Moment Tuitions** | `https://lastmomenttuitions.com/sppu/question-papers/` | Per-branch, per-year papers |
-| 6 | **GitHub (Sppuqp)** | `https://github.com/pinakdhabu/Sppuqp` | Merged PDFs (FE, SE, TE, BE) |
+| 6 | **GitHub (Sppuqp)** | `https://github.com/pinakdhabu/Sppuqp` | Merged PDFs (FE, SE, TE, BE), Google Drive mirror |
 | 7 | **KSKA Git (Gitea)** | `https://git.kska.io/sppu-te-comp-content/` | Per-subject organized repos with solved papers |
 | 8 | **Filo** | `https://askfilo.com/higher-education/savitribai-phule-pune-university/` | PYQ solutions with answers |
 | 9 | **Collegedunia** | `https://collegedunia.com/university/25732-savitribai-phule-pune-university-sppu-pune` | Old exam papers index |
 
-**LLM process for each source:**
+#### Official SPPU Portal — URL Patterns
+
+**Known archive periods** (format varies by year):
+```
+APRIL - 2025       → http://collegecirculars.unipune.ac.in/sites/examdocs/APRIL%20%202025/
+November - 2024    → .../sites/examdocs/November%20-%202024/
+April-2024         → .../sites/examdocs/April2024/
+OCTOBER - 2023     → .../sites/examdocs/OCTOBER%20%202023/
+APRIL - 2023       → .../sites/examdocs/APRIL%20%202023/
+OCTOBER - 2022     → .../sites/examdocs/OCTOBER%20%202022/
+APRIL-2022         → .../sites/examdocs/APRIL-2022/
+APRIL-2019 through November/December 2015 — same base URL
+```
+
+**PDF download pattern** (merged all-branch files per year level):
+```
+{PERIOD}/{YEAR_LEVEL} ({PATTERN} PATTERN).pdf
+```
+Examples:
+- `APRIL%20%202025/S.E%20(2019%20PATTERN).pdf` — SE all branches merged
+- `APRIL%20%202025/T.E%20(2019%20PATTERN).pdf` — TE all branches merged
+- `APRIL%20%202025/B.E%20(2019%20PATTERN).pdf` — BE all branches merged
+- `APRIL%20%202025/F.E%20(2019%20PATTERN).pdf` — FE all branches merged
+- `November%20%202024/F.E%20(2024%20PATTERN).pdf` — FE 2024 pattern
+- `April2024/B.E%20(2019%20PATTERN).pdf` — BE 2019 pattern
+
+**Timetables** (same site, different library):
+```
+http://collegecirculars.unipune.ac.in/sites/examdocs/Time%20Tables%20{PERIOD}/Forms/AllItems.aspx
+```
+Known periods: `APRMAY%202026`, `OCT/NOV%202025`, `MAR/APR%202025`, `OCT/NOV%202024`,
+`MAR/APR%202024`, `OCT/NOV%202023`, and older.
+
+**Guessing newer periods:** If the current date is near an exam season, the new folder might be
+`APRIL%20%20{CURRENT_YEAR}` or `Time%20Tables%20{SEASON}%20{CURRENT_YEAR}`. Always try both with
+current and next exam period names.
+
+**Limitations of official portal:**
+- Only **End Semester** papers (no In Sem)
+- PDFs are **large merged files** (all branches in one PDF — use Ctrl+F to find your subject)
+- Requires navigating a SharePoint UI (not always easy to scrape)
+- Folder naming is inconsistent (spaces, hyphens, URL encoding vary per year)
+
+#### LLM process for each source:
 1. Search the URL with the subject name
 2. If the page lists individual paper links, open each link and read the PDF directly
 3. Extract question text, marks, exam type from the PDF
 4. If direct PDF reading fails, search for the same paper on another source
 5. Write collected questions as structured markdown
 
-**Branch slug mapping for sppuquestionpapers.com:**
+#### Branch slug mapping for sppuquestionpapers.com:
 ```
 computer-engineering, entc, mechanical-engineering, civil-engineering,
 electrical-engineering, information-technology
 ```
 
-**Semester URL pattern:** `https://sppuquestionpapers.com/be/{branch}/semester-{N}` (N = 1-8)
+#### Semester URL pattern:
+`https://sppuquestionpapers.com/be/{branch}/semester-{N}` (N = 1-8)
 
 ### Option B (FALLBACK): Automated Scripts (SPPU only)
 
