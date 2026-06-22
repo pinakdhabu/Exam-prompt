@@ -169,9 +169,19 @@ MODEL ANSWER (excerpt):
 "Virtual memory is a memory management technique that creates an abstraction of a larger address space than physically available. It maps virtual addresses used by processes to physical frames through page tables managed by the MMU. When a process accesses a page not in physical memory, a page fault occurs, and the OS swaps the required page from disk into a free frame. Benefits include: (1) running programs larger than physical RAM, (2) process isolation — each process has its own virtual address space, (3) simplified memory management for programmers, (4) efficient memory utilization through sharing of common pages, and (5) support for sparse address spaces."
 ```
 
+## Session Config
+
+This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.
+
+---
+
 ## 5. Integration with Other Skills
 
-- **universal-answer-writer**: Provides the model answer standards against which answers are graded
+- **universal-a-plus-answer-writer**: Provides the model answer standards against which answers are graded
 - **universal-pyq-analyzer**: Identifies which question types and Bloom's levels are most frequently
   tested
 - **universal-subject-prompt-bank**: Supplies subject-specific answer standards and exemplars

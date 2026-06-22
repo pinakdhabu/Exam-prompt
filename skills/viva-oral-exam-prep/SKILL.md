@@ -141,9 +141,19 @@ Examiner: Good. Compare Quick Sort and Merge Sort.
 | Reading from notes (online)        | Noticeably reduces engagement | Use brief bullet points only; speak naturally                 |
 | Stopping at "I don't know"         | Shows no problem-solving      | Use "I'm not sure, but here's how I would approach it"        |
 
+## Session Config
+
+This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.
+
+---
+
 ## 8. Integration with Other Skills
 
 - **universal-notes-generator**: Creates structured notes that serve as answer reference material
 - **universal-mcq-practice-generator**: Tests fundamental knowledge that viva questions build upon
-- **universal-answer-writer**: Provides structured answer templates adaptable to oral delivery
+- **universal-a-plus-answer-writer**: Provides structured answer templates adaptable to oral delivery
 - **universal-flashcard-generator**: Creates quick-recall flashcards for viva preparation

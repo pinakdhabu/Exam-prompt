@@ -1,0 +1,37 @@
+{
+  "$schema": "exam-prompt-university-v1",
+  "meta": {
+    "template_version": "1.0.0",
+    "description": "Template for adding a new university to the Exam Prompt system. Copy this directory, rename it to your university's FULL NAME, and fill in the details below."
+  },
+  "id": "anna-university",
+  "full_name": "Anna University",
+  "short_name": "AU",
+  "aliases": [
+    "Common Name",
+    "Also Known As"
+  ],
+  "country": "India",
+  "region": "asia-pacific | north-america | europe | middle-east | africa | latin-america | oceania",
+  "type": "state",
+  "website": "https://www.university.edu",
+  "established": 1949,
+  "description": "Brief description of the university",
+  "exam_system": "semester | yearly | trimester | module",
+  "grading_system": "SGPA/CGPA | GPA (4.0) | ECTS | percentage | classification",
+  "academic_calendar": {
+    "type": "semester | trimester | yearly",
+    "details": "Odd semester: Jul-Dec, Even semester: Jan-Jun"
+  },
+  "patterns": {
+    "default": "latest-pattern-id",
+    "available": []
+  },
+  "branches": {
+    "departments": []
+  },
+  "contributing": {
+    "how_to_add": "See how-to-add.md in this directory",
+    "maintainers_needed": true
+  }
+}

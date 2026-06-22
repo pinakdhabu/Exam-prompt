@@ -156,11 +156,21 @@ The CSS template can be customized by editing the script:
 
 ---
 
+## Session Config
+
+This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.
+
+---
+
 ## Integration with Other Skills
 
 - **universal-document-reader**: First stage (PDF → TXT)
 - **universal-notes-generator**: Produces MD content ready for PDF conversion
-- **universal-answer-writer**: Generates answers that can be compiled into PDF
+- **universal-a-plus-answer-writer**: Generates answers that can be compiled into PDF
 - **universal-formula-sheet-generator**: Outputs MD formula sheets for PDF
 - **universal-flashcard-generator**: Flashcard content exportable to printable PDF
 - **universal-mind-map-generator**: Mermaid diagrams embeddable in PDF output

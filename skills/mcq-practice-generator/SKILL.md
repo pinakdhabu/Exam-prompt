@@ -175,6 +175,16 @@ VTU CSE - Operating Systems - Process States
    Answer: B
 ```
 
+## Session Config
+
+This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.
+
+---
+
 ## 8. Integration with Other Skills
 
 - **universal-notes-generator**: Feeds notes as source material for MCQ content

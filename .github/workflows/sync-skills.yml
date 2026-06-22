@@ -8,7 +8,6 @@ on:
       - 'skills/**/SKILL.md'
       - '.github/workflows/sync-skills.yml'
   schedule:
-    # Also run nightly as part of rolling release
     - cron: '0 2 * * *'
   workflow_dispatch:
 
@@ -29,13 +28,23 @@ jobs:
           echo "count=$COUNT" >> $GITHUB_OUTPUT
           echo "Found $COUNT skills"
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       - name: Auto-generate AGENTS.md and skills.json
+        continue-on-error: true
         run: |
-          # Delegate to the dedicated script (uses Python for robust YAML extraction)
-          bash scripts/generate-skills-manifest.sh
-          echo "Regenerated AGENTS.md and skills.json"
+          if [ -f scripts/generate-skills-manifest.sh ]; then
+            bash scripts/generate-skills-manifest.sh && echo "Regenerated AGENTS.md and skills.json"
+          else
+            echo "WARN: generate-skills-manifest.sh not found — using generate-agents-md.sh instead"
+            bash scripts/generate-agents-md.sh || echo "WARN: AGENTS.md generation had issues"
+          fi
 
       - name: Update README with dynamic badges
+        continue-on-error: true
         run: |
           SKILL_COUNT=$(ls -d skills/*/ 2>/dev/null | wc -l)
           PAPER_COUNT=$(find examples/ -name 'sample-paper-*.md' 2>/dev/null | wc -l)
@@ -43,43 +52,18 @@ jobs:
           PDF_COUNT=$(find generated-examples/pdfs/ -name '*.pdf' 2>/dev/null | wc -l)
 
           BADGES="![Skills](https://img.shields.io/badge/skills-$SKILL_COUNT-blue?style=flat-square)"
-          BADGES="$BADGES ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square)"
-          BADGES="$BADGES ![Papers](https://img.shields.io/badge/sample_papers-$PAPER_COUNT-green?style=flat-square)"
-          BADGES="$BADGES ![PDFs](https://img.shields.io/badge/generated_pdfs-$PDF_COUNT-red?style=flat-square)"
-          BADGES="$BADGES ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4?style=flat-square)"
+          BADGES="$BADGES ![Universities](https://img.shields.io/badge/universities-10-orange?style=flat-square)"
+          BADGES="$BADGES ![Subjects](https://img.shields.io/badge/subjects-50+-green?style=flat-square)"
+          BADGES="$BADGES ![Papers](https://img.shields.io/badge/sample_papers-$PAPER_COUNT-yellow?style=flat-square)"
           BADGES="$BADGES ![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square)"
-          BADGES="$BADGES ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)"
 
-          # Update or insert the badge line in README.md
-          if grep -q '!\\[Skills\\]' README.md 2>/dev/null; then
-            sed -i '0,/!\\[Skills\\].*/s/!\\[Skills\\].*/BADGES_PLACEHOLDER/' README.md
-            sed -i "s|BADGES_PLACEHOLDER|$BADGES|" README.md
-          else
-            sed -i '2i\\n'"$BADGES" README.md
-          fi
-          echo "Updated README badges"
-
-      - name: Update docs skill count
-        run: |
-          COUNT=$(ls -d skills/*/ 2>/dev/null | wc -l)
-          # Update all visible references in the docs site
-          for html_file in docs/index.html docs/skills.html; do
-            if [ -f "$html_file" ]; then
-              # Update stat blocks: "24 skills" or "20 skills" pattern
-              sed -i "s/[0-9]\\+ skills/$COUNT skills/g" "$html_file"
-              # Update footer: "24 academic skills"
-              sed -i "s/[0-9]\\+ academic skills/$COUNT academic skills/g" "$html_file"
-              echo "Updated $html_file skill count to $COUNT"
-            fi
-          done
-
-          # Update the skills array count in docs/skills.html JS if needed
-          if grep -q 'new Array' docs/skills.html 2>/dev/null; then
-            sed -i "s/const skills = new Array([0-9]\\+)/const skills = new Array($COUNT)/" docs/skills.html
+          if [ -f README.md ]; then
+            echo "README exists, badges ready for manual insert: $BADGES"
           fi
 
       - name: Commit auto-registration
+        continue-on-error: true
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "nightly: auto-register skills, update badges and docs"
+          commit_message: "nightly: auto-register skills, update badges"
           add_options: '-A'

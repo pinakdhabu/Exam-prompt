@@ -109,10 +109,20 @@ F6: Integration by parts
 ... (continues)
 ```
 
+## Session Config
+
+This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.
+
+---
+
 ## 5. Integration with Other Skills
 
 - **universal-notes-generator**: Provides the full context from which formulas are extracted
-- **universal-answer-writer**: Uses formula sheets for numerical problem solutions
+- **universal-a-plus-answer-writer**: Uses formula sheets for numerical problem solutions
 - **universal-last-minute-crammer**: Formula sheets are the primary cram resource
 - **universal-mcq-practice-generator**: MCQs can be generated targeting specific formula
   applications

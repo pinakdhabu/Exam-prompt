@@ -813,4 +813,14 @@ optimization problems like Knapsack, LCS, and Matrix Chain Multiplication.
 | Explain | Mechanism + formula + diagram | Theory + derivation + observation | Model + framework + example | Principle + case + ratio | Mechanism + pathway + clinical sign | Algorithm + trace + complexity | Proof + steps         | Argument + evidence + counterpoint |
 | Compare | Table with parameters         | Table with properties             | Table with criteria         | Table with judgments     | Table with features                 | Table with metrics             | Table with properties | Table with themes                  |
 | Derive  | Start with known formula      | Start with fundamental law        | N/A                         | Deduce from precedent    | N/A                                 | Derive recurrence              | Step-by-step algebra  | Reason from premises               |
-| Design  | Block diagram + specs         | Experimental setup                | Strategy + roadmap          | Legal document           | Treatment protocol                  | Architecture + trade-offs      | Formal proof          | Research proposal                  |
+| Design  | Block diagram + specs              | Experimental setup                | Strategy + roadmap      | Legal document           | Treatment protocol                  | Architecture + trade-offs      | Formal proof          | Research proposal                          |
+
+---
+
+## Session Config
+
+This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.

@@ -794,3 +794,13 @@ Q4) Case Study: [Real-world scenario]                        [10]
 | ------- | ------- | --------------------------------------------------------------------------------------------- |
 | 2.0     | 2026-05 | Complete rewrite: universal patterns, 13 question types, CO/Bloom, marking scheme, answer key |
 | 1.0     | 2025-02 | Original SPPU-only exam paper generator                                                       |
+
+---
+
+## Session Config
+
+This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.

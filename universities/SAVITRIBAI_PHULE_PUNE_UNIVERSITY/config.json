@@ -1,0 +1,115 @@
+{
+  "$schema": "exam-prompt-university-v1",
+  "id": "savitribai-phule-pune-university",
+  "full_name": "Savitribai Phule Pune University",
+  "short_name": "SPPU",
+  "aliases": ["Pune University", "University of Pune", "SPPU", "Pune Univ"],
+  "country": "India",
+  "region": "asia-pacific",
+  "type": "state",
+  "website": "http://www.unipune.ac.in/",
+  "established": 1949,
+  "description": "One of India's premier universities, located in Pune, Maharashtra. Formerly known as University of Pune. Renamed to Savitribai Phule Pune University in 2014.",
+  "exam_system": "semester",
+  "grading_system": "SGPA/CGPA",
+  "academic_calendar": {
+    "type": "semester",
+    "odd_semester": "July - December",
+    "even_semester": "January - June",
+    "in_sem_exams": "September/October, March/April",
+    "end_sem_exams": "November/December, April/May"
+  },
+  "patterns": {
+    "default": "2019",
+    "available": [
+      {
+        "id": "2015",
+        "name": "2015 Pattern",
+        "years_active": ["2015", "2016", "2017", "2018", "2019"],
+        "total_marks": 70,
+        "in_sem_marks": 30,
+        "time_hours": 3,
+        "total_units": 8,
+        "exam_units": 4,
+        "or_pairs": 4,
+        "question_structure": "OR_PAIRS"
+      },
+      {
+        "id": "2019",
+        "name": "2019 Pattern",
+        "years_active": ["2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+        "total_marks": 70,
+        "in_sem_marks": 30,
+        "time_hours": 2.5,
+        "total_units": 6,
+        "exam_units": 4,
+        "or_pairs": 4,
+        "question_structure": "OR_PAIRS",
+        "question_format": {
+          "type": "OR_PAIRS",
+          "count": 4,
+          "labeling": "Q1/Q2, Q3/Q4, Q5/Q6, Q7/Q8",
+          "sub_questions": {
+            "pattern": "a+b",
+            "marks_distribution": "a=10, b=10 or a=6, b=6, c=8",
+            "compulsory_questions": true
+          }
+        }
+      },
+      {
+        "id": "2024",
+        "name": "2024 Pattern",
+        "years_active": ["2024", "2025"],
+        "total_marks": 70,
+        "in_sem_marks": 30,
+        "time_hours": 2.5,
+        "total_units": 5,
+        "exam_units": 5,
+        "or_pairs": 5,
+        "question_structure": "OR_PAIRS",
+        "question_format": {
+          "type": "OR_PAIRS",
+          "count": 5,
+          "labeling": "Q1/Q2, Q3/Q4, Q5/Q6, Q7/Q8, Q9/Q10",
+          "sub_questions": {
+            "pattern": "a+b",
+            "marks_distribution": "a=10, b=10 or a=6, b=6, c=8",
+            "compulsory_questions": false
+          }
+        }
+      }
+    ]
+  },
+  "branches": {
+    "departments": [
+      {
+        "id": "computer-engineering",
+        "name": "Computer Engineering",
+        "relevant_skills": ["universal-a-plus-answer-writer", "universal-notes-generator", "universal-pyq-analyzer", "universal-imp-topics-generator", "universal-qp-fetcher"],
+        "degrees": [
+          {
+            "id": "be",
+            "name": "Bachelor of Engineering (B.E.)",
+            "years": [
+              {"id": "fe", "name": "First Year (F.E.)", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year (S.E.)", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year (T.E.)", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year (B.E.)", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "entc",
+        "name": "Electronics & Telecommunication Engineering",
+        "degrees": [{"id": "be", "name": "Bachelor of Engineering (B.E.)", "years": [{"id": "fe", "name": "First Year (F.E.)", "semesters": ["Semester 1", "Semester 2"]}, {"id": "se", "name": "Second Year (S.E.)", "semesters": ["Semester 3", "Semester 4"]}, {"id": "te", "name": "Third Year (T.E.)", "semesters": ["Semester 5", "Semester 6"]}, {"id": "be", "name": "Fourth Year (B.E.)", "semesters": ["Semester 7", "Semester 8"]}]}]
+      }
+    ]
+  },
+  "contributing": {
+    "maintainers": ["Pinak Dhabu (pinakdhabu)"],
+    "how_to_add_branch": "Create a new subdirectory under branches/ and add subjects.json",
+    "how_to_add_subject": "Add to subjects.json in the relevant branch directory",
+    "needs_help": ["ENTC subjects data", "ME subjects data", "CE subjects data", "EE subjects data", "IT subjects data"]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "2019",
+  "name": "2019 Pattern",
+  "description": "SPPU 2019 Course Pattern (BE Computer Engineering)",
+  "years_active": ["2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+  "exam_type": "end-semester",
+  "in_semester": {
+    "exists": true,
+    "name": "In-Semester Examination",
+    "marks": 30,
+    "duration_hours": 1,
+    "types": ["In-Sem exams", "assignments", "orals", "practicals"],
+    "notes": "In-Sem exams typically occur mid-semester. Some subjects have only assignments/practicals."
+  },
+  "end_semester": {
+    "total_marks": 70,
+    "time_hours": 2.5,
+    "total_units": 6,
+    "exam_units": 4,
+    "or_pairs": 4,
+    "instructions": [
+      "Answer Q.1 or Q.2, Q.3 or Q.4, Q.5 or Q.6, Q.7 or Q.8.",
+      "Neat diagrams must be drawn wherever necessary.",
+      "Figures to the right indicate full marks.",
+      "Assume suitable data, if necessary."
+    ],
+    "question_structure": {
+      "type": "OR_PAIRS",
+      "description": "Four OR-pairs covering Units 3-6. Odd units (3,5) → Q1/Q3, Even units (4,6) → Q2/Q4 label but actual pattern is Q1/Q2 (U3), Q3/Q4 (U4), Q5/Q6 (U5), Q7/Q8 (U6). Units 1-2 are for In-Sem.",
+      "total_questions": 8,
+      "or_pairs": 4,
+      "labeling": "Q1/Q2, Q3/Q4, Q5/Q6, Q7/Q8",
+      "sub_questions": {
+        "pattern": "a+b",
+        "mark_options": [
+          {"distribution": "10+10", "description": "Two 10-mark subquestions"},
+          {"distribution": "6+6+8", "description": "Three subquestions (6+6+8)"},
+          {"distribution": "5+5+10", "description": "Three subquestions (5+5+10)"},
+          {"distribution": "4+4+4+8", "description": "Four subquestions (4+4+4+8)"}
+        ]
+      }
+    }
+  },
+  "total_marks": 100,
+  "pass_percentage": 40,
+  "grading": {
+    "type": "SGPA/CGPA",
+    "scale": 10,
+    "pass_grade": "P",
+    "grade_mapping": {
+      "O": [90, 100],
+      "A+": [75, 89],
+      "A": [65, 74],
+      "B+": [60, 64],
+      "B": [55, 59],
+      "C+": [50, 54],
+      "C": [45, 49],
+      "D": [40, 44],
+      "F": [0, 39]
+    }
+  }
+}

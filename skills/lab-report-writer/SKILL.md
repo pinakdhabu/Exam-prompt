@@ -136,8 +136,18 @@ Ripple factor (with capacitor filter): gamma = 1/(4*sqrt(3)*f*R*C)
 ... (full report continues)
 ```
 
+## Session Config
+
+This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.
+
+---
+
 ## 4. Integration with Other Skills
 
-- **universal-answer-writer**: Provides extended theoretical explanations for the theory section
+- **universal-a-plus-answer-writer**: Provides extended theoretical explanations for the theory section
 - **universal-viva-oral-exam-prep**: Generates viva questions and answers for the viva section
 - **universal-formula-sheet-generator**: Derives and formats formulas for the calculations section

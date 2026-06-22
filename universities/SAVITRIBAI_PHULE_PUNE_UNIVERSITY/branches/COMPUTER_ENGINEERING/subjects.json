@@ -1,0 +1,148 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "computer-engineering",
+    "name": "Computer Engineering",
+    "description": "SPPU BE Computer Engineering subjects organized by year and semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (F.E.)",
+      "pattern": "2019",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "103", "name": "Engineering Mathematics I", "abbr": "M1", "type": "core"},
+            {"code": "104", "name": "Engineering Physics", "abbr": "PHY", "type": "core"},
+            {"code": "105", "name": "Engineering Chemistry", "abbr": "CHEM", "type": "core"},
+            {"code": "106", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core"},
+            {"code": "107", "name": "Programming and Problem Solving", "abbr": "PPS", "type": "core"},
+            {"code": "108", "name": "Workshop Practices", "abbr": "WP", "type": "practical"}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "203", "name": "Engineering Mathematics II", "abbr": "M2", "type": "core"},
+            {"code": "204", "name": "Engineering Physics", "abbr": "PHY", "type": "core"},
+            {"code": "205", "name": "Engineering Chemistry", "abbr": "CHEM", "type": "core"},
+            {"code": "206", "name": "Engineering Graphics", "abbr": "EG", "type": "core"},
+            {"code": "207", "name": "Basic Electronics Engineering", "abbr": "BXE", "type": "core"},
+            {"code": "208", "name": "Communication Skills", "abbr": "CS", "type": "core"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "2019",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "210241", "name": "Computer Graphics", "abbr": "CG", "type": "core"},
+            {"code": "210242", "name": "Digital Electronics and Logic Design", "abbr": "DELD", "type": "core"},
+            {"code": "210243", "name": "Discrete Mathematics", "abbr": "DM", "type": "core"},
+            {"code": "210244", "name": "Fundamentals of Data Structures", "abbr": "FDS", "type": "core"},
+            {"code": "210245", "name": "Object Oriented Programming", "abbr": "OOP", "type": "core"},
+            {"code": "210246", "name": "Soft Skills", "abbr": "SS", "type": "audit"}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "210247", "name": "Engineering Mathematics III", "abbr": "M3", "type": "core"},
+            {"code": "210248", "name": "Data Structures and Algorithms", "abbr": "DSA", "type": "core"},
+            {"code": "210249", "name": "Microprocessor", "abbr": "MP", "type": "core"},
+            {"code": "210250", "name": "Principles of Programming Languages", "abbr": "PPL", "type": "core"},
+            {"code": "210251", "name": "Software Engineering", "abbr": "SE", "type": "core"},
+            {"code": "210252", "name": "Environmental Studies", "abbr": "EVS", "type": "audit"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "2019",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "310241", "name": "Database Management Systems", "abbr": "DBMS", "type": "core"},
+            {"code": "310242", "name": "Theory of Computation", "abbr": "TOC", "type": "core"},
+            {"code": "310243", "name": "Systems Programming and Operating System", "abbr": "SPOS", "type": "core"},
+            {"code": "310244", "name": "Computer Networks and Security", "abbr": "CNS", "type": "core"},
+            {"code": "310245D", "name": "Human Computer Interface", "abbr": "HCI", "type": "elective-1"},
+            {"code": "310245B", "name": "Internet of Things and Embedded Systems", "abbr": "IoT", "type": "elective-1"},
+            {"code": "310245A", "name": "Distributed Systems", "abbr": "DS", "type": "elective-1"},
+            {"code": "310245C", "name": "Software Project Management", "abbr": "SPM", "type": "elective-1"}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "310246", "name": "Data Science and Big Data Analytics", "abbr": "DSBDA", "type": "core"},
+            {"code": "310247", "name": "Web Technology", "abbr": "WT", "type": "core"},
+            {"code": "310248", "name": "Artificial Intelligence", "abbr": "AI", "type": "core"},
+            {"code": "310249C", "name": "Information Security", "abbr": "IS", "type": "elective-2"},
+            {"code": "310249A", "name": "Cloud Computing", "abbr": "CC", "type": "elective-2"},
+            {"code": "310249B", "name": "Software Modeling and Architecture Design", "abbr": "SMA", "type": "elective-2"},
+            {"code": "310249D", "name": "Augmented and Virtual Reality", "abbr": "AVR", "type": "elective-2"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "2019",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "410241", "name": "Design and Analysis of Algorithms", "abbr": "DAA", "type": "core"},
+            {"code": "410242", "name": "Machine Learning", "abbr": "ML", "type": "core"},
+            {"code": "410243", "name": "Blockchain Technology", "abbr": "BC", "type": "core"},
+            {"code": "410244A", "name": "Compiler Design", "abbr": "CD", "type": "elective-3"},
+            {"code": "410244B", "name": "Cyber Security and Digital Forensics", "abbr": "CSDF", "type": "elective-3"},
+            {"code": "410244C", "name": "Digital Signal Processing", "abbr": "DSP", "type": "elective-3"},
+            {"code": "410244D", "name": "Mobile Computing", "abbr": "MC", "type": "elective-3"},
+            {"code": "410244E", "name": "GPU Computing", "abbr": "GPU", "type": "elective-3"},
+            {"code": "410244F", "name": "Information Retrieval", "abbr": "IR", "type": "elective-3"},
+            {"code": "410245A", "name": "Software Testing and Automation", "abbr": "STA", "type": "elective-4"},
+            {"code": "410245B", "name": "Robotic Process Automation", "abbr": "RPA", "type": "elective-4"},
+            {"code": "410245C", "name": "Business Intelligence", "abbr": "BI", "type": "elective-4"},
+            {"code": "410245D", "name": "Embedded System Design", "abbr": "ESD", "type": "elective-4"},
+            {"code": "410245E", "name": "Multimedia Techniques", "abbr": "MT", "type": "elective-4"},
+            {"code": "410245F", "name": "Pervasive Computing", "abbr": "PC", "type": "elective-4"}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "410246", "name": "Deep Learning", "abbr": "DL", "type": "core"},
+            {"code": "410247", "name": "High Performance Computing", "abbr": "HPC", "type": "core"},
+            {"code": "410248A", "name": "Natural Language Processing", "abbr": "NLP", "type": "elective-5"},
+            {"code": "410248B", "name": "Advanced Digital Signal Processing", "abbr": "ADSP", "type": "elective-5"},
+            {"code": "410248C", "name": "Image Processing", "abbr": "IP", "type": "elective-5"},
+            {"code": "410248D", "name": "Quantum Computing", "abbr": "QC", "type": "elective-5"},
+            {"code": "410248E", "name": "Bioinformatics", "abbr": "BI", "type": "elective-5"},
+            {"code": "410248F", "name": "Socio-Computer", "abbr": "SC", "type": "elective-5"}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -166,6 +166,9 @@ Sample Paper (Markdown) → marked → KaTeX + Playwright → A4 PDF
 
 > **See full dependency guide:** [`DEPENDENCIES.md`](DEPENDENCIES.md) — Node.js required, Python
 > optional.
+>
+> **MCP Server setup:** See [`docs/mcp-server-setup.md`](docs/mcp-server-setup.md) — expose Exam
+> Prompt as an MCP server for any AI agent.
 
 | Tool                        | Link                                                                               | What It Does                                        |
 | --------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------- |
@@ -233,11 +236,32 @@ exam-prompt/
 │   ├── imp-topics-generator/    #  → High-probability exam topics
 │   ├── exam-paper-generator/    #  → Question papers (11+ patterns)
 │   └── ... (20 more skills)
+├── universities/                # University configurations (multi-uni support)
+│   ├── _TEMPLATE_/              #   Template for adding new universities
+│   ├── university-registry.json #   Master registry of all supported unis
+│   ├── SAVITRIBAI_PHULE_PUNE_UNIVERSITY/  # SPPU (reference impl)
+│   │   ├── config.json          #   University metadata + exam patterns
+│   │   ├── branches/            #   Department subject lists
+│   │   ├── patterns/            #   Exam pattern definitions (2019, 2024)
+│   │   ├── PYQs/                #   Place PYQ PDFs here
+│   │   └── syllabi/             #   Place syllabus PDFs here
+│   ├── VISVESVARAYA_TECHNOLOGICAL_UNIVERSITY/  # VTU (template)
+│   ├── UNIVERSITY_OF_MUMBAI/    # Mumbai University (template)
+│   └── ... (10+ universities)
+├── pyq-index/                   # PYQ index (SPPU reference)
+│   ├── INDEX.md                 # Detailed PDF listing (563 PDFs)
+│   └── SKILL.md                 # Agent instructions for finding PYQs
 ├── generated-examples/          # 16 real PDFs generated from the pipeline
 ├── scripts/                     # Conversion & utility tools
-│   ├── convert-to-pdf.js        # MD → PDF (Typst pipeline)
-│   ├── batch-convert-to-pdf.js  # Batch convert all sample papers
-│   └── gen-pdf-previews.js      # Generate PNG preview thumbnails
+│   ├── init-project.sh          #   Auto-init project (detect uni, install, validate)
+│   ├── detect-university.sh     #   Detect active university config
+│   ├── detect-university.js     #   Cross-platform (Node.js) university detection
+│   ├── convert-to-pdf.js        #   MD → PDF (Typst pipeline)
+│   ├── batch-convert-to-pdf.js  #   Batch convert all sample papers
+│   └── gen-pdf-previews.js      #   Generate PNG preview thumbnails
+├── deps/                        # Runtime config (auto-generated)
+│   ├── session-profile.json     #   Current session university/pattern
+│   └── .gitkeep
 ├── docs/                        # GitHub Pages website
 ├── examples/                    # 48 sample papers across FE/SE/TE/BE
 ├── architectures/               # D2 language system diagrams

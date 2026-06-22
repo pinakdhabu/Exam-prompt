@@ -145,10 +145,20 @@ node scripts/diagram-gen.js --list-formats
 
 ---
 
+## Session Config
+
+This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.
+
+---
+
 ## Integration with Other Skills
 
 - **universal-mind-map-generator**: Outputs Mermaid mind maps → renders via diagram-gen
 - **universal-notes-generator**: Includes diagrams in generated notes → rendered in PDF
 - **universal-document-generator**: All diagrams auto-embedded in PDF output
-- **universal-answer-writer**: Include diagrams in exam answers → rendered in solutions PDF
+- **universal-a-plus-answer-writer**: Include diagrams in exam answers → rendered in solutions PDF
 - **universal-study-planner**: Gantt charts for study schedules

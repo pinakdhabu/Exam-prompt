@@ -38,7 +38,8 @@ const https = require('https');
 
 // ---- Configuration ----
 const BASE_URL = 'https://sppuquestionpapers.com';
-const DOWNLOAD_DIR = path.resolve(__dirname, '..', 'pyq-downloads');
+const DEFAULT_DOWNLOAD_DIR = path.resolve(__dirname, '..', 'pyq-downloads');
+let DOWNLOAD_DIR = DEFAULT_DOWNLOAD_DIR;
 const MAX_RETRIES = 3;
 const RATE_LIMIT_MS = 3000; // robots.txt Crawl-delay:3
 const DOWNLOAD_TIMEOUT = 15000;
@@ -401,7 +402,7 @@ Usage:
   node scripts/fetch-qp.js <subject> --list        List available papers
   node scripts/fetch-qp.js --semester <N>          Target semester (1-8)
   node scripts/fetch-qp.js --branch <name>         Branch (computer, entc, mech, etc.)
-  node scripts/fetch-qp.js --retry <N>             Max retries per download (default: 3)\n
+   node scripts/fetch-qp.js --retry <N>             Max retries per download (default: 3)\n   node scripts/fetch-qp.js --output-dir <path>    Custom download directory\n
 Examples:
   node scripts/fetch-qp.js dbms                    Download DBMS papers
   node scripts/fetch-qp.js dbms --year 2024        Only 2024 DBMS papers
@@ -440,6 +441,10 @@ Subjects: dbms, toc, spos, cns, ai, dsbda, wt, daa, ml, dl, hpc,
     else if (arg === '--list') { listOnly = true; }
     else if (arg === '--list-subjects') { listSubjects = true; }
     else if (arg === '--latest') { latestOnly = true; }
+    else if (arg === '--output-dir' && args[i + 1]) {
+      DOWNLOAD_DIR = path.resolve(args[++i]);
+      console.log(`  Output directory: ${DOWNLOAD_DIR}`);
+    }
     else if (!arg.startsWith('--')) { subjectQuery = arg; }
   }
 

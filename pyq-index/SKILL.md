@@ -15,8 +15,25 @@ This index references a comprehensive collection of **SPPU Previous Year Questio
 (2019–2025) across all Computer Engineering subjects, FE, and Honors programs.
 
 **Total Collection:** ~1,800 PDFs across 3 directories **Coverage:** 2019–2025 | **Patterns:** 2019
-& 2024 **Location:** `~/Downloads/Computer Engineering/`, `~/Downloads/F.E./`,
-`~/Downloads/Other branch/`, `~/Downloads/VL Computer Engineering/`
+& 2024
+
+**PYQ Locations (platform independent):**
+
+| Priority | Source | Location | Contents |
+|----------|--------|----------|----------|
+| 1 | **University PYQ dir** | `<project>/universities/<UNIVERSITY>/PYQs/` | Per-university organized PYQs (future) |
+| 2 | **Downloaded via fetch** | `<project>/pyq-downloads/` | Fetched via `node scripts/fetch-qp.js` |
+| 3 | **Pre-collected (Comp Eng)** | `~/Downloads/Computer Engineering/` | 563 PDFs (SE, TE, BE Computer) |
+| 4 | **Pre-collected (FE)** | `~/Downloads/F.E./` | 35 MB (FE papers) |
+| 5 | **Pre-collected (Other)** | `~/Downloads/Other branch/` | 103 PDFs (all branches) |
+| 6 | **Pre-collected (VL)** | `~/Downloads/VL Computer Engineering/` | 156 MB, 1,080 PDFs |
+
+> **Windows:** Replace `~/Downloads/` with `%USERPROFILE%/Downloads/`.
+> **macOS/Linux:** `~/Downloads/` resolves to `/Users/<user>/Downloads/` or `/home/<user>/Downloads/`.
+>
+> **University-specific PYQs:** The `universities/` directory contains per-university folders (e.g.,
+> `universities/SAVITRIBAI_PHULE_PUNE_UNIVERSITY/PYQs/`). Place your PYQ PDFs there following the
+> semester/subject structure from the university's `branches/` config. See `universities/_TEMPLATE_/how-to-add.md`.
 
 ---
 
@@ -212,21 +229,23 @@ When an AI agent needs to analyze PYQs or generate exam content:
 
 ### Step 1: Discover PYQ Files
 
+Prefer the project-level `pyq-downloads/` directory first, then fall back to `~/Downloads/`:
+
 ```bash
-# Find all PYQs for a specific subject
+# Check project downloads first
+ls pyq-downloads/<subject>/ 2>/dev/null || echo "No project-level PYQs for this subject"
+
+# Find all PYQs for a specific subject (cross-platform)
 find ~/Downloads/Computer\ Engineering/ -iname "*Database Management*" -o -iname "*DBMS*" 2>/dev/null
 
-# Find all PYQs for a specific semester
+# On Windows (PowerShell):
+# Get-ChildItem -Path "$env:USERPROFILE\Downloads\Computer Engineering" -Recurse -Filter "*DBMS*"
+
+# Fallback: Find PYQs by semester
 find ~/Downloads/Computer\ Engineering/ -path "*Sem-5*" -name "*.pdf" 2>/dev/null
 
-# Find all In-Semester papers for a subject
-find ~/Downloads/Computer\ Engineering/ -path "*TOC*In Sem*" -name "*.pdf" 2>/dev/null
-
-# Find syllabus PDFs
+# Fallback: Find syllabus PDFs
 find ~/Downloads/Computer\ Engineering/ -path "*SYLLABUS*" -name "*.pdf" 2>/dev/null
-
-# Find FE PYQs
-find ~/Downloads/F.E./ -iname "*Physics*End Sem*" -name "*.pdf" 2>/dev/null
 ```
 
 ### Step 2: Read Syllabus (for CO mapping)
