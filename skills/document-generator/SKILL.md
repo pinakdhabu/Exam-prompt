@@ -89,18 +89,19 @@ python3 scripts/convert-qp-to-pdf.py paper.md paper.pdf
 When generating an SPPU QP PDF, use these exact layout properties extracted from actual SPPU QPs
 across FE/SE/TE/BE and 2012/2015/2019/2024 patterns:
 
-| Property              | Main Pattern (2019/2015 SE/TE/BE) | BE 2012               | FE 2024 (normalized)   |
-|-----------------------|-----------------------------------|------------------------|------------------------|
-| Page size             | A4 (595.3×841.9 pt)               | A4 (595.3×841.9 pt)   | A4 (595.3×841.9 pt)    |
-| Left margin           | ~70.8 pt (~1″)                    | ~70.8 pt               | ~70.8 pt               |
-| Right margin          | ~48.1 pt                          | ~48.1 pt               | ~48.1 pt               |
-| Top margin            | ~56.3 pt                          | ~56.3 pt               | ~56.3 pt               |
-| Bottom edge           | ~59–63 pt                         | ~62.9 pt               | ~59–63 pt              |
-| Text area             | ~476 × 723 pt                     | ~476 × 723 pt          | ~476 × 723 pt          |
-| Paper code            | `PC####` (no hyphen)              | `P####`                | `PC-####` or `PD####` |
-| Producer              | Distiller 11.0 + iTextSharp 5.5.9 | iTextSharp 5.5.9      | Distiller 11.0 / cairo |
+| Property     | Main Pattern (2019/2015 SE/TE/BE) | BE 2012             | FE 2024 (normalized)   |
+| ------------ | --------------------------------- | ------------------- | ---------------------- |
+| Page size    | A4 (595.3×841.9 pt)               | A4 (595.3×841.9 pt) | A4 (595.3×841.9 pt)    |
+| Left margin  | ~70.8 pt (~1″)                    | ~70.8 pt            | ~70.8 pt               |
+| Right margin | ~48.1 pt                          | ~48.1 pt            | ~48.1 pt               |
+| Top margin   | ~56.3 pt                          | ~56.3 pt            | ~56.3 pt               |
+| Bottom edge  | ~59–63 pt                         | ~62.9 pt            | ~59–63 pt              |
+| Text area    | ~476 × 723 pt                     | ~476 × 723 pt       | ~476 × 723 pt          |
+| Paper code   | `PC####` (no hyphen)              | `P####`             | `PC-####` or `PD####`  |
+| Producer     | Distiller 11.0 + iTextSharp 5.5.9 | iTextSharp 5.5.9    | Distiller 11.0 / cairo |
 
 **Layout structure:**
+
 ```
 Total No. of Questions : N]                     SEAT No. : [number]
 [Paper Code]                                    [Total No. of Pages : N]
@@ -115,9 +116,10 @@ Time : [X] Hours]                               [Max. Marks : XX]
 Instructions to the candidates:
   1) [Instruction 1]
   2) [Instruction 2]
-  ```
+```
 
 **Typographic Rules:**
+
 - Paper number — **bold**, centered, larger than body
 - Subject name — **ALL CAPS**, bold
 - Time/marks — **bold**, left/right justified on same line

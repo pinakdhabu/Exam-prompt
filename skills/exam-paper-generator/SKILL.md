@@ -50,20 +50,21 @@ extracted from actual SPPU question papers (FE/SE/TE/BE, 2012/2015/2019/2024 pat
 
 **Page Properties:**
 
-| Property              | FE/SE/TE/BE 2019 & 2015 Pattern   | BE 2012 Pattern          | SE 2012 Pattern           | FE 2024 Pattern (normalized) |
-|-----------------------|------------------------------------|--------------------------|---------------------------|------------------------------|
-| Page size             | A4 (595.3×841.9 pt / 8.27×11.69″) | A4 (595.3×841.9 pt)     | Letter (612×792 pt)       | A4 (595.3×841.9 pt)          |
-| Left margin           | ~70.8 pt (~1″)                     | ~70.8 pt                 | ~86.5 pt                  | ~70.8 pt                     |
-| Right margin          | ~48.1 pt                           | ~48.1 pt                 | varies                    | ~48.1 pt                     |
-| Top margin            | ~56.3 pt                           | ~56.3 pt                 | ~114.6 pt                 | ~56.3 pt                     |
-| Bottom edge           | ~59–63 pt                          | ~62.9 pt                 | ~194.5 pt                 | ~59–63 pt                    |
-| Text area             | ~476 × 723 pt                      | ~476 × 723 pt            | varies                    | ~476 × 723 pt                |
-| Paper code format     | `PC####` (no hyphen, e.g. PC1675)  | `P####` (e.g. P3220)    | —                         | `PC-####` or `PD####`        |
-| Paper number format   | `[XXXX]-XXX` (e.g. [6352]-35)      | `[XXXX]-XXX`            | —                         | `[XXXX]-XXX` or `[XXXX]-XXXX` |
-| Creator               | Adobe PageMaker 7.0                | — (Microsoft Print)     | PDFCreator 1.7.1          | Adobe PageMaker 7.0 / cairo 1.18.4 |
-| Producer              | Acrobat Distiller 11.0 + iTextSharp 5.5.9 | iTextSharp 5.5.9 | GPL Ghostscript 9.07 + iTextSharp 5.2.1 | Acrobat Distiller 11.0 / cairo 1.18.4 |
+| Property            | FE/SE/TE/BE 2019 & 2015 Pattern           | BE 2012 Pattern      | SE 2012 Pattern                         | FE 2024 Pattern (normalized)          |
+| ------------------- | ----------------------------------------- | -------------------- | --------------------------------------- | ------------------------------------- |
+| Page size           | A4 (595.3×841.9 pt / 8.27×11.69″)         | A4 (595.3×841.9 pt)  | Letter (612×792 pt)                     | A4 (595.3×841.9 pt)                   |
+| Left margin         | ~70.8 pt (~1″)                            | ~70.8 pt             | ~86.5 pt                                | ~70.8 pt                              |
+| Right margin        | ~48.1 pt                                  | ~48.1 pt             | varies                                  | ~48.1 pt                              |
+| Top margin          | ~56.3 pt                                  | ~56.3 pt             | ~114.6 pt                               | ~56.3 pt                              |
+| Bottom edge         | ~59–63 pt                                 | ~62.9 pt             | ~194.5 pt                               | ~59–63 pt                             |
+| Text area           | ~476 × 723 pt                             | ~476 × 723 pt        | varies                                  | ~476 × 723 pt                         |
+| Paper code format   | `PC####` (no hyphen, e.g. PC1675)         | `P####` (e.g. P3220) | —                                       | `PC-####` or `PD####`                 |
+| Paper number format | `[XXXX]-XXX` (e.g. [6352]-35)             | `[XXXX]-XXX`         | —                                       | `[XXXX]-XXX` or `[XXXX]-XXXX`         |
+| Creator             | Adobe PageMaker 7.0                       | — (Microsoft Print)  | PDFCreator 1.7.1                        | Adobe PageMaker 7.0 / cairo 1.18.4    |
+| Producer            | Acrobat Distiller 11.0 + iTextSharp 5.5.9 | iTextSharp 5.5.9     | GPL Ghostscript 9.07 + iTextSharp 5.2.1 | Acrobat Distiller 11.0 / cairo 1.18.4 |
 
 **Common Layout Elements (all patterns):**
+
 ```
 [Left-aligned header]                           [Right-aligned header]
 Total No. of Questions : N]                     SEAT No. : [number]
@@ -85,6 +86,7 @@ Instructions to the candidates:
 ```
 
 **Typographic Rules:**
+
 - Paper number like `[6352]-35` — **bold**, centered, larger than body
 - Subject name — **ALL CAPS**, bold
 - Pattern/semester info — in **parentheses**, regular weight
@@ -96,11 +98,13 @@ Instructions to the candidates:
 - OR separator — `**OR**` centered on its own line
 
 **Mark Structure (SPPU 2019 Pattern):**
+
 - End Sem: 70 marks, 2.5 hrs, 8 questions (4 OR pairs), single compulsory at Q.1
 - In Sem: 30 marks, 1 hr, 3 questions (all compulsory)
 - Each question: 2–3 sub-questions with marks [2]–[8] each
 
 **Question body format:**
+
 ```
 **Q1)** State the following with justification.                      [6]
     a) [statement]                                                   [2]
