@@ -43,6 +43,77 @@ Neat diagrams mandatory, figures to right indicate full marks, assume suitable d
 | Time           | 2½ Hours               |
 | Per Unit       | ~14 marks              |
 
+### SPPU Question Paper — Real PDF Style Reference (from 1225+ PDFs)
+
+When generating an SPPU-style question paper for PDF output, replicate these exact layout properties
+extracted from actual SPPU question papers (FE/SE/TE/BE, 2012/2015/2019/2024 patterns):
+
+**Page Properties:**
+
+| Property              | FE/SE/TE/BE 2019 & 2015 Pattern   | BE 2012 Pattern          | SE 2012 Pattern           | FE 2024 Pattern (normalized) |
+|-----------------------|------------------------------------|--------------------------|---------------------------|------------------------------|
+| Page size             | A4 (595.3×841.9 pt / 8.27×11.69″) | A4 (595.3×841.9 pt)     | Letter (612×792 pt)       | A4 (595.3×841.9 pt)          |
+| Left margin           | ~70.8 pt (~1″)                     | ~70.8 pt                 | ~86.5 pt                  | ~70.8 pt                     |
+| Right margin          | ~48.1 pt                           | ~48.1 pt                 | varies                    | ~48.1 pt                     |
+| Top margin            | ~56.3 pt                           | ~56.3 pt                 | ~114.6 pt                 | ~56.3 pt                     |
+| Bottom edge           | ~59–63 pt                          | ~62.9 pt                 | ~194.5 pt                 | ~59–63 pt                    |
+| Text area             | ~476 × 723 pt                      | ~476 × 723 pt            | varies                    | ~476 × 723 pt                |
+| Paper code format     | `PC####` (no hyphen, e.g. PC1675)  | `P####` (e.g. P3220)    | —                         | `PC-####` or `PD####`        |
+| Paper number format   | `[XXXX]-XXX` (e.g. [6352]-35)      | `[XXXX]-XXX`            | —                         | `[XXXX]-XXX` or `[XXXX]-XXXX` |
+| Creator               | Adobe PageMaker 7.0                | — (Microsoft Print)     | PDFCreator 1.7.1          | Adobe PageMaker 7.0 / cairo 1.18.4 |
+| Producer              | Acrobat Distiller 11.0 + iTextSharp 5.5.9 | iTextSharp 5.5.9 | GPL Ghostscript 9.07 + iTextSharp 5.2.1 | Acrobat Distiller 11.0 / cairo 1.18.4 |
+
+**Common Layout Elements (all patterns):**
+```
+[Left-aligned header]                           [Right-aligned header]
+Total No. of Questions : N]                     SEAT No. : [number]
+[Paper Code]                                    [Total No. of Pages : N]
+
+           [Paper Number] e.g., [6352]-35
+           [Program Name] e.g., S.E. (Computer Engineering)
+           [SUBJECT NAME IN ALL CAPS]
+           (Pattern) (Semester) (Subject Code)
+
+Time : [X] Hours]                               [Max. Marks : XX]
+
+Instructions to the candidates:
+  1) [Instruction 1]
+  2) [Instruction 2]
+  ...
+
+[Question body with marks in brackets]
+```
+
+**Typographic Rules:**
+- Paper number like `[6352]-35` — **bold**, centered, larger than body
+- Subject name — **ALL CAPS**, bold
+- Pattern/semester info — in **parentheses**, regular weight
+- Time and marks — **bold**, same line, left/right justified
+- Instructions — numbered with `)`, indent 3 spaces
+- Question numbers — **bold** like `**Q1)**` or `**Q.1**`
+- Sub-question labels — lowercase `a)` `b)` `c)`, bold, indent
+- Marks — in `[N]` brackets after question text, right-aligned or inline
+- OR separator — `**OR**` centered on its own line
+
+**Mark Structure (SPPU 2019 Pattern):**
+- End Sem: 70 marks, 2.5 hrs, 8 questions (4 OR pairs), single compulsory at Q.1
+- In Sem: 30 marks, 1 hr, 3 questions (all compulsory)
+- Each question: 2–3 sub-questions with marks [2]–[8] each
+
+**Question body format:**
+```
+**Q1)** State the following with justification.                      [6]
+    a) [statement]                                                   [2]
+    b) [statement]                                                   [2]
+    c) [statement]                                                   [2]
+
+**OR**
+
+**Q2)** a) [question text]                                            [6]
+        b) [question text]                                            [6]
+        c) [question text]                                            [6]
+```
+
 **Structure:** Each unit has one OR pair. Q1/Q2 (Unit 1), Q3/Q4 (Unit 2), Q5/Q6 (Unit 3), Q7/Q8
 (Unit 4), Q9/Q10 (Unit 5).
 
