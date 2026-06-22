@@ -46,16 +46,7 @@ jobs:
         run: |
           cd universities
           if command -v python3 &>/dev/null; then
-            python3 -c "
-import json
-reg = json.load(open('university-registry.json'))
-for u in reg.get('universities', []):
-    d = u.get('directory', '')
-    if d and not __import__('os').path.isdir(d):
-        print(f'WARN: registry entry {u[\"id\"]} -> {d}/ not found on disk')
-    else:
-        print(f'OK: {u[\"id\"]} -> {d}/ exists')
-"
+            python3 -c "import json, os; reg=json.load(open('university-registry.json')); [print(f'WARN: {u[\"id\"]} -> {u.get(\"directory\",\"\")}/ not found') if u.get('directory') and not os.path.isdir(u['directory']) else print(f'OK: {u[\"id\"]} -> {u.get(\"directory\",\"\")}/ exists') for u in reg.get('universities', [])]"
           else
             echo "WARN: python3 not available, skipping deep validation"
           fi

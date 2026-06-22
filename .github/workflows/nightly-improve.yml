@@ -59,16 +59,8 @@ jobs:
       - name: Check for stale dependencies
         id: deps
         run: |
-          if [ -f package.json ] && [ -f package-lock.json ]; then
-            python3 -c "
-import json
-pkg = json.load(open('package.json'))
-lock = json.load(open('package-lock.json'))
-if pkg.get('dependencies', {}) or pkg.get('devDependencies', {}):
-    print('dependencies:found')
-else:
-    print('dependencies:none')
-" 2>/dev/null || echo "WARN: could not check dependencies"
+          if [ -f package.json ]; then
+            python3 -c "import json; d=json.load(open('package.json')); print('deps:found' if d.get('dependencies') or d.get('devDependencies') else 'deps:none')" 2>/dev/null || echo "WARN: could not check dependencies"
           fi
 
       - name: Check for TODO/FIXME/HACK comments
