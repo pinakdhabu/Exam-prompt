@@ -1,14 +1,18 @@
 # SPPU Previous Year Question Papers — Index
 
-**Generated:** 2026-06-06 17:20:06 **Source:** `~/Downloads/Computer Engineering` **Total PDFs:**
-563
-
-> **Cross-platform note:** This index was generated from `~/Downloads/Computer Engineering/`. For
-> other platforms, PYQs may also be downloaded via `node scripts/fetch-qp.js <subject>` which stores
-> files in `<project>/pyq-downloads/`.
-
-> ⚠️ These PDFs are scanned images (no extractable text layer). Use OCR (e.g., `tesseract`) via
-> `scripts/process-document.sh` for text extraction.
+> **Note:** This index is generated locally from your own PYQ collection. To generate it, run:
+> ```bash
+> bash scripts/pyq-index.sh --path <your-pyq-directory>
+> ```
+>
+> PYQs can also be collected automatically:
+> - **LLM web search** (primary, any university): AI agent searches the web and writes structured
+>   markdown files to `pyq-index/{subject}/*.md`
+> - **Automated fetch** (SPPU only): `node scripts/fetch-qp.js <subject>` downloads PDFs to
+>   `pyq-downloads/`
+>
+> ⚠️ Downloaded PDFs may be scanned images (no extractable text layer). Use OCR (e.g., `tesseract`)
+> via `scripts/process-document.sh` for text extraction.
 
 ---
 

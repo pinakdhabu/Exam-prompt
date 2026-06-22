@@ -6,8 +6,8 @@
 # Students run this after downloading any question paper.
 #
 # Options:
-#   bash scripts/submit-pyq.sh ~/Downloads/DBMS-2024-QP.pdf
-#   bash scripts/submit-pyq.sh ~/Downloads/DBMS-2024-QP.pdf "Database Management Systems"
+#   bash scripts/submit-pyq.sh path/to/DBMS-2024-QP.pdf
+#   bash scripts/submit-pyq.sh path/to/DBMS-2024-QP.pdf "Database Management Systems"
 #   bash scripts/submit-pyq.sh --help
 
 set -euo pipefail
@@ -39,9 +39,9 @@ if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
   echo "  --email          Submit via email instead of GitHub (for non-devs)"
   echo ""
   echo "Examples:"
-  echo "  bash scripts/submit-pyq.sh ~/Downloads/DBMS_2024_QP.pdf"
-  echo "  bash scripts/submit-pyq.sh ~/Downloads/DBMS_2024_QP.pdf \"Database Management Systems\""
-  echo "  bash scripts/submit-pyq.sh --email ~/Downloads/DBMS_2024_QP.pdf"
+  echo "  bash scripts/submit-pyq.sh path/to/DBMS_2024_QP.pdf"
+  echo "  bash scripts/submit-pyq.sh path/to/DBMS_2024_QP.pdf \"Database Management Systems\""
+  echo "  bash scripts/submit-pyq.sh --email path/to/DBMS_2024_QP.pdf"
   exit 0
 fi
 

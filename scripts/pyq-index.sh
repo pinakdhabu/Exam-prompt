@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# scripts/pyq-index.sh — SPPU PYQ Index Generator
+# scripts/pyq-index.sh — SPPU PYQ Index Generator (LOCAL ONLY)
 #
-# Scans the ~/Downloads/Computer Engineering/ folder and generates a complete,
-# organized markdown index of all previous year question paper PDFs.
+# Scans a local PDF collection and generates an organized markdown index.
+# This is a LOCAL utility script — the generated index contains machine-specific
+# paths and should NOT be committed to the repo.
 #
 # Usage:
-#   ./scripts/pyq-index.sh                          # Generate index (default path)
-#   ./scripts/pyq-index.sh --path ~/Downloads        # Custom root path
-#   ./scripts/pyq-index.sh --out pyq-index/INDEX.md  # Custom output path
-#   ./scripts/pyq-index.sh --stats                   # Stats-only mode
-#   ./scripts/pyq-index.sh --refresh                 # Regenerate index from scratch
+#   ./scripts/pyq-index.sh --path <pyq-directory>                # Generate index
+#   ./scripts/pyq-index.sh --path path/to/pyq-dir/ --stats       # Stats-only mode
+#   ./scripts/pyq-index.sh --path path/to/pyq-dir/ --out out.md  # Custom output
+#   ./scripts/pyq-index.sh --path path/to/pyq-dir/ --refresh     # Regenerate
 # ==============================================================================
 
 set -euo pipefail

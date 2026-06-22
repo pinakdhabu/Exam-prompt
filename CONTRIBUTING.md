@@ -189,12 +189,14 @@ bash scripts/validate-skills.sh my-skill
 
 PYQ index entries go in `pyq-index/SKILL.md`.
 
-The actual PYQ PDFs are **not stored in this repo** (they're too large). Instead, add references to
-the local filesystem:
+The actual PYQ PDFs are **not stored in this repo** (they're too large). Instead:
 
-- **Path**: `~/Downloads/<collection>/...`
-- **Format**: `Subject | Year | Month | Link`
-- Follow the existing table format in `pyq-index/SKILL.md`
+1. **LLM web search (recommended)** — the AI agent searches the web, finds question papers, and
+   writes structured markdown to `pyq-index/{subject}/*.md`. This is the primary way to add PYQs.
+2. **Automated fetch (SPPU)** — use `node scripts/fetch-qp.js <subject>` to download PDFs to
+   `pyq-downloads/`.
+3. **Update the index** — add entries to the tables in `pyq-index/SKILL.md` in the format:
+   `Subject | Exam Month/Year | Papers Available`
 
 ---
 

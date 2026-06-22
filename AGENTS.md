@@ -3,7 +3,7 @@
 
 <skill>
 <name>universal-agent-normalizer</name>
-<description>Universal agent normalizer that detects which AI coding agent is running (OpenCode, Claude Code, Cursor, Windsurf, Cline, Aider, GitHub Copilot, Continue.dev) and maps the Exam Prompt skill system to the agent's native configuration format. Ensures every agent can discover, load, and invoke all 26+ skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load.
+<description>Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt skill system to the agent's native configuration format. Supports 20+ coding agents as of June 2026. Ensures every agent can discover, load, and invoke all 27+ skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load.
 </description>
 <location>project</location>
 </skill>
@@ -118,7 +118,7 @@
 
 <skill>
 <name>universal-qp-fetcher</name>
-<description>Auto-fetches real SPPU question papers from sppuquestionpapers.com, generates university-style question papers with proper SPPU formatting, fonts, and layout. Can generate question papers for ANY subject by fetching from the web. Works offline too if PYQs are already downloaded. Covers ALL SPPU branches, ALL semesters, ALL patterns (2019, 2024, 2015). Supports auto-download via Playwright browser automation.
+<description>Fetches real question papers for ANY university worldwide via AI web search, or generates university-style question papers with proper formatting. Uses LLM web search as the primary method (no single-site dependency, works for any university). Falls back to automated scripts for SPPU. Supports ALL universities, ALL branches, ALL patterns, ALL semesters.
 </description>
 <location>project</location>
 </skill>

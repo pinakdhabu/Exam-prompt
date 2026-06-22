@@ -1,11 +1,10 @@
 ---
 name: universal-qp-fetcher
 description: >
-  Auto-fetches real SPPU question papers from sppuquestionpapers.com, generates university-style
-  question papers with proper SPPU formatting, fonts, and layout. Can generate question papers for
-  ANY subject by fetching from the web. Works offline too if PYQs are already downloaded. Covers ALL
-  SPPU branches, ALL semesters, ALL patterns (2019, 2024, 2015). Supports auto-download via
-  Playwright browser automation.
+  Fetches real question papers for ANY university worldwide via AI web search, or generates
+  university-style question papers with proper formatting. Uses LLM web search as the primary method
+  (no single-site dependency, works for any university). Falls back to automated scripts for SPPU.
+  Supports ALL universities, ALL branches, ALL patterns, ALL semesters.
 ---
 
 # Universal QP Fetcher & Generator
@@ -14,19 +13,113 @@ description: >
 
 This skill provides two capabilities:
 
-1. **Fetch**: Downloads real SPPU question papers from sppuquestionpapers.com using
-   `scripts/fetch-qp.js`
-2. **Generate**: Creates university-style question papers with proper SPPU formatting (fonts,
-   layout, instructions, OR structure, CO mapping, Bloom's levels)
+1. **Fetch**: Discovers and structures real question papers via LLM web search (primary) or
+   automated download scripts (fallback for SPPU)
+2. **Generate**: Creates university-style question papers with proper formatting, instructions,
+   OR structure, CO mapping, Bloom's levels
 
-Works for ANY SPPU branch (Computer, ENTC, Mechanical, Civil, Electrical, IT) and ANY semester
-(1-8).
+Works for ANY university worldwide, ANY branch, ANY semester.
 
 ---
 
 ## How It Works
 
-### Option A: Fetch Real Question Papers
+### Option A (PRIMARY): LLM Web Search → Structured Markdown
+
+Use the LLM's web search capability to discover question papers for any subject/university. This
+is the recommended approach — no single-site dependency, works for any university globally.
+
+**Process:**
+1. LLM searches the web for question papers matching: `"{subject}" "{university}" question paper {year}`
+2. Also searches university portals, educational sites, and PYQ repositories
+3. Extracts actual question text from search results (no PDF downloads needed)
+4. Writes structured markdown to the project's PYQ index
+
+**Output format** (`pyq-index/{university-slug}/{subject-slug}.md`):
+
+```markdown
+---
+subject: Database Management Systems
+university: Savitribai Phule Pune University
+pattern: 2019
+collected: 2026-06-22
+sources:
+  - type: web
+    url: https://example.com/pyq/dbms-2024
+  - type: web
+    url: https://example.com/pyq/dbms-2023
+---
+
+# DBMS — Previous Year Question Papers (SPPU 2019 Pattern)
+
+## End Semester Examination
+
+### April 2024
+**Total Marks: 70 | Time: 2.5 hrs**
+
+**Q.1** Explain DBMS architecture with neat diagram. (10M)
+**Q.2** a) What is normalization? Explain 3NF and BCNF with examples. (8M)
+       b) Write SQL queries for given relational schema. (7M)
+...
+
+### November 2023
+...
+
+## In Semester Examination
+
+### October 2023
+**Total Marks: 30 | Time: 1 hr**
+
+**Q.1** ...
+```
+
+**Search strategy per university type:**
+
+| University Type        | Recommended Search Queries                                                              |
+|------------------------|-----------------------------------------------------------------------------------------|
+| **SPPU / Pune**        | See "SPPU Internet Sources" section below                                                |
+| **VTU**                | `"{subject}" "VTU" "question paper"` or `site:vturesults.com {subject}`                |
+| **JNTU**               | `"{subject}" "JNTU" "question paper"` or `site:jnturesults.com {subject}`              |
+| **Mumbai University**  | `"{subject}" "Mumbai University" "question paper"`                                     |
+| **IITs / NITs**        | `"{subject}" "IIT {name}" "exam paper"`                                                |
+| **US/UK Universities** | `"{subject}" "past exam papers" "{university}"`                                        |
+| **Generic**            | `"{subject}" "previous year question paper" "{year}"` then extract university from page |
+
+### SPPU Internet Sources
+
+These are the **known working sources** for SPPU question papers. LLM should search these in order
+until enough papers are found:
+
+| # | Source | URL Pattern | Best For |
+|---|--------|-------------|----------|
+| 1 | **SPPU Question Papers** | `https://sppuquestionpapers.com/be/{branch}/semester-{N}` | Per-semester papers for all branches |
+| 2 | **SPPU QP Mirror** | `https://sppuquestionpaper.page.gd/program/be/` | Direct PDF links, mirror of #1 |
+| 3 | **Official SPPU Portal** | `http://collegecirculars.unipune.ac.in/sites/examdocs/` | Official merged PDFs per exam season |
+| 4 | **SPPU Study Hub** | `https://www.sppustudyhub.in/` | Notes + question papers |
+| 5 | **Last Moment Tuitions** | `https://lastmomenttuitions.com/sppu/question-papers/` | Per-branch, per-year papers |
+| 6 | **GitHub (Sppuqp)** | `https://github.com/pinakdhabu/Sppuqp` | Merged PDFs (FE, SE, TE, BE) |
+| 7 | **KSKA Git (Gitea)** | `https://git.kska.io/sppu-te-comp-content/` | Per-subject organized repos with solved papers |
+| 8 | **Filo** | `https://askfilo.com/higher-education/savitribai-phule-pune-university/` | PYQ solutions with answers |
+| 9 | **Collegedunia** | `https://collegedunia.com/university/25732-savitribai-phule-pune-university-sppu-pune` | Old exam papers index |
+
+**LLM process for each source:**
+1. Search the URL with the subject name
+2. If the page lists individual paper links, open each link and read the PDF directly
+3. Extract question text, marks, exam type from the PDF
+4. If direct PDF reading fails, search for the same paper on another source
+5. Write collected questions as structured markdown
+
+**Branch slug mapping for sppuquestionpapers.com:**
+```
+computer-engineering, entc, mechanical-engineering, civil-engineering,
+electrical-engineering, information-technology
+```
+
+**Semester URL pattern:** `https://sppuquestionpapers.com/be/{branch}/semester-{N}` (N = 1-8)
+
+### Option B (FALLBACK): Automated Scripts (SPPU only)
+
+If web search fails or SPPU-specific batch downloads are needed, use the automated fetcher:
 
 ```bash
 # Fetch all available DBMS question papers
@@ -35,20 +128,8 @@ node scripts/fetch-qp.js dbms
 # Fetch DBMS papers from 2024 only
 node scripts/fetch-qp.js dbms --year 2024
 
-# Get the latest paper only
-node scripts/fetch-qp.js toc --latest
-
-# List all available years for a subject
-node scripts/fetch-qp.js dbms --list
-
-# List all subjects available
-node scripts/fetch-qp.js --list-subjects
-
 # Fetch all Semester 5 Computer Engineering papers
 node scripts/fetch-qp.js --semester 5
-
-# Fetch from a different branch
-node scripts/fetch-qp.js --branch entc dbms
 ```
 
 ### Option B: Generate University-Style Question Paper

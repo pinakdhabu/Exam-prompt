@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# scripts/pyq-stats.sh — SPPU PYQ Collection Statistics
+# scripts/pyq-stats.sh — SPPU PYQ Collection Statistics (LOCAL ONLY)
 #
 # Generates real statistics from the SPPU PYQ PDF collection.
 # Uses file metadata (names, dates, counts) — no OCR needed.
 #
 # Usage:
-#   ./scripts/pyq-stats.sh                                    # Full stats report
-#   ./scripts/pyq-stats.sh --subjects                         # Per-subject breakdown
-#   ./scripts/pyq-stats.sh --gaps                             # Find subjects with few papers
-#   ./scripts/pyq-stats.sh --json                             # Machine-readable JSON output
-#   ./scripts/pyq-stats.sh --path ~/Downloads/Other\ branch   # Analyze a different directory
+#   ./scripts/pyq-stats.sh --path <pyq-directory>                # Stats with custom path
+#   ./scripts/pyq-stats.sh --path path/to/pyq-dir/ --subjects    # Per-subject breakdown
+#   ./scripts/pyq-stats.sh --path path/to/pyq-dir/ --gaps        # Find subjects with few papers
+#   ./scripts/pyq-stats.sh --path path/to/pyq-dir/ --json        # Machine-readable JSON output
 # ==============================================================================
 
 set -euo pipefail
