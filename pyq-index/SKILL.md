@@ -154,6 +154,37 @@ Browse sidebar to find latest season name.
 4. Try next source if a specific paper isn't found
 5. Write all collected papers as structured markdown
 
+### SPPU Hyperawareness — All Official Portals
+
+LLM must be aware of ALL SPPU portals, not just PYQs. Links change every season — discover
+dynamically by browsing base sites.
+
+**Base domains:**
+| Domain | What's There |
+|--------|-------------|
+| `collegecirculars.unipune.ac.in` | Timetables, exam docs, syllabi (2016-2026), academic calendar, circulars |
+| `onlineresults.unipune.ac.in` | Result checking portals |
+| `unipune.ac.in` | Main site, revaluation, circular search |
+| `exam.unipune.ac.in/Pages/PreviousQuestionPapers.html` | Alternative official QP source |
+| `sppuresult.vercel.app` | Community result viewer (live from SPPU) |
+
+**Syllabus:** Browse `.../sites/documents/` → `Syllabus {YEAR}` folders (2016–2026).
+
+**When user asks about SPPU, route to the right portal:**
+| User wants | Where to look |
+|------------|--------------|
+| PYQs | Official portal dynamic discovery (above) |
+| Results | `sppuresult.vercel.app` or `onlineresults.unipune.ac.in` |
+| Syllabus | `collegecirculars.unipune.ac.in/sites/documents/` |
+| Timetable | `Time%20Tables%20{SEASON}%20{YEAR}/` on examdocs |
+| Revaluation | `unipune.ac.in/university_files/Reval_Online_Results_online.htm` |
+| Academic calendar | `.../sites/documents/Academic%20Calender/` |
+| Circulars | `collegecirculars.unipune.ac.in/SitePages/Home.aspx` |
+| Alt QP source | `exam.unipune.ac.in/Pages/PreviousQuestionPapers.html` |
+
+**For other universities:** Same approach — LLM dynamically discovers portals by searching
+`"{university}" {resource}`. If not found → ask user for links/files.
+
 ---
 
 ## PYQ Coverage Per Subject

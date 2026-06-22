@@ -6,6 +6,24 @@
 
 ---
 
+## CI/CD Status (Live)
+
+> Last checked: 2026-06-22 | All 7 workflows passing ✅
+
+| Workflow | Latest Run | Notes |
+|----------|-----------|-------|
+| validate-skills.yml | ✅ Pass | Validates frontmatter, cross-refs, formatting |
+| format-markdown.yml | ✅ Pass | Auto-fixes whitespace/formatting |
+| sync-skills.yml | ✅ Pass | Auto-registers new skills |
+| convert-to-pdf.yml | ✅ Pass | Sample papers → PDF |
+| render-diagrams.yml | ✅ Pass | Renders Mermaid diagrams |
+| pages.yml | ✅ Pass | Deploys docs to GitHub Pages |
+| nightly-improve.yml | ✅ Pass | Midnight self-heal (orphans, deps, website checks) |
+
+**⚠️ If any workflow is failing:** Stop and fix before making further changes. Run `gh run list --limit 5` or check the Actions tab. The most common failures are YAML parsing errors (unindented `|` blocks) or stale `skills.json`.
+
+---
+
 ## What's Going On in This Repo (AI Agent Orientation)
 
 This is **Exam Prompt** — a universal exam preparation system that works for *any university worldwide*. Here's the big picture:

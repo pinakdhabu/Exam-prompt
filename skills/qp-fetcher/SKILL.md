@@ -198,6 +198,45 @@ node scripts/fetch-qp.js dbms --year 2024
 node scripts/fetch-qp.js --semester 5
 ```
 
+### SPPU Hyperawareness — All Official Portals
+
+For SPPU, the LLM must be aware of all these portals and use them dynamically. Links change every
+exam/syllabus season — always discover dynamically by browsing the base site.
+
+**Base domains:**
+- `http://collegecirculars.unipune.ac.in/` — Timetables, exam docs, syllabi, academic calendar
+- `http://onlineresults.unipune.ac.in/` — Result checking portals
+- `https://unipune.ac.in/` — Main university website
+- `https://exam.unipune.ac.in/Pages/PreviousQuestionPapers.html` — Alternative QP official source
+- `https://sppuresult.vercel.app/` — Community result viewer (fetches live from SPPU)
+
+**Syllabus archives (dynamic discovery):**
+Browse `http://collegecirculars.unipune.ac.in/sites/documents/` sidebar → `Syllabus {YEAR}` folders.
+Pattern: `http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%20{YEAR}/Forms/AllItems.aspx`
+or `.../Syllabus{YEAR}/Forms/AllItems.aspx` (encoding varies). Available years: 2016–2026.
+
+**What to do when user asks about SPPU:**
+1. Check `pyq-index/` for existing markdown first
+2. If QPs needed → use dynamic discovery on official portal (`collegecirculars.unipune.ac.in`)
+3. If results needed → use `sppuresult.vercel.app` or `onlineresults.unipune.ac.in`
+4. If syllabus needed → browse collegecirculars syllabi folders
+5. If timetables needed → browse `Time%20Tables%20{SEASON}%20{YEAR}/` on examdocs
+6. If revaluation needed → `unipune.ac.in/university_files/Reval_Online_Results_online.htm`
+7. If academic calendar needed → `collegecirculars.unipune.ac.in/sites/documents/Academic%20Calender/`
+8. If circulars needed → `collegecirculars.unipune.ac.in/SitePages/Home.aspx`
+9. If QP alternative needed → `exam.unipune.ac.in/Pages/PreviousQuestionPapers.html`
+10. Always write back to `pyq-index/` for future offline use
+
+**⚠️ All URLs above can change.** If a link fails, browse the parent site to find the new location.
+
+### For other universities:
+Same approach — LLM dynamically discovers portals by searching:
+`"{university}" syllabus`, `"{university}" exam timetable`, `"{university}" result portal`,
+`"{university}" question papers`, `"{university}" academic calendar`
+If not found → ask user for links/files.
+
+---
+
 ### Option B: Generate University-Style Question Paper
 
 When the user says "Generate a question paper for [subject]", the AI generates a properly formatted
