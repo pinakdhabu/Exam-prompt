@@ -144,7 +144,7 @@ generate_cursor_mdc() {
   cat > "$file" << 'MDCEOF'
 ---
 description: Global Exam Prompt rules for Cursor IDE
-globs: 
+globs:
 ---
 
 # Exam Prompt — Global Rules

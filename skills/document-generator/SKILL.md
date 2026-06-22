@@ -16,12 +16,13 @@ for creating exam-ready printed materials — unit notes, PYQ solutions, syllabu
 sheets, and master solutions.
 
 Supports **Node.js** (Playwright — primary, renders LaTeX via KaTeX) and **Python** (weasyprint —
-fallback, Unicode math only). Includes a **QP (Question Paper) variant** that renders LaTeX equations
-via KaTeX and uses Times New Roman for authentic exam-paper formatting.
+fallback, Unicode math only). Includes a **QP (Question Paper) variant** that renders LaTeX
+equations via KaTeX and uses Times New Roman for authentic exam-paper formatting.
 
-> **Dependency note:** The core MD→QP-PDF pipeline runs on **Node.js only** (`marked` + `playwright`).
-> Python is **optional** — only needed for PDF text extraction (`pdf-extract.py`) or the weasyprint fallback.
-> See [`DEPENDENCIES.md`](../../DEPENDENCIES.md) for full install instructions.
+> **Dependency note:** The core MD→QP-PDF pipeline runs on **Node.js only** (`marked` +
+> `playwright`). Python is **optional** — only needed for PDF text extraction (`pdf-extract.py`) or
+> the weasyprint fallback. See [`DEPENDENCIES.md`](../../DEPENDENCIES.md) for full install
+> instructions.
 
 ---
 
@@ -158,11 +159,15 @@ The CSS template can be customized by editing the script:
 
 ## Session Config
 
-This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+This skill integrates with the session config system (`deps/session-profile.json`). Before
+executing, check for an existing session profile:
 
-- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
-- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
-- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type`
+  fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run
+  `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused
+  across all skill calls.
 
 ---
 

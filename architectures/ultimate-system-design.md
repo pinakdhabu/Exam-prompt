@@ -2,7 +2,7 @@
 
 > **⚠️ PLANNED ARCHITECTURE — Not Yet Implemented**
 >
-> This document describes a *future* refactored CLI tool with config profiles, browser pooling,
+> This document describes a _future_ refactored CLI tool with config profiles, browser pooling,
 > caching, structured logging, and comprehensive error handling. The **current** pipeline lives in
 > `scripts/convert-to-pdf.js` (single file, Playwright-only, no config layer). See
 > [`DEPENDENCIES.md`](../DEPENDENCIES.md) and `scripts/convert-to-pdf/index.js` for current state.

@@ -158,17 +158,21 @@ Conclusion: The hybrid approach provides the best risk-reward profile, achieving
 
 ## Session Config
 
-This skill integrates with the session config system (`deps/session-profile.json`). Before executing, check for an existing session profile:
+This skill integrates with the session config system (`deps/session-profile.json`). Before
+executing, check for an existing session profile:
 
-- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type` fields to auto-configure the skill.
-- If the file does not exist, fall back to user-provided context or prompt the user to run `setup-exam-prompt` (or `npm run init`) first.
-- Session config eliminates redundant context detection — detection happens once and is reused across all skill calls.
+- If `deps/session-profile.json` exists, read `university`, `subject`, `pattern`, and `exam_type`
+  fields to auto-configure the skill.
+- If the file does not exist, fall back to user-provided context or prompt the user to run
+  `setup-exam-prompt` (or `npm run init`) first.
+- Session config eliminates redundant context detection — detection happens once and is reused
+  across all skill calls.
 
 ---
 
 ## 5. Integration with Other Skills
 
-- **universal-a-plus-answer-writer**: Provides detailed answer writing techniques applied to case study
-  questions
+- **universal-a-plus-answer-writer**: Provides detailed answer writing techniques applied to case
+  study questions
 - **universal-notes-generator**: Supplies theoretical frameworks and models used in case analysis
 - **universal-flashcard-generator**: Creates flashcards for framework steps and analysis techniques

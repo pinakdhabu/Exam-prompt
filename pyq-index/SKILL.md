@@ -19,21 +19,22 @@ This index references a comprehensive collection of **SPPU Previous Year Questio
 
 **PYQ Locations (platform independent):**
 
-| Priority | Source | Location | Contents |
-|----------|--------|----------|----------|
-| 1 | **University PYQ dir** | `<project>/universities/<UNIVERSITY>/PYQs/` | Per-university organized PYQs (future) |
-| 2 | **Downloaded via fetch** | `<project>/pyq-downloads/` | Fetched via `node scripts/fetch-qp.js` |
-| 3 | **Pre-collected (Comp Eng)** | `~/Downloads/Computer Engineering/` | 563 PDFs (SE, TE, BE Computer) |
-| 4 | **Pre-collected (FE)** | `~/Downloads/F.E./` | 35 MB (FE papers) |
-| 5 | **Pre-collected (Other)** | `~/Downloads/Other branch/` | 103 PDFs (all branches) |
-| 6 | **Pre-collected (VL)** | `~/Downloads/VL Computer Engineering/` | 156 MB, 1,080 PDFs |
+| Priority | Source                       | Location                                    | Contents                               |
+| -------- | ---------------------------- | ------------------------------------------- | -------------------------------------- |
+| 1        | **University PYQ dir**       | `<project>/universities/<UNIVERSITY>/PYQs/` | Per-university organized PYQs (future) |
+| 2        | **Downloaded via fetch**     | `<project>/pyq-downloads/`                  | Fetched via `node scripts/fetch-qp.js` |
+| 3        | **Pre-collected (Comp Eng)** | `~/Downloads/Computer Engineering/`         | 563 PDFs (SE, TE, BE Computer)         |
+| 4        | **Pre-collected (FE)**       | `~/Downloads/F.E./`                         | 35 MB (FE papers)                      |
+| 5        | **Pre-collected (Other)**    | `~/Downloads/Other branch/`                 | 103 PDFs (all branches)                |
+| 6        | **Pre-collected (VL)**       | `~/Downloads/VL Computer Engineering/`      | 156 MB, 1,080 PDFs                     |
 
-> **Windows:** Replace `~/Downloads/` with `%USERPROFILE%/Downloads/`.
-> **macOS/Linux:** `~/Downloads/` resolves to `/Users/<user>/Downloads/` or `/home/<user>/Downloads/`.
+> **Windows:** Replace `~/Downloads/` with `%USERPROFILE%/Downloads/`. **macOS/Linux:**
+> `~/Downloads/` resolves to `/Users/<user>/Downloads/` or `/home/<user>/Downloads/`.
 >
 > **University-specific PYQs:** The `universities/` directory contains per-university folders (e.g.,
 > `universities/SAVITRIBAI_PHULE_PUNE_UNIVERSITY/PYQs/`). Place your PYQ PDFs there following the
-> semester/subject structure from the university's `branches/` config. See `universities/_TEMPLATE_/how-to-add.md`.
+> semester/subject structure from the university's `branches/` config. See
+> `universities/_TEMPLATE_/how-to-add.md`.
 
 ---
 

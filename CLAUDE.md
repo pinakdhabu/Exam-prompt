@@ -21,35 +21,35 @@ skill registry.
 workflows, and configuration guides for all major AI coding platforms (Cursor, Windsurf, Aider,
 Cline, Copilot, Continue.dev) — see [`AGENT-GUIDE.md`](AGENT-GUIDE.md).
 
-| Skill                          | File                                           | Purpose                                                          |
-| ------------------------------ | ---------------------------------------------- | ---------------------------------------------------------------- |
-| universal-a-plus-answer-writer | `skills/answer-writer/SKILL.md`                | 10/10 GPA answers — all conditions                               |
-| universal-notes-generator      | `skills/notes-generator/SKILL.md`              | 12+ note formats for any subject                                 |
-| universal-pyq-analyzer         | `skills/pyq-analyzer/SKILL.md`                 | 13 analysis types with stats                                     |
-| universal-imp-topics-generator | `skills/imp-topics-generator/SKILL.md`         | 5 probability levels, 7 time plans                               |
-| universal-assignment-writer    | `skills/assignment-writer/SKILL.md`            | 12 assignment types with marking                                 |
-| universal-exam-paper-generator | `skills/exam-paper-generator/SKILL.md`         | 11+ university paper patterns                                    |
-| universal-sppu-exam-simulator  | `skills/sppu-exam-simulator/SKILL.md`          | Physical exam constraints, moderator checks                      |
-| universal-subject-prompt-bank  | `skills/subject-prompt-bank/SKILL.md`          | 8 discipline templates, 16 samples                               |
-| universal-document-reader      | `skills/universal-document-reader/SKILL.md`    | PDF/DOCX/image to clean text                                     |
-| universal-document-generator   | `skills/document-generator/SKILL.md`           | Markdown to print-ready PDF                                      |
-| universal-university-adapter   | `skills/universal-university-adapter/SKILL.md` | University detection & routing                                   |
-| pyq-index                      | `pyq-index/SKILL.md`                           | PYQ PDF collection index                                         |
-| setup-exam-prompt              | `skills/setup-exam-prompt/SKILL.md`            | First-time project configuration                                 |
-| universal-session-config       | `skills/session-config/SKILL.md`              | Persistent user profile across sessions                          |
-| universal-study-planner        | `skills/study-planner/SKILL.md`               | Personalized study schedules                                     |
-| universal-mcq-practice-generator | `skills/mcq-practice-generator/SKILL.md`    | Exam-style MCQs with explanations                                |
-| universal-flashcard-generator  | `skills/flashcard-generator/SKILL.md`         | Anki/Quizlet/CSV flashcards                                      |
-| universal-formula-sheet-generator | `skills/formula-sheet-generator/SKILL.md`  | Compact formula reference sheets                                 |
-| universal-mind-map-generator   | `skills/mind-map-generator/SKILL.md`          | Visual concept maps and hierarchies                              |
-| universal-case-study-solver    | `skills/case-study-solver/SKILL.md`           | Structured framework-based case study solutions                  |
-| universal-essay-grader         | `skills/essay-grader/SKILL.md`                | Score answers against rubrics                                    |
-| universal-cross-subject-mapper | `skills/cross-subject-mapper/SKILL.md`        | Interdisciplinary topic connections                              |
-| universal-lab-report-writer    | `skills/lab-report-writer/SKILL.md`           | Full lab report templates                                        |
-| universal-last-minute-crammer  | `skills/last-minute-crammer/SKILL.md`         | Emergency prep (12h/6h/3h/1h)                                    |
-| universal-viva-oral-exam-prep  | `skills/viva-oral-exam-prep/SKILL.md`         | Oral exam simulation                                             |
-| universal-qp-fetcher           | `skills/qp-fetcher/SKILL.md`                  | Auto-download PYQs from web                                      |
-| universal-diagram-generator    | `skills/diagram-generator/SKILL.md`           | Mermaid/D2/Graphviz diagrams                                     |
+| Skill                             | File                                           | Purpose                                         |
+| --------------------------------- | ---------------------------------------------- | ----------------------------------------------- |
+| universal-a-plus-answer-writer    | `skills/answer-writer/SKILL.md`                | 10/10 GPA answers — all conditions              |
+| universal-notes-generator         | `skills/notes-generator/SKILL.md`              | 12+ note formats for any subject                |
+| universal-pyq-analyzer            | `skills/pyq-analyzer/SKILL.md`                 | 13 analysis types with stats                    |
+| universal-imp-topics-generator    | `skills/imp-topics-generator/SKILL.md`         | 5 probability levels, 7 time plans              |
+| universal-assignment-writer       | `skills/assignment-writer/SKILL.md`            | 12 assignment types with marking                |
+| universal-exam-paper-generator    | `skills/exam-paper-generator/SKILL.md`         | 11+ university paper patterns                   |
+| universal-sppu-exam-simulator     | `skills/sppu-exam-simulator/SKILL.md`          | Physical exam constraints, moderator checks     |
+| universal-subject-prompt-bank     | `skills/subject-prompt-bank/SKILL.md`          | 8 discipline templates, 16 samples              |
+| universal-document-reader         | `skills/universal-document-reader/SKILL.md`    | PDF/DOCX/image to clean text                    |
+| universal-document-generator      | `skills/document-generator/SKILL.md`           | Markdown to print-ready PDF                     |
+| universal-university-adapter      | `skills/universal-university-adapter/SKILL.md` | University detection & routing                  |
+| pyq-index                         | `pyq-index/SKILL.md`                           | PYQ PDF collection index                        |
+| setup-exam-prompt                 | `skills/setup-exam-prompt/SKILL.md`            | First-time project configuration                |
+| universal-session-config          | `skills/session-config/SKILL.md`               | Persistent user profile across sessions         |
+| universal-study-planner           | `skills/study-planner/SKILL.md`                | Personalized study schedules                    |
+| universal-mcq-practice-generator  | `skills/mcq-practice-generator/SKILL.md`       | Exam-style MCQs with explanations               |
+| universal-flashcard-generator     | `skills/flashcard-generator/SKILL.md`          | Anki/Quizlet/CSV flashcards                     |
+| universal-formula-sheet-generator | `skills/formula-sheet-generator/SKILL.md`      | Compact formula reference sheets                |
+| universal-mind-map-generator      | `skills/mind-map-generator/SKILL.md`           | Visual concept maps and hierarchies             |
+| universal-case-study-solver       | `skills/case-study-solver/SKILL.md`            | Structured framework-based case study solutions |
+| universal-essay-grader            | `skills/essay-grader/SKILL.md`                 | Score answers against rubrics                   |
+| universal-cross-subject-mapper    | `skills/cross-subject-mapper/SKILL.md`         | Interdisciplinary topic connections             |
+| universal-lab-report-writer       | `skills/lab-report-writer/SKILL.md`            | Full lab report templates                       |
+| universal-last-minute-crammer     | `skills/last-minute-crammer/SKILL.md`          | Emergency prep (12h/6h/3h/1h)                   |
+| universal-viva-oral-exam-prep     | `skills/viva-oral-exam-prep/SKILL.md`          | Oral exam simulation                            |
+| universal-qp-fetcher              | `skills/qp-fetcher/SKILL.md`                   | Auto-download PYQs from web                     |
+| universal-diagram-generator       | `skills/diagram-generator/SKILL.md`            | Mermaid/D2/Graphviz diagrams                    |
 
 ## PYQ Collection
 

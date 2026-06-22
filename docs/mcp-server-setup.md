@@ -1,10 +1,13 @@
 # MCP Server Setup
 
-This guide helps you expose the Exam Prompt system as an [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server, making all university skills available to any MCP-compatible AI agent (Claude Desktop, Cursor, VS Code, etc.).
+This guide helps you expose the Exam Prompt system as an
+[MCP (Model Context Protocol)](https://modelcontextprotocol.io) server, making all university skills
+available to any MCP-compatible AI agent (Claude Desktop, Cursor, VS Code, etc.).
 
 ## Option 1: Filesystem MCP (Recommended)
 
-The simplest approach — point your MCP client to the `skills/` directory so the AI can read all SKILL.md files.
+The simplest approach — point your MCP client to the `skills/` directory so the AI can read all
+SKILL.md files.
 
 ### Claude Desktop
 
@@ -83,16 +86,16 @@ Then configure any MCP client to connect to `http://localhost:3100`.
 
 ## Available Tools
 
-| Tool | Description |
-|------|-------------|
-| `list_skills` | List all 26 exam prep skills |
-| `get_skill` | Read a specific SKILL.md by name |
-| `list_universities` | List all configured universities |
-| `get_university_config` | Get a university's config.json |
-| `list_university_branches` | List branches for a university |
-| `get_subjects` | Get subject list for a branch/semester |
-| `detect_university` | Auto-detect university from context |
-| `get_session_profile` | Read current session config |
+| Tool                       | Description                            |
+| -------------------------- | -------------------------------------- |
+| `list_skills`              | List all 26 exam prep skills           |
+| `get_skill`                | Read a specific SKILL.md by name       |
+| `list_universities`        | List all configured universities       |
+| `get_university_config`    | Get a university's config.json         |
+| `list_university_branches` | List branches for a university         |
+| `get_subjects`             | Get subject list for a branch/semester |
+| `detect_university`        | Auto-detect university from context    |
+| `get_session_profile`      | Read current session config            |
 
 ## Auto-Discovery
 
