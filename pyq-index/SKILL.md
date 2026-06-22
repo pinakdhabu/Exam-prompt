@@ -10,26 +10,26 @@ description: >
 
 ## Overview
 
-This index provides Previous Year Question Papers for **SPPU Computer Engineering** (2019–2025)
-via these methods, in priority order:
+This index provides Previous Year Question Papers for **SPPU Computer Engineering** (2019–2025) via
+these methods, in priority order:
 
 1. **LLM Web Search → Structured Markdown (PRIMARY)** — AI agent searches the web, extracts
    questions, writes `.md` files to `pyq-index/{subject}/`. Works for ANY university.
 2. **User-provided material (FALLBACK)** — If LLM cannot find PYQs on the web, ask user for:
    attachments (PDFs/docs), a directory path, or an internet link.
-3. **Automated Fetch Script (SPPU-only)** — `node scripts/fetch-qp.js` downloads PDFs
-   to `pyq-downloads/` from sppuquestionpapers.com.
+3. **Automated Fetch Script (SPPU-only)** — `node scripts/fetch-qp.js` downloads PDFs to
+   `pyq-downloads/` from sppuquestionpapers.com.
 
 **Coverage:** 2019–2025 (SPPU) | **Patterns:** 2019 & 2024
 
 **PYQ Sources (in priority order):**
 
-| Priority | Type                           | Location                      | Contents                                    |
-| -------- | ------------------------------ | ----------------------------- | ------------------------------------------- |
-| 1        | **LLM-collected markdown**     | `pyq-index/{subject}/*.md`    | Structured questions (web-scraped by LLM)   |
-| 2        | **User-provided material**     | Any path/URL/user attachment  | PDFs, docs, links user shares               |
-| 3        | **University PYQ dir**         | `universities/<UNIV>/PYQs/`   | Per-university organized PDFs               |
-| 4        | **Project downloads**          | `pyq-downloads/`              | Fetched via automated scripts (SPPU)        |
+| Priority | Type                       | Location                     | Contents                                  |
+| -------- | -------------------------- | ---------------------------- | ----------------------------------------- |
+| 1        | **LLM-collected markdown** | `pyq-index/{subject}/*.md`   | Structured questions (web-scraped by LLM) |
+| 2        | **User-provided material** | Any path/URL/user attachment | PDFs, docs, links user shares             |
+| 3        | **University PYQ dir**     | `universities/<UNIV>/PYQs/`  | Per-university organized PDFs             |
+| 4        | **Project downloads**      | `pyq-downloads/`             | Fetched via automated scripts (SPPU)      |
 
 ---
 
@@ -72,19 +72,20 @@ pyq-index/
 **Pattern:** {Pattern} | **Total Marks:** {Marks} | **Time:** {Hours} hrs
 
 ## Q.1
-a) {Question text} [{Marks}]
-b) {Question text} [{Marks}]
-**OR**
+
+a) {Question text} [{Marks}] b) {Question text} [{Marks}] **OR**
 
 ## Q.2
-a) {Question text} [{Marks}]
-b) {Question text} [{Marks}]
+
+a) {Question text} [{Marks}] b) {Question text} [{Marks}]
 
 ## Q.3
+
 ...
 ```
 
 **Advantages:**
+
 - No dependency on a specific website staying up
 - Works for ANY university, not just SPPU
 - Results are clean structured text — no OCR pipeline needed
@@ -95,21 +96,21 @@ b) {Question text} [{Marks}]
 
 These are the **known working sources** for SPPU question papers. Search them in order.
 
-> ⚠️ **Links change every exam season.** SPPU creates new folders per exam period on all sites.
-> If a URL 404s, try the next source or search for the current exam period's folder.
-> **Always update these instructions** when you discover new URLs or find broken ones.
+> ⚠️ **Links change every exam season.** SPPU creates new folders per exam period on all sites. If a
+> URL 404s, try the next source or search for the current exam period's folder. **Always update
+> these instructions** when you discover new URLs or find broken ones.
 
-| # | Source | URL | Best For |
-|---|--------|-----|----------|
-| 1 | **SPPU Official Portal ⭐** | `http://collegecirculars.unipune.ac.in/sites/examdocs/{PERIOD}/` | **Only official source.** Merged all-branch PDFs, End Sem only, 2019 & 2024 pattern |
-| 2 | **SPPU Question Papers** | `https://sppuquestionpapers.com/be/{branch}/semester-{N}` | Per-semester papers |
-| 3 | **SPPU QP Mirror** | `https://sppuquestionpaper.page.gd/program/be/` | Direct PDF links |
-| 4 | **SPPU Study Hub** | `https://www.sppustudyhub.in/` | Notes + question papers |
-| 5 | **Last Moment Tuitions** | `https://lastmomenttuitions.com/sppu/question-papers/` | Per-branch papers |
-| 6 | **GitHub (Sppuqp)** | `https://github.com/pinakdhabu/Sppuqp` | Merged PDFs (FE through BE), Google Drive mirror |
-| 7 | **KSKA Git (Gitea)** | `https://git.kska.io/sppu-te-comp-content/` | Per-subject repos + solved papers |
-| 8 | **Filo** | `https://askfilo.com/higher-education/savitribai-phule-pune-university/` | PYQ with answer solutions |
-| 9 | **Collegedunia** | `https://collegedunia.com/university/25732-savitribai-phule-pune-university-sppu-pune` | Old papers index |
+| #   | Source                      | URL                                                                                    | Best For                                                                            |
+| --- | --------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 1   | **SPPU Official Portal ⭐** | `http://collegecirculars.unipune.ac.in/sites/examdocs/{PERIOD}/`                       | **Only official source.** Merged all-branch PDFs, End Sem only, 2019 & 2024 pattern |
+| 2   | **SPPU Question Papers**    | `https://sppuquestionpapers.com/be/{branch}/semester-{N}`                              | Per-semester papers                                                                 |
+| 3   | **SPPU QP Mirror**          | `https://sppuquestionpaper.page.gd/program/be/`                                        | Direct PDF links                                                                    |
+| 4   | **SPPU Study Hub**          | `https://www.sppustudyhub.in/`                                                         | Notes + question papers                                                             |
+| 5   | **Last Moment Tuitions**    | `https://lastmomenttuitions.com/sppu/question-papers/`                                 | Per-branch papers                                                                   |
+| 6   | **GitHub (Sppuqp)**         | `https://github.com/pinakdhabu/Sppuqp`                                                 | Merged PDFs (FE through BE), Google Drive mirror                                    |
+| 7   | **KSKA Git (Gitea)**        | `https://git.kska.io/sppu-te-comp-content/`                                            | Per-subject repos + solved papers                                                   |
+| 8   | **Filo**                    | `https://askfilo.com/higher-education/savitribai-phule-pune-university/`               | PYQ with answer solutions                                                           |
+| 9   | **Collegedunia**            | `https://collegedunia.com/university/25732-savitribai-phule-pune-university-sppu-pune` | Old papers index                                                                    |
 
 #### Official SPPU Portal — Dynamic URL Discovery
 
@@ -120,34 +121,43 @@ http://collegecirculars.unipune.ac.in/sites/examdocs/
 ```
 
 **Step 1** — Fetch the base URL. The SharePoint sidebar lists all available libraries. Look for:
+
 - `Archive Question Papers` section — QP folders for every exam period (2015 through present)
 - `Time Tables {SEASON} {YEAR}` — timetable folders (one per exam season)
 
 **Step 2** — Navigate to a folder URL using pattern:
+
 ```
 {base_url}/{FOLDER_NAME}/Forms/AllItems.aspx
 ```
+
 URL-encode spaces. Try multiple encodings. Folder naming is inconsistent year-to-year.
 
 **Step 3** — Download merged PDFs per year level:
+
 ```
 {PERIOD_URL}/{YEAR_LEVEL} ({PATTERN} PATTERN).pdf
 ```
+
 Try all combos of `F.E`/`S.E`/`T.E`/`B.E` × `2019 PATTERN`/`2024 PATTERN`.
 
 **Step 4** — Timetables at:
+
 ```
 {base_url}/Time%20Tables%20{SEASON}%20{YEAR}/Forms/AllItems.aspx
 ```
+
 Browse sidebar to find latest season name.
 
 **Limitations of official portal:**
+
 - Only **End Semester** papers (no In Sem papers)
 - PDFs are **large merged files** (all branches in one PDF — open and Ctrl+F for your subject)
 - SharePoint UI is not easy to scrape; prefer direct PDF link patterns
 - Folder naming is inconsistent year-to-year
 
 #### LLM process:
+
 1. Pick source from table, search with subject name + exam type
 2. Open paper links, read PDFs directly via browser capability
 3. Extract question text, marks, exam type from each paper
@@ -159,28 +169,24 @@ Browse sidebar to find latest season name.
 LLM must be aware of ALL SPPU portals, not just PYQs. Links change every season — discover
 dynamically by browsing base sites.
 
-**Base domains:**
-| Domain | What's There |
-|--------|-------------|
-| `collegecirculars.unipune.ac.in` | Timetables, exam docs, syllabi (2016-2026), academic calendar, circulars |
-| `onlineresults.unipune.ac.in` | Result checking portals |
-| `unipune.ac.in` | Main site, revaluation, circular search |
-| `exam.unipune.ac.in/Pages/PreviousQuestionPapers.html` | Alternative official QP source |
-| `sppuresult.vercel.app` | Community result viewer (live from SPPU) |
+**Base domains:** | Domain | What's There | |--------|-------------| |
+`collegecirculars.unipune.ac.in` | Timetables, exam docs, syllabi (2016-2026), academic calendar,
+circulars | | `onlineresults.unipune.ac.in` | Result checking portals | | `unipune.ac.in` | Main
+site, revaluation, circular search | | `exam.unipune.ac.in/Pages/PreviousQuestionPapers.html` |
+Alternative official QP source | | `sppuresult.vercel.app` | Community result viewer (live from
+SPPU) |
 
 **Syllabus:** Browse `.../sites/documents/` → `Syllabus {YEAR}` folders (2016–2026).
 
-**When user asks about SPPU, route to the right portal:**
-| User wants | Where to look |
-|------------|--------------|
-| PYQs | Official portal dynamic discovery (above) |
-| Results | `sppuresult.vercel.app` or `onlineresults.unipune.ac.in` |
-| Syllabus | `collegecirculars.unipune.ac.in/sites/documents/` |
-| Timetable | `Time%20Tables%20{SEASON}%20{YEAR}/` on examdocs |
-| Revaluation | `unipune.ac.in/university_files/Reval_Online_Results_online.htm` |
-| Academic calendar | `.../sites/documents/Academic%20Calender/` |
-| Circulars | `collegecirculars.unipune.ac.in/SitePages/Home.aspx` |
-| Alt QP source | `exam.unipune.ac.in/Pages/PreviousQuestionPapers.html` |
+**When user asks about SPPU, route to the right portal:** | User wants | Where to look |
+|------------|--------------| | PYQs | Official portal dynamic discovery (above) | | Results |
+`sppuresult.vercel.app` or `onlineresults.unipune.ac.in` | | Syllabus |
+`collegecirculars.unipune.ac.in/sites/documents/` | | Timetable |
+`Time%20Tables%20{SEASON}%20{YEAR}/` on examdocs | | Revaluation |
+`unipune.ac.in/university_files/Reval_Online_Results_online.htm` | | Academic calendar |
+`.../sites/documents/Academic%20Calender/` | | Circulars |
+`collegecirculars.unipune.ac.in/SitePages/Home.aspx` | | Alt QP source |
+`exam.unipune.ac.in/Pages/PreviousQuestionPapers.html` |
 
 **For other universities:** Same approach — LLM dynamically discovers portals by searching
 `"{university}" {resource}`. If not found → ask user for links/files.
@@ -266,18 +272,20 @@ are available on the official portal.
 **For other universities:** LLM scrapes the web using generic queries
 (`"{subject}" "{university}" question paper`). If the LLM cannot find PYQs after reasonable
 searching, it should ask the user for:
+
 - Attached PYQ PDF files or documents
 - A local directory path where PYQs are stored
-- An internet link to a PYQ repository or download page
-Whatever the user provides, the LLM converts it to structured markdown.
+- An internet link to a PYQ repository or download page Whatever the user provides, the LLM converts
+  it to structured markdown.
 
 ### Step 3: User-Provided Material
 
 If web search fails to yield enough papers, ask the user for:
+
 - **PDF/DOCX attachments** — read them directly, extract questions
 - **A directory path** — scan for PDFs, extract text from each
-- **An internet URL** — fetch the page, find and download papers
-LLM reads and converts whatever is provided into structured markdown.
+- **An internet URL** — fetch the page, find and download papers LLM reads and converts whatever is
+  provided into structured markdown.
 
 ### Step 4: Fallback to Automated Fetch (SPPU only)
 
@@ -294,8 +302,12 @@ Feed extracted text to `universal-pyq-analyzer` for frequency analysis, Bloom's 
 
 ## Tips for AI Agents
 
-1. **Prefer markdown over PDFs** — LLM-collected markdown is cleaner, faster, works offline once created
-2. **Syllabus-first** — Find and read the official syllabus PDF first (web search) for unit structure and COs
+1. **Prefer markdown over PDFs** — LLM-collected markdown is cleaner, faster, works offline once
+   created
+2. **Syllabus-first** — Find and read the official syllabus PDF first (web search) for unit
+   structure and COs
 3. **Recent-weighted** — PYQs from 2024-2025 are more predictive than 2019-2020 papers
-4. **Collect-as-you-go** — When you search the web for PYQs, write the results to `pyq-index/` for future use
-5. **LLM reads PDFs from the web** — the AI agent can open PDF URLs directly; no need for local OCR tools
+4. **Collect-as-you-go** — When you search the web for PYQs, write the results to `pyq-index/` for
+   future use
+5. **LLM reads PDFs from the web** — the AI agent can open PDF URLs directly; no need for local OCR
+   tools

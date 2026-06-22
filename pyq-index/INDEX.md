@@ -1,11 +1,13 @@
 # SPPU Previous Year Question Papers — Index
 
 > **Note:** This index is generated locally from your own PYQ collection. To generate it, run:
+>
 > ```bash
 > bash scripts/pyq-index.sh --path <your-pyq-directory>
 > ```
 >
 > PYQs can also be collected automatically:
+>
 > - **LLM web search** (primary, any university): AI agent searches the web and writes structured
 >   markdown files to `pyq-index/{subject}/*.md`
 > - **Automated fetch** (SPPU only): `node scripts/fetch-qp.js <subject>` downloads PDFs to
