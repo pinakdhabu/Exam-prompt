@@ -244,7 +244,7 @@
     "check_deps": "bash scripts/check-deps.sh",
     "install_skills": "bash scripts/install.sh"
   },
-  "skills_count": 27,
+  "skills_count": 30,
   "sample_papers_count": 96,
   "install_commands": {
     "all": "bash scripts/setup.sh",

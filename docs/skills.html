@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Skills — Exam Prompt</title>
-<meta name="description" content="Browse all 26 academic AI skills — answer writer, notes, PYQ analysis, flashcards, exam papers, and more.">
+<meta name="description" content="Browse all 30 academic AI skills — answer writer, notes, PYQ analysis, flashcards, exam papers, and more.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -332,7 +332,7 @@
     <div class="term-line"><span class="arrow">&gt;</span> ls skills/</div>
     <h1>Academic Skills</h1>
     <p>26 purpose-built <code>SKILL.md</code> files &mdash; one per exam task. Self-contained, portable, exam-ready across all AI platforms.</p>
-    <div class="count" id="skillCount">26 skills &middot; 6 categories</div>
+    <div class="count" id="skillCount">30 skills 26 skills &middot; 6middot; 6 categories</div>
   </div>
 </div>
 
@@ -365,7 +365,7 @@
       <a href="app.html">app</a>
       <a href="https://github.com/pinakdhabu/Exam-prompt">github</a>
     </div>
-    <p>MIT &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; 26 academic skills</p>
+    <p>MIT &middot; <a href="https://github.com/pinakdhabu/Exam-prompt">github/pinakdhabu/Exam-prompt</a> &middot; 30 academic skills</p>
   </div>
 </footer>
 
@@ -512,7 +512,7 @@ const skills = [
     name: 'Session Config',
     cat: 'infra',
     tags: ['infra'],
-    desc: 'Persistent session configuration stored as a JSON profile. Stores university, subject, exam pattern, and user preferences across all 26 skills. Set once via bash scripts/profile.sh &mdash; shared across every skill. Eliminates redundant context detection.',
+    desc: 'Persistent session configuration stored as a JSON profile. Stores university, subject, exam pattern, and user preferences across all 30 skills. Set once via bash scripts/profile.sh &mdash; shared across every skill. Eliminates redundant context detection.',
     url: 'session-config'
   },
   {
@@ -542,6 +542,27 @@ const skills = [
     tags: ['strategy'],
     desc: 'Physical exam hall simulation engine. Models 36-page answer booklet, 34 writable pages, writing speed, time pressure, and examiner psychology. Use alongside Answer Writer for realistic exam practice.',
     url: 'sppu-exam-simulator'
+  },
+  {
+    name: 'Code Solution Generator',
+    cat: 'writing',
+    tags: ['coding'],
+    desc: 'Step-by-step coding solutions with algorithm design, pseudocode, actual code in any language, complexity analysis, test cases, and edge case identification. Supports C, C++, Java, Python, JS, Go, Rust, and more.',
+    url: 'code-solution-generator'
+  },
+  {
+    name: 'Cheat Sheet Generator',
+    cat: 'writing',
+    tags: ['notes'],
+    desc: 'Compact one-page micro notes in official SPPU merge-micro format. Letter portrait, 3-column layout, continuous definition text, unit-wise organization. Perfect for last-minute revision and exam chits.',
+    url: 'cheat-sheet-generator'
+  },
+  {
+    name: 'Thesis Generator',
+    cat: 'writing',
+    tags: ['writing'],
+    desc: 'Complete academic thesis, dissertation, and project report structure generation. Supports all sections from abstract to conclusion with university-specific formatting and citation styles (APA, MLA, IEEE, Chicago).',
+    url: 'thesis-generator'
   }
 ];
 

@@ -3,7 +3,7 @@
 
 <skill>
 <name>universal-agent-normalizer</name>
-<description>Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt skill system to the agent's native configuration format. Supports 20+ coding agents as of June 2026. Ensures every agent can discover, load, and invoke all 27+ skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load.
+<description>Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt skill system to the agent's native configuration format. Supports 20+ coding agents as of June 2026. Ensures every agent can discover, load, and invoke all 30 skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load.
 </description>
 <location>project</location>
 </skill>
@@ -172,6 +172,27 @@
 <skill>
 <name>universal-viva-oral-exam-prep</name>
 <description>Prepares students for oral exams, viva voce, interviews, and defense presentations for ANY university worldwide. Simulates realistic examiner-student dialogue with follow-up questions, anticipated probes, and grading criteria. Covers ALL disciplines, ALL exam conditions (closed/open, panel, individual, online).</description>
+<location>project</location>
+</skill>
+
+<skill>
+<name>universal-code-solution-generator</name>
+<description>Generates step-by-step solutions for coding problems, numericals, and programming assignments for ANY university worldwide. Produces explanation, algorithm, pseudocode, actual code, complexity analysis, and test cases. Works for ALL programming languages, ALL subjects, ALL exam patterns.
+</description>
+<location>project</location>
+</skill>
+
+<skill>
+<name>universal-cheat-sheet-generator</name>
+<description>Generates compact, exam-ready cheat sheets (micro notes) for ANY university worldwide. Produces single-page dense reference sheets matching the official SPPU Micro format — Letter portrait, 3-column layout, continuous definition text, unit-wise organization. Supports ALL subjects, ALL patterns, ALL exam types.
+</description>
+<location>project</location>
+</skill>
+
+<skill>
+<name>universal-thesis-generator</name>
+<description>Generates complete academic thesis, dissertation, or project report structures for ANY university worldwide. Supports all sections — abstract, introduction, literature review, methodology, implementation, results, conclusion. Adapts to university-specific formatting guidelines and citation styles.
+</description>
 <location>project</location>
 </skill>
 

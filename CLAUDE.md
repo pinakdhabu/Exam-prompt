@@ -73,7 +73,7 @@ bash deps/resolve.sh --install
 
 ## Skills Manifest
 
-A machine-readable manifest at [`skills/skills.json`](skills/skills.json) lists all 26 skills with
+A machine-readable manifest at [`skills/skills.json`](skills/skills.json) lists all 30 skills with
 their names, descriptions, versions, and file paths. Compatible with:
 
 - Claude Code (`npx skills@latest add pinakdhabu/Exam-prompt`)

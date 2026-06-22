@@ -2,7 +2,7 @@
 
 ## Current State
 
-The repo is complete with 26 skills, community infrastructure, CI/CD, rolling release, and agent
+The repo is complete with 30 skills, community infrastructure, CI/CD, rolling release, and agent
 configurations for all major AI coding platforms.
 
 ## Recent Changes
@@ -22,7 +22,7 @@ configurations for all major AI coding platforms.
 ## Current Focus
 
 Making the repo optimized for AI coding agents — ensuring every major agent platform can
-auto-discover and load the 26 skills seamlessly.
+auto-discover and load the 30 skills seamlessly.
 
 ## Open Questions
 

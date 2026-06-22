@@ -42,9 +42,9 @@ diagrams, etc.) for students at any university. One repo to prepare for _all_ yo
 ### 🧠 Architecture
 
 ```
-skills/                  # 27 skills — each is an AI agent "capability"
+skills/                  # 30 skills — each is an AI agent "capability"
   └─ {name}/SKILL.md     #   Skill definition with YAML frontmatter
-skills/skills.json       # Auto-generated registry (27 skills)
+skills/skills.json       # Auto-generated registry (30 skills)
 skills/agent-normalizer/ # Detects which AI agent you're running and maps skills
 
 universities/            # University configs (SPPU primary, others welcome)
@@ -676,14 +676,19 @@ in any HTML. If the site needs a gallery section, these are ready to use.
 
 ### Skill Count Discrepancies (docs/)
 
-The website HTML files hardcode skill counts that may drift from the actual 27 skills:
+The website HTML files hardcode skill counts that may drift from the actual 30 skills:
 
 | File               | What to check                                                                                                                                                                         |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `docs/index.html`  | Meta description ✅, OG description ✅, heading ✅, "view all" link ✅ — all `26→27` fixed                                                                                            |
-| `docs/index.html`  | Skills section cards — ensure all 27 skills have a card (still missing 6: agent-normalizer, diagram-generator, setup-exam-prompt, study-planner, session-config, flastcard-generator) |
+| `docs/index.html`  | Meta description ✅, OG description ✅, heading ✅, "view all" link ✅ — all `27→30` and `26→30` fixed                                                                                |
+| `docs/index.html`  | Skills section cards — ensure all 30 skills have a card (still missing 6: agent-normalizer, diagram-generator, setup-exam-prompt, study-planner, session-config, flastcard-generator) |
 | `docs/skills.html` | Directory listing — 3 missing (agent-normalizer, diagram-generator, setup-exam-prompt)                                                                                                |
 | `docs/app.html`    | Dropdown + JS SKILLS object — same 3 missing                                                                                                                                          |
+|---|---|
+| `docs/index.html` | Meta description ✅, OG description ✅, heading ✅, "view all" link ✅ — all `27→30` and `26→30` fixed |
+| `docs/index.html` | Skills section cards — ensure all 30 skills have a card (still missing 6: agent-normalizer, diagram-generator, setup-exam-prompt, study-planner, session-config, flastcard-generator) |
+| `docs/skills.html` | Directory listing — 3 missing (agent-normalizer, diagram-generator, setup-exam-prompt) |
+| `docs/app.html` | Dropdown + JS SKILLS object — same 3 missing |
 
 ---
 

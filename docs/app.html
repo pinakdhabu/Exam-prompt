@@ -241,6 +241,9 @@
       <option value="session-config">Session Config</option>
       <option value="qp-fetcher">QP Fetcher</option>
       <option value="sppu-simulator">SPPU Exam Simulator</option>
+      <option value="code-solver">Code Solution Generator</option>
+      <option value="cheat-sheet">Cheat Sheet Generator</option>
+      <option value="thesis">Thesis Generator</option>
     </select>
     <select id="univ">
       <option value="SPPU">SPPU</option>
@@ -263,7 +266,7 @@
     <label>Your Question</label>
     <span style="color:var(--muted);font-size:0.65rem;font-family:var(--font-mono)">Include subject, marks, university, and exam type</span>
   </div>
-  <div class="hint"><span class="accent">$</span> 26 skills available &mdash; skill prompt + question copied together</div>
+  <div class="hint"><span class="accent">$</span> 30 skills available &mdash; skill prompt + question copied together</div>
   <textarea id="question" placeholder="Paste your exam question here..."></textarea>
 
   <div class="row" style="margin-top:10px">
@@ -918,7 +921,63 @@ Simulate real examination hall conditions.
 Load alongside Answer Writer for realistic exam practice.
 
 ## Full Skill
-See skills/sppu-simulator/SKILL.md for complete instructions.` }
+See skills/sppu-simulator/SKILL.md for complete instructions.` },
+
+  "code-solver": {
+    name: "Code Solution Generator",
+    desc: "Step-by-step coding solutions with algorithm, complexity analysis, and test cases.",
+    text: `# Code Solution Generator
+
+Generate step-by-step coding solutions for programming problems across all languages.
+
+## Process
+1. Understand the problem statement
+2. Design algorithm with step-by-step approach
+3. Write pseudocode
+4. Implement actual code in specified language
+5. Analyze time and space complexity
+6. Provide test cases with expected outputs
+7. Identify edge cases
+
+## Full Skill
+See skills/code-solution-generator/SKILL.md for complete instructions.` },
+
+  "cheat-sheet": {
+    name: "Cheat Sheet Generator",
+    desc: "Compact one-page micro notes in SPPU merge-micro format.",
+    text: `# Cheat Sheet Generator (Micro Notes)
+
+Generate compact exam-ready cheat sheets in the official SPPU merge-micro format.
+
+## Format
+- Letter portrait (612x792 pt)
+- 3 dense columns, continuous definition text
+- Unit-wise organization with bold headers
+- Numbered points for rules and components
+
+## Usage
+Use for: last-minute revision, quick reference, chits
+
+## Full Skill
+See skills/cheat-sheet-generator/SKILL.md for complete instructions.` },
+
+  "thesis": {
+    name: "Thesis Generator",
+    desc: "Complete thesis/dissertation/project report structure generation.",
+    text: `# Thesis Generator
+
+Generate structured academic thesis content with proper sections and formatting.
+
+## Structure
+1. Abstract - Summary of entire work
+2. Introduction - Problem statement, objectives
+3. Literature Review - Existing work and gaps
+4. Methodology - Approach and techniques
+5. Implementation - System design and results
+6. Conclusion - Findings and future work
+
+## Full Skill
+See skills/thesis-generator/SKILL.md for complete instructions.` }
 };
 
 const skillSelect = document.getElementById('skillSelect');

@@ -3,7 +3,7 @@ name: universal-agent-normalizer
 description: >
   Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt
   skill system to the agent's native configuration format. Supports 20+ coding agents as of June
-  2026. Ensures every agent can discover, load, and invoke all 27+ skills regardless of its native
+  2026. Ensures every agent can discover, load, and invoke all 30+ skills regardless of its native
   skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to
   load.
 ---
@@ -98,7 +98,7 @@ bash scripts/generate-agents-md.sh     # Regenerates AGENTS.md
 ```
 
 **Verify:** `AGENTS.md` has a single `<available_skills>` block with `<skill><name>`,
-`<description>`, `<location>` tags for all 27+ skills.
+`<description>`, `<location>` tags for all 30+ skills.
 
 **If skills don't load:** Run `generate-agents-md.sh`. Ensure `AGENTS.md` is at repo root.
 
@@ -296,7 +296,7 @@ bash scripts/init-project.sh          # Interactive setup
 node scripts/detect-university.js --active  # See active university config
 ```
 
-All 27+ skills read from the session config automatically.
+All 30+ skills read from the session config automatically.
 
 ### Step 3: Load Skills
 

@@ -1,6 +1,6 @@
 # How to Add Your University
 
-> 🎯 **Goal:** Make your university work with all 26 Exam Prompt skills in under 5 minutes.
+> 🎯 **Goal:** Make your university work with all 30 Exam Prompt skills in under 5 minutes.
 
 ## Quick Start (3 Steps)
 

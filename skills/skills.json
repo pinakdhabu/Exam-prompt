@@ -1,11 +1,11 @@
 {
   "$schema": "exam-prompt-skills-v1",
   "generated": "2026-06-22T11:12:31Z",
-  "total_skills": 27,
+  "total_skills": 30,
   "skills": [
     {
       "name": "universal-agent-normalizer",
-      "description": "Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt skill system to the agent's native configuration format. Supports 20+ coding agents as of June 2026. Ensures every agent can discover, load, and invoke all 27+ skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load.\n",
+      "description": "Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt skill system to the agent's native configuration format. Supports 20+ coding agents as of June 2026. Ensures every agent can discover, load, and invoke all 30 skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load.\n",
       "version": "1.0.0",
       "directory": "agent-normalizer"
     },
@@ -164,6 +164,24 @@
       "description": "Prepares students for oral exams, viva voce, interviews, and defense presentations for ANY university worldwide. Simulates realistic examiner-student dialogue with follow-up questions, anticipated probes, and grading criteria. Covers ALL disciplines, ALL exam conditions (closed/open, panel, individual, online).",
       "version": "1.0.0",
       "directory": "viva-oral-exam-prep"
+    },
+    {
+      "name": "universal-code-solution-generator",
+      "description": "Generates step-by-step solutions for coding problems, numericals, and programming assignments for ANY university worldwide. Produces explanation, algorithm, pseudocode, actual code, complexity analysis, and test cases.",
+      "version": "1.0.0",
+      "directory": "code-solution-generator"
+    },
+    {
+      "name": "universal-cheat-sheet-generator",
+      "description": "Generates compact, exam-ready cheat sheets (micro notes) for ANY university worldwide. Produces single-page dense reference sheets in Letter portrait, 3-column layout, continuous definition text, unit-wise organization.",
+      "version": "1.0.0",
+      "directory": "cheat-sheet-generator"
+    },
+    {
+      "name": "universal-thesis-generator",
+      "description": "Generates complete academic thesis, dissertation, or project report structures for ANY university worldwide. Supports all sections — abstract, introduction, literature review, methodology, implementation, results, conclusion.",
+      "version": "1.0.0",
+      "directory": "thesis-generator"
     }
   ],
   "compatible_with": [

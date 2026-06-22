@@ -1,6 +1,6 @@
 # Universal Exam Prompt — Ultimate A+ Answer System for Any University Worldwide
 
-![Skills](https://img.shields.io/badge/skills-27-blue?style=flat-square)
+![Skills](https://img.shields.io/badge/skills-30-blue?style=flat-square)
 ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square)
 ![Papers](https://img.shields.io/badge/sample_papers-96-green?style=flat-square)
 ![PDFs](https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square)
@@ -8,7 +8,7 @@
 ![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square)
 ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)
 
-![Skills](https://img.shields.io/badge/skills-27-blue?style=flat-square)
+![Skills](https://img.shields.io/badge/skills-30-blue?style=flat-square)
 ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square)
 ![Papers](https://img.shields.io/badge/sample_papers-96-green?style=flat-square)
 ![PDFs](https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square)
@@ -17,7 +17,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)
 
 <!-- prettier-ignore -->
-![Skills](https://img.shields.io/badge/skills-27-blue?style=flat-square) ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square) ![Papers](https://img.shields.io/badge/sample_papers-96-green?style=flat-square) ![PDFs](https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square) ![Solutions](https://img.shields.io/badge/solutions-48-orange?style=flat-square) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square) ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)
+![Skills](https://img.shields.io/badge/skills-30-blue?style=flat-square) ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square) ![Papers](https://img.shields.io/badge/sample_papers-96-green?style=flat-square) ![PDFs](https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square) ![Solutions](https://img.shields.io/badge/solutions-48-orange?style=flat-square) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square) ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)
 
 <p align="center">
   <a href="https://pinakdhabu.github.io/Exam-prompt/">
@@ -42,7 +42,7 @@
 ## 🚀 Quick Start
 
 ```bash
-# 1. Install all 26 exam prep skills in one command
+# 1. Install all 30 exam prep skills in one command
 npx skills add https://github.com/pinakdhabu/Exam-prompt -g -y -a opencode
 
 # 2. Open your AI agent (Claude, Cursor, ChatGPT, Gemini)
@@ -79,7 +79,7 @@ Opens instantly — Node.js + Playwright only (no Python needed).
 # "Convert my notes.md to a print-ready PDF"
 ```
 
-Your agent reads the 26 skills from `skills/` and generates exam-ready output automatically.
+Your agent reads the 30 skills from `skills/` and generates exam-ready output automatically.
 
 > 🐛 **Found a bug?** [Open an issue](https://github.com/pinakdhabu/Exam-prompt/issues) 💡 **Have an
 > idea?** [Start a discussion](https://github.com/pinakdhabu/Exam-prompt/discussions) 🔧 **Want to
@@ -153,7 +153,7 @@ This is a **universal skill hub** that transforms any AI coding agent into a per
 exam tutor** for **any university worldwide**. Pre-configured with **SPPU Computer Engineering**
 intelligence. Instantly adapts to any other university's syllabus and exam pattern when provided.
 
-The system includes **26 skills** for:
+The system includes **30 skills** for:
 
 - **Write A+ exam answers** — ALL question types, ALL mark levels (1–100+), ALL exam conditions
 - **Generate exam-ready notes** — 12+ formats (Outline, Cornell, Mind Map, Flowchart, Q&A)
@@ -196,7 +196,7 @@ Sample Paper (Markdown) → marked → KaTeX + Playwright → A4 PDF
 
 ## Quick Install (All AI Coding Agents)
 
-Install all 26 exam-prep skills globally for your AI coding agent:
+Install all 30 exam-prep skills globally for your AI coding agent:
 
 ```bash
 # ✅ Recommended — targets OpenCode + universal agents

@@ -51,11 +51,11 @@ exam-prompt/
 ├── .github/copilot-instructions.md  # GitHub Copilot configuration
 ├── .continue/config.yaml       # Continue.dev configuration
 │
-├── skills/                     # 26 skill modules (THE BRAIN)
+├── skills/                     # 30 skill modules (THE BRAIN)
 │   ├── answer-writer/SKILL.md
 │   ├── notes-generator/SKILL.md
 │   ├── pyq-analyzer/SKILL.md
-│   └── ... (26 total)
+│   └── ... (30 total)
 │
 ├── examples/                   # Sample papers + solutions
 ├── scripts/                    # Utility scripts
@@ -72,7 +72,7 @@ exam-prompt/
 
 ### Method 1: Read AGENTS.md (Recommended)
 
-`AGENTS.md` contains an XML `<available_skills>` block with ALL 26 skills listed. Each entry has:
+`AGENTS.md` contains an XML `<available_skills>` block with ALL 30 skills listed. Each entry has:
 
 ```xml
 <skill>
@@ -151,6 +151,9 @@ precedence over general knowledge.
 | 24  | **QP Fetcher**              | User wants to download PYQs from websites                               | `skills/qp-fetcher/SKILL.md`                   |
 | 25  | **Setup Exam Prompt**       | User says "setup", "configure", "first time", "get started"             | `skills/setup-exam-prompt/SKILL.md`            |
 | 26  | **Diagram Generator**       | User wants flowcharts, mind maps, architecture diagrams, UML            | `skills/diagram-generator/SKILL.md`            |
+| 27  | **Code Solution Generator**  | User asks for coding solutions, algorithms, programming help            | `skills/code-solution-generator/SKILL.md`      |
+| 28  | **Cheat Sheet Generator**    | User wants micro notes, cheat sheet, one-page revision, chit            | `skills/cheat-sheet-generator/SKILL.md`        |
+| 29  | **Thesis Generator**         | User asks for thesis, dissertation, project report                      | `skills/thesis-generator/SKILL.md`             |
 
 ---
 

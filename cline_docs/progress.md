@@ -32,7 +32,7 @@
 
 ## 📊 Metrics
 
-- 26 skills
+- 30 skills
 - 33 use cases
 - 8 CI/CD workflows
 - 8 agent platforms configured

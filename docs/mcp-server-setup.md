@@ -88,7 +88,7 @@ Then configure any MCP client to connect to `http://localhost:3100`.
 
 | Tool                       | Description                            |
 | -------------------------- | -------------------------------------- |
-| `list_skills`              | List all 26 exam prep skills           |
+| `list_skills`              | List all 30 exam prep skills           |
 | `get_skill`                | Read a specific SKILL.md by name       |
 | `list_universities`        | List all configured universities       |
 | `get_university_config`    | Get a university's config.json         |
