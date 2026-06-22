@@ -684,11 +684,11 @@ The website HTML files hardcode skill counts that may drift from the actual 30 s
 | `docs/index.html`  | Skills section cards — ensure all 30 skills have a card (still missing 6: agent-normalizer, diagram-generator, setup-exam-prompt, study-planner, session-config, flastcard-generator) |
 | `docs/skills.html` | Directory listing — 3 missing (agent-normalizer, diagram-generator, setup-exam-prompt)                                                                                                |
 | `docs/app.html`    | Dropdown + JS SKILLS object — same 3 missing                                                                                                                                          |
-|---|---|
-| `docs/index.html` | Meta description ✅, OG description ✅, heading ✅, "view all" link ✅ — all `27→30` and `26→30` fixed |
-| `docs/index.html` | Skills section cards — ensure all 30 skills have a card (still missing 6: agent-normalizer, diagram-generator, setup-exam-prompt, study-planner, session-config, flastcard-generator) |
-| `docs/skills.html` | Directory listing — 3 missing (agent-normalizer, diagram-generator, setup-exam-prompt) |
-| `docs/app.html` | Dropdown + JS SKILLS object — same 3 missing |
+| ---                | ---                                                                                                                                                                                   |
+| `docs/index.html`  | Meta description ✅, OG description ✅, heading ✅, "view all" link ✅ — all `27→30` and `26→30` fixed                                                                                |
+| `docs/index.html`  | Skills section cards — ensure all 30 skills have a card (still missing 6: agent-normalizer, diagram-generator, setup-exam-prompt, study-planner, session-config, flastcard-generator) |
+| `docs/skills.html` | Directory listing — 3 missing (agent-normalizer, diagram-generator, setup-exam-prompt)                                                                                                |
+| `docs/app.html`    | Dropdown + JS SKILLS object — same 3 missing                                                                                                                                          |
 
 ---
 

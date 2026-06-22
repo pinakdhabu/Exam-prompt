@@ -1,10 +1,10 @@
 ---
 name: universal-thesis-generator
 description: >
-  Generates complete academic thesis, dissertation, or project report structures
-  for ANY university worldwide. Supports all sections — abstract, introduction,
-  literature review, methodology, implementation, results, conclusion. Adapts to
-  university-specific formatting guidelines and citation styles.
+  Generates complete academic thesis, dissertation, or project report structures for ANY university
+  worldwide. Supports all sections — abstract, introduction, literature review, methodology,
+  implementation, results, conclusion. Adapts to university-specific formatting guidelines and
+  citation styles.
 ---
 
 # Universal Thesis Generator
@@ -13,13 +13,13 @@ Generates structured academic thesis/dissertation/project report content with pr
 
 ## Supported Output Types
 
-| Type           | Typical Length | Audience              |
-| -------------- | -------------- | --------------------- |
-| **Bachelor's thesis**  | 40-80 pages    | Academic committee    |
-| **Master's thesis**    | 60-120 pages   | Supervisor + examiner |
-| **PhD dissertation**   | 150-300 pages  | Doctoral committee    |
-| **Project report**     | 30-50 pages    | Department faculty    |
-| **Term paper**         | 10-20 pages    | Course instructor     |
+| Type                  | Typical Length | Audience              |
+| --------------------- | -------------- | --------------------- |
+| **Bachelor's thesis** | 40-80 pages    | Academic committee    |
+| **Master's thesis**   | 60-120 pages   | Supervisor + examiner |
+| **PhD dissertation**  | 150-300 pages  | Doctoral committee    |
+| **Project report**    | 30-50 pages    | Department faculty    |
+| **Term paper**        | 10-20 pages    | Course instructor     |
 
 ## Structure Template
 
@@ -37,6 +37,7 @@ Generates structured academic thesis/dissertation/project report content with pr
 ## Usage
 
 Trigger when user asks for:
+
 - "Thesis on..."
 - "Dissertation on..."
 - "Project report on..."

@@ -151,9 +151,9 @@ precedence over general knowledge.
 | 24  | **QP Fetcher**              | User wants to download PYQs from websites                               | `skills/qp-fetcher/SKILL.md`                   |
 | 25  | **Setup Exam Prompt**       | User says "setup", "configure", "first time", "get started"             | `skills/setup-exam-prompt/SKILL.md`            |
 | 26  | **Diagram Generator**       | User wants flowcharts, mind maps, architecture diagrams, UML            | `skills/diagram-generator/SKILL.md`            |
-| 27  | **Code Solution Generator**  | User asks for coding solutions, algorithms, programming help            | `skills/code-solution-generator/SKILL.md`      |
-| 28  | **Cheat Sheet Generator**    | User wants micro notes, cheat sheet, one-page revision, chit            | `skills/cheat-sheet-generator/SKILL.md`        |
-| 29  | **Thesis Generator**         | User asks for thesis, dissertation, project report                      | `skills/thesis-generator/SKILL.md`             |
+| 27  | **Code Solution Generator** | User asks for coding solutions, algorithms, programming help            | `skills/code-solution-generator/SKILL.md`      |
+| 28  | **Cheat Sheet Generator**   | User wants micro notes, cheat sheet, one-page revision, chit            | `skills/cheat-sheet-generator/SKILL.md`        |
+| 29  | **Thesis Generator**        | User asks for thesis, dissertation, project report                      | `skills/thesis-generator/SKILL.md`             |
 
 ---
 
