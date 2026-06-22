@@ -656,6 +656,36 @@ npm test && npm run generate:agents && bash deps/resolve.sh
 
 ---
 
+## Website Status (docs/)
+
+### Architecture Diagrams (index.html)
+
+The site renders architecture diagrams in an "Architecture" section from D2 source → SVG exports:
+
+| File on disk (`docs/architectures/exports/`) | Referenced in HTML? | Status |
+|---|---|---|
+| `system.svg` | ✅ `architectures/exports/system.svg` | Visible |
+| `rag-pipeline.svg` | ✅ `architectures/exports/rag-pipeline.svg` | Visible |
+| `deployment.svg` | ✅ `architectures/exports/deployment.svg` | Visible |
+| `student-flow.svg` | ❌ Not referenced in index.html | Exists but unused |
+| `user-journey.svg` | ❌ Does not exist (was removed 2026-06-22) | Broken link removed |
+| `skills-ecosystem.svg` | ❌ Does not exist (was removed 2026-06-22) | Broken link removed |
+
+**PDF preview images** (`docs/images/pdf-previews/`, 16 PNGs): Exist on disk but **not referenced** in any HTML. If the site needs a gallery section, these are ready to use.
+
+### Skill Count Discrepancies (docs/)
+
+The website HTML files hardcode skill counts that may drift from the actual 27 skills:
+
+| File | What to check |
+|---|---|
+| `docs/index.html` | Meta description ✅, OG description ✅, heading ✅, "view all" link ✅ — all `26→27` fixed |
+| `docs/index.html` | Skills section cards — ensure all 27 skills have a card (still missing 6: agent-normalizer, diagram-generator, setup-exam-prompt, study-planner, session-config, flastcard-generator) |
+| `docs/skills.html` | Directory listing — 3 missing (agent-normalizer, diagram-generator, setup-exam-prompt) |
+| `docs/app.html` | Dropdown + JS SKILLS object — same 3 missing |
+
+---
+
 ## Rolling Release Model
 
 This repo follows a rolling release model (like Arch Linux):

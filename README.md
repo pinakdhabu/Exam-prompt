@@ -1,6 +1,6 @@
 # Universal Exam Prompt — Ultimate A+ Answer System for Any University Worldwide
 
-![Skills](https://img.shields.io/badge/skills-26-blue?style=flat-square)
+![Skills](https://img.shields.io/badge/skills-27-blue?style=flat-square)
 ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square)
 ![Papers](https://img.shields.io/badge/sample_papers-96-green?style=flat-square)
 ![PDFs](https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square)
@@ -8,7 +8,7 @@
 ![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square)
 ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)
 
-![Skills](https://img.shields.io/badge/skills-26-blue?style=flat-square)
+![Skills](https://img.shields.io/badge/skills-27-blue?style=flat-square)
 ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square)
 ![Papers](https://img.shields.io/badge/sample_papers-96-green?style=flat-square)
 ![PDFs](https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square)
@@ -17,7 +17,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)
 
 <!-- prettier-ignore -->
-![Skills](https://img.shields.io/badge/skills-26-blue?style=flat-square) ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square) ![Papers](https://img.shields.io/badge/sample_papers-96-green?style=flat-square) ![PDFs](https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square) ![Solutions](https://img.shields.io/badge/solutions-48-orange?style=flat-square) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square) ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)
+![Skills](https://img.shields.io/badge/skills-27-blue?style=flat-square) ![Subjects](https://img.shields.io/badge/subjects-50+-orange?style=flat-square) ![Papers](https://img.shields.io/badge/sample_papers-96-green?style=flat-square) ![PDFs](https://img.shields.io/badge/generated_pdfs-16-red?style=flat-square) ![Solutions](https://img.shields.io/badge/solutions-48-orange?style=flat-square) ![Rolling](https://img.shields.io/badge/release-rolling-ff69b4?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square) ![Last Commit](https://img.shields.io/github/last-commit/pinakdhabu/Exam-prompt?style=flat-square)
 
 <p align="center">
   <a href="https://pinakdhabu.github.io/Exam-prompt/">
