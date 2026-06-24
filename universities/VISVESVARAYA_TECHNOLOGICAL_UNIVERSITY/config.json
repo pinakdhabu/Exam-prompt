@@ -53,6 +53,15 @@
       { "id": "biotechnology", "name": "Biotechnology", "code": "BT" },
       { "id": "chemical-engineering", "name": "Chemical Engineering", "code": "CH" },
       { "id": "robotics-automation", "name": "Robotics & Automation", "code": "RA" },
+      { "id": "textile-engineering", "name": "Textile Engineering", "code": "TE" },
+      { "id": "transportation-engineering", "name": "Transportation Engineering", "code": "TR" },
+      { "id": "architecture", "name": "Architecture", "code": "AR" },
+      { "id": "instrumentation-technology", "name": "Instrumentation Technology", "code": "IT" },
+      { "id": "mining-engineering", "name": "Mining Engineering", "code": "MI" },
+      { "id": "construction-technology-management", "name": "Construction Technology & Management", "code": "CT" },
+      { "id": "environmental-engineering", "name": "Environmental Engineering", "code": "EN" },
+      { "id": "industrial-production-engineering", "name": "Industrial & Production Engineering", "code": "IP" },
+      { "id": "medical-electronics", "name": "Medical Electronics", "code": "MX" },
       { "id": "mba", "name": "MBA", "code": "MBA" },
       { "id": "mca", "name": "MCA", "code": "MCA" }
     ]
