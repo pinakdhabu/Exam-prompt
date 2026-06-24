@@ -1,0 +1,9 @@
+{
+  "$schema": "https://opencode.ai/schema.json",
+  "name": "exam-prompt",
+  "description": "Universal Exam Prompt - AI-powered exam preparation for any university worldwide",
+  "customInstructions": "This project contains 30+ exam preparation skills. When working on this project, first read AGENTS.md and CLAUDE.md for full context. The skills/ directory contains all skill modules. Each skill has a SKILL.md file with its prompt.",
+  "agent": {
+    "allowedTools": ["read", "grep", "glob", "bash", "write", "edit", "websearch", "webfetch"]
+  }
+}
