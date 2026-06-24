@@ -1,0 +1,153 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "computer-science-engineering",
+    "name": "Computer Science and Engineering",
+    "description": "JNTUA B.Tech CSE subjects under R23 Regulation (NEP-aligned), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (B.Tech I & II Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "23AHSBS01", "name": "Linear Algebra & Calculus", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "23AHSBS02", "name": "Engineering Physics", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "23AHSBS03", "name": "Communicative English", "abbr": "ENG", "type": "core", "credits": 2},
+            {"code": "23AHSBS04", "name": "Problem Solving & Programming using C", "abbr": "PSC", "type": "core", "credits": 3},
+            {"code": "23AHSBS05", "name": "Fundamentals of Electrical & Electronics Engineering", "abbr": "FEEE", "type": "core", "credits": 3},
+            {"code": "23AHSBS06", "name": "Engineering Drawing & Design", "abbr": "EDD", "type": "core", "credits": 3},
+            {"code": "23AHSBS07", "name": "C Programming Lab", "abbr": "CPL", "type": "lab", "credits": 1.5},
+            {"code": "23AHSBS08", "name": "Engineering Physics Lab", "abbr": "PHYL", "type": "lab", "credits": 1},
+            {"code": "23AHSBS09", "name": "Electrical & Electronics Engineering Lab", "abbr": "EEEL", "type": "lab", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "23AHSBS10", "name": "Differential Equations & Vector Calculus", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "23AHSBS11", "name": "Engineering Chemistry", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "23AHSBS12", "name": "Data Structures through C", "abbr": "DSC", "type": "core", "credits": 3},
+            {"code": "23AHSBS13", "name": "Basic Mechanical Engineering", "abbr": "BME", "type": "core", "credits": 3},
+            {"code": "23AHSBS14", "name": "Engineering Workshop", "abbr": "EW", "type": "core", "credits": 2},
+            {"code": "23AHSBS15", "name": "Data Structures Lab", "abbr": "DSL", "type": "lab", "credits": 1.5},
+            {"code": "23AHSBS16", "name": "Engineering Chemistry Lab", "abbr": "CHEML", "type": "lab", "credits": 1},
+            {"code": "23AHSBS17", "name": "IT & Engineering Workshop Lab", "abbr": "ITEWL", "type": "lab", "credits": 1},
+            {"code": "23AHSBS18", "name": "Environmental Science", "abbr": "EVS", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (B.Tech III & IV Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "23AHSBS19", "name": "Probability & Statistics for Engineers", "abbr": "PS", "type": "core", "credits": 3},
+            {"code": "23A54301", "name": "Discrete Mathematics", "abbr": "DM", "type": "core", "credits": 3},
+            {"code": "23A54302", "name": "Object Oriented Programming using Java", "abbr": "OOPJ", "type": "core", "credits": 3},
+            {"code": "23A54303", "name": "Database Management Systems", "abbr": "DBMS", "type": "core", "credits": 3},
+            {"code": "23A54304", "name": "Digital Logic Design", "abbr": "DLD", "type": "core", "credits": 3},
+            {"code": "23A54305", "name": "Computer Organization & Architecture", "abbr": "COA", "type": "core", "credits": 3},
+            {"code": "23A54306", "name": "Java Programming Lab", "abbr": "JPL", "type": "lab", "credits": 1.5},
+            {"code": "23A54307", "name": "DBMS Lab", "abbr": "DBMSL", "type": "lab", "credits": 1.5},
+            {"code": "23A54308", "name": "Digital Logic Design Lab", "abbr": "DLDL", "type": "lab", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "23AHSBS20", "name": "Numerical Methods & Complex Variables", "abbr": "NMV", "type": "core", "credits": 3},
+            {"code": "23A54401", "name": "Formal Languages & Automata Theory", "abbr": "FLAT", "type": "core", "credits": 3},
+            {"code": "23A54402", "name": "Design & Analysis of Algorithms", "abbr": "DAA", "type": "core", "credits": 3},
+            {"code": "23A54403", "name": "Operating Systems", "abbr": "OS", "type": "core", "credits": 3},
+            {"code": "23A54404", "name": "Machine Learning", "abbr": "ML", "type": "core", "credits": 3},
+            {"code": "23A54405", "name": "Software Engineering", "abbr": "SE", "type": "core", "credits": 3},
+            {"code": "23A54406", "name": "Operating Systems Lab", "abbr": "OSL", "type": "lab", "credits": 1.5},
+            {"code": "23A54407", "name": "Machine Learning Lab", "abbr": "MLL", "type": "lab", "credits": 1.5},
+            {"code": "23A54408", "name": "Algorithms Lab", "abbr": "AL", "type": "lab", "credits": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (B.Tech V & VI Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "23A54501", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 3},
+            {"code": "23A54502", "name": "Data Analytics Using Python", "abbr": "DA", "type": "core", "credits": 3},
+            {"code": "23A54503", "name": "Artificial Intelligence", "abbr": "AI", "type": "core", "credits": 3},
+            {"code": "23A54504a", "name": "Professional Elective I: Full Stack Development", "abbr": "FSD", "type": "elective", "credits": 3},
+            {"code": "23A54504b", "name": "Professional Elective I: Mobile Application Development", "abbr": "MAD", "type": "elective", "credits": 3},
+            {"code": "23A54505a", "name": "Professional Elective II: Cryptography & Network Security", "abbr": "CNS", "type": "elective", "credits": 3},
+            {"code": "23A54505b", "name": "Professional Elective II: Cloud Computing", "abbr": "CC", "type": "elective", "credits": 3},
+            {"code": "23A54506", "name": "Computer Networks Lab", "abbr": "CNL", "type": "lab", "credits": 1.5},
+            {"code": "23A54507", "name": "Python Programming Lab", "abbr": "PPL", "type": "lab", "credits": 1.5},
+            {"code": "23A54508", "name": "AI with Python Lab", "abbr": "AIL", "type": "lab", "credits": 1.5},
+            {"code": "23A54509", "name": "Skill Oriented Course: DevOps", "abbr": "DEVOPS", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "23A54601", "name": "Compiler Design", "abbr": "CD", "type": "core", "credits": 3},
+            {"code": "23A54602", "name": "Deep Learning", "abbr": "DL", "type": "core", "credits": 3},
+            {"code": "23A54603a", "name": "Professional Elective III: Big Data Analytics", "abbr": "BDA", "type": "elective", "credits": 3},
+            {"code": "23A54603b", "name": "Professional Elective III: Image Processing", "abbr": "IP", "type": "elective", "credits": 3},
+            {"code": "23A54604a", "name": "Professional Elective IV: Internet of Things", "abbr": "IOT", "type": "elective", "credits": 3},
+            {"code": "23A54604b", "name": "Professional Elective IV: Cyber Security", "abbr": "CS", "type": "elective", "credits": 3},
+            {"code": "23A54605", "name": "Compiler Design Lab", "abbr": "CDL", "type": "lab", "credits": 1.5},
+            {"code": "23A54606", "name": "Deep Learning Lab", "abbr": "DLL", "type": "lab", "credits": 1.5},
+            {"code": "23A54607", "name": "Skill Oriented Course: UI/UX Design", "abbr": "UIUX", "type": "core", "credits": 2},
+            {"code": "23A54608", "name": "Summer Internship", "abbr": "SI", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.Tech VII & VIII Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "23A54701a", "name": "Professional Elective V: Natural Language Processing", "abbr": "NLP", "type": "elective", "credits": 3},
+            {"code": "23A54701b", "name": "Professional Elective V: Blockchain Technology", "abbr": "BT", "type": "elective", "credits": 3},
+            {"code": "23A54702a", "name": "Professional Elective VI: Distributed Systems", "abbr": "DS", "type": "elective", "credits": 3},
+            {"code": "23A54702b", "name": "Professional Elective VI: Computer Vision", "abbr": "CV", "type": "elective", "credits": 3},
+            {"code": "23A54703a", "name": "Open Elective I: Entrepreneurship", "abbr": "ENT", "type": "elective", "credits": 3},
+            {"code": "23A54703b", "name": "Open Elective I: Disaster Management", "abbr": "DM", "type": "elective", "credits": 3},
+            {"code": "23A54704", "name": "Major Project Phase I", "abbr": "MP1", "type": "project", "credits": 3},
+            {"code": "23A54705", "name": "Technical Seminar", "abbr": "TS", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "23A54801", "name": "Major Project Phase II", "abbr": "MP2", "type": "project", "credits": 8},
+            {"code": "23A54802", "name": "Comprehensive Viva Voce", "abbr": "CVV", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    }
+  ]
+}

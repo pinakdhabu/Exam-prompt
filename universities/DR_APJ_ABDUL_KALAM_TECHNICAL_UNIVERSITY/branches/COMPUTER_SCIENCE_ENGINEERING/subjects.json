@@ -1,0 +1,140 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "computer-science-engineering",
+    "name": "Computer Science and Engineering",
+    "description": "AKTU B.Tech CSE subjects under 2021-22 Pattern (AICTE Curriculum), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (B.Tech I & II Semester)",
+      "pattern": "aktu-2021",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "KAS101T/KAS101P", "name": "Engineering Mathematics I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "KAS101T/KAS102P", "name": "Engineering Physics / Engineering Chemistry", "abbr": "PHY/CHEM", "type": "core", "credits": 4},
+            {"code": "KEE101T/KEE101P", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 4},
+            {"code": "KCS101T/KCS101P", "name": "Programming for Problem Solving", "abbr": "PPS", "type": "core", "credits": 4},
+            {"code": "KME101T", "name": "Engineering Mechanics", "abbr": "EM", "type": "core", "credits": 3},
+            {"code": "KMC101", "name": "Soft Skills & Interpersonal Communication", "abbr": "SS", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "KAS201T/KAS201P", "name": "Engineering Mathematics II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "KAS202T/KAS202P", "name": "Engineering Chemistry / Engineering Physics", "abbr": "CHEM/PHY", "type": "core", "credits": 4},
+            {"code": "KEC201T/KEC201P", "name": "Basic Electronics Engineering", "abbr": "BEE", "type": "core", "credits": 4},
+            {"code": "KCS201T/KCS201P", "name": "Programming for Problem Solving", "abbr": "PPS", "type": "core", "credits": 4},
+            {"code": "KME201T", "name": "Engineering Graphics & Design", "abbr": "EGD", "type": "core", "credits": 3},
+            {"code": "KMC201", "name": "Soft Skills & Team Building", "abbr": "SSTB", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (B.Tech III & IV Semester)",
+      "pattern": "aktu-2021",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "KCS301", "name": "Data Structure", "abbr": "DS", "type": "core", "credits": 4},
+            {"code": "KCS302", "name": "Computer Organization and Architecture", "abbr": "COA", "type": "core", "credits": 4},
+            {"code": "KCS303", "name": "Discrete Structure & Theory of Logic", "abbr": "DSTL", "type": "core", "credits": 4},
+            {"code": "KCS304", "name": "Universal Human Values", "abbr": "UHV", "type": "core", "credits": 3},
+            {"code": "KAS302", "name": "Mathematics IV", "abbr": "M4", "type": "core", "credits": 4},
+            {"code": "KCS351", "name": "Data Structure Lab", "abbr": "DSL", "type": "lab", "credits": 1},
+            {"code": "KCS352", "name": "Computer Organization Lab", "abbr": "COL", "type": "lab", "credits": 1},
+            {"code": "KCS353", "name": "Discrete Structure Lab", "abbr": "DSTLL", "type": "lab", "credits": 1},
+            {"code": "KMC301", "name": "Computer System Security", "abbr": "CSS", "type": "core", "credits": 3}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "KCS401", "name": "Operating Systems", "abbr": "OS", "type": "core", "credits": 4},
+            {"code": "KCS402", "name": "Theory of Automata & Formal Languages", "abbr": "TAFL", "type": "core", "credits": 4},
+            {"code": "KCS403", "name": "Database Management System", "abbr": "DBMS", "type": "core", "credits": 4},
+            {"code": "KCS404", "name": "Analysis & Design of Algorithm", "abbr": "ADA", "type": "core", "credits": 4},
+            {"code": "KCS451", "name": "Operating Systems Lab", "abbr": "OSL", "type": "lab", "credits": 1},
+            {"code": "KCS452", "name": "DBMS Lab", "abbr": "DBMSL", "type": "lab", "credits": 1},
+            {"code": "KCS453", "name": "Algorithm Lab", "abbr": "AL", "type": "lab", "credits": 1},
+            {"code": "KNC402", "name": "Constitution of India, Law & Engineering", "abbr": "CILE", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (B.Tech V & VI Semester)",
+      "pattern": "aktu-2021",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "KCS501", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 4},
+            {"code": "KCS502", "name": "Software Engineering", "abbr": "SE", "type": "core", "credits": 4},
+            {"code": "KCS503", "name": "Object Oriented Programming using Java", "abbr": "OOPJ", "type": "core", "credits": 4},
+            {"code": "KCS504", "name": "Web Technology", "abbr": "WT", "type": "core", "credits": 4},
+            {"code": "KCS551", "name": "Computer Networks Lab", "abbr": "CNL", "type": "lab", "credits": 1},
+            {"code": "KCS552", "name": "OOP using Java Lab", "abbr": "OOPJL", "type": "lab", "credits": 1},
+            {"code": "KCS553", "name": "Web Technology Lab", "abbr": "WTL", "type": "lab", "credits": 1},
+            {"code": "KNC501", "name": "Indian Tradition, Culture & Society", "abbr": "ITCS", "type": "audit", "credits": 0}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "KCS601", "name": "Compiler Design", "abbr": "CD", "type": "core", "credits": 4},
+            {"code": "KCS602", "name": "Machine Learning Techniques", "abbr": "MLT", "type": "core", "credits": 4},
+            {"code": "KCS603", "name": "Full Stack Development", "abbr": "FSD", "type": "core", "credits": 4},
+            {"code": "KCS6xx", "name": "Professional Elective I", "abbr": "PE1", "type": "elective", "credits": 4},
+            {"code": "KCS651", "name": "Compiler Design Lab", "abbr": "CDL", "type": "lab", "credits": 1},
+            {"code": "KCS652", "name": "Machine Learning Lab", "abbr": "MLL", "type": "lab", "credits": 1},
+            {"code": "KCS653", "name": "Full Stack Development Lab", "abbr": "FSDL", "type": "lab", "credits": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.Tech VII & VIII Semester)",
+      "pattern": "aktu-2021",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "KCS7xx", "name": "Professional Elective II", "abbr": "PE2", "type": "elective", "credits": 4},
+            {"code": "KCS7xx", "name": "Professional Elective III", "abbr": "PE3", "type": "elective", "credits": 4},
+            {"code": "KCS7xx", "name": "Professional Elective IV", "abbr": "PE4", "type": "elective", "credits": 4},
+            {"code": "KOE7xx", "name": "Open Elective I", "abbr": "OE1", "type": "elective", "credits": 4},
+            {"code": "KOE7xx", "name": "Open Elective II", "abbr": "OE2", "type": "elective", "credits": 4},
+            {"code": "KCS751", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "KCS8xx", "name": "Professional Elective V", "abbr": "PE5", "type": "elective", "credits": 4},
+            {"code": "KOE8xx", "name": "Open Elective III", "abbr": "OE3", "type": "elective", "credits": 4},
+            {"code": "KCS851", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 8},
+            {"code": "KCS852", "name": "Seminar", "abbr": "SEM", "type": "core", "credits": 1}
+          ]
+        }
+      ]
+    }
+  ]
+}

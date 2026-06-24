@@ -20,7 +20,7 @@ unlikely but possible in:
 
 1. **Open a draft security advisory** at
    [github.com/pinakdhabu/Exam-prompt/security/advisories](https://github.com/pinakdhabu/Exam-prompt/security/advisories)
-2. **Or email**: pinakdhabu@gmail.com (mention "Exam Prompt security" in subject)
+2. **Or email**: pinakdhabu2005@gmail.com (mention "Exam Prompt security" in subject)
 
 ### Response
 

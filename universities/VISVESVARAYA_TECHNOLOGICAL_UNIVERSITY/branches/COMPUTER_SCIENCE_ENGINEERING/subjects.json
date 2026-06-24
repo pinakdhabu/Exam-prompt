@@ -1,0 +1,148 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "computer-science-engineering",
+    "name": "Computer Science and Engineering",
+    "description": "VTU BE CSE subjects under the 2022 Scheme (NEP-aligned, CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (Common to all branches)",
+      "pattern": "2022",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1 (Physics Cycle)",
+          "subjects": [
+            {"code": "BMATS101", "name": "Mathematics for CSE Stream I (Calculus and Linear Algebra)", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "BPHYS102/202", "name": "Physics for CSE Stream", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "BCHES102/202", "name": "Chemistry for CSE Stream", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "BPOPS103/203", "name": "Principles of Programming Using C", "abbr": "C", "type": "core", "credits": 4},
+            {"code": "BESCK104x", "name": "Engineering Science Course", "abbr": "ESC", "type": "core", "credits": 3},
+            {"code": "BETCK105x", "name": "Emerging Technology Course", "abbr": "ETC", "type": "core", "credits": 3},
+            {"code": "BENGK106", "name": "Communicative English", "abbr": "ENG", "type": "core", "credits": 1},
+            {"code": "BIDTK158", "name": "Innovation and Design Thinking", "abbr": "IDT", "type": "core", "credits": 1},
+            {"code": "BSFHK158", "name": "Scientific Foundations for Health", "abbr": "SFH", "type": "core", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2 (Chemistry Cycle)",
+          "subjects": [
+            {"code": "BMATS201", "name": "Mathematics for CSE Stream II (Numerical Methods)", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "BPHYS102/202", "name": "Physics for CSE Stream", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "BCHES102/202", "name": "Chemistry for CSE Stream", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "BPOPS103/203", "name": "Principles of Programming Using C", "abbr": "C", "type": "core", "credits": 4},
+            {"code": "BESCK204x", "name": "Engineering Science Course", "abbr": "ESC", "type": "core", "credits": 3},
+            {"code": "BETCK205x", "name": "Emerging Technology Course", "abbr": "ETC", "type": "core", "credits": 3},
+            {"code": "BPWSK206", "name": "Professional Writing Skills in English", "abbr": "PWS", "type": "core", "credits": 1},
+            {"code": "BICOK207", "name": "Indian Constitution", "abbr": "IC", "type": "core", "credits": 1},
+            {"code": "BIDTK258", "name": "Innovation and Design Thinking", "abbr": "IDT", "type": "core", "credits": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "2022",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "BCS301", "name": "Mathematics for Computer Science", "abbr": "MCS", "type": "core", "credits": 4},
+            {"code": "BCS302", "name": "Digital Design and Computer Organization", "abbr": "DDCO", "type": "core", "credits": 4},
+            {"code": "BCS303", "name": "Operating Systems", "abbr": "OS", "type": "core", "credits": 4},
+            {"code": "BCS304", "name": "Data Structures and Applications", "abbr": "DSA", "type": "core", "credits": 3},
+            {"code": "BCSL305", "name": "Data Structures Lab", "abbr": "DSL", "type": "lab", "credits": 1},
+            {"code": "BCS306A", "name": "Object Oriented Programming with Java", "abbr": "OOPJ", "type": "elective", "credits": 3},
+            {"code": "BCS306B", "name": "Object Oriented Programming with C++", "abbr": "OOPCPP", "type": "elective", "credits": 3},
+            {"code": "BSCK307", "name": "Social Connect and Responsibility", "abbr": "SCR", "type": "core", "credits": 1},
+            {"code": "BCS358x", "name": "Ability Enhancement Course III", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BNSK359", "name": "National Service Scheme", "abbr": "NSS", "type": "audit", "credits": 0}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "BCS401", "name": "Analysis and Design of Algorithms", "abbr": "ADA", "type": "core", "credits": 3},
+            {"code": "BCS402", "name": "Microcontrollers", "abbr": "MC", "type": "core", "credits": 4},
+            {"code": "BCS403", "name": "Database Management Systems", "abbr": "DBMS", "type": "core", "credits": 4},
+            {"code": "BCSL404", "name": "Analysis and Design of Algorithms Lab", "abbr": "ADAL", "type": "lab", "credits": 1},
+            {"code": "BCS405x", "name": "Engineering Science Course (ESC/ETC/PLC)", "abbr": "ESC", "type": "elective", "credits": 3},
+            {"code": "BCS456x", "name": "Ability Enhancement Course IV", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BBOC407", "name": "Biology for Computer Engineers", "abbr": "BIO", "type": "core", "credits": 2},
+            {"code": "BUHK408", "name": "Universal Human Values", "abbr": "UHV", "type": "core", "credits": 1},
+            {"code": "BNSK459", "name": "National Service Scheme", "abbr": "NSS", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "2022",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "BCS501", "name": "Software Engineering and Project Management", "abbr": "SEPM", "type": "core", "credits": 3},
+            {"code": "BCS502", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 4},
+            {"code": "BCS503", "name": "Theory of Computation", "abbr": "TOC", "type": "core", "credits": 4},
+            {"code": "BCSL504", "name": "Web Technology Lab", "abbr": "WTL", "type": "lab", "credits": 1},
+            {"code": "BCS515x", "name": "Professional Elective Course", "abbr": "PEC", "type": "elective", "credits": 3},
+            {"code": "BCS556x", "name": "Ability Enhancement Course V", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BPEK559", "name": "Physical Education", "abbr": "PE", "type": "audit", "credits": 0}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "BCS601", "name": "Machine Learning", "abbr": "ML", "type": "core", "credits": 4},
+            {"code": "BCS602", "name": "Full Stack Development", "abbr": "FSD", "type": "core", "credits": 4},
+            {"code": "BCS603", "name": "Computer Graphics and Fundamentals of Image Processing", "abbr": "CGIP", "type": "core", "credits": 3},
+            {"code": "BCSL604", "name": "Machine Learning Lab", "abbr": "MLL", "type": "lab", "credits": 1},
+            {"code": "BCS615x", "name": "Professional Elective Course", "abbr": "PEC", "type": "elective", "credits": 3},
+            {"code": "BCS656x", "name": "Ability Enhancement Course VI", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BYOK659", "name": "Yoga", "abbr": "YOGA", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "2022",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "BCS701", "name": "Natural Language Processing", "abbr": "NLP", "type": "core", "credits": 3},
+            {"code": "BCS702", "name": "Cloud Computing", "abbr": "CC", "type": "core", "credits": 3},
+            {"code": "BCS703x", "name": "Professional Elective Course", "abbr": "PEC", "type": "elective", "credits": 3},
+            {"code": "BCS704x", "name": "Professional Elective Course", "abbr": "PEC", "type": "elective", "credits": 3},
+            {"code": "BCS705x", "name": "Open Elective Course", "abbr": "OEC", "type": "elective", "credits": 3},
+            {"code": "BCSL706", "name": "Mini Project", "abbr": "MP", "type": "project", "credits": 2},
+            {"code": "BCS707", "name": "Research Methodology and IPR", "abbr": "RMIPR", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "BCS801x", "name": "Professional Elective Course", "abbr": "PEC", "type": "elective", "credits": 3},
+            {"code": "BCS802x", "name": "Open Elective Course", "abbr": "OEC", "type": "elective", "credits": 3},
+            {"code": "BCS803", "name": "Internship / Technical Seminar", "abbr": "INT", "type": "core", "credits": 3},
+            {"code": "BCS804", "name": "Project Work Phase II", "abbr": "PROJ", "type": "project", "credits": 10}
+          ]
+        }
+      ]
+    }
+  ]
+}

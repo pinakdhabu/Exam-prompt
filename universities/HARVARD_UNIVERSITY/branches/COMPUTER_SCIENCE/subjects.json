@@ -1,0 +1,81 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "computer-science",
+    "name": "Computer Science",
+    "description": "Harvard University Computer Science concentration subjects (AB/SB)"
+  },
+  "years": [
+    {
+      "id": "foundations",
+      "name": "Foundational Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "intro",
+          "name": "Introductory Sequence",
+          "subjects": [
+            {"code": "CS50", "name": "Introduction to Computer Science I", "abbr": "CS50", "type": "core"},
+            {"code": "CS20", "name": "Discrete Mathematics", "abbr": "DM", "type": "core"},
+            {"code": "CS51", "name": "Abstraction and Design in Computation", "abbr": "CS51", "type": "core"},
+            {"code": "CS61", "name": "Systems Programming and Machine Organization", "abbr": "CS61", "type": "core"},
+            {"code": "Stat110", "name": "Probability", "abbr": "PROB", "type": "core"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theory",
+      "name": "Theory Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "theory",
+          "name": "Theory",
+          "subjects": [
+            {"code": "CS121", "name": "Introduction to Theoretical Computer Science", "abbr": "TCS", "type": "core"},
+            {"code": "CS124", "name": "Algorithms", "abbr": "ALGO", "type": "core"},
+            {"code": "CS127", "name": "Cryptography", "abbr": "CRYPTO", "type": "elective"},
+            {"code": "CS221", "name": "Computational Complexity", "abbr": "COMPLEX", "type": "elective"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "name": "Systems Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "systems",
+          "name": "Systems",
+          "subjects": [
+            {"code": "CS141", "name": "Computing Hardware", "abbr": "HW", "type": "elective"},
+            {"code": "CS143", "name": "Compilers", "abbr": "COMP", "type": "elective"},
+            {"code": "CS144", "name": "Operating Systems", "abbr": "OS", "type": "elective"},
+            {"code": "CS145", "name": "Networking", "abbr": "NET", "type": "elective"},
+            {"code": "CS146", "name": "Database Systems", "abbr": "DB", "type": "elective"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-ml",
+      "name": "AI/ML Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "ai-ml",
+          "name": "Artificial Intelligence & Machine Learning",
+          "subjects": [
+            {"code": "CS181", "name": "Machine Learning", "abbr": "ML", "type": "elective"},
+            {"code": "CS182", "name": "Artificial Intelligence", "abbr": "AI", "type": "elective"},
+            {"code": "CS184", "name": "Neural Networks", "abbr": "NN", "type": "elective"},
+            {"code": "CS189", "name": "Computational Vision", "abbr": "CV", "type": "elective"},
+            {"code": "CS279", "name": "Computational Biology", "abbr": "CB", "type": "elective"}
+          ]
+        }
+      ]
+    }
+  ]
+}

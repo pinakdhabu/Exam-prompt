@@ -1,0 +1,65 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "computer-science",
+    "name": "Computer Science",
+    "description": "University of Oxford Computer Science undergraduate subjects by year"
+  },
+  "years": [
+    {
+      "id": "first-year",
+      "name": "Year 1 (Prelims)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "full-year",
+          "name": "First Year",
+          "subjects": [
+            {"code": "CS1", "name": "Functional Programming", "abbr": "FP", "type": "core"},
+            {"code": "CS2", "name": "Imperative Programming", "abbr": "IP", "type": "core"},
+            {"code": "CS3", "name": "Design and Analysis of Algorithms", "abbr": "DAA", "type": "core"},
+            {"code": "M1", "name": "Discrete Mathematics", "abbr": "DM", "type": "core"},
+            {"code": "M2", "name": "Probability", "abbr": "PROB", "type": "core"},
+            {"code": "M3", "name": "Linear Algebra", "abbr": "LA", "type": "core"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second-year",
+      "name": "Year 2 (Core)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "full-year",
+          "name": "Second Year",
+          "subjects": [
+            {"code": "CS4", "name": "Introduction to Formal Specification", "abbr": "IFS", "type": "core"},
+            {"code": "CS5", "name": "Models of Computation", "abbr": "MOC", "type": "core"},
+            {"code": "CS6", "name": "Object-Oriented Programming", "abbr": "OOP", "type": "core"},
+            {"code": "CS7", "name": "Computer Architecture", "abbr": "CA", "type": "core"},
+            {"code": "CS8", "name": "Computer Networks", "abbr": "CN", "type": "core"},
+            {"code": "CS9", "name": "Algorithms and Data Structures", "abbr": "ADS", "type": "core"},
+            {"code": "CS10", "name": "Compilers", "abbr": "COMP", "type": "core"},
+            {"code": "CS11", "name": "Databases", "abbr": "DB", "type": "core"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third-year",
+      "name": "Year 3 & 4 (Options + Project)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "advanced",
+          "name": "Years 3 & 4",
+          "subjects": [
+            {"code": "OPT", "name": "Advanced Options (Machine Learning, AI, Computer Vision, Cryptography, Quantum Computing)", "abbr": "OPT", "type": "elective"},
+            {"code": "PROJ", "name": "Final Year Project / Dissertation", "abbr": "PROJ", "type": "project"}
+          ]
+        }
+      ]
+    }
+  ]
+}

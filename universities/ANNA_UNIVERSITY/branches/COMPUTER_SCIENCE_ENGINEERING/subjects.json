@@ -1,0 +1,136 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "computer-science-engineering",
+    "name": "Computer Science and Engineering",
+    "description": "Anna University B.E. CSE subjects under R2021 Regulation (CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (Semesters 1 & 2)",
+      "pattern": "au-cbcs-2021",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "HS3151", "name": "Communicative English", "abbr": "CE", "type": "core", "credits": 3},
+            {"code": "MA3151", "name": "Matrices and Calculus", "abbr": "MC", "type": "core", "credits": 4},
+            {"code": "PH3151", "name": "Engineering Physics", "abbr": "PHY", "type": "core", "credits": 3},
+            {"code": "CY3151", "name": "Engineering Chemistry", "abbr": "CHEM", "type": "core", "credits": 3},
+            {"code": "GE3151", "name": "Problem Solving and Python Programming", "abbr": "PSPP", "type": "core", "credits": 3},
+            {"code": "GE3171", "name": "Python Programming Lab", "abbr": "PPL", "type": "lab", "credits": 1.5},
+            {"code": "BS3171", "name": "Physics and Chemistry Lab", "abbr": "PCL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "HS3251", "name": "Professional English", "abbr": "PE", "type": "core", "credits": 3},
+            {"code": "MA3251", "name": "Statistics and Numerical Methods", "abbr": "SNM", "type": "core", "credits": 4},
+            {"code": "PH3251", "name": "Materials Science", "abbr": "MS", "type": "core", "credits": 3},
+            {"code": "BE3251", "name": "Basic Electrical and Electronics Engineering", "abbr": "BEEE", "type": "core", "credits": 3},
+            {"code": "GE3251", "name": "Engineering Graphics", "abbr": "EG", "type": "core", "credits": 4},
+            {"code": "GE3271", "name": "Engineering Practices Lab", "abbr": "EPL", "type": "lab", "credits": 1.5},
+            {"code": "BE3271", "name": "Basic Electrical and Electronics Engineering Lab", "abbr": "BEEEL", "type": "lab", "credits": 1.5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (Semesters 3 & 4)",
+      "pattern": "au-cbcs-2021",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "MA3354", "name": "Discrete Mathematics", "abbr": "DM", "type": "core", "credits": 4},
+            {"code": "CS3351", "name": "Digital Principles and Computer Organization", "abbr": "DPCO", "type": "core", "credits": 4},
+            {"code": "CS3352", "name": "Foundations of Data Science", "abbr": "FDS", "type": "core", "credits": 3},
+            {"code": "CS3353", "name": "C Programming and Data Structures", "abbr": "CPDS", "type": "core", "credits": 3},
+            {"code": "CS3391", "name": "Object Oriented Programming", "abbr": "OOP", "type": "core", "credits": 3},
+            {"code": "CS3361", "name": "Data Science Lab", "abbr": "DSL", "type": "lab", "credits": 1.5},
+            {"code": "CS3381", "name": "Object Oriented Programming Lab", "abbr": "OOPL", "type": "lab", "credits": 1.5},
+            {"code": "GE3361", "name": "Professional Development", "abbr": "PD", "type": "core", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "MA3451", "name": "Probability and Queueing Theory", "abbr": "PQT", "type": "core", "credits": 4},
+            {"code": "CS3451", "name": "Introduction to Operating Systems", "abbr": "IOS", "type": "core", "credits": 4},
+            {"code": "CS3452", "name": "Theory of Computation", "abbr": "TOC", "type": "core", "credits": 4},
+            {"code": "CS3491", "name": "Artificial Intelligence and Machine Learning", "abbr": "AIML", "type": "core", "credits": 4},
+            {"code": "CS3461", "name": "Operating Systems Lab", "abbr": "OSL", "type": "lab", "credits": 1.5},
+            {"code": "CS3481", "name": "AIML Lab", "abbr": "AIMLL", "type": "lab", "credits": 1.5},
+            {"code": "CS3411", "name": "Database Management Systems", "abbr": "DBMS", "type": "core", "credits": 4},
+            {"code": "CS3462", "name": "DBMS Lab", "abbr": "DBMSL", "type": "lab", "credits": 1.5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (Semesters 5 & 6)",
+      "pattern": "au-cbcs-2021",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "CS3551", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 4},
+            {"code": "CS3552", "name": "Software Engineering", "abbr": "SE", "type": "core", "credits": 3},
+            {"code": "CS3591", "name": "Internet and Web Programming", "abbr": "IWP", "type": "core", "credits": 3},
+            {"code": "CS3501", "name": "Compiler Design", "abbr": "CD", "type": "core", "credits": 4},
+            {"code": "CS3553", "name": "Resource Management Techniques", "abbr": "RMT", "type": "core", "credits": 3},
+            {"code": "CS3561", "name": "Computer Networks Lab", "abbr": "CNL", "type": "lab", "credits": 1.5},
+            {"code": "CS3581", "name": "Web Programming Lab", "abbr": "WPL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "CCS3xxx", "name": "Professional Elective I", "abbr": "PE1", "type": "elective", "credits": 3},
+            {"code": "CCS3xxx", "name": "Professional Elective II", "abbr": "PE2", "type": "elective", "credits": 3},
+            {"code": "CCS3xxx", "name": "Professional Elective III", "abbr": "PE3", "type": "elective", "credits": 3},
+            {"code": "CCS3xxx", "name": "Open Elective I", "abbr": "OE1", "type": "elective", "credits": 3},
+            {"code": "CCS3xxx", "name": "Open Elective II", "abbr": "OE2", "type": "elective", "credits": 3},
+            {"code": "CS3611", "name": "Mini Project", "abbr": "MP", "type": "project", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (Semesters 7 & 8)",
+      "pattern": "au-cbcs-2021",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "CCS3xxx", "name": "Professional Elective IV", "abbr": "PE4", "type": "elective", "credits": 3},
+            {"code": "CCS3xxx", "name": "Professional Elective V", "abbr": "PE5", "type": "elective", "credits": 3},
+            {"code": "CCS3xxx", "name": "Open Elective III", "abbr": "OE3", "type": "elective", "credits": 3},
+            {"code": "CCS3xxx", "name": "Open Elective IV", "abbr": "OE4", "type": "elective", "credits": 3},
+            {"code": "CS3711", "name": "Project Work Phase I", "abbr": "PW1", "type": "project", "credits": 4}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "CS3811", "name": "Project Work Phase II", "abbr": "PW2", "type": "project", "credits": 12},
+            {"code": "CS3812", "name": "Comprehensive Viva Voce", "abbr": "CVV", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    }
+  ]
+}

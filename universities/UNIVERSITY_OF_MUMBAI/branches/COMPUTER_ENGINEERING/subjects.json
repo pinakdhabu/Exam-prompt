@@ -1,0 +1,138 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "computer-engineering",
+    "name": "Computer Engineering",
+    "description": "University of Mumbai B.E. Computer Engineering subjects under R-2019 'C' Scheme (CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (F.E.)",
+      "pattern": "mu-cbcs-2019",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "FE101", "name": "Engineering Mathematics I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "FE102", "name": "Engineering Physics I", "abbr": "PHY1", "type": "core", "credits": 3},
+            {"code": "FE103", "name": "Engineering Chemistry I", "abbr": "CHEM1", "type": "core", "credits": 3},
+            {"code": "FE104", "name": "Engineering Mechanics", "abbr": "EM", "type": "core", "credits": 3},
+            {"code": "FE105", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 3},
+            {"code": "FE106", "name": "Environmental Studies I", "abbr": "EVS1", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "FE201", "name": "Engineering Mathematics II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "FE202", "name": "Engineering Physics II", "abbr": "PHY2", "type": "core", "credits": 3},
+            {"code": "FE203", "name": "Engineering Chemistry II", "abbr": "CHEM2", "type": "core", "credits": 3},
+            {"code": "FE204", "name": "Structured Programming Approach", "abbr": "SPA", "type": "core", "credits": 3},
+            {"code": "FE205", "name": "Basic Electronics Engineering", "abbr": "BXE", "type": "core", "credits": 3},
+            {"code": "FE206", "name": "Communication Skills", "abbr": "CS", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "mu-cbcs-2019",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "CSC301", "name": "Engineering Mathematics III", "abbr": "M3", "type": "core", "credits": 4},
+            {"code": "CSC302", "name": "Discrete Structures and Graph Theory", "abbr": "DSGT", "type": "core", "credits": 3},
+            {"code": "CSC303", "name": "Data Structures", "abbr": "DS", "type": "core", "credits": 3},
+            {"code": "CSC304", "name": "Digital Logic and Computer Architecture", "abbr": "DLCA", "type": "core", "credits": 3},
+            {"code": "CSC305", "name": "Computer Graphics", "abbr": "CG", "type": "core", "credits": 3},
+            {"code": "CSL301", "name": "Data Structures Lab", "abbr": "DSL", "type": "lab", "credits": 2},
+            {"code": "CSL302", "name": "Computer Graphics Lab", "abbr": "CGL", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "CSC401", "name": "Applied Mathematics IV", "abbr": "AM4", "type": "core", "credits": 4},
+            {"code": "CSC402", "name": "Analysis of Algorithms", "abbr": "AOA", "type": "core", "credits": 3},
+            {"code": "CSC403", "name": "Database Management Systems", "abbr": "DBMS", "type": "core", "credits": 3},
+            {"code": "CSC404", "name": "Operating Systems", "abbr": "OS", "type": "core", "credits": 3},
+            {"code": "CSC405", "name": "Microprocessor and Microcontrollers", "abbr": "MPMC", "type": "core", "credits": 3},
+            {"code": "CSL401", "name": "Database Management Systems Lab", "abbr": "DBMSL", "type": "lab", "credits": 2},
+            {"code": "CSL402", "name": "Microprocessor and Microcontrollers Lab", "abbr": "MPMCL", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "mu-cbcs-2019",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "CSC501", "name": "Software Engineering", "abbr": "SE", "type": "core", "credits": 3},
+            {"code": "CSC502", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 3},
+            {"code": "CSC503", "name": "Theory of Computation", "abbr": "TOC", "type": "core", "credits": 3},
+            {"code": "CSC504", "name": "System Programming and Compiler Construction", "abbr": "SPCC", "type": "core", "credits": 3},
+            {"code": "CSDLO501x", "name": "Department Level Optional Course I", "abbr": "DLOC1", "type": "elective", "credits": 3},
+            {"code": "CSL501", "name": "Software Engineering Lab", "abbr": "SEL", "type": "lab", "credits": 2},
+            {"code": "CSL502", "name": "Computer Networks Lab", "abbr": "CNL", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "CSC601", "name": "Artificial Intelligence", "abbr": "AI", "type": "core", "credits": 3},
+            {"code": "CSC602", "name": "Data Warehousing and Mining", "abbr": "DWM", "type": "core", "credits": 3},
+            {"code": "CSC603", "name": "Cryptography and System Security", "abbr": "CSS", "type": "core", "credits": 3},
+            {"code": "CSC604", "name": "Mobile Communication and Computing", "abbr": "MCC", "type": "core", "credits": 3},
+            {"code": "CSDLO601x", "name": "Department Level Optional Course II", "abbr": "DLOC2", "type": "elective", "credits": 3},
+            {"code": "CSL601", "name": "Artificial Intelligence Lab", "abbr": "AIL", "type": "lab", "credits": 2},
+            {"code": "CSL602", "name": "Data Warehousing and Mining Lab", "abbr": "DWML", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "mu-cbcs-2019",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "CSC701", "name": "Machine Learning", "abbr": "ML", "type": "core", "credits": 3},
+            {"code": "CSC702", "name": "Big Data Analytics", "abbr": "BDA", "type": "core", "credits": 3},
+            {"code": "CSDLO701x", "name": "Department Level Optional Course III", "abbr": "DLOC3", "type": "elective", "credits": 3},
+            {"code": "CSDLO702x", "name": "Department Level Optional Course IV", "abbr": "DLOC4", "type": "elective", "credits": 3},
+            {"code": "ILO701x", "name": "Institute Level Optional Course I", "abbr": "ILOC1", "type": "elective", "credits": 3},
+            {"code": "CSL701", "name": "Machine Learning Lab", "abbr": "MLL", "type": "lab", "credits": 2},
+            {"code": "CSL702", "name": "Big Data Analytics Lab", "abbr": "BDAL", "type": "lab", "credits": 2},
+            {"code": "CSL703", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "CSC801", "name": "Distributed Computing", "abbr": "DC", "type": "core", "credits": 3},
+            {"code": "CSDLO801x", "name": "Department Level Optional Course V", "abbr": "DLOC5", "type": "elective", "credits": 3},
+            {"code": "ILO801x", "name": "Institute Level Optional Course II", "abbr": "ILOC2", "type": "elective", "credits": 3},
+            {"code": "CSL801", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 6}
+          ]
+        }
+      ]
+    }
+  ]
+}
