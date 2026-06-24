@@ -1,15 +1,16 @@
 # SPPU B.E. Computer Engineering — Honors in Internet of Things (IoT)
+
 ## Semester V Syllabus (2019 Pattern)
 
 ---
 
 ## Course Structure — Semester V
 
-| Course Code | Course Name | TH | PR | Credits | ISA | ESA | Total |
-|-------------|-------------|:--:|:--:|:-------:|:---:|:---:|:-----:|
-| 310601 | Embedded Systems and IoT | 3 | — | 3 | 30 | 70 | 100 |
-| 310602 | Embedded Systems and IoT Laboratory | — | 2 | 1 | 25 | 25 | 50 |
-| **Total** | | **3** | **2** | **4** | **55** | **95** | **150** |
+| Course Code | Course Name                         |  TH   |  PR   | Credits |  ISA   |  ESA   |  Total  |
+| ----------- | ----------------------------------- | :---: | :---: | :-----: | :----: | :----: | :-----: |
+| 310601      | Embedded Systems and IoT            |   3   |   —   |    3    |   30   |   70   |   100   |
+| 310602      | Embedded Systems and IoT Laboratory |   —   |   2   |    1    |   25   |   25   |   50    |
+| **Total**   |                                     | **3** | **2** |  **4**  | **55** | **95** | **150** |
 
 ---
 
@@ -22,23 +23,25 @@
 **Prerequisites:** Microprocessor, Computer Networks
 
 ### Course Objectives
+
 - Understand embedded system architectures and microcontrollers
 - Learn IoT protocols, platforms, and system design
 - Build IoT systems integrating sensors, cloud, and analytics
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                           |
+| --- | --------------------------------------------------------------------- |
 | CO1 | Explain embedded system architecture and ARM microcontroller features |
-| CO2 | Interface sensors and actuators with microcontrollers |
-| CO3 | Implement IoT communication protocols |
-| CO4 | Design IoT systems with cloud integration |
-| CO5 | Develop real-time IoT applications |
+| CO2 | Interface sensors and actuators with microcontrollers                 |
+| CO3 | Implement IoT communication protocols                                 |
+| CO4 | Design IoT systems with cloud integration                             |
+| CO5 | Develop real-time IoT applications                                    |
 
 ### Course Contents
 
 #### Unit I: Embedded Systems Fundamentals (07 Hours)
+
 - Embedded Systems: Definition, Characteristics, Applications
 - Microprocessor vs Microcontroller: ARM, AVR, PIC
 - ARM Cortex-M Architecture: Registers, Memory Map, Interrupts
@@ -48,6 +51,7 @@
 - Low Power Modes: Sleep, Deep Sleep, Standby
 
 #### Unit II: Sensors and Actuators (07 Hours)
+
 - Sensor Types: Temperature (DHT11, LM35), Humidity, Motion (PIR), Ultrasonic
 - Actuators: DC Motors, Servo Motors, Stepper Motors, Relays
 - Signal Conditioning: Amplification, Filtering, Level Shifting
@@ -57,6 +61,7 @@
 - PCB Design Basics for Sensor Integration
 
 #### Unit III: IoT Protocols and Connectivity (07 Hours)
+
 - IoT Network Architecture: Perception, Network, Application Layers
 - IEEE 802.15.4: LR-WPAN, Frame Structure
 - 6LoWPAN: Header Compression, Fragmentation
@@ -66,6 +71,7 @@
 - NB-IoT and LTE-M for Cellular IoT
 
 #### Unit IV: IoT Platforms and Cloud (07 Hours)
+
 - IoT Platforms: Arduino, Raspberry Pi, ESP32, NodeMCU
 - Cloud IoT Platforms: AWS IoT Core, Azure IoT Hub, Google Cloud IoT
 - Data Protocols: MQTT, CoAP, HTTP/2
@@ -75,6 +81,7 @@
 - Device Management: Provisioning, Update, Monitoring
 
 #### Unit V: IoT Application Protocols (07 Hours)
+
 - MQTT: Publish-Subscribe, QoS Levels, Retained Messages, Will Messages
 - CoAP: RESTful, Observe, Block-wise Transfer
 - AMQP: Message Queue, Routing, Security
@@ -84,6 +91,7 @@
 - Protocol Comparison and Selection Criteria
 
 #### Unit VI: IoT Security and Applications (07 Hours)
+
 - IoT Security: Authentication, Encryption, Secure Boot
 - Secure Communication: TLS/DTLS for IoT
 - IoT Application Domains:
@@ -97,12 +105,16 @@
 ### Learning Resources
 
 #### Textbooks
-1. Arshdeep Bahga, Vijay Madisetti, "Internet of Things: A Hands-On Approach", Universities Press, 2015
+
+1. Arshdeep Bahga, Vijay Madisetti, "Internet of Things: A Hands-On Approach", Universities Press,
+   2015
 2. Raj Kamal, "Internet of Things: Architecture and Design Principles", McGraw Hill, 2017
 
 #### Reference Books
+
 1. Adrian McEwen, Hakim Cassimally, "Designing the Internet of Things", Wiley, 2013
-2. David Hanes, "IoT Fundamentals: Networking Technologies, Protocols, and Use Cases", Cisco Press, 2017
+2. David Hanes, "IoT Fundamentals: Networking Technologies, Protocols, and Use Cases", Cisco Press,
+   2017
 
 ---
 

@@ -1,15 +1,16 @@
 # SPPU B.E. Computer Engineering — Honors in Data Science
+
 ## Semester VII Syllabus (2019 Pattern)
 
 ---
 
 ## Course Structure — Semester VII
 
-| Course Code | Course Name | TH | PR | Credits | ISA | ESA | Total |
-|-------------|-------------|:--:|:--:|:-------:|:---:|:---:|:-----:|
-| 410501 | Machine Learning and Data Science | 3 | — | 3 | 30 | 70 | 100 |
-| 410502 | Machine Learning and Data Science Laboratory | — | 2 | 1 | 25 | 25 | 50 |
-| **Total** | | **3** | **2** | **4** | **55** | **95** | **150** |
+| Course Code | Course Name                                  |  TH   |  PR   | Credits |  ISA   |  ESA   |  Total  |
+| ----------- | -------------------------------------------- | :---: | :---: | :-----: | :----: | :----: | :-----: |
+| 410501      | Machine Learning and Data Science            |   3   |   —   |    3    |   30   |   70   |   100   |
+| 410502      | Machine Learning and Data Science Laboratory |   —   |   2   |    1    |   25   |   25   |   50    |
+| **Total**   |                                              | **3** | **2** |  **4**  | **55** | **95** | **150** |
 
 ---
 
@@ -20,23 +21,25 @@
 **Prerequisites:** Big Data Analytics (310503), Data Science and Visualization (310501)
 
 ### Course Objectives
+
 - Apply machine learning algorithms for data-driven decision making
 - Build scalable ML pipelines for production environments
 - Master model deployment and monitoring strategies
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Build complete ML pipelines from data ingestion to model deployment |
-| CO2 | Apply advanced supervised and unsupervised learning techniques |
+| CO  | Description                                                            |
+| --- | ---------------------------------------------------------------------- |
+| CO1 | Build complete ML pipelines from data ingestion to model deployment    |
+| CO2 | Apply advanced supervised and unsupervised learning techniques         |
 | CO3 | Implement model selection, evaluation, and hyperparameter optimization |
-| CO4 | Deploy and monitor ML models in production |
-| CO5 | Apply MLOps practices for reproducible ML workflows |
+| CO4 | Deploy and monitor ML models in production                             |
+| CO5 | Apply MLOps practices for reproducible ML workflows                    |
 
 ### Course Contents
 
 #### Unit I: ML Pipeline Architecture (07 Hours)
+
 - End-to-End ML Pipeline Design
 - Data Ingestion: Batch vs Streaming
 - Feature Store: Feature Engineering, Serving, Versioning
@@ -46,6 +49,7 @@
 - Model Monitoring: Performance, Data Drift, Concept Drift
 
 #### Unit II: Advanced Supervised Learning (07 Hours)
+
 - Gradient Boosting: XGBoost, LightGBM, CatBoost
 - Bayesian Methods: Gaussian Processes, Bayesian Linear Regression
 - Multi-label and Multi-output Classification
@@ -54,6 +58,7 @@
 - Recommendation Systems: Collaborative Filtering, Content-based, Hybrid
 
 #### Unit III: Advanced Unsupervised Learning (07 Hours)
+
 - Gaussian Mixture Models: EM Algorithm
 - Spectral Clustering
 - Density-Based Clustering: HDBSCAN
@@ -62,6 +67,7 @@
 - Graph-based Learning: Graph Neural Networks Basics
 
 #### Unit IV: ML at Scale (07 Hours)
+
 - Distributed ML with Spark MLlib
 - Feature Scaling with Dask and Ray
 - GPU Accelerated ML: RAPIDS, cuML
@@ -70,6 +76,7 @@
 - Causal Inference in ML: Propensity Score, Uplift Modeling
 
 #### Unit V: MLOps and Production ML (07 Hours)
+
 - MLflow: Experiment Tracking, Model Registry, Serving
 - Docker and Kubernetes for ML: Containerization, Orchestration
 - CI/CD for ML: GitHub Actions, Jenkins, Kubeflow
@@ -78,6 +85,7 @@
 - Model Serving: TF Serving, TorchServe, BentoML, Ray Serve
 
 #### Unit VI: ML Ethics and Governance (07 Hours)
+
 - Fairness in ML: Demographic Parity, Equal Opportunity
 - Interpretability: SHAP, LIME, Partial Dependence, Permutation Importance
 - Privacy: Differential Privacy, Federated Learning
@@ -88,10 +96,12 @@
 ### Learning Resources
 
 #### Textbooks
+
 1. Andriy Burkov, "The Hundred-Page Machine Learning Book", 2019
 2. Chip Huyen, "Designing Machine Learning Systems", O'Reilly, 2022
 
 #### Reference Books
+
 1. Mark Treveil, "Introducing MLOps", O'Reilly, 2020
 2. Emmanuel Ameisen, "Building Machine Learning Pipelines", O'Reilly, 2021
 

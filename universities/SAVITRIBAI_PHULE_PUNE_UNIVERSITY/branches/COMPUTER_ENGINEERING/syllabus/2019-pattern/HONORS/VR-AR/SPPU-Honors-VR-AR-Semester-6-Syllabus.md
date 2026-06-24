@@ -1,15 +1,16 @@
 # SPPU B.E. Computer Engineering — Honors in Virtual & Augmented Reality (VR/AR)
+
 ## Semester VI Syllabus (2019 Pattern)
 
 ---
 
 ## Course Structure — Semester VI
 
-| Course Code | Course Name | TH | PR | Credits | ISA | ESA | Total |
-|-------------|-------------|:--:|:--:|:-------:|:---:|:---:|:-----:|
-| 310703 | Augmented Reality | 3 | — | 3 | 30 | 70 | 100 |
-| 310704 | Augmented Reality Laboratory | — | 2 | 1 | 25 | 25 | 50 |
-| **Total** | | **3** | **2** | **4** | **55** | **95** | **150** |
+| Course Code | Course Name                  |  TH   |  PR   | Credits |  ISA   |  ESA   |  Total  |
+| ----------- | ---------------------------- | :---: | :---: | :-----: | :----: | :----: | :-----: |
+| 310703      | Augmented Reality            |   3   |   —   |    3    |   30   |   70   |   100   |
+| 310704      | Augmented Reality Laboratory |   —   |   2   |    1    |   25   |   25   |   50    |
+| **Total**   |                              | **3** | **2** |  **4**  | **55** | **95** | **150** |
 
 ---
 
@@ -20,6 +21,7 @@
 **Prerequisites:** Virtual Reality (310701), Computer Graphics
 
 ### Course Objectives
+
 - Understand AR tracking, registration, and rendering
 - Learn computer vision techniques for AR
 - Develop AR applications for mobile and wearable platforms
@@ -27,6 +29,7 @@
 ### Course Contents
 
 #### Unit I: Augmented Reality Fundamentals (07 Hours)
+
 - AR vs VR vs MR: Continuum, Differences
 - AR History and Milestones
 - AR Display Technologies: Optical See-through (Hololens), Video See-through, Retinal
@@ -35,6 +38,7 @@
 - Challenges in AR: Latency, Occlusion, Lighting, Calibration
 
 #### Unit II: AR Tracking and Registration (07 Hours)
+
 - Sensor-based Tracking: GPS, IMU, Magnetometer, Visual-inertial
 - Marker-based Tracking: Fiducial Markers (ARTag, QR, AprilTag)
 - Markerless Tracking: Natural Feature Tracking
@@ -44,6 +48,7 @@
 - Hand and Face Tracking: MediaPipe, Apple ARKit
 
 #### Unit III: AR Rendering and Display (07 Hours)
+
 - Real-time Rendering for AR: Virtual Content over Camera Feed
 - Occlusion Handling: Depth-based, Model-based
 - Lighting Estimation: Environment Probes, HDR Lighting
@@ -53,6 +58,7 @@
 - Video See-through AR Pipeline: Camera → Processing → Compositing
 
 #### Unit IV: AR SDKs and Platforms (07 Hours)
+
 - ARKit (Apple): Scene Understanding, Face Tracking, People Occlusion
 - ARCore (Google): Cloud Anchors, Augmented Images, Depth API
 - AR Foundation (Unity): Cross-platform AR
@@ -61,6 +67,7 @@
 - AR Cloud: Persistent AR, Multi-user AR, Cloud Anchors
 
 #### Unit V: Computer Vision for AR (07 Hours)
+
 - Image Processing: Feature Detection (SIFT, SURF, ORB)
 - Camera Calibration: Intrinsic/Extrinsic Parameters
 - Homography and Pose Estimation
@@ -69,6 +76,7 @@
 - Neural Rendering: NeRF for Novel View Synthesis
 
 #### Unit VI: AR Design and Interaction (07 Hours)
+
 - AR UX Design Principles: Comfort, Safety, Context Awareness
 - Spatial UI: Floating Panels, World-locked, Body-locked
 - Gesture Interaction: Tap, Swipe, Pinch, Air Tap
@@ -80,10 +88,13 @@
 ### Learning Resources
 
 #### Textbooks
-1. Dieter Schmalstieg, Tobias Hollerer, "Augmented Reality: Principles and Practice", Addison-Wesley, 2016
+
+1. Dieter Schmalstieg, Tobias Hollerer, "Augmented Reality: Principles and Practice",
+   Addison-Wesley, 2016
 2. Alan B. Craig, "Understanding Augmented Reality", Morgan Kaufmann, 2013
 
 #### Reference Books
+
 1. Jonathan Linowes, "Augmented Reality with Unity AR Foundation", Packt, 2021
 2. Daniel Wagner, "Mobile Augmented Reality", TU Graz, 2020
 

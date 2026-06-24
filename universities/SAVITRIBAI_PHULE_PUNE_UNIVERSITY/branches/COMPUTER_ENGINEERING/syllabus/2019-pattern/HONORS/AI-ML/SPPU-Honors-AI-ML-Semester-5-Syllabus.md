@@ -1,19 +1,19 @@
 # SPPU B.E. Computer Engineering — Honors in AI & Machine Learning
+
 ## Semester V Syllabus (2019 Pattern)
 
-> **Honors Specialization:** Artificial Intelligence & Machine Learning
-> **Department:** Computer Engineering
-> **Applicable from:** Third Year (T.E.) Semester V
+> **Honors Specialization:** Artificial Intelligence & Machine Learning **Department:** Computer
+> Engineering **Applicable from:** Third Year (T.E.) Semester V
 
 ---
 
 ## Course Structure — Semester V
 
-| Course Code | Course Name | TH | PR | Credits | ISA | ESA | Total |
-|-------------|-------------|:--:|:--:|:-------:|:---:|:---:|:-----:|
-| 310301 | Computational Statistics | 3 | — | 3 | 30 | 70 | 100 |
-| 310302 | Computational Statistics Laboratory | — | 2 | 1 | 25 | 25 | 50 |
-| **Total** | | **3** | **2** | **4** | **55** | **95** | **150** |
+| Course Code | Course Name                         |  TH   |  PR   | Credits |  ISA   |  ESA   |  Total  |
+| ----------- | ----------------------------------- | :---: | :---: | :-----: | :----: | :----: | :-----: |
+| 310301      | Computational Statistics            |   3   |   —   |    3    |   30   |   70   |   100   |
+| 310302      | Computational Statistics Laboratory |   —   |   2   |    1    |   25   |   25   |   50    |
+| **Total**   |                                     | **3** | **2** |  **4**  | **55** | **95** | **150** |
 
 ---
 
@@ -37,13 +37,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Apply probability theory and understand various probability distributions |
+| CO  | Description                                                                          |
+| --- | ------------------------------------------------------------------------------------ |
+| CO1 | Apply probability theory and understand various probability distributions            |
 | CO2 | Perform statistical inference using sampling distributions and estimation techniques |
-| CO3 | Apply hypothesis testing methods for decision making |
-| CO4 | Perform correlation and regression analysis for data modeling |
-| CO5 | Apply ANOVA and design of experiments for statistical analysis |
+| CO3 | Apply hypothesis testing methods for decision making                                 |
+| CO4 | Perform correlation and regression analysis for data modeling                        |
+| CO5 | Apply ANOVA and design of experiments for statistical analysis                       |
 
 ### Course Contents
 
@@ -104,13 +104,17 @@
 
 #### Textbooks
 
-1. Sheldon M. Ross, "Introduction to Probability and Statistics for Engineers and Scientists", 6th Edition, Academic Press, 2020
-2. Ronald E. Walpole, Raymond H. Myers, Sharon L. Myers, Keying Ye, "Probability and Statistics for Engineers and Scientists", 9th Edition, Pearson, 2016
+1. Sheldon M. Ross, "Introduction to Probability and Statistics for Engineers and Scientists", 6th
+   Edition, Academic Press, 2020
+2. Ronald E. Walpole, Raymond H. Myers, Sharon L. Myers, Keying Ye, "Probability and Statistics for
+   Engineers and Scientists", 9th Edition, Pearson, 2016
 
 #### Reference Books
 
-1. Bradley Efron, Trevor Hastie, "Computer Age Statistical Inference", Cambridge University Press, 2016
-2. Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, "An Introduction to Statistical Learning", Springer, 2021
+1. Bradley Efron, Trevor Hastie, "Computer Age Statistical Inference", Cambridge University Press,
+   2016
+2. Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, "An Introduction to Statistical
+   Learning", Springer, 2021
 3. Larry Wasserman, "All of Statistics: A Concise Course in Statistical Inference", Springer, 2004
 
 ---
@@ -125,31 +129,29 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                     |
+| --- | ------------------------------------------------------------------------------- |
 | CO1 | Implement probability distributions and statistical computations using Python/R |
-| CO2 | Perform hypothesis testing and statistical inference |
-| CO3 | Build regression models and perform ANOVA |
-| CO4 | Implement resampling methods and Monte Carlo simulations |
+| CO2 | Perform hypothesis testing and statistical inference                            |
+| CO3 | Build regression models and perform ANOVA                                       |
+| CO4 | Implement resampling methods and Monte Carlo simulations                        |
 
 ### Suggested List of Assignments
 
 **Group A (Any 4):**
+
 1. Implement functions to compute PMF, PDF, CDF for various probability distributions
 2. Generate random samples from different distributions and verify Central Limit Theorem
 3. Implement point estimation using MLE and Method of Moments
 4. Perform hypothesis testing (Z-test, t-test, Chi-Square) on sample datasets
 
-**Group B (Any 4):**
-5. Implement linear and multiple regression analysis on real-world datasets
-6. Perform ANOVA (one-way and two-way) on experimental data
-7. Implement bootstrap resampling for confidence interval estimation
-8. Implement PCA for dimensionality reduction
+**Group B (Any 4):** 5. Implement linear and multiple regression analysis on real-world datasets 6.
+Perform ANOVA (one-way and two-way) on experimental data 7. Implement bootstrap resampling for
+confidence interval estimation 8. Implement PCA for dimensionality reduction
 
-**Group C (Any 2):**
-9. Implement Monte Carlo simulation for estimating probabilities
-10. Implement Markov Chain Monte Carlo (MCMC) sampling
-11. Mini-project: Complete statistical analysis pipeline on a real dataset
+**Group C (Any 2):** 9. Implement Monte Carlo simulation for estimating probabilities 10. Implement
+Markov Chain Monte Carlo (MCMC) sampling 11. Mini-project: Complete statistical analysis pipeline on
+a real dataset
 
 ### Learning Resources
 

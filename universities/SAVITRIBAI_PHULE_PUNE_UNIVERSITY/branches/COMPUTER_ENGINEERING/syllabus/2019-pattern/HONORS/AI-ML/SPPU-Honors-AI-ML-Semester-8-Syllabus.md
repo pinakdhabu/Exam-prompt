@@ -1,15 +1,16 @@
 # SPPU B.E. Computer Engineering — Honors in AI & Machine Learning
+
 ## Semester VIII Syllabus (2019 Pattern)
 
 ---
 
 ## Course Structure — Semester VIII
 
-| Course Code | Course Name | TH | PR | Credits | ISA | ESA | Total |
-|-------------|-------------|:--:|:--:|:-------:|:---:|:---:|:-----:|
-| 410303 | Natural Language Processing | 3 | — | 3 | 30 | 70 | 100 |
-| 410304 | Natural Language Processing Laboratory | — | 2 | 1 | 25 | 25 | 50 |
-| **Total** | | **3** | **2** | **4** | **55** | **95** | **150** |
+| Course Code | Course Name                            |  TH   |  PR   | Credits |  ISA   |  ESA   |  Total  |
+| ----------- | -------------------------------------- | :---: | :---: | :-----: | :----: | :----: | :-----: |
+| 410303      | Natural Language Processing            |   3   |   —   |    3    |   30   |   70   |   100   |
+| 410304      | Natural Language Processing Laboratory |   —   |   2   |    1    |   25   |   25   |   50    |
+| **Total**   |                                        | **3** | **2** |  **4**  | **55** | **95** | **150** |
 
 ---
 
@@ -29,17 +30,18 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                |
+| --- | ---------------------------------------------------------- |
 | CO1 | Apply text preprocessing and feature extraction techniques |
-| CO2 | Implement word embeddings and neural language models |
-| CO3 | Build sequence models for NLP tasks |
-| CO4 | Apply transformer architectures for NLP |
-| CO5 | Develop end-to-end NLP applications |
+| CO2 | Implement word embeddings and neural language models       |
+| CO3 | Build sequence models for NLP tasks                        |
+| CO4 | Apply transformer architectures for NLP                    |
+| CO5 | Develop end-to-end NLP applications                        |
 
 ### Course Contents
 
 #### Unit I: Text Processing and Linguistic Fundamentals (07 Hours)
+
 - Regular Expressions, Text Normalization
 - Tokenization: Word, Sentence, Subword (BPE, WordPiece)
 - Stemming (Porter, Lancaster) and Lemmatization
@@ -48,6 +50,7 @@
 - Text Classification: Naive Bayes, Logistic Regression
 
 #### Unit II: Word Embeddings and Neural Language Models (07 Hours)
+
 - Distributional Semantics: Distributional Hypothesis
 - Word2Vec: CBOW, Skip-gram Architecture
 - GloVe: Global Vectors for Word Representation
@@ -56,6 +59,7 @@
 - ELMo: Contextualized Embeddings
 
 #### Unit III: Sequence Models for NLP (07 Hours)
+
 - RNNs for Sequence Labeling: POS Tagging, NER
 - LSTM and GRU: Architecture, Applications
 - Bidirectional RNNs
@@ -64,6 +68,7 @@
 - Beam Search Decoding
 
 #### Unit IV: Transformers and Pre-trained Models (07 Hours)
+
 - Transformer Architecture: Self-Attention, Multi-Head Attention
 - Positional Encoding, Layer Normalization
 - BERT: Pre-training (Masked LM, NSP), Fine-tuning
@@ -72,6 +77,7 @@
 - T5, BART: Text-to-Text Framework
 
 #### Unit V: Information Extraction and Question Answering (07 Hours)
+
 - Named Entity Recognition (NER): LSTM-CRF, BERT-based
 - Relation Extraction: Pattern-based, Distant Supervision
 - Coreference Resolution
@@ -79,6 +85,7 @@
 - Text Summarization: Extractive, Abstractive
 
 #### Unit VI: Advanced NLP Applications (07 Hours)
+
 - Machine Translation: Statistical, Neural (Transformer-based)
 - Sentiment Analysis: Aspect-based, Fine-grained
 - Dialogue Systems: Retrieval-based, Generative, Task-oriented
@@ -89,12 +96,15 @@
 ### Learning Resources
 
 #### Textbooks
+
 1. Daniel Jurafsky, James H. Martin, "Speech and Language Processing", 3rd Edition, Pearson, 2022
 2. Jacob Eisenstein, "Introduction to Natural Language Processing", MIT Press, 2019
 
 #### Reference Books
+
 1. Yoav Goldberg, "Neural Network Methods in Natural Language Processing", Morgan & Claypool, 2017
-2. Christopher D. Manning, Hinrich Schütze, "Foundations of Statistical Natural Language Processing", MIT Press, 1999
+2. Christopher D. Manning, Hinrich Schütze, "Foundations of Statistical Natural Language
+   Processing", MIT Press, 1999
 
 ---
 

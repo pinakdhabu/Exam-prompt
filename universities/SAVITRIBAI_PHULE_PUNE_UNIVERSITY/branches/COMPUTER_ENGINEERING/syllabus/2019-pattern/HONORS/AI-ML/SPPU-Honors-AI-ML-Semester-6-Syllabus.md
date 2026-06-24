@@ -1,15 +1,16 @@
 # SPPU B.E. Computer Engineering — Honors in AI & Machine Learning
+
 ## Semester VI Syllabus (2019 Pattern)
 
 ---
 
 ## Course Structure — Semester VI
 
-| Course Code | Course Name | TH | PR | Credits | ISA | ESA | Total |
-|-------------|-------------|:--:|:--:|:-------:|:---:|:---:|:-----:|
-| 310303 | Deep Learning Fundamentals | 3 | — | 3 | 30 | 70 | 100 |
-| 310304 | Deep Learning Fundamentals Laboratory | — | 2 | 1 | 25 | 25 | 50 |
-| **Total** | | **3** | **2** | **4** | **55** | **95** | **150** |
+| Course Code | Course Name                           |  TH   |  PR   | Credits |  ISA   |  ESA   |  Total  |
+| ----------- | ------------------------------------- | :---: | :---: | :-----: | :----: | :----: | :-----: |
+| 310303      | Deep Learning Fundamentals            |   3   |   —   |    3    |   30   |   70   |   100   |
+| 310304      | Deep Learning Fundamentals Laboratory |   —   |   2   |    1    |   25   |   25   |   50    |
+| **Total**   |                                       | **3** | **2** |  **4**  | **55** | **95** | **150** |
 
 ---
 
@@ -29,17 +30,18 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                             |
+| --- | ------------------------------------------------------- |
 | CO1 | Explain neural network fundamentals and backpropagation |
-| CO2 | Design and train CNNs for image-based tasks |
-| CO3 | Implement RNNs and LSTMs for sequential data |
-| CO4 | Apply transfer learning and generative models |
-| CO5 | Optimize deep learning models for performance |
+| CO2 | Design and train CNNs for image-based tasks             |
+| CO3 | Implement RNNs and LSTMs for sequential data            |
+| CO4 | Apply transfer learning and generative models           |
+| CO5 | Optimize deep learning models for performance           |
 
 ### Course Contents
 
 #### Unit I: Neural Network Foundations (07 Hours)
+
 - Biological Neuron vs Artificial Neuron
 - Perceptron: Architecture, Limitations, Multilayer Perceptron
 - Activation Functions: Sigmoid, Tanh, ReLU, Leaky ReLU, Softmax
@@ -49,6 +51,7 @@
 - Regularization: L1, L2, Dropout, Early Stopping, Batch Normalization
 
 #### Unit II: Convolutional Neural Networks (07 Hours)
+
 - CNN Architecture: Convolution, Pooling, Fully Connected Layers
 - Convolution Operation: Padding, Stride, Dilated Convolution
 - Pooling: Max, Average, Global Average Pooling
@@ -58,6 +61,7 @@
 - Data Augmentation Techniques
 
 #### Unit III: Recurrent Neural Networks (07 Hours)
+
 - RNN Architecture: Sequence Modeling, Unfolding
 - Vanishing and Exploding Gradients
 - Long Short-Term Memory (LSTM): Gates, Cell State
@@ -67,6 +71,7 @@
 - Attention Mechanism: Additive, Multiplicative, Self-Attention
 
 #### Unit IV: Generative Models (07 Hours)
+
 - Autoencoders: Undercomplete, Denoising, Variational (VAE)
 - Generative Adversarial Networks (GANs): Generator, Discriminator
 - GAN Training: Min-Max Game, Nash Equilibrium
@@ -75,6 +80,7 @@
 - Diffusion Models: Forward Process, Reverse Process
 
 #### Unit V: Advanced Topics and Optimization (07 Hours)
+
 - Hyperparameter Tuning: Grid Search, Random Search, Bayesian Optimization
 - Model Deployment: TensorFlow Serving, ONNX, TFLite
 - Interpretability: Grad-CAM, Saliency Maps, SHAP, LIME
@@ -83,6 +89,7 @@
 - Ethical AI: Bias, Fairness, Accountability
 
 #### Unit VI: Practical Deep Learning (07 Hours)
+
 - TensorFlow 2.x and Keras: Model Building, Training, Evaluation
 - PyTorch: Autograd, Modules, DataLoaders, Training Loop
 - Distributed Training: Data Parallel, Model Parallel
@@ -93,10 +100,12 @@
 ### Learning Resources
 
 #### Textbooks
+
 1. Ian Goodfellow, Yoshua Bengio, Aaron Courville, "Deep Learning", MIT Press, 2016
 2. Francois Chollet, "Deep Learning with Python", 2nd Edition, Manning, 2021
 
 #### Reference Books
+
 1. Aston Zhang et al., "Dive into Deep Learning", Cambridge University Press, 2023
 2. Josh Patterson, Adam Gibson, "Deep Learning: A Practitioner's Approach", O'Reilly, 2017
 

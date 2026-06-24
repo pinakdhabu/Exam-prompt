@@ -1,15 +1,16 @@
 # SPPU B.E. Computer Engineering — Honors in Cyber Security
+
 ## Semester VIII Syllabus (2019 Pattern)
 
 ---
 
 ## Course Structure — Semester VIII
 
-| Course Code | Course Name | TH | PR | Credits | ISA | ESA | Total |
-|-------------|-------------|:--:|:--:|:-------:|:---:|:---:|:-----:|
-| 410403 | Cloud and Application Security | 3 | — | 3 | 30 | 70 | 100 |
-| 410404 | Cloud and Application Security Laboratory | — | 2 | 1 | 25 | 25 | 50 |
-| **Total** | | **3** | **2** | **4** | **55** | **95** | **150** |
+| Course Code | Course Name                               |  TH   |  PR   | Credits |  ISA   |  ESA   |  Total  |
+| ----------- | ----------------------------------------- | :---: | :---: | :-----: | :----: | :----: | :-----: |
+| 410403      | Cloud and Application Security            |   3   |   —   |    3    |   30   |   70   |   100   |
+| 410404      | Cloud and Application Security Laboratory |   —   |   2   |    1    |   25   |   25   |   50    |
+| **Total**   |                                           | **3** | **2** |  **4**  | **55** | **95** | **150** |
 
 ---
 
@@ -20,23 +21,25 @@
 **Prerequisites:** Information and Cyber Security (310401), IoT and Embedded Security (410401)
 
 ### Course Objectives
+
 - Understand cloud security architecture and shared responsibility model
 - Learn secure application development and DevSecOps practices
 - Master cloud penetration testing and security assessment
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                   |
+| --- | ----------------------------------------------------------------------------- |
 | CO1 | Design secure cloud architectures using IAM, encryption, and network controls |
-| CO2 | Implement secure CI/CD pipelines with integrated security testing |
-| CO3 | Apply DevSecOps practices for continuous security |
-| CO4 | Perform cloud security assessments and penetration testing |
-| CO5 | Implement container and Kubernetes security |
+| CO2 | Implement secure CI/CD pipelines with integrated security testing             |
+| CO3 | Apply DevSecOps practices for continuous security                             |
+| CO4 | Perform cloud security assessments and penetration testing                    |
+| CO5 | Implement container and Kubernetes security                                   |
 
 ### Course Contents
 
 #### Unit I: Cloud Security Architecture (07 Hours)
+
 - Cloud Deployment Models: Public, Private, Hybrid, Multi-cloud
 - Shared Responsibility Model: IaaS, PaaS, SaaS
 - Cloud IAM: Users, Groups, Roles, Policies, MFA, Federation
@@ -46,6 +49,7 @@
 - AWS/Azure/GCP Security Best Practices
 
 #### Unit II: Application Security (07 Hours)
+
 - Secure SDLC: Threat Modeling, Security Requirements, Design Review
 - OWASP Top 10: Injection, Broken Authentication, XSS, Insecure Deserialization
 - Secure Coding Practices: Input Validation, Output Encoding, Parameterized Queries
@@ -55,6 +59,7 @@
 - Container Security: Docker Security Best Practices, Image Scanning
 
 #### Unit III: DevSecOps (07 Hours)
+
 - DevSecOps Principles: Shift Left, Security as Code, Continuous Security
 - CI/CD Pipeline Security: SAST, DAST, SCA Integration
 - Infrastructure as Code (IaC) Security: Terraform, CloudFormation Scanning
@@ -64,6 +69,7 @@
 - Security Monitoring: SIEM Integration with CI/CD
 
 #### Unit IV: Cloud Penetration Testing (07 Hours)
+
 - Cloud Reconnaissance: Enumeration, OSINT, Attack Surface Discovery
 - IAM Attacks: Privilege Escalation, Backdoor User Creation
 - Storage Security: S3 Bucket Misconfiguration, Data Exposure
@@ -73,6 +79,7 @@
 - Cloud Pentesting Tools: ScoutSuite, Prowler, Pacu, CloudSploit
 
 #### Unit V: Kubernetes Security (07 Hours)
+
 - Kubernetes Architecture: Control Plane, Nodes, Pods, Services
 - Pod Security: Pod Security Standards, Security Contexts
 - Network Security: Network Policies, CNI Plugins, Service Mesh
@@ -82,6 +89,7 @@
 - Kubernetes Auditing: Audit Logs, Falco, Sysdig
 
 #### Unit VI: Advanced Security Topics (07 Hours)
+
 - Zero Trust Architecture: Micro-segmentation, Identity-based Access
 - Software Supply Chain Security: SBOM, Sigstore, In-toto
 - Homomorphic Encryption and Secure Multi-party Computation
@@ -93,10 +101,12 @@
 ### Learning Resources
 
 #### Textbooks
+
 1. Mark Birch, "Cloud Security: A Comprehensive Guide to Secure Cloud Computing", Wiley, 2019
 2. Gene Kim, "The DevOps Handbook", IT Revolution Press, 2016
 
 #### Reference Books
+
 1. Liz Rice, "Container Security", O'Reilly, 2020
 2. Paul Czarny, "Kubernetes Security and Observability", O'Reilly, 2021
 

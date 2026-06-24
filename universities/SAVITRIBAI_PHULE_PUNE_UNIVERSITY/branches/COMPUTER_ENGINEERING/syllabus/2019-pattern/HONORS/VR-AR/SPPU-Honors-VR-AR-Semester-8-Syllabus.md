@@ -1,15 +1,16 @@
 # SPPU B.E. Computer Engineering — Honors in Virtual & Augmented Reality (VR/AR)
+
 ## Semester VIII Syllabus (2019 Pattern)
 
 ---
 
 ## Course Structure — Semester VIII
 
-| Course Code | Course Name | TH | PR | Credits | ISA | ESA | Total |
-|-------------|-------------|:--:|:--:|:-------:|:---:|:---:|:-----:|
-| 410703 | Mixed Reality and Immersive Technologies | 3 | — | 3 | 30 | 70 | 100 |
-| 410704 | Mixed Reality Laboratory | — | 2 | 1 | 25 | 25 | 50 |
-| **Total** | | **3** | **2** | **4** | **55** | **95** | **150** |
+| Course Code | Course Name                              |  TH   |  PR   | Credits |  ISA   |  ESA   |  Total  |
+| ----------- | ---------------------------------------- | :---: | :---: | :-----: | :----: | :----: | :-----: |
+| 410703      | Mixed Reality and Immersive Technologies |   3   |   —   |    3    |   30   |   70   |   100   |
+| 410704      | Mixed Reality Laboratory                 |   —   |   2   |    1    |   25   |   25   |   50    |
+| **Total**   |                                          | **3** | **2** |  **4**  | **55** | **95** | **150** |
 
 ---
 
@@ -20,6 +21,7 @@
 **Prerequisites:** VR (310701), AR (310703), VR Game Dev (410701)
 
 ### Course Objectives
+
 - Understand mixed reality continuum and spatial computing
 - Build immersive experiences with hand and eye tracking
 - Explore advanced topics: Neural interfaces, synthetic media
@@ -27,6 +29,7 @@
 ### Course Contents
 
 #### Unit I: Mixed Reality Fundamentals (07 Hours)
+
 - MR Spectrum: Reality → Augmented Reality → Mixed Reality → Virtual Reality
 - Spatial Computing: Concept, Enabling Technologies
 - Microsoft HoloLens: Architecture, Spatial Mapping, Holograms
@@ -35,6 +38,7 @@
 - MR Interaction: Voice, Gaze, Gesture, Controller
 
 #### Unit II: Hand and Eye Tracking (07 Hours)
+
 - Hand Tracking: Leap Motion, MediaPipe, HoloLens Hand Tracking
 - Hand Skeleton: Joints, Rotations, Convex Hull
 - Gesture Recognition: Static, Dynamic, Continuous
@@ -44,6 +48,7 @@
 - Calibration: Personalization, Accuracy, Precision
 
 #### Unit III: Spatial Mapping and 3D Scanning (07 Hours)
+
 - Spatial Mapping: Mesh Generation, Updates, LOD
 - Scene Understanding: Planes, Meshes, Labels
 - 3D Scanning: Structure Sensor, iPhone LiDAR, Kinect
@@ -52,6 +57,7 @@
 - World Anchors: Persistence, Sharing
 
 #### Unit IV: Neural Interfaces and Biosensors (07 Hours)
+
 - Brain-Computer Interfaces: EEG, fNIRS, Invasive
 - EMG (Electromyography): Muscle Activity, Gesture Detection
 - Galvanic Skin Response: Emotional Arousal
@@ -60,6 +66,7 @@
 - Ethical Considerations: Privacy, Neurodata, Agency
 
 #### Unit V: Synthetic Media and AI in XR (07 Hours)
+
 - Generative AI for XR: Text-to-3D, Image-to-3D
 - NeRF: Neural Radiance Fields for View Synthesis
 - Gaussian Splatting for Real-time Rendering
@@ -68,6 +75,7 @@
 - AI-driven Content: Procedural Generation, NPC Behavior
 
 #### Unit VI: Future Trends and Applications (07 Hours)
+
 - Metaverse: Concepts, Platforms, Standards
 - Web3 and XR: Decentralized, NFT, DAO
 - Haptic Technology: Ultrasonic, Gloves, Full-body Suits
@@ -79,10 +87,12 @@
 ### Learning Resources
 
 #### Textbooks
+
 1. Erin Pangilinan, "Creating Augmented & Virtual Realities", O'Reilly, 2019
 2. Greg Kipper, "Augmented Reality: An Emerging Technologies Guide to AR", Syngress, 2012
 
 #### Reference Books
+
 1. Jesse Schell, "The Art of Game Design: A Book of Lenses", CRC Press, 2020
 2. Jon Peddie, "Augmented Reality: Where We Will All Live", Springer, 2023
 
