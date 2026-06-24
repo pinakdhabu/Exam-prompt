@@ -40,30 +40,38 @@
     {
       "id": "se",
       "name": "Second Year (S.E.)",
-      "pattern": "2019",
-      "semesters": [
+      "pattern": "2019",          "semesters": [
         {
           "id": "sem-3",
           "name": "Semester 3",
           "subjects": [
-            {"code": "210241", "name": "Computer Graphics", "abbr": "CG", "type": "core"},
-            {"code": "210242", "name": "Digital Electronics and Logic Design", "abbr": "DELD", "type": "core"},
-            {"code": "210243", "name": "Discrete Mathematics", "abbr": "DM", "type": "core"},
-            {"code": "210244", "name": "Fundamentals of Data Structures", "abbr": "FDS", "type": "core"},
-            {"code": "210245", "name": "Object Oriented Programming", "abbr": "OOP", "type": "core"},
-            {"code": "210246", "name": "Soft Skills", "abbr": "SS", "type": "audit"}
+            {"code": "210241", "name": "Discrete Mathematics", "abbr": "DM", "type": "core"},
+            {"code": "210242", "name": "Fundamentals of Data Structures", "abbr": "FDS", "type": "core"},
+            {"code": "210243", "name": "Object Oriented Programming", "abbr": "OOP", "type": "core"},
+            {"code": "210244", "name": "Computer Graphics", "abbr": "CG", "type": "core"},
+            {"code": "210245", "name": "Digital Electronics and Logic Design", "abbr": "DELD", "type": "core"},
+            {"code": "210246", "name": "Data Structures Laboratory", "abbr": "DSL", "type": "practical"},
+            {"code": "210247", "name": "OOP and Computer Graphics Laboratory", "abbr": "OOPL", "type": "practical"},
+            {"code": "210248", "name": "Digital Electronics Laboratory", "abbr": "DEL", "type": "practical"},
+            {"code": "210249", "name": "Business Communication Skills", "abbr": "BCS", "type": "audit"},
+            {"code": "210250", "name": "Humanity and Social Science", "abbr": "HSS", "type": "audit"},
+            {"code": "210251", "name": "Audit Course 3", "abbr": "AC3", "type": "audit"}
           ]
         },
         {
           "id": "sem-4",
           "name": "Semester 4",
           "subjects": [
-            {"code": "210247", "name": "Engineering Mathematics III", "abbr": "M3", "type": "core"},
-            {"code": "210248", "name": "Data Structures and Algorithms", "abbr": "DSA", "type": "core"},
-            {"code": "210249", "name": "Microprocessor", "abbr": "MP", "type": "core"},
-            {"code": "210250", "name": "Principles of Programming Languages", "abbr": "PPL", "type": "core"},
-            {"code": "210251", "name": "Software Engineering", "abbr": "SE", "type": "core"},
-            {"code": "210252", "name": "Environmental Studies", "abbr": "EVS", "type": "audit"}
+            {"code": "207003", "name": "Engineering Mathematics III", "abbr": "M3", "type": "core"},
+            {"code": "210252", "name": "Data Structures and Algorithms", "abbr": "DSA", "type": "core"},
+            {"code": "210253", "name": "Software Engineering", "abbr": "SE", "type": "core"},
+            {"code": "210254", "name": "Microprocessor", "abbr": "MP", "type": "core"},
+            {"code": "210255", "name": "Principles of Programming Languages", "abbr": "PPL", "type": "core"},
+            {"code": "210256", "name": "Data Structures and Algorithms Laboratory", "abbr": "DSAL", "type": "practical"},
+            {"code": "210257", "name": "Microprocessor Laboratory", "abbr": "MPL", "type": "practical"},
+            {"code": "210258", "name": "Project Based Learning II", "abbr": "PBL", "type": "practical"},
+            {"code": "210259", "name": "Code of Conduct", "abbr": "CC", "type": "audit"},
+            {"code": "210260", "name": "Audit Course 4", "abbr": "AC4", "type": "audit"}
           ]
         }
       ]
