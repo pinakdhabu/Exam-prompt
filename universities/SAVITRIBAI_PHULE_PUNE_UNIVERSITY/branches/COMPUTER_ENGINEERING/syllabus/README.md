@@ -1,18 +1,20 @@
 # SPPU Computer Engineering Syllabus
 
-Place syllabus PDFs here organized by year/pattern.
+Official SPPU syllabus reference files organized by exam pattern.
 
 ## Structure
 
 ```
 syllabus/
-├── 2019_pattern/
-│   ├── BE_COMP_2019_PATTERN.pdf
-│   ├── TE_COMP_2019_PATTERN.pdf
-│   └── SE_COMP_2019_PATTERN.pdf
-└── 2024_pattern/
-    ├── FE_2024_PATTERN.pdf
-    └── SE_2024_PATTERN.pdf
+├── 2019-pattern/
+│   ├── SPPU-FE-Official-Syllabus-Reference-2019-Pattern.md
+│   ├── SPPU-SE-Computer-Official-Syllabus-Reference-2019-Pattern.md
+│   ├── SPPU-TE-Computer-Official-Syllabus-Reference-2019-Pattern.md
+│   └── SPPU-BE-Computer-Official-Syllabus-Reference-2019-Pattern.md
+└── 2024-pattern/
+    ├── SPPU-FE-Engineering-Official-Syllabus-Reference-2024-Pattern.md
+    ├── SPPU-SE-Computer-Official-Syllabus-Reference-2024-Pattern.md
+    └── SPPU-TE-Computer-Official-Syllabus-Reference-2024-Pattern.md
 ```
 
 ## Source
