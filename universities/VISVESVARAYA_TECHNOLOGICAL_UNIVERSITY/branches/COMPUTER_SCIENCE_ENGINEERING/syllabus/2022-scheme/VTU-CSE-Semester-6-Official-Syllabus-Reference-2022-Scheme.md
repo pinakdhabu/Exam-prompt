@@ -3,8 +3,8 @@
 > Extracted from official VTU syllabus documents (effective from Academic Year 2023-24).
 >
 > This document provides exact module-wise syllabus, course outcomes, examination structure,
-> laboratory work, practical guidelines and curriculum information for the Sixth Semester
-> of B.E. in Computer Science and Engineering under the 2022 Scheme.
+> laboratory work, practical guidelines and curriculum information for the Sixth Semester of B.E. in
+> Computer Science and Engineering under the 2022 Scheme.
 >
 > No syllabus topic has been intentionally omitted or condensed.
 
@@ -12,33 +12,36 @@
 
 # Semester VI — Course Structure
 
-| Sl. | Course Code | Course Title | L:T:P:S | CIE | SEE | Total | Credits |
-|-----|-------------|-------------|---------|-----|-----|-------|---------|
-| 1 | BCS601 | Machine Learning | 3:0:0:0 | 50 | 50 | 100 | 3 |
-| 2 | BCS602 (IPCC) | Full Stack Development | 3:0:2:0 | 50 | 50 | 100 | 4 |
-| 3 | BCS603 (IPCC) | Cloud Computing | 3:0:2:0 | 50 | 50 | 100 | 4 |
-| 4 | BCSL604 | Machine Learning Lab | 0:0:2:0 | 50 | 50 | 100 | 1 |
-| 5 | BCSL605 | Cloud Computing Lab | 0:0:2:0 | 50 | 50 | 100 | 1 |
-| 6 | BCS656x | Professional Elective Course | 3:0:0:0 | 50 | 50 | 100 | 3 |
-| 7 | BCS657x | AEC/SEC - V | 0:0:2:0 | 50 | 50 | 100 | 1 |
-| 8 | BCS658x | Open Elective Course | 3:0:0:0 | 50 | 50 | 100 | 3 |
-| 9 | BNSK659/BPEK659/BYOK659 | NSS/PE/Yoga | 0:0:2:0 | 100 | --- | 100 | 0 |
-| 10 | BIKS609 | Indian Knowledge System | 1:0:0:0 | 100 | --- | 100 | 0 |
-| | **Total** | | | **500** | **300** | **800** | **18** |
+| Sl. | Course Code             | Course Title                 | L:T:P:S | CIE     | SEE     | Total   | Credits |
+| --- | ----------------------- | ---------------------------- | ------- | ------- | ------- | ------- | ------- |
+| 1   | BCS601                  | Machine Learning             | 3:0:0:0 | 50      | 50      | 100     | 3       |
+| 2   | BCS602 (IPCC)           | Full Stack Development       | 3:0:2:0 | 50      | 50      | 100     | 4       |
+| 3   | BCS603 (IPCC)           | Cloud Computing              | 3:0:2:0 | 50      | 50      | 100     | 4       |
+| 4   | BCSL604                 | Machine Learning Lab         | 0:0:2:0 | 50      | 50      | 100     | 1       |
+| 5   | BCSL605                 | Cloud Computing Lab          | 0:0:2:0 | 50      | 50      | 100     | 1       |
+| 6   | BCS656x                 | Professional Elective Course | 3:0:0:0 | 50      | 50      | 100     | 3       |
+| 7   | BCS657x                 | AEC/SEC - V                  | 0:0:2:0 | 50      | 50      | 100     | 1       |
+| 8   | BCS658x                 | Open Elective Course         | 3:0:0:0 | 50      | 50      | 100     | 3       |
+| 9   | BNSK659/BPEK659/BYOK659 | NSS/PE/Yoga                  | 0:0:2:0 | 100     | ---     | 100     | 0       |
+| 10  | BIKS609                 | Indian Knowledge System      | 1:0:0:0 | 100     | ---     | 100     | 0       |
+|     | **Total**               |                              |         | **500** | **300** | **800** | **18**  |
 
 **Professional Elective (PEC) Options (BCS656x):**
+
 - BCS656A: Software Testing
 - BCS656B: Network Security
 - BCS656C: Computer Vision
 - BCS656D: Storage Area Networks
 
 **AEC/SEC Options (BCS657x):**
+
 - BISL657A: Tosca – Automated Software Testing
 - BCSL657B: React
 - BAIL657C: Generative AI
 - BCSL657D: DevOps
 
 **Open Elective Options (BCS658x):**
+
 - BCS658A: Introduction to Data Structures
 - BCS658B: Fundamentals of Operating Systems
 - BIS658C: Mobile Application Development
@@ -62,13 +65,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain the fundamentals of machine learning and various learning paradigms |
-| CO2 | Implement and analyze supervised learning algorithms for classification and regression |
+| CO  | Description                                                                             |
+| --- | --------------------------------------------------------------------------------------- |
+| CO1 | Explain the fundamentals of machine learning and various learning paradigms             |
+| CO2 | Implement and analyze supervised learning algorithms for classification and regression  |
 | CO3 | Apply unsupervised learning techniques for data clustering and dimensionality reduction |
-| CO4 | Evaluate model performance using appropriate metrics and validation techniques |
-| CO5 | Understand reinforcement learning and ensemble methods |
+| CO4 | Evaluate model performance using appropriate metrics and validation techniques          |
+| CO5 | Understand reinforcement learning and ensemble methods                                  |
 
 ### Course Contents
 
@@ -130,7 +133,8 @@
 
 #### Reference Books
 
-1. Shai Shalev-Shwartz, Shai Ben-David, "Understanding Machine Learning", Cambridge University Press, 2014
+1. Shai Shalev-Shwartz, Shai Ben-David, "Understanding Machine Learning", Cambridge University
+   Press, 2014
 2. Gareth James et al., "An Introduction to Statistical Learning", Springer, 2021
 
 ---
@@ -154,13 +158,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                    |
+| --- | ------------------------------------------------------------------------------ |
 | CO1 | Design and develop responsive web interfaces using HTML5, CSS3, and JavaScript |
-| CO2 | Build dynamic front-end applications using React.js |
-| CO3 | Develop server-side logic and RESTful APIs using Node.js and Express |
-| CO4 | Design and manage databases for web applications |
-| CO5 | Deploy and maintain full stack applications |
+| CO2 | Build dynamic front-end applications using React.js                            |
+| CO3 | Develop server-side logic and RESTful APIs using Node.js and Express           |
+| CO4 | Design and manage databases for web applications                               |
+| CO5 | Deploy and maintain full stack applications                                    |
 
 ### Course Contents
 
@@ -238,13 +242,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                         |
+| --- | ------------------------------------------------------------------- |
 | CO1 | Explain cloud computing models, services, and deployment strategies |
 | CO2 | Analyze virtualization techniques and cloud architecture components |
-| CO3 | Implement cloud storage solutions and data management techniques |
-| CO4 | Evaluate cloud security mechanisms and compliance requirements |
-| CO5 | Design and deploy applications on cloud platforms |
+| CO3 | Implement cloud storage solutions and data management techniques    |
+| CO4 | Evaluate cloud security mechanisms and compliance requirements      |
+| CO5 | Design and deploy applications on cloud platforms                   |
 
 ### Course Contents
 
@@ -289,15 +293,18 @@
 #### Module 5: Cloud Security and Migration (08 Hours)
 
 **Cloud Security:**
+
 - Shared Responsibility Model
 - Identity and Access Management (IAM): Users, Groups, Roles, Policies
 - Encryption: At Rest, In Transit, Key Management (KMS)
 - Security Groups, Network ACLs, WAF
 
 **Compliance:**
+
 - GDPR, HIPAA, SOC, PCI DSS
 
 **Cloud Migration:**
+
 - Migration Strategies: Rehost, Replatform, Refactor, Retire, Retain
 - Migration Phases: Assess, Mobilize, Migrate & Modernize
 - AWS Migration Tools: AWS Migration Hub, DMS, SMS
@@ -325,12 +332,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                |
+| --- | ---------------------------------------------------------- |
 | CO1 | Implement data preprocessing and exploratory data analysis |
-| CO2 | Build and evaluate supervised learning models |
-| CO3 | Implement unsupervised learning algorithms |
-| CO4 | Develop ensemble and reinforcement learning models |
+| CO2 | Build and evaluate supervised learning models              |
+| CO3 | Implement unsupervised learning algorithms                 |
+| CO4 | Develop ensemble and reinforcement learning models         |
 
 ### Laboratory Experiments
 
@@ -357,11 +364,11 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Deploy applications on cloud platforms |
-| CO2 | Implement cloud storage and database services |
-| CO3 | Configure cloud networking and security |
+| CO  | Description                                             |
+| --- | ------------------------------------------------------- |
+| CO1 | Deploy applications on cloud platforms                  |
+| CO2 | Implement cloud storage and database services           |
+| CO3 | Configure cloud networking and security                 |
 | CO4 | Automate cloud deployments using infrastructure as code |
 
 ### Laboratory Experiments
@@ -393,13 +400,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                               |
+| --- | --------------------------------------------------------- |
 | CO1 | Explain software testing principles and levels of testing |
-| CO2 | Design effective test cases using various techniques |
-| CO3 | Apply automation testing tools for efficient testing |
-| CO4 | Evaluate software quality using appropriate metrics |
-| CO5 | Implement testing in agile and DevOps environments |
+| CO2 | Design effective test cases using various techniques      |
+| CO3 | Apply automation testing tools for efficient testing      |
+| CO4 | Evaluate software quality using appropriate metrics       |
+| CO5 | Implement testing in agile and DevOps environments        |
 
 ### Course Contents
 
@@ -454,12 +461,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Build UI components using React.js |
+| CO  | Description                                       |
+| --- | ------------------------------------------------- |
+| CO1 | Build UI components using React.js                |
 | CO2 | Implement state management with hooks and context |
-| CO3 | Develop single-page applications with routing |
-| CO4 | Consume REST APIs and handle side effects |
+| CO3 | Develop single-page applications with routing     |
+| CO4 | Consume REST APIs and handle side effects         |
 
 ### Laboratory Experiments
 
@@ -492,11 +499,11 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain the concepts of generative AI and LLMs |
-| CO2 | Use prompt engineering for effective AI interactions |
-| CO3 | Build applications using generative AI APIs |
+| CO  | Description                                                |
+| --- | ---------------------------------------------------------- |
+| CO1 | Explain the concepts of generative AI and LLMs             |
+| CO2 | Use prompt engineering for effective AI interactions       |
+| CO3 | Build applications using generative AI APIs                |
 | CO4 | Create content (text, image, code) using generative models |
 
 ### Laboratory Experiments
@@ -522,12 +529,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Implement version control with Git and GitHub |
+| CO  | Description                                               |
+| --- | --------------------------------------------------------- |
+| CO1 | Implement version control with Git and GitHub             |
 | CO2 | Set up CI/CD pipelines for automated build and deployment |
-| CO3 | Use Docker containers for application packaging |
-| CO4 | Implement infrastructure as code using Terraform |
+| CO3 | Use Docker containers for application packaging           |
+| CO4 | Implement infrastructure as code using Terraform          |
 
 ### Laboratory Experiments
 
@@ -553,27 +560,32 @@
 ### Course Contents
 
 #### Module 1: Introduction to Indian Knowledge Systems
+
 - Overview of Indian Knowledge Systems
 - Key characteristics and foundations
 - Relevance in modern context
 
 #### Module 2: Key Knowledge Traditions
+
 - Vedas and Upanishads: Core concepts
 - Indian Mathematics: Zero, Decimal System, Algebra
 - Indian Astronomy: Aryabhata, Bhaskara
 - Indian Medicine: Ayurveda, Yoga
 
 #### Module 3: Indian Philosophy and Logic
+
 - Six Schools of Indian Philosophy
 - Indian Logic (Nyaya): Inference, Syllogism
 - Contributions to linguistics (Panini's Grammar)
 
 #### Module 4: Indian Engineering and Technology
+
 - Architecture: Vastu Shastra, Temple Architecture
 - Metallurgy: Iron Pillar, Wootz Steel
 - Town Planning: Indus Valley Civilization
 
 #### Module 5: Indian Knowledge Systems in Modern Era
+
 - Integration with modern education
 - Reviving traditional knowledge
 - Case studies of IKS applications
@@ -583,10 +595,12 @@
 # Assessment Details (Common for All Courses)
 
 ## CIE and SEE Structure
+
 - **CIE:** 50% weightage (25 marks assignment + 25 marks tests)
 - **SEE:** 50% weightage (03 hours, 10 questions, answer 5, scaled to 50)
 - Minimum passing: 40% overall (min 35% in SEE)
 
 ---
 
-> **Disclaimer:** This document is compiled from official VTU syllabus documents (2022 Scheme) for reference purposes. For the latest updates, always refer to: https://vtu.ac.in
+> **Disclaimer:** This document is compiled from official VTU syllabus documents (2022 Scheme) for
+> reference purposes. For the latest updates, always refer to: https://vtu.ac.in

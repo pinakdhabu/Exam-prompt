@@ -3,8 +3,8 @@
 > Extracted from official VTU syllabus documents (effective from Academic Year 2023-24).
 >
 > This document provides exact module-wise syllabus, course outcomes, examination structure,
-> laboratory work, practical guidelines and curriculum information for the Fifth Semester
-> of B.E. in Computer Science and Engineering under the 2022 Scheme.
+> laboratory work, practical guidelines and curriculum information for the Fifth Semester of B.E. in
+> Computer Science and Engineering under the 2022 Scheme.
 >
 > No syllabus topic has been intentionally omitted or condensed.
 
@@ -12,19 +12,20 @@
 
 # Semester V — Course Structure
 
-| Sl. | Course Code | Course Title | L:T:P:S | CIE | SEE | Total | Credits |
-|-----|-------------|-------------|---------|-----|-----|-------|---------|
-| 1 | BCS501 | Software Engineering & Project Management | 3:0:0:0 | 50 | 50 | 100 | 3 |
-| 2 | BCS502 (IPCC) | Computer Networks | 3:0:2:0 | 50 | 50 | 100 | 4 |
-| 3 | BCS503 | Theory of Computation | 3:2:0:0 | 50 | 50 | 100 | 4 |
-| 4 | BCSL504 | Web Technology Lab | 0:0:2:0 | 50 | 50 | 100 | 1 |
-| 5 | BCS515x | Professional Elective Course | 3:0:0:0 | 50 | 50 | 100 | 3 |
-| 6 | BCS508 | Environmental Studies & E-Waste Management | 2:0:0:0 | 50 | 50 | 100 | 2 |
-| 7 | BCSK507 | Creativity and Innovation | 0:0:2:0 | 100 | --- | 100 | 1 |
-| 8 | BNSK559/BPEK559/BYOK559 | NSS/PE/Yoga | 0:0:2:0 | 100 | --- | 100 | 0 |
-| | **Total** | | | **500** | **300** | **800** | **18** |
+| Sl. | Course Code             | Course Title                               | L:T:P:S | CIE     | SEE     | Total   | Credits |
+| --- | ----------------------- | ------------------------------------------ | ------- | ------- | ------- | ------- | ------- |
+| 1   | BCS501                  | Software Engineering & Project Management  | 3:0:0:0 | 50      | 50      | 100     | 3       |
+| 2   | BCS502 (IPCC)           | Computer Networks                          | 3:0:2:0 | 50      | 50      | 100     | 4       |
+| 3   | BCS503                  | Theory of Computation                      | 3:2:0:0 | 50      | 50      | 100     | 4       |
+| 4   | BCSL504                 | Web Technology Lab                         | 0:0:2:0 | 50      | 50      | 100     | 1       |
+| 5   | BCS515x                 | Professional Elective Course               | 3:0:0:0 | 50      | 50      | 100     | 3       |
+| 6   | BCS508                  | Environmental Studies & E-Waste Management | 2:0:0:0 | 50      | 50      | 100     | 2       |
+| 7   | BCSK507                 | Creativity and Innovation                  | 0:0:2:0 | 100     | ---     | 100     | 1       |
+| 8   | BNSK559/BPEK559/BYOK559 | NSS/PE/Yoga                                | 0:0:2:0 | 100     | ---     | 100     | 0       |
+|     | **Total**               |                                            |         | **500** | **300** | **800** | **18**  |
 
 **Professional Elective (PEC) Options (BCS515x):**
+
 - BCS515A: Data Science
 - BCS515B: Full Stack Development
 - BCS515C: Artificial Intelligence & Machine Learning
@@ -44,26 +45,31 @@
 
 ### Course Objectives
 
-- Outline software engineering principles and activities involved in building large software programs. Identify ethical and professional issues and explain why they are of concern to Software Engineers.
-- Describe the process of requirement gathering, requirement classification, requirement specification and requirements validation.
+- Outline software engineering principles and activities involved in building large software
+  programs. Identify ethical and professional issues and explain why they are of concern to Software
+  Engineers.
+- Describe the process of requirement gathering, requirement classification, requirement
+  specification and requirements validation.
 - Recognize the importance of Project Management with its methods and methodologies.
-- Identify software quality parameters and quantify software using measurements and metrics. List software quality standards and outline the practices involved.
+- Identify software quality parameters and quantify software using measurements and metrics. List
+  software quality standards and outline the practices involved.
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                                         |
+| --- | --------------------------------------------------------------------------------------------------- |
 | CO1 | Differentiate process models to judge which process model has to be adopted for the given scenarios |
-| CO2 | Derive both functional and nonfunctional requirements from the case study |
-| CO3 | Analyze the importance of various software testing methods and agile methodology |
-| CO4 | Illustrate the role of project planning and quality management in software development |
-| CO5 | Identify appropriate techniques to enhance software quality |
+| CO2 | Derive both functional and nonfunctional requirements from the case study                           |
+| CO3 | Analyze the importance of various software testing methods and agile methodology                    |
+| CO4 | Illustrate the role of project planning and quality management in software development              |
+| CO5 | Identify appropriate techniques to enhance software quality                                         |
 
 ### Course Contents
 
 #### Module 1: Software and Process Models (09 Hours)
 
 **Software and Software Engineering:**
+
 - The Nature of Software
 - The Unique Nature of WebApps
 - Software Engineering
@@ -72,9 +78,11 @@
 - Software Myths
 
 **Process Models:**
+
 - A Generic Process Model
 - Process Assessment and Improvement
-- Prescriptive Process Models: Waterfall Model, Incremental Process Models, Evolutionary Process Models, Concurrent Models
+- Prescriptive Process Models: Waterfall Model, Incremental Process Models, Evolutionary Process
+  Models, Concurrent Models
 - Specialized Process Models
 - Unified Process
 - Personal and Team Process Models
@@ -84,6 +92,7 @@
 #### Module 2: Requirements Engineering (09 Hours)
 
 **Understanding Requirements:**
+
 - Requirements Engineering
 - Establishing the Ground Work
 - Eliciting Requirements
@@ -93,12 +102,14 @@
 - Validating Requirements
 
 **Requirements Modeling:**
+
 - Scenario-Based Modeling
 - UML Models that Supplement the Use Case
 - Data Modeling Concepts
 - Class-Based Modeling
 
 **Requirement Modeling Strategies:**
+
 - Flow-Oriented Modeling
 - Behavioral Modeling
 
@@ -114,6 +125,7 @@
 - A Tool Set for Agile Process
 
 **Principles that Guide Practice:**
+
 - Software Engineering Knowledge
 - Core Principles
 - Principles that Guide Each Framework Activity
@@ -123,6 +135,7 @@
 #### Module 4: Project Management (09 Hours)
 
 **Introduction to Project Management:**
+
 - Project and Importance of Project Management
 - Contract Management
 - Activities Covered by Software Project Management
@@ -136,6 +149,7 @@
 - Traditional vs Modern Project Management Practices
 
 **Project Evaluation:**
+
 - Evaluation of Individual Projects
 - Cost-Benefit Evaluation Techniques
 - Risk Evaluation
@@ -145,6 +159,7 @@
 #### Module 5: Software Quality and Estimation (09 Hours)
 
 **Software Quality:**
+
 - The Place of Software Quality in Project Planning
 - Importance of Software Quality
 - Defining Software Quality
@@ -152,6 +167,7 @@
 - Product vs Process Quality Management
 
 **Software Project Estimation:**
+
 - Observations on Estimation
 - Decomposition Techniques
 - Empirical Estimation Models
@@ -162,8 +178,10 @@
 
 #### Textbooks
 
-1. Roger S. Pressman, "Software Engineering: A Practitioner's Approach", 7th Edition, Tata McGraw Hill
-2. Bob Hughes, Mike Cotterell, Rajib Mall, "Software Project Management", 6th Edition, McGraw Hill Education, 2018
+1. Roger S. Pressman, "Software Engineering: A Practitioner's Approach", 7th Edition, Tata McGraw
+   Hill
+2. Bob Hughes, Mike Cotterell, Rajib Mall, "Software Project Management", 6th Edition, McGraw Hill
+   Education, 2018
 
 #### Reference Books
 
@@ -184,35 +202,39 @@
 
 ### Course Objectives
 
-- Study the TCP/IP protocol suite, switching criteria and Medium Access Control protocols for reliable and noisy channels.
+- Study the TCP/IP protocol suite, switching criteria and Medium Access Control protocols for
+  reliable and noisy channels.
 - Learn network layer services and IP versions.
 - Discuss transport layer services and understand UDP and TCP protocols.
 - Demonstrate the working of different concepts of networking layers and protocols.
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain the fundamentals of computer networks |
+| CO  | Description                                                                                                                  |
+| --- | ---------------------------------------------------------------------------------------------------------------------------- |
+| CO1 | Explain the fundamentals of computer networks                                                                                |
 | CO2 | Apply the concepts of computer networks to demonstrate the working of various layers and protocols in communication networks |
-| CO3 | Analyze the principles of protocol layering in modern communication systems |
-| CO4 | Demonstrate various routing protocols and their services using tools such as Cisco Packet Tracer |
+| CO3 | Analyze the principles of protocol layering in modern communication systems                                                  |
+| CO4 | Demonstrate various routing protocols and their services using tools such as Cisco Packet Tracer                             |
 
 ### Course Contents
 
 #### Module 1: Introduction and Physical Layer (08 Hours)
 
 **Introduction:**
+
 - Data Communications
 - Networks: LAN, MAN, WAN
 - Network Types
 
 **Network Models:**
+
 - Protocol Layering
 - TCP/IP Protocol Suite
 - OSI Model
 
 **Physical Layer:**
+
 - Transmission Media: Guided (Twisted Pair, Coaxial, Fiber Optic), Unguided (Wireless)
 - Switching: Packet Switching and its Types
 
@@ -221,17 +243,20 @@
 #### Module 2: Data Link Layer (08 Hours)
 
 **Error Detection and Correction:**
+
 - Introduction, Block Coding
 - Cyclic Codes: CRC
 - Checksum
 
 **Data Link Control:**
+
 - DLC Services: Framing, Flow Control, Error Control
 - Connectionless and Connection Oriented
 - Data Link Layer Protocols
 - High Level Data Link Control (HDLC)
 
 **Media Access Control:**
+
 - Random Access: ALOHA, CSMA, CSMA/CD, CSMA/CA
 - Controlled Access: Reservation, Polling, Token Passing
 
@@ -247,7 +272,8 @@
 - IPv4 Datagram Format
 - IPv6 Datagram Format
 - Introduction to Routing Algorithms
-- Unicast Routing Protocols: Distance Vector Routing (DVR), Link State Routing (LSR), Path Vector Routing (PVR)
+- Unicast Routing Protocols: Distance Vector Routing (DVR), Link State Routing (LSR), Path Vector
+  Routing (PVR)
 - Unicast Routing Protocols: RIP, OSPF, BGP
 - Multicasting Routing: MOSPF
 
@@ -284,14 +310,20 @@
 
 **Laboratory Experiments (10 experiments):**
 
-1. Implement three nodes point-to-point network with duplex links between them. Set queue size, vary bandwidth, and find number of packets dropped
-2. Implement transmission of ping messages/traceroute over a network topology of 6 nodes and find number of packets dropped due to congestion
-3. Implement an Ethernet LAN using n nodes and set multiple traffic nodes and plot congestion window for different source/destination
+1. Implement three nodes point-to-point network with duplex links between them. Set queue size, vary
+   bandwidth, and find number of packets dropped
+2. Implement transmission of ping messages/traceroute over a network topology of 6 nodes and find
+   number of packets dropped due to congestion
+3. Implement an Ethernet LAN using n nodes and set multiple traffic nodes and plot congestion window
+   for different source/destination
 4. Develop a program for error detecting code using CRC-CCITT (16-bits)
 5. Develop a program to implement sliding window protocol in the data link layer
-6. Develop a program to find shortest path between vertices using Bellman-Ford and path vector routing algorithm
-7. Using TCP/IP sockets, write a client-server program to make client send file name and server send back contents of requested file
-8. Develop a program on datagram socket for client/server to display messages on client side, typed at server side
+6. Develop a program to find shortest path between vertices using Bellman-Ford and path vector
+   routing algorithm
+7. Using TCP/IP sockets, write a client-server program to make client send file name and server send
+   back contents of requested file
+8. Develop a program on datagram socket for client/server to display messages on client side, typed
+   at server side
 9. Develop a program for a simple RSA algorithm to encrypt and decrypt data
 10. Develop a program for congestion control using leaky bucket algorithm
 
@@ -303,7 +335,8 @@
 
 #### Reference Books
 
-1. Larry L. Peterson, Bruce S. Davie, "Computer Networks – A Systems Approach", 4th Edition, Elsevier, 2019
+1. Larry L. Peterson, Bruce S. Davie, "Computer Networks – A Systems Approach", 4th Edition,
+   Elsevier, 2019
 2. Nader F. Mir, "Computer and Communication Networks", 2nd Edition, Pearson Education, 2015
 3. William Stallings, "Data and Computer Communication", 10th Edition, Pearson Education, 2014
 
@@ -311,7 +344,8 @@
 
 ## BCS503: Theory of Computation
 
-**Teaching Scheme:** Theory: 03 Hours/Week, Tutorial: 02 Hours/Week | **Credits:** 04 | **Total Hours:** 50
+**Teaching Scheme:** Theory: 03 Hours/Week, Tutorial: 02 Hours/Week | **Credits:** 04 | **Total
+Hours:** 50
 
 **Examination:** CIE: 50 Marks, SEE: 50 Marks, Total: 100 Marks
 
@@ -327,13 +361,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                                                      |
+| --- | ---------------------------------------------------------------------------------------------------------------- |
 | CO1 | Apply the fundamental concepts of automata theory, including deterministic and non-deterministic finite automata |
-| CO2 | Design regular expressions and analyze regular languages |
-| CO3 | Design context-free grammars and pushdown automata |
-| CO4 | Design Turing machines for computational problems |
-| CO5 | Analyze the decidability and complexity of computational problems |
+| CO2 | Design regular expressions and analyze regular languages                                                         |
+| CO3 | Design context-free grammars and pushdown automata                                                               |
+| CO4 | Design Turing machines for computational problems                                                                |
+| CO5 | Analyze the decidability and complexity of computational problems                                                |
 
 ### Course Contents
 
@@ -384,12 +418,14 @@
 #### Module 5: Turing Machines and Undecidability (10 Hours)
 
 **Introduction to Turing Machines:**
+
 - Problems That Computers Cannot Solve
 - The Turing Machine
 - Programming Techniques for Turing Machines
 - Extensions to the Basic Turing Machine
 
 **Undecidability:**
+
 - A Language That Is Not Recursively Enumerable
 - Undecidable Problems
 - Post's Correspondence Problem
@@ -400,13 +436,16 @@
 
 #### Textbooks
 
-1. John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman, "Introduction to Automata Theory, Languages, and Computation", 3rd Edition, Pearson Education, 2013
+1. John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman, "Introduction to Automata Theory, Languages,
+   and Computation", 3rd Edition, Pearson Education, 2013
 2. Michael Sipser, "Introduction to the Theory of Computation", 3rd Edition, Cengage Learning, 2012
 
 #### Reference Books
 
-1. Peter Linz, "An Introduction to Formal Languages and Automata", 6th Edition, Jones & Bartlett, 2016
-2. K.L.P. Mishra, N. Chandrasekaran, "Theory of Computer Science: Automata, Languages and Computation", 3rd Edition, PHI, 2007
+1. Peter Linz, "An Introduction to Formal Languages and Automata", 6th Edition, Jones & Bartlett,
+   2016
+2. K.L.P. Mishra, N. Chandrasekaran, "Theory of Computer Science: Automata, Languages and
+   Computation", 3rd Edition, PHI, 2007
 
 ---
 
@@ -420,12 +459,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Design web pages using HTML and CSS |
-| CO2 | Implement client-side scripting using JavaScript |
-| CO3 | Develop server-side applications using PHP/Python |
-| CO4 | Build database-driven web applications |
+| CO  | Description                                         |
+| --- | --------------------------------------------------- |
+| CO1 | Design web pages using HTML and CSS                 |
+| CO2 | Implement client-side scripting using JavaScript    |
+| CO3 | Develop server-side applications using PHP/Python   |
+| CO4 | Build database-driven web applications              |
 | CO5 | Create responsive web applications using frameworks |
 
 ### Laboratory Experiments
@@ -458,13 +497,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain the data science lifecycle and its applications |
+| CO  | Description                                                       |
+| --- | ----------------------------------------------------------------- |
+| CO1 | Explain the data science lifecycle and its applications           |
 | CO2 | Apply data preprocessing and exploratory data analysis techniques |
-| CO3 | Implement statistical analysis and hypothesis testing |
-| CO4 | Build machine learning models for predictive analytics |
-| CO5 | Create effective data visualizations for communication |
+| CO3 | Implement statistical analysis and hypothesis testing             |
+| CO4 | Build machine learning models for predictive analytics            |
+| CO5 | Create effective data visualizations for communication            |
 
 ### Course Contents
 
@@ -535,13 +574,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain full stack architecture and technologies |
+| CO  | Description                                                     |
+| --- | --------------------------------------------------------------- |
+| CO1 | Explain full stack architecture and technologies                |
 | CO2 | Develop responsive front-end interfaces using modern frameworks |
-| CO3 | Build RESTful APIs and server-side logic |
-| CO4 | Design and query databases for web applications |
-| CO5 | Deploy and maintain full stack applications |
+| CO3 | Build RESTful APIs and server-side logic                        |
+| CO4 | Design and query databases for web applications                 |
+| CO5 | Deploy and maintain full stack applications                     |
 
 ### Course Contents
 
@@ -608,18 +647,19 @@
 
 - Understand the goals and challenges of distributed systems
 - Describe the architecture of RPC/RMI, distributed file systems and name services
-- Learn clock synchronization algorithms to monitor and order events, mutual exclusion, election and consensus algorithms
+- Learn clock synchronization algorithms to monitor and order events, mutual exclusion, election and
+  consensus algorithms
 - Study the fundamental concepts and algorithms related to distributed transactions and replication
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Identify the goals and challenges of distributed systems |
-| CO2 | Demonstrate the remote invocation techniques for communication |
-| CO3 | Describe the architecture of distributed file systems and name services |
-| CO4 | Apply clock synchronization algorithms to monitor and order events |
-| CO5 | Analyze the performance of mutual exclusion, election and consensus algorithms |
+| CO  | Description                                                                                            |
+| --- | ------------------------------------------------------------------------------------------------------ |
+| CO1 | Identify the goals and challenges of distributed systems                                               |
+| CO2 | Demonstrate the remote invocation techniques for communication                                         |
+| CO3 | Describe the architecture of distributed file systems and name services                                |
+| CO4 | Apply clock synchronization algorithms to monitor and order events                                     |
+| CO5 | Analyze the performance of mutual exclusion, election and consensus algorithms                         |
 | CO6 | Illustrate the fundamental concepts and algorithms related to distributed transactions and replication |
 
 ### Course Contents
@@ -627,10 +667,13 @@
 #### Module 1: Characterization and Remote Invocation (08 Hours)
 
 **Characterization of Distributed Systems:**
+
 - Introduction, Focus on Resource Sharing
-- Challenges: Heterogeneity, Openness, Security, Scalability, Failure handling, Concurrency, Transparency
+- Challenges: Heterogeneity, Openness, Security, Scalability, Failure handling, Concurrency,
+  Transparency
 
 **Remote Invocation:**
+
 - Request-Reply Protocols
 - Remote Procedure Call (RPC)
 - Introduction to Remote Method Invocation (RMI)
@@ -640,10 +683,12 @@
 #### Module 2: Distributed File Systems and Name Services (08 Hours)
 
 **Distributed File Systems:**
+
 - Introduction
 - File Service Architecture
 
 **Name Services:**
+
 - Introduction
 - Name Services and the Domain Name System (DNS)
 - Directory Services
@@ -673,6 +718,7 @@
 #### Module 5: Distributed Transactions and Replication (08 Hours)
 
 **Distributed Transactions:**
+
 - Flat and Nested Distributed Transactions
 - Atomic Commit Protocols: Two-Phase Commit (2PC), Three-Phase Commit (3PC)
 - Concurrency Control in Distributed Transactions
@@ -680,6 +726,7 @@
 - Transaction Recovery
 
 **Replication:**
+
 - Introduction
 - Replication Models
 - Consistency Protocols
@@ -690,12 +737,15 @@
 
 #### Textbooks
 
-1. George Coulouris, Jean Dollimore, Tim Kindberg, "Distributed Systems Concepts and Design", 5th Edition, Pearson Education, 2012
+1. George Coulouris, Jean Dollimore, Tim Kindberg, "Distributed Systems Concepts and Design", 5th
+   Edition, Pearson Education, 2012
 
 #### Reference Books
 
-1. Andrew S. Tanenbaum, Maarten Van Steen, "Distributed Systems: Principles and Paradigms", 2nd Edition, Pearson, 2007
-2. Ajay D. Kshemkalyani, Mukesh Singhal, "Distributed Computing: Principles, Algorithms, and Systems", Cambridge University Press, 2011
+1. Andrew S. Tanenbaum, Maarten Van Steen, "Distributed Systems: Principles and Paradigms", 2nd
+   Edition, Pearson, 2007
+2. Ajay D. Kshemkalyani, Mukesh Singhal, "Distributed Computing: Principles, Algorithms, and
+   Systems", Cambridge University Press, 2011
 
 ---
 
@@ -713,13 +763,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                          |
+| --- | ---------------------------------------------------- |
 | CO1 | Demonstrate the basics of Unix concepts and commands |
-| CO2 | Demonstrate the UNIX file system |
-| CO3 | Apply commands to reflect changes in file system |
-| CO4 | Demonstrate IPC and process management |
-| CO5 | Develop an application/service over a Unix system |
+| CO2 | Demonstrate the UNIX file system                     |
+| CO3 | Apply commands to reflect changes in file system     |
+| CO4 | Demonstrate IPC and process management               |
+| CO5 | Develop an application/service over a Unix system    |
 
 ### Course Contents
 
@@ -735,6 +785,7 @@
 - The root login and su command
 
 **Unix Files:**
+
 - Naming Files, Basic File Types/Categories
 - Organization of Files, Hidden Files
 - Standard Directories
@@ -748,21 +799,25 @@
 #### Module 2: File Attributes, Shell Programming (08 Hours)
 
 **File Attributes and Permissions:**
+
 - ls command options
 - Changing File Permissions: Relative, Absolute Methods
 - Directory Permissions
 
 **The Shell Interpretive Cycle:**
+
 - Wild Cards
 - Removing Special Meanings of Wild Cards
 - Three Standard Files and Redirection
 
 **Connecting Commands:**
+
 - Pipe
 - Regular Expressions: Basic and Extended
 - grep, egrep
 
 **Shell Programming:**
+
 - Ordinary and Environment Variables
 - .profile, read, readonly Commands
 - Command Line Arguments
@@ -777,20 +832,24 @@
 #### Module 3: Unix Standardization and File I/O (08 Hours)
 
 **Unix Standardization and Implementations:**
+
 - Introduction, Unix Standardization
 - UNIX System Implementation
 
 **File I/O:**
+
 - Introduction, File Descriptor
 - open, create, read, write, close, fcntl functions
 
 **Files and Directories:**
+
 - mkdir, rmdir functions
 - Reading Directories
 - chdir, fchdir, getcwd functions
 - Device Special Files
 
 **Environment of a UNIX Process:**
+
 - main function, Process Termination
 - Command-Line Arguments, Environment List
 - Memory Layout of a C Program
@@ -804,12 +863,14 @@
 #### Module 4: Process Control and IPC (08 Hours)
 
 **Process Control:**
+
 - Process Identifiers
 - fork, vfork, exit, wait, waitpid, wait3, wait4 functions
 - Race Conditions
 - exec Functions
 
 **Interprocess Communication:**
+
 - Overview of IPC Methods
 - Pipes: popen, pclose functions
 - Coprocesses, FIFOs
@@ -821,6 +882,7 @@
 #### Module 5: Signals and Daemon Processes (08 Hours)
 
 **Signals:**
+
 - Signal Concepts
 - Signal Functions: signal, kill, raise
 - SIGCLD Semantics
@@ -829,6 +891,7 @@
 - sigsetjmp, siglongjmp, sigsuspend, abort, system, sleep functions
 
 **Daemon Processes:**
+
 - Daemon Characteristics
 - Coding Rules
 - Error Logging
@@ -841,13 +904,15 @@
 #### Textbooks
 
 1. Sumitabha Das, "Unix Concepts and Applications", 4th Edition, Tata McGraw Hill
-2. W. Richard Stevens, "Advanced Programming in the UNIX Environment", 2nd Edition, Pearson Education, 2005
+2. W. Richard Stevens, "Advanced Programming in the UNIX Environment", 2nd Edition, Pearson
+   Education, 2005
 
 #### Reference Books
 
 1. Terrence Chan, "Unix System Programming Using C++", PHI, 1999
 2. M.G. Venkatesh Murthy, "UNIX & Shell Programming", Pearson Education
-3. Richard Blum, Christine Brenham, "Linux Command Line and Shell Scripting Bible", 2nd Edition, Wiley, 2014
+3. Richard Blum, Christine Brenham, "Linux Command Line and Shell Scripting Bible", 2nd Edition,
+   Wiley, 2014
 
 ---
 
@@ -862,36 +927,41 @@
 ### Course Objectives
 
 - Identify the major challenges of environmental issues
-- Develop skills, critical thinking and demonstrate socio-economic skills for environmental protection
+- Develop skills, critical thinking and demonstrate socio-economic skills for environmental
+  protection
 - Analyze the impact of issues with respect to waste management
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                                                        |
+| --- | ------------------------------------------------------------------------------------------------------------------ |
 | CO1 | Comprehend the principles of ecology and environmental issues pertaining to air, land, and water on a global scale |
-| CO2 | Acquire observation skills for solving problems related to the environment |
-| CO3 | Conduct surveys to describe the realities of waste management systems |
+| CO2 | Acquire observation skills for solving problems related to the environment                                         |
+| CO3 | Conduct surveys to describe the realities of waste management systems                                              |
 
 ### Course Contents
 
 #### Module 1: Ecosystem and Sustainability (05 Hours)
 
 **Ecosystem:**
+
 - Structure of Ecosystem
 - Types: Forest, Desert, Wetlands, Riverine, Oceanic Ecosystems
 
 **Sustainability:**
+
 - 17 SDG Targets and Possible Actions
 
 #### Module 2: Natural Resources and Energy (05 Hours)
 
 **Natural Resources:**
+
 - Water Resources: Availability & Quality Aspects
 - Water Borne Diseases & Water Induced Diseases
 - Fluoride Problem in Drinking Water
 
 **Energy:**
+
 - Different Types of Energy
 - Conventional Sources & Non-Conventional Sources of Energy
 - Solar Energy, Wind Energy, Hydrogen as an Alternative Energy
@@ -905,13 +975,16 @@
 #### Module 4: Waste Management (05 Hours)
 
 **Solid Waste Management:**
+
 - Types and Sources
 - Functional Elements of SWM
 
 **Biomedical Waste Management:**
+
 - Sources, Characteristics
 
 **Environmental Legislation:**
+
 - Solid Waste Management Rules, 2016
 - Biomedical Waste Management Rules, 2016
 
@@ -936,7 +1009,8 @@
 #### Reference Books
 
 1. Erach Bharucha, "Environmental Studies for UG Students", 2004
-2. R. Rajagopalan, "Environmental Studies- From Crisis to Cure", 2nd Edition, Oxford University Press, 2013
+2. R. Rajagopalan, "Environmental Studies- From Crisis to Cure", 2nd Edition, Oxford University
+   Press, 2013
 
 ---
 
@@ -954,12 +1028,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                |
+| --- | ---------------------------------------------------------- |
 | CO1 | Apply creative thinking techniques to generate novel ideas |
-| CO2 | Use design thinking methodology for problem solving |
-| CO3 | Develop innovative solutions for real-world problems |
-| CO4 | Communicate and pitch ideas effectively |
+| CO2 | Use design thinking methodology for problem solving        |
+| CO3 | Develop innovative solutions for real-world problems       |
+| CO4 | Communicate and pitch ideas effectively                    |
 
 ### Course Activities
 
@@ -981,6 +1055,7 @@
 - Minimum passing: 40% of CIE marks (20 out of 50)
 
 **For IPCC (Integrated Professional Core Course):**
+
 - Theory component CIE: 15 marks (two tests) + 10 marks (other assessments)
 - Practical component CIE: 15 marks (experiment conduction) + 10 marks (lab test)
 
@@ -996,4 +1071,6 @@ Minimum **40% (40 out of 100)** in the sum total of CIE and SEE taken together.
 
 ---
 
-> **Disclaimer:** This document is compiled from official VTU syllabus documents (2022 Scheme) for reference purposes. For the latest updates, always refer to the official VTU website: https://vtu.ac.in
+> **Disclaimer:** This document is compiled from official VTU syllabus documents (2022 Scheme) for
+> reference purposes. For the latest updates, always refer to the official VTU website:
+> https://vtu.ac.in

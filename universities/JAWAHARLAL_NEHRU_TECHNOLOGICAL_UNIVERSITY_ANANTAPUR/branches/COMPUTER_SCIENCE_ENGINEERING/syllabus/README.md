@@ -12,11 +12,11 @@ syllabus/
 
 ## Official Syllabus Sources
 
-| Resource | URL |
-|----------|-----|
-| **JNTUA Official Syllabus Portal** | https://www.jntua.ac.in/syllabus |
-| **JNTUA College of Engineering (Autonomous)** | https://www.jntuacea.ac.in/academics_syllabus.php |
-| **JNTUA R23 Regulations (Official PDF)** | https://www.jntua.ac.in/wp-content/uploads/2023/07/R23-Regulations.pdf |
+| Resource                                      | URL                                                                    |
+| --------------------------------------------- | ---------------------------------------------------------------------- |
+| **JNTUA Official Syllabus Portal**            | https://www.jntua.ac.in/syllabus                                       |
+| **JNTUA College of Engineering (Autonomous)** | https://www.jntuacea.ac.in/academics_syllabus.php                      |
+| **JNTUA R23 Regulations (Official PDF)**      | https://www.jntua.ac.in/wp-content/uploads/2023/07/R23-Regulations.pdf |
 
 ## Source
 

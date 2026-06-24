@@ -2,14 +2,15 @@
 
 > Compiled from Oxford University Computer Science course materials for reference.
 >
-> Oxford follows a tutorial-based system where each year of study covers core
-> and optional courses across three terms (Michaelmas, Hilary, Trinity).
+> Oxford follows a tutorial-based system where each year of study covers core and optional courses
+> across three terms (Michaelmas, Hilary, Trinity).
 
 ---
 
 ## Year 1: Core Courses
 
 ### CP1: Introduction to Functional Programming
+
 **Term:** Michaelmas | **Credits:** 1 FHEQ Level 4 unit
 
 - Lambda calculus fundamentals
@@ -18,6 +19,7 @@
 - Lazy evaluation and infinite data structures
 
 ### CP2: Design and Analysis of Algorithms
+
 **Term:** Michaelmas, Hilary | **Credits:** 1.5 FHEQ Level 4 unit
 
 - Algorithm analysis: Big-O, amortized analysis
@@ -26,6 +28,7 @@
 - NP-completeness, approximation algorithms
 
 ### CP3: Imperative Programming
+
 **Term:** Michaelmas, Hilary | **Credits:** 1.5 FHEQ Level 4 unit
 
 - Programming in Java: OOP, inheritance, polymorphism
@@ -33,6 +36,7 @@
 - Exception handling, I/O, concurrency basics
 
 ### CP4: Digital Systems
+
 **Term:** Michaelmas | **Credits:** 1 FHEQ Level 4 unit
 
 - Boolean algebra, logic gates
@@ -41,6 +45,7 @@
 - Memory hierarchy, cache
 
 ### CP5: Continuous Mathematics
+
 **Term:** Michaelmas, Hilary | **Credits:** 1 FHEQ Level 4 unit
 
 - Calculus: limits, derivatives, integrals
@@ -48,6 +53,7 @@
 - Probability: random variables, distributions, Bayes
 
 ### CP6: Discrete Mathematics
+
 **Term:** Hilary | **Credits:** 1 FHEQ Level 4 unit
 
 - Set theory, relations, functions
@@ -62,23 +68,27 @@
 ### Core Courses
 
 #### Algorithms and Data Structures
+
 - Advanced graph algorithms
 - Streaming algorithms
 - Randomized algorithms
 - Online algorithms
 
 #### Models of Computation
+
 - Formal languages: regular, context-free
 - Automata theory: DFA, NFA, PDA
 - Turing machines, computability
 - Complexity theory: P, NP, PSPACE
 
 #### Computer Systems
+
 - Operating systems: processes, memory, file systems
 - Computer networks: TCP/IP, routing, transport
 - Computer architecture: pipelines, caches, virtual memory
 
 ### Optional Courses (Choose 2-3)
+
 - Artificial Intelligence
 - Computer Graphics
 - Databases
@@ -133,4 +143,5 @@ Students choose 6-8 advanced options from 30+ available courses including:
 
 ---
 
-> **Official Source:** https://www.cs.ox.ac.uk/undergraduate/course-structure.html | University of Oxford
+> **Official Source:** https://www.cs.ox.ac.uk/undergraduate/course-structure.html | University of
+> Oxford

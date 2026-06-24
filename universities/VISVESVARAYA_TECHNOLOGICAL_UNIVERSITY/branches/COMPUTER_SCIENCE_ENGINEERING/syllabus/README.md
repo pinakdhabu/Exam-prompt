@@ -17,15 +17,15 @@ syllabus/
 
 ## Official Syllabus Sources
 
-| Resource | URL |
-|----------|-----|
-| **VTU BE Scheme & Syllabus Portal** | https://vtu.ac.in/b-e-scheme-syllabus/ |
-| **VTU Official Website** | https://vtu.ac.in/ |
-| **VTU CSE 2022 Scheme (3-8 Sem)** | https://vtu.ac.in/pdf/2022_3to8/38csesch.pdf |
+| Resource                            | URL                                           |
+| ----------------------------------- | --------------------------------------------- |
+| **VTU BE Scheme & Syllabus Portal** | https://vtu.ac.in/b-e-scheme-syllabus/        |
+| **VTU Official Website**            | https://vtu.ac.in/                            |
+| **VTU CSE 2022 Scheme (3-8 Sem)**   | https://vtu.ac.in/pdf/2022_3to8/38csesch.pdf  |
 | **VTU CSE 2022 Syllabus (3-4 Sem)** | https://vtu.ac.in/pdf/2022_3to8/2csessyll.pdf |
-| **VTU CSE 2022 Syllabus (5-6 Sem)** | https://vtu.ac.in/pdf/2022_3to8/3csesyll.pdf |
-| **VTU CSE 2022 Syllabus (7 Sem)** | https://vtu.ac.in/pdf/2022_3to8/7csesyll.pdf |
-| **VTU Previous Year Papers** | https://vtu.ac.in/previous-question-papers/ |
+| **VTU CSE 2022 Syllabus (5-6 Sem)** | https://vtu.ac.in/pdf/2022_3to8/3csesyll.pdf  |
+| **VTU CSE 2022 Syllabus (7 Sem)**   | https://vtu.ac.in/pdf/2022_3to8/7csesyll.pdf  |
+| **VTU Previous Year Papers**        | https://vtu.ac.in/previous-question-papers/   |
 
 ## Source
 

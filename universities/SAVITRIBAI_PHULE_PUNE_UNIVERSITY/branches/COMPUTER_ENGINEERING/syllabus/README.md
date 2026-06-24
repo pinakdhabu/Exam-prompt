@@ -19,12 +19,12 @@ syllabus/
 
 ## Official Syllabus Sources
 
-| Resource | URL |
-|----------|-----|
+| Resource                         | URL                                                   |
+| -------------------------------- | ----------------------------------------------------- |
 | **SPPU Official Syllabi Portal** | http://www.unipune.ac.in/university_files/syllabi.htm |
-| **SPPU Board of Syllabi** | http://bosc.unipune.ac.in/ |
-| **SPPU Circulars Portal** | https://collegecirculars.unipune.ac.in/ |
-| **SPPU Academic Calendar** | http://www.unipune.ac.in/exam_calender.htm |
+| **SPPU Board of Syllabi**        | http://bosc.unipune.ac.in/                            |
+| **SPPU Circulars Portal**        | https://collegecirculars.unipune.ac.in/               |
+| **SPPU Academic Calendar**       | http://www.unipune.ac.in/exam_calender.htm            |
 
 ## Source
 

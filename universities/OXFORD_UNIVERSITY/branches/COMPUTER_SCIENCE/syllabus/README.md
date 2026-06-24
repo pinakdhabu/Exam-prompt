@@ -4,17 +4,18 @@ Official University of Oxford Computer Science course structure reference.
 
 ## Official Syllabus Sources
 
-| Resource | URL |
-|----------|-----|
-| **Oxford Computer Science Department** | https://www.cs.ox.ac.uk/ |
-| **Oxford CS Undergraduate Admissions** | https://www.cs.ox.ac.uk/undergraduate/ |
-| **Oxford CS Course Structure** | https://www.cs.ox.ac.uk/undergraduate/course-structure.html |
-| **Oxford CS Syllabus** | https://www.cs.ox.ac.uk/teaching/ |
-| **Oxford University Academic Calendar** | https://www.ox.ac.uk/about/facts-and-figures/dates-of-term |
+| Resource                                | URL                                                         |
+| --------------------------------------- | ----------------------------------------------------------- |
+| **Oxford Computer Science Department**  | https://www.cs.ox.ac.uk/                                    |
+| **Oxford CS Undergraduate Admissions**  | https://www.cs.ox.ac.uk/undergraduate/                      |
+| **Oxford CS Course Structure**          | https://www.cs.ox.ac.uk/undergraduate/course-structure.html |
+| **Oxford CS Syllabus**                  | https://www.cs.ox.ac.uk/teaching/                           |
+| **Oxford University Academic Calendar** | https://www.ox.ac.uk/about/facts-and-figures/dates-of-term  |
 
 ## Programme Structure
 
 ### Year 1 (Prelims — Three compulsory subjects)
+
 - Functional Programming
 - Imperative Programming
 - Design and Analysis of Algorithms
@@ -23,6 +24,7 @@ Official University of Oxford Computer Science course structure reference.
 - Linear Algebra
 
 ### Year 2 (Core + Electives)
+
 - Introduction to Formal Specification
 - Models of Computation
 - Object-Oriented Programming
@@ -33,7 +35,9 @@ Official University of Oxford Computer Science course structure reference.
 - Databases
 
 ### Year 3 & 4 (Advanced Options + Project)
+
 Students choose from 20+ advanced options including:
+
 - Artificial Intelligence
 - Machine Learning
 - Computer Vision
@@ -43,7 +47,9 @@ Students choose from 20+ advanced options including:
 - Lambda Calculus & Types
 
 ### Assessment
-- **Classification:** First (70%+), Upper Second 2:1 (60-69%), Lower Second 2:2 (50-59%), Third (45-49%)
+
+- **Classification:** First (70%+), Upper Second 2:1 (60-69%), Lower Second 2:2 (50-59%), Third
+  (45-49%)
 - **Terms:** Michaelmas (Oct-Dec), Hilary (Jan-Mar), Trinity (Apr-Jun)
 - **Exams:** Prelims (end of Year 1), Finals (end of Year 3/4)
 

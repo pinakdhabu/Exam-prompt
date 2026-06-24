@@ -3,8 +3,8 @@
 > Extracted from official VTU syllabus documents (effective from Academic Year 2023-24).
 >
 > This document provides exact module-wise syllabus, course outcomes, examination structure,
-> laboratory work, practical guidelines and curriculum information for the Seventh Semester
-> of B.E. in Computer Science and Engineering under the 2022 Scheme.
+> laboratory work, practical guidelines and curriculum information for the Seventh Semester of B.E.
+> in Computer Science and Engineering under the 2022 Scheme.
 >
 > No syllabus topic has been intentionally omitted or condensed.
 
@@ -12,23 +12,25 @@
 
 # Semester VII — Course Structure (Swappable with Semester VIII)
 
-| Sl. | Course Code | Course Title | L:T:P:S | CIE | SEE | Total | Credits |
-|-----|-------------|-------------|---------|-----|-----|-------|---------|
-| 1 | BCS701 (IPCC) | Internet of Things | 3:0:2:0 | 50 | 50 | 100 | 4 |
-| 2 | BCS702 (IPCC) | Parallel Computing | 3:0:2:0 | 50 | 50 | 100 | 4 |
-| 3 | BCS703 | Cryptography & Network Security | 4:0:0:0 | 50 | 50 | 100 | 4 |
-| 4 | BCS714x | Professional Elective Course | 3:0:0:0 | 50 | 50 | 100 | 3 |
-| 5 | BCS755x | Open Elective Course | 3:0:0:0 | 50 | 50 | 100 | 3 |
-| 6 | BCS786 | Major Project Phase-II | 0:0:12:0 | 100 | 100 | 200 | 6 |
-| | **Total** | | | **400** | **300** | **700** | **24** |
+| Sl. | Course Code   | Course Title                    | L:T:P:S  | CIE     | SEE     | Total   | Credits |
+| --- | ------------- | ------------------------------- | -------- | ------- | ------- | ------- | ------- |
+| 1   | BCS701 (IPCC) | Internet of Things              | 3:0:2:0  | 50      | 50      | 100     | 4       |
+| 2   | BCS702 (IPCC) | Parallel Computing              | 3:0:2:0  | 50      | 50      | 100     | 4       |
+| 3   | BCS703        | Cryptography & Network Security | 4:0:0:0  | 50      | 50      | 100     | 4       |
+| 4   | BCS714x       | Professional Elective Course    | 3:0:0:0  | 50      | 50      | 100     | 3       |
+| 5   | BCS755x       | Open Elective Course            | 3:0:0:0  | 50      | 50      | 100     | 3       |
+| 6   | BCS786        | Major Project Phase-II          | 0:0:12:0 | 100     | 100     | 200     | 6       |
+|     | **Total**     |                                 |          | **400** | **300** | **700** | **24**  |
 
 **Professional Elective (PEC) Options (BCS714x):**
+
 - BCS714A: Deep Learning
 - BCS714B: Natural Language Processing
 - BAD714D: Social Network Analysis
 - BCS714D: Big Data Analytics
 
 **Open Elective Options (BCS755x):**
+
 - BCS755A: Introduction to DBMS
 - BCS755B: Introduction to Algorithms
 - BCS755C: Software Engineering
@@ -55,13 +57,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                    |
+| --- | -------------------------------------------------------------- |
 | CO1 | Explain IoT architecture, protocols, and enabling technologies |
-| CO2 | Interface sensors and actuators with IoT development boards |
-| CO3 | Implement communication protocols for IoT (MQTT, CoAP, HTTP) |
-| CO4 | Process and analyze IoT data using cloud platforms |
-| CO5 | Design and develop IoT applications for real-world problems |
+| CO2 | Interface sensors and actuators with IoT development boards    |
+| CO3 | Implement communication protocols for IoT (MQTT, CoAP, HTTP)   |
+| CO4 | Process and analyze IoT data using cloud platforms             |
+| CO5 | Design and develop IoT applications for real-world problems    |
 
 ### Course Contents
 
@@ -102,12 +104,14 @@
 #### Module 5: IoT Security and Applications (08 Hours)
 
 **IoT Security:**
+
 - Security Challenges: Authentication, Encryption, Access Control
 - Device and Network Security
 - Blockchain for IoT Security
 - Privacy Concerns in IoT
 
 **IoT Applications:**
+
 - Smart Home: Lighting, HVAC, Security Systems
 - Smart City: Traffic Management, Waste Management
 - Industrial IoT (IIoT): Predictive Maintenance
@@ -118,14 +122,17 @@
 
 #### Textbooks
 
-1. Arshdeep Bahga, Vijay Madisetti, "Internet of Things: A Hands-On Approach", Universities Press, 2015
+1. Arshdeep Bahga, Vijay Madisetti, "Internet of Things: A Hands-On Approach", Universities Press,
+   2015
 2. Adrian McEwen, Hakim Cassimally, "Designing the Internet of Things", Wiley, 2013
 
 #### Reference Books
 
 1. Raj Kamal, "Internet of Things: Architecture and Design Principles", McGraw Hill, 2017
-2. David Hanes, "IoT Fundamentals: Networking Technologies, Protocols, and Use Cases", Cisco Press, 2017
-3. O. Vermesan, P. Friess, "Internet of Things: Converging Technologies for Smart Environments", River Publishers, 2013
+2. David Hanes, "IoT Fundamentals: Networking Technologies, Protocols, and Use Cases", Cisco Press,
+   2017
+3. O. Vermesan, P. Friess, "Internet of Things: Converging Technologies for Smart Environments",
+   River Publishers, 2013
 
 ---
 
@@ -148,30 +155,33 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain parallel computing architectures and models |
-| CO2 | Design and analyze parallel algorithms for computational problems |
+| CO  | Description                                                        |
+| --- | ------------------------------------------------------------------ |
+| CO1 | Explain parallel computing architectures and models                |
+| CO2 | Design and analyze parallel algorithms for computational problems  |
 | CO3 | Implement parallel programs using OpenMP for shared memory systems |
-| CO4 | Develop distributed memory parallel programs using MPI |
-| CO5 | Implement GPU-accelerated programs using CUDA |
+| CO4 | Develop distributed memory parallel programs using MPI             |
+| CO5 | Implement GPU-accelerated programs using CUDA                      |
 
 ### Course Contents
 
 #### Module 1: Introduction to Parallel Computing (08 Hours)
 
 **Parallel Computing Overview:**
+
 - Motivating Parallelism
 - Scope of Parallel Computing
 - Levels of Parallelism: Bit-level, Instruction-level, Data, Task
 
 **Parallel Architectures:**
+
 - Flynn's Taxonomy: SISD, SIMD, MISD, MIMD
 - Shared Memory: UMA, NUMA, CC-NUMA
 - Distributed Memory: Clusters, Massively Parallel Processors
 - GPU Architecture: SIMT Model
 
 **Parallel Programming Models:**
+
 - Shared Memory: Threads, OpenMP
 - Distributed Memory: Message Passing (MPI)
 - Data Parallel: CUDA, OpenCL
@@ -180,17 +190,20 @@
 #### Module 2: Parallel Algorithm Design (08 Hours)
 
 **Decomposition Techniques:**
+
 - Domain Decomposition: Data Parallelism
 - Functional Decomposition: Task Parallelism
 - Recursive Decomposition: Divide and Conquer
 - Exploratory Decomposition: Search-based
 
 **Tasks and Interactions:**
+
 - Granularity: Fine, Coarse
 - Load Balancing: Static, Dynamic
 - Mapping and Scheduling
 
 **Performance Analysis:**
+
 - Speedup, Efficiency, Scalability
 - Amdahl's Law, Gustafson's Law
 - Isoefficiency Metric
@@ -241,13 +254,15 @@
 
 #### Textbooks
 
-1. Ananth Grama, Anshul Gupta, George Karypis, Vipin Kumar, "Introduction to Parallel Computing", 2nd Edition, Addison-Wesley, 2003
+1. Ananth Grama, Anshul Gupta, George Karypis, Vipin Kumar, "Introduction to Parallel Computing",
+   2nd Edition, Addison-Wesley, 2003
 2. John Cheng, Max Grossman, Ty McKercher, "Professional CUDA C Programming", Wiley, 2014
 
 #### Reference Books
 
 1. Peter S. Pacheco, "An Introduction to Parallel Programming", Morgan Kaufmann, 2011
-2. David B. Kirk, Wen-mei W. Hwu, "Programming Massively Parallel Processors", 3rd Edition, Morgan Kaufmann, 2017
+2. David B. Kirk, Wen-mei W. Hwu, "Programming Massively Parallel Processors", 3rd Edition, Morgan
+   Kaufmann, 2017
 
 ---
 
@@ -268,25 +283,27 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain security concepts, threats, and cryptographic mechanisms |
+| CO  | Description                                                              |
+| --- | ------------------------------------------------------------------------ |
+| CO1 | Explain security concepts, threats, and cryptographic mechanisms         |
 | CO2 | Apply symmetric and asymmetric encryption algorithms for data protection |
-| CO3 | Implement authentication protocols and digital signature schemes |
-| CO4 | Analyze network security protocols (IPSec, SSL/TLS, PGP) |
-| CO5 | Evaluate system security mechanisms including firewalls and IDS |
+| CO3 | Implement authentication protocols and digital signature schemes         |
+| CO4 | Analyze network security protocols (IPSec, SSL/TLS, PGP)                 |
+| CO5 | Evaluate system security mechanisms including firewalls and IDS          |
 
 ### Course Contents
 
 #### Module 1: Introduction to Security and Classical Encryption (10 Hours)
 
 **Security Fundamentals:**
+
 - CIA Triad: Confidentiality, Integrity, Availability
 - Security Attacks: Passive (Eavesdropping, Traffic Analysis), Active (Masquerade, Replay, DoS)
 - Security Services: Authentication, Access Control, Non-repudiation
 - Security Mechanisms: Encryption, Digital Signatures, Access Control
 
 **Classical Encryption Techniques:**
+
 - Substitution Ciphers: Caesar, Monoalphabetic, Playfair, Hill, Vigenere
 - Transposition Ciphers: Rail Fence, Columnar
 - Steganography
@@ -295,12 +312,14 @@
 #### Module 2: Symmetric and Asymmetric Cryptography (10 Hours)
 
 **Symmetric Key Cryptography:**
+
 - Block Cipher Principles: Feistel Structure
 - Data Encryption Standard (DES): Structure, Key Schedule, Modes of Operation
 - Advanced Encryption Standard (AES): Structure, Rounds, Key Expansion
 - Block Cipher Modes: ECB, CBC, CFB, OFB, CTR
 
 **Asymmetric Key Cryptography:**
+
 - Principles of Public-Key Cryptography
 - RSA Algorithm: Key Generation, Encryption, Decryption, Signing
 - Elliptic Curve Cryptography (ECC)
@@ -309,11 +328,13 @@
 #### Module 3: Authentication, Hash Functions, and Digital Signatures (10 Hours)
 
 **Cryptographic Hash Functions:**
+
 - Requirements, Security Properties
 - SHA-512: Structure, Compression Function
 - Message Authentication Codes (MAC): HMAC
 
 **Digital Signatures:**
+
 - Digital Signature Standard (DSS)
 - ECDSA
 - Digital Certificate: X.509 Format
@@ -322,40 +343,48 @@
 #### Module 4: Network Security Protocols (10 Hours)
 
 **IP Security (IPSec):**
+
 - IPSec Architecture: AH, ESP
 - Security Associations (SA)
 - IKE Protocol
 - VPN Configuration
 
 **SSL/TLS:**
+
 - SSL Architecture: Record, Handshake, Change Cipher Spec, Alert Protocols
 - TLS 1.3 Improvements
 - HTTPS Protocol
 
 **Email Security:**
+
 - PGP (Pretty Good Privacy): Key Management, Encryption, Authentication
 - S/MIME
 
 **Web Security:**
+
 - SET (Secure Electronic Transaction)
 - Web Authentication: OAuth, OpenID Connect, SAML
 
 #### Module 5: System Security and Recent Trends (10 Hours)
 
 **Firewall:**
+
 - Packet Filtering, Stateful Inspection, Application Gateway
 - Firewall Architecture: Screened Host, Screened Subnet
 
 **Intrusion Detection and Prevention:**
+
 - IDS Types: Signature-based, Anomaly-based
 - HIDS vs NIDS
 - Snort
 
 **Wireless Security:**
+
 - WEP, WPA2, WPA3
 - IEEE 802.11i
 
 **Recent Trends:**
+
 - Cloud Security: Shared Responsibility
 - IoT Security Challenges
 - Blockchain Security
@@ -365,7 +394,8 @@
 
 #### Textbooks
 
-1. William Stallings, "Cryptography and Network Security: Principles and Practice", 7th Edition, Pearson, 2017
+1. William Stallings, "Cryptography and Network Security: Principles and Practice", 7th Edition,
+   Pearson, 2017
 2. Atul Kahate, "Cryptography and Network Security", 4th Edition, McGraw Hill, 2019
 
 #### Reference Books
@@ -390,13 +420,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain the foundations of deep learning and neural networks |
+| CO  | Description                                                            |
+| --- | ---------------------------------------------------------------------- |
+| CO1 | Explain the foundations of deep learning and neural networks           |
 | CO2 | Design and train Convolutional Neural Networks (CNNs) for visual tasks |
-| CO3 | Implement RNNs and LSTMs for sequential data analysis |
-| CO4 | Apply generative models including GANs and autoencoders |
-| CO5 | Deploy deep learning models for real-world applications |
+| CO3 | Implement RNNs and LSTMs for sequential data analysis                  |
+| CO4 | Apply generative models including GANs and autoencoders                |
+| CO5 | Deploy deep learning models for real-world applications                |
 
 ### Course Contents
 
@@ -476,11 +506,11 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Apply text preprocessing techniques for NLP tasks |
-| CO2 | Implement word embeddings and language models |
-| CO3 | Design NLP systems using sequence models and transformers |
+| CO  | Description                                                              |
+| --- | ------------------------------------------------------------------------ |
+| CO1 | Apply text preprocessing techniques for NLP tasks                        |
+| CO2 | Implement word embeddings and language models                            |
+| CO3 | Design NLP systems using sequence models and transformers                |
 | CO4 | Build applications for text classification, NER, and machine translation |
 
 ### Course Contents
@@ -537,7 +567,8 @@
 #### Reference Books
 
 1. Yoav Goldberg, "Neural Network Methods in Natural Language Processing", Morgan & Claypool, 2017
-2. Christopher D. Manning, Hinrich Schütze, "Foundations of Statistical Natural Language Processing", MIT Press, 1999
+2. Christopher D. Manning, Hinrich Schütze, "Foundations of Statistical Natural Language
+   Processing", MIT Press, 1999
 
 ---
 
@@ -555,13 +586,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                               |
+| --- | --------------------------------------------------------- |
 | CO1 | Explain big data characteristics and the Hadoop ecosystem |
-| CO2 | Process large datasets using MapReduce programming model |
-| CO3 | Analyze data using Apache Spark and its MLlib |
-| CO4 | Apply NoSQL databases for big data storage |
-| CO5 | Visualize and present big data analytics results |
+| CO2 | Process large datasets using MapReduce programming model  |
+| CO3 | Analyze data using Apache Spark and its MLlib             |
+| CO4 | Apply NoSQL databases for big data storage                |
+| CO5 | Visualize and present big data analytics results          |
 
 ### Course Contents
 
@@ -637,12 +668,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                  |
+| --- | ---------------------------------------------------------------------------- |
 | CO1 | Identify and analyze a real-world problem requiring a computational solution |
-| CO2 | Design and implement a complete software/hardware solution |
-| CO3 | Test and validate the solution against requirements |
-| CO4 | Document and present the project work professionally |
+| CO2 | Design and implement a complete software/hardware solution                   |
+| CO3 | Test and validate the solution against requirements                          |
+| CO4 | Document and present the project work professionally                         |
 
 ### Evaluation
 
@@ -661,6 +692,7 @@
 - Minimum passing: 40% of CIE marks (20 out of 50)
 
 **For IPCC (Integrated Professional Core Course):**
+
 - Theory CIE: 15 marks (two tests) + 10 marks (other assessments)
 - Practical CIE: 15 marks (experiment conduction) + 10 marks (lab test)
 
@@ -676,4 +708,5 @@ Minimum **40% (40 out of 100)** in the sum total of CIE and SEE taken together.
 
 ---
 
-> **Disclaimer:** This document is compiled from official VTU syllabus documents (2022 Scheme) for reference purposes. For the latest updates, always refer to: https://vtu.ac.in
+> **Disclaimer:** This document is compiled from official VTU syllabus documents (2022 Scheme) for
+> reference purposes. For the latest updates, always refer to: https://vtu.ac.in

@@ -51,7 +51,7 @@ Moderator level. Follow all instructions below precisely.
 | **Explain / Describe**                | Definition + 3-6 mechanism points + closing.                            |
 | **Discuss / Elaborate**               | Definition + mechanism + types + pros/cons + applications + closing.    |
 | **Short note on**                     | Definition + 4-6 points + diagram (if structural) + closing.            |
-| **Compare / Differentiate**           | Table ( X \| Y) min 2 rows + preference closing.                |
+| **Compare / Differentiate**           | Table ( X \| Y) min 2 rows + preference closing.                        |
 | **Justify / Argue**                   | Claim + 3-5 logical reasons + evidence + closing.                       |
 | **Evaluate / Assess / Criticize**     | Criteria-based. Strengths + weaknesses + judgment.                      |
 | **Derive / Prove**                    | Step-by-step. Name each formula. Box final expression.                  |

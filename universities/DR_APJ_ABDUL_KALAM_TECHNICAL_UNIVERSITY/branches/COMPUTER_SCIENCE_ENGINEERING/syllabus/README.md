@@ -12,12 +12,12 @@ syllabus/
 
 ## Official Syllabus Sources
 
-| Resource | URL |
-|----------|-----|
-| **AKTU Official Syllabus Portal** | https://aktu.ac.in/syllabus.html |
-| **AKTU 2021-22 Syllabus Page** | https://aktu.ac.in/syllabus%202021-2022.html |
-| **AKTU Website** | https://aktu.ac.in/ |
-| **AKTU Previous Year Papers** | https://aktu.ac.in/pyq.html |
+| Resource                          | URL                                          |
+| --------------------------------- | -------------------------------------------- |
+| **AKTU Official Syllabus Portal** | https://aktu.ac.in/syllabus.html             |
+| **AKTU 2021-22 Syllabus Page**    | https://aktu.ac.in/syllabus%202021-2022.html |
+| **AKTU Website**                  | https://aktu.ac.in/                          |
+| **AKTU Previous Year Papers**     | https://aktu.ac.in/pyq.html                  |
 
 ## Source
 

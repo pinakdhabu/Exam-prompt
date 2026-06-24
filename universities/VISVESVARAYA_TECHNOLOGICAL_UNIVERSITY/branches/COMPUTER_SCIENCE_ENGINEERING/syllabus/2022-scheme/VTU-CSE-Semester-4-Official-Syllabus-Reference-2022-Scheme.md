@@ -3,8 +3,8 @@
 > Extracted from official VTU syllabus documents (effective from Academic Year 2023-24).
 >
 > This document provides exact module-wise syllabus, course outcomes, examination structure,
-> laboratory work, practical guidelines and curriculum information for the Fourth Semester
-> of B.E. in Computer Science and Engineering under the 2022 Scheme.
+> laboratory work, practical guidelines and curriculum information for the Fourth Semester of B.E.
+> in Computer Science and Engineering under the 2022 Scheme.
 >
 > Use this as the authoritative source for:
 >
@@ -22,26 +22,28 @@
 
 # Semester IV — Course Structure
 
-| Sl. | Course Code | Course Title | L:T:P:S | CIE | SEE | Total | Credits |
-|---|-------------|-------------|---------|-----|-----|-------|---------|
-| 1 | BCS401 | Analysis & Design of Algorithms | 3:0:0:0 | 50 | 50 | 100 | 3 |
-| 2 | BCS402 (IPCC) | Microcontrollers | 3:0:2:0 | 50 | 50 | 100 | 4 |
-| 3 | BCS403 (IPCC) | Database Management Systems | 3:0:2:0 | 50 | 50 | 100 | 4 |
-| 4 | BCSL404 | Analysis & Design of Algorithms Lab | 0:0:2:0 | 50 | 50 | 100 | 1 |
-| 5 | BCS405x | ESC/ETC/PLC | 2:2:0:0 | 50 | 50 | 100 | 3 |
-| 6 | BCS456x | AEC/SEC - IV | 1:0:0/0:0:2 | 50 | 50 | 100 | 1 |
-| 7 | BBOC407 | Biology for Computer Engineers | 2:0:0:0 | 50 | 50 | 100 | 2 |
-| 8 | BUHK408 | Universal Human Values Course | 1:0:0:0 | 50 | 50 | 100 | 1 |
-| 9 | BNSK459/BPEK459/BYOK459 | NSS/PE/Yoga | 0:0:2:0 | 100 | --- | 100 | 0 |
-| | **Total** | | | **500** | **400** | **900** | **19** |
+| Sl. | Course Code             | Course Title                        | L:T:P:S     | CIE     | SEE     | Total   | Credits |
+| --- | ----------------------- | ----------------------------------- | ----------- | ------- | ------- | ------- | ------- |
+| 1   | BCS401                  | Analysis & Design of Algorithms     | 3:0:0:0     | 50      | 50      | 100     | 3       |
+| 2   | BCS402 (IPCC)           | Microcontrollers                    | 3:0:2:0     | 50      | 50      | 100     | 4       |
+| 3   | BCS403 (IPCC)           | Database Management Systems         | 3:0:2:0     | 50      | 50      | 100     | 4       |
+| 4   | BCSL404                 | Analysis & Design of Algorithms Lab | 0:0:2:0     | 50      | 50      | 100     | 1       |
+| 5   | BCS405x                 | ESC/ETC/PLC                         | 2:2:0:0     | 50      | 50      | 100     | 3       |
+| 6   | BCS456x                 | AEC/SEC - IV                        | 1:0:0/0:0:2 | 50      | 50      | 100     | 1       |
+| 7   | BBOC407                 | Biology for Computer Engineers      | 2:0:0:0     | 50      | 50      | 100     | 2       |
+| 8   | BUHK408                 | Universal Human Values Course       | 1:0:0:0     | 50      | 50      | 100     | 1       |
+| 9   | BNSK459/BPEK459/BYOK459 | NSS/PE/Yoga                         | 0:0:2:0     | 100     | ---     | 100     | 0       |
+|     | **Total**               |                                     |             | **500** | **400** | **900** | **19**  |
 
 **ESC/ETC/PLC Options (BCS405x):**
+
 - BCS405A: Discrete Mathematical Structures
 - BCS405B: Graph Theory
 - BCS405C: Optimization Technique
 - BCS405D: Linear Algebra
 
 **AEC/SEC Options (BCS456x):**
+
 - BCS456A: Green IT and Sustainability
 - BCS456B: Capacity Planning for IT
 - BCS456C: UI/UX
@@ -63,64 +65,76 @@
 
 - To learn the methods for analyzing algorithms and evaluating their performance.
 - To demonstrate the efficiency of algorithms using asymptotic notations.
-- To solve problems using various algorithm design methods, including brute force, greedy, divide and conquer, decrease and conquer, transform and conquer, dynamic programming, backtracking, and branch and bound.
+- To solve problems using various algorithm design methods, including brute force, greedy, divide
+  and conquer, decrease and conquer, transform and conquer, dynamic programming, backtracking, and
+  branch and bound.
 - To learn the concepts of P and NP complexity classes.
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Apply asymptotic notational method to analyze the performance of the algorithms in terms of time complexity |
-| CO2 | Demonstrate divide & conquer approaches and decrease & conquer approaches to solve computational problems |
+| CO  | Description                                                                                                                               |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| CO1 | Apply asymptotic notational method to analyze the performance of the algorithms in terms of time complexity                               |
+| CO2 | Demonstrate divide & conquer approaches and decrease & conquer approaches to solve computational problems                                 |
 | CO3 | Make use of transform & conquer and dynamic programming design approaches to solve the given real world or complex computational problems |
-| CO4 | Apply greedy and input enhancement methods to solve graph & string based computational problems |
-| CO5 | Analyse various classes (P, NP and NP Complete) of problems |
-| CO6 | Illustrate backtracking, branch & bound and approximation methods |
+| CO4 | Apply greedy and input enhancement methods to solve graph & string based computational problems                                           |
+| CO5 | Analyse various classes (P, NP and NP Complete) of problems                                                                               |
+| CO6 | Illustrate backtracking, branch & bound and approximation methods                                                                         |
 
 ### Course Contents
 
 #### Module 1: Introduction and Brute Force Approaches (08 Hours)
 
 **Introduction:**
+
 - What is an Algorithm?
 - Fundamentals of Algorithmic Problem Solving
 
 **Fundamentals of the Analysis of Algorithm Efficiency:**
+
 - Analysis Framework
 - Asymptotic Notations and Basic Efficiency Classes
 - Mathematical Analysis of Non-recursive Algorithms
 - Mathematical Analysis of Recursive Algorithms
 
 **Brute Force Approaches:**
+
 - Selection Sort and Bubble Sort
 - Sequential Search and Brute Force String Matching
 
-**Textbook Reference:** Ch. 1 (Sections 1.1, 1.2), Ch. 2 (Sections 2.1, 2.2, 2.3, 2.4), Ch. 3 (Sections 3.1, 3.2)
+**Textbook Reference:** Ch. 1 (Sections 1.1, 1.2), Ch. 2 (Sections 2.1, 2.2, 2.3, 2.4), Ch. 3
+(Sections 3.1, 3.2)
 
 #### Module 2: Brute Force, Decrease-and-Conquer, Divide-and-Conquer (08 Hours)
 
 **Brute Force Approaches (continued):**
+
 - Exhaustive Search (Travelling Salesman Problem and Knapsack Problem)
 
 **Decrease-and-Conquer:**
+
 - Insertion Sort
 - Topological Sorting
 
 **Divide and Conquer:**
+
 - Merge Sort
 - Quick Sort
 - Binary Tree Traversals
 - Multiplication of Large Integers and Strassen's Matrix Multiplication
 
-**Textbook Reference:** Ch. 3 (Section 3.4), Ch. 4 (Sections 4.1, 4.2), Ch. 5 (Sections 5.1, 5.2, 5.3, 5.4)
+**Textbook Reference:** Ch. 3 (Section 3.4), Ch. 4 (Sections 4.1, 4.2), Ch. 5 (Sections 5.1, 5.2,
+5.3, 5.4)
 
 #### Module 3: Transform-and-Conquer and Space-Time Tradeoffs (08 Hours)
 
 **Transform-and-Conquer:**
+
 - Balanced Search Trees
 - Heaps and Heapsort
 
 **Space-Time Tradeoffs:**
+
 - Sorting by Counting: Comparison Counting Sort
 - Input Enhancement in String Matching: Horspool's Algorithm
 
@@ -129,11 +143,13 @@
 #### Module 4: Dynamic Programming and Greedy Method (08 Hours)
 
 **Dynamic Programming:**
+
 - Three Basic Examples
 - The Knapsack Problem and Memory Functions
 - Warshall's and Floyd's Algorithms
 
 **The Greedy Method:**
+
 - Prim's Algorithm
 - Kruskal's Algorithm
 - Dijkstra's Algorithm
@@ -144,10 +160,12 @@
 #### Module 5: Limitations, Backtracking, Branch-and-Bound (08 Hours)
 
 **Limitations of Algorithmic Power:**
+
 - Decision Trees
 - P, NP, and NP-Complete Problems
 
 **Coping with Limitations of Algorithmic Power:**
+
 - Backtracking (n-Queens Problem, Subset-Sum Problem)
 - Branch-and-Bound (Knapsack Problem)
 - Approximation Algorithms for NP-Hard Problems (Knapsack Problem)
@@ -158,13 +176,17 @@
 
 #### Textbooks
 
-1. Anany Levitin, "Introduction to the Design and Analysis of Algorithms", 3rd Edition, Pearson Education, 2012
-2. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein, "Introduction to Algorithms", 3rd Edition, MIT Press, 2009
+1. Anany Levitin, "Introduction to the Design and Analysis of Algorithms", 3rd Edition, Pearson
+   Education, 2012
+2. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein, "Introduction to
+   Algorithms", 3rd Edition, MIT Press, 2009
 
 #### Reference Books
 
-1. Alfred V. Aho, John E. Hopcroft, Jeffrey D. Ullman, "Data Structures and Algorithms", Pearson Education, 2003
-2. Sara Baase and Allen Van Gelder, "Computer Algorithms: Introduction to Design and Analysis", 3rd Edition, Pearson Education, 2008
+1. Alfred V. Aho, John E. Hopcroft, Jeffrey D. Ullman, "Data Structures and Algorithms", Pearson
+   Education, 2003
+2. Sara Baase and Allen Van Gelder, "Computer Algorithms: Introduction to Design and Analysis", 3rd
+   Edition, Pearson Education, 2008
 3. Donald E. Knuth, "The Art of Computer Programming", Volumes 1-4, Addison-Wesley
 
 ---
@@ -181,7 +203,8 @@
 
 ### Course Objectives
 
-- To understand the difference between Microprocessor and Microcontroller and architectural details of ARM Microcontroller.
+- To understand the difference between Microprocessor and Microcontroller and architectural details
+  of ARM Microcontroller.
 - To acquire in-depth knowledge about the instruction set of ARM Cortex M3/M4.
 - To understand the importance of peripherals like GPIO, Timers, PWM, ADC, DAC and Interrupts.
 - To design and develop real-time applications using ARM Microcontrollers.
@@ -189,14 +212,14 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain the architectural details of ARM Cortex M3/M4 |
-| CO2 | Write programs for ARM Cortex M3/M4 for various real-world applications |
+| CO  | Description                                                                    |
+| --- | ------------------------------------------------------------------------------ |
+| CO1 | Explain the architectural details of ARM Cortex M3/M4                          |
+| CO2 | Write programs for ARM Cortex M3/M4 for various real-world applications        |
 | CO3 | Understand and analyze the usage of GPIO, Timers, PWM, ADC, DAC and Interrupts |
-| CO4 | Design and develop real-time applications using ARM Microcontrollers |
-| CO5 | Develop applications using communication protocols (UART, SPI, I2C) |
-| CO6 | Design and develop real-world embedded systems |
+| CO4 | Design and develop real-time applications using ARM Microcontrollers           |
+| CO5 | Develop applications using communication protocols (UART, SPI, I2C)            |
+| CO6 | Design and develop real-world embedded systems                                 |
 
 ### Course Contents
 
@@ -229,18 +252,21 @@
 #### Module 3: GPIO, Timers and PWM (08 Hours)
 
 **GPIO:**
+
 - GPIO Registers, Configuration
 - Input/Output Modes: Push-Pull, Open-Drain
 - Alternate Functions
 - Interfacing LEDs, Switches, and Seven-Segment Displays
 
 **Timers:**
+
 - SysTick Timer
 - General Purpose Timers
 - Timer Modes: One-Shot, Periodic
 - Input Capture, Output Compare
 
 **PWM:**
+
 - PWM Generation
 - Duty Cycle and Frequency Control
 - Applications: Motor Control, LED Dimming
@@ -248,16 +274,19 @@
 #### Module 4: ADC, DAC and Interrupts (08 Hours)
 
 **ADC:**
+
 - Successive Approximation ADC
 - ADC Registers and Configuration
 - Analog Sampling: Single, Continuous, Scan Mode
 - Applications: Temperature Sensor, Potentiometer
 
 **DAC:**
+
 - DAC Architecture and Operation
 - Waveform Generation
 
 **Interrupts:**
+
 - NVIC (Nested Vectored Interrupt Controller)
 - Interrupt Priority and Pre-emption
 - Enabling/Disabling Interrupts
@@ -267,12 +296,14 @@
 #### Module 5: Communication Protocols and Application Development (08 Hours)
 
 **Communication Protocols:**
+
 - UART: Frame Format, Baud Rate, Parity
 - SPI: Master/Slave Configuration, Data Modes
 - I2C: Multi-Master, Addressing, Clock Stretching
 - CAN Protocol Basics
 
 **Application Development:**
+
 - Interfacing LCD Display
 - Interfacing Keypad
 - Sensor Interfacing: DHT11, Ultrasonic Sensor
@@ -283,13 +314,16 @@
 
 #### Textbooks
 
-1. Joseph Yiu, "The Definitive Guide to ARM Cortex-M3 and Cortex-M4 Processors", 3rd Edition, Newnes, 2014
-2. Muhammad Ali Mazidi, "ARM Assembly Language Programming & Architecture", 2nd Edition, Mazidi & Naimi Publishers, 2016
+1. Joseph Yiu, "The Definitive Guide to ARM Cortex-M3 and Cortex-M4 Processors", 3rd Edition,
+   Newnes, 2014
+2. Muhammad Ali Mazidi, "ARM Assembly Language Programming & Architecture", 2nd Edition, Mazidi &
+   Naimi Publishers, 2016
 
 #### Reference Books
 
 1. Trevor Martin, "The Designer's Guide to the Cortex-M Processor Family", 2nd Edition, Newnes, 2013
-2. Jonathan W. Valvano, "Embedded Systems: Real-Time Interfacing to ARM Cortex-M Microcontrollers", CreateSpace, 2015
+2. Jonathan W. Valvano, "Embedded Systems: Real-Time Interfacing to ARM Cortex-M Microcontrollers",
+   CreateSpace, 2015
 
 ### Practical Component (IPCC)
 
@@ -328,13 +362,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Demonstrate the basic concepts of database systems and their architecture |
+| CO  | Description                                                                       |
+| --- | --------------------------------------------------------------------------------- |
+| CO1 | Demonstrate the basic concepts of database systems and their architecture         |
 | CO2 | Design Entity-Relationship (ER) diagrams and convert them into relational schemas |
-| CO3 | Apply SQL queries for data definition, manipulation, and control |
-| CO4 | Apply normalization techniques to design well-structured databases |
-| CO5 | Analyze transaction management, concurrency control, and recovery mechanisms |
+| CO3 | Apply SQL queries for data definition, manipulation, and control                  |
+| CO4 | Apply normalization techniques to design well-structured databases                |
+| CO5 | Analyze transaction management, concurrency control, and recovery mechanisms      |
 
 ### Course Contents
 
@@ -355,6 +389,7 @@
 #### Module 2: Entity-Relationship Model and Relational Model (08 Hours)
 
 **Entity-Relationship Model:**
+
 - Basic Concepts: Entity, Attributes, Relationships
 - Entity Sets, Relationship Sets
 - Attributes: Simple, Composite, Multi-valued, Derived
@@ -366,6 +401,7 @@
 - Reduction of ER Schema to Tables
 
 **Relational Model:**
+
 - Structure of Relational Databases
 - Schema Diagrams
 - Relational Query Languages
@@ -376,6 +412,7 @@
 #### Module 3: SQL and PL/SQL (08 Hours)
 
 **SQL:**
+
 - SQL Data Definition: CREATE, ALTER, DROP
 - Basic Structure of SQL Queries: SELECT, FROM, WHERE
 - Set Operations: UNION, INTERSECT, EXCEPT
@@ -387,6 +424,7 @@
 - Data Control Language (DCL): GRANT, REVOKE
 
 **PL/SQL:**
+
 - PL/SQL Block Structure
 - Variables and Constants
 - Control Structures: IF, CASE, LOOP
@@ -414,12 +452,14 @@
 #### Module 5: Transaction Management, Concurrency Control and Recovery (08 Hours)
 
 **Transaction Management:**
+
 - Transaction Concept
 - ACID Properties
 - Transaction States
 - Serializability: Conflict and View
 
 **Concurrency Control:**
+
 - Lock-Based Protocols
 - Timestamp-Based Protocols
 - Validation-Based Protocols
@@ -427,6 +467,7 @@
 - Multiple Granularity
 
 **Recovery System:**
+
 - Failure Classification
 - Storage Structure
 - Recovery Algorithms: Log-Based, Shadow Paging
@@ -439,12 +480,15 @@
 
 #### Textbooks
 
-1. Abraham Silberschatz, Henry F. Korth, S. Sudarshan, "Database System Concepts", 7th Edition, McGraw-Hill Education, 2019
-2. Ramez Elmasri, Shamkant B. Navathe, "Fundamentals of Database Systems", 7th Edition, Pearson Education, 2016
+1. Abraham Silberschatz, Henry F. Korth, S. Sudarshan, "Database System Concepts", 7th Edition,
+   McGraw-Hill Education, 2019
+2. Ramez Elmasri, Shamkant B. Navathe, "Fundamentals of Database Systems", 7th Edition, Pearson
+   Education, 2016
 
 #### Reference Books
 
-1. Raghu Ramakrishnan, Johannes Gehrke, "Database Management Systems", 3rd Edition, McGraw-Hill, 2014
+1. Raghu Ramakrishnan, Johannes Gehrke, "Database Management Systems", 3rd Edition, McGraw-Hill,
+   2014
 2. C.J. Date, "An Introduction to Database Systems", 8th Edition, Pearson Education, 2003
 
 ### Practical Component (IPCC)
@@ -482,12 +526,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                                                                      |
+| --- | ---------------------------------------------------------------------------------------------------------------- |
 | CO1 | Implement algorithm design strategies including brute force, divide and conquer, greedy, and dynamic programming |
-| CO2 | Analyze the time complexity of implemented algorithms |
-| CO3 | Design algorithms for real-world computational problems |
-| CO4 | Evaluate algorithm performance and select appropriate strategies |
+| CO2 | Analyze the time complexity of implemented algorithms                                                            |
+| CO3 | Design algorithms for real-world computational problems                                                          |
+| CO4 | Evaluate algorithm performance and select appropriate strategies                                                 |
 
 ### Laboratory Experiments
 
@@ -527,12 +571,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Apply logical reasoning and proof techniques to solve problems |
-| CO2 | Apply set theory, relations, and functions in computer science contexts |
-| CO3 | Solve counting problems using combinatorial methods |
-| CO4 | Apply algebraic structures to computing problems |
+| CO  | Description                                                              |
+| --- | ------------------------------------------------------------------------ |
+| CO1 | Apply logical reasoning and proof techniques to solve problems           |
+| CO2 | Apply set theory, relations, and functions in computer science contexts  |
+| CO3 | Solve counting problems using combinatorial methods                      |
+| CO4 | Apply algebraic structures to computing problems                         |
 | CO5 | Model and solve real-world problems using discrete mathematical concepts |
 
 ### Course Contents
@@ -581,7 +625,8 @@
 #### Textbooks
 
 1. Kenneth H. Rosen, "Discrete Mathematics and Its Applications", 8th Edition, McGraw-Hill, 2019
-2. Bernard Kolman, Robert C. Busby, Sharon C. Ross, "Discrete Mathematical Structures", 6th Edition, Pearson, 2008
+2. Bernard Kolman, Robert C. Busby, Sharon C. Ross, "Discrete Mathematical Structures", 6th Edition,
+   Pearson, 2008
 
 #### Reference Books
 
@@ -608,13 +653,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                   |
+| --- | ------------------------------------------------------------- |
 | CO1 | Explain basic concepts of graphs, trees, and their properties |
-| CO2 | Apply graph traversal algorithms for problem solving |
-| CO3 | Analyze graph connectivity and planarity |
-| CO4 | Apply graph coloring and network flow concepts |
-| CO5 | Model real-world problems using graph theory |
+| CO2 | Apply graph traversal algorithms for problem solving          |
+| CO3 | Analyze graph connectivity and planarity                      |
+| CO4 | Apply graph coloring and network flow concepts                |
+| CO5 | Model real-world problems using graph theory                  |
 
 ### Course Contents
 
@@ -682,13 +727,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                    |
+| --- | -------------------------------------------------------------- |
 | CO1 | Understand the need for Green IT and its environmental impacts |
-| CO2 | Apply green practices in data centers and IT infrastructure |
-| CO3 | Evaluate the role of virtualization in energy efficiency |
-| CO4 | Analyze lifecycle assessment and e-waste management |
-| CO5 | Implement green IT strategies in organizations |
+| CO2 | Apply green practices in data centers and IT infrastructure    |
+| CO3 | Evaluate the role of virtualization in energy efficiency       |
+| CO4 | Analyze lifecycle assessment and e-waste management            |
+| CO5 | Implement green IT strategies in organizations                 |
 
 ### Course Contents
 
@@ -732,8 +777,10 @@
 
 #### Textbooks
 
-1. San Murugesan, G.R. Gangadharan, "Harnessing Green IT: Principles and Practices", Wiley-IEEE Press, 2012
-2. Mohammad Dastbaz, Colin Pattinson, Babak Akhgar, "Green Information Technology: A Sustainable Approach", Elsevier, 2015
+1. San Murugesan, G.R. Gangadharan, "Harnessing Green IT: Principles and Practices", Wiley-IEEE
+   Press, 2012
+2. Mohammad Dastbaz, Colin Pattinson, Babak Akhgar, "Green Information Technology: A Sustainable
+   Approach", Elsevier, 2015
 
 ---
 
@@ -755,13 +802,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain the user experience design requirements |
-| CO2 | Relate design thinking concepts and mental models to UX design |
-| CO3 | Illustrate UX design in line with design goals, metrics and targets |
+| CO  | Description                                                             |
+| --- | ----------------------------------------------------------------------- |
+| CO1 | Explain the user experience design requirements                         |
+| CO2 | Relate design thinking concepts and mental models to UX design          |
+| CO3 | Illustrate UX design in line with design goals, metrics and targets     |
 | CO4 | Demonstrate different prototyping in relation with software engineering |
-| CO5 | Explain UX design principles with case examples |
+| CO5 | Explain UX design principles with case examples                         |
 
 ### Course Contents
 
@@ -808,7 +855,8 @@
 
 #### Textbooks
 
-1. Rex Hartson, Pardha S. Pyla, "The UX Book: Process and Guidelines for Ensuring a Quality User Experience", Morgan Kaufmann, Elsevier, 2012
+1. Rex Hartson, Pardha S. Pyla, "The UX Book: Process and Guidelines for Ensuring a Quality User
+   Experience", Morgan Kaufmann, Elsevier, 2012
 
 #### Reference
 
@@ -833,12 +881,12 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Apply basic LaTeX commands to develop simple documents |
-| CO2 | Develop LaTeX script to present tables and figures in documents |
-| CO3 | Illustrate LaTeX script to present theorems and mathematical equations |
-| CO4 | Develop programs to generate complete reports with citations and bibliography |
+| CO  | Description                                                                          |
+| --- | ------------------------------------------------------------------------------------ |
+| CO1 | Apply basic LaTeX commands to develop simple documents                               |
+| CO2 | Develop LaTeX script to present tables and figures in documents                      |
+| CO3 | Illustrate LaTeX script to present theorems and mathematical equations               |
+| CO4 | Develop programs to generate complete reports with citations and bibliography        |
 | CO5 | Illustrate the use of Tikz and Algorithm libraries to design graphics and algorithms |
 
 ### Laboratory Experiments
@@ -874,13 +922,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
-| CO1 | Explain the basic principles of life and cell biology |
-| CO2 | Describe the central dogma of molecular biology |
-| CO3 | Apply biological principles to computational problems |
+| CO  | Description                                            |
+| --- | ------------------------------------------------------ |
+| CO1 | Explain the basic principles of life and cell biology  |
+| CO2 | Describe the central dogma of molecular biology        |
+| CO3 | Apply biological principles to computational problems  |
 | CO4 | Analyze bio-inspired algorithms and their applications |
-| CO5 | Evaluate the ethical implications of bio-computing |
+| CO5 | Evaluate the ethical implications of bio-computing     |
 
 ### Course Contents
 
@@ -953,13 +1001,13 @@
 
 ### Course Outcomes
 
-| CO | Description |
-|----|-------------|
+| CO  | Description                                                  |
+| --- | ------------------------------------------------------------ |
 | CO1 | Understand the need for value education and self-exploration |
-| CO2 | Analyze harmony in the human being and in family |
-| CO3 | Evaluate harmony in society and nature |
-| CO4 | Apply professional ethics in engineering practice |
-| CO5 | Develop holistic approach to life and profession |
+| CO2 | Analyze harmony in the human being and in family             |
+| CO3 | Evaluate harmony in society and nature                       |
+| CO4 | Apply professional ethics in engineering practice            |
+| CO5 | Develop holistic approach to life and profession             |
 
 ### Course Contents
 
@@ -1002,7 +1050,8 @@
 
 #### Textbooks
 
-1. R.R. Gaur, R. Asthana, G.P. Bagaria, "A Foundation Course in Human Values and Professional Ethics", 3rd Revised Edition, UHV Publications, 2023
+1. R.R. Gaur, R. Asthana, G.P. Bagaria, "A Foundation Course in Human Values and Professional
+   Ethics", 3rd Revised Edition, UHV Publications, 2023
 
 #### Reference Books
 
@@ -1032,8 +1081,12 @@
 
 ## Overall Passing Criteria
 
-A student shall be deemed to have satisfied the academic requirements and earned the credits if the student secures a minimum of **40% (40 marks out of 100)** in the sum total of CIE and SEE taken together.
+A student shall be deemed to have satisfied the academic requirements and earned the credits if the
+student secures a minimum of **40% (40 marks out of 100)** in the sum total of CIE and SEE taken
+together.
 
 ---
 
-> **Disclaimer:** This document is compiled from official VTU syllabus documents (2022 Scheme) for reference purposes. For the latest updates, always refer to the official VTU website: https://vtu.ac.in
+> **Disclaimer:** This document is compiled from official VTU syllabus documents (2022 Scheme) for
+> reference purposes. For the latest updates, always refer to the official VTU website:
+> https://vtu.ac.in
