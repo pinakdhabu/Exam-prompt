@@ -171,15 +171,25 @@ function getCss(useMath, fontFaces) {
       padding: 0;
     }
     /* Headings — suppressed in QP body (units use h2/h3 but should not show) */
-    h1{font-size:14pt;font-weight:bold;text-align:center;margin:6pt 0 2pt 0;border:none;text-transform:uppercase}
+    h1{font-size:14pt;font-weight:bold;text-align:center;margin:4pt 0 2pt 0;border:none;text-transform:uppercase;letter-spacing:0.5px}
     h2{font-size:12pt;font-weight:bold;text-align:center;margin:4pt 0 2pt 0;border:none;display:none}
     h3{font-size:12pt;font-weight:bold;margin:10pt 0 4pt 0}
     h4{font-size:12pt;font-weight:bold;margin:8pt 0 3pt 0}
-    p{margin:2pt 0;line-height:1.35}
+    p {
+      margin: 2pt 0;
+      line-height: 1.35;
+      position: relative;
+    }
     strong{font-weight:bold}
 
-    /* Marks [N] — inline at end of text, not floated */
-    .marks{font-weight:bold;font-size:12pt;color:#000;float:right}
+    /* Marks [N] — positioned absolutely on the right to align perfectly on same baseline */
+    .marks {
+      font-weight: bold;
+      font-size: 12pt;
+      color: #000;
+      position: absolute;
+      right: 0;
+    }
 
     /* OR separator — centered bold */
     .question-or{text-align:center;font-weight:bold;margin:6pt 0;font-size:12pt}
