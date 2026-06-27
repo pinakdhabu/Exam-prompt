@@ -234,12 +234,24 @@ function generateHeaderHtml(meta) {
     '<!-- Row 1: Total Questions (left, 12pt Bold) + SEAT No. with inline box (right) -->\n' +
     '<table style="width:100%;border-collapse:collapse;margin:0 0 3px 0;font-size:12pt;">\n' +
     '<tr>\n' +
-    '<td style="width:50%;border:none;padding:0;text-align:left;font-weight:bold;vertical-align:middle;">\n' +
+    '<td style="width:40%;border:none;padding:0;text-align:left;font-weight:bold;vertical-align:middle;">\n' +
     'Total No. of Questions : ' + tq + ']\n' +
     '</td>\n' +
-    '<td style="width:50%;border:none;padding:0;text-align:right;font-weight:bold;vertical-align:middle;white-space:nowrap;">\n' +
+    '<td style="width:60%;border:none;padding:0;text-align:right;font-weight:bold;vertical-align:middle;white-space:nowrap;">\n' +
     'SEAT No. :' +
-    '<span style="display:inline-block;border:2px solid black;width:130px;height:22px;margin:0 0 0 8px;vertical-align:middle;"></span>\n' +
+    '<table style="display:inline-table;border-collapse:collapse;border:1.5px solid black;vertical-align:middle;margin:0 0 0 8px;">\n' +
+    '<tr>\n' +
+    '<td style="border:1.5px solid black;width:18px;height:20px;padding:0;text-align:center;"></td>\n' +
+    '<td style="border:1.5px solid black;width:18px;height:20px;padding:0;text-align:center;"></td>\n' +
+    '<td style="border:1.5px solid black;width:18px;height:20px;padding:0;text-align:center;"></td>\n' +
+    '<td style="border:1.5px solid black;width:18px;height:20px;padding:0;text-align:center;"></td>\n' +
+    '<td style="border:1.5px solid black;width:18px;height:20px;padding:0;text-align:center;"></td>\n' +
+    '<td style="border:1.5px solid black;width:18px;height:20px;padding:0;text-align:center;"></td>\n' +
+    '<td style="border:1.5px solid black;width:18px;height:20px;padding:0;text-align:center;"></td>\n' +
+    '<td style="border:1.5px solid black;width:18px;height:20px;padding:0;text-align:center;"></td>\n' +
+    '<td style="border:1.5px solid black;width:18px;height:20px;padding:0;text-align:center;"></td>\n' +
+    '</tr>\n' +
+    '</table>\n' +
     '</td>\n' +
     '</tr>\n' +
     '</table>\n' +

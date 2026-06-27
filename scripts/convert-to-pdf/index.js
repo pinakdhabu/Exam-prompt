@@ -30,9 +30,13 @@ async function convertMdToPdf(mdPath, pdfPath, options = {}) {
   const raw = fs.readFileSync(mdPath, 'utf-8');
   logger.debug({ size: raw.length }, 'Input read');
 
-  // Compute file hash for caching
+  // Compute file hash for caching (using version prefix to invalidate on compiler/style updates)
   const useCache = !options.noCache;
-  const hash = crypto.createHash('sha256').update(raw).digest('hex');
+  const CACHE_VERSION = 'v1.1.0_sppu_styling';
+  const hash = crypto.createHash('sha256')
+    .update(CACHE_VERSION)
+    .update(raw)
+    .digest('hex');
   const cacheDir = path.join(path.resolve(__dirname, '../..'), '.cache', 'pdf-compilation');
   const cacheFilePath = path.join(cacheDir, `${hash}.pdf`);
 

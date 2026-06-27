@@ -87,21 +87,20 @@ class HtmlRenderer {
       }
       h1{font-size:15pt;font-weight:bold;text-align:center;margin:8px 0 3px 0;border:none;text-transform:uppercase;letter-spacing:1pt}
       h2{font-size:13pt;font-weight:bold;margin:5px 0 2px 0;border:none}
-      h3{font-size:12pt;font-weight:bold;margin:16px 0 6px 0;border-bottom:1px solid #ccc;padding-bottom:2px}
+      h3{font-size:12pt;font-weight:bold;margin:16px 0 6px 0}
       h4{font-size:11pt;font-weight:bold;margin:10px 0 4px 0}
       p{margin:3px 0}
       strong{font-weight:bold}
       .marks{float:right;font-size:10pt;color:#000}
       .question-or{text-align:center;font-weight:bold;margin:8px 0;font-size:11pt}
       table{width:100%;border-collapse:collapse;margin:8px 0;font-size:10pt}
-      th{background:#eee;padding:4px 8px;border:1px solid #999;text-align:left;font-weight:bold}
-      td{padding:3px 8px;border:1px solid #bbb}
-      tr:nth-child(even){background:#fafafa}
+      th{padding:4px 8px;border:1px solid #000;text-align:left;font-weight:bold}
+      td{padding:3px 8px;border:1px solid #000}
       ul,ol{margin:4px 0;padding-left:22px}
       li{margin:2px 0}
-      pre{background:#f4f4f4;border:1px solid #ddd;padding:8px 10px;font-size:8.5pt;line-height:1.3;overflow-x:auto;white-space:pre-wrap;margin:6px 0}
+      pre{border:0.5pt solid #000;padding:8px 10px;font-size:8.5pt;line-height:1.3;overflow-x:auto;white-space:pre-wrap;margin:6px 0}
       code{font-family:'Cask NFM','CaskaydiaCove Nerd Font Mono',monospace;font-size:8.5pt}
-      p>code,li>code{background:#f0f0f0;padding:1px 4px}
+      p>code,li>code{padding:1px 4px}
       .mermaid{margin:8px 0;text-align:center}.mermaid svg{max-width:100%;height:auto}
       hr{border:none;border-top:1px solid #888;margin:10px 0}
       ${mathCSS}
