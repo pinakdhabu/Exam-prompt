@@ -92,10 +92,10 @@ function generateHeaderHtml(meta) {
     // --- Row 1: Total Questions (left) + SEAT No. with box (right) ---
     '<table style="width:100%;border-collapse:collapse;margin:0;font-size:12pt;font-weight:bold;">\n' +
     '<tr>\n' +
-    '<td style="border:none;padding:0;text-align:left;vertical-align:top;">\n' +
+    '<td style="border:none;padding:0;text-align:left;vertical-align:top;white-space:nowrap;width:50%;">\n' +
     'Total No. of Questions : ' + tq + ']\n' +
     '</td>\n' +
-    '<td style="border:none;padding:0;text-align:right;vertical-align:top;white-space:nowrap;">\n' +
+    '<td style="border:none;padding:0;text-align:right;vertical-align:top;white-space:nowrap;width:50%;">\n' +
     'SEAT No. :\n' +
     '<table style="display:inline-table;border-collapse:collapse;margin-left:6px;vertical-align:middle;width:auto;">\n' +
     '<tr>\n' +
@@ -106,10 +106,10 @@ function generateHeaderHtml(meta) {
     '</tr>\n' +
     // --- Row 2: Paper code (left) + Total Pages (right) ---
     '<tr>\n' +
-    '<td style="border:none;padding:2pt 0 0 0;text-align:left;vertical-align:top;font-size:12pt;">\n' +
+    '<td style="border:none;padding:2pt 0 0 0;text-align:left;vertical-align:top;font-size:12pt;white-space:nowrap;width:50%;">\n' +
     (code || '') + (tpDisplay ? '' : '') + '\n' +
     '</td>\n' +
-    '<td style="border:none;padding:2pt 0 0 0;text-align:right;vertical-align:top;font-size:12pt;">\n' +
+    '<td style="border:none;padding:2pt 0 0 0;text-align:right;vertical-align:top;font-size:12pt;white-space:nowrap;width:50%;">\n' +
     (tpDisplay || '') + '\n' +
     '</td>\n' +
     '</tr>\n' +
