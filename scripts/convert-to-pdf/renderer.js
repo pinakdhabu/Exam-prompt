@@ -34,7 +34,9 @@ class HtmlRenderer {
       // b) -> wrapped in class question-sub, regular font weight
       .replace(/<p><strong>([b-z])\)<\/strong>/g, '<p class="question-sub">$1)')
       .replace(/<p>\*\*\* End of Paper \*\*\*<\/p>/g, '<div style="text-align:center;font-size:16pt;margin:24pt 0 12pt 0;letter-spacing:12px;">⧓ ⧓ ⧓</div>')
-      .replace(/<pre><code>(\[ANSWER BOX\][\s\S]*?)<\/code><\/pre>/g, '<div class="answer-box"><pre><code>$1</code></pre></div>');
+      .replace(/<pre><code>(\[ANSWER BOX\][\s\S]*?)<\/code><\/pre>/g, '<div class="answer-box"><pre><code>$1</code></pre></div>')
+      // Regex to extract marks span from the end and place it at the front of paragraphs
+      .replace(/<p([^>]*)>(.*?)(<span class="marks">\[\d+\]<\/span>)(.*?)<\/p>/g, '<p$1>$3$2$4</p>');
 
     let page = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">';
 

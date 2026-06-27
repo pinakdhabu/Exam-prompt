@@ -97,11 +97,7 @@ function generateHeaderHtml(meta) {
     '</td>\n' +
     '<td style="border:none;padding:0;text-align:right;vertical-align:top;white-space:nowrap;width:50%;">\n' +
     'SEAT No. :\n' +
-    '<table style="display:inline-table;border-collapse:collapse;margin-left:6px;vertical-align:middle;width:auto;">\n' +
-    '<tr>\n' +
-    Array.from({ length: 9 }).map(() => '<td style="border:1.5pt solid #000;width:15px;height:18px;padding:0;text-align:center;"></td>').join('\n') + '\n' +
-    '</tr>\n' +
-    '</table>\n' +
+    '<span style="display:inline-block;border:1.5pt solid #000;width:110px;height:18px;vertical-align:middle;margin-left:6px;"></span>\n' +
     '</td>\n' +
     '</tr>\n' +
     // --- Row 2: Paper code (left) + Total Pages (right) ---
@@ -193,6 +189,7 @@ function getCss(useMath, fontFaces) {
     .question-main {
       padding-left: 56.8pt;
       text-indent: -56.8pt;
+      position: relative !important;
     }
     .question-main strong.q-label {
       display: inline-block;
@@ -203,6 +200,7 @@ function getCss(useMath, fontFaces) {
     .question-sub {
       padding-left: 56.8pt;
       text-indent: -28.4pt;
+      position: relative !important;
     }
     /* Indent elements following sub-questions */
     .question-sub + table, .question-sub + pre {
@@ -210,13 +208,12 @@ function getCss(useMath, fontFaces) {
     }
     strong{font-weight:bold}
 
-    /* Marks [N] — positioned absolutely on the right to align perfectly on same baseline */
+    /* Marks [N] — floated right to align perfectly on the right margin of the first line */
     .marks {
       font-weight: bold;
       font-size: 12pt;
       color: #000;
-      position: absolute;
-      right: 0;
+      float: right;
     }
 
     /* OR separator — centered bold */
