@@ -143,9 +143,8 @@ function generateHeaderHtml(meta) {
     // --- Instructions ---
     instHtml + '\n' +
     '\n' +
-    // --- Horizontal rule separator + P.T.O. ---
-    '<hr style="border:none;border-top:1pt solid #000;margin:8pt 0 2pt 0;">\n' +
-    '<div style="text-align:right;font-size:12pt;font-style:italic;margin:0 0 4pt 0;">P .T.O.</div>\n' +
+    // --- P.T.O. only ---
+    '<div style="text-align:right;font-size:12pt;font-style:italic;margin:6pt 0 4pt 0;">P .T.O.</div>\n' +
     '</div>'
   );
 }
@@ -240,8 +239,8 @@ function getCss(useMath, fontFaces) {
     /* Mermaid */
     .mermaid{margin:6pt 0;text-align:center}.mermaid svg{max-width:100%;height:auto}
 
-    /* Horizontal rules */
-    hr{border:none;border-top:0.5pt solid #000;margin:8pt 0}
+    /* Horizontal rules — hidden in SPPU layout template */
+    hr{display:none}
 
     /* Answer box */
     .answer-box{border:1pt solid #000;padding:8pt;margin:6pt 0}

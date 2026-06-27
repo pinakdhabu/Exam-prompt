@@ -33,6 +33,7 @@ class HtmlRenderer {
       .replace(/<p><strong>Q(\d+)\)\s+([a-z])\)<\/strong>/g, '<p class="question-main"><strong class="q-label">Q$1)</strong> $2)')
       // b) -> wrapped in class question-sub, regular font weight
       .replace(/<p><strong>([b-z])\)<\/strong>/g, '<p class="question-sub">$1)')
+      .replace(/<p>\*\*\* End of Paper \*\*\*<\/p>/g, '<div style="text-align:center;font-size:16pt;margin:24pt 0 12pt 0;letter-spacing:6px;">ⓘ ⓘ ⓘ ⓘ</div>')
       .replace(/<pre><code>(\[ANSWER BOX\][\s\S]*?)<\/code><\/pre>/g, '<div class="answer-box"><pre><code>$1</code></pre></div>');
 
     let page = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">';
