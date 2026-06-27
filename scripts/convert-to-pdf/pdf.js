@@ -14,7 +14,12 @@ function sleep(ms) {
 }
 
 function _b64(p) {
-  return fs.readFileSync(p).toString('base64');
+  if (!p || !fs.existsSync(p)) return '';
+  try {
+    return fs.readFileSync(p).toString('base64');
+  } catch {
+    return '';
+  }
 }
 
 function _footerFontCss() {
@@ -22,11 +27,44 @@ function _footerFontCss() {
   if (!tnr) return '';
   const faces = [];
   for (const v of Object.values(tnr.variants)) {
-    faces.push(
-      `@font-face{font-family:'${tnr.family}';src:url(data:font/truetype;base64,${_b64(v.file)})format('truetype');font-weight:${v.weight};font-style:${v.style}}`
-    );
+    const b64 = _b64(v.file);
+    if (b64) {
+      faces.push(
+        `@font-face{font-family:'${tnr.family}';src:url(data:font/truetype;base64,${b64})format('truetype');font-weight:${v.weight};font-style:${v.style}}`
+      );
+    }
   }
   return faces.join('');
+}
+
+let sharedBrowser = null;
+let sharedBrowserPromise = null;
+
+async function getSharedBrowser() {
+  if (sharedBrowser && sharedBrowser.isConnected()) {
+    return sharedBrowser;
+  }
+  if (sharedBrowserPromise) {
+    return sharedBrowserPromise;
+  }
+  sharedBrowserPromise = chromium.launch({
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
+      '--disable-extensions',
+    ],
+  }).then(b => {
+    sharedBrowser = b;
+    sharedBrowserPromise = null;
+    return b;
+  }).catch(err => {
+    sharedBrowser = null;
+    sharedBrowserPromise = null;
+    throw err;
+  });
+  return sharedBrowserPromise;
 }
 
 class PdfGenerator {
@@ -47,18 +85,17 @@ class PdfGenerator {
   }
 
   async _attempt(html, outputPath, attempt) {
-    const browser = await chromium.launch({
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu',
-        '--disable-extensions',
-      ],
-    });
+    let browser;
+    try {
+      browser = await getSharedBrowser();
+    } catch (launchError) {
+      this._log('error', 'Failed to launch browser', { error: launchError.message });
+      throw launchError;
+    }
 
     try {
-      const page = await browser.newPage();
+      const context = await browser.newContext();
+      const page = await context.newPage();
       page.on('pageerror', err => {
         this._log('warn', 'Browser error: ' + err.message);
       });
@@ -130,10 +167,15 @@ class PdfGenerator {
         this._log('info', 'PDF generated successfully', { path: outputPath });
         return null; // no error
       } finally {
-        await page.close();
+        await context.close();
       }
     } catch (error) {
       this._log('warn', `Attempt ${attempt} failed`, { error: error.message });
+
+      if (browser && !browser.isConnected()) {
+        sharedBrowser = null;
+        sharedBrowserPromise = null;
+      }
 
       if (attempt < RETRY_CONFIG.maxRetries) {
         const delay = Math.min(RETRY_CONFIG.baseDelay * Math.pow(2, attempt - 1), RETRY_CONFIG.maxDelay);
@@ -144,8 +186,6 @@ class PdfGenerator {
 
       this._log('error', 'All attempts failed', { error: error.message, attempts: attempt });
       return error;
-    } finally {
-      await browser.close();
     }
   }
 }

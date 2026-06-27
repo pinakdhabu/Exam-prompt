@@ -43,7 +43,12 @@ class HtmlRenderer {
   }
 
   _b64(p) {
-    return fs.readFileSync(p).toString('base64');
+    if (!p || !fs.existsSync(p)) return '';
+    try {
+      return fs.readFileSync(p).toString('base64');
+    } catch {
+      return '';
+    }
   }
 
   _fontFaces() {
@@ -52,7 +57,10 @@ class HtmlRenderer {
       const cfg = FONTS[key];
       if (!cfg) continue;
       for (const v of Object.values(cfg.variants)) {
-        faces.push(`@font-face{font-family:'${cfg.family}';src:url(data:font/truetype;base64,${this._b64(v.file)})format('truetype');font-weight:${v.weight};font-style:${v.style}}`);
+        const b64 = this._b64(v.file);
+        if (b64) {
+          faces.push(`@font-face{font-family:'${cfg.family}';src:url(data:font/truetype;base64,${b64})format('truetype');font-weight:${v.weight};font-style:${v.style}}`);
+        }
       }
     }
     return faces.join('\n');
@@ -78,7 +86,7 @@ class HtmlRenderer {
         padding: 0;
       }
       h1{font-size:15pt;font-weight:bold;text-align:center;margin:8px 0 3px 0;border:none;text-transform:uppercase;letter-spacing:1pt}
-      h2{font-size:13pt;font-weight:bold;text-align:center;margin:5px 0 2px 0;border:none}
+      h2{font-size:13pt;font-weight:bold;margin:5px 0 2px 0;border:none}
       h3{font-size:12pt;font-weight:bold;margin:16px 0 6px 0;border-bottom:1px solid #ccc;padding-bottom:2px}
       h4{font-size:11pt;font-weight:bold;margin:10px 0 4px 0}
       p{margin:3px 0}

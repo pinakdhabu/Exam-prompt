@@ -1,37 +1,60 @@
 const path = require('path');
+const fs = require('fs');
+
+function resolveFontFile(filenames) {
+  const possibleDirs = [
+    '/usr/share/fonts/TTF',
+    '/usr/share/fonts/truetype',
+    '/Library/Fonts',
+    '/System/Library/Fonts',
+    path.join(process.env.HOME || '', 'Library/Fonts'),
+    'C:\\Windows\\Fonts',
+    path.join(__dirname, '../../fonts'),
+  ];
+
+  for (const dir of possibleDirs) {
+    for (const name of filenames) {
+      const fullPath = path.join(dir, name);
+      if (fs.existsSync(fullPath)) {
+        return fullPath;
+      }
+    }
+  }
+  return null;
+}
 
 const FONTS = {
   tnr: {
     family: 'TNR',
     variants: {
-      normal:  { file: '/usr/share/fonts/TTF/Times.TTF', weight: 'normal', style: 'normal' },
-      bold:    { file: '/usr/share/fonts/TTF/Timesbd.TTF', weight: 'bold', style: 'normal' },
-      italic:  { file: '/usr/share/fonts/TTF/Timesi.TTF', weight: 'normal', style: 'italic' },
-      bi:      { file: '/usr/share/fonts/TTF/Timesbi.TTF', weight: 'bold', style: 'italic' },
+      normal:  { file: resolveFontFile(['Times.TTF', 'times.ttf']), weight: 'normal', style: 'normal' },
+      bold:    { file: resolveFontFile(['Timesbd.TTF', 'timesbd.ttf']), weight: 'bold', style: 'normal' },
+      italic:  { file: resolveFontFile(['Timesi.TTF', 'timesi.ttf']), weight: 'normal', style: 'italic' },
+      bi:      { file: resolveFontFile(['Timesbi.TTF', 'timesbi.ttf']), weight: 'bold', style: 'italic' },
     },
   },
   caskaydia: {
     family: 'Cask NFM',
     variants: {
-      normal:  { file: '/usr/share/fonts/TTF/CaskaydiaCoveNerdFontMono-Regular.ttf', weight: 'normal', style: 'normal' },
-      bold:    { file: '/usr/share/fonts/TTF/CaskaydiaCoveNerdFontMono-Bold.ttf', weight: 'bold', style: 'normal' },
-      italic:  { file: '/usr/share/fonts/TTF/CaskaydiaCoveNerdFontMono-Italic.ttf', weight: 'normal', style: 'italic' },
-      bi:      { file: '/usr/share/fonts/TTF/CaskaydiaCoveNerdFontMono-BoldItalic.ttf', weight: 'bold', style: 'italic' },
+      normal:  { file: resolveFontFile(['CaskaydiaCoveNerdFontMono-Regular.ttf', 'CaskaydiaMonoNerdFontMono-Regular.ttf']), weight: 'normal', style: 'normal' },
+      bold:    { file: resolveFontFile(['CaskaydiaCoveNerdFontMono-Bold.ttf', 'CaskaydiaMonoNerdFontMono-Bold.ttf']), weight: 'bold', style: 'normal' },
+      italic:  { file: resolveFontFile(['CaskaydiaCoveNerdFontMono-Italic.ttf', 'CaskaydiaMonoNerdFontMono-Italic.ttf']), weight: 'normal', style: 'italic' },
+      bi:      { file: resolveFontFile(['CaskaydiaCoveNerdFontMono-BoldItalic.ttf', 'CaskaydiaMonoNerdFontMono-BoldItalic.ttf']), weight: 'bold', style: 'italic' },
     },
   },
   cambria: {
     family: 'Cambria',
     variants: {
-      normal:  { file: '/usr/share/fonts/TTF/cambria.ttf', weight: 'normal', style: 'normal' },
-      bold:    { file: '/usr/share/fonts/TTF/cambriab.ttf', weight: 'bold', style: 'normal' },
-      italic:  { file: '/usr/share/fonts/TTF/cambriai.ttf', weight: 'normal', style: 'italic' },
-      bi:      { file: '/usr/share/fonts/TTF/cambriaz.ttf', weight: 'bold', style: 'italic' },
+      normal:  { file: resolveFontFile(['cambria.ttf', 'Cambria.ttf']), weight: 'normal', style: 'normal' },
+      bold:    { file: resolveFontFile(['cambriab.ttf', 'Cambriab.ttf']), weight: 'bold', style: 'normal' },
+      italic:  { file: resolveFontFile(['cambriai.ttf', 'Cambriai.ttf']), weight: 'normal', style: 'italic' },
+      bi:      { file: resolveFontFile(['cambriaz.ttf', 'Cambriaz.ttf']), weight: 'bold', style: 'italic' },
     },
   },
   cambriaMath: {
     family: 'Cambria Math',
     variants: {
-      normal:  { file: '/usr/share/fonts/TTF/cambria-math.ttf', weight: 'normal', style: 'normal' },
+      normal:  { file: resolveFontFile(['cambria-math.ttf', 'Cambria-Math.ttf']), weight: 'normal', style: 'normal' },
     },
   },
 };

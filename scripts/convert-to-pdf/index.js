@@ -30,6 +30,22 @@ async function convertMdToPdf(mdPath, pdfPath, options = {}) {
   const raw = fs.readFileSync(mdPath, 'utf-8');
   logger.debug({ size: raw.length }, 'Input read');
 
+  // Compute file hash for caching
+  const useCache = !options.noCache;
+  const hash = crypto.createHash('sha256').update(raw).digest('hex');
+  const cacheDir = path.join(path.resolve(__dirname, '../..'), '.cache', 'pdf-compilation');
+  const cacheFilePath = path.join(cacheDir, `${hash}.pdf`);
+
+  if (useCache) {
+    if (fs.existsSync(cacheFilePath)) {
+      logger.info({ hash }, 'Cache hit: copying compiled PDF from cache');
+      fs.mkdirSync(path.dirname(pdfPath), { recursive: true });
+      fs.copyFileSync(cacheFilePath, pdfPath);
+      const size = fs.statSync(pdfPath).size;
+      return { jobId, path: pdfPath, size, duration: 0 };
+    }
+  }
+
   const processor = new MarkdownProcessor();
   const processedMd = processor.process(raw);
   logger.debug({ hasMath: processor.hasMath }, 'Markdown processed');
@@ -68,9 +84,19 @@ async function convertMdToPdf(mdPath, pdfPath, options = {}) {
   }
 
   const duration = Date.now() - start;
-
   const size = fs.statSync(pdfPath).size;
   logger.info({ duration, size }, 'Conversion complete');
+
+  // Save to cache
+  if (useCache) {
+    try {
+      fs.mkdirSync(cacheDir, { recursive: true });
+      fs.copyFileSync(pdfPath, cacheFilePath);
+      logger.debug({ hash }, 'Saved compiled PDF to cache');
+    } catch (cacheError) {
+      logger.warn({ error: cacheError.message }, 'Failed to save to cache');
+    }
+  }
 
   return { jobId, path: pdfPath, size, duration };
 }

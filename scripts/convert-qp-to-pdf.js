@@ -4,9 +4,42 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-function b64font(p) {
-  return fs.readFileSync(p).toString('base64');
+function resolveFont(filenames) {
+  const possibleDirs = [
+    '/usr/share/fonts/TTF',
+    '/usr/share/fonts/truetype',
+    '/Library/Fonts',
+    '/System/Library/Fonts',
+    path.join(process.env.HOME || '', 'Library/Fonts'),
+    'C:\\Windows\\Fonts',
+  ];
+  for (const dir of possibleDirs) {
+    for (const name of filenames) {
+      const fullPath = path.join(dir, name);
+      if (fs.existsSync(fullPath)) {
+        return fullPath;
+      }
+    }
+  }
+  return null;
 }
+
+function getFontFace(family, filenames, weight, style) {
+  const p = resolveFont(filenames);
+  if (!p) return '';
+  try {
+    const b64 = fs.readFileSync(p).toString('base64');
+    return `@font-face { font-family: '${family}'; src: url(data:font/truetype;base64,${b64}) format('truetype'); font-weight: ${weight}; font-style: ${style}; }\n`;
+  } catch {
+    return '';
+  }
+}
+
+const fontFaces = 
+  getFontFace('TNR', ['Times.TTF', 'times.ttf'], 'normal', 'normal') +
+  getFontFace('TNR', ['Timesbd.TTF', 'timesbd.ttf'], 'bold', 'normal') +
+  getFontFace('TNR', ['Timesi.TTF', 'timesi.ttf'], 'normal', 'italic') +
+  getFontFace('TNR', ['Timesbi.TTF', 'timesbi.ttf'], 'bold', 'italic');
 
 const CSS = `
   @page {
@@ -16,10 +49,7 @@ const CSS = `
       font-family: 'TNR', serif; font-size: 9pt; color: #555;
     }
   }
-  @font-face { font-family: 'TNR'; src: url(data:font/truetype;base64,${b64font('/usr/share/fonts/TTF/Times.TTF')}) format('truetype'); font-weight: normal; font-style: normal; }
-  @font-face { font-family: 'TNR'; src: url(data:font/truetype;base64,${b64font('/usr/share/fonts/TTF/Timesbd.TTF')}) format('truetype'); font-weight: bold; font-style: normal; }
-  @font-face { font-family: 'TNR'; src: url(data:font/truetype;base64,${b64font('/usr/share/fonts/TTF/Timesi.TTF')}) format('truetype'); font-weight: normal; font-style: italic; }
-  @font-face { font-family: 'TNR'; src: url(data:font/truetype;base64,${b64font('/usr/share/fonts/TTF/Timesbi.TTF')}) format('truetype'); font-weight: bold; font-style: italic; }
+  ${fontFaces}
   body { font-family: 'TNR', serif; font-size: 11pt; line-height: 1.4; color: #000; margin: 0; padding: 0; }
   h1 { font-size: 15pt; font-weight: bold; text-align: center; margin: 8px 0 3px 0; border: none; text-transform: uppercase; letter-spacing: 1pt; }
   h2 { font-size: 12pt; font-weight: bold; text-align: center; margin: 5px 0 3px 0; border: none; }

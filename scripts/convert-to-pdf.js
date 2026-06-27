@@ -13,6 +13,7 @@ async function main() {
   const help = args.includes('--help') || args.includes('-h');
   const jsonMode = args.includes('--json') || args.includes('-j');
   const verbose = args.includes('--verbose') || args.includes('-v');
+  const noCache = args.includes('--no-cache') || args.includes('-n');
 
   if (help || args.length === 0 || args[0].startsWith('-')) {
     console.log('Convert Markdown to QP-styled PDF with rendered math.');
@@ -23,6 +24,7 @@ async function main() {
     console.log('Options:');
     console.log('  -j, --json       JSON output (machine-readable)');
     console.log('  -v, --verbose    Debug logging');
+    console.log('  -n, --no-cache   Bypass cache and force recompilation');
     console.log('  -h, --help       Show this help');
     console.log('');
     console.log('Examples:');
@@ -39,8 +41,10 @@ async function main() {
   }
 
   let pdfPath;
-  if (args.length >= 2 && !args[1].startsWith('-')) {
-    pdfPath = path.resolve(args[1]);
+  // Filter out options from arguments to find output path
+  const remainingArgs = args.filter(a => !a.startsWith('-'));
+  if (remainingArgs.length >= 2) {
+    pdfPath = path.resolve(remainingArgs[1]);
   } else {
     const d = path.join(path.dirname(mdPath), 'pdf_output');
     fs.mkdirSync(d, { recursive: true });
@@ -48,7 +52,7 @@ async function main() {
   }
   fs.mkdirSync(path.dirname(pdfPath), { recursive: true });
 
-  const options = { json: jsonMode, verbose };
+  const options = { json: jsonMode, verbose, noCache };
 
   if (jsonMode) {
     emitJson('start', { file: path.basename(mdPath), output: path.basename(pdfPath) });
