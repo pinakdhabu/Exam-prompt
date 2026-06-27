@@ -39,6 +39,7 @@ function generateHeaderHtml(meta) {
   const marks = meta.maxMarks ? '[Max. Marks : ' + meta.maxMarks : '';
   const inst = meta.instructions || HEADER_DEFAULTS.instructions;
   const bi = 'font-weight:bold;font-style:italic';
+  const tpDisplay = meta.totalPages ? '[Total No. of Pages : ' + meta.totalPages : '';
 
   // Build instructions HTML
   let instHtml = '';
@@ -68,13 +69,13 @@ function generateHeaderHtml(meta) {
     '<div style="font-family:\'TNR\',\'Times New Roman\',serif;width:100%;margin:0 auto;">\n' +
     paperComment +
     '\n' +
-    '<!-- Row 1: Total Questions + SEAT No. with 9-slot table -->\n' +
-    '<table style="width:100%;border-collapse:collapse;margin:0 0 3px 0;font-size:12pt;">\n' +
+    '<!-- Row 1 & 2: Total Questions, Seat No, Paper Code, Total Pages -->\n' +
+    '<table style="width:100%;border-collapse:collapse;margin:0 0 3px 0;font-size:12pt;font-weight:bold;">\n' +
     '<tr>\n' +
-    '<td style="width:40%;border:none;padding:0;text-align:left;font-weight:bold;vertical-align:middle;line-height:1.2;">\n' +
-    'Total No. of Questions : ' + tq + ']' + tpDisplay + '\n' +
+    '<td style="width:40%;border:none;padding:0;text-align:left;vertical-align:middle;">\n' +
+    'Total No. of Questions : ' + tq + ']\n' +
     '</td>\n' +
-    '<td style="width:60%;border:none;padding:0;text-align:right;font-weight:bold;vertical-align:middle;white-space:nowrap;">\n' +
+    '<td style="width:60%;border:none;padding:0;text-align:right;vertical-align:middle;white-space:nowrap;">\n' +
     'SEAT No. :' +
     '<table style="display:inline-table;border-collapse:collapse;border:1.5px solid black;vertical-align:middle;margin:0 0 0 8px;">\n' +
     '<tr>\n' +
@@ -91,16 +92,15 @@ function generateHeaderHtml(meta) {
     '</table>\n' +
     '</td>\n' +
     '</tr>\n' +
-    '</table>\n' +
-    '\n' +
-    '<!-- Row 2: Paper code -->\n' +
-    (code ? '<table style="width:100%;border-collapse:collapse;margin:0 0 3px 0;font-size:16pt;">\n' +
     '<tr>\n' +
-    '<td style="width:100%;border:none;padding:0;text-align:right;font-weight:bold;">\n' +
-    code + '\n' +
+    '<td style="width:50%;border:none;padding:4px 0 0 0;text-align:left;font-size:16pt;font-weight:bold;vertical-align:middle;">\n' +
+    (code || '&nbsp;') + '\n' +
+    '</td>\n' +
+    '<td style="width:50%;border:none;padding:4px 0 0 0;text-align:right;font-size:12pt;font-weight:bold;vertical-align:middle;">\n' +
+    (tpDisplay || '&nbsp;') + '\n' +
     '</td>\n' +
     '</tr>\n' +
-    '</table>\n' : '') +
+    '</table>\n' +
     '\n' +
     '<!-- Row 3: Paper identifier centered -->\n' +
     (idDisplay ? '<div style="text-align:center;font-size:17pt;font-weight:bold;margin:5px 0;">\n' +
