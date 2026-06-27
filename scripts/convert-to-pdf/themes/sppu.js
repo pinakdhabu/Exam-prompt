@@ -133,9 +133,8 @@ function generateHeaderHtml(meta) {
     // --- Instructions ---
     instHtml + '\n' +
     '\n' +
-    // --- Horizontal rule separator + P.T.O. ---
+    // --- Horizontal rule separator ---
     '<hr style="border:none;border-top:1pt solid #000;margin:8pt 0 2pt 0;">\n' +
-    '<div style="text-align:right;font-size:12pt;font-style:italic;margin:0 0 4pt 0;">P .T.O.</div>\n' +
     '</div>'
   );
 }

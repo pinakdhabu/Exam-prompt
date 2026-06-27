@@ -157,7 +157,13 @@ class PdfGenerator {
             '<style>' + _footerFontCss() + '</style>' +
             '<div style="font-family:\'TNR\',\'Times New Roman\',Times,serif;width:100%;display:flex;align-items:baseline;padding:0 0.7cm;">' +
             '<span style="font-size:17pt;font-weight:bold;">' + this.paperIdentifier + '</span>' +
-            '<span style="flex:1;text-align:center;font-size:12pt;" class="pageNumber"></span></div>',
+            '<span style="flex:1;text-align:center;font-size:12pt;"><span class="pageNumber"></span></span>' +
+            '<span style="font-size:12pt;font-style:italic;width:70px;text-align:right;">' +
+            '<span class="pageNumber" style="display:none;"></span>' +
+            '<span class="totalPages" style="display:none;"></span>' +
+            'P .T.O.' +
+            '</span>' +
+            '</div>',
         }));
 
         if (!pdfResult.ok) {
