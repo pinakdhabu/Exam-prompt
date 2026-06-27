@@ -15,10 +15,10 @@ const HEADER_DEFAULTS = {
   maxMarks: '',
   totalPages: '2',
   instructions: [
-    'Attempt Q. No. 1 or Q. No. 2, Q. No. 3 or Q. No. 4,\n   Q. No. 5 or Q. No. 6 and Q. No. 7 or Q. No. 8.',
+    'Answer Q.1 or Q.2, Q.3 or Q.4, Q.5 or Q.6, Q.7 or Q.8.',
     'Neat diagrams must be drawn wherever necessary.',
-    'Figures to the right indicate full marks.',
-    'Assume suitable data, if necessary.',
+    'Figures to the right side indicate full marks.',
+    'Assume suitable data necessary.',
   ],
 };
 
@@ -33,7 +33,9 @@ function generateHeaderHtml(meta) {
     meta.semester ? '(Semester - ' + meta.semester + ')' : '',
     meta.subjectCode ? '(' + meta.subjectCode + ')' : '',
   ].filter(Boolean).join(' ');
-  const time = meta.time || '';
+  // Convert decimals (e.g. 2.5 or .5) to vulgar fraction ½ to match SPPU print layout
+  const rawTime = meta.time || '';
+  const time = rawTime.replace(/(?:0)?\.5/g, '½').trim();
   const marks = meta.maxMarks ? '[Max. Marks : ' + meta.maxMarks : '';
   const inst = meta.instructions || HEADER_DEFAULTS.instructions;
   const bi = 'font-weight:bold;font-style:italic';
