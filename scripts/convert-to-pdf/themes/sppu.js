@@ -30,24 +30,12 @@ function generateHeaderHtml(meta) {
   const subj = meta.subject || '';
   const isInsem = /insem/i.test(dept) || (meta.time && parseInt(meta.time, 10) === 1);
   
-  let patternHtml = '';
-  if (isInsem) {
-    // In-sem split: 2019 Pattern on line 1, Semester + Code on line 2
-    patternHtml = 
-      (meta.pattern ? '<div style="font-size:14pt;">(' + meta.pattern + ')</div>\n' : '') +
-      ((meta.semester || meta.subjectCode) ? 
-        '<div style="font-size:14pt;">' + 
-        [meta.semester ? '(Semester - ' + meta.semester + ')' : '', meta.subjectCode ? '(' + meta.subjectCode + ')' : ''].filter(Boolean).join(' ') + 
-        '</div>\n' : '');
-  } else {
-    // End-sem: unified line
-    const patternInfoCombined = [
-      meta.pattern ? '(' + meta.pattern + ')' : '',
-      meta.semester ? '(Semester - ' + meta.semester + ')' : '',
-      meta.subjectCode ? '(' + meta.subjectCode + ')' : '',
-    ].filter(Boolean).join(' ');
-    patternHtml = patternInfoCombined ? '<div style="font-size:14pt;">' + patternInfoCombined + '</div>\n' : '';
-  }
+  const patternInfoCombined = [
+    meta.pattern ? '(' + meta.pattern + ')' : '',
+    meta.semester ? '(Semester - ' + meta.semester + ')' : '',
+    meta.subjectCode ? '(' + meta.subjectCode + ')' : '',
+  ].filter(Boolean).join(' ');
+  const patternHtml = patternInfoCombined ? '<div style="font-size:14pt;">' + patternInfoCombined + '</div>\n' : '';
 
   // Convert decimals (e.g. 2.5 or .5) to vulgar fraction ½ to match SPPU print layout
   const rawTime = meta.time || '';
