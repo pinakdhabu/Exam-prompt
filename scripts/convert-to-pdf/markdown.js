@@ -28,8 +28,8 @@ class MarkdownProcessor {
     this._hasMermaid = hasMermaid(raw);
 
     let md = raw;
-    md = stripYaml(md);
     md = processHeader(md);
+    md = stripYaml(md);
     md = normalizeArrows(md);
     md = removeUnicodeChars(md);
     md = normalizeQuotes(md);

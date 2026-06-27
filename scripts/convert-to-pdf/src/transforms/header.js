@@ -110,45 +110,88 @@ function findHeaderBlock(lines) {
 function extractHeaderMetadata(lines) {
   const meta = { ...HEADER_DEFAULTS };
 
-  for (const raw of lines) {
-    const text = stripBold(raw);
+  for (const rawLine of lines) {
+    const text = stripBold(rawLine);
     if (!text || text === '---') continue;
 
-    // Total No. of Questions
-    const tq = text.match(/Total\s*No\.?\s*of\s*Questions?\s*:?\s*(\d+)/i);
+    // Support both YAML style ("key: value") and plain text lines
+    let key = '';
+    let val = text;
+    const yamlMatch = text.match(/^([a-zA-Z0-9_-]+)\s*:\s*(.*)$/);
+    if (yamlMatch) {
+      key = yamlMatch[1].toLowerCase();
+      val = yamlMatch[2].trim();
+      // Remove surrounding quotes if present
+      if (val.startsWith("'") && val.endsWith("'")) val = val.slice(1, -1);
+      if (val.startsWith('"') && val.endsWith('"')) val = val.slice(1, -1);
+    }
+
+    // 1. Total Questions
+    if (key === 'totalquestions') {
+      meta.totalQuestions = val;
+      continue;
+    }
+    const tq = val.match(/Total\s*No\.?\s*of\s*Questions?\s*:?\s*(\d+)/i);
     if (tq) { meta.totalQuestions = tq[1]; continue; }
 
     // SEAT No. line — skip
-    if (/SEAT\s*No/i.test(text)) continue;
+    if (/SEAT\s*No/i.test(val)) continue;
 
-    // Paper code (standalone like PE-2519, P-7539)
-    if (/^[A-Za-z]+-\d+$/.test(text) && !text.startsWith('[')) {
-      meta.paperCode = text; continue;
+    // 2. Paper code
+    if (key === 'papercode') {
+      meta.paperCode = val;
+      continue;
+    }
+    if (/^[A-Za-z]+-\d+$/.test(val) && !val.startsWith('[')) {
+      meta.paperCode = val; continue;
     }
 
-    // Paper identifier [XXXX]-YY or [XXXX]-ABC
-    const pid = text.match(/^\[([^\]]+)\]-(\S+)$/);
+    // 3. Paper identifier [XXXX]-YY or [XXXX]-ABC
+    if (key === 'paperidentifier') {
+      meta.paperIdentifier = val;
+      continue;
+    }
+    const pid = val.match(/^\[([^\]]+)\]-(\S+)$/);
     if (pid) { meta.paperIdentifier = `[${pid[1]}]-${pid[2]}`; continue; }
 
-    // Department / year: SE, TE, BE, FE, ME, MTech
-    const deptMatch = text.match(/^(S\.?E\.?|T\.?E\.?|B\.?E\.?|F\.?E\.?|M\.?E\.?|M\.?Tech)\b/i);
+    // 4. Department / Year
+    if (key === 'department') {
+      meta.department = val;
+      continue;
+    }
+    const deptMatch = val.match(/^(S\.?E\.?|T\.?E\.?|B\.?E\.?|F\.?E\.?|M\.?E\.?|M\.?Tech)\b/i);
     if (deptMatch) {
-      meta.department = text.includes(')')
-        ? text.slice(0, text.indexOf(')') + 1)
+      meta.department = val.includes(')')
+        ? val.slice(0, val.indexOf(')') + 1)
         : deptMatch[0];
-      // Extract SEM if present
-      const semMatch = text.match(/SEM[-\s]*(\w+)/i);
+      const semMatch = val.match(/SEM[- \s]*(\w+)/i);
       if (semMatch && !meta.semester) meta.semester = semMatch[1];
       continue;
     }
 
-    // Subject: all-caps line (letters, spaces, &, (), /)
-    if (/^[A-Z &()\/]+$/.test(text) && text.length > 5) {
-      meta.subject = text; continue;
+    // 5. Subject
+    if (key === 'subject') {
+      meta.subject = val;
+      continue;
+    }
+    if (/^[A-Z &()\/]+$/.test(val) && val.length > 5) {
+      meta.subject = val; continue;
     }
 
-    // Pattern info: (YYYY Pattern) (Semester - X) (XXXXXX)
-    const pt = text.match(/\((\d{4})\s*Pattern\)\s*\(Semester\s*-\s*(\w+)\)\s*\((\d{6})\)/);
+    // 6. Pattern info (YYYY Pattern) (Semester - X) (XXXXXX)
+    if (key === 'pattern') {
+      meta.pattern = val.includes('Pattern') ? val : val + ' Pattern';
+      continue;
+    }
+    if (key === 'semester') {
+      meta.semester = val;
+      continue;
+    }
+    if (key === 'subjectcode') {
+      meta.subjectCode = val;
+      continue;
+    }
+    const pt = val.match(/\((\d{4})\s*Pattern\)\s*\(Semester\s*-\s*(\w+)\)\s*\((\d{6})\)/);
     if (pt) {
       meta.pattern = pt[1] + ' Pattern';
       meta.semester = pt[2];
@@ -156,28 +199,39 @@ function extractHeaderMetadata(lines) {
       continue;
     }
 
-    // Pattern info — partial
-    const pyp = text.match(/(\d{4})\s*Pattern/i);
+    const pyp = val.match(/(\d{4})\s*Pattern/i);
     if (pyp && !meta.pattern) meta.pattern = pyp[1] + ' Pattern';
 
-    const pysm = text.match(/Semester\s*-\s*(\w+)/i);
+    const pysm = val.match(/Semester\s*-\s*(\w+)/i);
     if (pysm && !meta.semester) meta.semester = pysm[1];
 
-    const pysc = text.match(/\((\d{6})\)/);
+    const pysc = val.match(/\((\d{6})\)/);
     if (pysc && !meta.subjectCode) meta.subjectCode = pysc[1];
 
-    // Time
-    const tm = text.match(/Time\s*:?\s*([^|]+)/i);
+    // 7. Time
+    if (key === 'time') {
+      meta.time = val;
+      continue;
+    }
+    const tm = val.match(/Time\s*:?\s*([^|]+)/i);
     if (tm) {
       meta.time = tm[1].replace(/\]/g, '').replace(/\s*\|.*$/, '').trim();
     }
 
-    // Max Marks
-    const mm = text.match(/Max\.?\s*Marks\s*:?\s*(\d+)/i);
+    // 8. Max Marks
+    if (key === 'maxmarks') {
+      meta.maxMarks = val;
+      continue;
+    }
+    const mm = val.match(/Max\.?\s*Marks\s*:?\s*(\d+)/i);
     if (mm) meta.maxMarks = mm[1];
 
-    // Total Pages
-    const tp = text.match(/Total\s*No\.?\s*of\s*Pages?\s*:?\s*(\d+)/i);
+    // 9. Total Pages
+    if (key === 'totalpages') {
+      meta.totalPages = val;
+      continue;
+    }
+    const tp = val.match(/Total\s*No\.?\s*of\s*Pages?\s*:?\s*(\d+)/i);
     if (tp) meta.totalPages = tp[1];
   }
 
