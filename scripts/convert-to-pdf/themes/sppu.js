@@ -52,16 +52,18 @@ function generateHeaderHtml(meta) {
   const escPid = identifier.replace(/\[/g, '&#91;').replace(/\]/g, '&#93;');
   const paperComment = identifier ? '<!-- PAPER_ID:' + escPid + ' -->\n' : '';
 
-  // Build instructions HTML — numbered with ), no bold, regular weight
+  // Build instructions HTML — italicized items, bold-italic header
   let instHtml = '';
   if (inst.length > 0) {
     const items = inst.map((item, idx) => {
       const num = idx + 1;
       const text = item.replace(/\n\s*/g, ' ').trim();
-      return '<div style="padding-left:24pt;font-size:12pt;line-height:1.4;">' + num + ') ' + text + '</div>';
+      // Format questions inside instructions to match bold-italic: e.g. Q.1 -> Q.1
+      const formattedText = text.replace(/(Q\s*\.?\s*\d+)/g, '<strong><em>$1</em></strong>');
+      return '<div style="padding-left:24pt;font-size:12pt;line-height:1.4;font-style:italic;">' + num + ')&nbsp;&nbsp;' + formattedText + '</div>';
     });
     instHtml =
-      '<div style="font-size:12pt;font-weight:bold;margin:4pt 0 2pt 0;">' +
+      '<div style="font-size:12pt;font-weight:bold;font-style:italic;margin:4pt 0 2pt 0;">' +
       'Instructions to the candidates:' +
       '</div>\n' +
       items.join('\n');
@@ -193,9 +195,10 @@ function getCss(useMath, fontFaces) {
       padding-left: 56.8pt;
       text-indent: -56.8pt;
     }
-    .question-main strong {
+    .question-main strong.q-label {
       display: inline-block;
       width: 28.4pt;
+      font-style: italic;
     }
     /* Sub-questions (b), c)) - b) at 28.4pt, continuation at 56.8pt */
     .question-sub {
