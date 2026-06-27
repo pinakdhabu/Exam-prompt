@@ -71,8 +71,8 @@ function generateHeaderHtml(meta) {
     '<!-- Row 1: Total Questions + SEAT No. with 9-slot table -->\n' +
     '<table style="width:100%;border-collapse:collapse;margin:0 0 3px 0;font-size:12pt;">\n' +
     '<tr>\n' +
-    '<td style="width:40%;border:none;padding:0;text-align:left;font-weight:bold;vertical-align:middle;">\n' +
-    'Total No. of Questions : ' + tq + ']\n' +
+    '<td style="width:40%;border:none;padding:0;text-align:left;font-weight:bold;vertical-align:middle;line-height:1.2;">\n' +
+    'Total No. of Questions : ' + tq + ']' + tpDisplay + '\n' +
     '</td>\n' +
     '<td style="width:60%;border:none;padding:0;text-align:right;font-weight:bold;vertical-align:middle;white-space:nowrap;">\n' +
     'SEAT No. :' +
