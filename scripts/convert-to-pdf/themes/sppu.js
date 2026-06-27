@@ -91,7 +91,11 @@ function generateHeaderHtml(meta) {
     '</td>\n' +
     '<td style="border:none;padding:0;text-align:right;vertical-align:top;white-space:nowrap;">\n' +
     'SEAT No. :\n' +
-    '<span style="display:inline-block;border:1.5pt solid #000;width:135px;height:18px;vertical-align:middle;margin-left:6px;"></span>\n' +
+    '<table style="display:inline-table;border-collapse:collapse;margin-left:6px;vertical-align:middle;width:auto;">\n' +
+    '<tr>\n' +
+    Array.from({ length: 9 }).map(() => '<td style="border:1.5pt solid #000;width:15px;height:18px;padding:0;text-align:center;"></td>').join('\n') + '\n' +
+    '</tr>\n' +
+    '</table>\n' +
     '</td>\n' +
     '</tr>\n' +
     // --- Row 2: Paper code (left) + Total Pages (right) ---
