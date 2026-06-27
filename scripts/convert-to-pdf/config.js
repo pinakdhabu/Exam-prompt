@@ -61,10 +61,10 @@ const FONTS = {
 
 const PAGE = {
   format: 'A4',
-  marginTop: '2cm',
-  marginBottom: '2.2cm',
-  marginLeft: '2.2cm',
-  marginRight: '2.2cm',
+  marginTop: '2.4cm',
+  marginBottom: '2.4cm',
+  marginLeft: '2.5cm',
+  marginRight: '1.7cm',
 };
 
 const MATH_DISPLAY_PATTERNS = /\\begin|\\sum|\\int|\\prod|\\iint|\\iiint|\\oint|\\lim|\\frac/;
