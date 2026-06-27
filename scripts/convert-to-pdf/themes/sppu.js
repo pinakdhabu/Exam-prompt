@@ -188,6 +188,21 @@ function getCss(useMath, fontFaces) {
       line-height: 1.35;
       position: relative;
     }
+    /* Main questions (Q1) a)) - left aligned, no indent */
+    .question-main {
+      padding-left: 0;
+      text-indent: 0;
+    }
+    /* Sub-questions (b), c)) - indent by 28pt, and indent any continuation text by 28pt */
+    .question-sub {
+      margin-left: 28pt;
+      text-indent: -28pt;
+      padding-left: 28pt;
+    }
+    /* Indent elements following sub-questions */
+    .question-sub + table, .question-sub + pre {
+      margin-left: 28pt !important;
+    }
     strong{font-weight:bold}
 
     /* Marks [N] — positioned absolutely on the right to align perfectly on same baseline */

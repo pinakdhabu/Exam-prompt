@@ -29,6 +29,10 @@ class HtmlRenderer {
     let html = markdownHtml
       .replace(/\[(\d+)\]/g, '<span class="marks">[$1]</span>')
       .replace(/<p>\*\*OR\*\*<\/p>/g, '<div class="question-or">OR</div>')
+      // Q1) a) -> Q1) is bold, a) is regular, add class question-main
+      .replace(/<p><strong>Q(\d+)\)\s+([a-z])\)<\/strong>/g, '<p class="question-main"><strong>Q$1)</strong> $2)')
+      // b) -> wrapped in class question-sub
+      .replace(/<p><strong>([b-z])\)<\/strong>/g, '<p class="question-sub"><strong>$1)</strong>')
       .replace(/<pre><code>(\[ANSWER BOX\][\s\S]*?)<\/code><\/pre>/g, '<div class="answer-box"><pre><code>$1</code></pre></div>');
 
     let page = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">';
