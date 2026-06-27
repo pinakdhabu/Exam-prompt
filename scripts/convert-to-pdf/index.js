@@ -58,8 +58,13 @@ async function convertMdToPdf(mdPath, pdfPath, options = {}) {
   logger.debug({ htmlSize: htmlBody.length }, 'HTML body rendered');
 
   const renderer = new HtmlRenderer(processor.hasMath);
-  const html = renderer.render(htmlBody);
-  logger.debug({ documentSize: html.length }, 'Document assembled');
+  let html = renderer.render(htmlBody);
+
+  // Extract target totalPages from YAML or header HTML
+  const totalPagesMatch = html.match(/\[Total No\. of Pages : (\d+)/) || html.match(/totalpages:\s*(\d+)/i);
+  const targetPages = totalPagesMatch ? parseInt(totalPagesMatch[1], 10) : 0;
+
+  logger.debug({ documentSize: html.length, targetPages }, 'Document assembled');
 
   // Extract paper identifier from HTML for footer
   const idMatch = html.match(/<!-- PAPER_ID:&#91;(\d+)&#93;-(\S+) -->/);
@@ -67,24 +72,84 @@ async function convertMdToPdf(mdPath, pdfPath, options = {}) {
 
   const generator = new PdfGenerator({ logger, paperIdentifier });
   const start = Date.now();
-  await generator.generate(html, pdfPath);
 
-  // Two-pass: if HTML has __TOTAL_PAGES__ placeholder, count pages and regenerate
-  if (html.includes('__TOTAL_PAGES__')) {
-    let pageCount = 0;
+  // Spacing Auto-Adjust Loop
+  let scale = 1.0;
+  let attempts = 0;
+  let pageCount = 0;
+  const maxAttempts = 5;
+
+  while (attempts < maxAttempts) {
+    logger.info({ scale, attempt: attempts + 1 }, 'Compiling PDF page');
+    
+    // Inject dynamic CSS spacing adjustments using custom property style tag
+    let styledHtml = html;
+    if (scale !== 1.0) {
+      const spacingCss = `
+        <style>
+          body {
+            line-height: ${1.4 * scale} !important;
+          }
+          p {
+            margin-top: ${2 * scale}pt !important;
+            margin-bottom: ${2 * scale}pt !important;
+          }
+          pre {
+            margin-top: ${4 * scale}pt !important;
+            margin-bottom: ${4 * scale}pt !important;
+            padding: ${6 * scale}pt ${10 * scale}pt !important;
+          }
+          table {
+            margin-top: ${6 * scale}pt !important;
+            margin-bottom: ${6 * scale}pt !important;
+          }
+          th, td {
+            padding: ${3 * scale}pt ${10 * scale}pt !important;
+          }
+          hr {
+            margin-top: ${8 * scale}pt !important;
+            margin-bottom: ${8 * scale}pt !important;
+          }
+        </style>
+      `;
+      styledHtml = html.replace('</head>', spacingCss + '</head>');
+    }
+
+    await generator.generate(styledHtml, pdfPath);
+
+    // Count pages
     try {
       const script = 'from pypdf import PdfReader; print(len(PdfReader(' + JSON.stringify(pdfPath) + ').pages))';
       const result = execSync('python3 -c ' + JSON.stringify(script), { timeout: 10000 }).toString().trim();
       pageCount = parseInt(result, 10) || 0;
-    } catch {
+    } catch (e) {
+      logger.warn('Failed to parse PDF page count:', e.message);
       pageCount = 0;
+      break;
     }
 
-    if (pageCount > 0) {
-      logger.info({ pageCount }, 'Page count detected, regenerating with correct total');
-      const correctedHtml = html.replace(/__TOTAL_PAGES__/g, String(pageCount));
-      await generator.generate(correctedHtml, pdfPath);
+    logger.info({ pageCount, targetPages }, 'Page check outcome');
+
+    if (!targetPages || pageCount === targetPages) {
+      break; // Matched target perfectly or no target specified
     }
+
+    if (pageCount > targetPages) {
+      // Too many pages -> shrink spacing
+      scale -= 0.12;
+    } else {
+      // Too few pages -> expand spacing
+      scale += 0.12;
+    }
+    
+    attempts++;
+  }
+
+  // Final replacement of total page numbers inside document
+  if (pageCount > 0 && html.includes('__TOTAL_PAGES__')) {
+    logger.info({ pageCount }, 'Regenerating final copy with resolved __TOTAL_PAGES__');
+    const finalHtml = html.replace(/__TOTAL_PAGES__/g, String(pageCount));
+    await generator.generate(finalHtml, pdfPath);
   }
 
   const duration = Date.now() - start;
