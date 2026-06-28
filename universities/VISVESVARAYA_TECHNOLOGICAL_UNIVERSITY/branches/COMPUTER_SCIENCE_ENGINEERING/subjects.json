@@ -9,7 +9,7 @@
     {
       "id": "fe",
       "name": "First Year (Common to all branches)",
-      "pattern": "2022",
+      "pattern": "vtu-cbcs-2022",
       "semesters": [
         {
           "id": "sem-1",
@@ -46,7 +46,7 @@
     {
       "id": "se",
       "name": "Second Year (S.E.)",
-      "pattern": "2022",
+      "pattern": "vtu-cbcs-2022",
       "semesters": [
         {
           "id": "sem-3",
@@ -84,7 +84,7 @@
     {
       "id": "te",
       "name": "Third Year (T.E.)",
-      "pattern": "2022",
+      "pattern": "vtu-cbcs-2022",
       "semesters": [
         {
           "id": "sem-5",
@@ -117,7 +117,7 @@
     {
       "id": "be",
       "name": "Fourth Year (B.E.)",
-      "pattern": "2022",
+      "pattern": "vtu-cbcs-2022",
       "semesters": [
         {
           "id": "sem-7",

@@ -1,0 +1,68 @@
+{
+  "id": "vtu-cbcs-2018",
+  "name": "VTU CBCS 2018 Scheme",
+  "description": "VTU Choice Based Credit System (CBCS) 2018 Scheme — 40 marks CIE + 60 marks SEE",
+  "years_active": ["2018", "2019", "2020", "2021", "2022"],
+  "exam_type": "end-semester",
+  "in_semester": {
+    "exists": true,
+    "name": "Continuous Internal Evaluation (CIE)",
+    "marks": 40,
+    "duration_hours": 1.5,
+    "types": ["internal tests", "assignments", "quizzes", "seminar", "practicals"],
+    "notes": "CIE typically consists of two IA tests (20 marks each, best/average), assignments, and quiz components."
+  },
+  "end_semester": {
+    "total_marks": 60,
+    "time_hours": 3,
+    "total_units": 5,
+    "exam_units": 5,
+    "or_pairs": 5,
+    "instructions": [
+      "Answer any FIVE full questions, choosing at least ONE from each module.",
+      "Module 1: Q.1 or Q.2, Module 2: Q.3 or Q.4, Module 3: Q.5 or Q.6, Module 4: Q.7 or Q.8, Module 5: Q.9 or Q.10.",
+      "Neat diagrams must be drawn wherever necessary.",
+      "Figures to the right indicate full marks.",
+      "Assume suitable data, if necessary."
+    ],
+    "question_structure": {
+      "type": "OR_PAIRS",
+      "description": "Five modules, each with an OR-pair (2 questions per module). Answer one full question from each module (5 questions total). Each question typically has sub-questions (a+b) or (a+b+c).",
+      "total_questions": 10,
+      "or_pairs": 5,
+      "labeling": "Q1/Q2 (Module 1), Q3/Q4 (Module 2), Q5/Q6 (Module 3), Q7/Q8 (Module 4), Q9/Q10 (Module 5)",
+      "unit_mapping": {
+        "Module 1": "Q1/Q2",
+        "Module 2": "Q3/Q4",
+        "Module 3": "Q5/Q6",
+        "Module 4": "Q7/Q8",
+        "Module 5": "Q9/Q10"
+      },
+      "sub_questions": {
+        "pattern": "a+b or a+b+c",
+        "mark_options": [
+          {"distribution": "8+12", "description": "Two sub-questions (8+12=20)"},
+          {"distribution": "10+10", "description": "Two sub-questions (10+10=20)"},
+          {"distribution": "6+6+8", "description": "Three sub-questions (6+6+8=20)"},
+          {"distribution": "7+7+6", "description": "Three sub-questions (7+7+6=20)"}
+        ]
+      }
+    }
+  },
+  "total_marks": 100,
+  "pass_percentage": 40,
+  "grading": {
+    "type": "SGPA/CGPA",
+    "scale": 10,
+    "pass_grade": "P",
+    "grade_mapping": {
+      "S": [90, 100],
+      "A": [80, 89],
+      "B": [70, 79],
+      "C": [60, 69],
+      "D": [50, 59],
+      "E": [40, 49],
+      "F": [0, 39]
+    }
+  }
+}

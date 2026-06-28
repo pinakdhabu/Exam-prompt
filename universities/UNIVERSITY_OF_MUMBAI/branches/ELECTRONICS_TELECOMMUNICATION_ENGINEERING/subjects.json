@@ -1,0 +1,138 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "electronics-telecommunication-engineering",
+    "name": "Electronics & Telecommunication Engineering",
+    "description": "University of Mumbai B.E. EXTC subjects under R-2019 'C' Scheme (CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (F.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "FE101", "name": "Engineering Mathematics I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "FE102", "name": "Engineering Physics I", "abbr": "PHY1", "type": "core", "credits": 3},
+            {"code": "FE103", "name": "Engineering Chemistry I", "abbr": "CHEM1", "type": "core", "credits": 3},
+            {"code": "FE104", "name": "Engineering Mechanics", "abbr": "EM", "type": "core", "credits": 3},
+            {"code": "FE105", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 3},
+            {"code": "FE106", "name": "Environmental Studies I", "abbr": "EVS1", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "FE201", "name": "Engineering Mathematics II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "FE202", "name": "Engineering Physics II", "abbr": "PHY2", "type": "core", "credits": 3},
+            {"code": "FE203", "name": "Engineering Chemistry II", "abbr": "CHEM2", "type": "core", "credits": 3},
+            {"code": "FE204", "name": "Structured Programming Approach", "abbr": "SPA", "type": "core", "credits": 3},
+            {"code": "FE205", "name": "Basic Electronics Engineering", "abbr": "BXE", "type": "core", "credits": 3},
+            {"code": "FE206", "name": "Communication Skills", "abbr": "CS", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "ECC301", "name": "Engineering Mathematics III", "abbr": "M3", "type": "core", "credits": 4},
+            {"code": "ECC302", "name": "Electronic Devices and Circuits I", "abbr": "EDC1", "type": "core", "credits": 3},
+            {"code": "ECC303", "name": "Digital System Design", "abbr": "DSD", "type": "core", "credits": 3},
+            {"code": "ECC304", "name": "Network Theory", "abbr": "NT", "type": "core", "credits": 3},
+            {"code": "ECC305", "name": "Object Oriented Programming", "abbr": "OOP", "type": "core", "credits": 3},
+            {"code": "ECL301", "name": "Electronic Devices and Circuits I Lab", "abbr": "EDC1L", "type": "lab", "credits": 2},
+            {"code": "ECL302", "name": "Digital System Design Lab", "abbr": "DSDL", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "ECC401", "name": "Engineering Mathematics IV", "abbr": "M4", "type": "core", "credits": 4},
+            {"code": "ECC402", "name": "Electronic Devices and Circuits II", "abbr": "EDC2", "type": "core", "credits": 3},
+            {"code": "ECC403", "name": "Microprocessor and Microcontrollers", "abbr": "MPMC", "type": "core", "credits": 3},
+            {"code": "ECC404", "name": "Signals and Systems", "abbr": "SS", "type": "core", "credits": 3},
+            {"code": "ECC405", "name": "Linear Integrated Circuits", "abbr": "LIC", "type": "core", "credits": 3},
+            {"code": "ECL401", "name": "Electronic Devices and Circuits II Lab", "abbr": "EDC2L", "type": "lab", "credits": 2},
+            {"code": "ECL402", "name": "Microprocessor Lab", "abbr": "MPL", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "ECC501", "name": "Digital Communication", "abbr": "DC", "type": "core", "credits": 3},
+            {"code": "ECC502", "name": "Discrete Time Signal Processing", "abbr": "DTSP", "type": "core", "credits": 3},
+            {"code": "ECC503", "name": "Electromagnetic Engineering", "abbr": "EME", "type": "core", "credits": 3},
+            {"code": "ECC504", "name": "Computer Communication Networks", "abbr": "CCN", "type": "core", "credits": 3},
+            {"code": "ECDLO501x", "name": "Department Level Optional Course I", "abbr": "DLOC1", "type": "elective", "credits": 3},
+            {"code": "ECL501", "name": "Digital Communication Lab", "abbr": "DCL", "type": "lab", "credits": 2},
+            {"code": "ECL502", "name": "Discrete Time Signal Processing Lab", "abbr": "DTSPL", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "ECC601", "name": "RF and Microwave Engineering", "abbr": "RFME", "type": "core", "credits": 3},
+            {"code": "ECC602", "name": "VLSI Design", "abbr": "VLSI", "type": "core", "credits": 3},
+            {"code": "ECC603", "name": "Optical Fiber Communication", "abbr": "OFC", "type": "core", "credits": 3},
+            {"code": "ECC604", "name": "Embedded Systems and RTOS", "abbr": "ESRTOS", "type": "core", "credits": 3},
+            {"code": "ECDLO601x", "name": "Department Level Optional Course II", "abbr": "DLOC2", "type": "elective", "credits": 3},
+            {"code": "ECL601", "name": "RF and Microwave Lab", "abbr": "RFML", "type": "lab", "credits": 2},
+            {"code": "ECL602", "name": "VLSI Lab", "abbr": "VLSIL", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "ECC701", "name": "Wireless Communication", "abbr": "WC", "type": "core", "credits": 3},
+            {"code": "ECC702", "name": "Image Processing", "abbr": "IP", "type": "core", "credits": 3},
+            {"code": "ECDLO701x", "name": "Department Level Optional Course III", "abbr": "DLOC3", "type": "elective", "credits": 3},
+            {"code": "ECDLO702x", "name": "Department Level Optional Course IV", "abbr": "DLOC4", "type": "elective", "credits": 3},
+            {"code": "ILO701x", "name": "Institute Level Optional Course I", "abbr": "ILOC1", "type": "elective", "credits": 3},
+            {"code": "ECL701", "name": "Wireless Communication Lab", "abbr": "WCL", "type": "lab", "credits": 2},
+            {"code": "ECL702", "name": "Image Processing Lab", "abbr": "IPL", "type": "lab", "credits": 2},
+            {"code": "ECL703", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "ECC801", "name": "Advanced Digital Signal Processing", "abbr": "ADSP", "type": "core", "credits": 3},
+            {"code": "ECDLO801x", "name": "Department Level Optional Course V", "abbr": "DLOC5", "type": "elective", "credits": 3},
+            {"code": "ILO801x", "name": "Institute Level Optional Course II", "abbr": "ILOC2", "type": "elective", "credits": 3},
+            {"code": "ECL801", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 6}
+          ]
+        }
+      ]
+    }
+  ]
+}

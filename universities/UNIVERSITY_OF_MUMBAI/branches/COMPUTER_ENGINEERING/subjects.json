@@ -9,7 +9,7 @@
     {
       "id": "fe",
       "name": "First Year (F.E.)",
-      "pattern": "mu-cbcs-2019",
+      "pattern": "mu-rev-2019",
       "semesters": [
         {
           "id": "sem-1",
@@ -40,7 +40,7 @@
     {
       "id": "se",
       "name": "Second Year (S.E.)",
-      "pattern": "mu-cbcs-2019",
+      "pattern": "mu-rev-2019",
       "semesters": [
         {
           "id": "sem-3",
@@ -73,7 +73,7 @@
     {
       "id": "te",
       "name": "Third Year (T.E.)",
-      "pattern": "mu-cbcs-2019",
+      "pattern": "mu-rev-2019",
       "semesters": [
         {
           "id": "sem-5",
@@ -106,7 +106,7 @@
     {
       "id": "be",
       "name": "Fourth Year (B.E.)",
-      "pattern": "mu-cbcs-2019",
+      "pattern": "mu-rev-2019",
       "semesters": [
         {
           "id": "sem-7",

@@ -1,0 +1,138 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "civil-engineering",
+    "name": "Civil Engineering",
+    "description": "University of Mumbai B.E. Civil Engineering subjects under R-2019 'C' Scheme (CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (F.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "FE101", "name": "Engineering Mathematics I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "FE102", "name": "Engineering Physics I", "abbr": "PHY1", "type": "core", "credits": 3},
+            {"code": "FE103", "name": "Engineering Chemistry I", "abbr": "CHEM1", "type": "core", "credits": 3},
+            {"code": "FE104", "name": "Engineering Mechanics", "abbr": "EM", "type": "core", "credits": 3},
+            {"code": "FE105", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 3},
+            {"code": "FE106", "name": "Environmental Studies I", "abbr": "EVS1", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "FE201", "name": "Engineering Mathematics II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "FE202", "name": "Engineering Physics II", "abbr": "PHY2", "type": "core", "credits": 3},
+            {"code": "FE203", "name": "Engineering Chemistry II", "abbr": "CHEM2", "type": "core", "credits": 3},
+            {"code": "FE204", "name": "Structured Programming Approach", "abbr": "SPA", "type": "core", "credits": 3},
+            {"code": "FE205", "name": "Basic Electronics Engineering", "abbr": "BXE", "type": "core", "credits": 3},
+            {"code": "FE206", "name": "Communication Skills", "abbr": "CS", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "CEC301", "name": "Engineering Mathematics III", "abbr": "M3", "type": "core", "credits": 4},
+            {"code": "CEC302", "name": "Mechanics of Solids", "abbr": "MOS", "type": "core", "credits": 3},
+            {"code": "CEC303", "name": "Fluid Mechanics I", "abbr": "FM1", "type": "core", "credits": 3},
+            {"code": "CEC304", "name": "Engineering Geology", "abbr": "EG", "type": "core", "credits": 3},
+            {"code": "CEC305", "name": "Building Materials and Construction", "abbr": "BMC", "type": "core", "credits": 3},
+            {"code": "CEL301", "name": "Fluid Mechanics I Lab", "abbr": "FM1L", "type": "lab", "credits": 2},
+            {"code": "CEL302", "name": "Building Materials Lab", "abbr": "BML", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "CEC401", "name": "Engineering Mathematics IV", "abbr": "M4", "type": "core", "credits": 4},
+            {"code": "CEC402", "name": "Structural Analysis I", "abbr": "SA1", "type": "core", "credits": 3},
+            {"code": "CEC403", "name": "Surveying", "abbr": "SV", "type": "core", "credits": 3},
+            {"code": "CEC404", "name": "Concrete Technology", "abbr": "CT", "type": "core", "credits": 3},
+            {"code": "CEC405", "name": "Fluid Mechanics II", "abbr": "FM2", "type": "core", "credits": 3},
+            {"code": "CEL401", "name": "Surveying Lab", "abbr": "SVL", "type": "lab", "credits": 2},
+            {"code": "CEL402", "name": "Concrete Technology Lab", "abbr": "CTL", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "CEC501", "name": "Structural Analysis II", "abbr": "SA2", "type": "core", "credits": 3},
+            {"code": "CEC502", "name": "Geotechnical Engineering I", "abbr": "GE1", "type": "core", "credits": 3},
+            {"code": "CEC503", "name": "Environmental Engineering I", "abbr": "ENV1", "type": "core", "credits": 3},
+            {"code": "CEC504", "name": "Design of RC Structures", "abbr": "DRCS", "type": "core", "credits": 3},
+            {"code": "CEDLO501x", "name": "Department Level Optional Course I", "abbr": "DLOC1", "type": "elective", "credits": 3},
+            {"code": "CEL501", "name": "Geotechnical Engineering Lab", "abbr": "GEL", "type": "lab", "credits": 2},
+            {"code": "CEL502", "name": "Environmental Engineering Lab", "abbr": "ENVL", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "CEC601", "name": "Geotechnical Engineering II", "abbr": "GE2", "type": "core", "credits": 3},
+            {"code": "CEC602", "name": "Environmental Engineering II", "abbr": "ENV2", "type": "core", "credits": 3},
+            {"code": "CEC603", "name": "Design of Steel Structures", "abbr": "DSS", "type": "core", "credits": 3},
+            {"code": "CEC604", "name": "Transportation Engineering", "abbr": "TE", "type": "core", "credits": 3},
+            {"code": "CEDLO601x", "name": "Department Level Optional Course II", "abbr": "DLOC2", "type": "elective", "credits": 3},
+            {"code": "CEL601", "name": "Transportation Engineering Lab", "abbr": "TEL", "type": "lab", "credits": 2},
+            {"code": "CEL602", "name": "Structural Design Lab", "abbr": "SDL", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "CEC701", "name": "Quantity Surveying and Estimation", "abbr": "QSE", "type": "core", "credits": 3},
+            {"code": "CEC702", "name": "Construction Management", "abbr": "CM", "type": "core", "credits": 3},
+            {"code": "CEDLO701x", "name": "Department Level Optional Course III", "abbr": "DLOC3", "type": "elective", "credits": 3},
+            {"code": "CEDLO702x", "name": "Department Level Optional Course IV", "abbr": "DLOC4", "type": "elective", "credits": 3},
+            {"code": "ILO701x", "name": "Institute Level Optional Course I", "abbr": "ILOC1", "type": "elective", "credits": 3},
+            {"code": "CEL701", "name": "Estimation and Management Lab", "abbr": "EML", "type": "lab", "credits": 2},
+            {"code": "CEL702", "name": "Computer Aided Design Lab", "abbr": "CADL", "type": "lab", "credits": 2},
+            {"code": "CEL703", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "CEC801", "name": "Earthquake Engineering", "abbr": "EQE", "type": "core", "credits": 3},
+            {"code": "CEDLO801x", "name": "Department Level Optional Course V", "abbr": "DLOC5", "type": "elective", "credits": 3},
+            {"code": "ILO801x", "name": "Institute Level Optional Course II", "abbr": "ILOC2", "type": "elective", "credits": 3},
+            {"code": "CEL801", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 6}
+          ]
+        }
+      ]
+    }
+  ]
+}

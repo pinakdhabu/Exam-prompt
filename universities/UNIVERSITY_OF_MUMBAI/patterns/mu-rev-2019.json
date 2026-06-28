@@ -1,0 +1,68 @@
+{
+  "id": "mu-rev-2019",
+  "name": "Mumbai University REV-2019 'C' Scheme",
+  "description": "Mumbai University Revised 2019 'C' Scheme (CBCS) — 20 marks IA + 80 marks ESE, 6 units",
+  "years_active": ["2019", "2020", "2021", "2022", "2023"],
+  "exam_type": "end-semester",
+  "in_semester": {
+    "exists": true,
+    "name": "Internal Assessment (IA)",
+    "marks": 20,
+    "duration_hours": 1,
+    "types": ["internal tests", "assignments", "orals", "presentations", "practicals"],
+    "notes": "IA consists of two class tests (best of 2) and assignment/project work."
+  },
+  "end_semester": {
+    "total_marks": 80,
+    "time_hours": 3,
+    "total_units": 6,
+    "exam_units": 6,
+    "or_pairs": 6,
+    "instructions": [
+      "Question No. 1 is compulsory.",
+      "Attempt any THREE from Q.2 to Q.6 (or equivalent structure depending on subject).",
+      "In OR_PAIRS pattern: Answer Q.1 or Q.2, Q.3 or Q.4, Q.5 or Q.6.",
+      "Neat diagrams must be drawn wherever necessary.",
+      "Figures to the right indicate full marks.",
+      "Assume suitable data, if necessary."
+    ],
+    "question_structure": {
+      "type": "OR_PAIRS",
+      "description": "Six units covered through 3 OR-pairs (Q1/Q2, Q3/Q4, Q5/Q6) or a mix of compulsory + choice. Common pattern: Q1 compulsory (covering multiple units), then 3 out of 5 remaining. For engineering: 3 OR-pairs covering 6 units.",
+      "total_questions": 6,
+      "or_pairs": 3,
+      "labeling": "Q1/Q2, Q3/Q4, Q5/Q6",
+      "unit_mapping": {
+        "Unit 1 & 2": "Q1/Q2",
+        "Unit 3 & 4": "Q3/Q4",
+        "Unit 5 & 6": "Q5/Q6"
+      },
+      "sub_questions": {
+        "pattern": "a+b or a+b+c",
+        "mark_options": [
+          {"distribution": "10+10", "description": "Two sub-questions (10+10=20)"},
+          {"distribution": "8+12", "description": "Two sub-questions (8+12=20)"},
+          {"distribution": "6+7+7", "description": "Three sub-questions (6+7+7=20)"},
+          {"distribution": "5+5+10", "description": "Three sub-questions (5+5+10=20)"}
+        ]
+      }
+    }
+  },
+  "total_marks": 100,
+  "pass_percentage": 40,
+  "grading": {
+    "type": "SGPA/CGPA",
+    "scale": 10,
+    "pass_grade": "P",
+    "grade_mapping": {
+      "O": [90, 100],
+      "A": [80, 89],
+      "B+": [70, 79],
+      "B": [60, 69],
+      "C": [55, 59],
+      "D": [50, 54],
+      "E": [45, 49],
+      "F": [0, 44]
+    }
+  }
+}

@@ -18,7 +18,10 @@
   "grading_system": "SGPA/CGPA",
   "academic_calendar": {
     "type": "semester",
-    "details": "Odd semester: Aug-Dec, exams in Dec-Jan. Even semester: Jan-Jun, exams in May-Jun."
+    "odd_semester": "August - December",
+    "even_semester": "January - June",
+    "in_sem_exams": "September/October, March/April",
+    "end_sem_exams": "December/January, May/June"
   },
   "patterns": {
     "default": "vtu-cbcs-2022",
@@ -26,23 +29,134 @@
       {
         "id": "vtu-cbcs-2018",
         "name": "VTU CBCS 2018 Scheme",
-        "description": "Choice Based Credit System with 50 marks IA + 100 marks SEE"
+        "years_active": ["2018", "2019", "2020", "2021", "2022"],
+        "total_marks": 100,
+        "in_sem_marks": 40,
+        "time_hours": 3,
+        "total_units": 5,
+        "exam_units": 5,
+        "or_pairs": 5,
+        "question_structure": "OR_PAIRS"
       },
       {
         "id": "vtu-cbcs-2022",
         "name": "VTU CBCS 2022 Scheme (NEP)",
-        "description": "NEP-aligned with 50 marks IA + 100 marks SEE, 5 units"
+        "years_active": ["2022", "2023", "2024", "2025"],
+        "total_marks": 100,
+        "in_sem_marks": 40,
+        "time_hours": 3,
+        "total_units": 5,
+        "exam_units": 5,
+        "or_pairs": 5,
+        "question_structure": "OR_PAIRS"
       }
     ]
   },
   "branches": {
     "departments": [
-      { "id": "computer-science-engineering", "name": "Computer Science & Engineering", "code": "CS" },
-      { "id": "information-science-engineering", "name": "Information Science & Engineering", "code": "IS" },
-      { "id": "electronics-communication-engineering", "name": "Electronics & Communication Engineering", "code": "EC" },
-      { "id": "electrical-electronics-engineering", "name": "Electrical & Electronics Engineering", "code": "EE" },
-      { "id": "mechanical-engineering", "name": "Mechanical Engineering", "code": "ME" },
-      { "id": "civil-engineering", "name": "Civil Engineering", "code": "CV" },
+      {
+        "id": "computer-science-engineering",
+        "name": "Computer Science & Engineering",
+        "code": "CS",
+        "relevant_skills": ["universal-a-plus-answer-writer", "universal-notes-generator", "universal-pyq-analyzer", "universal-imp-topics-generator", "universal-qp-fetcher"],
+        "degrees": [
+          {
+            "id": "be",
+            "name": "Bachelor of Engineering (B.E.)",
+            "years": [
+              {"id": "fe", "name": "First Year (F.E.)", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year (S.E.)", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year (T.E.)", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year (B.E.)", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "information-science-engineering",
+        "name": "Information Science & Engineering",
+        "code": "IS",
+        "degrees": [
+          {
+            "id": "be",
+            "name": "Bachelor of Engineering (B.E.)",
+            "years": [
+              {"id": "fe", "name": "First Year (F.E.)", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year (S.E.)", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year (T.E.)", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year (B.E.)", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "electronics-communication-engineering",
+        "name": "Electronics & Communication Engineering",
+        "code": "EC",
+        "degrees": [
+          {
+            "id": "be",
+            "name": "Bachelor of Engineering (B.E.)",
+            "years": [
+              {"id": "fe", "name": "First Year (F.E.)", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year (S.E.)", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year (T.E.)", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year (B.E.)", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "electrical-electronics-engineering",
+        "name": "Electrical & Electronics Engineering",
+        "code": "EE",
+        "degrees": [
+          {
+            "id": "be",
+            "name": "Bachelor of Engineering (B.E.)",
+            "years": [
+              {"id": "fe", "name": "First Year (F.E.)", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year (S.E.)", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year (T.E.)", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year (B.E.)", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mechanical-engineering",
+        "name": "Mechanical Engineering",
+        "code": "ME",
+        "degrees": [
+          {
+            "id": "be",
+            "name": "Bachelor of Engineering (B.E.)",
+            "years": [
+              {"id": "fe", "name": "First Year (F.E.)", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year (S.E.)", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year (T.E.)", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year (B.E.)", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil-engineering",
+        "name": "Civil Engineering",
+        "code": "CV",
+        "degrees": [
+          {
+            "id": "be",
+            "name": "Bachelor of Engineering (B.E.)",
+            "years": [
+              {"id": "fe", "name": "First Year (F.E.)", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year (S.E.)", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year (T.E.)", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year (B.E.)", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
       { "id": "artificial-intelligence-machine-learning", "name": "Artificial Intelligence & Machine Learning", "code": "AI" },
       { "id": "cse-ai-ml", "name": "Computer Science & Engineering (AI & ML)", "code": "CS-AI" },
       { "id": "cse-data-science", "name": "Computer Science & Engineering (Data Science)", "code": "CS-DS" },
@@ -67,7 +181,8 @@
     ]
   },
   "contributing": {
-    "how_to_add": "See how-to-add.md in this directory",
-    "maintainers_needed": true
+    "maintainers": [],
+    "how_to_add_branch": "Create a new subdirectory under branches/ and add subjects.json",
+    "how_to_add_subject": "Add to subjects.json in the relevant branch directory",
+    "needs_help": ["ECE subjects data", "EEE subjects data", "ME subjects data", "CE subjects data", "AI/ML subjects data", "MBA/MCA subjects data"]
   }
-}

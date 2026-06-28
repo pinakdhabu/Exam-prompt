@@ -1,0 +1,145 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "mechanical-engineering",
+    "name": "Mechanical Engineering",
+    "description": "VTU BE Mechanical Engineering subjects under the 2022 Scheme (NEP-aligned, CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (Common to all branches)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1 (Physics Cycle)",
+          "subjects": [
+            {"code": "BMATE101", "name": "Mathematics for ME Stream I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "BPHYE102/202", "name": "Physics for ME Stream", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "BCHEE102/202", "name": "Chemistry for ME Stream", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "BPOPS103/203", "name": "Principles of Programming Using C", "abbr": "C", "type": "core", "credits": 4},
+            {"code": "BESCK104x", "name": "Engineering Science Course", "abbr": "ESC", "type": "core", "credits": 3},
+            {"code": "BETCK105x", "name": "Emerging Technology Course", "abbr": "ETC", "type": "core", "credits": 3},
+            {"code": "BENGK106", "name": "Communicative English", "abbr": "ENG", "type": "core", "credits": 1},
+            {"code": "BIDTK158", "name": "Innovation and Design Thinking", "abbr": "IDT", "type": "core", "credits": 1},
+            {"code": "BSFHK158", "name": "Scientific Foundations for Health", "abbr": "SFH", "type": "core", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2 (Chemistry Cycle)",
+          "subjects": [
+            {"code": "BMATE201", "name": "Mathematics for ME Stream II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "BPHYE102/202", "name": "Physics for ME Stream", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "BCHEE102/202", "name": "Chemistry for ME Stream", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "BPOPS103/203", "name": "Principles of Programming Using C", "abbr": "C", "type": "core", "credits": 4},
+            {"code": "BESCK204x", "name": "Engineering Science Course", "abbr": "ESC", "type": "core", "credits": 3},
+            {"code": "BETCK205x", "name": "Emerging Technology Course", "abbr": "ETC", "type": "core", "credits": 3},
+            {"code": "BPWSK206", "name": "Professional Writing Skills in English", "abbr": "PWS", "type": "core", "credits": 1},
+            {"code": "BICOK207", "name": "Indian Constitution", "abbr": "IC", "type": "core", "credits": 1},
+            {"code": "BIDTK258", "name": "Innovation and Design Thinking", "abbr": "IDT", "type": "core", "credits": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "BME301", "name": "Mathematics for Mechanical Engineering III", "abbr": "M3", "type": "core", "credits": 4},
+            {"code": "BME302", "name": "Engineering Materials and Metallurgy", "abbr": "EMM", "type": "core", "credits": 3},
+            {"code": "BME303", "name": "Mechanics of Materials", "abbr": "MOM", "type": "core", "credits": 3},
+            {"code": "BME304", "name": "Basic Thermodynamics", "abbr": "BTD", "type": "core", "credits": 3},
+            {"code": "BMEL305", "name": "Materials Testing Lab", "abbr": "MTL", "type": "lab", "credits": 1},
+            {"code": "BMEL306", "name": "Computer Aided Machine Drawing", "abbr": "CAMD", "type": "lab", "credits": 1},
+            {"code": "BSCK307", "name": "Social Connect and Responsibility", "abbr": "SCR", "type": "core", "credits": 1},
+            {"code": "BNSK359", "name": "National Service Scheme", "abbr": "NSS", "type": "audit", "credits": 0}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "BME401", "name": "Fluid Mechanics", "abbr": "FM", "type": "core", "credits": 3},
+            {"code": "BME402", "name": "Manufacturing Processes", "abbr": "MP", "type": "core", "credits": 3},
+            {"code": "BME403", "name": "Applied Thermodynamics", "abbr": "ATD", "type": "core", "credits": 4},
+            {"code": "BME404", "name": "Machine Drawing and CAD", "abbr": "MCAD", "type": "core", "credits": 3},
+            {"code": "BMEL405", "name": "Fluid Mechanics Lab", "abbr": "FML", "type": "lab", "credits": 1},
+            {"code": "BMEL406", "name": "Manufacturing Processes Lab", "abbr": "MPL", "type": "lab", "credits": 1},
+            {"code": "BUHK408", "name": "Universal Human Values", "abbr": "UHV", "type": "core", "credits": 1},
+            {"code": "BNSK459", "name": "National Service Scheme", "abbr": "NSS", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "BME501", "name": "Design of Machine Elements I", "abbr": "DME1", "type": "core", "credits": 4},
+            {"code": "BME502", "name": "Heat and Mass Transfer", "abbr": "HMT", "type": "core", "credits": 4},
+            {"code": "BME503", "name": "Theory of Machines", "abbr": "TOM", "type": "core", "credits": 3},
+            {"code": "BMEL504", "name": "Heat and Mass Transfer Lab", "abbr": "HMTL", "type": "lab", "credits": 1},
+            {"code": "BME515x", "name": "Professional Elective Course I", "abbr": "PEC1", "type": "elective", "credits": 3},
+            {"code": "BME556x", "name": "Ability Enhancement Course V", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BPEK559", "name": "Physical Education", "abbr": "PE", "type": "audit", "credits": 0}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "BME601", "name": "Design of Machine Elements II", "abbr": "DME2", "type": "core", "credits": 4},
+            {"code": "BME602", "name": "CIM and Automation", "abbr": "CIMA", "type": "core", "credits": 3},
+            {"code": "BME603", "name": "Finite Element Methods", "abbr": "FEM", "type": "core", "credits": 3},
+            {"code": "BMEL604", "name": "CIM and Automation Lab", "abbr": "CIMAL", "type": "lab", "credits": 1},
+            {"code": "BME615x", "name": "Professional Elective Course II", "abbr": "PEC2", "type": "elective", "credits": 3},
+            {"code": "BME656x", "name": "Ability Enhancement Course VI", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BYOK659", "name": "Yoga", "abbr": "YOGA", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "BME701", "name": "Energy Engineering", "abbr": "EE", "type": "core", "credits": 3},
+            {"code": "BME702", "name": "Hydraulics and Pneumatics", "abbr": "HP", "type": "core", "credits": 3},
+            {"code": "BME703x", "name": "Professional Elective Course III", "abbr": "PEC3", "type": "elective", "credits": 3},
+            {"code": "BME704x", "name": "Professional Elective Course IV", "abbr": "PEC4", "type": "elective", "credits": 3},
+            {"code": "BME705x", "name": "Open Elective Course", "abbr": "OEC", "type": "elective", "credits": 3},
+            {"code": "BMEL706", "name": "Mini Project", "abbr": "MP", "type": "project", "credits": 2},
+            {"code": "BME707", "name": "Research Methodology and IPR", "abbr": "RMIPR", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "BME801x", "name": "Professional Elective Course V", "abbr": "PEC5", "type": "elective", "credits": 3},
+            {"code": "BME802x", "name": "Open Elective Course", "abbr": "OEC", "type": "elective", "credits": 3},
+            {"code": "BME803", "name": "Internship / Technical Seminar", "abbr": "INT", "type": "core", "credits": 3},
+            {"code": "BME804", "name": "Project Work", "abbr": "PROJ", "type": "project", "credits": 10}
+          ]
+        }
+      ]
+    }
+  ]
+}

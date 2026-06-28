@@ -1,0 +1,145 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "electronics-communication-engineering",
+    "name": "Electronics & Communication Engineering",
+    "description": "VTU BE ECE subjects under the 2022 Scheme (NEP-aligned, CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (Common to all branches)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1 (Physics Cycle)",
+          "subjects": [
+            {"code": "BMATS101", "name": "Mathematics for ECE Stream I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "BPHYS102/202", "name": "Physics for ECE Stream", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "BCHES102/202", "name": "Chemistry for ECE Stream", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "BPOPS103/203", "name": "Principles of Programming Using C", "abbr": "C", "type": "core", "credits": 4},
+            {"code": "BESCK104x", "name": "Engineering Science Course", "abbr": "ESC", "type": "core", "credits": 3},
+            {"code": "BETCK105x", "name": "Emerging Technology Course", "abbr": "ETC", "type": "core", "credits": 3},
+            {"code": "BENGK106", "name": "Communicative English", "abbr": "ENG", "type": "core", "credits": 1},
+            {"code": "BIDTK158", "name": "Innovation and Design Thinking", "abbr": "IDT", "type": "core", "credits": 1},
+            {"code": "BSFHK158", "name": "Scientific Foundations for Health", "abbr": "SFH", "type": "core", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2 (Chemistry Cycle)",
+          "subjects": [
+            {"code": "BMATS201", "name": "Mathematics for ECE Stream II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "BPHYS102/202", "name": "Physics for ECE Stream", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "BCHES102/202", "name": "Chemistry for ECE Stream", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "BPOPS103/203", "name": "Principles of Programming Using C", "abbr": "C", "type": "core", "credits": 4},
+            {"code": "BESCK204x", "name": "Engineering Science Course", "abbr": "ESC", "type": "core", "credits": 3},
+            {"code": "BETCK205x", "name": "Emerging Technology Course", "abbr": "ETC", "type": "core", "credits": 3},
+            {"code": "BPWSK206", "name": "Professional Writing Skills in English", "abbr": "PWS", "type": "core", "credits": 1},
+            {"code": "BICOK207", "name": "Indian Constitution", "abbr": "IC", "type": "core", "credits": 1},
+            {"code": "BIDTK258", "name": "Innovation and Design Thinking", "abbr": "IDT", "type": "core", "credits": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "BEC301", "name": "Mathematics for ECE III (Transform Techniques)", "abbr": "M3", "type": "core", "credits": 4},
+            {"code": "BEC302", "name": "Network Theory", "abbr": "NT", "type": "core", "credits": 3},
+            {"code": "BEC303", "name": "Electronic Devices", "abbr": "ED", "type": "core", "credits": 3},
+            {"code": "BEC304", "name": "Digital System Design", "abbr": "DSD", "type": "core", "credits": 3},
+            {"code": "BECL305", "name": "Electronic Devices Lab", "abbr": "EDL", "type": "lab", "credits": 1},
+            {"code": "BECL306", "name": "Digital System Design Lab", "abbr": "DSDL", "type": "lab", "credits": 1},
+            {"code": "BSCK307", "name": "Social Connect and Responsibility", "abbr": "SCR", "type": "core", "credits": 1},
+            {"code": "BNSK359", "name": "National Service Scheme", "abbr": "NSS", "type": "audit", "credits": 0}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "BEC401", "name": "Analog Circuits", "abbr": "AC", "type": "core", "credits": 3},
+            {"code": "BEC402", "name": "Signal and Systems", "abbr": "SS", "type": "core", "credits": 3},
+            {"code": "BEC403", "name": "Microcontrollers", "abbr": "MC", "type": "core", "credits": 4},
+            {"code": "BEC404", "name": "Electromagnetic Field Theory", "abbr": "EMFT", "type": "core", "credits": 3},
+            {"code": "BECL405", "name": "Analog Circuits Lab", "abbr": "ACL", "type": "lab", "credits": 1},
+            {"code": "BECL406", "name": "Microcontrollers Lab", "abbr": "MCL", "type": "lab", "credits": 1},
+            {"code": "BUHK408", "name": "Universal Human Values", "abbr": "UHV", "type": "core", "credits": 1},
+            {"code": "BNSK459", "name": "National Service Scheme", "abbr": "NSS", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "BEC501", "name": "Digital Communication", "abbr": "DC", "type": "core", "credits": 4},
+            {"code": "BEC502", "name": "Analog and Digital Transforms", "abbr": "ADT", "type": "core", "credits": 3},
+            {"code": "BEC503", "name": "VLSI Design", "abbr": "VLSI", "type": "core", "credits": 3},
+            {"code": "BECL504", "name": "Digital Communication Lab", "abbr": "DCL", "type": "lab", "credits": 1},
+            {"code": "BEC515x", "name": "Professional Elective Course I", "abbr": "PEC1", "type": "elective", "credits": 3},
+            {"code": "BEC556x", "name": "Ability Enhancement Course V", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BPEK559", "name": "Physical Education", "abbr": "PE", "type": "audit", "credits": 0}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "BEC601", "name": "Digital Signal Processing", "abbr": "DSP", "type": "core", "credits": 4},
+            {"code": "BEC602", "name": "Embedded Systems", "abbr": "ES", "type": "core", "credits": 3},
+            {"code": "BEC603", "name": "Wireless Communication", "abbr": "WC", "type": "core", "credits": 3},
+            {"code": "BECL604", "name": "DSP Lab", "abbr": "DSPL", "type": "lab", "credits": 1},
+            {"code": "BEC615x", "name": "Professional Elective Course II", "abbr": "PEC2", "type": "elective", "credits": 3},
+            {"code": "BEC656x", "name": "Ability Enhancement Course VI", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BYOK659", "name": "Yoga", "abbr": "YOGA", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "BEC701", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 3},
+            {"code": "BEC702", "name": "Optical Fiber Communication", "abbr": "OFC", "type": "core", "credits": 3},
+            {"code": "BEC703x", "name": "Professional Elective Course III", "abbr": "PEC3", "type": "elective", "credits": 3},
+            {"code": "BEC704x", "name": "Professional Elective Course IV", "abbr": "PEC4", "type": "elective", "credits": 3},
+            {"code": "BEC705x", "name": "Open Elective Course", "abbr": "OEC", "type": "elective", "credits": 3},
+            {"code": "BECL706", "name": "Mini Project", "abbr": "MP", "type": "project", "credits": 2},
+            {"code": "BEC707", "name": "Research Methodology and IPR", "abbr": "RMIPR", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "BEC801x", "name": "Professional Elective Course V", "abbr": "PEC5", "type": "elective", "credits": 3},
+            {"code": "BEC802x", "name": "Open Elective Course", "abbr": "OEC", "type": "elective", "credits": 3},
+            {"code": "BEC803", "name": "Internship / Technical Seminar", "abbr": "INT", "type": "core", "credits": 3},
+            {"code": "BEC804", "name": "Project Work", "abbr": "PROJ", "type": "project", "credits": 10}
+          ]
+        }
+      ]
+    }
+  ]
+}

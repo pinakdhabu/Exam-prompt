@@ -1,5 +1,5 @@
 {
-  "$schema": "exam-prompt-skills-v1",
+  "$schema": "../schemas/skills-manifest.json",
   "generated": "2026-06-22T13:03:54Z",
   "total_skills": 30,
   "skills": [

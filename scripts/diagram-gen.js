@@ -18,7 +18,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync, spawn } = require('child_process');
+const { execSync } = require('child_process');
 
 // === Config ===
 const OUTPUT_DIR = '_diagrams';  // relative to input file directory
@@ -129,7 +129,7 @@ function renderDot(code, outputSvg) {
 }
 
 // === Process All Diagrams in a File ===
-function processFile(inputPath, options = {}) {
+function processFile(inputPath, _options = {}) {
   const inputFile = path.resolve(inputPath);
   if (!fs.existsSync(inputFile)) {
     console.error(`ERROR: File not found: ${inputFile}`);

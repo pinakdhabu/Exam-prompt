@@ -1,0 +1,138 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "information-technology",
+    "name": "Information Technology",
+    "description": "University of Mumbai B.E. Information Technology subjects under R-2019 'C' Scheme (CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (F.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "FE101", "name": "Engineering Mathematics I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "FE102", "name": "Engineering Physics I", "abbr": "PHY1", "type": "core", "credits": 3},
+            {"code": "FE103", "name": "Engineering Chemistry I", "abbr": "CHEM1", "type": "core", "credits": 3},
+            {"code": "FE104", "name": "Engineering Mechanics", "abbr": "EM", "type": "core", "credits": 3},
+            {"code": "FE105", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 3},
+            {"code": "FE106", "name": "Environmental Studies I", "abbr": "EVS1", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "FE201", "name": "Engineering Mathematics II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "FE202", "name": "Engineering Physics II", "abbr": "PHY2", "type": "core", "credits": 3},
+            {"code": "FE203", "name": "Engineering Chemistry II", "abbr": "CHEM2", "type": "core", "credits": 3},
+            {"code": "FE204", "name": "Structured Programming Approach", "abbr": "SPA", "type": "core", "credits": 3},
+            {"code": "FE205", "name": "Basic Electronics Engineering", "abbr": "BXE", "type": "core", "credits": 3},
+            {"code": "FE206", "name": "Communication Skills", "abbr": "CS", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "ITC301", "name": "Engineering Mathematics III", "abbr": "M3", "type": "core", "credits": 4},
+            {"code": "ITC302", "name": "Discrete Structures and Graph Theory", "abbr": "DSGT", "type": "core", "credits": 3},
+            {"code": "ITC303", "name": "Data Structures", "abbr": "DS", "type": "core", "credits": 3},
+            {"code": "ITC304", "name": "Digital Logic and Computer Architecture", "abbr": "DLCA", "type": "core", "credits": 3},
+            {"code": "ITC305", "name": "Object Oriented Programming Methodology", "abbr": "OOPM", "type": "core", "credits": 3},
+            {"code": "ITL301", "name": "Data Structures Lab", "abbr": "DSL", "type": "lab", "credits": 2},
+            {"code": "ITL302", "name": "Object Oriented Programming Lab", "abbr": "OOPL", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "ITC401", "name": "Applied Mathematics IV", "abbr": "AM4", "type": "core", "credits": 4},
+            {"code": "ITC402", "name": "Analysis of Algorithms", "abbr": "AOA", "type": "core", "credits": 3},
+            {"code": "ITC403", "name": "Database Management Systems", "abbr": "DBMS", "type": "core", "credits": 3},
+            {"code": "ITC404", "name": "Operating Systems", "abbr": "OS", "type": "core", "credits": 3},
+            {"code": "ITC405", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 3},
+            {"code": "ITL401", "name": "Database Management Systems Lab", "abbr": "DBMSL", "type": "lab", "credits": 2},
+            {"code": "ITL402", "name": "Computer Networks Lab", "abbr": "CNL", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "ITC501", "name": "Software Engineering", "abbr": "SE", "type": "core", "credits": 3},
+            {"code": "ITC502", "name": "Web Technologies", "abbr": "WT", "type": "core", "credits": 3},
+            {"code": "ITC503", "name": "Theory of Computation", "abbr": "TOC", "type": "core", "credits": 3},
+            {"code": "ITC504", "name": "Data Warehousing and Mining", "abbr": "DWM", "type": "core", "credits": 3},
+            {"code": "ITDLO501x", "name": "Department Level Optional Course I", "abbr": "DLOC1", "type": "elective", "credits": 3},
+            {"code": "ITL501", "name": "Web Technologies Lab", "abbr": "WTL", "type": "lab", "credits": 2},
+            {"code": "ITL502", "name": "Data Warehousing and Mining Lab", "abbr": "DWML", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "ITC601", "name": "Artificial Intelligence", "abbr": "AI", "type": "core", "credits": 3},
+            {"code": "ITC602", "name": "Cryptography and System Security", "abbr": "CSS", "type": "core", "credits": 3},
+            {"code": "ITC603", "name": "Mobile Computing", "abbr": "MC", "type": "core", "credits": 3},
+            {"code": "ITC604", "name": "Software Testing and QA", "abbr": "STQA", "type": "core", "credits": 3},
+            {"code": "ITDLO601x", "name": "Department Level Optional Course II", "abbr": "DLOC2", "type": "elective", "credits": 3},
+            {"code": "ITL601", "name": "Artificial Intelligence Lab", "abbr": "AIL", "type": "lab", "credits": 2},
+            {"code": "ITL602", "name": "Mobile Computing Lab", "abbr": "MCL", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "ITC701", "name": "Machine Learning", "abbr": "ML", "type": "core", "credits": 3},
+            {"code": "ITC702", "name": "Big Data Analytics", "abbr": "BDA", "type": "core", "credits": 3},
+            {"code": "ITDLO701x", "name": "Department Level Optional Course III", "abbr": "DLOC3", "type": "elective", "credits": 3},
+            {"code": "ITDLO702x", "name": "Department Level Optional Course IV", "abbr": "DLOC4", "type": "elective", "credits": 3},
+            {"code": "ILO701x", "name": "Institute Level Optional Course I", "abbr": "ILOC1", "type": "elective", "credits": 3},
+            {"code": "ITL701", "name": "Machine Learning Lab", "abbr": "MLL", "type": "lab", "credits": 2},
+            {"code": "ITL702", "name": "Big Data Analytics Lab", "abbr": "BDAL", "type": "lab", "credits": 2},
+            {"code": "ITL703", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "ITC801", "name": "Distributed Computing", "abbr": "DC", "type": "core", "credits": 3},
+            {"code": "ITDLO801x", "name": "Department Level Optional Course V", "abbr": "DLOC5", "type": "elective", "credits": 3},
+            {"code": "ILO801x", "name": "Institute Level Optional Course II", "abbr": "ILOC2", "type": "elective", "credits": 3},
+            {"code": "ITL801", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 6}
+          ]
+        }
+      ]
+    }
+  ]
+}

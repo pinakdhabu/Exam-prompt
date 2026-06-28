@@ -20,6 +20,9 @@
   },
   "license": "MIT",
   "author": "Pinak Dhabu",
+  "bin": {
+    "exam-prompt": "./bin/exam-prompt.js"
+  },
   "type": "commonjs",
   "scripts": {
     "init": "bash scripts/init-project.sh",
@@ -65,7 +68,8 @@
     "sync:registry": "bash scripts/update-registry.sh",
     "sync:registry:check": "bash scripts/update-registry.sh --dry-run",
     "scaffold:university": "bash scripts/generate-university-scaffold.sh",
-    "test": "bash scripts/validate-skills.sh && bash scripts/update-registry.sh --dry-run"
+    "test": "node scripts/test-all.js",
+    "test:win": "node scripts/test-all.js"
   },
   "dependencies": {
     "marked": "^15.0.12",

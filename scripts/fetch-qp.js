@@ -122,7 +122,7 @@ async function withRetry(fn, retries = MAX_RETRIES, description = 'operation') {
 }
 
 // ---- Helper: Download a file ----
-function downloadFile(url, destPath) {
+function _downloadFile(url, destPath) {
   return new Promise((resolve, reject) => {
     const dir = path.dirname(destPath);
     fs.mkdirSync(dir, { recursive: true });
@@ -138,7 +138,7 @@ function downloadFile(url, destPath) {
         const redirectUrl = response.headers.location.startsWith('http')
           ? response.headers.location
           : new URL(response.headers.location, url).toString();
-        return downloadFile(redirectUrl, destPath).then(resolve).catch(reject);
+        return _downloadFile(redirectUrl, destPath).then(resolve).catch(reject);
       }
 
       if (response.statusCode !== 200) {
@@ -425,13 +425,13 @@ Subjects: dbms, toc, spos, cns, ai, dsbda, wt, daa, ml, dl, hpc,
   let listOnly = false;
   let listSubjects = false;
   let latestOnly = false;
-  let maxRetries = MAX_RETRIES;
+  let _maxRetries = MAX_RETRIES;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
     if (arg === '--semester' && args[i + 1]) { semesterFilter = args[++i]; }
     else if (arg === '--retry' && args[i + 1]) {
-      maxRetries = parseInt(args[++i], 10) || MAX_RETRIES;
+      _maxRetries = parseInt(args[++i], 10) || MAX_RETRIES;
     }
     else if (arg === '--year' && args[i + 1]) { yearFilter = args[++i]; }
     else if (arg === '--branch' && args[i + 1]) {

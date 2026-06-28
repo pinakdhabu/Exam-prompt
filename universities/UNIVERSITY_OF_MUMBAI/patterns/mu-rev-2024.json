@@ -1,0 +1,71 @@
+{
+  "id": "mu-rev-2024",
+  "name": "Mumbai University REV-2024 Scheme (NEP 2020)",
+  "description": "Mumbai University Revised 2024 Scheme — NEP 2020 aligned, 20 marks IA + 80 marks ESE, 5 units",
+  "years_active": ["2024", "2025"],
+  "exam_type": "end-semester",
+  "in_semester": {
+    "exists": true,
+    "name": "Internal Assessment (IA)",
+    "marks": 20,
+    "duration_hours": 1,
+    "types": ["internal tests", "assignments", "projects", "presentations", "practicals"],
+    "notes": "NEP-aligned continuous assessment with multiple components throughout the semester."
+  },
+  "end_semester": {
+    "total_marks": 80,
+    "time_hours": 3,
+    "total_units": 5,
+    "exam_units": 5,
+    "or_pairs": 5,
+    "instructions": [
+      "Question No. 1 is compulsory (covering multiple units).",
+      "Attempt any THREE from Q.2 to Q.5 (or equivalent choice structure).",
+      "Answer Q.1 or Q.2, Q.3 or Q.4, Q.5 or Q.6, Q.7 or Q.8, Q.9 or Q.10.",
+      "Neat diagrams must be drawn wherever necessary.",
+      "Figures to the right indicate full marks.",
+      "Assume suitable data, if necessary."
+    ],
+    "question_structure": {
+      "type": "OR_PAIRS",
+      "description": "Five units, one OR-pair per unit. Total 10 questions, pick 5 (one per unit). Each question carries 16 marks with sub-questions.",
+      "total_questions": 10,
+      "or_pairs": 5,
+      "labeling": "Q1/Q2 (Unit 1), Q3/Q4 (Unit 2), Q5/Q6 (Unit 3), Q7/Q8 (Unit 4), Q9/Q10 (Unit 5)",
+      "unit_mapping": {
+        "Unit 1": "Q1/Q2",
+        "Unit 2": "Q3/Q4",
+        "Unit 3": "Q5/Q6",
+        "Unit 4": "Q7/Q8",
+        "Unit 5": "Q9/Q10"
+      },
+      "sub_questions": {
+        "pattern": "a+b+c or a+b",
+        "mark_options": [
+          {"distribution": "8+8", "description": "Two sub-questions (8+8=16)"},
+          {"distribution": "10+6", "description": "Two sub-questions (10+6=16)"},
+          {"distribution": "5+5+6", "description": "Three sub-questions (5+5+6=16)"},
+          {"distribution": "4+6+6", "description": "Three sub-questions (4+6+6=16)"}
+        ]
+      }
+    }
+  },
+  "total_marks": 100,
+  "pass_percentage": 40,
+  "grading": {
+    "type": "SGPA/CGPA",
+    "scale": 10,
+    "pass_grade": "P",
+    "grade_mapping": {
+      "O": [90, 100],
+      "A+": [80, 89],
+      "A": [70, 79],
+      "B+": [60, 69],
+      "B": [55, 59],
+      "C": [50, 54],
+      "D": [45, 49],
+      "E": [40, 44],
+      "F": [0, 39]
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "civil-engineering",
+    "name": "Civil Engineering",
+    "description": "VTU BE Civil Engineering subjects under the 2022 Scheme (NEP-aligned, CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (Common to all branches)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1 (Physics Cycle)",
+          "subjects": [
+            {"code": "BMATE101", "name": "Mathematics for CV Stream I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "BPHYE102/202", "name": "Physics for CV Stream", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "BCHEE102/202", "name": "Chemistry for CV Stream", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "BPOPS103/203", "name": "Principles of Programming Using C", "abbr": "C", "type": "core", "credits": 4},
+            {"code": "BESCK104x", "name": "Engineering Science Course", "abbr": "ESC", "type": "core", "credits": 3},
+            {"code": "BETCK105x", "name": "Emerging Technology Course", "abbr": "ETC", "type": "core", "credits": 3},
+            {"code": "BENGK106", "name": "Communicative English", "abbr": "ENG", "type": "core", "credits": 1},
+            {"code": "BIDTK158", "name": "Innovation and Design Thinking", "abbr": "IDT", "type": "core", "credits": 1},
+            {"code": "BSFHK158", "name": "Scientific Foundations for Health", "abbr": "SFH", "type": "core", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2 (Chemistry Cycle)",
+          "subjects": [
+            {"code": "BMATE201", "name": "Mathematics for CV Stream II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "BPHYE102/202", "name": "Physics for CV Stream", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "BCHEE102/202", "name": "Chemistry for CV Stream", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "BPOPS103/203", "name": "Principles of Programming Using C", "abbr": "C", "type": "core", "credits": 4},
+            {"code": "BESCK204x", "name": "Engineering Science Course", "abbr": "ESC", "type": "core", "credits": 3},
+            {"code": "BETCK205x", "name": "Emerging Technology Course", "abbr": "ETC", "type": "core", "credits": 3},
+            {"code": "BPWSK206", "name": "Professional Writing Skills in English", "abbr": "PWS", "type": "core", "credits": 1},
+            {"code": "BICOK207", "name": "Indian Constitution", "abbr": "IC", "type": "core", "credits": 1},
+            {"code": "BIDTK258", "name": "Innovation and Design Thinking", "abbr": "IDT", "type": "core", "credits": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "BCV301", "name": "Mathematics for Civil Engineering III", "abbr": "M3", "type": "core", "credits": 4},
+            {"code": "BCV302", "name": "Engineering Geology", "abbr": "EG", "type": "core", "credits": 3},
+            {"code": "BCV303", "name": "Mechanics of Materials", "abbr": "MOM", "type": "core", "credits": 3},
+            {"code": "BCV304", "name": "Fluid Mechanics and Hydraulics", "abbr": "FMH", "type": "core", "credits": 3},
+            {"code": "BCVL305", "name": "Fluid Mechanics Lab", "abbr": "FML", "type": "lab", "credits": 1},
+            {"code": "BCVL306", "name": "Engineering Geology Lab", "abbr": "EGL", "type": "lab", "credits": 1},
+            {"code": "BSCK307", "name": "Social Connect and Responsibility", "abbr": "SCR", "type": "core", "credits": 1},
+            {"code": "BNSK359", "name": "National Service Scheme", "abbr": "NSS", "type": "audit", "credits": 0}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "BCV401", "name": "Basic Surveying", "abbr": "BS", "type": "core", "credits": 3},
+            {"code": "BCV402", "name": "Building Materials and Construction", "abbr": "BMC", "type": "core", "credits": 3},
+            {"code": "BCV403", "name": "Structural Analysis I", "abbr": "SA1", "type": "core", "credits": 4},
+            {"code": "BCV404", "name": "Concrete Technology", "abbr": "CT", "type": "core", "credits": 3},
+            {"code": "BCVL405", "name": "Surveying Lab", "abbr": "SL", "type": "lab", "credits": 1},
+            {"code": "BCVL406", "name": "Concrete Technology Lab", "abbr": "CTL", "type": "lab", "credits": 1},
+            {"code": "BUHK408", "name": "Universal Human Values", "abbr": "UHV", "type": "core", "credits": 1},
+            {"code": "BNSK459", "name": "National Service Scheme", "abbr": "NSS", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "BCV501", "name": "Structural Analysis II", "abbr": "SA2", "type": "core", "credits": 4},
+            {"code": "BCV502", "name": "Geotechnical Engineering", "abbr": "GE", "type": "core", "credits": 4},
+            {"code": "BCV503", "name": "Water Supply and Wastewater Engineering", "abbr": "WSWE", "type": "core", "credits": 3},
+            {"code": "BCVL504", "name": "Geotechnical Engineering Lab", "abbr": "GEL", "type": "lab", "credits": 1},
+            {"code": "BCV515x", "name": "Professional Elective Course I", "abbr": "PEC1", "type": "elective", "credits": 3},
+            {"code": "BCV556x", "name": "Ability Enhancement Course V", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BPEK559", "name": "Physical Education", "abbr": "PE", "type": "audit", "credits": 0}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "BCV601", "name": "Design of RC Structures", "abbr": "DRCS", "type": "core", "credits": 4},
+            {"code": "BCV602", "name": "Highway Engineering", "abbr": "HE", "type": "core", "credits": 3},
+            {"code": "BCV603", "name": "Hydrology and Water Resources Engineering", "abbr": "HWRE", "type": "core", "credits": 3},
+            {"code": "BCVL604", "name": "Highway Engineering Lab", "abbr": "HEL", "type": "lab", "credits": 1},
+            {"code": "BCV615x", "name": "Professional Elective Course II", "abbr": "PEC2", "type": "elective", "credits": 3},
+            {"code": "BCV656x", "name": "Ability Enhancement Course VI", "abbr": "AEC", "type": "core", "credits": 1},
+            {"code": "BYOK659", "name": "Yoga", "abbr": "YOGA", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "vtu-cbcs-2022",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "BCV701", "name": "Design of Steel Structures", "abbr": "DSS", "type": "core", "credits": 3},
+            {"code": "BCV702", "name": "Estimation and Costing", "abbr": "EC", "type": "core", "credits": 3},
+            {"code": "BCV703x", "name": "Professional Elective Course III", "abbr": "PEC3", "type": "elective", "credits": 3},
+            {"code": "BCV704x", "name": "Professional Elective Course IV", "abbr": "PEC4", "type": "elective", "credits": 3},
+            {"code": "BCV705x", "name": "Open Elective Course", "abbr": "OEC", "type": "elective", "credits": 3},
+            {"code": "BCVL706", "name": "Mini Project", "abbr": "MP", "type": "project", "credits": 2},
+            {"code": "BCV707", "name": "Research Methodology and IPR", "abbr": "RMIPR", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "BCV801x", "name": "Professional Elective Course V", "abbr": "PEC5", "type": "elective", "credits": 3},
+            {"code": "BCV802x", "name": "Open Elective Course", "abbr": "OEC", "type": "elective", "credits": 3},
+            {"code": "BCV803", "name": "Internship / Technical Seminar", "abbr": "INT", "type": "core", "credits": 3},
+            {"code": "BCV804", "name": "Project Work", "abbr": "PROJ", "type": "project", "credits": 10}
+          ]
+        }
+      ]
+    }
+  ]
+}

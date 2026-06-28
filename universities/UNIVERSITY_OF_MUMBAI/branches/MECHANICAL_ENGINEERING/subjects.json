@@ -1,0 +1,138 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "mechanical-engineering",
+    "name": "Mechanical Engineering",
+    "description": "University of Mumbai B.E. Mechanical Engineering subjects under R-2019 'C' Scheme (CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (F.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "FE101", "name": "Engineering Mathematics I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "FE102", "name": "Engineering Physics I", "abbr": "PHY1", "type": "core", "credits": 3},
+            {"code": "FE103", "name": "Engineering Chemistry I", "abbr": "CHEM1", "type": "core", "credits": 3},
+            {"code": "FE104", "name": "Engineering Mechanics", "abbr": "EM", "type": "core", "credits": 3},
+            {"code": "FE105", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 3},
+            {"code": "FE106", "name": "Environmental Studies I", "abbr": "EVS1", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "FE201", "name": "Engineering Mathematics II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "FE202", "name": "Engineering Physics II", "abbr": "PHY2", "type": "core", "credits": 3},
+            {"code": "FE203", "name": "Engineering Chemistry II", "abbr": "CHEM2", "type": "core", "credits": 3},
+            {"code": "FE204", "name": "Structured Programming Approach", "abbr": "SPA", "type": "core", "credits": 3},
+            {"code": "FE205", "name": "Basic Electronics Engineering", "abbr": "BXE", "type": "core", "credits": 3},
+            {"code": "FE206", "name": "Communication Skills", "abbr": "CS", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (S.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "MEC301", "name": "Engineering Mathematics III", "abbr": "M3", "type": "core", "credits": 4},
+            {"code": "MEC302", "name": "Mechanics of Solids", "abbr": "MOS", "type": "core", "credits": 3},
+            {"code": "MEC303", "name": "Engineering Materials and Metallurgy", "abbr": "EMM", "type": "core", "credits": 3},
+            {"code": "MEC304", "name": "Production Process I", "abbr": "PP1", "type": "core", "credits": 3},
+            {"code": "MEC305", "name": "Thermodynamics", "abbr": "TD", "type": "core", "credits": 3},
+            {"code": "MEL301", "name": "Mechanics of Solids Lab", "abbr": "MOSL", "type": "lab", "credits": 2},
+            {"code": "MEL302", "name": "Production Process I Lab", "abbr": "PP1L", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "MEC401", "name": "Engineering Mathematics IV", "abbr": "M4", "type": "core", "credits": 4},
+            {"code": "MEC402", "name": "Fluid Mechanics", "abbr": "FM", "type": "core", "credits": 3},
+            {"code": "MEC403", "name": "Production Process II", "abbr": "PP2", "type": "core", "credits": 3},
+            {"code": "MEC404", "name": "Applied Thermodynamics", "abbr": "ATD", "type": "core", "credits": 3},
+            {"code": "MEC405", "name": "Machine Drawing and CAD", "abbr": "MCAD", "type": "core", "credits": 3},
+            {"code": "MEL401", "name": "Fluid Mechanics Lab", "abbr": "FML", "type": "lab", "credits": 2},
+            {"code": "MEL402", "name": "Production Process II Lab", "abbr": "PP2L", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (T.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "MEC501", "name": "Design of Machine Elements I", "abbr": "DME1", "type": "core", "credits": 3},
+            {"code": "MEC502", "name": "Heat and Mass Transfer", "abbr": "HMT", "type": "core", "credits": 3},
+            {"code": "MEC503", "name": "Theory of Machines I", "abbr": "TOM1", "type": "core", "credits": 3},
+            {"code": "MEC504", "name": "Metrology and Quality Engineering", "abbr": "MQE", "type": "core", "credits": 3},
+            {"code": "MEDLO501x", "name": "Department Level Optional Course I", "abbr": "DLOC1", "type": "elective", "credits": 3},
+            {"code": "MEL501", "name": "Heat and Mass Transfer Lab", "abbr": "HMTL", "type": "lab", "credits": 2},
+            {"code": "MEL502", "name": "Metrology and Quality Engineering Lab", "abbr": "MQEL", "type": "lab", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "MEC601", "name": "Design of Machine Elements II", "abbr": "DME2", "type": "core", "credits": 3},
+            {"code": "MEC602", "name": "Theory of Machines II", "abbr": "TOM2", "type": "core", "credits": 3},
+            {"code": "MEC603", "name": "Refrigeration and Air Conditioning", "abbr": "RAC", "type": "core", "credits": 3},
+            {"code": "MEC604", "name": "Computer Integrated Manufacturing", "abbr": "CIM", "type": "core", "credits": 3},
+            {"code": "MEDLO601x", "name": "Department Level Optional Course II", "abbr": "DLOC2", "type": "elective", "credits": 3},
+            {"code": "MEL601", "name": "Theory of Machines Lab", "abbr": "TOML", "type": "lab", "credits": 2},
+            {"code": "MEL602", "name": "CIM Lab", "abbr": "CIML", "type": "lab", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.E.)",
+      "pattern": "mu-rev-2019",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "MEC701", "name": "CAD/CAM", "abbr": "CADCAM", "type": "core", "credits": 3},
+            {"code": "MEC702", "name": "Finite Element Analysis", "abbr": "FEA", "type": "core", "credits": 3},
+            {"code": "MEDLO701x", "name": "Department Level Optional Course III", "abbr": "DLOC3", "type": "elective", "credits": 3},
+            {"code": "MEDLO702x", "name": "Department Level Optional Course IV", "abbr": "DLOC4", "type": "elective", "credits": 3},
+            {"code": "ILO701x", "name": "Institute Level Optional Course I", "abbr": "ILOC1", "type": "elective", "credits": 3},
+            {"code": "MEL701", "name": "CAD/CAM Lab", "abbr": "CADCAML", "type": "lab", "credits": 2},
+            {"code": "MEL702", "name": "FEA Lab", "abbr": "FEAL", "type": "lab", "credits": 2},
+            {"code": "MEL703", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "MEC801", "name": "Energy Engineering", "abbr": "EE", "type": "core", "credits": 3},
+            {"code": "MEDLO801x", "name": "Department Level Optional Course V", "abbr": "DLOC5", "type": "elective", "credits": 3},
+            {"code": "ILO801x", "name": "Institute Level Optional Course II", "abbr": "ILOC2", "type": "elective", "credits": 3},
+            {"code": "MEL801", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 6}
+          ]
+        }
+      ]
+    }
+  ]
+}
