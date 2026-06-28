@@ -1,0 +1,131 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "mechanical-engineering",
+    "name": "Mechanical Engineering",
+    "description": "JNTUA B.Tech Mechanical Engineering subjects under R23 Regulation (NEP-aligned), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (B.Tech I & II Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "23AHSBS01", "name": "Calculus & Differential Equations", "abbr": "CDE", "type": "core", "credits": 4},
+            {"code": "23AHSBS02", "name": "Engineering Physics", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "23AHSBS03", "name": "Communicative English", "abbr": "ENG", "type": "core", "credits": 2},
+            {"code": "23AHSBS04", "name": "C Programming", "abbr": "CP", "type": "core", "credits": 3},
+            {"code": "23AHSBS05", "name": "Engineering Graphics", "abbr": "EG", "type": "core", "credits": 3},
+            {"code": "23AHSBS07", "name": "Physics Lab", "abbr": "PHYL", "type": "lab", "credits": 1.5},
+            {"code": "23AHSBS08", "name": "C Programming Lab", "abbr": "CPL", "type": "lab", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "23AHSBS10", "name": "Linear Algebra & Transform", "abbr": "LAT", "type": "core", "credits": 4},
+            {"code": "23AHSBS11", "name": "Engineering Chemistry", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "23AHSBS12", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 3},
+            {"code": "23AHSBS13", "name": "Engineering Mechanics", "abbr": "EM", "type": "core", "credits": 3},
+            {"code": "23AHSBS15", "name": "Chemistry Lab", "abbr": "CHEML", "type": "lab", "credits": 1},
+            {"code": "23AHSBS16", "name": "Engineering Workshop", "abbr": "EW", "type": "lab", "credits": 1.5},
+            {"code": "23AHSBS18", "name": "Environmental Science", "abbr": "EVS", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (B.Tech III & IV Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "23AHSBS19", "name": "Probability & Statistics", "abbr": "PS", "type": "core", "credits": 3},
+            {"code": "23A03301", "name": "Engineering Thermodynamics", "abbr": "ET", "type": "core", "credits": 3},
+            {"code": "23A03302", "name": "Fluid Mechanics and Hydraulic Machines", "abbr": "FMHM", "type": "core", "credits": 3},
+            {"code": "23A03303", "name": "Strength of Materials", "abbr": "SOM", "type": "core", "credits": 3},
+            {"code": "23A03304", "name": "Manufacturing Processes", "abbr": "MP", "type": "core", "credits": 3},
+            {"code": "23A03305", "name": "Strength of Materials Lab", "abbr": "SOML", "type": "lab", "credits": 1.5},
+            {"code": "23A03306", "name": "Manufacturing Processes Lab", "abbr": "MPL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "23AHSBS20", "name": "Numerical Methods", "abbr": "NM", "type": "core", "credits": 3},
+            {"code": "23A03401", "name": "Applied Thermodynamics", "abbr": "ATD", "type": "core", "credits": 3},
+            {"code": "23A03402", "name": "Kinematics and Dynamics of Machinery", "abbr": "KDM", "type": "core", "credits": 3},
+            {"code": "23A03403", "name": "Machine Drawing and CAD", "abbr": "MCAD", "type": "core", "credits": 3},
+            {"code": "23A03404", "name": "Fluid Mechanics Lab", "abbr": "FML", "type": "lab", "credits": 1.5},
+            {"code": "23A03405", "name": "Machine Drawing Lab", "abbr": "MDL", "type": "lab", "credits": 1.5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (B.Tech V & VI Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "23A03501", "name": "Design of Machine Elements", "abbr": "DME", "type": "core", "credits": 3},
+            {"code": "23A03502", "name": "Heat and Mass Transfer", "abbr": "HMT", "type": "core", "credits": 3},
+            {"code": "23A03503", "name": "CAD/CAM", "abbr": "CADCAM", "type": "core", "credits": 3},
+            {"code": "23A03504a", "name": "Professional Elective I: Automation", "abbr": "AUTO", "type": "elective", "credits": 3},
+            {"code": "23A03505", "name": "Heat and Mass Transfer Lab", "abbr": "HMTL", "type": "lab", "credits": 1.5},
+            {"code": "23A03506", "name": "CAD/CAM Lab", "abbr": "CADL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "23A03601", "name": "Refrigeration and Air Conditioning", "abbr": "RAC", "type": "core", "credits": 3},
+            {"code": "23A03602", "name": "Finite Element Methods", "abbr": "FEM", "type": "core", "credits": 3},
+            {"code": "23A03603a", "name": "Professional Elective II: Robotics", "abbr": "ROBO", "type": "elective", "credits": 3},
+            {"code": "23A03603b", "name": "Open Elective I: Entrepreneurship", "abbr": "ENT", "type": "elective", "credits": 3},
+            {"code": "23A03604", "name": "Metrology Lab", "abbr": "ML", "type": "lab", "credits": 1.5},
+            {"code": "23A03605", "name": "Skill Course: Python", "abbr": "PYTHON", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.Tech VII & VIII Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "23A03701a", "name": "Professional Elective III: Production Planning", "abbr": "PPM", "type": "elective", "credits": 3},
+            {"code": "23A03701b", "name": "Open Elective II: Disaster Management", "abbr": "DM", "type": "elective", "credits": 3},
+            {"code": "23A03702", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 3},
+            {"code": "23A03703", "name": "Technical Seminar", "abbr": "TS", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "23A03801", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 8},
+            {"code": "23A03802", "name": "Comprehensive Viva Voce", "abbr": "CVV", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    }
+  ]
+}

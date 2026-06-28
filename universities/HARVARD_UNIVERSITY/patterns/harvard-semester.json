@@ -1,0 +1,64 @@
+{
+  "id": "harvard-semester",
+  "name": "Harvard Standard Semester Pattern",
+  "description": "Standard US semester pattern — 4-credit courses (one semester each). Letter grades A-F on 4.0 GPA scale. Fall semester (Sep-Dec), Spring semester (Jan-May). Reading period before final exams each term.",
+  "years_active": ["2020", "2021", "2022", "2023", "2024", "2025"],
+  "exam_type": "end-semester",
+  "in_semester": {
+    "exists": true,
+    "name": "Midterm / Continuous Assessment",
+    "marks": null,
+    "duration_hours": null,
+    "types": ["midterm exams", "problem sets", "projects", "papers", "participation", "quizzes"],
+    "notes": "Harvard courses have varied assessment — typically problem sets (20-30%), midterm (20-30%), final exam (40-50%), plus participation/projects. No fixed marks split."
+  },
+  "end_semester": {
+    "total_marks": null,
+    "time_hours": 3,
+    "total_units": null,
+    "exam_units": null,
+    "or_pairs": null,
+    "instructions": [
+      "Answer all questions. The final examination covers the full semester's material.",
+      "Show all work for full credit.",
+      "This is a closed-book examination unless otherwise specified."
+    ],
+    "question_structure": {
+      "type": "FULL_SYLLABUS",
+      "description": "Comprehensive final examination. Format varies by course — may include problem-solving, essays, proofs, multiple choice. Typically 3-hour exam during exam period after reading week."
+    }
+  },
+  "total_marks": null,
+  "pass_percentage": 60,
+  "grading": {
+    "type": "GPA (4.0)",
+    "scale": 4.0,
+    "pass_grade": "D",
+    "grade_mapping": {
+      "A": [93, 100],
+      "A-": [90, 92],
+      "B+": [87, 89],
+      "B": [83, 86],
+      "B-": [80, 82],
+      "C+": [77, 79],
+      "C": [73, 76],
+      "C-": [70, 72],
+      "D+": [67, 69],
+      "D": [60, 66],
+      "F": [0, 59]
+    },
+    "gpa_values": {
+      "A": 4.0,
+      "A-": 3.67,
+      "B+": 3.33,
+      "B": 3.0,
+      "B-": 2.67,
+      "C+": 2.33,
+      "C": 2.0,
+      "C-": 1.67,
+      "D+": 1.33,
+      "D": 1.0,
+      "F": 0.0
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "branch": {
     "id": "computer-science",
     "name": "Computer Science",
-    "description": "Harvard University Computer Science concentration subjects (AB/SB)"
+    "description": "Harvard University Computer Science concentration subjects (AB/SB) — real course listing from seas.harvard.edu. Courses are 4 credits each unless noted."
   },
   "years": [
     {
@@ -15,64 +15,95 @@
           "id": "intro",
           "name": "Introductory Sequence",
           "subjects": [
-            {"code": "CS50", "name": "Introduction to Computer Science I", "abbr": "CS50", "type": "core"},
-            {"code": "CS20", "name": "Discrete Mathematics", "abbr": "DM", "type": "core"},
-            {"code": "CS51", "name": "Abstraction and Design in Computation", "abbr": "CS51", "type": "core"},
-            {"code": "CS61", "name": "Systems Programming and Machine Organization", "abbr": "CS61", "type": "core"},
-            {"code": "Stat110", "name": "Probability", "abbr": "PROB", "type": "core"}
+            {"code": "CS50", "name": "Introduction to Computer Science", "abbr": "CS50", "type": "core", "credits": 4},
+            {"code": "CS51", "name": "Abstraction and Design in Computation", "abbr": "CS51", "type": "core", "credits": 4},
+            {"code": "CS61", "name": "Systems Programming and Machine Organization", "abbr": "CS61", "type": "core", "credits": 4},
+            {"code": "Math 1ab", "name": "Calculus", "abbr": "CALC", "type": "core", "credits": 4},
+            {"code": "Math 21a", "name": "Linear Algebra", "abbr": "LA", "type": "core", "credits": 4},
+            {"code": "Stat 110", "name": "Probability", "abbr": "PROB", "type": "core", "credits": 4}
           ]
         }
       ]
     },
     {
       "id": "theory",
-      "name": "Theory Courses",
+      "name": "Theory & Algorithms",
       "pattern": "harvard-semester",
       "semesters": [
         {
           "id": "theory",
-          "name": "Theory",
+          "name": "Theory & Algorithms",
           "subjects": [
-            {"code": "CS121", "name": "Introduction to Theoretical Computer Science", "abbr": "TCS", "type": "core"},
-            {"code": "CS124", "name": "Algorithms", "abbr": "ALGO", "type": "core"},
-            {"code": "CS127", "name": "Cryptography", "abbr": "CRYPTO", "type": "elective"},
-            {"code": "CS221", "name": "Computational Complexity", "abbr": "COMPLEX", "type": "elective"}
+            {"code": "CS121", "name": "Software Engineering", "abbr": "SE", "type": "core", "credits": 4},
+            {"code": "CS124", "name": "Algorithms and Data Structures", "abbr": "ALGO", "type": "core", "credits": 4},
+            {"code": "CS125", "name": "Algorithms and Computation", "abbr": "ALGO2", "type": "core", "credits": 4},
+            {"code": "CS127", "name": "Optimization", "abbr": "OPT", "type": "elective", "credits": 4},
+            {"code": "CS128", "name": "AI for Inference and Discovery", "abbr": "AIID", "type": "elective", "credits": 4},
+            {"code": "CS225", "name": "Randomized Algorithms", "abbr": "RA", "type": "elective", "credits": 4}
           ]
         }
       ]
     },
     {
       "id": "systems",
-      "name": "Systems Courses",
+      "name": "Systems & Hardware",
       "pattern": "harvard-semester",
       "semesters": [
         {
           "id": "systems",
-          "name": "Systems",
+          "name": "Systems, Hardware, and Programming Languages",
           "subjects": [
-            {"code": "CS141", "name": "Computing Hardware", "abbr": "HW", "type": "elective"},
-            {"code": "CS143", "name": "Compilers", "abbr": "COMP", "type": "elective"},
-            {"code": "CS144", "name": "Operating Systems", "abbr": "OS", "type": "elective"},
-            {"code": "CS145", "name": "Networking", "abbr": "NET", "type": "elective"},
-            {"code": "CS146", "name": "Database Systems", "abbr": "DB", "type": "elective"}
+            {"code": "CS141", "name": "Computing Hardware", "abbr": "HW", "type": "elective", "credits": 4},
+            {"code": "CS143", "name": "Computer Networks", "abbr": "CN", "type": "elective", "credits": 4},
+            {"code": "CS144", "name": "Operating Systems", "abbr": "OS", "type": "elective", "credits": 4},
+            {"code": "CS146", "name": "Computer Architecture", "abbr": "ARCH", "type": "elective", "credits": 4},
+            {"code": "CS148", "name": "Programming Languages", "abbr": "PL", "type": "elective", "credits": 4},
+            {"code": "CS152", "name": "Programming Language Concepts", "abbr": "PLC", "type": "elective", "credits": 4},
+            {"code": "CS153", "name": "Compilers", "abbr": "COMP", "type": "elective", "credits": 4},
+            {"code": "CS161", "name": "Cryptography", "abbr": "CRYPTO", "type": "elective", "credits": 4},
+            {"code": "CS165", "name": "Data Systems", "abbr": "DS", "type": "elective", "credits": 4},
+            {"code": "CS179", "name": "Embedded Systems", "abbr": "ES", "type": "elective", "credits": 4},
+            {"code": "CS205", "name": "Parallel Computing", "abbr": "PC", "type": "elective", "credits": 4},
+            {"code": "CS242", "name": "Computing at Scale", "abbr": "SCALE", "type": "elective", "credits": 4}
           ]
         }
       ]
     },
     {
       "id": "ai-ml",
-      "name": "AI/ML Courses",
+      "name": "AI, ML & Data Science",
       "pattern": "harvard-semester",
       "semesters": [
         {
           "id": "ai-ml",
-          "name": "Artificial Intelligence & Machine Learning",
+          "name": "Artificial Intelligence, Machine Learning, and Data Science",
           "subjects": [
-            {"code": "CS181", "name": "Machine Learning", "abbr": "ML", "type": "elective"},
-            {"code": "CS182", "name": "Artificial Intelligence", "abbr": "AI", "type": "elective"},
-            {"code": "CS184", "name": "Neural Networks", "abbr": "NN", "type": "elective"},
-            {"code": "CS189", "name": "Computational Vision", "abbr": "CV", "type": "elective"},
-            {"code": "CS279", "name": "Computational Biology", "abbr": "CB", "type": "elective"}
+            {"code": "CS181", "name": "Machine Learning", "abbr": "ML", "type": "elective", "credits": 4},
+            {"code": "CS182", "name": "Artificial Intelligence", "abbr": "AI", "type": "elective", "credits": 4},
+            {"code": "CS187", "name": "Computational Linguistics", "abbr": "CL", "type": "elective", "credits": 4},
+            {"code": "CS189", "name": "Autonomous Robot Systems", "abbr": "ROBO", "type": "elective", "credits": 4},
+            {"code": "CS234", "name": "Convex Optimization", "abbr": "CO", "type": "elective", "credits": 4},
+            {"code": "CS236", "name": "Advanced AI", "abbr": "AAI", "type": "elective", "credits": 4}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Applications & Security",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "applications",
+          "name": "Applications, Visualization, Security & Other",
+          "subjects": [
+            {"code": "CS171", "name": "Visualization", "abbr": "VIZ", "type": "elective", "credits": 4},
+            {"code": "CS175", "name": "Computer Graphics", "abbr": "CG", "type": "elective", "credits": 4},
+            {"code": "CS249", "name": "Software Security", "abbr": "SS", "type": "elective", "credits": 4},
+            {"code": "CS252", "name": "Network Security", "abbr": "NS", "type": "elective", "credits": 4},
+            {"code": "CS263", "name": "Wireless Networks", "abbr": "WN", "type": "elective", "credits": 4},
+            {"code": "CS264", "name": "Blockchain", "abbr": "BC", "type": "elective", "credits": 4},
+            {"code": "CS265", "name": "Big Data", "abbr": "BD", "type": "elective", "credits": 4}
           ]
         }
       ]

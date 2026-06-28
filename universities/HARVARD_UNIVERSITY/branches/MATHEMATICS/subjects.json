@@ -1,0 +1,68 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "mathematics",
+    "name": "Mathematics",
+    "description": "Harvard University Mathematics concentration subjects (A.B.) — representative course listing"
+  },
+  "years": [
+    {
+      "id": "foundations",
+      "name": "Foundational Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "intro",
+          "name": "Introductory Sequence",
+          "subjects": [
+            {"code": "Math 1ab", "name": "Calculus", "abbr": "CALC", "type": "core", "credits": 4},
+            {"code": "Math 21a", "name": "Multivariable Calculus", "abbr": "MVC", "type": "core", "credits": 4},
+            {"code": "Math 21b", "name": "Linear Algebra", "abbr": "LA", "type": "core", "credits": 4},
+            {"code": "Math 23a", "name": "Real Analysis", "abbr": "RA", "type": "core", "credits": 4},
+            {"code": "Math 23b", "name": "Complex Analysis", "abbr": "CA", "type": "core", "credits": 4},
+            {"code": "Math 22a", "name": "Vector Calculus and Linear Algebra", "abbr": "VCLA", "type": "core", "credits": 4}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "name": "Core Mathematics",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "core-courses",
+          "name": "Core Theory Courses",
+          "subjects": [
+            {"code": "Math 101", "name": "Abstract Algebra", "abbr": "AA", "type": "core", "credits": 4},
+            {"code": "Math 113", "name": "Real Analysis II", "abbr": "RA2", "type": "core", "credits": 4},
+            {"code": "Math 114", "name": "Complex Analysis II", "abbr": "CA2", "type": "core", "credits": 4},
+            {"code": "Math 121", "name": "Topology", "abbr": "TOP", "type": "core", "credits": 4},
+            {"code": "Math 123", "name": "Differential Geometry", "abbr": "DG", "type": "elective", "credits": 4},
+            {"code": "Math 129", "name": "Number Theory", "abbr": "NT", "type": "elective", "credits": 4}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "advanced",
+          "name": "Advanced Mathematics Electives",
+          "subjects": [
+            {"code": "Math 131", "name": "Algebraic Topology", "abbr": "AT", "type": "elective", "credits": 4},
+            {"code": "Math 132", "name": "Algebraic Geometry", "abbr": "AG", "type": "elective", "credits": 4},
+            {"code": "Math 141", "name": "Differential Equations", "abbr": "DE", "type": "elective", "credits": 4},
+            {"code": "Math 145", "name": "Functional Analysis", "abbr": "FA", "type": "elective", "credits": 4},
+            {"code": "Math 152", "name": "Combinatorics", "abbr": "COMB", "type": "elective", "credits": 4},
+            {"code": "Math 155", "name": "Probability Theory", "abbr": "PROB", "type": "elective", "credits": 4},
+            {"code": "Math 161", "name": "Mathematical Logic", "abbr": "ML", "type": "elective", "credits": 4}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "civil-engineering",
+    "name": "Civil Engineering",
+    "description": "IIT Bombay B.Tech Civil Engineering subjects organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (Semesters 1 & 2)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Autumn Semester (Sem 1)",
+          "subjects": [
+            {"code": "MA 105", "name": "Calculus", "abbr": "CALC", "type": "core", "credits": 8},
+            {"code": "PH 107", "name": "Quantum Physics and Applications", "abbr": "QPA", "type": "core", "credits": 6},
+            {"code": "CH 105", "name": "Organic/Inorganic Chemistry", "abbr": "CHEM", "type": "core", "credits": 6},
+            {"code": "CS 101", "name": "Computer Programming and Utilization", "abbr": "CPU", "type": "core", "credits": 6},
+            {"code": "ME 119", "name": "Engineering Graphics and Drawing", "abbr": "EGD", "type": "core", "credits": 6},
+            {"code": "HS 101", "name": "English for Communication", "abbr": "ENG", "type": "core", "credits": 4}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Spring Semester (Sem 2)",
+          "subjects": [
+            {"code": "MA 106", "name": "Linear Algebra", "abbr": "LA", "type": "core", "credits": 8},
+            {"code": "PH 108", "name": "Basics of Electricity and Magnetism", "abbr": "BEM", "type": "core", "credits": 6},
+            {"code": "EE 101", "name": "Introduction to Electrical Engineering", "abbr": "IEE", "type": "core", "credits": 6},
+            {"code": "ME 109", "name": "Thermodynamics and Fluid Mechanics", "abbr": "TFM", "type": "core", "credits": 6},
+            {"code": "BB 101", "name": "Biology", "abbr": "BIO", "type": "core", "credits": 4},
+            {"code": "CE 102", "name": "Introduction to Civil Engineering", "abbr": "ICE", "type": "core", "credits": 6}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (Semesters 3 & 4)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Autumn Semester (Sem 3)",
+          "subjects": [
+            {"code": "MA 207", "name": "Differential Equations II", "abbr": "DE2", "type": "core", "credits": 6},
+            {"code": "CE 201", "name": "Mechanics of Solids", "abbr": "MOS", "type": "core", "credits": 6},
+            {"code": "CE 203", "name": "Fluid Mechanics", "abbr": "FM", "type": "core", "credits": 6},
+            {"code": "CE 205", "name": "Surveying", "abbr": "SURV", "type": "core", "credits": 6},
+            {"code": "CE 207", "name": "Geology and Soil Mechanics", "abbr": "GSM", "type": "core", "credits": 6},
+            {"code": "HS 2xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Spring Semester (Sem 4)",
+          "subjects": [
+            {"code": "CE 202", "name": "Structural Analysis I", "abbr": "SA1", "type": "core", "credits": 6},
+            {"code": "CE 204", "name": "Building Materials and Construction", "abbr": "BMC", "type": "core", "credits": 6},
+            {"code": "CE 206", "name": "Geotechnical Engineering", "abbr": "GE", "type": "core", "credits": 6},
+            {"code": "CE 208", "name": "Transportation Engineering", "abbr": "TE", "type": "core", "credits": 6},
+            {"code": "CE 210", "name": "Concrete Technology", "abbr": "CT", "type": "core", "credits": 6}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (Semesters 5 & 6)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Autumn Semester (Sem 5)",
+          "subjects": [
+            {"code": "CE 301", "name": "Structural Analysis II", "abbr": "SA2", "type": "core", "credits": 6},
+            {"code": "CE 305", "name": "Water Supply and Wastewater Engineering", "abbr": "WSWE", "type": "core", "credits": 6},
+            {"code": "CE 309", "name": "Design of RC Structures", "abbr": "DRCS", "type": "core", "credits": 6},
+            {"code": "CE 313", "name": "Hydrology and Water Resources", "abbr": "HWR", "type": "core", "credits": 6},
+            {"code": "CE 3xx", "name": "Department Elective I", "abbr": "DE1", "type": "elective", "credits": 6}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Spring Semester (Sem 6)",
+          "subjects": [
+            {"code": "CE 302", "name": "Design of Steel Structures", "abbr": "DSS", "type": "core", "credits": 6},
+            {"code": "CE 306", "name": "Foundation Engineering", "abbr": "FE", "type": "core", "credits": 6},
+            {"code": "CE 310", "name": "Estimation and Project Management", "abbr": "EPM", "type": "core", "credits": 6},
+            {"code": "CE 3xx", "name": "Department Elective II", "abbr": "DE2", "type": "elective", "credits": 6},
+            {"code": "HS 3xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (Semesters 7 & 8)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Autumn Semester (Sem 7)",
+          "subjects": [
+            {"code": "CE 4xx", "name": "Department Elective III", "abbr": "DE3", "type": "elective", "credits": 6},
+            {"code": "CE 4xx", "name": "Department Elective IV", "abbr": "DE4", "type": "elective", "credits": 6},
+            {"code": "CE 494", "name": "B.Tech Project I", "abbr": "BTP1", "type": "project", "credits": 12},
+            {"code": "HS 4xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Spring Semester (Sem 8)",
+          "subjects": [
+            {"code": "CE 4xx", "name": "Department Elective V", "abbr": "DE5", "type": "elective", "credits": 6},
+            {"code": "CE 494", "name": "B.Tech Project II", "abbr": "BTP2", "type": "project", "credits": 18},
+            {"code": "CE 498", "name": "Seminar", "abbr": "SEM", "type": "core", "credits": 4}
+          ]
+        }
+      ]
+    }
+  ]
+}

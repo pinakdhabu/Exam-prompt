@@ -1,9 +1,9 @@
 {
   "$schema": "exam-prompt-branch-v1",
   "branch": {
-    "id": "computer-science",
-    "name": "Computer Science (B.Sc. Hons)",
-    "description": "University of Delhi B.Sc. (Hons) Computer Science subjects under NEP FYUP 2022, organized by semester"
+    "id": "physics",
+    "name": "Physics (B.Sc. Hons)",
+    "description": "University of Delhi B.Sc. (Hons) Physics subjects under NEP FYUP 2022, organized by semester"
   },
   "years": [
     {
@@ -15,26 +15,26 @@
           "id": "sem-1",
           "name": "Semester 1",
           "subjects": [
-            {"code": "DSC-1", "name": "Object Oriented Programming using Python", "abbr": "OOPP", "type": "core", "credits": 4},
-            {"code": "DSC-2", "name": "Computer System Architecture", "abbr": "CSA", "type": "core", "credits": 4},
-            {"code": "DSC-3", "name": "Mathematics for Computing", "abbr": "MFC", "type": "core", "credits": 4},
-            {"code": "GE-1", "name": "Generic Elective I (from other disciplines)", "abbr": "GE1", "type": "elective", "credits": 4},
+            {"code": "DSC-1", "name": "Mechanics", "abbr": "MECH", "type": "core", "credits": 4},
+            {"code": "DSC-2", "name": "Electromagnetism I", "abbr": "EM1", "type": "core", "credits": 4},
+            {"code": "DSC-3", "name": "Mathematical Physics I", "abbr": "MP1", "type": "core", "credits": 4},
+            {"code": "GE-1", "name": "Generic Elective I", "abbr": "GE1", "type": "elective", "credits": 4},
             {"code": "AEC-1", "name": "Ability Enhancement Course: English", "abbr": "AEC1", "type": "core", "credits": 2},
-            {"code": "SEC-1", "name": "Skill Enhancement Course: Python Programming Lab", "abbr": "SEC1", "type": "core", "credits": 2},
-            {"code": "VAC-1", "name": "Value Addition Course: Environmental Science", "abbr": "VAC1", "type": "core", "credits": 2}
+            {"code": "SEC-1", "name": "Skill Enhancement: Physics Lab I", "abbr": "SEC1", "type": "core", "credits": 2},
+            {"code": "VAC-1", "name": "Value Addition Course", "abbr": "VAC1", "type": "core", "credits": 2}
           ]
         },
         {
           "id": "sem-2",
           "name": "Semester 2",
           "subjects": [
-            {"code": "DSC-4", "name": "Programming using C++", "abbr": "CPP", "type": "core", "credits": 4},
-            {"code": "DSC-5", "name": "Discrete Mathematical Structures", "abbr": "DMS", "type": "core", "credits": 4},
-            {"code": "DSC-6", "name": "Probability for Computing", "abbr": "PFC", "type": "core", "credits": 4},
+            {"code": "DSC-4", "name": "Waves and Optics", "abbr": "WO", "type": "core", "credits": 4},
+            {"code": "DSC-5", "name": "Electromagnetism II", "abbr": "EM2", "type": "core", "credits": 4},
+            {"code": "DSC-6", "name": "Mathematical Physics II", "abbr": "MP2", "type": "core", "credits": 4},
             {"code": "GE-2", "name": "Generic Elective II", "abbr": "GE2", "type": "elective", "credits": 4},
-            {"code": "AEC-2", "name": "Ability Enhancement Course: English/MIL", "abbr": "AEC2", "type": "core", "credits": 2},
-            {"code": "SEC-2", "name": "Skill Enhancement Course: C++ Programming Lab", "abbr": "SEC2", "type": "core", "credits": 2},
-            {"code": "VAC-2", "name": "Value Addition Course: Ethics & Culture", "abbr": "VAC2", "type": "core", "credits": 2}
+            {"code": "AEC-2", "name": "Ability Enhancement Course", "abbr": "AEC2", "type": "core", "credits": 2},
+            {"code": "SEC-2", "name": "Skill Enhancement: Physics Lab II", "abbr": "SEC2", "type": "core", "credits": 2},
+            {"code": "VAC-2", "name": "Value Addition Course", "abbr": "VAC2", "type": "core", "credits": 2}
           ]
         }
       ]
@@ -48,12 +48,12 @@
           "id": "sem-3",
           "name": "Semester 3",
           "subjects": [
-            {"code": "DSC-7", "name": "Data Structures", "abbr": "DS", "type": "core", "credits": 4},
-            {"code": "DSC-8", "name": "Operating Systems", "abbr": "OS", "type": "core", "credits": 4},
-            {"code": "DSC-9", "name": "Artificial Intelligence", "abbr": "AI", "type": "core", "credits": 4},
+            {"code": "DSC-7", "name": "Thermal Physics", "abbr": "TP", "type": "core", "credits": 4},
+            {"code": "DSC-8", "name": "Quantum Mechanics I", "abbr": "QM1", "type": "core", "credits": 4},
+            {"code": "DSC-9", "name": "Electronics", "abbr": "ELEC", "type": "core", "credits": 4},
             {"code": "DSE-1", "name": "Discipline Specific Elective I", "abbr": "DSE1", "type": "elective", "credits": 4},
             {"code": "AEC-3", "name": "Ability Enhancement Course III", "abbr": "AEC3", "type": "core", "credits": 2},
-            {"code": "SEC-3", "name": "Skill Enhancement: Data Structures Lab", "abbr": "SEC3", "type": "core", "credits": 2},
+            {"code": "SEC-3", "name": "Skill Enhancement: Electronics Lab", "abbr": "SEC3", "type": "core", "credits": 2},
             {"code": "VAC-3", "name": "Value Addition Course III", "abbr": "VAC3", "type": "core", "credits": 2}
           ]
         },
@@ -61,12 +61,12 @@
           "id": "sem-4",
           "name": "Semester 4",
           "subjects": [
-            {"code": "DSC-10", "name": "Design & Analysis of Algorithms", "abbr": "DAA", "type": "core", "credits": 4},
-            {"code": "DSC-11", "name": "Database Management Systems", "abbr": "DBMS", "type": "core", "credits": 4},
-            {"code": "DSC-12", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 4},
+            {"code": "DSC-10", "name": "Statistical Mechanics", "abbr": "SM", "type": "core", "credits": 4},
+            {"code": "DSC-11", "name": "Quantum Mechanics II", "abbr": "QM2", "type": "core", "credits": 4},
+            {"code": "DSC-12", "name": "Atomic and Molecular Physics", "abbr": "AMP", "type": "core", "credits": 4},
             {"code": "DSE-2", "name": "Discipline Specific Elective II", "abbr": "DSE2", "type": "elective", "credits": 4},
             {"code": "AEC-4", "name": "Ability Enhancement Course IV", "abbr": "AEC4", "type": "core", "credits": 2},
-            {"code": "SEC-4", "name": "Skill Enhancement: DBMS/Networking Lab", "abbr": "SEC4", "type": "core", "credits": 2},
+            {"code": "SEC-4", "name": "Skill Enhancement: Modern Physics Lab", "abbr": "SEC4", "type": "core", "credits": 2},
             {"code": "VAC-4", "name": "Value Addition Course IV", "abbr": "VAC4", "type": "core", "credits": 2}
           ]
         }
@@ -81,24 +81,24 @@
           "id": "sem-5",
           "name": "Semester 5",
           "subjects": [
-            {"code": "DSC-13", "name": "Advanced Data Structures", "abbr": "ADS", "type": "core", "credits": 4},
-            {"code": "DSC-14", "name": "Machine Learning", "abbr": "ML", "type": "core", "credits": 4},
-            {"code": "DSC-15", "name": "Software Engineering", "abbr": "SE", "type": "core", "credits": 4},
+            {"code": "DSC-13", "name": "Solid State Physics", "abbr": "SSP", "type": "core", "credits": 4},
+            {"code": "DSC-14", "name": "Nuclear and Particle Physics", "abbr": "NPP", "type": "core", "credits": 4},
+            {"code": "DSC-15", "name": "Classical Mechanics", "abbr": "CM", "type": "core", "credits": 4},
             {"code": "GE-3", "name": "Generic Elective III", "abbr": "GE3", "type": "elective", "credits": 4},
             {"code": "DSE-3", "name": "Discipline Specific Elective III", "abbr": "DSE3", "type": "elective", "credits": 4},
-            {"code": "SEC-5", "name": "Skill Enhancement: ML Lab", "abbr": "SEC5", "type": "core", "credits": 2}
+            {"code": "SEC-5", "name": "Skill Enhancement: Solid State Lab", "abbr": "SEC5", "type": "core", "credits": 2}
           ]
         },
         {
           "id": "sem-6",
           "name": "Semester 6",
           "subjects": [
-            {"code": "DSC-16", "name": "Theory of Computation", "abbr": "TOC", "type": "core", "credits": 4},
-            {"code": "DSC-17", "name": "Deep Learning", "abbr": "DL", "type": "core", "credits": 4},
-            {"code": "DSC-18", "name": "Computer Graphics", "abbr": "CG", "type": "core", "credits": 4},
+            {"code": "DSC-16", "name": "Electrodynamics and Plasma Physics", "abbr": "EPP", "type": "core", "credits": 4},
+            {"code": "DSC-17", "name": "Quantum Mechanics III", "abbr": "QM3", "type": "core", "credits": 4},
+            {"code": "DSC-18", "name": "Astronomy and Astrophysics", "abbr": "AA", "type": "core", "credits": 4},
             {"code": "GE-4", "name": "Generic Elective IV", "abbr": "GE4", "type": "elective", "credits": 4},
             {"code": "DSE-4", "name": "Discipline Specific Elective IV", "abbr": "DSE4", "type": "elective", "credits": 4},
-            {"code": "SEC-6", "name": "Skill Enhancement: Deep Learning Lab", "abbr": "SEC6", "type": "core", "credits": 2}
+            {"code": "SEC-6", "name": "Skill Enhancement: Advanced Physics Lab", "abbr": "SEC6", "type": "core", "credits": 2}
           ]
         }
       ]
@@ -112,7 +112,7 @@
           "id": "sem-7",
           "name": "Semester 7",
           "subjects": [
-            {"code": "DSC-19", "name": "Cloud Computing", "abbr": "CC", "type": "core", "credits": 4},
+            {"code": "DSC-19", "name": "Quantum Field Theory", "abbr": "QFT", "type": "core", "credits": 4},
             {"code": "DSE-5", "name": "Discipline Specific Elective V", "abbr": "DSE5", "type": "elective", "credits": 4},
             {"code": "DSE-6", "name": "Discipline Specific Elective VI", "abbr": "DSE6", "type": "elective", "credits": 4},
             {"code": "DSE-7", "name": "Discipline Specific Elective VII", "abbr": "DSE7", "type": "elective", "credits": 4},
@@ -123,7 +123,7 @@
           "id": "sem-8",
           "name": "Semester 8",
           "subjects": [
-            {"code": "DSC-20", "name": "Information Security", "abbr": "IS", "type": "core", "credits": 4},
+            {"code": "DSC-20", "name": "Condensed Matter Physics", "abbr": "CMP", "type": "core", "credits": 4},
             {"code": "DSE-8", "name": "Discipline Specific Elective VIII", "abbr": "DSE8", "type": "elective", "credits": 4},
             {"code": "DSE-9", "name": "Discipline Specific Elective IX", "abbr": "DSE9", "type": "elective", "credits": 4},
             {"code": "DSE-10", "name": "Discipline Specific Elective X", "abbr": "DSE10", "type": "elective", "credits": 4},

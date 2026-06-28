@@ -3,7 +3,7 @@
   "branch": {
     "id": "computer-science-engineering",
     "name": "Computer Science and Engineering",
-    "description": "IIT Bombay B.Tech CSE subjects organized by semester (standard curriculum)"
+    "description": "IIT Bombay B.Tech CSE subjects organized by semester (standard curriculum from iitbcse.blogspot.com)"
   },
   "years": [
     {
@@ -15,24 +15,24 @@
           "id": "sem-1",
           "name": "Autumn Semester (Sem 1)",
           "subjects": [
-            {"code": "MA 105", "name": "Calculus", "abbr": "CALC", "type": "core", "credits": 8},
-            {"code": "PH 107", "name": "Quantum Physics and Applications", "abbr": "QPA", "type": "core", "credits": 6},
             {"code": "CS 101", "name": "Computer Programming and Utilization", "abbr": "CPU", "type": "core", "credits": 6},
-            {"code": "ME 119", "name": "Engineering Graphics & Drawing", "abbr": "EGD", "type": "core", "credits": 6},
-            {"code": "CH 105", "name": "Organic/Inorganic Chemistry", "abbr": "CHEM", "type": "core", "credits": 6},
-            {"code": "HS 101", "name": "English for Communication", "abbr": "ENG", "type": "core", "credits": 4}
+            {"code": "CS 103", "name": "Computing and Science", "abbr": "CNS", "type": "core", "credits": 6},
+            {"code": "CS 152", "name": "Abstractions and Paradigms", "abbr": "AP", "type": "core", "credits": 6},
+            {"code": "CS 207", "name": "Discrete Structures", "abbr": "DS", "type": "core", "credits": 6},
+            {"code": "MA 105", "name": "Calculus", "abbr": "CALC", "type": "core", "credits": 8},
+            {"code": "PH 107", "name": "Quantum Physics and Applications", "abbr": "QPA", "type": "core", "credits": 6}
           ]
         },
         {
           "id": "sem-2",
           "name": "Spring Semester (Sem 2)",
           "subjects": [
-            {"code": "MA 106", "name": "Linear Algebra", "abbr": "LA", "type": "core", "credits": 8},
-            {"code": "PH 108", "name": "Basics of Electricity & Magnetism", "abbr": "BEM", "type": "core", "credits": 6},
-            {"code": "CS 102", "name": "Data Structures and Algorithms", "abbr": "DSA", "type": "core", "credits": 6},
-            {"code": "ME 109", "name": "Thermodynamics & Fluid Mechanics", "abbr": "TFM", "type": "core", "credits": 6},
-            {"code": "EE 101", "name": "Introduction to Electrical Engineering", "abbr": "EE", "type": "core", "credits": 6},
-            {"code": "BB 101", "name": "Biology", "abbr": "BIO", "type": "core", "credits": 4}
+            {"code": "CS 154", "name": "Programming Paradigms Lab", "abbr": "PPL", "type": "core", "credits": 6},
+            {"code": "CS 202", "name": "Programming", "abbr": "PROG", "type": "core", "credits": 6},
+            {"code": "CS 213", "name": "Data Structures and Algorithms", "abbr": "DSA", "type": "core", "credits": 6},
+            {"code": "MA 106", "name": "Linear Algebra", "abbr": "LA", "type": "core", "credits": 6},
+            {"code": "PH 108", "name": "Basics of Electricity and Magnetism", "abbr": "BEM", "type": "core", "credits": 6},
+            {"code": "ME 119", "name": "Engineering Graphics and Drawing", "abbr": "EGD", "type": "core", "credits": 6}
           ]
         }
       ]
@@ -46,11 +46,11 @@
           "id": "sem-3",
           "name": "Autumn Semester (Sem 3)",
           "subjects": [
-            {"code": "MA 214", "name": "Differential Equations I", "abbr": "DE1", "type": "core", "credits": 6},
-            {"code": "CS 207", "name": "Discrete Structures", "abbr": "DS", "type": "core", "credits": 6},
-            {"code": "CS 213", "name": "Data Structures and Algorithms", "abbr": "DSA", "type": "core", "credits": 6},
-            {"code": "CS 215", "name": "Digital Logic Design", "abbr": "DLD", "type": "core", "credits": 6},
-            {"code": "CS 217", "name": "Machine Organization & Assembly Language Programming", "abbr": "MOALP", "type": "core", "credits": 6},
+            {"code": "CS 215", "name": "Data Analysis and Interpretation", "abbr": "DAI", "type": "core", "credits": 6},
+            {"code": "CS 217", "name": "Computer Architecture", "abbr": "COA", "type": "core", "credits": 6},
+            {"code": "CS 224", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 6},
+            {"code": "CS 228", "name": "Logic in Computer Science", "abbr": "LCS", "type": "core", "credits": 6},
+            {"code": "MA 214", "name": "Probability and Random Processes", "abbr": "PROB", "type": "core", "credits": 6},
             {"code": "HS 2xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
           ]
         },
@@ -58,12 +58,12 @@
           "id": "sem-4",
           "name": "Spring Semester (Sem 4)",
           "subjects": [
+            {"code": "CS 317", "name": "Database and Information Systems", "abbr": "DBIS", "type": "core", "credits": 6},
+            {"code": "CS 321", "name": "Operating Systems", "abbr": "OS", "type": "core", "credits": 6},
+            {"code": "CS 347", "name": "Software Engineering", "abbr": "SE", "type": "core", "credits": 6},
+            {"code": "CS 305", "name": "Automata Theory", "abbr": "AT", "type": "core", "credits": 6},
             {"code": "MA 205", "name": "Complex Analysis", "abbr": "CA", "type": "core", "credits": 6},
-            {"code": "CS 218", "name": "Design and Analysis of Algorithms", "abbr": "DAA", "type": "core", "credits": 6},
-            {"code": "CS 224", "name": "Computer Networks", "abbr": "CN", "type": "core", "credits": 6},
-            {"code": "CS 228", "name": "Logic in Computer Science", "abbr": "LCS", "type": "core", "credits": 6},
-            {"code": "CS 242", "name": "Automata Theory", "abbr": "AT", "type": "core", "credits": 6},
-            {"code": "HS 2xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+            {"code": "BB 101", "name": "Biology", "abbr": "BIO", "type": "core", "credits": 4}
           ]
         }
       ]
@@ -77,23 +77,21 @@
           "id": "sem-5",
           "name": "Autumn Semester (Sem 5)",
           "subjects": [
-            {"code": "CS 317", "name": "Database and Information Systems", "abbr": "DBIS", "type": "core", "credits": 6},
-            {"code": "CS 330", "name": "Operating Systems", "abbr": "OS", "type": "core", "credits": 6},
+            {"code": "CS 218", "name": "Design and Analysis of Algorithms", "abbr": "DAA", "type": "core", "credits": 6},
             {"code": "CS 341", "name": "Compiler Design", "abbr": "CD", "type": "core", "credits": 6},
-            {"code": "CS 347", "name": "Software Engineering", "abbr": "SE", "type": "core", "credits": 6},
-            {"code": "CS 3xx", "name": "Department Elective I", "abbr": "DE1", "type": "elective", "credits": 6},
-            {"code": "CS 3xx", "name": "Department Elective II", "abbr": "DE2", "type": "elective", "credits": 6}
+            {"code": "CS 384", "name": "Machine Learning", "abbr": "ML", "type": "core", "credits": 6},
+            {"code": "CS 386", "name": "Artificial Intelligence", "abbr": "AI", "type": "core", "credits": 6},
+            {"code": "CS 3xx", "name": "Department Elective I", "abbr": "DE1", "type": "elective", "credits": 6}
           ]
         },
         {
           "id": "sem-6",
           "name": "Spring Semester (Sem 6)",
           "subjects": [
-            {"code": "CS 348", "name": "Computer Graphics", "abbr": "CG", "type": "core", "credits": 6},
-            {"code": "CS 386", "name": "Artificial Intelligence", "abbr": "AI", "type": "core", "credits": 6},
-            {"code": "CS 384", "name": "Numerical Methods", "abbr": "NM", "type": "core", "credits": 6},
+            {"code": "CS 348", "name": "Computer Vision", "abbr": "CV", "type": "core", "credits": 6},
+            {"code": "CS 3xx", "name": "Distributed Systems", "abbr": "DS", "type": "core", "credits": 6},
+            {"code": "CS 3xx", "name": "Department Elective II", "abbr": "DE2", "type": "elective", "credits": 6},
             {"code": "CS 3xx", "name": "Department Elective III", "abbr": "DE3", "type": "elective", "credits": 6},
-            {"code": "CS 3xx", "name": "Department Elective IV", "abbr": "DE4", "type": "elective", "credits": 6},
             {"code": "HS 3xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
           ]
         }
@@ -108,8 +106,8 @@
           "id": "sem-7",
           "name": "Autumn Semester (Sem 7)",
           "subjects": [
+            {"code": "CS 4xx", "name": "Department Elective IV", "abbr": "DE4", "type": "elective", "credits": 6},
             {"code": "CS 4xx", "name": "Department Elective V", "abbr": "DE5", "type": "elective", "credits": 6},
-            {"code": "CS 4xx", "name": "Department Elective VI", "abbr": "DE6", "type": "elective", "credits": 6},
             {"code": "CS 494", "name": "B.Tech Project I", "abbr": "BTP1", "type": "project", "credits": 12},
             {"code": "HS 4xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
           ]
@@ -118,7 +116,7 @@
           "id": "sem-8",
           "name": "Spring Semester (Sem 8)",
           "subjects": [
-            {"code": "CS 4xx", "name": "Department Elective VII", "abbr": "DE7", "type": "elective", "credits": 6},
+            {"code": "CS 4xx", "name": "Department Elective VI", "abbr": "DE6", "type": "elective", "credits": 6},
             {"code": "CS 494", "name": "B.Tech Project II", "abbr": "BTP2", "type": "project", "credits": 18},
             {"code": "CS 498", "name": "Seminar", "abbr": "SEM", "type": "core", "credits": 4}
           ]

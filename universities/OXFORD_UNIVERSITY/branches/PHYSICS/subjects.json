@@ -1,0 +1,113 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "physics",
+    "name": "Physics",
+    "description": "University of Oxford Physics undergraduate subjects — representative curriculum"
+  },
+  "years": [
+    {
+      "id": "first-year",
+      "name": "Year 1 (Prelims)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "P1", "name": "Classical Mechanics", "abbr": "CM", "type": "core"},
+            {"code": "P2", "name": "Introduction to Quantum Physics", "abbr": "IQP", "type": "core"},
+            {"code": "P3", "name": "Mathematical Methods I", "abbr": "MM1", "type": "core"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "P4", "name": "Electromagnetism I", "abbr": "EM1", "type": "core"},
+            {"code": "P5", "name": "Thermal Physics", "abbr": "TP", "type": "core"},
+            {"code": "P6", "name": "Mathematical Methods II", "abbr": "MM2", "type": "core"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "P7", "name": "Waves and Optics", "abbr": "WO", "type": "core"},
+            {"code": "P8", "name": "Practical Physics I", "abbr": "PP1", "type": "core", "credits": null},
+            {"code": "P9", "name": "Introduction to Computing", "abbr": "COMP", "type": "core", "credits": null}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second-year",
+      "name": "Year 2",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "P10", "name": "Quantum Mechanics", "abbr": "QM", "type": "core"},
+            {"code": "P11", "name": "Electromagnetism II", "abbr": "EM2", "type": "core"},
+            {"code": "P12", "name": "Mathematical Methods III", "abbr": "MM3", "type": "core"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "P13", "name": "Statistical Physics", "abbr": "SP", "type": "core"},
+            {"code": "P14", "name": "Atomic and Nuclear Physics", "abbr": "ANP", "type": "core"},
+            {"code": "P15", "name": "Practical Physics II", "abbr": "PP2", "type": "core"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "P16", "name": "Condensed Matter Physics", "abbr": "CMP", "type": "core"},
+            {"code": "P17", "name": "Lasers and Optics", "abbr": "LO", "type": "core"},
+            {"code": "P18", "name": "Computational Physics", "abbr": "CP", "type": "core"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third-year",
+      "name": "Year 3 (Finals)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "P20", "name": "Particle Physics", "abbr": "PP", "type": "elective"},
+            {"code": "P21", "name": "General Relativity", "abbr": "GR", "type": "elective"},
+            {"code": "P22", "name": "Biological Physics", "abbr": "BP", "type": "elective"},
+            {"code": "P23", "name": "Advanced Quantum Mechanics", "abbr": "AQM", "type": "elective"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "P24", "name": "Astrophysics", "abbr": "ASTRO", "type": "elective"},
+            {"code": "P25", "name": "Plasma Physics", "abbr": "PLASMA", "type": "elective"},
+            {"code": "P26", "name": "Nonlinear Dynamics", "abbr": "NLD", "type": "elective"},
+            {"code": "P27", "name": "Climate Physics", "abbr": "CLIM", "type": "elective"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "P28", "name": "Advanced Practical Physics", "abbr": "APP", "type": "core"},
+            {"code": "P 499", "name": "Project / Dissertation", "abbr": "PROJ", "type": "project"}
+          ]
+        }
+      ]
+    }
+  ]
+}

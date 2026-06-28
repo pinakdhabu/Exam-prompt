@@ -1,0 +1,132 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "civil-engineering",
+    "name": "Civil Engineering",
+    "description": "JNTUA B.Tech Civil Engineering subjects under R23 Regulation (NEP-aligned), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (B.Tech I & II Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "23AHSBS01", "name": "Calculus & Differential Equations", "abbr": "CDE", "type": "core", "credits": 4},
+            {"code": "23AHSBS02", "name": "Engineering Physics", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "23AHSBS03", "name": "Communicative English", "abbr": "ENG", "type": "core", "credits": 2},
+            {"code": "23AHSBS04", "name": "C Programming", "abbr": "CP", "type": "core", "credits": 3},
+            {"code": "23AHSBS05", "name": "Engineering Graphics", "abbr": "EG", "type": "core", "credits": 3},
+            {"code": "23AHSBS07", "name": "Physics Lab", "abbr": "PHYL", "type": "lab", "credits": 1.5},
+            {"code": "23AHSBS08", "name": "C Programming Lab", "abbr": "CPL", "type": "lab", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "23AHSBS10", "name": "Linear Algebra & Transform", "abbr": "LAT", "type": "core", "credits": 4},
+            {"code": "23AHSBS11", "name": "Engineering Chemistry", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "23AHSBS12", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 3},
+            {"code": "23AHSBS13", "name": "Engineering Mechanics", "abbr": "EM", "type": "core", "credits": 3},
+            {"code": "23AHSBS15", "name": "Chemistry Lab", "abbr": "CHEML", "type": "lab", "credits": 1},
+            {"code": "23AHSBS16", "name": "Engineering Workshop", "abbr": "EW", "type": "lab", "credits": 1.5},
+            {"code": "23AHSBS18", "name": "Environmental Science", "abbr": "EVS", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (B.Tech III & IV Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "23AHSBS19", "name": "Probability & Statistics", "abbr": "PS", "type": "core", "credits": 3},
+            {"code": "23A01301", "name": "Solid Mechanics", "abbr": "SM", "type": "core", "credits": 3},
+            {"code": "23A01302", "name": "Fluid Mechanics", "abbr": "FM", "type": "core", "credits": 3},
+            {"code": "23A01303", "name": "Surveying", "abbr": "SURV", "type": "core", "credits": 3},
+            {"code": "23A01304", "name": "Building Materials and Construction", "abbr": "BMC", "type": "core", "credits": 3},
+            {"code": "23A01305", "name": "Solid Mechanics Lab", "abbr": "SML", "type": "lab", "credits": 1.5},
+            {"code": "23A01306", "name": "Surveying Lab", "abbr": "SL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "23AHSBS20", "name": "Numerical Methods", "abbr": "NM", "type": "core", "credits": 3},
+            {"code": "23A01401", "name": "Structural Analysis I", "abbr": "SA1", "type": "core", "credits": 3},
+            {"code": "23A01402", "name": "Geotechnical Engineering", "abbr": "GE", "type": "core", "credits": 3},
+            {"code": "23A01403", "name": "Concrete Technology", "abbr": "CT", "type": "core", "credits": 3},
+            {"code": "23A01404", "name": "Environmental Engineering", "abbr": "EVEN", "type": "core", "credits": 3},
+            {"code": "23A01405", "name": "Geotechnical Engineering Lab", "abbr": "GEL", "type": "lab", "credits": 1.5},
+            {"code": "23A01406", "name": "Concrete Technology Lab", "abbr": "CTL", "type": "lab", "credits": 1.5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (B.Tech V & VI Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "23A01501", "name": "Structural Analysis II", "abbr": "SA2", "type": "core", "credits": 3},
+            {"code": "23A01502", "name": "Design of RC Structures", "abbr": "DRCS", "type": "core", "credits": 3},
+            {"code": "23A01503", "name": "Water Supply and Wastewater Engineering", "abbr": "WSWE", "type": "core", "credits": 3},
+            {"code": "23A01504a", "name": "Professional Elective I: Highway Engineering", "abbr": "HE", "type": "elective", "credits": 3},
+            {"code": "23A01505", "name": "Water and Wastewater Lab", "abbr": "WWL", "type": "lab", "credits": 1.5},
+            {"code": "23A01506", "name": "CAD for Civil Engineering Lab", "abbr": "CADL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "23A01601", "name": "Design of Steel Structures", "abbr": "DSS", "type": "core", "credits": 3},
+            {"code": "23A01602", "name": "Estimation and Costing", "abbr": "EC", "type": "core", "credits": 3},
+            {"code": "23A01603a", "name": "Professional Elective II: Foundation Engineering", "abbr": "FE", "type": "elective", "credits": 3},
+            {"code": "23A01603b", "name": "Open Elective I: Entrepreneurship", "abbr": "ENT", "type": "elective", "credits": 3},
+            {"code": "23A01604", "name": "Structural Engineering Lab", "abbr": "SEL", "type": "lab", "credits": 1.5},
+            {"code": "23A01605", "name": "Skill Course: Python", "abbr": "PYTHON", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.Tech VII & VIII Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "23A01701", "name": "Professional Elective III: Hydrology", "abbr": "HYDRO", "type": "elective", "credits": 3},
+            {"code": "23A01701b", "name": "Open Elective II: Disaster Management", "abbr": "DM", "type": "elective", "credits": 3},
+            {"code": "23A01702", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 3},
+            {"code": "23A01703", "name": "Technical Seminar", "abbr": "TS", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "23A01801", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 8},
+            {"code": "23A01802", "name": "Comprehensive Viva Voce", "abbr": "CVV", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    }
+  ]
+}

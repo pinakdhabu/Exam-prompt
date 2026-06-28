@@ -3,7 +3,7 @@
   "branch": {
     "id": "computer-science",
     "name": "Computer Science",
-    "description": "University of Oxford Computer Science undergraduate subjects by year"
+    "description": "University of Oxford Computer Science undergraduate subjects — real curriculum from cs.ox.ac.uk. Three terms per year: Michaelmas (Oct-Dec), Hilary (Jan-Mar), Trinity (Apr-Jun). Examinations at end of academic year."
   },
   "years": [
     {
@@ -12,51 +12,141 @@
       "pattern": "oxford-standard",
       "semesters": [
         {
-          "id": "full-year",
-          "name": "First Year",
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
           "subjects": [
             {"code": "CS1", "name": "Functional Programming", "abbr": "FP", "type": "core"},
-            {"code": "CS2", "name": "Imperative Programming", "abbr": "IP", "type": "core"},
-            {"code": "CS3", "name": "Design and Analysis of Algorithms", "abbr": "DAA", "type": "core"},
             {"code": "M1", "name": "Discrete Mathematics", "abbr": "DM", "type": "core"},
-            {"code": "M2", "name": "Probability", "abbr": "PROB", "type": "core"},
-            {"code": "M3", "name": "Linear Algebra", "abbr": "LA", "type": "core"}
+            {"code": "CS3", "name": "Digital Systems", "abbr": "DS", "type": "core"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "CS2", "name": "Design and Analysis of Algorithms", "abbr": "DAA", "type": "core"},
+            {"code": "M2", "name": "Linear Algebra", "abbr": "LA", "type": "core"},
+            {"code": "M3", "name": "Probability", "abbr": "PROB", "type": "core"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "CS1", "name": "Functional Programming (Revision and Exam Prep)", "abbr": "FP", "type": "core"},
+            {"code": "CS2", "name": "Design and Analysis of Algorithms (Revision and Exam Prep)", "abbr": "DAA", "type": "core"},
+            {"code": "CS3", "name": "Digital Systems (Revision and Exam Prep)", "abbr": "DS", "type": "core"}
           ]
         }
       ]
     },
     {
       "id": "second-year",
-      "name": "Year 2 (Core)",
+      "name": "Year 2 (Core + Options)",
       "pattern": "oxford-standard",
       "semesters": [
         {
-          "id": "full-year",
-          "name": "Second Year",
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
           "subjects": [
-            {"code": "CS4", "name": "Introduction to Formal Specification", "abbr": "IFS", "type": "core"},
+            {"code": "CS4", "name": "Imperative Programming", "abbr": "IP", "type": "core"},
             {"code": "CS5", "name": "Models of Computation", "abbr": "MOC", "type": "core"},
-            {"code": "CS6", "name": "Object-Oriented Programming", "abbr": "OOP", "type": "core"},
-            {"code": "CS7", "name": "Computer Architecture", "abbr": "CA", "type": "core"},
+            {"code": "CS6", "name": "Computer Architecture", "abbr": "CA", "type": "core"},
+            {"code": "CS7", "name": "Group Project", "abbr": "GP", "type": "project"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
             {"code": "CS8", "name": "Computer Networks", "abbr": "CN", "type": "core"},
-            {"code": "CS9", "name": "Algorithms and Data Structures", "abbr": "ADS", "type": "core"},
-            {"code": "CS10", "name": "Compilers", "abbr": "COMP", "type": "core"},
-            {"code": "CS11", "name": "Databases", "abbr": "DB", "type": "core"}
+            {"code": "CS9", "name": "Principles of Programming Languages", "abbr": "PPL", "type": "elective"},
+            {"code": "CS10", "name": "Intelligent Systems", "abbr": "IS", "type": "elective"},
+            {"code": "CS11", "name": "Database Systems", "abbr": "DBS", "type": "elective"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "CS12", "name": "Computer-Aided Verification", "abbr": "CAV", "type": "elective"},
+            {"code": "CS13", "name": "Computational Linguistics", "abbr": "CL", "type": "elective"},
+            {"code": "CS14", "name": "Geometric Modeling", "abbr": "GM", "type": "elective"},
+            {"code": "CS15", "name": "Quantum Computer Science", "abbr": "QCS", "type": "elective"}
           ]
         }
       ]
     },
     {
       "id": "third-year",
-      "name": "Year 3 & 4 (Options + Project)",
+      "name": "Year 3 (Advanced Options)",
       "pattern": "oxford-standard",
       "semesters": [
         {
-          "id": "advanced",
-          "name": "Years 3 & 4",
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
           "subjects": [
-            {"code": "OPT", "name": "Advanced Options (Machine Learning, AI, Computer Vision, Cryptography, Quantum Computing)", "abbr": "OPT", "type": "elective"},
-            {"code": "PROJ", "name": "Final Year Project / Dissertation", "abbr": "PROJ", "type": "project"}
+            {"code": "CS16", "name": "Lambda Calculus", "abbr": "LC", "type": "elective"},
+            {"code": "CS17", "name": "Graph Theory", "abbr": "GT", "type": "elective"},
+            {"code": "CS18", "name": "Knowledge Representation and Reasoning", "abbr": "KR", "type": "elective"},
+            {"code": "CS19", "name": "Program Verification", "abbr": "PV", "type": "elective"},
+            {"code": "CS20", "name": "Machine Learning", "abbr": "ML", "type": "elective"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "CS21", "name": "Categories and Proofs", "abbr": "CP", "type": "elective"},
+            {"code": "CS22", "name": "Randomized Algorithms", "abbr": "RA", "type": "elective"},
+            {"code": "CS23", "name": "Types and Semantics", "abbr": "TS", "type": "elective"},
+            {"code": "CS24", "name": "Computational Biology", "abbr": "CB", "type": "elective"},
+            {"code": "CS25", "name": "Cryptography", "abbr": "CRYPTO", "type": "elective"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "CS26", "name": "Advanced Security", "abbr": "AS", "type": "elective"},
+            {"code": "CS27", "name": "Computer Animation", "abbr": "ANIM", "type": "elective"},
+            {"code": "CS28", "name": "Computer Vision", "abbr": "CV", "type": "elective"},
+            {"code": "CS29", "name": "Distributed Computing", "abbr": "DC", "type": "elective"},
+            {"code": "CS30", "name": "Quantum Computing", "abbr": "QC", "type": "elective"},
+            {"code": "CS31", "name": "Natural Language Processing", "abbr": "NLP", "type": "elective"},
+            {"code": "CS32", "name": "Software Engineering", "abbr": "SE", "type": "elective"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fourth-year",
+      "name": "Year 4 (MCompSci)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "CS4xx", "name": "Advanced Options Part 1", "abbr": "AO1", "type": "elective"},
+            {"code": "CS4xx", "name": "Advanced Options Part 2", "abbr": "AO2", "type": "elective"},
+            {"code": "CS4xx", "name": "Advanced Options Part 3", "abbr": "AO3", "type": "elective"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "CS4xx", "name": "Advanced Options Part 4", "abbr": "AO4", "type": "elective"},
+            {"code": "CS4xx", "name": "Advanced Options Part 5", "abbr": "AO5", "type": "elective"},
+            {"code": "CS4xx", "name": "Advanced Options Part 6", "abbr": "AO6", "type": "elective"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "CS 499", "name": "Major Project / Dissertation", "abbr": "PROJ", "type": "project"}
           ]
         }
       ]

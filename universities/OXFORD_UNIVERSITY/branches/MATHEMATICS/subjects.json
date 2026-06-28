@@ -1,0 +1,115 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "mathematics",
+    "name": "Mathematics",
+    "description": "University of Oxford Mathematics undergraduate subjects — representative curriculum"
+  },
+  "years": [
+    {
+      "id": "first-year",
+      "name": "Year 1 (Prelims)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "M1", "name": "Algebra", "abbr": "ALG", "type": "core"},
+            {"code": "M2", "name": "Calculus", "abbr": "CALC", "type": "core"},
+            {"code": "M3", "name": "Geometry", "abbr": "GEOM", "type": "core"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "M4", "name": "Probability and Statistics", "abbr": "PROB", "type": "core"},
+            {"code": "M5", "name": "Analysis I", "abbr": "AN1", "type": "core"},
+            {"code": "M6", "name": "Linear Algebra", "abbr": "LA", "type": "core"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "M7", "name": "Dynamics", "abbr": "DYN", "type": "core"},
+            {"code": "M8", "name": "Introduction to Computer Science", "abbr": "ICS", "type": "core"},
+            {"code": "M9", "name": "Statistics", "abbr": "STATS", "type": "core"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second-year",
+      "name": "Year 2",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "M10", "name": "Analysis II", "abbr": "AN2", "type": "core"},
+            {"code": "M11", "name": "Group Theory", "abbr": "GT", "type": "core"},
+            {"code": "M12", "name": "Differential Equations I", "abbr": "DE1", "type": "core"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "M13", "name": "Multivariable Calculus", "abbr": "MVC", "type": "core"},
+            {"code": "M14", "name": "Ring Theory", "abbr": "RT", "type": "core"},
+            {"code": "M15", "name": "Differential Equations II", "abbr": "DE2", "type": "core"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "M16", "name": "Numerical Analysis", "abbr": "NA", "type": "core"},
+            {"code": "M17", "name": "Complex Analysis", "abbr": "CA", "type": "elective"},
+            {"code": "M18", "name": "Metric Spaces", "abbr": "MS", "type": "elective"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third-year",
+      "name": "Year 3 (Finals)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "M20", "name": "Functional Analysis I", "abbr": "FA1", "type": "elective"},
+            {"code": "M21", "name": "Topology", "abbr": "TOP", "type": "elective"},
+            {"code": "M22", "name": "Number Theory", "abbr": "NT", "type": "elective"},
+            {"code": "M23", "name": "Graph Theory", "abbr": "GRAPH", "type": "elective"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "M24", "name": "Functional Analysis II", "abbr": "FA2", "type": "elective"},
+            {"code": "M25", "name": "Combinatorics", "abbr": "COMB", "type": "elective"},
+            {"code": "M26", "name": "Galois Theory", "abbr": "GAL", "type": "elective"},
+            {"code": "M27", "name": "Fluid Dynamics", "abbr": "FD", "type": "elective"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "M28", "name": "Mathematical Models and Methods", "abbr": "MMM", "type": "elective"},
+            {"code": "M29", "name": "Algebraic Geometry", "abbr": "AG", "type": "elective"},
+            {"code": "M30", "name": "Quantum Theory", "abbr": "QT", "type": "elective"},
+            {"code": "M 499", "name": "Dissertation", "abbr": "DISS", "type": "project"}
+          ]
+        }
+      ]
+    }
+  ]
+}

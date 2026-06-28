@@ -1,0 +1,50 @@
+{
+  "id": "iitb-standard",
+  "name": "IIT Bombay Standard Pattern (IITB Semester)",
+  "description": "IIT Bombay semester system — 100 marks total, 50% mid-semester (IA) + 50% end-semester (ESE). 10-point letter grade system (AP/AA/AB/BB/BC/CC/CD/DD/FR). SPI per semester, CPI cumulative. Credits-based (6-12 credits per subject).",
+  "years_active": ["2020", "2021", "2022", "2023", "2024", "2025"],
+  "exam_type": "end-semester",
+  "in_semester": {
+    "exists": true,
+    "name": "Mid Semester Examination (IA)",
+    "marks": 50,
+    "duration_hours": 2,
+    "types": ["mid-semester exam", "quizzes", "assignments", "labs", "projects"],
+    "notes": "IA = 50% of total marks (typically: mid-semester exam ~30%, quizzes/assignments/labs ~20%). Varies by instructor."
+  },
+  "end_semester": {
+    "total_marks": 50,
+    "time_hours": 3,
+    "total_units": null,
+    "exam_units": null,
+    "or_pairs": null,
+    "instructions": [
+      "Answer all questions. The paper covers the full syllabus.",
+      "Neat diagrams must be drawn wherever necessary.",
+      "Figures to the right indicate full marks.",
+      "Assume suitable data, if necessary."
+    ],
+    "question_structure": {
+      "type": "FULL_SYLLABUS",
+      "description": "Comprehensive end-semester examination covering all topics taught in the semester. Typically 8-10 questions with internal choice. Individual instructors may vary the format."
+    }
+  },
+  "total_marks": 100,
+  "pass_percentage": 40,
+  "grading": {
+    "type": "CPI (10.0)",
+    "scale": 10,
+    "pass_grade": "DD",
+    "grade_mapping": {
+      "AP": [90, 100],
+      "AA": [80, 89],
+      "AB": [75, 79],
+      "BB": [70, 74],
+      "BC": [65, 69],
+      "CC": [60, 64],
+      "CD": [55, 59],
+      "DD": [50, 54],
+      "FR": [0, 49]
+    }
+  }
+}

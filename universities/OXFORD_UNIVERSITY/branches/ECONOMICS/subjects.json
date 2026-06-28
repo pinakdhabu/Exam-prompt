@@ -1,0 +1,111 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "economics",
+    "name": "Economics",
+    "description": "University of Oxford Economics undergraduate subjects — representative curriculum"
+  },
+  "years": [
+    {
+      "id": "first-year",
+      "name": "Year 1 (Prelims)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "E1", "name": "Introductory Microeconomics", "abbr": "MICRO", "type": "core"},
+            {"code": "E2", "name": "Mathematics for Economists", "abbr": "MATHEC", "type": "core"},
+            {"code": "E3", "name": "History of Economic Thought", "abbr": "HET", "type": "core"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "E4", "name": "Introductory Macroeconomics", "abbr": "MACRO", "type": "core"},
+            {"code": "E5", "name": "Statistics for Economists", "abbr": "STATEC", "type": "core"},
+            {"code": "E6", "name": "Principles of Economics", "abbr": "PRIN", "type": "core"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "E7", "name": "Economic Data Analysis", "abbr": "EDA", "type": "core"},
+            {"code": "E8", "name": "Political Economy", "abbr": "PE", "type": "core"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second-year",
+      "name": "Year 2",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "E10", "name": "Microeconomic Theory", "abbr": "MICT", "type": "core"},
+            {"code": "E11", "name": "Macroeconomic Theory", "abbr": "MACT", "type": "core"},
+            {"code": "E12", "name": "Econometrics I", "abbr": "EC1", "type": "core"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "E13", "name": "Game Theory", "abbr": "GT", "type": "core"},
+            {"code": "E14", "name": "Econometrics II", "abbr": "EC2", "type": "core"},
+            {"code": "E15", "name": "Development Economics", "abbr": "DEVEC", "type": "elective"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "E16", "name": "International Economics", "abbr": "INTEC", "type": "elective"},
+            {"code": "E17", "name": "Labor Economics", "abbr": "LABEC", "type": "elective"},
+            {"code": "E18", "name": "Public Economics", "abbr": "PUBEC", "type": "elective"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third-year",
+      "name": "Year 3 (Finals)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "E20", "name": "Advanced Microeconomics", "abbr": "ADMIC", "type": "elective"},
+            {"code": "E21", "name": "Advanced Macroeconomics", "abbr": "ADMAC", "type": "elective"},
+            {"code": "E22", "name": "Behavioral Economics", "abbr": "BEC", "type": "elective"},
+            {"code": "E23", "name": "Financial Economics", "abbr": "FINEC", "type": "elective"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "E24", "name": "Industrial Organization", "abbr": "IO", "type": "elective"},
+            {"code": "E25", "name": "Environmental Economics", "abbr": "ENVEC", "type": "elective"},
+            {"code": "E26", "name": "Money and Banking", "abbr": "MB", "type": "elective"},
+            {"code": "E27", "name": "Economic History", "abbr": "ECH", "type": "elective"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "E 499", "name": "Dissertation", "abbr": "DISS", "type": "project"}
+          ]
+        }
+      ]
+    }
+  ]
+}

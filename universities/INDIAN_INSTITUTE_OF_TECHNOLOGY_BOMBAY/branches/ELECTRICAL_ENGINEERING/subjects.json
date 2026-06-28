@@ -1,0 +1,127 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "electrical-engineering",
+    "name": "Electrical Engineering",
+    "description": "IIT Bombay B.Tech Electrical Engineering subjects organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (Semesters 1 & 2)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Autumn Semester (Sem 1)",
+          "subjects": [
+            {"code": "MA 105", "name": "Calculus", "abbr": "CALC", "type": "core", "credits": 8},
+            {"code": "PH 107", "name": "Quantum Physics and Applications", "abbr": "QPA", "type": "core", "credits": 6},
+            {"code": "CH 105", "name": "Organic/Inorganic Chemistry", "abbr": "CHEM", "type": "core", "credits": 6},
+            {"code": "CS 101", "name": "Computer Programming and Utilization", "abbr": "CPU", "type": "core", "credits": 6},
+            {"code": "ME 119", "name": "Engineering Graphics and Drawing", "abbr": "EGD", "type": "core", "credits": 6},
+            {"code": "HS 101", "name": "English for Communication", "abbr": "ENG", "type": "core", "credits": 4}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Spring Semester (Sem 2)",
+          "subjects": [
+            {"code": "MA 106", "name": "Linear Algebra", "abbr": "LA", "type": "core", "credits": 8},
+            {"code": "PH 108", "name": "Basics of Electricity and Magnetism", "abbr": "BEM", "type": "core", "credits": 6},
+            {"code": "EE 101", "name": "Introduction to Electrical Engineering", "abbr": "IEE", "type": "core", "credits": 6},
+            {"code": "ME 109", "name": "Thermodynamics and Fluid Mechanics", "abbr": "TFM", "type": "core", "credits": 6},
+            {"code": "BB 101", "name": "Biology", "abbr": "BIO", "type": "core", "credits": 4},
+            {"code": "CS 102", "name": "Data Structures and Algorithms", "abbr": "DSA", "type": "core", "credits": 6}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (Semesters 3 & 4)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Autumn Semester (Sem 3)",
+          "subjects": [
+            {"code": "MA 207", "name": "Differential Equations II", "abbr": "DE2", "type": "core", "credits": 6},
+            {"code": "EE 207", "name": "Electronic Circuits", "abbr": "EC", "type": "core", "credits": 6},
+            {"code": "EE 210", "name": "Signals and Systems", "abbr": "SS", "type": "core", "credits": 6},
+            {"code": "EE 214", "name": "Digital Systems", "abbr": "DS", "type": "core", "credits": 6},
+            {"code": "EE 216", "name": "Semiconductor Devices", "abbr": "SD", "type": "core", "credits": 6},
+            {"code": "HS 2xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Spring Semester (Sem 4)",
+          "subjects": [
+            {"code": "MA 205", "name": "Complex Analysis", "abbr": "CA", "type": "core", "credits": 6},
+            {"code": "EE 223", "name": "Communication Systems", "abbr": "CS", "type": "core", "credits": 6},
+            {"code": "EE 225", "name": "Network Theory", "abbr": "NT", "type": "core", "credits": 6},
+            {"code": "EE 229", "name": "Control Systems", "abbr": "CON", "type": "core", "credits": 6},
+            {"code": "EE 204", "name": "Electrical Machines I", "abbr": "EM1", "type": "core", "credits": 6},
+            {"code": "PH 2xx", "name": "Electromagnetic Theory", "abbr": "EMT", "type": "core", "credits": 6}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (Semesters 5 & 6)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Autumn Semester (Sem 5)",
+          "subjects": [
+            {"code": "EE 301", "name": "Analog Circuits", "abbr": "AC", "type": "core", "credits": 6},
+            {"code": "EE 305", "name": "Digital Signal Processing", "abbr": "DSP", "type": "core", "credits": 6},
+            {"code": "EE 309", "name": "Microprocessors", "abbr": "MP", "type": "core", "credits": 6},
+            {"code": "EE 313", "name": "Electrical Machines II", "abbr": "EM2", "type": "core", "credits": 6},
+            {"code": "EE 3xx", "name": "Department Elective I", "abbr": "DE1", "type": "elective", "credits": 6}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Spring Semester (Sem 6)",
+          "subjects": [
+            {"code": "EE 302", "name": "Power Electronics", "abbr": "PE", "type": "core", "credits": 6},
+            {"code": "EE 306", "name": "Power Systems", "abbr": "PS", "type": "core", "credits": 6},
+            {"code": "EE 310", "name": "VLSI Design", "abbr": "VLSI", "type": "core", "credits": 6},
+            {"code": "EE 3xx", "name": "Department Elective II", "abbr": "DE2", "type": "elective", "credits": 6},
+            {"code": "HS 3xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (Semesters 7 & 8)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Autumn Semester (Sem 7)",
+          "subjects": [
+            {"code": "EE 4xx", "name": "Department Elective III", "abbr": "DE3", "type": "elective", "credits": 6},
+            {"code": "EE 4xx", "name": "Department Elective IV", "abbr": "DE4", "type": "elective", "credits": 6},
+            {"code": "EE 494", "name": "B.Tech Project I", "abbr": "BTP1", "type": "project", "credits": 12},
+            {"code": "HS 4xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Spring Semester (Sem 8)",
+          "subjects": [
+            {"code": "EE 4xx", "name": "Department Elective V", "abbr": "DE5", "type": "elective", "credits": 6},
+            {"code": "EE 494", "name": "B.Tech Project II", "abbr": "BTP2", "type": "project", "credits": 18},
+            {"code": "EE 498", "name": "Seminar", "abbr": "SEM", "type": "core", "credits": 4}
+          ]
+        }
+      ]
+    }
+  ]
+}

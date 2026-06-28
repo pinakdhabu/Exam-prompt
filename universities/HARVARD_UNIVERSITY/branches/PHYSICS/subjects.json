@@ -1,0 +1,67 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "physics",
+    "name": "Physics",
+    "description": "Harvard University Physics concentration subjects (A.B.) — representative course listing"
+  },
+  "years": [
+    {
+      "id": "foundations",
+      "name": "Foundational Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "intro",
+          "name": "Introductory Sequence",
+          "subjects": [
+            {"code": "Phys 15a", "name": "Mechanics and Special Relativity", "abbr": "MECH", "type": "core", "credits": 4},
+            {"code": "Phys 15b", "name": "Electromagnetism and Waves", "abbr": "EMW", "type": "core", "credits": 4},
+            {"code": "Phys 15c", "name": "Quantum Physics and Statistical Mechanics", "abbr": "QPSM", "type": "core", "credits": 4},
+            {"code": "Math 1ab", "name": "Calculus", "abbr": "CALC", "type": "core", "credits": 4},
+            {"code": "Math 21a", "name": "Multivariable Calculus", "abbr": "MVC", "type": "core", "credits": 4},
+            {"code": "Math 21b", "name": "Linear Algebra", "abbr": "LA", "type": "core", "credits": 4}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "name": "Core Physics",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "core-courses",
+          "name": "Core Theory and Lab Courses",
+          "subjects": [
+            {"code": "Phys 143a", "name": "Quantum Mechanics I", "abbr": "QM1", "type": "core", "credits": 4},
+            {"code": "Phys 143b", "name": "Quantum Mechanics II", "abbr": "QM2", "type": "core", "credits": 4},
+            {"code": "Phys 151", "name": "Electromagnetic Theory", "abbr": "EMT", "type": "core", "credits": 4},
+            {"code": "Phys 153", "name": "Thermodynamics and Statistical Mechanics", "abbr": "TSM", "type": "core", "credits": 4},
+            {"code": "Phys 161", "name": "Classical Mechanics", "abbr": "CM", "type": "core", "credits": 4},
+            {"code": "Phys 191", "name": "Advanced Laboratory", "abbr": "LAB", "type": "core", "credits": 4}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Physics",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "advanced",
+          "name": "Advanced Physics Electives",
+          "subjects": [
+            {"code": "Phys 201", "name": "Nuclear and Particle Physics", "abbr": "NPP", "type": "elective", "credits": 4},
+            {"code": "Phys 205", "name": "Solid State Physics", "abbr": "SSP", "type": "elective", "credits": 4},
+            {"code": "Phys 210", "name": "General Relativity", "abbr": "GR", "type": "elective", "credits": 4},
+            {"code": "Phys 213", "name": "Cosmology", "abbr": "COSMO", "type": "elective", "credits": 4},
+            {"code": "Phys 220", "name": "Biological Physics", "abbr": "BP", "type": "elective", "credits": 4},
+            {"code": "Phys 230", "name": "Quantum Field Theory", "abbr": "QFT", "type": "elective", "credits": 4}
+          ]
+        }
+      ]
+    }
+  ]
+}

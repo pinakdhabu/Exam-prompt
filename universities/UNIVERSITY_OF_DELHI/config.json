@@ -21,12 +21,17 @@
     "details": "Odd semester: Jul-Dec, Even semester: Jan-Jun. End semester exams in Dec and May respectively."
   },
   "patterns": {
-    "default": "du-cbcs-2022",
+    "default": "du-nep-2022",
     "available": [
       {
         "id": "du-cbcs-2019",
         "name": "DU CBCS 2019 Pattern",
         "description": "Choice Based Credit System with 7-point grading, 25 IA + 75 ESE for core subjects"
+      },
+      {
+        "id": "du-nep-2022",
+        "name": "DU NEP 2022 Pattern (FYUP)",
+        "description": "NEP-aligned Four Year Undergraduate Programme (FYUP) — 176 credits, 25 IA + 75 ESE"
       },
       {
         "id": "du-cbcs-2022",

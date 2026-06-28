@@ -26,37 +26,83 @@
       {
         "id": "harvard-semester",
         "name": "Harvard Standard Semester Pattern",
-        "description": "Standard US semester pattern with letter grades A-F on 4.0 GPA scale. Final exams after reading period."
+        "description": "Standard US semester pattern with letter grades A-F on 4.0 GPA scale. 4-credit courses. Final exams after reading period."
       }
     ]
   },
   "branches": {
     "departments": [
-      "Computer Science",
-      "Electrical Engineering",
-      "Mechanical Engineering",
-      "Bioengineering",
-      "Applied Mathematics",
-      "Physics",
-      "Chemistry & Chemical Biology",
-      "Molecular & Cellular Biology",
-      "Economics",
-      "Government",
-      "History",
-      "English",
-      "Philosophy",
-      "Psychology",
-      "Sociology",
-      "Statistics",
-      "Earth & Planetary Sciences",
-      "Organismic & Evolutionary Biology",
-      "Linguistics",
-      "Anthropology",
-      "Art, Film, & Visual Studies",
-      "Music",
-      "East Asian Languages & Civilizations",
-      "Romance Languages & Literatures",
-      "African & African American Studies"
+      {
+        "id": "computer-science",
+        "name": "Computer Science",
+        "relevant_skills": ["universal-a-plus-answer-writer", "universal-notes-generator", "universal-pyq-analyzer", "universal-imp-topics-generator", "universal-qp-fetcher"],
+        "degrees": [
+          {
+            "id": "ab",
+            "name": "Bachelor of Arts (A.B.)",
+            "years": [
+              {"id": "foundations", "name": "Foundational Courses", "semesters": ["Fall", "Spring"]},
+              {"id": "concentration", "name": "Concentration Years", "semesters": ["Fall", "Spring"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "economics",
+        "name": "Economics",
+        "degrees": [
+          {
+            "id": "ab",
+            "name": "Bachelor of Arts (A.B.)",
+            "years": [
+              {"id": "foundations", "name": "Foundational Courses", "semesters": ["Fall", "Spring"]},
+              {"id": "concentration", "name": "Concentration Years", "semesters": ["Fall", "Spring"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mathematics",
+        "name": "Mathematics",
+        "degrees": [
+          {
+            "id": "ab",
+            "name": "Bachelor of Arts (A.B.)",
+            "years": [
+              {"id": "foundations", "name": "Foundational Courses", "semesters": ["Fall", "Spring"]},
+              {"id": "concentration", "name": "Concentration Years", "semesters": ["Fall", "Spring"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "physics",
+        "name": "Physics",
+        "degrees": [
+          {
+            "id": "ab",
+            "name": "Bachelor of Arts (A.B.)",
+            "years": [
+              {"id": "foundations", "name": "Foundational Courses", "semesters": ["Fall", "Spring"]},
+              {"id": "concentration", "name": "Concentration Years", "semesters": ["Fall", "Spring"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "history",
+        "name": "History",
+        "degrees": [
+          {
+            "id": "ab",
+            "name": "Bachelor of Arts (A.B.)",
+            "years": [
+              {"id": "foundations", "name": "Foundational Courses", "semesters": ["Fall", "Spring"]},
+              {"id": "concentration", "name": "Concentration Years", "semesters": ["Fall", "Spring"]}
+            ]
+          }
+        ]
+      }
     ]
   },
   "contributing": {

@@ -1,0 +1,142 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "engineering-science",
+    "name": "Engineering Science",
+    "description": "University of Oxford Engineering Science undergraduate subjects — representative curriculum"
+  },
+  "years": [
+    {
+      "id": "first-year",
+      "name": "Year 1 (Prelims)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "E1", "name": "Engineering Mathematics I", "abbr": "EM1", "type": "core"},
+            {"code": "E2", "name": "Mechanics I", "abbr": "MECH1", "type": "core"},
+            {"code": "E3", "name": "Electrical and Information Engineering I", "abbr": "EIE1", "type": "core"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "E4", "name": "Engineering Mathematics II", "abbr": "EM2", "type": "core"},
+            {"code": "E5", "name": "Mechanics II", "abbr": "MECH2", "type": "core"},
+            {"code": "E6", "name": "Electrical and Information Engineering II", "abbr": "EIE2", "type": "core"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "E7", "name": "Engineering Practical Work", "abbr": "EPW", "type": "core"},
+            {"code": "E8", "name": "Computing for Engineers", "abbr": "COMP", "type": "core"},
+            {"code": "E9", "name": "Design and Materials", "abbr": "DM", "type": "core"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second-year",
+      "name": "Year 2",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "E10", "name": "Thermodynamics", "abbr": "TD", "type": "core"},
+            {"code": "E11", "name": "Fluid Mechanics", "abbr": "FM", "type": "core"},
+            {"code": "E12", "name": "Solid Mechanics", "abbr": "SM", "type": "core"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "E13", "name": "Engineering Mathematics III", "abbr": "EM3", "type": "core"},
+            {"code": "E14", "name": "Control Engineering", "abbr": "CE", "type": "core"},
+            {"code": "E15", "name": "Structural Engineering", "abbr": "SE", "type": "core"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "E16", "name": "Electronic Circuits", "abbr": "EC", "type": "core"},
+            {"code": "E17", "name": "Engineering Materials", "abbr": "EM", "type": "core"},
+            {"code": "E18", "name": "Engineering Practical Work", "abbr": "EPW2", "type": "core"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third-year",
+      "name": "Year 3 (Finals)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "E20", "name": "Advanced Solid Mechanics", "abbr": "ASM", "type": "elective"},
+            {"code": "E21", "name": "Thermofluids", "abbr": "TF", "type": "elective"},
+            {"code": "E22", "name": "Information Engineering", "abbr": "IE", "type": "elective"},
+            {"code": "E23", "name": "Biomedical Engineering", "abbr": "BME", "type": "elective"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "E24", "name": "Management for Engineers", "abbr": "MFE", "type": "elective"},
+            {"code": "E25", "name": "Power Systems", "abbr": "PS", "type": "elective"},
+            {"code": "E26", "name": "Engineering Design", "abbr": "ED", "type": "elective"},
+            {"code": "E27", "name": "Environmental Engineering", "abbr": "ENV", "type": "elective"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "E 499", "name": "Project / Dissertation", "abbr": "PROJ", "type": "project"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fourth-year",
+      "name": "Year 4 (MEng)",
+      "pattern": "oxford-standard",
+      "semesters": [
+        {
+          "id": "michaelmas",
+          "name": "Michaelmas Term",
+          "subjects": [
+            {"code": "E4xx", "name": "Advanced Engineering Options I", "abbr": "AEO1", "type": "elective"},
+            {"code": "E4xx", "name": "Advanced Engineering Options II", "abbr": "AEO2", "type": "elective"}
+          ]
+        },
+        {
+          "id": "hilary",
+          "name": "Hilary Term",
+          "subjects": [
+            {"code": "E4xx", "name": "Advanced Engineering Options III", "abbr": "AEO3", "type": "elective"},
+            {"code": "E4xx", "name": "Advanced Engineering Options IV", "abbr": "AEO4", "type": "elective"}
+          ]
+        },
+        {
+          "id": "trinity",
+          "name": "Trinity Term",
+          "subjects": [
+            {"code": "E 498", "name": "Major Project / Dissertation", "abbr": "MAJPROJ", "type": "project"}
+          ]
+        }
+      ]
+    }
+  ]
+}

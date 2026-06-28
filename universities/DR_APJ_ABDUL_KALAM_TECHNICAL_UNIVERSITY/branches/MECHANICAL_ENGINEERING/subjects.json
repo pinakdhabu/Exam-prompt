@@ -1,0 +1,134 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "mechanical-engineering",
+    "name": "Mechanical Engineering",
+    "description": "AKTU B.Tech Mechanical Engineering subjects under 2021 Pattern, organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (B.Tech I & II Semester)",
+      "pattern": "aktu-2021",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "KAS101T", "name": "Engineering Mathematics I", "abbr": "M1", "type": "core", "credits": 4},
+            {"code": "KAS102T", "name": "Engineering Physics", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "KAS103T", "name": "Engineering Chemistry", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "KEE101T", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 4},
+            {"code": "KME101T", "name": "Fundamentals of Mechanical Engineering", "abbr": "FME", "type": "core", "credits": 3},
+            {"code": "KAS151P", "name": "Physics Lab", "abbr": "PHYL", "type": "lab", "credits": 1},
+            {"code": "KAS152P", "name": "Chemistry Lab", "abbr": "CHEML", "type": "lab", "credits": 1},
+            {"code": "KEE151P", "name": "Electrical Engineering Lab", "abbr": "EEL", "type": "lab", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "KAS201T", "name": "Engineering Mathematics II", "abbr": "M2", "type": "core", "credits": 4},
+            {"code": "KCS201T", "name": "Programming for Problem Solving", "abbr": "PPS", "type": "core", "credits": 4},
+            {"code": "KAS202T", "name": "Environmental Science", "abbr": "EVS", "type": "core", "credits": 3},
+            {"code": "KCE201T", "name": "Emerging Technology", "abbr": "EMT", "type": "core", "credits": 3},
+            {"code": "KAS251P", "name": "C Programming Lab", "abbr": "CPL", "type": "lab", "credits": 1},
+            {"code": "KAS252P", "name": "Environmental Lab", "abbr": "EVSL", "type": "lab", "credits": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (B.Tech III & IV Semester)",
+      "pattern": "aktu-2021",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "KME301", "name": "Engineering Thermodynamics", "abbr": "ET", "type": "core", "credits": 4},
+            {"code": "KME302", "name": "Strength of Materials", "abbr": "SOM", "type": "core", "credits": 4},
+            {"code": "KME303", "name": "Fluid Mechanics and Fluid Machines", "abbr": "FMFM", "type": "core", "credits": 4},
+            {"code": "KME304", "name": "Manufacturing Science I", "abbr": "MS1", "type": "core", "credits": 4},
+            {"code": "KAS302", "name": "Mathematics IV", "abbr": "M4", "type": "core", "credits": 4},
+            {"code": "KME351", "name": "Strength of Materials Lab", "abbr": "SOML", "type": "lab", "credits": 1},
+            {"code": "KME352", "name": "Fluid Mechanics Lab", "abbr": "FML", "type": "lab", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "KME401", "name": "Applied Thermodynamics", "abbr": "ATD", "type": "core", "credits": 4},
+            {"code": "KME402", "name": "Manufacturing Science II", "abbr": "MS2", "type": "core", "credits": 4},
+            {"code": "KME403", "name": "Theory of Machines", "abbr": "TOM", "type": "core", "credits": 4},
+            {"code": "KME404", "name": "Machine Design I", "abbr": "MD1", "type": "core", "credits": 4},
+            {"code": "KME451", "name": "Manufacturing Science Lab", "abbr": "MSL", "type": "lab", "credits": 1},
+            {"code": "KME452", "name": "Theory of Machines Lab", "abbr": "TOML", "type": "lab", "credits": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (B.Tech V & VI Semester)",
+      "pattern": "aktu-2021",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "KME501", "name": "Heat and Mass Transfer", "abbr": "HMT", "type": "core", "credits": 4},
+            {"code": "KME502", "name": "Machine Design II", "abbr": "MD2", "type": "core", "credits": 4},
+            {"code": "KME503", "name": "CAD/CAM", "abbr": "CADCAM", "type": "core", "credits": 4},
+            {"code": "KME504", "name": "Internal Combustion Engines", "abbr": "ICE", "type": "core", "credits": 4},
+            {"code": "KME551", "name": "Heat and Mass Transfer Lab", "abbr": "HMTL", "type": "lab", "credits": 1},
+            {"code": "KME552", "name": "CAD/CAM Lab", "abbr": "CADL", "type": "lab", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "KME601", "name": "Refrigeration and Air Conditioning", "abbr": "RAC", "type": "core", "credits": 4},
+            {"code": "KME602", "name": "Automation and Robotics", "abbr": "AUR", "type": "core", "credits": 4},
+            {"code": "KME603", "name": "Finite Element Methods", "abbr": "FEM", "type": "core", "credits": 4},
+            {"code": "KME6xx", "name": "Elective I", "abbr": "EL1", "type": "elective", "credits": 4},
+            {"code": "KME6xx", "name": "Elective II", "abbr": "EL2", "type": "elective", "credits": 4},
+            {"code": "KME651", "name": "RAC Lab", "abbr": "RACL", "type": "lab", "credits": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.Tech VII & VIII Semester)",
+      "pattern": "aktu-2021",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "KME7xx", "name": "Elective III", "abbr": "EL3", "type": "elective", "credits": 4},
+            {"code": "KME7xx", "name": "Elective IV", "abbr": "EL4", "type": "elective", "credits": 4},
+            {"code": "KME7xx", "name": "Elective V", "abbr": "EL5", "type": "elective", "credits": 4},
+            {"code": "KOE7xx", "name": "Open Elective I", "abbr": "OE1", "type": "elective", "credits": 4},
+            {"code": "KOE7xx", "name": "Open Elective II", "abbr": "OE2", "type": "elective", "credits": 4},
+            {"code": "KME751", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "KME8xx", "name": "Elective VI", "abbr": "EL6", "type": "elective", "credits": 4},
+            {"code": "KOE8xx", "name": "Open Elective III", "abbr": "OE3", "type": "elective", "credits": 4},
+            {"code": "KME851", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 8}
+          ]
+        }
+      ]
+    }
+  ]
+}

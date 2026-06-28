@@ -1,0 +1,69 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "history",
+    "name": "History",
+    "description": "Harvard University History concentration subjects (A.B.) — representative course listing"
+  },
+  "years": [
+    {
+      "id": "foundations",
+      "name": "Foundational Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "intro",
+          "name": "Introductory Sequence",
+          "subjects": [
+            {"code": "Hist 10a", "name": "World History to 1500", "abbr": "WH1", "type": "core", "credits": 4},
+            {"code": "Hist 10b", "name": "World History since 1500", "abbr": "WH2", "type": "core", "credits": 4},
+            {"code": "Hist 97", "name": "Sophomore Tutorial: Historical Methods", "abbr": "HM", "type": "core", "credits": 4},
+            {"code": "Hist 98", "name": "Junior Tutorial: Historical Research", "abbr": "HR", "type": "core", "credits": 4}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regions",
+      "name": "Regional History",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "regions",
+          "name": "Regional and Thematic Courses",
+          "subjects": [
+            {"code": "Hist 1000", "name": "American History to 1865", "abbr": "AMH1", "type": "elective", "credits": 4},
+            {"code": "Hist 1001", "name": "American History since 1865", "abbr": "AMH2", "type": "elective", "credits": 4},
+            {"code": "Hist 1010", "name": "European History: Renaissance to Revolution", "abbr": "EUR1", "type": "elective", "credits": 4},
+            {"code": "Hist 1011", "name": "Modern European History", "abbr": "EUR2", "type": "elective", "credits": 4},
+            {"code": "Hist 1020", "name": "East Asian History", "abbr": "EAH", "type": "elective", "credits": 4},
+            {"code": "Hist 1030", "name": "South Asian History", "abbr": "SAH", "type": "elective", "credits": 4},
+            {"code": "Hist 1040", "name": "African History", "abbr": "AFH", "type": "elective", "credits": 4},
+            {"code": "Hist 1050", "name": "Latin American History", "abbr": "LAH", "type": "elective", "credits": 4},
+            {"code": "Hist 1060", "name": "Middle Eastern History", "abbr": "MEH", "type": "elective", "credits": 4}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic",
+      "name": "Thematic History",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "thematic",
+          "name": "Thematic and Advanced Seminars",
+          "subjects": [
+            {"code": "Hist 1100", "name": "Diplomatic History", "abbr": "DIPH", "type": "elective", "credits": 4},
+            {"code": "Hist 1110", "name": "Intellectual History", "abbr": "INTH", "type": "elective", "credits": 4},
+            {"code": "Hist 1120", "name": "Social and Cultural History", "abbr": "SCH", "type": "elective", "credits": 4},
+            {"code": "Hist 1130", "name": "Economic History", "abbr": "ECH", "type": "elective", "credits": 4},
+            {"code": "Hist 1140", "name": "History of Science and Medicine", "abbr": "HSM", "type": "elective", "credits": 4},
+            {"code": "Hist 1150", "name": "Gender and Sexuality in History", "abbr": "GSH", "type": "elective", "credits": 4},
+            {"code": "Hist 99", "name": "Senior Thesis", "abbr": "THESIS", "type": "project", "credits": 4}
+          ]
+        }
+      ]
+    }
+  ]
+}

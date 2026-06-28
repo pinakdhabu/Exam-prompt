@@ -1,0 +1,67 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "economics",
+    "name": "Economics",
+    "description": "Harvard University Economics concentration subjects (A.B.) — representative course listing"
+  },
+  "years": [
+    {
+      "id": "foundations",
+      "name": "Foundational Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "intro",
+          "name": "Introductory Sequence",
+          "subjects": [
+            {"code": "Econ 10a", "name": "Principles of Economics", "abbr": "PRIN", "type": "core", "credits": 4},
+            {"code": "Econ 10b", "name": "Intermediate Microeconomic Theory", "abbr": "MICRO", "type": "core", "credits": 4},
+            {"code": "Econ 1123", "name": "Intermediate Macroeconomic Theory", "abbr": "MACRO", "type": "core", "credits": 4},
+            {"code": "Stat 100", "name": "Introduction to Statistics", "abbr": "STATS", "type": "core", "credits": 4},
+            {"code": "Math 1ab", "name": "Calculus", "abbr": "CALC", "type": "core", "credits": 4}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "name": "Core Economics",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "core-courses",
+          "name": "Core Theory & Methods",
+          "subjects": [
+            {"code": "Econ 1010a", "name": "Microeconomic Theory", "abbr": "MICT", "type": "core", "credits": 4},
+            {"code": "Econ 1010b", "name": "Macroeconomic Theory", "abbr": "MACT", "type": "core", "credits": 4},
+            {"code": "Econ 1126", "name": "Econometrics", "abbr": "ECON", "type": "core", "credits": 4},
+            {"code": "Econ 1127", "name": "Advanced Econometrics", "abbr": "ADVEC", "type": "elective", "credits": 4}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fields",
+      "name": "Field Courses",
+      "pattern": "harvard-semester",
+      "semesters": [
+        {
+          "id": "fields",
+          "name": "Field Courses and Electives",
+          "subjects": [
+            {"code": "Econ 1810", "name": "International Economics", "abbr": "INTEC", "type": "elective", "credits": 4},
+            {"code": "Econ 1820", "name": "Public Economics", "abbr": "PUBEC", "type": "elective", "credits": 4},
+            {"code": "Econ 1830", "name": "Labor Economics", "abbr": "LABEC", "type": "elective", "credits": 4},
+            {"code": "Econ 1840", "name": "Development Economics", "abbr": "DEVEC", "type": "elective", "credits": 4},
+            {"code": "Econ 1850", "name": "Behavioral Economics", "abbr": "BEC", "type": "elective", "credits": 4},
+            {"code": "Econ 1860", "name": "Financial Economics", "abbr": "FINEC", "type": "elective", "credits": 4},
+            {"code": "Econ 1870", "name": "Industrial Organization", "abbr": "IO", "type": "elective", "credits": 4},
+            {"code": "Econ 1880", "name": "Game Theory", "abbr": "GT", "type": "elective", "credits": 4},
+            {"code": "Econ 1890", "name": "Political Economy", "abbr": "PE", "type": "elective", "credits": 4}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "oxford-standard",
+  "name": "Oxford Standard Pattern (Undergraduate)",
+  "description": "Oxford undergraduate degree classification system. Three 8-week terms per year: Michaelmas (Oct-Dec), Hilary (Jan-Mar), Trinity (Apr-Jun). Final examinations at end of academic year (Prelims in Y1, Finals in Y3). Class degree: First (70+), Upper Second/2:1 (60-69), Lower Second/2:2 (50-59), Third (45-49), Pass (40-44).",
+  "years_active": ["2020", "2021", "2022", "2023", "2024", "2025"],
+  "exam_type": "final-year",
+  "in_semester": {
+    "exists": false,
+    "name": "Collections / Term Tests",
+    "marks": null,
+    "duration_hours": null,
+    "types": ["collections", "tutorial essays", "practical work", "problem sheets"],
+    "notes": "Internal college assessments (collections) at start/end of term for progress monitoring. Tutorials with weekly essays/problem sheets. No formal in-term marks contributing to final degree."
+  },
+  "end_semester": {
+    "total_marks": 100,
+    "time_hours": 3,
+    "total_units": null,
+    "exam_units": null,
+    "or_pairs": null,
+    "instructions": [
+      "Answer the required number of questions from each section.",
+      "All questions carry equal marks unless otherwise stated.",
+      "Start each question on a new page.",
+      "Calculators are not permitted unless specified."
+    ],
+    "question_structure": {
+      "type": "FULL_SYLLABUS",
+      "description": "University examinations (Prelims/Finals) occur at the end of the academic year. Each subject paper is typically 3 hours with essay and/or problem-style questions. Students choose a subset of questions from a larger set."
+    }
+  },
+  "total_marks": null,
+  "pass_percentage": 40,
+  "grading": {
+    "type": "classification",
+    "scale": null,
+    "pass_grade": "Third",
+    "grade_mapping": {
+      "First": [70, 100],
+      "Upper Second (2:1)": [60, 69],
+      "Lower Second (2:2)": [50, 59],
+      "Third": [45, 49],
+      "Pass": [40, 44],
+      "Fail": [0, 39]
+    }
+  }
+}

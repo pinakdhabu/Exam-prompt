@@ -1,0 +1,126 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "mechanical-engineering",
+    "name": "Mechanical Engineering",
+    "description": "IIT Bombay B.Tech Mechanical Engineering subjects organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (Semesters 1 & 2)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Autumn Semester (Sem 1)",
+          "subjects": [
+            {"code": "MA 105", "name": "Calculus", "abbr": "CALC", "type": "core", "credits": 8},
+            {"code": "PH 107", "name": "Quantum Physics and Applications", "abbr": "QPA", "type": "core", "credits": 6},
+            {"code": "CH 105", "name": "Organic/Inorganic Chemistry", "abbr": "CHEM", "type": "core", "credits": 6},
+            {"code": "CS 101", "name": "Computer Programming and Utilization", "abbr": "CPU", "type": "core", "credits": 6},
+            {"code": "ME 119", "name": "Engineering Graphics and Drawing", "abbr": "EGD", "type": "core", "credits": 6},
+            {"code": "HS 101", "name": "English for Communication", "abbr": "ENG", "type": "core", "credits": 4}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Spring Semester (Sem 2)",
+          "subjects": [
+            {"code": "MA 106", "name": "Linear Algebra", "abbr": "LA", "type": "core", "credits": 8},
+            {"code": "PH 108", "name": "Basics of Electricity and Magnetism", "abbr": "BEM", "type": "core", "credits": 6},
+            {"code": "EE 101", "name": "Introduction to Electrical Engineering", "abbr": "IEE", "type": "core", "credits": 6},
+            {"code": "ME 109", "name": "Thermodynamics and Fluid Mechanics", "abbr": "TFM", "type": "core", "credits": 6},
+            {"code": "BB 101", "name": "Biology", "abbr": "BIO", "type": "core", "credits": 4},
+            {"code": "ME 102", "name": "Mechanics", "abbr": "MECH", "type": "core", "credits": 6}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (Semesters 3 & 4)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Autumn Semester (Sem 3)",
+          "subjects": [
+            {"code": "MA 207", "name": "Differential Equations II", "abbr": "DE2", "type": "core", "credits": 6},
+            {"code": "ME 201", "name": "Solid Mechanics", "abbr": "SM", "type": "core", "credits": 6},
+            {"code": "ME 209", "name": "Manufacturing Processes I", "abbr": "MP1", "type": "core", "credits": 6},
+            {"code": "ME 211", "name": "Thermodynamics", "abbr": "TD", "type": "core", "credits": 6},
+            {"code": "ME 213", "name": "Fluid Mechanics", "abbr": "FM", "type": "core", "credits": 6},
+            {"code": "HS 2xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Spring Semester (Sem 4)",
+          "subjects": [
+            {"code": "ME 202", "name": "Machine Drawing", "abbr": "MD", "type": "core", "credits": 6},
+            {"code": "ME 204", "name": "Kinematics of Machines", "abbr": "KOM", "type": "core", "credits": 6},
+            {"code": "ME 206", "name": "Heat and Mass Transfer", "abbr": "HMT", "type": "core", "credits": 6},
+            {"code": "ME 208", "name": "Manufacturing Processes II", "abbr": "MP2", "type": "core", "credits": 6},
+            {"code": "ME 210", "name": "Materials Science", "abbr": "MS", "type": "core", "credits": 6}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (Semesters 5 & 6)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Autumn Semester (Sem 5)",
+          "subjects": [
+            {"code": "ME 301", "name": "Dynamics of Machines", "abbr": "DOM", "type": "core", "credits": 6},
+            {"code": "ME 305", "name": "Design of Machine Elements", "abbr": "DME", "type": "core", "credits": 6},
+            {"code": "ME 309", "name": "Internal Combustion Engines", "abbr": "ICE", "type": "core", "credits": 6},
+            {"code": "ME 313", "name": "Metrology and Quality Control", "abbr": "MQC", "type": "core", "credits": 6},
+            {"code": "ME 3xx", "name": "Department Elective I", "abbr": "DE1", "type": "elective", "credits": 6}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Spring Semester (Sem 6)",
+          "subjects": [
+            {"code": "ME 302", "name": "Refrigeration and Air Conditioning", "abbr": "RAC", "type": "core", "credits": 6},
+            {"code": "ME 306", "name": "Finite Element Methods", "abbr": "FEM", "type": "core", "credits": 6},
+            {"code": "ME 310", "name": "Computer Aided Design and Manufacturing", "abbr": "CADM", "type": "core", "credits": 6},
+            {"code": "ME 3xx", "name": "Department Elective II", "abbr": "DE2", "type": "elective", "credits": 6},
+            {"code": "HS 3xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (Semesters 7 & 8)",
+      "pattern": "iitb-standard",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Autumn Semester (Sem 7)",
+          "subjects": [
+            {"code": "ME 4xx", "name": "Department Elective III", "abbr": "DE3", "type": "elective", "credits": 6},
+            {"code": "ME 4xx", "name": "Department Elective IV", "abbr": "DE4", "type": "elective", "credits": 6},
+            {"code": "ME 494", "name": "B.Tech Project I", "abbr": "BTP1", "type": "project", "credits": 12},
+            {"code": "HS 4xx", "name": "Humanities/Social Sciences Elective", "abbr": "HSS", "type": "core", "credits": 6}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Spring Semester (Sem 8)",
+          "subjects": [
+            {"code": "ME 4xx", "name": "Department Elective V", "abbr": "DE5", "type": "elective", "credits": 6},
+            {"code": "ME 494", "name": "B.Tech Project II", "abbr": "BTP2", "type": "project", "credits": 18},
+            {"code": "ME 498", "name": "Seminar", "abbr": "SEM", "type": "core", "credits": 4}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -21,7 +21,7 @@
     "details": "Odd semester: Jul-Dec, Even semester: Jan-Jun. Exams typically in Nov-Dec (odd) and May-Jun (even)."
   },
   "patterns": {
-    "default": "aktu-2019",
+    "default": "aktu-2021",
     "available": [
       {
         "id": "aktu-2019",

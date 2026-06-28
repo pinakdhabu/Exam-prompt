@@ -1,0 +1,69 @@
+{
+  "id": "aktu-2021",
+  "name": "AKTU 2021 Pattern (NEP)",
+  "description": "AKTU NEP-aligned 2021 Pattern — 30 marks internal + 70 marks end semester, 5 units, KCS-series course codes",
+  "years_active": ["2021", "2022", "2023", "2024", "2025"],
+  "exam_type": "end-semester",
+  "in_semester": {
+    "exists": true,
+    "name": "Internal Assessment",
+    "marks": 30,
+    "types": ["internal tests", "assignments", "quizzes", "practicals"],
+    "notes": "Internal assessment includes two sessional tests (15 marks each) or assignments/quiz/project as per course type."
+  },
+  "end_semester": {
+    "total_marks": 70,
+    "time_hours": 3,
+    "total_units": 5,
+    "exam_units": 5,
+    "or_pairs": 5,
+    "instructions": [
+      "Answer any FIVE full questions, choosing at least ONE from each module.",
+      "Module 1: Q.1 or Q.2, Module 2: Q.3 or Q.4, Module 3: Q.5 or Q.6, Module 4: Q.7 or Q.8, Module 5: Q.9 or Q.10.",
+      "All questions carry equal marks.",
+      "Neat diagrams must be drawn wherever necessary.",
+      "Assume suitable data, if necessary."
+    ],
+    "question_structure": {
+      "type": "OR_PAIRS",
+      "description": "Five modules each with an OR-pair. Each full question is 14 marks with sub-questions.",
+      "total_questions": 10,
+      "or_pairs": 5,
+      "labeling": "Q1/Q2 (Module 1), Q3/Q4 (Module 2), Q5/Q6 (Module 3), Q7/Q8 (Module 4), Q9/Q10 (Module 5)",
+      "unit_mapping": {
+        "Module 1": "Q1/Q2",
+        "Module 2": "Q3/Q4",
+        "Module 3": "Q5/Q6",
+        "Module 4": "Q7/Q8",
+        "Module 5": "Q9/Q10"
+      },
+      "sub_questions": {
+        "pattern": "a+b or a+b+c",
+        "mark_options": [
+          {"distribution": "7+7", "description": "Two sub-questions (7+7=14)"},
+          {"distribution": "10+4", "description": "Two sub-questions (10+4=14)"},
+          {"distribution": "8+6", "description": "Two sub-questions (8+6=14)"},
+          {"distribution": "5+5+4", "description": "Three sub-questions (5+5+4=14)"}
+        ]
+      }
+    }
+  },
+  "total_marks": 100,
+  "pass_percentage": 40,
+  "grading": {
+    "type": "SGPA/CGPA",
+    "scale": 10,
+    "pass_grade": "P",
+    "grade_mapping": {
+      "O": [90, 100],
+      "A+": [80, 89],
+      "A": [70, 79],
+      "B+": [60, 69],
+      "B": [55, 59],
+      "C": [50, 54],
+      "D": [45, 49],
+      "P": [40, 44],
+      "F": [0, 39]
+    }
+  }
+}

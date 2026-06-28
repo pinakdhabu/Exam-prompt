@@ -13,7 +13,7 @@
   "type": "central",
   "website": "https://www.iitb.ac.in",
   "established": 1958,
-  "description": "India's top-ranked engineering institute (NIRF #3 overall). Offers B.Tech, B.S., M.Tech, M.Sc., MBA, and Ph.D. programs. Uses IIT 10-point grading (AA/AB/BB/BC/CC/CD/DD/FR) with SPI/CPI system. Semester system with Autumn (Jul-Nov) and Spring (Jan-Apr) terms.",
+  "description": "India's top-ranked engineering institute (NIRF #3 overall). Offers B.Tech, B.S., M.Tech, M.Sc., MBA, and Ph.D. programs. Uses IIT 10-point grading (AP/AA/AB/BB/BC/CC/CD/DD/FR) with SPI/CPI system. Semester system with Autumn (Jul-Nov) and Spring (Jan-Apr) terms.",
   "exam_system": "semester",
   "grading_system": "CPI (10.0)",
   "academic_calendar": {
@@ -26,34 +26,93 @@
       {
         "id": "iitb-standard",
         "name": "IIT Bombay Standard Pattern",
-        "description": "10-point letter grade system (AA/AB/BB/BC/CC/CD/DD/FR). SPI per semester, CPI cumulative. Min DD to pass. 40% IA + 60% ESE typical."
+        "description": "10-point letter grade system (AP/AA/AB/BB/BC/CC/CD/DD/FR). 50% IA + 50% ESE typical. SPI per semester, CPI cumulative. Min DD to pass."
       }
     ]
   },
   "branches": {
     "departments": [
-      "Computer Science & Engineering",
-      "Electrical Engineering",
-      "Mechanical Engineering",
-      "Civil Engineering",
-      "Chemical Engineering",
-      "Aerospace Engineering",
-      "Metallurgical Engineering & Materials Science",
-      "Engineering Physics",
-      "Environmental Science & Engineering",
-      "Energy Science & Engineering",
-      "Biosciences & Bioengineering",
-      "Systems & Control Engineering",
-      "Industrial Engineering & Operations Research",
-      "Mathematics",
-      "Physics",
-      "Chemistry",
-      "Earth Sciences",
-      "Humanities & Social Sciences",
-      "Management Studies",
-      "Design",
-      "Computer Science & Engineering (AI)",
-      "Computer Science & Engineering (Data Science)"
+      {
+        "id": "computer-science-engineering",
+        "name": "Computer Science & Engineering",
+        "relevant_skills": ["universal-a-plus-answer-writer", "universal-notes-generator", "universal-pyq-analyzer", "universal-imp-topics-generator", "universal-qp-fetcher"],
+        "degrees": [
+          {
+            "id": "btech",
+            "name": "Bachelor of Technology (B.Tech.)",
+            "years": [
+              {"id": "fe", "name": "First Year", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "electrical-engineering",
+        "name": "Electrical Engineering",
+        "degrees": [
+          {
+            "id": "btech",
+            "name": "Bachelor of Technology (B.Tech.)",
+            "years": [
+              {"id": "fe", "name": "First Year", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mechanical-engineering",
+        "name": "Mechanical Engineering",
+        "degrees": [
+          {
+            "id": "btech",
+            "name": "Bachelor of Technology (B.Tech.)",
+            "years": [
+              {"id": "fe", "name": "First Year", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil-engineering",
+        "name": "Civil Engineering",
+        "degrees": [
+          {
+            "id": "btech",
+            "name": "Bachelor of Technology (B.Tech.)",
+            "years": [
+              {"id": "fe", "name": "First Year", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "chemical-engineering",
+        "name": "Chemical Engineering",
+        "degrees": [
+          {
+            "id": "btech",
+            "name": "Bachelor of Technology (B.Tech.)",
+            "years": [
+              {"id": "fe", "name": "First Year", "semesters": ["Semester 1", "Semester 2"]},
+              {"id": "se", "name": "Second Year", "semesters": ["Semester 3", "Semester 4"]},
+              {"id": "te", "name": "Third Year", "semesters": ["Semester 5", "Semester 6"]},
+              {"id": "be", "name": "Fourth Year", "semesters": ["Semester 7", "Semester 8"]}
+            ]
+          }
+        ]
+      }
     ]
   },
   "contributing": {

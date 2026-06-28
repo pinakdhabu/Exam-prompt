@@ -1,0 +1,75 @@
+{
+  "id": "au-r2021",
+  "name": "R2021 Regulation (CBCS)",
+  "description": "Anna University R2021 Regulation — 80 marks end semester + 20 marks internal, 5 units, 10-credit semester system, outcome-based education",
+  "years_active": ["2021", "2022", "2023", "2024", "2025"],
+  "exam_type": "end-semester",
+  "in_semester": {
+    "exists": true,
+    "name": "Continuous Internal Assessment (CIA)",
+    "marks": 20,
+    "duration_hours": 1.5,
+    "types": ["internal tests", "assignments", "quizzes", "practicals", "projects"],
+    "notes": "CIA includes two internal assessment tests (CAT1 and CAT2) weighted at 20%. Each test covers 2.5 units."
+  },
+  "end_semester": {
+    "total_marks": 80,
+    "time_hours": 3,
+    "total_units": 5,
+    "exam_units": 5,
+    "or_pairs": 5,
+    "instructions": [
+      "Answer ALL questions from PART A (10 × 2 = 20 marks).",
+      "Answer any FIVE full questions from PART B (5 × 13 = 65 marks) with internal choice.",
+      "Choose either (a) or (b) for each question in Part B.",
+      "Neat diagrams must be drawn wherever necessary.",
+      "Figures to the right indicate full marks.",
+      "Assume suitable data, if necessary."
+    ],
+    "question_structure": {
+      "type": "PART_A_PLUS_OR_PAIRS",
+      "description": "Part A: 10 compulsory 2-mark questions (all 5 units). Part B: 5 OR-pairs, one per unit, each 13 marks with sub-questions.",
+      "total_questions": 20,
+      "or_pairs": 5,
+      "labeling": "Q1-Q10 (Part A), Q11/Q12 (Unit 1), Q13/Q14 (Unit 2), Q15/Q16 (Unit 3), Q17/Q18 (Unit 4), Q19/Q20 (Unit 5)",
+      "unit_mapping": {
+        "Unit 1": "Q11/Q12",
+        "Unit 2": "Q13/Q14",
+        "Unit 3": "Q15/Q16",
+        "Unit 4": "Q17/Q18",
+        "Unit 5": "Q19/Q20"
+      },
+      "part_a": {
+        "marks_per_question": 2,
+        "total_questions": 10,
+        "total_marks": 20
+      },
+      "sub_questions": {
+        "pattern": "a+b or a+b+c",
+        "mark_options": [
+          {"distribution": "7+6", "description": "Two sub-questions (7+6=13)"},
+          {"distribution": "8+5", "description": "Two sub-questions (8+5=13)"},
+          {"distribution": "5+4+4", "description": "Three sub-questions (5+4+4=13)"}
+        ]
+      }
+    }
+  },
+  "total_marks": 100,
+  "pass_percentage": 40,
+  "grading": {
+    "type": "SGPA/CGPA",
+    "scale": 10,
+    "pass_grade": "P",
+    "grade_mapping": {
+      "O": [91, 100],
+      "A+": [81, 90],
+      "A": [71, 80],
+      "B+": [61, 70],
+      "B": [55, 60],
+      "C": [50, 54],
+      "D": [45, 49],
+      "P": [40, 44],
+      "F": [0, 39]
+    }
+  }
+}

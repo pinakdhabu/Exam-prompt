@@ -1,0 +1,132 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "electronics-communication-engineering",
+    "name": "Electronics & Communication Engineering",
+    "description": "JNTUA B.Tech ECE subjects under R23 Regulation (NEP-aligned), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (B.Tech I & II Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "23AHSBS01", "name": "Calculus & Differential Equations", "abbr": "CDE", "type": "core", "credits": 4},
+            {"code": "23AHSBS02", "name": "Engineering Physics", "abbr": "PHY", "type": "core", "credits": 4},
+            {"code": "23AHSBS03", "name": "Communicative English", "abbr": "ENG", "type": "core", "credits": 2},
+            {"code": "23AHSBS04", "name": "C Programming", "abbr": "CP", "type": "core", "credits": 3},
+            {"code": "23AHSBS05", "name": "Engineering Graphics", "abbr": "EG", "type": "core", "credits": 3},
+            {"code": "23AHSBS07", "name": "Physics Lab", "abbr": "PHYL", "type": "lab", "credits": 1.5},
+            {"code": "23AHSBS08", "name": "C Programming Lab", "abbr": "CPL", "type": "lab", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "23AHSBS10", "name": "Linear Algebra & Transform", "abbr": "LAT", "type": "core", "credits": 4},
+            {"code": "23AHSBS11", "name": "Engineering Chemistry", "abbr": "CHEM", "type": "core", "credits": 4},
+            {"code": "23AHSBS12", "name": "Basic Electrical Engineering", "abbr": "BEE", "type": "core", "credits": 3},
+            {"code": "23AHSBS13", "name": "Engineering Mechanics", "abbr": "EM", "type": "core", "credits": 3},
+            {"code": "23AHSBS15", "name": "Chemistry Lab", "abbr": "CHEML", "type": "lab", "credits": 1},
+            {"code": "23AHSBS16", "name": "Engineering Workshop", "abbr": "EW", "type": "lab", "credits": 1.5},
+            {"code": "23AHSBS18", "name": "Environmental Science", "abbr": "EVS", "type": "audit", "credits": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (B.Tech III & IV Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "23AHSBS19", "name": "Probability & Statistics", "abbr": "PS", "type": "core", "credits": 3},
+            {"code": "23A04301", "name": "Electronic Devices and Circuits", "abbr": "EDC", "type": "core", "credits": 3},
+            {"code": "23A04302", "name": "Digital Logic Design", "abbr": "DLD", "type": "core", "credits": 3},
+            {"code": "23A04303", "name": "Network Analysis", "abbr": "NA", "type": "core", "credits": 3},
+            {"code": "23A04304", "name": "Signals and Systems", "abbr": "SS", "type": "core", "credits": 3},
+            {"code": "23A04305", "name": "EDC Lab", "abbr": "EDCL", "type": "lab", "credits": 1.5},
+            {"code": "23A04306", "name": "Digital Logic Design Lab", "abbr": "DLDL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "23AHSBS20", "name": "Numerical Methods", "abbr": "NM", "type": "core", "credits": 3},
+            {"code": "23A04401", "name": "Analog Communication", "abbr": "AC", "type": "core", "credits": 3},
+            {"code": "23A04402", "name": "Linear ICs", "abbr": "LIC", "type": "core", "credits": 3},
+            {"code": "23A04403", "name": "EMF", "abbr": "EMF", "type": "core", "credits": 3},
+            {"code": "23A04404", "name": "Microprocessors", "abbr": "MP", "type": "core", "credits": 3},
+            {"code": "23A04405", "name": "Analog Communication Lab", "abbr": "ACL", "type": "lab", "credits": 1.5},
+            {"code": "23A04406", "name": "Microprocessors Lab", "abbr": "MPL", "type": "lab", "credits": 1.5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (B.Tech V & VI Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "23A04501", "name": "Digital Communication", "abbr": "DC", "type": "core", "credits": 3},
+            {"code": "23A04502", "name": "Digital Signal Processing", "abbr": "DSP", "type": "core", "credits": 3},
+            {"code": "23A04503", "name": "VLSI Design", "abbr": "VLSI", "type": "core", "credits": 3},
+            {"code": "23A04504a", "name": "Professional Elective I: Embedded Systems", "abbr": "ES", "type": "elective", "credits": 3},
+            {"code": "23A04505", "name": "DSP Lab", "abbr": "DSPL", "type": "lab", "credits": 1.5},
+            {"code": "23A04506", "name": "Digital Communication Lab", "abbr": "DCL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "23A04601", "name": "Wireless Communication", "abbr": "WC", "type": "core", "credits": 3},
+            {"code": "23A04602", "name": "Optical Communication", "abbr": "OC", "type": "core", "credits": 3},
+            {"code": "23A04603a", "name": "Professional Elective II: IoT", "abbr": "IOT", "type": "elective", "credits": 3},
+            {"code": "23A04603b", "name": "Open Elective I: Entrepreneurship", "abbr": "ENT", "type": "elective", "credits": 3},
+            {"code": "23A04604", "name": "Wireless Communication Lab", "abbr": "WCL", "type": "lab", "credits": 1.5},
+            {"code": "23A04605", "name": "Skill Course: Python", "abbr": "PYTHON", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (B.Tech VII & VIII Semester)",
+      "pattern": "jntua-r23",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "23A04701a", "name": "Professional Elective III: Computer Networks", "abbr": "CN", "type": "elective", "credits": 3},
+            {"code": "23A04701b", "name": "Open Elective II: Disaster Management", "abbr": "DM", "type": "elective", "credits": 3},
+            {"code": "23A04702", "name": "Project I", "abbr": "PROJ1", "type": "project", "credits": 3},
+            {"code": "23A04703", "name": "Technical Seminar", "abbr": "TS", "type": "core", "credits": 2}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "23A04801", "name": "Project II", "abbr": "PROJ2", "type": "project", "credits": 8},
+            {"code": "23A04802", "name": "Comprehensive Viva Voce", "abbr": "CVV", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    }
+  ]
+}

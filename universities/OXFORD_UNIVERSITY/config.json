@@ -37,31 +37,90 @@
   },
   "branches": {
     "departments": [
-      "Computer Science",
-      "Engineering Science",
-      "Mathematics",
-      "Physics",
-      "Chemistry",
-      "Biology",
-      "Biochemistry",
-      "Materials Science",
-      "Economics",
-      "Philosophy, Politics & Economics (PPE)",
-      "Law",
-      "Medicine",
-      "History",
-      "English Language & Literature",
-      "Modern Languages",
-      "Classics",
-      "Oriental Studies",
-      "Geography",
-      "Theology & Religion",
-      "Music",
-      "Fine Art",
-      "Archaeology & Anthropology",
-      "Earth Sciences",
-      "Statistics",
-      "Psychology & Linguistics"
+      {
+        "id": "computer-science",
+        "name": "Computer Science",
+        "relevant_skills": ["universal-a-plus-answer-writer", "universal-notes-generator", "universal-pyq-analyzer", "universal-imp-topics-generator", "universal-qp-fetcher"],
+        "degrees": [
+          {
+            "id": "ba",
+            "name": "Bachelor of Arts (B.A.)",
+            "years": [
+              {"id": "first-year", "name": "Year 1 (Prelims)", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "second-year", "name": "Year 2 (Core + Options)", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "third-year", "name": "Year 3 (Finals)", "semesters": ["Michaelmas", "Hilary", "Trinity"]}
+            ]
+          },
+          {
+            "id": "mcompsci",
+            "name": "Master of Computer Science (MCompSci)",
+            "years": [
+              {"id": "fourth-year", "name": "Year 4 (MCompSci)", "semesters": ["Michaelmas", "Hilary", "Trinity"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mathematics",
+        "name": "Mathematics",
+        "degrees": [
+          {
+            "id": "ba",
+            "name": "Bachelor of Arts (B.A.)",
+            "years": [
+              {"id": "first-year", "name": "Year 1", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "second-year", "name": "Year 2", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "third-year", "name": "Year 3", "semesters": ["Michaelmas", "Hilary", "Trinity"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "physics",
+        "name": "Physics",
+        "degrees": [
+          {
+            "id": "ba",
+            "name": "Bachelor of Arts (B.A.)",
+            "years": [
+              {"id": "first-year", "name": "Year 1", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "second-year", "name": "Year 2", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "third-year", "name": "Year 3", "semesters": ["Michaelmas", "Hilary", "Trinity"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "economics",
+        "name": "Economics",
+        "degrees": [
+          {
+            "id": "ba",
+            "name": "Bachelor of Arts (B.A.)",
+            "years": [
+              {"id": "first-year", "name": "Year 1", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "second-year", "name": "Year 2", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "third-year", "name": "Year 3", "semesters": ["Michaelmas", "Hilary", "Trinity"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "engineering-science",
+        "name": "Engineering Science",
+        "degrees": [
+          {
+            "id": "ba",
+            "name": "Bachelor of Arts (B.A.)",
+            "years": [
+              {"id": "first-year", "name": "Year 1", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "second-year", "name": "Year 2", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "third-year", "name": "Year 3", "semesters": ["Michaelmas", "Hilary", "Trinity"]},
+              {"id": "fourth-year", "name": "Year 4 (MEng)", "semesters": ["Michaelmas", "Hilary", "Trinity"]}
+            ]
+          }
+        ]
+      }
     ]
   },
   "contributing": {

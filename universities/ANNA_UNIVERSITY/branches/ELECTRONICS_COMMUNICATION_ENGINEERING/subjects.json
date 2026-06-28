@@ -1,0 +1,134 @@
+{
+  "$schema": "exam-prompt-branch-v1",
+  "branch": {
+    "id": "electronics-communication-engineering",
+    "name": "Electronics & Communication Engineering",
+    "description": "Anna University B.E. ECE subjects under R2021 Regulation (CBCS), organized by semester"
+  },
+  "years": [
+    {
+      "id": "fe",
+      "name": "First Year (Semesters 1 & 2)",
+      "pattern": "au-cbcs-2021",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "name": "Semester 1",
+          "subjects": [
+            {"code": "HS3151", "name": "Professional English I", "abbr": "PE1", "type": "core", "credits": 3},
+            {"code": "MA3151", "name": "Matrices and Calculus", "abbr": "MC", "type": "core", "credits": 4},
+            {"code": "PH3151", "name": "Engineering Physics", "abbr": "PHY", "type": "core", "credits": 3},
+            {"code": "CY3151", "name": "Engineering Chemistry", "abbr": "CHEM", "type": "core", "credits": 3},
+            {"code": "GE3151", "name": "Problem Solving and Python Programming", "abbr": "PSPP", "type": "core", "credits": 3},
+            {"code": "GE3171", "name": "Python Programming Lab", "abbr": "PPL", "type": "lab", "credits": 1.5},
+            {"code": "BS3171", "name": "Physics and Chemistry Lab", "abbr": "PCL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-2",
+          "name": "Semester 2",
+          "subjects": [
+            {"code": "HS3251", "name": "Professional English II", "abbr": "PE2", "type": "core", "credits": 3},
+            {"code": "MA3251", "name": "Statistics and Numerical Methods", "abbr": "SNM", "type": "core", "credits": 4},
+            {"code": "PH3256", "name": "Physics for Electronics Engineering", "abbr": "PHEE", "type": "core", "credits": 3},
+            {"code": "BE3251", "name": "Basic Electrical and Electronics Engineering", "abbr": "BEEE", "type": "core", "credits": 3},
+            {"code": "GE3251", "name": "Engineering Graphics", "abbr": "EG", "type": "core", "credits": 4},
+            {"code": "EC3251", "name": "Circuit Analysis", "abbr": "CA", "type": "core", "credits": 3},
+            {"code": "GE3271", "name": "Engineering Practices Lab", "abbr": "EPL", "type": "lab", "credits": 1.5},
+            {"code": "EC3271", "name": "Circuit Analysis Lab", "abbr": "CAL", "type": "lab", "credits": 1.5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "se",
+      "name": "Second Year (Semesters 3 & 4)",
+      "pattern": "au-cbcs-2021",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "name": "Semester 3",
+          "subjects": [
+            {"code": "MA3351", "name": "Transform Techniques and Partial Differential Equations", "abbr": "TTPDE", "type": "core", "credits": 4},
+            {"code": "EC3351", "name": "Electronic Devices and Circuits", "abbr": "EDC", "type": "core", "credits": 4},
+            {"code": "EC3352", "name": "Digital Electronics", "abbr": "DE", "type": "core", "credits": 4},
+            {"code": "EC3353", "name": "Electromagnetic Fields", "abbr": "EMF", "type": "core", "credits": 3},
+            {"code": "EC3354", "name": "Signals and Systems", "abbr": "SS", "type": "core", "credits": 4},
+            {"code": "EC3361", "name": "Electronic Devices and Circuits Lab", "abbr": "EDCL", "type": "lab", "credits": 1.5},
+            {"code": "EC3381", "name": "Digital Electronics Lab", "abbr": "DEL", "type": "lab", "credits": 1.5},
+            {"code": "GE3361", "name": "Professional Development", "abbr": "PD", "type": "core", "credits": 1}
+          ]
+        },
+        {
+          "id": "sem-4",
+          "name": "Semester 4",
+          "subjects": [
+            {"code": "MA3452", "name": "Probability and Statistics", "abbr": "PS", "type": "core", "credits": 4},
+            {"code": "EC3451", "name": "Analog and Digital Communication", "abbr": "ADC", "type": "core", "credits": 4},
+            {"code": "EC3452", "name": "Linear Integrated Circuits", "abbr": "LIC", "type": "core", "credits": 4},
+            {"code": "EC3491", "name": "Microprocessors and Microcontrollers", "abbr": "MPMC", "type": "core", "credits": 4},
+            {"code": "EC3461", "name": "Analog and Digital Communication Lab", "abbr": "ADCL", "type": "lab", "credits": 1.5},
+            {"code": "EC3481", "name": "Microprocessors and Microcontrollers Lab", "abbr": "MPMCL", "type": "lab", "credits": 1.5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "name": "Third Year (Semesters 5 & 6)",
+      "pattern": "au-cbcs-2021",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "name": "Semester 5",
+          "subjects": [
+            {"code": "EC3551", "name": "Digital Signal Processing", "abbr": "DSP", "type": "core", "credits": 4},
+            {"code": "EC3552", "name": "VLSI Design", "abbr": "VLSI", "type": "core", "credits": 4},
+            {"code": "EC3591", "name": "Computer Architecture and Networks", "abbr": "CAN", "type": "core", "credits": 4},
+            {"code": "EC3501", "name": "Control Systems", "abbr": "CS", "type": "core", "credits": 3},
+            {"code": "EC3561", "name": "Digital Signal Processing Lab", "abbr": "DSPL", "type": "lab", "credits": 1.5},
+            {"code": "EC3581", "name": "VLSI Lab", "abbr": "VLSIL", "type": "lab", "credits": 1.5}
+          ]
+        },
+        {
+          "id": "sem-6",
+          "name": "Semester 6",
+          "subjects": [
+            {"code": "EC36xx", "name": "Professional Elective I", "abbr": "PE1", "type": "elective", "credits": 3},
+            {"code": "EC36xx", "name": "Professional Elective II", "abbr": "PE2", "type": "elective", "credits": 3},
+            {"code": "EC36xx", "name": "Professional Elective III", "abbr": "PE3", "type": "elective", "credits": 3},
+            {"code": "GE36xx", "name": "Open Elective I", "abbr": "OE1", "type": "elective", "credits": 3},
+            {"code": "GE36xx", "name": "Open Elective II", "abbr": "OE2", "type": "elective", "credits": 3},
+            {"code": "EC3611", "name": "Mini Project", "abbr": "MP", "type": "project", "credits": 2}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Fourth Year (Semesters 7 & 8)",
+      "pattern": "au-cbcs-2021",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "name": "Semester 7",
+          "subjects": [
+            {"code": "EC37xx", "name": "Professional Elective IV", "abbr": "PE4", "type": "elective", "credits": 3},
+            {"code": "EC37xx", "name": "Professional Elective V", "abbr": "PE5", "type": "elective", "credits": 3},
+            {"code": "GE37xx", "name": "Open Elective III", "abbr": "OE3", "type": "elective", "credits": 3},
+            {"code": "GE37xx", "name": "Open Elective IV", "abbr": "OE4", "type": "elective", "credits": 3},
+            {"code": "EC3711", "name": "Project Work Phase I", "abbr": "PW1", "type": "project", "credits": 4}
+          ]
+        },
+        {
+          "id": "sem-8",
+          "name": "Semester 8",
+          "subjects": [
+            {"code": "EC3811", "name": "Project Work Phase II", "abbr": "PW2", "type": "project", "credits": 12},
+            {"code": "EC3812", "name": "Comprehensive Viva Voce", "abbr": "CVV", "type": "core", "credits": 2}
+          ]
+        }
+      ]
+    }
+  ]
+}
