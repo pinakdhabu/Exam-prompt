@@ -6,6 +6,8 @@
       - SKILL.md exists
       - YAML frontmatter present
       - Required fields: name, description
+      - Directory naming convention (kebab-case)
+      - Cross-reference validity (no broken skill links)
       - No trailing whitespace
       - Consistent line endings (no mixed CRLF/LF)
 .USAGE
@@ -24,7 +26,7 @@ $ExitCode = 0
 function Write-Result {
     param([string]$Status, [string]$Name, [string]$Message)
     $color = @{ "OK" = "Green"; "FAIL" = "Red"; "WARN" = "Yellow" }[$Status]
-    Write-Host "$Status : $Name — $Message" -ForegroundColor $color
+    Write-Host "$Status : $Name - $Message" -ForegroundColor $color
 }
 
 function Validate-Skill {
@@ -45,7 +47,7 @@ function Validate-Skill {
 
     # Check frontmatter opening
     if ($lines.Count -eq 0 -or $lines[0] -ne "---") {
-        Write-Result -Status "FAIL" -Name $name -Message "SKILL.md must start with YAML frontmatter (---)"
+        Write-Result -Status "FAIL" -Name $name -Message 'SKILL.md must start with YAML frontmatter (---)'
         $errors++
     }
 
@@ -81,6 +83,29 @@ function Validate-Skill {
         }
     }
 
+    # Check directory naming convention (kebab-case)
+    if ($name -notmatch '^[a-z][a-z0-9]*(-[a-z0-9]+)*$') {
+        Write-Result -Status "WARN" -Name $name -Message "directory name not kebab-case: '$name'"
+    }
+
+    # Check cross-references to other skills
+    $rawContent = Get-Content $skillFile -Raw
+    $refs = [regex]::Matches($rawContent, '`universal-[a-z-]+`|`setup-[a-z-]+`')
+    $existingDirs = Get-ChildItem $SkillsDir -Directory | ForEach-Object { $_.Name }
+    foreach ($ref in $refs) {
+        $refName = $ref.Value -replace '^`|`$', ''
+        $found = $false
+        foreach ($dir in $existingDirs) {
+            if ($dir -replace '-', '' -eq $refName -replace '-', '') {
+                $found = $true
+                break
+            }
+        }
+        if (-not $found) {
+            Write-Result -Status "WARN" -Name $name -Message "cross-reference to unknown skill: $refName"
+        }
+    }
+
     # Check trailing whitespace
     $hasTrailing = $false
     foreach ($line in $lines) {
@@ -102,7 +127,7 @@ function Validate-Skill {
         }
     }
     if ($crlfCount -gt 0) {
-        Write-Result -Status "WARN" -Name $name -Message "Windows line endings (CRLF) found — $crlfCount occurrences"
+        Write-Result -Status "WARN" -Name $name -Message "Windows line endings (CRLF) found - $crlfCount occurrences"
     }
 
     if ($errors -eq 0) {
