@@ -571,6 +571,7 @@ After extracting text with this skill:
 │  Print-Ready    │
 │  PDF Output     │
 └─────────────────┘
+```
 
 ## Quality Gate
 
