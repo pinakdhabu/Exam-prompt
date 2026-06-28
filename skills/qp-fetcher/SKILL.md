@@ -515,6 +515,57 @@ executing, check for an existing session profile:
 
 ---
 
+## Fair Use & Copyright Notice
+
+Question papers are educational material. When fetching from public university portals:
+
+1. Use fetched papers **only for personal/educational study purposes**.
+2. Do not republish fetched papers as your own content.
+3. Respect the university's terms of service for their question paper portal.
+4. If the paper has a visible copyright notice, honour it.
+5. When generating synthetic question papers (not fetched), they are original works — no copyright concerns.
+
+## Rate Limiting & Polite Scraping Rules
+
+- Add a delay of **1–3 seconds** between successive requests to the same university portal.
+- Do not make more than **10 requests per minute** to any single domain.
+- Check `robots.txt` if fetching from a root domain (not university-specific portals).
+- If a request returns 429 (Too Many Requests) or 503 (Service Unavailable): back off for 30 seconds, retry once. If it fails again, use generation fallback.
+- For SPPU portal: limit concurrent downloads to 3. Portal latency ~800ms typical.
+
+## Non-SPPU Source Templates
+
+For universities without a dedicated script, use this general approach:
+
+```
+1. Search web: "[University Name] [Subject] [Year] question paper"
+2. Search repository: "site:[university-domain].ac.in question paper [subject]"
+3. Search PDF aggregators: "site:pdfslide.net [subject] question paper [university]"
+4. If no results: fall back to generation rather than fetching nothing.
+```
+
+| University         | Typical Source Pattern                                      | Fallback Priority |
+| ------------------ | ----------------------------------------------------------- | ----------------- |
+| VTU                | `vtu.ac.in` → Result/BE/[Branch]/[Sem]/[Subject]            | Generate           |
+| JNTU               | `jntua.ac.in`, `jntuh.ac.in` → Previous Question Papers     | Generate           |
+| Mumbai University  | `mu.ac.in` → Examination → Question Papers                  | Generate           |
+| AKTU               | `aktu.ac.in` → Previous Year Question Papers                | Generate           |
+| RGPV               | `rgpv.ac.in` → Question Papers                              | Generate           |
+| GTU                | `gtu.ac.in` → Exam Papers                                   | Generate           |
+| DU                 | `du.ac.in` → Department pages individually                  | Ask user to upload |
+| IPU                | `ipu.ac.in` → Examination → Question Papers                 | Generate           |
+| International (NA) | University portal, course websites, or ask user to upload   | Ask user to upload |
+
+## Fallback: User Upload
+
+When all fetch methods fail for a university:
+
+1. Politely ask: *"I couldn't find question papers for [university] automatically. Could you upload 2–3 PDFs of past question papers for [subject]? I can continue with analysis once you share them."*
+2. If the user uploads a PDF, route to `universal-document-reader` for text extraction, then proceed with analysis.
+3. If the user cannot provide any PDF, offer to **generate a realistic question paper** in the university's estimated pattern based on the available context.
+
+---
+
 ## Prerequisites
 
 - Node.js 18+ (primary runtime)

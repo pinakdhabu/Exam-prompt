@@ -133,7 +133,7 @@ Adaptive formula: **1 mark ≈ 2-3 lines of average handwriting ≈ 25-30 second
 | ----- | ------------------- | ------------------------------------------------------------ |
 | 1     | 2-3                 | One definition or fact                                       |
 | 2     | 5-6                 | 2-3 facts or definition + 1 point                            |
-| 3     | 8-10                | Definition + 2-3 points                                      |
+| 3     | 8-10                | Definition + 2-3 points + closing                            |
 | 4     | 12-14               | Definition + 3-4 points + closing                            |
 | 5     | 15-18               | Definition + 4-5 points + closing + optional diagram         |
 | 6     | 18-22               | Definition + 5-6 points + diagram + closing                  |
@@ -167,7 +167,20 @@ Adaptive formula: **1 mark ≈ 2-3 lines of average handwriting ≈ 25-30 second
 | **Negative marking**            | Attempt estimation logic: which questions to skip, partial marks strategy. Only answer high-confidence questions first.                        |
 | **Open-book with limited time** | Skip definitions entirely. Emphasize analysis, cross-referencing, and application. Reference known sources quickly.                            |
 
-### 1E — Identify Bloom's Level (Implicit)
+### 1E — Bilingual, Regional-Language & Non-English Answer Mode
+
+For universities where answers may be written in English, a regional language, or a mix:
+
+| Requirement                                 | Rule                                                                                                                                             |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **User asks in a regional language**        | Answer in the same language. Retain all technical terms in **English** (first use bolded) because examiners expect standard nomenclature.        |
+| **Bilingual university** (e.g., Hindi/English) | Give the definition in both languages in one sentence, e.g., *"**Blockchain** (ब्लॉकचेन) is a distributed ledger..."*. Then continue in the requested language. |
+| **Technical terms**                         | Never translate technical terms into regional-script approximations. Use the English term, then optionally parenthetical local name once.        |
+| **Numerical / formulas**                    | Always use Arabic numerals and standard mathematical notation. Do not transliterate formulas.                                                    |
+| **RTL / complex scripts**                   | For Arabic, Persian, Urdu, Hebrew, maintain right-to-left sentence structure; keep technical terms in English left-to-right.                     |
+| **Terminology consistency**                 | Pick one local equivalent per concept and reuse it throughout the answer. Do not switch synonyms.                                                |
+
+### 1F — Identify Bloom's Level (Implicit)
 
 | Bloom Level         | Command Word Clusters                                                                                                                                                                          | Answer Must...                                                                                    |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
@@ -1160,6 +1173,74 @@ Exam Eve: Quick scan of keyword highlights only
 
 This schedule produces ~95% retention at exam time with only ~4 hours of total study per major
 answer.
+
+---
+
+## PHASE 16: INTERNATIONAL UNIVERSITY EXEMPLARS — Few-Shot Answer Patterns
+
+When a known international university pattern is detected, these few-shot exemplars apply:
+
+### Cambridge / Oxford (UK — Essay-Based)
+
+```
+Question: "Critically evaluate the role of the separation of powers in modern constitutional democracies." [15 marks]
+Pattern: UK Tripos/Finals — answer 3 of 8, 45 minutes per essay
+Structure: Thesis → Argument 1 (+ evidence) → Argument 2 (+ counterpoint) → Argument 3 (+ synthesis) → Evaluated Conclusion
+- Opening: Direct thesis statement answering the question. No definition padding.
+- Body: Each paragraph = claim + authority (case law/scholar) + counter-consideration + resolution
+- Style: Formal but fluid. Use "However", "Nevertheless", "A more nuanced view..."
+- Closing: Explicit judgment — "On balance, the separation of powers remains... but its modern operation reveals..."
+- No bullet points. No numbered lists. Continuous prose only.
+- Marks: Class-based (First / 2:1 / 2:2). For First-class: originality of argument + depth of reference.
+```
+
+### North American (US/Canada — Midterm + Problem Set)
+
+```
+Question: "Solve the following recurrence using the Master Theorem: T(n) = 3T(n/4) + n log n" [8 marks]
+Pattern: US Midterm — 60 min, 5 problems, partial credit
+Structure: Given → Method → Steps → Answer → Verification
+- Step 1: Identify form: T(n) = aT(n/b) + f(n). Here a=3, b=4, f(n)=n log n.
+- Step 2: Compute n^(log_b a) = n^(log_4 3) ≈ n^0.792.
+- Step 3: Compare f(n) = n log n with n^0.792. f(n) grows faster (n log n > n^0.792).
+- Step 4: Check regularity condition: a·f(n/b) = 3·(n/4) log(n/4) = (3/4)n log(n/4) ≤ c·n log n holds for c=3/4 < 1.
+- Step 5: Apply Case 3: T(n) = Θ(f(n)) = Θ(n log n).
+- Box answer: T(n) = Θ(n log n)
+- Verification: Expand T(16) as sanity check.
+Style: Show every algebraic step. Label each theorem/rule used. Box final answer.
+```
+
+### European (ECTS — Module Exam + Oral Component)
+
+```
+Question: "Explain the principle of operation of a MOSFET and derive its I-V characteristics." [10 marks]
+Pattern: ECTS Module Exam — 90 min, 50% written + 50% oral follow-up
+Structure: Principle → Physical Operation → Derivation → Characteristics → Oral Prep Notes
+- Written answer: Full derivation with diagrams. Label all regions (cutoff, linear, saturation).
+- Include: Cross-section diagram with labeled terminals (Gate, Source, Drain, Substrate).
+- Key equations: I_D = (μ_n C_ox W/L)[(V_GS - V_T)V_DS - V_DS²/2] for linear; I_D = (μ_n C_ox W/2L)(V_GS - V_T)² for saturation.
+- [ORAL PREP] At end, add 3 anticipated follow-up questions with short answers:
+  1. "What happens when V_DS exceeds V_GS - V_T?" → Channel pinch-off, saturation region.
+  2. "How does body effect modify V_T?" → V_T increases with reverse substrate bias.
+  3. "Compare BJT vs MOSFET for amplification." → MOSFET: high input impedance, voltage-controlled; BJT: lower impedance, current-controlled.
+Style: Diagrams mandatory. Derivations stepwise. Anticipate oral follow-ups explicitly.
+```
+
+### Australian / NUS / NTU (Semester-Based with Hurdle)
+
+```
+Question: "Analyse the impact of cloud computing on IT infrastructure management." [10 marks]
+Pattern: Australian Final — 3 hrs, 60% weight, hurdle requirement
+Structure: Introduction → Analysis Themes → Industry Evidence → Conclusion
+- Opening: Define cloud computing (NIST definition: on-demand, broad network access, resource pooling, rapid elasticity, measured service).
+- Body: 4 analysis themes:
+  1. CAPEX → OPEX shift (capital expenditure eliminated, pay-as-you-go operational model)
+  2. Elasticity benefits (auto-scaling, no over-provisioning, match demand curves)
+  3. Security concerns (shared responsibility model, data sovereignty, compliance)
+  4. Vendor lock-in risk (proprietary APIs, migration costs, multi-cloud strategy)
+- Evidence: Cite 1-2 real examples per theme (AWS, Azure, Google Cloud case studies).
+- Conclusion: Balanced judgment — cloud reduces infrastructure burden but requires new governance skills.
+Style: Analytical depth expected. Cite evidence. Clear structure. Use Australian/British spelling.
 
 ---
 
