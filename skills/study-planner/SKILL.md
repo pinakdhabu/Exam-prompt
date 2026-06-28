@@ -158,6 +158,26 @@ REST | REST | REST | REST | REST | REST |
 | **Review**    | Spaced Repetition, Interleaving, Summary Writing | Consolidating knowledge    |
 | **Deep Work** | Pomodoro, Time Blocking, Deep Focus              | Complex topics             |
 
+### Overlapping-Exam Scheduling
+
+When two or more exams fall on the same day or consecutive days:
+
+| Scenario                                    | Strategy                                                                                 |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Exam A on June 15, Exam B on June 15 (same day) | Allocate 60% time to higher-weightage subject on the day before; use interleaved review blocks |
+| Exam A on June 15, Exam B on June 16       | Study Exam A until 6pm on June 14; 2-hour review of Exam B on evening of June 14         |
+| Exam A on June 15, Exam B on June 17       | Full focus on A until June 14; 1 day gap day for B on June 15 afternoon + June 16         |
+| Exam A on June 15, Exam B on June 14       | Inverted gap — prioritize B first; A review on morning of June 15                        |
+| 3+ exams in 5 days                         | Treat as "exam cluster": high-yield topics only, 1-hour review blocks per subject         |
+
+### Recovery-Day Rules
+
+- Mandatory 1 rest day for every 6 consecutive study days
+- After a missed day: do NOT double the next day's load — redistribute over 3 days instead
+- After an exam day: the remainder of that day is a recovery half-day (light review only)
+- Recovery day activities: 30-min passive review (reading summaries), walks, sleep catch-up
+- If 2+ days are missed, regenerate the plan rather than compressing remaining days
+
 ## 8. Adaptive Re-scheduling
 
 The planner can adapt mid-course:
@@ -177,6 +197,40 @@ The planner can adapt mid-course:
 | **CSV / Excel (.xlsx)** | Calendar import, further manipulation               |
 | **Calendar (.ics)**     | Direct Google Calendar / Outlook import             |
 | **Text**                | Quick reference, printing                           |
+
+### Calendar Export Snippets
+
+**.ics format for Google Calendar / Outlook import:**
+
+```
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:20260601T090000
+DTEND:20260601T110000
+SUMMARY:Study: DS - Trees (Deep Work Block)
+DESCRIPTION:Unit 1 - Data Structures. Focus: Tree traversals, BST operations.
+RRULE:FREQ=WEEKLY;BYDAY=MO,WE,FR
+END:VEVENT
+END:VCALENDAR
+```
+
+**CSV format for spreadsheet import:**
+
+```csv
+Date,Start,End,Subject,Topic,Block Type,Notes
+2026-06-01,09:00,10:30,Data Structures,Tree Traversals,Deep Work,Focus on inorder/preorder/postorder
+2026-06-01,10:30,11:00,,,Break,
+2026-06-01,11:00,12:30,Data Structures,BST Operations,Practice,Solve 5 BST problems
+2026-06-01,14:00,15:30,Operating Systems,CPU Scheduling,New Topic,FCFS SJB Round Robin
+2026-06-01,15:30,16:00,,,Break,
+2026-06-01,16:00,17:00,Operating Systems,Scheduling Numericals,Practice,Solve 3 problems
+2026-06-01,17:00,17:30,All,Flashcard Review,Revision,Spaced repetition review
+```
+
+To export a plan as a calendar file, pipe the output to `plan-to-ics.py` or `plan-to-csv.py` from the `scripts/` directory.
+
+---
 
 ## Session Config
 
@@ -198,3 +252,33 @@ executing, check for an existing session profile:
 - **universal-imp-topics-generator**: Identifies high-probability topics for cram schedules
 - **universal-flashcard-generator**: Populates flashcard review sessions with actual generated cards
 - **universal-last-minute-crammer**: Emergency sub-plans for schedule shortfalls
+
+## Error Handling
+
+| Error                              | Cause                                      | Solution                                                   |
+| ---------------------------------- | ------------------------------------------ | ---------------------------------------------------------- |
+| No exam dates provided             | Required input missing                     | Prompt user for at least one exam date                     |
+| Impossible schedule (time < needs) | Available hours insufficient for scope     | Reduce scope, increase daily hours, or extend timeline     |
+| Negative time remaining            | Exam date has already passed               | Switch to cram plan (Type 3) or imp-topics only            |
+| Subject/topic list empty           | No scope defined                           | Prompt for subject list or syllabus PDF                    |
+| Overlapping exams not handled      | Multiple exams same day/cluster            | Apply overlapping-exam scheduling rules                    |
+| Calendar export fails              | Missing conversion script                  | Run `npm run init` to install scripts; fall back to table  |
+| Difficulty ratings inconsistent    | All topics same rating (unlikely)          | Ask user to differentiate (Hard/Medium/Easy)               |
+| Abnormally high daily hours        | >14 hours/day requested                    | Warn user; cap at 12 with mandatory breaks                 |
+
+## Quality Gate
+
+Before presenting the schedule to the user, verify:
+
+- [ ] Exam dates are in the future and chronologically ordered
+- [ ] Total study hours fit within available days (no over-commit)
+- [ ] Each subject has at least one study block before its exam
+- [ ] Spaced repetition schedule (R1-R6) is embedded in the timeline
+- [ ] At least one rest/recovery day exists if plan exceeds 6 days
+- [ ] Overlapping-exam rule is applied if multiple exams within 3 days
+- [ ] Daily hours do not exceed 12 (or 14 for cram plans, with warning)
+- [ ] Output format is available (markdown, CSV, ICS, or text)
+- [ ] Calendar export file is valid if requested (.ics or .csv format)
+- [ ] User can start immediately with the plan as presented
+
+If any check fails, adjust the schedule or report the limitation to the user.

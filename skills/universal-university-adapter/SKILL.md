@@ -541,3 +541,179 @@ executing, check for an existing session profile:
   `setup-exam-prompt` (or `npm run init`) first.
 - Session config eliminates redundant context detection — detection happens once and is reused
   across all skill calls.
+
+---
+
+## Part 7: Fallback Handler — University Detection Failed
+
+When all detection scenarios fail (no PDFs match, verbal description is ambiguous, URL is wrong),
+use this three-tier fallback:
+
+### Tier 1 — Ask Targeted Questions
+
+```
+1. "Which country is your university in?"
+2. "What grading system do you use? (percentage, 4.0 GPA, 10-point CGPA, ECTS, letter grades)"
+3. "How are exams structured? (semester-end, midterms+finals, module exams, continuous assessment)"
+4. "What is your department and semester/year of study?"
+```
+
+### Tier 2 — Use Default Pattern
+
+If the user cannot answer after 3 questions, fall back to:
+
+| Clue                        | Default Pattern Used         |
+| --------------------------- | ---------------------------- |
+| Country = India             | SPPU 2019 Pattern (generic)  |
+| Country = US/Canada         | US semester with midterm+final (4.0 GPA) |
+| Country = UK                | UK module exams (First/2:1/2:2) |
+| Country = Europe            | ECTS module system           |
+| Country = Australia         | Australian semester (7-point GPA) |
+| Country = Singapore/Asia    | 5-point GPA modular system   |
+| No country known            | Generic international format |
+
+### Tier 3 — Manual Profile
+
+Prompt the user to create a manual profile:
+
+```
+I'll use a generic university profile. You can refine it anytime:
+- University name: [any]
+- Pattern: Generic
+- Marks distribution: 2/5/10 mark questions
+- Grading: percentage
+
+Would you like to customize any of these now?
+```
+
+## Part 8: Conflict-Resolution Flowchart
+
+When multiple sources provide conflicting information (e.g., syllabus says 80:20 split, URL says
+70:30, user says 60:40), apply this priority resolution:
+
+```
+                    ┌──────────────────────────────────────┐
+                    │  CONFLICT DETECTED                   │
+                    │  Multiple sources disagree on        │
+                    │  exam pattern / grading / structure   │
+                    └──────────────────┬───────────────────┘
+                                       │
+                    ┌──────────────────▼───────────────────┐
+                    │  Priority 1: Syllabus PDF            │
+                    │  (Most authoritative source)         │
+                    └──────────────────┬───────────────────┘
+                                       │
+                    ┌──────────────────▼───────────────────┐
+                    │  If no syllabus PDF:                 │
+                    │  Priority 2: Official URL / Website  │
+                    └──────────────────┬───────────────────┘
+                                       │
+                    ┌──────────────────▼───────────────────┐
+                    │  If no URL:                          │
+                    │  Priority 3: Uploaded PYQ PDFs       │
+                    └──────────────────┬───────────────────┘
+                                       │
+                    ┌──────────────────▼───────────────────┐
+                    │  If no PDFs at all:                  │
+                    │  Priority 4: User's verbal           │
+                    │  description                         │
+                    └──────────────────┬───────────────────┘
+                                       │
+                    ┌──────────────────▼───────────────────┐
+                    │  Still conflicting?                  │
+                    │  Present all options and ask:        │
+                    │  "Which should I use?"               │
+                    └──────────────────┬───────────────────┘
+                                       │
+                    ┌──────────────────▼───────────────────┐
+                    │  RESOLUTION APPLIED                   │
+                    │  Log which source won and why        │
+                    │  Flag to user: "Using X over Y due   │
+                    │  to priority rule"                   │
+                    └──────────────────────────────────────┘
+```
+
+### Conflict Examples
+
+| Conflict                                 | Resolution                                                    |
+| ---------------------------------------- | ------------------------------------------------------------- |
+| Syllabus says 80:20, PYQ shows 70:30     | Follow syllabus (Priority 1) — PYQ may be from old pattern    |
+| URL says 4.0 GPA, user says 10-point CGPA| Ask user to confirm; URL data may be outdated                 |
+| Verbal says "module exams", PDF shows semester system | Trust PDF (physical document) over recall      |
+| Two different pattern years in PDFs      | Use the most recent pattern year                               |
+| Language mismatch (PDF in Hindi, URL in English) | Extract from both; pattern data from English source preferred |
+
+## Part 9: Language Detection & Decision Rules for Non-English PDFs
+
+When PDFs are detected to be in a language other than English, apply these rules:
+
+### Detection Signals
+
+| Signal                              | Likely Language      |
+| ----------------------------------- | -------------------- |
+| Hindi/Sanskrit terms in header      | Hindi / Marathi / Sanskrit |
+| Arabic script watermark             | Urdu / Arabic        |
+| Chinese/Kanji characters            | Chinese / Japanese   |
+| European accent characters (é, ñ, ü)| Spanish / French / German |
+| Cyrillic characters                 | Russian / Ukrainian  |
+| French terms (Université, Faculté)  | French               |
+| German terms (Universität, Prüfung) | German               |
+
+### Decision Rules
+
+1. **If PDF language ≠ English AND you can process it**: Extract in original language, then note
+   language for downstream routing
+2. **If PDF language ≠ English AND you cannot process it**: Inform user and request English
+   translation or description
+3. **If mixed-language PDF** (e.g., English subject names but Hindi explanations): Use language
+   detection per-page; extract what you can; flag untranslated sections
+4. **If Latin-script European language** (French, German, Spanish, Portuguese, Italian): Process
+   normally — most exam pattern structures are recognizable
+5. **If non-Latin script** (Arabic, Devanagari, CJK, Cyrillic): Use OCR with the correct language
+   pack (`tesseract -l lang_code`); inform user that numerical patterns (marks, dates) will be
+   extracted but text content needs human verification
+6. **If PDF uses multiple scripts**: Treat per-page; use `tesseract -l eng+lang_code` for mixed
+   documents
+
+### Language-Aware Routing
+
+| Detected Language   | Routing Behavior                                        |
+| ------------------- | ------------------------------------------------------- |
+| English             | Normal routing to universal skills                      |
+| Hindi / Indian lang | Route with `lang: hi` context; answers expected in Hindi |
+| French / German     | Route with European exam pattern; expect local grading   |
+| Arabic              | Route with Islamic/Gulf exam pattern if recognized       |
+| CJK (Chinese/Japanese/Korean) | Route with Asian exam pattern                   |
+| Other               | Best-effort extraction; flag to user for validation      |
+
+## Error Handling
+
+| Error                                       | Cause                                          | Solution                                                        |
+| ------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------------- |
+| No PDFs found in directory                  | Empty or wrong path                            | Prompt user to verify path or upload PDFs directly              |
+| University detection failed                 | No clear signals in any source                 | Launch Fallback Handler (Part 7)                                |
+| Conflicting signals across sources          | Syllabus vs URL vs user description mismatch   | Apply Conflict-Resolution Flowchart (Part 8)                    |
+| Language not supported                      | Non-English PDF with unknown script            | Request English translation or description                      |
+| PDF is image-only (no text layer)           | Scanned document without OCR                   | Fall back to OCR pipeline; if OCR fails, request text PDF       |
+| URL fetch fails                             | Link broken, requires auth, or blocked         | Ask user to upload content directly or describe verbally        |
+| Pattern database does not cover university  | Unknown or very new university                 | Use Generic/Other profile and build custom pattern              |
+| No user input after multiple prompts        | User unresponsive                              | Use neutral international format and proceed                    |
+| Zero-information scenario                   | User provides no context at all                | Use Generic pattern: 10-mark standard, 5-mark concise, 2-mark definition |
+
+## Quality Gate
+
+Before routing to any downstream skill, verify:
+
+- [ ] University name and country are identified (or fallback is in use)
+- [ ] Exam pattern type is determined (Indian/US/UK/European/Australian/Asian/Generic)
+- [ ] Grading scale is known (10-point CGPA, 4.0 GPA, ECTS, percentage, etc.)
+- [ ] Assessment split is resolved (80:20, 60:40, midterm+final, etc.)
+- [ ] At least one subject is identified with name and code
+- [ ] Language of source PDFs is detected and compatible
+- [ ] Conflict resolution has been applied if multiple sources disagree
+- [ ] Source type is logged (directory / uploaded / verbal / URL / fallback)
+- [ ] Context JSON (Part 6) is populated with all detected fields before passing to downstream skill
+- [ ] User has confirmed the detected university and pattern (unless ≥95% confidence)
+
+If any check fails, resolve before routing. Never route incomplete context — incomplete context
+produces incorrect answers.

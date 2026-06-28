@@ -116,6 +116,43 @@ Before answering, estimate page budget:
 | 9     | 2 to 2.5     | 2.75          |
 | 10    | 2.5 to 3     | 3             |
 
+### VTU Page Budget (2021/2022 Scheme — 6 pages per question)
+
+| Marks | Target Pages | Maximum Pages |
+| ----- | ------------ | ------------- |
+| 4     | 1/2          | 3/4           |
+| 6     | 3/4          | 1             |
+| 8     | 1            | 1.5           |
+| 10    | 1.5          | 2             |
+| 12    | 2            | 2.5           |
+| 15    | 2.5          | 3             |
+
+### JNTU Page Budget (R19/R20/R22 — answer booklet varies)
+
+| Marks | Target Pages | Maximum Pages |
+| ----- | ------------ | ------------- |
+| 2     | 1/4          | 1/3           |
+| 5     | 1/2          | 3/4           |
+| 7     | 3/4          | 1             |
+| 10    | 1 to 1.25    | 1.5           |
+| 14    | 1.5          | 2             |
+| 15    | 2            | 2.5           |
+
+### Mumbai University Page Budget (REV-2019/2024 — 32-page booklet)
+
+| Marks | Target Pages | Maximum Pages |
+| ----- | ------------ | ------------- |
+| 2     | 1/4          | 1/2           |
+| 3     | 1/3          | 1/2           |
+| 4     | 1/2          | 3/4           |
+| 5     | 3/4          | 1             |
+| 6     | 1            | 1.25          |
+| 7     | 1.25         | 1.5           |
+| 8     | 1.5          | 1.75          |
+| 10    | 2            | 2.25          |
+| 12    | 2.5          | 3             |
+| 15    | 3            | 3.5           |
+
 Never exceed the expected page budget unless explicitly instructed.
 
 ---
@@ -135,6 +172,43 @@ Assume realistic writing speed:
 | 8     | 12–15 min    |
 | 9     | 15–18 min    |
 | 10    | 18–20 min    |
+
+### VTU Time Budget
+
+| Marks | Writing Time |
+| ----- | ------------ |
+| 4     | 3–4 min      |
+| 6     | 5–7 min      |
+| 8     | 7–9 min      |
+| 10    | 9–12 min     |
+| 12    | 12–15 min    |
+| 15    | 15–20 min    |
+
+### JNTU Time Budget
+
+| Marks | Writing Time |
+| ----- | ------------ |
+| 2     | 2–3 min      |
+| 5     | 5–6 min      |
+| 7     | 7–9 min      |
+| 10    | 10–13 min    |
+| 14    | 14–17 min    |
+| 15    | 16–20 min    |
+
+### Mumbai University Time Budget
+
+| Marks | Writing Time |
+| ----- | ------------ |
+| 2     | 2–3 min      |
+| 3     | 3–4 min      |
+| 4     | 4–5 min      |
+| 5     | 6–7 min      |
+| 6     | 7–9 min      |
+| 7     | 9–11 min     |
+| 8     | 10–13 min    |
+| 10    | 14–18 min    |
+| 12    | 17–22 min    |
+| 15    | 20–26 min    |
 
 If an answer cannot be physically written within this duration, compress it.
 
@@ -442,3 +516,85 @@ executing, check for an existing session profile:
 | Time-managed paper solving       | Plan which questions to attempt within 2.5 hr / 3 hr exam duration   |
 | Examiner psychology optimization | Structure answers for maximum marks per second of examiner attention |
 | Moderator-level quality gate     | Three-layer verification ensures syllabus/CO/Bloom compliance        |
+
+## Companion Activation with Answer Writer
+
+This skill must NEVER be loaded alone. Always activate it BEFORE or ALONGSIDE `universal-a-plus-answer-writer`.
+
+### Correct Activation Sequence
+
+```
+1. Load universal-sppu-exam-simulator   → Sets exam constraints, page budgets, moderator checks
+2. Load universal-a-plus-answer-writer  → Generates answers within those constraints
+```
+
+### Invocation Patterns
+
+| Pattern                      | Command                                                                 |
+| ---------------------------- | ----------------------------------------------------------------------- |
+| Pre-loaded simulation        | `Activate sppu-exam-simulator, then answer-writer for "Explain DBMS"`   |
+| Direct with constraints      | `Activate both sppu-exam-simulator and answer-writer`                   |
+| University-switched          | `Switch to VTU, activate sppu-exam-simulator with VTU budgets`          |
+| Test-only constraints        | `Use sppu-exam-simulator page/time budgets without moderator layer`     |
+
+### What NOT to Do
+
+- ❌ Load `sppu-exam-simulator` alone (no output will be produced)
+- ❌ Load `answer-writer` before `sppu-exam-simulator` (constraints won't apply)
+- ❌ Use without university pattern selected (budgets default to SPPU)
+
+## Self-Score Estimate After Answer Generation
+
+After every answer, immediately append a scoring estimate:
+
+```json
+{
+  "self_score": {
+    "max_marks": 10,
+    "estimated_earned": 7,
+    "confidence": "medium",
+    "marking_rationale": {
+      "definition_keywords_present": ["normalization", "functional dependency", "anomaly"],
+      "diagram_included": true,
+      "example_provided": true,
+      "command_word_followed": true,
+      "estimated_loss_reasons": ["missing edge case mention", "could add one more point"]
+    },
+    "time_taken_minutes": 12,
+    "page_used": 1.5,
+    "budget_ok": true
+  }
+}
+```
+
+Marking rationale must reference the specific marking scheme for the target university pattern. Include the self-score as a code block after the answer, before any marking scheme.
+
+## Error Handling
+
+| Error                              | Cause                                      | Solution                                                    |
+| ---------------------------------- | ------------------------------------------ | ----------------------------------------------------------- |
+| No answer-writer companion loaded  | Simulator activated alone                  | Load `universal-a-plus-answer-writer` alongside             |
+| Page budget exceeded               | Generated answer is too long               | Reduce content, compress points, remove fluff               |
+| Time budget exceeded               | Answer requires more writing time than available | Split answer, reduce depth, or flag to user            |
+| No university pattern detected     | Session config missing                     | Run `setup-exam-prompt` or specify university explicitly    |
+| Diagram cost > benefit             | Low-value diagram wastes page/time         | Skip diagram, describe concept in 2-3 lines instead         |
+| Moderator check fails              | Phase 16 check does not pass               | Regenerate with focus on the specific failing check         |
+| Unknown command word               | Question uses unfamiliar phrasing          | Map to nearest known command word and flag to user          |
+| Non-theory question detected       | Numerical/coding question                  | Route to `universal-code-solution-generator` instead        |
+
+## Quality Gate
+
+Before outputting any answer, verify:
+
+- [ ] An answer-writer companion is loaded (Phase 18 execution rule)
+- [ ] SPPU/VTU/JNTU/Mumbai page budget matches the target university (Phase 4 + broadening tables)
+- [ ] Time budget is not exceeded (Phase 5 + broadening tables)
+- [ ] Examiner Attention Model is satisfied (Phase 7 — keywords visible early)
+- [ ] Silent Moderator Check (Phase 16) passes all 11 items
+- [ ] Command word is correctly resolved (Phase 11)
+- [ ] Self-score estimate is appended after the answer
+- [ ] Answer Density Control (Phase 9) is applied — no fluff remains
+- [ ] Answer is physically writable in real exam conditions
+- [ ] No meta-commentary, preamble, or section labels in output
+
+If any check fails, regenerate before producing final output.

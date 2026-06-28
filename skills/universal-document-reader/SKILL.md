@@ -249,6 +249,7 @@ After document conversion, pass the text to:
 | **universal-flashcard-generator**     | Create flashcards from text       |
 | **universal-formula-sheet-generator** | Extract formulas                  |
 | **universal-mcq-practice-generator**  | Generate MCQs from content        |
+| **universal-session-config**          | Read university/department for format hints |
 
 ---
 
@@ -325,80 +326,6 @@ sudo apt update && sudo apt install -y poppler-utils tesseract-ocr pandoc python
 sudo apt install -y python3-pypdf python3-pytesseract python3-pil python3-docx
 ```
 
-### Check Dependencies
-
-```bash
-./scripts/check-deps.sh
-```
-
-### Linux (Fedora/RHEL/CentOS)
-
-```bash
-sudo dnf install -y poppler-utils tesseract pandoc python3-pip
-pip3 install pypdf pytesseract Pillow python-docx
-```
-
-### Linux (Arch/Manjaro)
-
-```bash
-sudo pacman -S poppler tesseract tesseract-data-eng pandoc python python-pip
-pip install pypdf pytesseract Pillow python-docx
-```
-
-### Linux (Alpine)
-
-```bash
-sudo apk add poppler tesseract-ocr pandoc python3 py3-pip
-pip3 install pypdf pytesseract Pillow python-docx
-```
-
-### Linux (openSUSE)
-
-```bash
-sudo zypper install poppler-tools tesseract pandoc python3-pip
-pip3 install pypdf pytesseract Pillow python-docx
-```
-
-### macOS
-
-```bash
-brew install poppler tesseract pandoc python3
-pip3 install pypdf pytesseract Pillow python-docx
-```
-
-### Windows (PowerShell Admin)
-
-```powershell
-# Option A: winget (built-in Windows 10/11 — recommended)
-winget install XP89DCGQ3K6VLD   # poppler (pdftotext)
-winget install UBMFFKJRRR9W2K   # tesseract (OCR)
-winget install 9NBLGGH4W8GQ     # pandoc
-winget install 9PJPW5LDXLZ5     # Python 3
-pip install pypdf pytesseract Pillow python-docx
-
-# Option B: Chocolatey
-choco install poppler tesseract pandoc python3 -y
-pip install pypdf pytesseract Pillow python-docx
-
-# Option C: Scoop
-scoop install poppler tesseract pandoc python
-pip install pypdf pytesseract Pillow python-docx
-```
-
-### Windows (WSL/Ubuntu)
-
-```bash
-# Same as Linux Ubuntu/Debian instructions
-sudo apt update && sudo apt install -y poppler-utils tesseract-ocr pandoc python3-pip
-pip3 install pypdf pytesseract Pillow python-docx
-```
-
-### Check Dependencies
-
-```bash
-./scripts/check-deps.sh
-```
-
 ---
 
 ## Prerequisites Check
@@ -455,8 +382,37 @@ sudo dnf install -y python3-pypdf python3-pytesseract python3-pillow python3-doc
 | "tesseract not found" | Missing OCR            | `sudo apt install tesseract-ocr`           |
 | "pandoc not found"    | Missing converter      | `sudo apt install pandoc`                  |
 | "Permission denied"   | File locked            | Check file permissions                     |
+| "OCR confidence low"  | Poor scan quality (<80%) | Increase DPI to 300+, adjust contrast/brightness |
+| "OCR language uncertain" | Mixed language document | Specify language: `-l eng+hin` for bilingual |
+| "Fatal OCR error"     | Image corruption or format | Re-save image as PNG, verify file integrity |
+| "Multi-column garbled"| PDF has 2+ columns      | Use `-layout` flag or column-detection OCR mode |
+| "Table structure lost"| Tabular data extracted as loose text | Use OCR with table recognition, or `camelot`/`tabula` |
+| "Image contains only handwriting" | Handwritten notes | Use specialized handwriting OCR (e.g., Google Vision) |
 
 ---
+
+## Multi-Column PDF Preservation
+
+When processing multi-column PDFs (common in research papers and textbooks), apply these steps:
+
+1. **Detect column layout** — use `pdftotext -layout` which preserves whitespace alignment
+2. **Check reading order** — verify extracted text reads left-to-right, top-to-bottom
+3. **Column-aware OCR** — for scanned multi-column, use `tesseract --psm 6` (uniform block)
+4. **Post-process** — reflow text by detecting short lines that indicate column breaks
+5. **Validation** — compare extracted word count against estimated page word count (±10%)
+
+```bash
+# Column-aware extraction
+pdftotext -layout input.pdf output.txt
+
+# Column-aware OCR (scanned)
+tesseract page.png output -l eng --psm 6
+
+# Column-aware OCR with table detection (scanned)
+tesseract page.png output -l eng --psm 4
+```
+
+If the extracted text has garbled column ordering, fall back to single-column extraction and note to the user that some interleaving may have occurred.
 
 ## Quick Reference
 
@@ -520,61 +476,21 @@ with open('output.txt', 'w') as out:
 
 ### Step 1: Install Dependencies
 
-**Linux (Ubuntu/Debian):**
+See the [Installation Requirements](#installation-requirements) section above for full per-OS instructions (Ubuntu, Fedora, Arch, Alpine, openSUSE, macOS, Windows, WSL).
+
+Quick reference:
 
 ```bash
-sudo apt install -y poppler-utils tesseract-ocr pandoc python3 python3-pip
-sudo apt install -y python3-pypdf python3-pytesseract python3-pil python3-docx
-```
+# Linux (Ubuntu/Debian)
+sudo apt install -y poppler-utils tesseract-ocr pandoc python3-pip
+pip3 install pypdf pytesseract Pillow python-docx
 
-**Linux (Arch/Manjaro):**
-
-```bash
-sudo pacman -S poppler tesseract tesseract-data-eng pandoc python python-pip
-sudo pacman -S python-pypdf python-pytesseract python-pillow
-yay -S python-docx  # or: pip install python-docx
-```
-
-**macOS:**
-
-```bash
+# macOS
 brew install poppler tesseract pandoc python3
 pip3 install pypdf pytesseract Pillow python-docx
-```
 
-**Windows:**
-
-```powershell
-winget install XP89DCGQ3K6VLD
-winget install UBMFFKJRRR9W2K
-winget install 9NBLGGH4W8GQ
-winget install 9PJPW5LDXLZ5
-pip install pypdf pytesseract Pillow python-docx
-```
-
-**macOS:**
-
-```bash
-brew install poppler tesseract pandoc python3
-pip3 install pypdf pytesseract Pillow python-docx
-```
-
-**Windows:**
-
-```powershell
-# Option A: winget (built-in, recommended)
-winget install XP89DCGQ3K6VLD
-winget install UBMFFKJRRR9W2K
-winget install 9NBLGGH4W8GQ
-winget install 9PJPW5LDXLZ5
-pip install pypdf pytesseract Pillow python-docx
-
-# Option B: Chocolatey
-choco install poppler tesseract pandoc python3 -y
-pip install pypdf pytesseract Pillow python-docx
-
-# Option C: Scoop
-scoop install poppler tesseract pandoc python
+# Windows (PowerShell Admin - winget)
+winget install XP89DCGQ3K6VLD UBMFFKJRRR9W2K 9NBLGGH4W8GQ 9PJPW5LDXLZ5
 pip install pypdf pytesseract Pillow python-docx
 ```
 
@@ -655,4 +571,31 @@ After extracting text with this skill:
 │  Print-Ready    │
 │  PDF Output     │
 └─────────────────┘
-```
+
+## Quality Gate
+
+Before passing extracted text to downstream skills, verify:
+
+### OCR Quality Gate
+
+- [ ] OCR confidence score ≥ 80% (use `tesseract page.png output -l eng --psm 6` and check log)
+- [ ] No "Fatal OCR error" or "Empty page" warnings in the conversion log
+- [ ] At least 50 characters extracted per page (otherwise flag as empty/noise)
+- [ ] Language detection: document language matches expected language from session-config
+- [ ] Handwriting detected? Flag to user that manual review is needed
+- [ ] Multi-column layout handled correctly (reading order verified)
+- [ ] Table structures preserved or flagged for manual reconstruction
+
+### General Quality Gate
+
+- [ ] File type is supported (see Supported Input Formats table)
+- [ ] Conversion method matches the file type (text PDF → pdftotext, scanned → OCR)
+- [ ] Text cleaning pipeline (clean_text function) has been applied
+- [ ] Output format matches the DOCUMENT METADATA + EXTRACTED TEXT structure
+- [ ] Source filename and conversion timestamp are recorded in metadata
+- [ ] If input is a URL, content was successfully fetched before conversion
+- [ ] If input is password-protected, user was prompted for password
+- [ ] Downstream skill chain is specified (where to send extracted text next)
+- [ ] Document type (syllabus, PYQ, notes, reference) is identified for downstream routing
+
+If any check fails, either retry with a different method (e.g., pdftotext -layout → OCR → manual entry) or report the limitation to the user with suggested fixes.
