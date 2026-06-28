@@ -169,6 +169,26 @@ MODEL ANSWER (excerpt):
 "Virtual memory is a memory management technique that creates an abstraction of a larger address space than physically available. It maps virtual addresses used by processes to physical frames through page tables managed by the MMU. When a process accesses a page not in physical memory, a page fault occurs, and the OS swaps the required page from disk into a free frame. Benefits include: (1) running programs larger than physical RAM, (2) process isolation — each process has its own virtual address space, (3) simplified memory management for programmers, (4) efficient memory utilization through sharing of common pages, and (5) support for sparse address spaces."
 ```
 
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| No rubric provided | Construct rubric dynamically using question type, marks, Bloom's level, and subject area defaults |
+| Answer too short | Grade what is present; flag insufficient length in feedback as a limitation |
+| Missing criteria weights | Use default weights (Content Accuracy 30%, Coverage 25%, Structure 15%, Depth 10%, Examples 10%, Language 5%, Concision 5%) |
+| Ambiguous scoring scale | Clarify with user or default to percentage-based scoring (0-100%) mapped to letter grades |
+
+## Quality Gate — Check Before Output
+
+- [ ] All evaluation criteria scored with clear justification
+- [ ] Feedback is specific and actionable (not generic praise/criticism)
+- [ ] Model answer referenced where student answer falls short
+- [ ] Score range validated — total does not exceed allocated marks
+- [ ] Bloom's level of question matched to evaluation depth
+- [ ] Improvement priority list ordered by impact on score
+
+---
+
 ## Session Config
 
 This skill integrates with the session config system (`deps/session-profile.json`). Before
@@ -185,6 +205,7 @@ executing, check for an existing session profile:
 
 ## 5. Integration with Other Skills
 
+- **universal-session-config**: Reads grading preferences, university, and subject from session profile
 - **universal-a-plus-answer-writer**: Provides the model answer standards against which answers are
   graded
 - **universal-pyq-analyzer**: Identifies which question types and Bloom's levels are most frequently

@@ -202,6 +202,26 @@ The CSS template can be customized by editing the script:
 
 ---
 
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| Markdown parse error | Validate Markdown syntax; check for unclosed code blocks or mismatched delimiters |
+| Font not found | Fall back to system fonts (Segoe UI, Calibri); note font substitution in output |
+| PDF renderer unavailable | Ensure Playwright is installed (`npx playwright install chromium`); fall back to weasyprint (Python) |
+| Page count exceeds limit | Adjust margins or font size; split document into multiple volumes if necessary |
+
+## Quality Gate — Check Before Output
+
+- [ ] All images embed correctly in the PDF (no broken `img` tags)
+- [ ] Math renders properly (KaTeX for Node.js pipeline, Unicode fallback for Python)
+- [ ] Page count matches specification (within limits set by user)
+- [ ] Fonts load correctly for the target platform
+- [ ] Tables, code blocks, and blockquotes styled per CSS template
+- [ ] Page numbers present and correctly formatted
+
+---
+
 ## Session Config
 
 This skill integrates with the session config system (`deps/session-profile.json`). Before
@@ -218,9 +238,11 @@ executing, check for an existing session profile:
 
 ## Integration with Other Skills
 
+- **universal-session-config**: Reads formatting preferences (university, pattern) from session profile
 - **universal-document-reader**: First stage (PDF → TXT)
 - **universal-notes-generator**: Produces MD content ready for PDF conversion
 - **universal-a-plus-answer-writer**: Generates answers that can be compiled into PDF
+- **universal-diagram-generator**: Embeds rendered SVG diagrams into PDF output
 - **universal-formula-sheet-generator**: Outputs MD formula sheets for PDF
 - **universal-flashcard-generator**: Flashcard content exportable to printable PDF
 - **universal-mind-map-generator**: Mermaid diagrams embeddable in PDF output

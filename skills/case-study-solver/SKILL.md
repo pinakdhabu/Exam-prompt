@@ -156,6 +156,25 @@ Step 6: Implementation
 Conclusion: The hybrid approach provides the best risk-reward profile, achieving significant cost reduction while maintaining quality control and managing stakeholder impact.
 ```
 
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| Incomplete case text | Ask user to provide full case text; extract key facts from what is available and note gaps |
+| Multiple frameworks applicable | Select the framework best matching the question type; note alternative frameworks in analysis |
+| Missing stakeholder info | Infer stakeholders from case context; flag assumptions in the analysis |
+| No marks given | Default to 10-mark depth (substantial); note the assumed mark allocation |
+
+## Quality Gate — Check Before Output
+
+- [ ] Framework selection is justified and matches the case type
+- [ ] All key facts from the case text are addressed in the analysis
+- [ ] Recommendations are specific, actionable, and linked to the analysis
+- [ ] Stakeholder analysis covers all relevant parties
+- [ ] Alternatives include pros, cons, and feasibility assessment
+
+---
+
 ## Session Config
 
 This skill integrates with the session config system (`deps/session-profile.json`). Before
@@ -172,7 +191,9 @@ executing, check for an existing session profile:
 
 ## 5. Integration with Other Skills
 
+- **universal-session-config**: Reads university, subject, and exam pattern for case adaptation
 - **universal-a-plus-answer-writer**: Provides detailed answer writing techniques applied to case
   study questions
+- **universal-essay-grader**: Evaluates case study answers against rubric criteria
 - **universal-notes-generator**: Supplies theoretical frameworks and models used in case analysis
 - **universal-flashcard-generator**: Creates flashcards for framework steps and analysis techniques

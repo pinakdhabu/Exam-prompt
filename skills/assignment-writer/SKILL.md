@@ -691,6 +691,33 @@ No introductory text, no closing remarks, no meta-explanation.
 
 ---
 
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| Ambiguous topic | Ask clarifying questions to narrow scope; suggest 2-3 specific interpretations and let user choose |
+| Missing citation style | Default to IEEE (engineering) or APA 7th (sciences); note the default in output |
+| Insufficient context | Use session config for university/subject/pattern; if absent, use generic academic defaults |
+| Overlapping assignment types | Clarify with user which assignment type takes priority; if hybrid, use the dominant type's structure |
+
+## Quality Gate — Check Before Output
+
+- [ ] All citations properly formatted in the correct style (IEEE/APA/MLA/etc.)
+- [ ] Answer structure matches the identified assignment type
+- [ ] Mark allocation verified against Evaluation Depth Mapping table
+- [ ] Key technical terms bolded throughout
+- [ ] Marking scheme included with point-wise distribution, Bloom's level, and CO alignment
+
+## Integration with Other Skills
+
+| Skill | Integration |
+|---|---|
+| **universal-session-config** | Reads university, subject, pattern, and exam type from session profile |
+| **universal-a-plus-answer-writer** | Provides exam-ready answer techniques repurposed for assignment contexts |
+| **universal-document-generator** | Converts assignment answers to print-ready PDF output |
+
+---
+
 ## Session Config
 
 This skill integrates with the session config system (`deps/session-profile.json`). Before

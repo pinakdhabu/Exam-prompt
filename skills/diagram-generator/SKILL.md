@@ -145,6 +145,25 @@ node scripts/diagram-gen.js --list-formats
 
 ---
 
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| Mermaid syntax error | Validate against Mermaid parser; simplify diagram or use alternate syntax (Graphviz/D2) |
+| Renderer not available | Ensure `@mermaid-js/mermaid-cli` is installed (`npm install`); fall back to text description |
+| D2 not installed | Install `d2` CLI or fall back to Mermaid for architecture diagrams |
+| Diagram too complex | Split into multiple sub-diagrams; stay within element limits per Best Practices table |
+
+## Quality Gate — Check Before Output
+
+- [ ] Diagram renders without errors in the target format (Mermaid/D2/DOT)
+- [ ] All nodes and edges are labelled meaningfully
+- [ ] Accessible alt-text provided for each diagram
+- [ ] Format matches request (flowchart vs sequence vs class vs architecture vs graph)
+- [ ] Element count within recommended limits from Best Practices table
+
+---
+
 ## Session Config
 
 This skill integrates with the session config system (`deps/session-profile.json`). Before
@@ -161,6 +180,7 @@ executing, check for an existing session profile:
 
 ## Integration with Other Skills
 
+- **universal-session-config**: Reads diagram format preferences and subject context from session profile
 - **universal-mind-map-generator**: Outputs Mermaid mind maps → renders via diagram-gen
 - **universal-notes-generator**: Includes diagrams in generated notes → rendered in PDF
 - **universal-document-generator**: All diagrams auto-embedded in PDF output
