@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /* eslint-env browser */
+/* global mermaid */
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');

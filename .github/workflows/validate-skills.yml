@@ -5,28 +5,47 @@ on:
     paths:
       - 'skills/**/*.md'
       - 'scripts/validate-skills.sh'
+      - 'scripts/validate-skills.ps1'
   pull_request:
     paths:
       - 'skills/**/*.md'
       - 'scripts/validate-skills.sh'
+      - 'scripts/validate-skills.ps1'
   workflow_dispatch:
 
 jobs:
   validate:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
       fail-fast: false
     runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run comprehensive validation (${{ matrix.os }})
+      - name: Setup Node.js
+        if: runner.os == 'Windows'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies (Windows)
+        if: runner.os == 'Windows'
+        run: npm install --no-audit --no-fund
+
+      - name: Run validation (${{ matrix.os }})
+        if: runner.os != 'Windows'
         run: bash scripts/validate-skills.sh
         shell: bash
 
+      - name: Run Windows validation (lint + validate-skills.ps1)
+        if: runner.os == 'Windows'
+        run: npm run check:win
+
       - name: Cross-platform script syntax check
+        if: runner.os != 'Windows'
         run: |
           echo "=== Checking shell scripts for cross-platform issues ==="
           for script in scripts/*.sh; do

@@ -1,0 +1,52 @@
+name: PR Quality Gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  checks: write
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Lint check
+        run: npm run lint
+
+      - name: Validate skills
+        run: bash scripts/validate-skills.sh
+
+      - name: Validate skills.json structure
+        run: |
+          python3 -c "
+          import json
+          with open('skills/skills.json') as f:
+              data = json.load(f)
+          assert data['total_skills'] == len(data['skills']), 'total_skills mismatch'
+          for s in data['skills']:
+              assert s['name'] and s['directory'] and s['version'], f'missing field in {s.get(\"name\",\"?\")}'
+          print(f'OK: {len(data[\"skills\"])} skills validated in skills.json')
+          "
+
+      - name: Check for duplicate skill directories
+        run: |
+          dups=$(ls -d skills/*/ 2>/dev/null | sed 's|skills/||;s|/||' | sort | uniq -d)
+          if [ -n "$dups" ]; then
+            echo "ERROR: Duplicate skill directories: $dups"
+            exit 1
+          fi
+          echo "OK: No duplicate skill directories"
