@@ -129,7 +129,13 @@ F3: Net Present Value
   WHERE: CF_t = cash flow at time t, r = discount rate
   DECISION: NPV > 0 → Accept project
 
-F4: Internal Rate of Return
+F4: Discounted Cash Flow (DCF)
+  DCF = Σ(CF_t / (1+r)^t)
+  WHERE: CF_t = projected cash flow at time t, r = discount rate
+  NOTE: DCF estimates investment value based on future cash flow projections
+  DIFFERENCE: DCF is the sum of discounted cash flows; NPV subtracts initial investment from DCF
+
+F5: Internal Rate of Return
   0 = Σ(CF_t / (1+IRR)^t) - Initial Investment
   NOTE: IRR is the discount rate that makes NPV = 0
   WATCH: May give multiple IRRs for non-conventional cash flows

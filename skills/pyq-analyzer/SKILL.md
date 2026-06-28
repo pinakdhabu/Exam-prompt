@@ -835,6 +835,20 @@ Proceed with full analysis only when all required inputs are confirmed valid.
 
 ---
 
+## Quality Gate — Check Before Output
+
+- [ ] University pattern correctly identified from PYQ headers/footers
+- [ ] All PYQ files parse successfully (no corrupted or truncated PDFs)
+- [ ] Year-over-year data has consistent unit/module naming across all papers
+- [ ] Analysis covers ALL question types present (theory, numerical, MCQ, diagram)
+- [ ] Every frequency/weightage claim traceable to specific PYQ reference
+- [ ] Gap analysis only marks topics NOT appearing in any provided PYQ
+- [ ] Confidence grading applied to all predictions (High/Medium/Low)
+- [ ] International normalization rules applied if non-Indian university
+- [ ] Output format: tables for quantitative data, prose for strategic insights
+
+---
+
 ## Session Config
 
 This skill integrates with the session config system (`deps/session-profile.json`). Before
