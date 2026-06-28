@@ -752,6 +752,43 @@ When the university is identified, apply these optimizations automatically:
 - Emphasis: Applied knowledge, case studies, projects
 - No strict OR — section-based or free-choice
 
+### International Normalization Guidance
+
+When analyzing non-Indian PYQs, apply these normalizations:
+
+#### Naming Convention Mapping
+
+| International Term | Universal Equivalent |
+|---|---|
+| Course / Module / Unit | Topic Cluster |
+| Learning Outcome (LO) | Course Outcome (CO) |
+| Midterm / Mid-sem | Midterm |
+| Final Exam / Final Assessment | End-Semester Exam |
+| Assignment / Coursework | Internal Assessment |
+| Quiz / Test | Surprise Test / Class Test |
+| Letter Grade (A, B, C, etc.) | Percentage / Marks |
+| Credit Hour | Weightage |
+
+#### Grading Scale Normalization
+
+| International Scale | Normalized to 100 | Notes |
+|---|---|---|
+| 4.0 GPA (US) | (GPA / 4.0) × 100 | Standard US 4.0 scale |
+| 4.3 GPA (some US/CA) | (GPA / 4.3) × 100 | Includes A+ grade |
+| 7.0 GPA (Australia) | (GPA / 7.0) × 100 | Common in AU/NZ |
+| Percentage (UK/Europe) | Direct | Already in percentage |
+| Letter Grade (A-F) | Map to midpoints: A=92.5, B=80, C=67.5, D=57.5, F=35 | Approximate conversion |
+| ECTS Grade (Europe) | Map to percentage: A=90, B=78, C=65, D=55, E=45, F=30 | European Credit Transfer |
+
+#### Topic Name Mapping
+
+For cross-university comparison, map topic names to a canonical reference:
+
+- **Concept-level mapping:** Match topics by their underlying concepts, not by exact naming
+- **Synonym resolution:** "Process Scheduling" = "CPU Scheduling" = "Task Scheduling"
+- **Scope normalization:** "OS" = "Operating Systems" = "Operating System Concepts"
+- **Granularity adjustment:** Break broad topics into subtopics or merge narrow ones to match syllabus structure
+
 ---
 
 ## Absolute Prohibitions
@@ -778,6 +815,11 @@ When the university is identified, apply these optimizations automatically:
 - **Insufficient PYQs (less than 2 years):** Respond: "**NO!** At least 2 years of PYQs are needed
   for meaningful analysis. With X year(s) available, only basic frequency analysis is possible.
   Proceed? (Y/N)"
+- **Corrupted or partial PYQ PDF:** Respond: "**NO!** PYQ PDF appears corrupted or incomplete. Try
+  re-downloading or using a different source. If the PDF is a scanned image, ensure OCR was run."
+- **Mixed university patterns detected:** Respond: "**WARNING:** PYQs appear to be from different
+  university patterns or exam schemes. Verify all papers belong to the same university and pattern.
+  Analysis will proceed but may have inconsistencies."
 
 ---
 
@@ -804,3 +846,18 @@ executing, check for an existing session profile:
   `setup-exam-prompt` (or `npm run init`) first.
 - Session config eliminates redundant context detection — detection happens once and is reused
   across all skill calls.
+
+---
+
+## Integration with Other Skills
+
+| Skill | Integration |
+|---|---|
+| **universal-session-config** | Reads university/subject/pattern from session profile |
+| **universal-imp-topics-generator** | Feeds frequency and probability data to generate IMP topic lists |
+| **universal-study-planner** | Supplies unit weightage and topic priority for study schedule creation |
+| **universal-last-minute-crammer** | Provides PYQ frequency data for high-yield topic selection |
+| **universal-flashcard-generator** | Supplies frequency-weighted topic list for exam-cram flashcard decks |
+| **universal-mcq-practice-generator** | Provides historical question distribution to guide MCQ focus areas |
+| **universal-mind-map-generator** | Colors priority levels based on historical question frequency |
+| **universal-notes-generator** | Ensures note generation focuses on high-frequency topics |

@@ -109,6 +109,68 @@ F6: Integration by parts
 ... (continues)
 ```
 
+### Finance Formulas
+
+#### Time Value of Money (TVM)
+
+```
+F1: Present Value
+  PV = FV / (1 + r)^n
+  WHERE: FV = future value, r = discount rate, n = periods
+  NOTE: For annuity: PV = PMT × [1 - (1+r)^(-n)] / r
+
+F2: Future Value
+  FV = PV × (1 + r)^n
+  WHERE: PV = present value, r = rate, n = periods
+  NOTE: For annuity: FV = PMT × [(1+r)^n - 1] / r
+
+F3: Net Present Value
+  NPV = Σ(CF_t / (1+r)^t) - Initial Investment
+  WHERE: CF_t = cash flow at time t, r = discount rate
+  DECISION: NPV > 0 → Accept project
+
+F4: Internal Rate of Return
+  0 = Σ(CF_t / (1+IRR)^t) - Initial Investment
+  NOTE: IRR is the discount rate that makes NPV = 0
+  WATCH: May give multiple IRRs for non-conventional cash flows
+
+F5: Capital Asset Pricing Model
+  E(R_i) = R_f + β_i × (E(R_m) - R_f)
+  WHERE: R_f = risk-free rate, β_i = stock beta, E(R_m) = expected market return
+  NOTE: CAPM gives the expected return compensating for systematic risk
+
+F6: Weighted Average Cost of Capital
+  WACC = (E/V) × R_e + (D/V) × R_d × (1 - T_c)
+  WHERE: E = equity value, D = debt value, V = E+D, R_e = cost of equity, R_d = cost of debt, T_c = tax rate
+```
+
+#### Medical Formulas
+
+```
+F1: Body Mass Index
+  BMI = weight(kg) / height(m)²
+  CLASSIFICATION: <18.5 Underweight, 18.5-24.9 Normal, 25-29.9 Overweight, ≥30 Obese
+
+F2: Body Surface Area (Mosteller)
+  BSA(m²) = √(height(cm) × weight(kg) / 3600)
+  NOTE: Used for chemotherapy dosing, burn assessment
+
+F3: Glomerular Filtration Rate — MDRD
+  eGFR = 175 × (S_Cr)^(-1.154) × (Age)^(-0.203) × (0.742 if female) × (1.212 if African American)
+  WHERE: S_Cr = serum creatinine in mg/dL
+  NOTE: CKD-EPI equation preferred for higher accuracy at GFR > 60
+
+F4: Anion Gap
+  AG = Na⁺ - (Cl⁻ + HCO₃⁻)
+  NORMAL RANGE: 8-12 mEq/L
+  NOTE: Elevated gap → metabolic acidosis (MUD PILES: Methanol, Uremia, DKA, etc.)
+
+F5: Mean Arterial Pressure
+  MAP = DBP + 1/3 × (SBP - DBP)
+  WHERE: SBP = systolic BP, DBP = diastolic BP
+  TARGET: MAP ≥ 65 mmHg for organ perfusion
+```
+
 ## Session Config
 
 This skill integrates with the session config system (`deps/session-profile.json`). Before
@@ -123,10 +185,31 @@ executing, check for an existing session profile:
 
 ---
 
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| Formula domain not recognized | Respond: "Unrecognized formula domain. Supported domains: engineering, mathematics, physics, chemistry, finance, statistics, data science." |
+| Variable definition missing | Flag undefined variables during generation and request clarification |
+| Unit inconsistency | Auto-convert to SI units; warn if conversion may introduce error |
+| Circular formula reference | Detect cycles in formula dependencies and break at the simplest formula |
+
+## Quality Gate — Check Before Output
+
+- [ ] Every formula includes variable definitions with units
+- [ ] Applicability conditions stated (WHEN clause present)
+- [ ] Common mistakes noted (WATCH clause present)
+- [ ] Cross-references to related formulas included
+- [ ] Consistent notation maintained across all formulas
+- [ ] Sample calculation provided for non-trivial formulas
+- [ ] Maximum 3 formulas per page for readability in exam conditions
+
 ## 5. Integration with Other Skills
 
-- **universal-notes-generator**: Provides the full context from which formulas are extracted
-- **universal-a-plus-answer-writer**: Uses formula sheets for numerical problem solutions
-- **universal-last-minute-crammer**: Formula sheets are the primary cram resource
-- **universal-mcq-practice-generator**: MCQs can be generated targeting specific formula
-  applications
+| Skill | Integration |
+|---|---|
+| **universal-session-config** | Reads university/subject/pattern from session profile |
+| **universal-notes-generator** | Provides the full context from which formulas are extracted |
+| **universal-a-plus-answer-writer** | Uses formula sheets for numerical problem solutions |
+| **universal-last-minute-crammer** | Formula sheets are the primary cram resource |
+| **universal-mcq-practice-generator** | MCQs can be generated targeting specific formula applications |

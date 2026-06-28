@@ -37,6 +37,25 @@ fully explained answer keys.
 | **Case-Based**          | Multiple MCQs from a common stem    | CBSE, IB, North American               |
 | **Ordering / Sequence** | Arrange in correct order            | GATE, programming exams                |
 | **Diagram-Based**       | MCQ referencing a diagram           | Medical, Engineering, Biology          |
+| **NAT / Integer Answer** | Single integer value (-9999 to +9999) | GATE, IIT, competitive exams           |
+
+### NAT (Numerical Answer Type) Format
+
+Rules for GATE-style NAT questions:
+
+- Answer must be an integer between -9999 and +9999
+- No decimal points or fractional values
+- No units in the answer field
+- No sign for non-negative values (positive values are unsigned)
+- Blank or out-of-range answers receive zero marks
+- Negative marking may apply (per university pattern)
+
+**Example:**
+
+```
+Q: How many vertices does a complete binary tree of height h have at most? [NAT]
+Answer: 2^(h+1) - 1
+```
 
 ## 2. Difficulty Calibration
 
@@ -189,10 +208,33 @@ executing, check for an existing session profile:
 
 ---
 
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| Subject/topic not specified | Respond: "Please specify subject and topics for MCQ generation." |
+| Insufficient syllabus detail | Flag: "Syllabus detail is sparse. MCQ coverage may be incomplete. Provide detailed subtopics if possible." |
+| University pattern not recognized | Default to Standard MCQ format (single correct, no negative marking) and note the assumption |
+| NAT question answer out of range | Validate: NAT answers must be integers between -9999 and +9999. Flag violations before final output. |
+| Distractor generation failure | Fall back to 3-distractor model if 4 plausible distractors cannot be generated |
+
+## Quality Gate — Check Before Output
+
+- [ ] Each MCQ has exactly one correct answer clearly identified
+- [ ] Distractors are plausible and based on common misconceptions
+- [ ] Bloom's level tag included for each question
+- [ ] Answer key with explanations is provided
+- [ ] Question count matches user's requested number
+- [ ] No duplicate questions (same or rephrased)
+- [ ] For NAT questions: answer validated as integer within [-9999, 9999]
+
 ## 8. Integration with Other Skills
 
-- **universal-notes-generator**: Feeds notes as source material for MCQ content
-- **universal-pyq-analyzer**: Uses historical question distribution to guide topic focus
-- **universal-imp-topics-generator**: Generates targeted MCQs for high-probability topics
-- **universal-flashcard-generator**: Creates complementary flashcards from missed MCQs
-- **universal-essay-grader**: Evaluates performance patterns across MCQ attempts
+| Skill | Integration |
+|---|---|
+| **universal-session-config** | Reads university/subject/pattern from session profile |
+| **universal-notes-generator** | Feeds notes as source material for MCQ content |
+| **universal-pyq-analyzer** | Uses historical question distribution to guide topic focus |
+| **universal-imp-topics-generator** | Generates targeted MCQs for high-probability topics |
+| **universal-flashcard-generator** | Creates complementary flashcards from missed MCQs |
+| **universal-essay-grader** | Evaluates performance patterns across MCQ attempts |

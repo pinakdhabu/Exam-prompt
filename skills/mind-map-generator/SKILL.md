@@ -167,9 +167,70 @@ executing, check for an existing session profile:
 
 ---
 
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| Subject/topic too broad | Respond: "Topic too broad for a single mind map. Consider narrowing to one unit or chapter." |
+| Mermaid syntax generation failure | Fall back to indented text outline format and notify user |
+| Cross-link cycle detected | Simplify cross-links to avoid circular references in mind map |
+| Color scheme conflict | Apply default color scheme if user-specified colors conflict with priority/Bloom's mapping |
+| Accessibility description missing | Auto-generate: "Accessibility Description: A [type] diagram showing [subject]." |
+
+## Quality Gate — Check Before Output
+
+- [ ] Central topic is clearly identified
+- [ ] All main branches are labeled and connected to central node
+- [ ] Priority annotations (HIGH/MEDIUM/LOW) present on all major nodes
+- [ ] Bloom's level tags applied to leaf nodes
+- [ ] Cross-links documented between related branches
+- [ ] Accessibility description included for screen reader support
+- [ ] Mermaid syntax validated before output (if Mermaid format selected)
+- [ ] At least one alternative format (text outline or image description) available
+
 ## 5. Integration with Other Skills
 
-- **universal-notes-generator**: Extracts concepts and structure from generated notes
-- **universal-pyq-analyzer**: Colors priority levels based on historical question frequency
-- **universal-imp-topics-generator**: Highlights important nodes in the map
-- **universal-study-planner**: Mind maps serve as daily review anchors
+| Skill | Integration |
+|---|---|
+| **universal-session-config** | Reads university/subject/pattern from session profile |
+| **universal-notes-generator** | Extracts concepts and structure from generated notes |
+| **universal-pyq-analyzer** | Colors priority levels based on historical question frequency |
+| **universal-imp-topics-generator** | Highlights important nodes in the map |
+| **universal-study-planner** | Mind maps serve as daily review anchors |
+| **universal-diagram-generator** | Renders Mermaid mind maps to SVG for document embedding |
+
+## 6. Accessibility & Compatibility
+
+### Text-Only Accessibility Description
+
+Every generated mind map MUST include a text-only description for screen readers and accessibility
+tools. This ensures the map content is accessible to all users.
+
+**Format:**
+
+```
+Accessibility Description: A [type] diagram showing [summary]. Central node: [X]. Branches: [Y], [Z], ...
+```
+
+**Example:**
+
+```
+Accessibility Description: A radial mind map diagram showing Computer Networks concepts.
+Central node: Computer Networks. Branches: OSI Model (7 layers), TCP/IP Stack (4 layers),
+Protocols (TCP, UDP), Addressing (MAC, IP, Port). Cross-links: OSI Transport ↔ TCP.
+```
+
+### Mermaid Renderer Compatibility Note
+
+Mermaid mindmap syntax varies across renderers:
+
+| Renderer | mindmap Syntax Support | Notes |
+|---|---|---|
+| **GitHub Markdown** | ✅ Full | Supports `mindmap` block with indented hierarchy |
+| **Mermaid Live Editor** | ✅ Full | All features supported |
+| **Obsidian** | ⚠️ Partial | May require `mindmap` plugin or alternative syntax |
+| **VS Code Extensions** | ⚠️ Partial | Check extension documentation for mindmap support |
+| **PDF Export (via universal-document-generator)** | ✅ Full | Pre-rendered as SVG, no renderer dependency |
+
+**Recommendation:** For maximum compatibility, also generate the indented text outline format
+(Format 2) alongside any Mermaid mind map. The text outline is universally readable.

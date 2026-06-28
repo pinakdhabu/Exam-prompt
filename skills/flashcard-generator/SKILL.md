@@ -124,6 +124,46 @@ Every generated flashcard includes these scheduling fields for SRS system import
 | **Plain Text** | .txt      | Any text editor                           | Minimal formatting             |
 | **JSON**       | .json     | Programmatic processing                   | Structured data export         |
 
+### International Export Examples
+
+#### Example CSV Header
+
+```csv
+Front, Back, Tags, Deck, Due
+```
+
+#### Example Quizlet Import Format
+
+| Front | Back | Tags |
+|-------|------|------|
+| What is TCP? | Transmission Control Protocol | cn_unit3 |
+| Define OSI model | 7-layer conceptual model | cn_unit1 |
+
+#### JSON Export Schema
+
+```json
+{
+  "deck": "Subject_Unit",
+  "cards": [
+    {
+      "front": "Question text",
+      "back": "Answer text",
+      "tags": ["tag1", "tag2"],
+      "due": "2026-06-01",
+      "interval": 1,
+      "ease": 250,
+      "difficulty": 3
+    }
+  ]
+}
+```
+
+#### Anki APKG Packaging Note
+
+APKG files are SQLite databases with a `collection.anki21` table containing the card/note data
+and a media directory for images/audio. The system generates APKG-format output compatible with
+Anki 2.1+. Import via: Anki Desktop → File → Import → Select .apkg file.
+
 ## 5. Generation Modes
 
 ### Mode 1 — From Lecture Notes
@@ -239,9 +279,30 @@ executing, check for an existing session profile:
 
 ---
 
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| Source material too short | Respond: "Material too sparse for flashcard generation. Minimum of 500 characters of meaningful content required." |
+| Unsupported file format | Respond: "Unsupported format. Accepted formats: PDF, DOCX, TXT, MD, or pasted text." |
+| SRS metadata conflict | Auto-resolve by prioritizing session config defaults over card-level overrides |
+| Export format failure | Log error, fall back to Markdown export, notify user of format limitation |
+
+## Quality Gate — Check Before Output
+
+- [ ] Every syllabus point has at least one corresponding flashcard
+- [ ] No duplicate cards (same front text across different cards)
+- [ ] Difficulty progression exists (Tier 1 → Tier 2 → Tier 3 cards)
+- [ ] SRS metadata fields are populated for all cards
+- [ ] Export format matches user's requested format exactly
+- [ ] Deck naming convention follows `University_Subject_Unit` pattern
+
 ## 11. Integration with Other Skills
 
-- **universal-notes-generator**: Takes generated notes as input and converts them to flashcards
-- **universal-pyq-analyzer**: Uses PYQ frequency analysis to weight card importance
-- **universal-imp-topics-generator**: Generates cram-mode decks from imp topics output
-- **universal-mcq-practice-generator**: Creates exam-simulated MCQ practice from same material
+| Skill | Integration |
+|---|---|
+| **universal-session-config** | Reads university/subject/pattern from session profile |
+| **universal-notes-generator** | Takes generated notes as input and converts them to flashcards |
+| **universal-pyq-analyzer** | Uses PYQ frequency analysis to weight card importance |
+| **universal-imp-topics-generator** | Generates cram-mode decks from imp topics output |
+| **universal-mcq-practice-generator** | Creates exam-simulated MCQ practice from same material |

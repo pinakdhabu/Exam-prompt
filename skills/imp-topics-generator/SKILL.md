@@ -534,6 +534,36 @@ Otherwise: **INSUFFICIENT INPUT** — explain exactly what is missing and why it
 
 ---
 
+## Syllabus-Only Fallback Mode
+
+When PYQs are unavailable, the system can generate IMP topics from syllabus structure alone:
+
+### Methodology
+
+1. **Topic Frequency by CO Overlap** — Topics that map to multiple Course Outcomes are weighted higher
+2. **Logical Dependency Chains** — Foundational topics (prerequisites for later units) are flagged as high-priority
+3. **Cross-Unit Weightage Estimation** — Units with more syllabus content, more COs, and higher detail density are estimated to carry higher weightage
+
+### Output Differences vs PYQ Mode
+
+| Aspect | Syllabus-Only Mode | PYQ Mode |
+|---|---|---|
+| Probability accuracy | Estimated (±20%) | Measured (±5%) |
+| Topic classification | Based on CO overlap + syllabus emphasis | Based on historical exam frequency |
+| Question format prediction | Generic (from topic nature) | Specific (from past patterns) |
+| Cross-unit detection | Based on CO sharing | Based on actual co-occurrence |
+| Confidence level | Medium | High |
+
+### Limitations
+
+- No recency weighting possible
+- Examiner favorites cannot be detected
+- Question format prediction is generic, not pattern-based
+- Probability ranges are wider (±20% vs ±5%)
+- Syllabus-only mode is a fallback — PYQ mode is always preferred
+
+---
+
 ## Session Config
 
 This skill integrates with the session config system (`deps/session-profile.json`). Before
@@ -545,3 +575,34 @@ executing, check for an existing session profile:
   `setup-exam-prompt` (or `npm run init`) first.
 - Session config eliminates redundant context detection — detection happens once and is reused
   across all skill calls.
+
+---
+
+## Error Handling
+
+| Situation | Action |
+|---|---|
+| No PYQs and no syllabus provided | Respond: "INSUFFICIENT INPUT. Please provide syllabus or at least 3 previous year question papers." |
+| Syllabus-only mode active | Flag to user: "Running in syllabus-only mode. Probability estimates are wider (±20%). Provide PYQs for higher accuracy." |
+| Cross-unit overlap ambiguous | Flag ambiguous CO mappings and ask for clarification |
+| Topic name mismatch between syllabus and PYQs | Attempt fuzzy matching; if confidence < 80%, flag for manual review |
+
+## Quality Gate — Check Before Output
+
+- [ ] Each unit has at least one Must-Prepare topic identified
+- [ ] Probability percentages are clearly shown for all topics
+- [ ] Confidence level indicated (PYQ mode vs syllabus-only mode)
+- [ ] No answer content generated (prohibition enforced)
+- [ ] All probability language used — no certainty claims
+- [ ] No university-specific pattern hardcoded
+
+## Integration with Other Skills
+
+| Skill | Integration |
+|---|---|
+| **universal-session-config** | Reads university/subject/pattern from session profile |
+| **universal-pyq-analyzer** | Uses PYQ frequency data to inform probability calculations |
+| **universal-study-planner** | Receives IMP topic list to create day-by-day study schedules |
+| **universal-last-minute-crammer** | Provides high-yield topic list for ultra-compressed study plans |
+| **universal-flashcard-generator** | Supplies priority-weighted topics for exam-cram flashcard decks |
+| **universal-notes-generator** | Generates targeted notes for Must-Prepare and Selective topics |

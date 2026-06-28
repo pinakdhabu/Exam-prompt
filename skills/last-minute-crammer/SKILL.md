@@ -151,6 +151,62 @@ Synchronization:
 | **Audio Summary**              | Listen during travel/breaks        | 5-15 min     |
 | **Flashcard Deck (Cram Mode)** | 20-50 high-yield cards only        | 5 min        |
 
+## 7. Sleep Optimization & Stress Management
+
+### Sleep-Study Trade-Off
+
+Research shows that sleep deprivation directly impairs the cognitive functions needed for exam
+performance — memory consolidation, attention, and executive function.
+
+| Sleep in 24h Window | Cognitive Effect | Recommendation |
+|---|---|---|
+| < 2 hours | Severe impairment — negates most study gains | Avoid. Study gains lost to cognitive deficit. |
+| 3-4 hours | Moderate impairment — reduced recall, slower thinking | Minimum viable for 12h cram window |
+| 5-6 hours | Mild impairment — acceptable for short-term exams | Target for multi-day cram sessions |
+| 7+ hours | Full cognitive function | Always preferred when time allows |
+
+**Rule:** Even in a 12-hour cram window, allocate 3-4 hours for sleep. The memory consolidation
+that occurs during sleep is more valuable than 3-4 additional hours of study.
+
+### Stress Management Techniques
+
+#### Box Breathing (4-4-4-4)
+
+```
+Inhale (4 sec) → Hold (4 sec) → Exhale (4 sec) → Hold (4 sec)
+Repeat 4-5 cycles. Use before entering exam hall or when anxiety spikes during exam.
+```
+
+#### 5-4-3-2-1 Grounding
+
+When panic or blank-mind sets in during the exam:
+
+- **5** things you can see
+- **4** things you can touch
+- **3** things you can hear
+- **2** things you can smell
+- **1** thing you can taste
+
+#### Positive Self-Talk Scripts
+
+- **Before exam:** "I have prepared what I could. I will write what I know."
+- **Blank mind:** "This is normal adrenaline. I will start with what I know and come back."
+- **Tough question:** "Partial marks come from trying. I will write related concepts."
+- **Running out of time:** "Bullet points earn marks. Keywords over sentences."
+
+### Exam Hall Toolkit Checklist
+
+Before leaving for the exam, verify:
+
+- [ ] Pen (primary) — gel or ballpoint as permitted
+- [ ] Pen (backup) — spare ink refill or additional pen
+- [ ] Analog wristwatch (not smartwatch — usually prohibited)
+- [ ] Water bottle — transparent, label removed
+- [ ] Government-issued photo ID / hall ticket
+- [ ] Admit card / exam entry pass
+- [ ] Simple calculator (if permitted for the subject)
+- [ ] Geometry box / scale (for diagram questions)
+
 ## Session Config
 
 This skill integrates with the session config system (`deps/session-profile.json`). Before
@@ -165,11 +221,32 @@ executing, check for an existing session profile:
 
 ---
 
-## 7. Integration with Other Skills
+## Error Handling
 
-- **universal-imp-topics-generator**: Provides the high-yield topic list that drives cram
-  prioritization
-- **universal-pyq-analyzer**: Supplies frequency data for topic selection
-- **universal-flashcard-generator**: Creates the cram-mode flashcard deck
-- **universal-study-planner**: Falls back to cram plan when time runs short
-- **universal-notes-generator**: Produces the rapid revision note format
+| Situation | Action |
+|---|---|
+| Timeframe not specified | Default to 12-hour plan and ask user to confirm or specify |
+| Subject/topics not provided | Respond: "Please specify the subject and topics you need to cram." |
+| Insufficient time for requested scope | Suggest reducing scope: "3 hours is not enough for 5 units. Recommend focusing on 2 highest-weightage units." |
+| User health concern (sleep deprivation) | Warn: "Sleep below 2 hours impairs cognitive function. Study gains may be negated. Recommend minimum 3-4 hours sleep." |
+
+## Quality Gate — Check Before Output
+
+- [ ] Timeframe matches plan generated (1h / 3h / 6h / 12h)
+- [ ] Condensed reference sheet is included
+- [ ] Active recall / self-test step present in plan
+- [ ] Memory encoding technique assigned to each topic block
+- [ ] Exam hall strategy section present
+- [ ] Sleep recommendation aligned with timeframe
+- [ ] No topic exceeds 1 page in the reference sheet (enforces conciseness)
+
+## 8. Integration with Other Skills
+
+| Skill | Integration |
+|---|---|
+| **universal-session-config** | Reads university/subject/pattern from session profile |
+| **universal-imp-topics-generator** | Provides the high-yield topic list that drives cram prioritization |
+| **universal-pyq-analyzer** | Supplies frequency data for topic selection |
+| **universal-flashcard-generator** | Creates the cram-mode flashcard deck |
+| **universal-study-planner** | Falls back to cram plan when time runs short |
+| **universal-notes-generator** | Produces the rapid revision note format |
