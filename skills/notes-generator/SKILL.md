@@ -8,7 +8,10 @@ description:
 
 # Universal Academic Notes Generator
 
-> **Quick Start:** Provide university name + subject code/topics + exam pattern (marks/time). The skill auto-selects the best note format. Example: *"Generate Cornell notes for University of Nairobi, Bachelor of Computer Science, Database Systems Unit 3: Normalization. SPPU 2019 pattern, 6 marks per topic."*
+> **Quick Start:** Provide university name + subject code/topics + exam pattern (marks/time). The
+> skill auto-selects the best note format. Example: _"Generate Cornell notes for University of
+> Nairobi, Bachelor of Computer Science, Database Systems Unit 3: Normalization. SPPU 2019 pattern,
+> 6 marks per topic."_
 
 ## Overview
 
@@ -950,17 +953,17 @@ Bloom Level Reached: L3 (Apply) — push to L4 by comparing with [topic Z]
 
 This skill works for universities worldwide. Below are representative examples from diverse regions:
 
-| Region              | University Example                                       | Pattern Adaptation                                                                 |
-| ------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| **East Africa**     | University of Nairobi (Kenya) — BSc Computer Science     | Semester system, 70% exam + 30% continuous assessment, 3 exam questions (compulsory) |
-| **West Africa**     | University of Lagos (Nigeria) — Engineering               | Harmattan/Rain semester, 100 marks, 3 hours, 5 questions (answer any 4)            |
-| **North Africa**    | Cairo University (Egypt) — Medicine                       | Year system, written + oral + practical, Arabic/English bilingual terminology      |
-| **South Asia**      | Bangladesh University of Engineering & Technology (BUET)  | Semester system, 3 credits per subject, 3 hours, 70 marks + 30 continuous          |
-| **Southeast Asia**  | University of the Philippines — Social Sciences           | Semestral, 60% final exam, essay-based with research component                     |
-| **Latin America**   | Universidad Nacional Autónoma de México (UNAM)            | Semester system, 70% exam + 30% assignments, Spanish/English bilingual terminology |
-| **Middle East**     | King Saud University (Saudi Arabia) — Engineering         | Two-semester system, 60% final + 40% coursework, Arabic/English mixed instruction  |
-| **South America**   | Universidade de São Paulo (USP) — Sciences                | Semester system, créditos (credits), final exam + lab reports + seminars            |
-| **Caribbean**       | University of the West Indies (UWI) — Arts & General      | Semester system, 50% coursework + 50% final exam, essay-based, APA referencing     |
+| Region             | University Example                                       | Pattern Adaptation                                                                   |
+| ------------------ | -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **East Africa**    | University of Nairobi (Kenya) — BSc Computer Science     | Semester system, 70% exam + 30% continuous assessment, 3 exam questions (compulsory) |
+| **West Africa**    | University of Lagos (Nigeria) — Engineering              | Harmattan/Rain semester, 100 marks, 3 hours, 5 questions (answer any 4)              |
+| **North Africa**   | Cairo University (Egypt) — Medicine                      | Year system, written + oral + practical, Arabic/English bilingual terminology        |
+| **South Asia**     | Bangladesh University of Engineering & Technology (BUET) | Semester system, 3 credits per subject, 3 hours, 70 marks + 30 continuous            |
+| **Southeast Asia** | University of the Philippines — Social Sciences          | Semestral, 60% final exam, essay-based with research component                       |
+| **Latin America**  | Universidad Nacional Autónoma de México (UNAM)           | Semester system, 70% exam + 30% assignments, Spanish/English bilingual terminology   |
+| **Middle East**    | King Saud University (Saudi Arabia) — Engineering        | Two-semester system, 60% final + 40% coursework, Arabic/English mixed instruction    |
+| **South America**  | Universidade de São Paulo (USP) — Sciences               | Semester system, créditos (credits), final exam + lab reports + seminars             |
+| **Caribbean**      | University of the West Indies (UWI) — Arts & General     | Semester system, 50% coursework + 50% final exam, essay-based, APA referencing       |
 
 When the user provides a university from any of these regions, adapt the note format to match the
 region's typical assessment structure, terminology, and referencing style.
@@ -999,9 +1002,9 @@ Pause the audio after each question. Try to answer before I do.
 This concludes the audio summary of [Topic]. Review this section again tomorrow for best retention."
 ```
 
-To generate: append the audio script after the written notes, prefixed with `### Audio Summary Script`.
-Students can use text-to-speech (e.g., browser TTS, mobile accessibility tools, or `tts` CLI) to
-convert to spoken audio.
+To generate: append the audio script after the written notes, prefixed with
+`### Audio Summary Script`. Students can use text-to-speech (e.g., browser TTS, mobile accessibility
+tools, or `tts` CLI) to convert to spoken audio.
 
 ---
 

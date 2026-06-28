@@ -116,28 +116,41 @@ The framework provides **eight discipline templates**. Each template defines:
 ### 9. Nursing & Health Sciences (Clinical Reasoning, Care Plans, Evidence-Based Practice)
 
 - **Answer anatomy**: Clinical Presentation → Assessment → Diagnosis → Plan → Evaluation
-- **Evidence**: Patient data, vital signs, lab values, nursing diagnoses (NANDA-I), clinical guidelines
-- **Keyword density**: High — precise medical/nursing terminology, abbreviations (e.g., SOB, NPO, PRN)
-- **Diagram policy**: Required for 4+ marks — body system diagrams, care plan flowcharts, anatomical charts
-- **Numerical policy**: Drug calculations (dosage, drip rates), BMI, fluid balance, APGAR scores — show formula and units
+- **Evidence**: Patient data, vital signs, lab values, nursing diagnoses (NANDA-I), clinical
+  guidelines
+- **Keyword density**: High — precise medical/nursing terminology, abbreviations (e.g., SOB, NPO,
+  PRN)
+- **Diagram policy**: Required for 4+ marks — body system diagrams, care plan flowcharts, anatomical
+  charts
+- **Numerical policy**: Drug calculations (dosage, drip rates), BMI, fluid balance, APGAR scores —
+  show formula and units
 - **Citation format**: Standard clinical terminology (ICD-11, SNOMED CT), nursing diagnosis labels
 
 ### 10. Design & Visual Arts (Portfolio, Critique, Studio Practice)
 
 - **Answer anatomy**: Design Problem → Research → Concept → Process → Outcome → Critique
-- **Evidence**: Design principles (balance, contrast, hierarchy, rhythm), colour theory, typography, material studies
-- **Keyword density**: Moderate to high — discipline-specific vocabulary (e.g., kerning, chiaroscuro, biomimicry, wireframe)
-- **Diagram policy**: Mandatory — sketches, mood boards, wireframes, process documentation, annotated images
-- **Numerical policy**: Measurements, proportions, aspect ratios, colour codes (HEX/RGB/CMYK), material specifications
+- **Evidence**: Design principles (balance, contrast, hierarchy, rhythm), colour theory, typography,
+  material studies
+- **Keyword density**: Moderate to high — discipline-specific vocabulary (e.g., kerning,
+  chiaroscuro, biomimicry, wireframe)
+- **Diagram policy**: Mandatory — sketches, mood boards, wireframes, process documentation,
+  annotated images
+- **Numerical policy**: Measurements, proportions, aspect ratios, colour codes (HEX/RGB/CMYK),
+  material specifications
 - **Citation format**: Designer names, movement names (Bauhaus, Art Deco), software/tool names
 
 ### 11. Social Sciences (Research, Data Analysis, Theory Application)
 
-- **Answer anatomy**: Theoretical Framework → Research Question → Methodology → Findings → Interpretation
-- **Evidence**: Empirical studies, survey data, census statistics, ethnographic observations, theoretical constructs
-- **Keyword density**: Moderate — theoretical terms (e.g., structural functionalism, intersectionality, social capital)
-- **Diagram policy**: Useful for data presentation — bar charts, scatter plots, network diagrams, timelines
-- **Numerical policy**: Descriptive statistics (mean, median, mode), correlation coefficients, chi-square, regression output
+- **Answer anatomy**: Theoretical Framework → Research Question → Methodology → Findings →
+  Interpretation
+- **Evidence**: Empirical studies, survey data, census statistics, ethnographic observations,
+  theoretical constructs
+- **Keyword density**: Moderate — theoretical terms (e.g., structural functionalism,
+  intersectionality, social capital)
+- **Diagram policy**: Useful for data presentation — bar charts, scatter plots, network diagrams,
+  timelines
+- **Numerical policy**: Descriptive statistics (mean, median, mode), correlation coefficients,
+  chi-square, regression output
 - **Citation format**: APA (most common), ASA, Chicago; include year, journal, DOI for studies
 
 ---
@@ -814,8 +827,8 @@ optimization problems like Knapsack, LCS, and Matrix Chain Multiplication.
 
 ## Reference Implementation: VTU (Visvesvaraya Technological University) — Computer Science
 
-This section shows how the same template framework maps to a different Indian university. VTU follows
-a 5-module, 100-mark, 3-hour pattern with OR within each module.
+This section shows how the same template framework maps to a different Indian university. VTU
+follows a 5-module, 100-mark, 3-hour pattern with OR within each module.
 
 ### Module 1: Data Structures — Stacks
 
@@ -834,19 +847,19 @@ undo/redo operations.
 
 **Time Budget**: 6 min
 
-| Aspect              | Array Implementation                    | Linked List Implementation                |
-| ------------------- | --------------------------------------- | ----------------------------------------- |
-| Memory allocation   | Contiguous, fixed size                  | Dynamic, node-by-node                     |
-| Overflow condition  | Possible when array is full             | Rare (heap exhaustion only)               |
-| Underflow condition | Same — empty stack detection            | Same                                      |
-| Access time         | O(1) for Top and Push (if space)        | O(1) for Top and Push                     |
-| Cache locality      | High (contiguous memory)                | Low (scattered nodes)                     |
-| Memory per element  | Only the data element                   | Data + pointer to next node (overhead)    |
-| Resizing            | Expensive (O(n) copy if full)           | No resizing needed — grows naturally      |
-| Use case            | Known maximum size, performance-critical | Unknown size, frequent insert/delete      |
+| Aspect              | Array Implementation                     | Linked List Implementation             |
+| ------------------- | ---------------------------------------- | -------------------------------------- |
+| Memory allocation   | Contiguous, fixed size                   | Dynamic, node-by-node                  |
+| Overflow condition  | Possible when array is full              | Rare (heap exhaustion only)            |
+| Underflow condition | Same — empty stack detection             | Same                                   |
+| Access time         | O(1) for Top and Push (if space)         | O(1) for Top and Push                  |
+| Cache locality      | High (contiguous memory)                 | Low (scattered nodes)                  |
+| Memory per element  | Only the data element                    | Data + pointer to next node (overhead) |
+| Resizing            | Expensive (O(n) copy if full)            | No resizing needed — grows naturally   |
+| Use case            | Known maximum size, performance-critical | Unknown size, frequent insert/delete   |
 
-**Array Stack**: Uses a `top` index. Push: `arr[++top] = value`. Pop: `return arr[top--]`.
-**Linked Stack**: Uses a `head` pointer. Push: new node → link to head → update head. Pop: head = head→next.
+**Array Stack**: Uses a `top` index. Push: `arr[++top] = value`. Pop: `return arr[top--]`. **Linked
+Stack**: Uses a `head` pointer. Push: new node → link to head → update head. Pop: head = head→next.
 
 VTU follow-up often asks: "Write a C program to implement stack using arrays." For code, provide
 well-commented program with push(), pop(), display(), and main() with menu.
@@ -859,13 +872,15 @@ well-commented program with push(), pop(), display(), and main() with menu.
 
 **Normalization** is a process of organizing data to reduce redundancy and improve data integrity.
 
-| Normal Form | Rule                                                              | Example Violation                                                                       |
-| ----------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| **1NF**     | Each cell contains atomic (single) value; no repeating groups     | A column storing multiple phone numbers: `"123-456, 789-012"`                           |
-| **2NF**     | In 1NF + every non-key attribute fully depends on the entire PK   | `StudentID → DepartmentName` when PK is `(StudentID, CourseID)` — `DepName` depends only on `StudentID`, not the full PK |
-| **3NF**     | In 2NF + no transitive dependency (non-key → non-key)             | `StudentID → DeptID → DeptHead`. `DeptHead` is transitively dependent on `StudentID` via `DeptID` |
+| Normal Form | Rule                                                            | Example Violation                                                                                                        |
+| ----------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **1NF**     | Each cell contains atomic (single) value; no repeating groups   | A column storing multiple phone numbers: `"123-456, 789-012"`                                                            |
+| **2NF**     | In 1NF + every non-key attribute fully depends on the entire PK | `StudentID → DepartmentName` when PK is `(StudentID, CourseID)` — `DepName` depends only on `StudentID`, not the full PK |
+| **3NF**     | In 2NF + no transitive dependency (non-key → non-key)           | `StudentID → DeptID → DeptHead`. `DeptHead` is transitively dependent on `StudentID` via `DeptID`                        |
 
-**Example:** Consider `Student (SID, SName, CourseID, CourseName, Instructor)`. PK = `(SID, CourseID)`.
+**Example:** Consider `Student (SID, SName, CourseID, CourseName, Instructor)`. PK =
+`(SID, CourseID)`.
+
 - 1NF violation if CourseName contains multiple values → split atomic.
 - 2NF violation: `SName` depends only on `SID` (part of PK) → move to Student table.
 - 3NF violation: `Instructor` depends on `CourseID` (non-key → non-key) → move to Course table.

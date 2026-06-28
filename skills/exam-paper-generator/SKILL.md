@@ -266,16 +266,19 @@ Generate paper in any combination requested.
 
 ### 12. DU / IPU Pattern (University of Delhi / Guru Gobind Singh Indraprastha University)
 
-| Property       | DU (Delhi University)                   | IPU (GGSIPU)                           |
-| -------------- | --------------------------------------- | -------------------------------------- |
-| Syllabus Units | 4-5 units                               | 5-6 units                              |
-| Total Marks    | 80 (End-Sem) + 20 (Internal)            | 75 (End-Sem) + 25 (Internal)           |
-| Time           | 3 Hours                                 | 3 Hours                                |
+| Property       | DU (Delhi University)                                       | IPU (GGSIPU)                                    |
+| -------------- | ----------------------------------------------------------- | ----------------------------------------------- |
+| Syllabus Units | 4-5 units                                                   | 5-6 units                                       |
+| Total Marks    | 80 (End-Sem) + 20 (Internal)                                | 75 (End-Sem) + 25 (Internal)                    |
+| Time           | 3 Hours                                                     | 3 Hours                                         |
 | Structure      | Section A (short compulsory) + Section B (long with choice) | 3 sections: A (MCQ/short), B (medium), C (long) |
 
-**DU Structure:** Section A (20 marks) — 10 short compulsory questions (2 each, covering all units). Section B (60 marks) — 6 long questions with internal choice, attempt any 4 (15 marks each).
+**DU Structure:** Section A (20 marks) — 10 short compulsory questions (2 each, covering all units).
+Section B (60 marks) — 6 long questions with internal choice, attempt any 4 (15 marks each).
 
-**IPU Structure:** Section A (20 marks) — 10 compulsory objective/short questions. Section B (25 marks) — 5 medium-length questions, attempt any 3. Section C (30 marks) — 4 long questions, attempt any 2 (15 marks each).
+**IPU Structure:** Section A (20 marks) — 10 compulsory objective/short questions. Section B (25
+marks) — 5 medium-length questions, attempt any 3. Section C (30 marks) — 4 long questions, attempt
+any 2 (15 marks each).
 
 ### 13. GTU Pattern (Gujarat Technological University)
 
@@ -287,36 +290,40 @@ Generate paper in any combination requested.
 | Q1             | Compulsory (short questions, all units) |
 | Q2–Q7          | OR pairs (6 questions, 3 OR pairs)      |
 
-**Structure:** Q1 is compulsory with 7 sub-questions (1 mark each, one per unit). Q2–Q7 form 3 OR pairs carrying 21 marks each pair.
+**Structure:** Q1 is compulsory with 7 sub-questions (1 mark each, one per unit). Q2–Q7 form 3 OR
+pairs carrying 21 marks each pair.
 
 ### 14. BPUT Pattern (Biju Patnaik University of Technology)
 
-| Property       | Value                                   |
-| -------------- | --------------------------------------- |
-| Syllabus Units | 8 units                                 |
-| Total Marks    | 70 (Theory) + 30 (Internal)             |
-| Time           | 3 Hours                                 |
-| Part A         | 10 compulsory short questions (1 each)  |
+| Property       | Value                                            |
+| -------------- | ------------------------------------------------ |
+| Syllabus Units | 8 units                                          |
+| Total Marks    | 70 (Theory) + 30 (Internal)                      |
+| Time           | 3 Hours                                          |
+| Part A         | 10 compulsory short questions (1 each)           |
 | Part B         | 6 long questions with OR choice (attempt 5 of 6) |
 
-**Structure:** Part A (10 marks) — one question per unit. Part B (60 marks) — 6 questions (covering all units in pairs), answer any 5.
+**Structure:** Part A (10 marks) — one question per unit. Part B (60 marks) — 6 questions (covering
+all units in pairs), answer any 5.
 
 ---
 
 ## Accessibility & Accommodation Notes for All Patterns
 
-| Accommodation                               | Adjustments                                                                                        |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| **Large print**                             | Increase font by 2pt, widen margins to 1.5", increase line spacing to 1.5. Maintain question ratio. |
-| **Extra time** (25%/50%/100%)               | Reduce total question count proportionally, or add an optional section for same total marks.        |
-| **Reader/scribe**                           | Use clear oral-style question phrasing. Avoid visual references like "as shown above" without labels. |
-| **Colour-blind safe**                       | Do not rely on colour-coded distinctions. Use patterns, labels, or shapes alongside colours.        |
-| **Digital-screen friendly**                 | Use high-contrast colours, san-serif fonts, avoid text-on-image.                                   |
+| Accommodation                 | Adjustments                                                                                           |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Large print**               | Increase font by 2pt, widen margins to 1.5", increase line spacing to 1.5. Maintain question ratio.   |
+| **Extra time** (25%/50%/100%) | Reduce total question count proportionally, or add an optional section for same total marks.          |
+| **Reader/scribe**             | Use clear oral-style question phrasing. Avoid visual references like "as shown above" without labels. |
+| **Colour-blind safe**         | Do not rely on colour-coded distinctions. Use patterns, labels, or shapes alongside colours.          |
+| **Digital-screen friendly**   | Use high-contrast colours, san-serif fonts, avoid text-on-image.                                      |
 
 ### Variant & Randomization Notes
 
-- When generating multiple versions of the same paper, swap question order across OR pairs (not within a pair — OR pairs must stay together).
-- For automated marking: keep MCQs and numerical answers identical across variants; only reorder choices in MCQs.
+- When generating multiple versions of the same paper, swap question order across OR pairs (not
+  within a pair — OR pairs must stay together).
+- For automated marking: keep MCQs and numerical answers identical across variants; only reorder
+  choices in MCQs.
 - Mark the version clearly as `[Version A / Version B]` at the top.
 
 ---

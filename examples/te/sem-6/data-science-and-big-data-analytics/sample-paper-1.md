@@ -77,14 +77,8 @@ nodes (Gini index, entropy, information gain)? [9]
 **Q5)** **a)** Perform K-means clustering on the following dataset with K=2. Initial centroids:
 (2,3) and (8,6). Compute new centroids after each iteration until convergence.
 
-| Point | X   | Y   |
-| ----- | --- | --- | --- |
-| A     | 2   | 3   |
-| B     | 4   | 7   |
-| C     | 3   | 5   |
-| D     | 6   | 9   |
-| E     | 8   | 6   |
-| F     | 7   | 8   | [9] |
+| Point | X | Y | | ----- | --- | --- | --- | | A | 2 | 3 | | B | 4 | 7 | | C | 3 | 5 | | D | 6 | 9
+| | E | 8 | 6 | | F | 7 | 8 | [9] |
 
 **b)** How do you handle noise in text data during preprocessing? Explain Bag of Words and TF-IDF in
 text analytics. [9]

@@ -442,7 +442,7 @@ Never interpolate `${{ github.event.pull_request.title }}`, `${{ github.head_ref
 
 ```yaml
 # BEST — pinned to full commit SHA
-uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
 # ACCEPTABLE (for actions/ org — maintained by GitHub)
 uses: actions/checkout@v4
@@ -564,19 +564,23 @@ gh run watch <run-id>
 
 ### Common Failure Patterns
 
-| Error                                             | Likely Cause                        | Fix                                                       |
-| ------------------------------------------------- | ----------------------------------- | --------------------------------------------------------- | ---------------------------------------------------- |
-| `could not find expected ':'`                     | YAML indentation in `run:` block    | Check `                                                   | ` block alignment; use heredoc for multi-line Python |
-| `Log not found`                                   | Workflow never ran (parsing failed) | Validate YAML locally first                               |
-| `Resource not accessible by integration`          | Permissions too restricted          | Add `contents: write` or appropriate permission           |
-| `The workflow is not valid`                       | Trigger event misconfigured         | Check `on:` syntax, path filters, branch restrictions     |
-| `HttpError: not found`                            | Token insufficient                  | Use `${{ secrets.GITHUB_TOKEN }}` or a PAT                |
-| `Failed to download action`                       | SHA not found in action repo        | Update pinned SHA to current commit HEAD                  |
-| `stefanzweifel/git-auto-commit-action@v5` fails   | No changes to commit, or dirty tree | Check `git status`; verify `add_options`                  |
-| `actions/github-script@v7` fails with `TypeError` | API response shape changed          | Check GitHub API docs for breaking changes                |
-| `No uploaded artifact was found`                  | `upload-pages-artifact` path wrong  | Verify `path:` points to directory with `index.html`      |
-| npm install fails                                 | package-lock.json mismatch          | Delete `node_modules/` and `package-lock.json`, reinstall |
-| `curl: (6) Could not resolve host`                | Network issue or URL changed        | Verify URL; add `continue-on-error: true`                 |
+| Error | Likely Cause | Fix | | ------------------------------------------------- |
+----------------------------------- | --------------------------------------------------------- |
+---------------------------------------------------- | | `could not find expected ':'` | YAML
+indentation in `run:` block | Check `                                                  |` block
+alignment; use heredoc for multi-line Python | | `Log not found` | Workflow never ran (parsing
+failed) | Validate YAML locally first | | `Resource not accessible by integration` | Permissions too
+restricted | Add `contents: write` or appropriate permission | | `The workflow is not valid` |
+Trigger event misconfigured | Check `on:` syntax, path filters, branch restrictions | |
+`HttpError: not found` | Token insufficient | Use `${{ secrets.GITHUB_TOKEN }}` or a PAT | |
+`Failed to download action` | SHA not found in action repo | Update pinned SHA to current commit
+HEAD | | `stefanzweifel/git-auto-commit-action@v5` fails | No changes to commit, or dirty tree |
+Check `git status`; verify `add_options` | | `actions/github-script@v7` fails with `TypeError` | API
+response shape changed | Check GitHub API docs for breaking changes | |
+`No uploaded artifact was found` | `upload-pages-artifact` path wrong | Verify `path:` points to
+directory with `index.html` | | npm install fails | package-lock.json mismatch | Delete
+`node_modules/` and `package-lock.json`, reinstall | | `curl: (6) Could not resolve host` | Network
+issue or URL changed | Verify URL; add `continue-on-error: true` |
 
 ### Emergency Rollback
 

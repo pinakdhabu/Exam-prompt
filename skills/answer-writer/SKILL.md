@@ -171,14 +171,14 @@ Adaptive formula: **1 mark ≈ 2-3 lines of average handwriting ≈ 25-30 second
 
 For universities where answers may be written in English, a regional language, or a mix:
 
-| Requirement                                 | Rule                                                                                                                                             |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **User asks in a regional language**        | Answer in the same language. Retain all technical terms in **English** (first use bolded) because examiners expect standard nomenclature.        |
-| **Bilingual university** (e.g., Hindi/English) | Give the definition in both languages in one sentence, e.g., *"**Blockchain** (ब्लॉकचेन) is a distributed ledger..."*. Then continue in the requested language. |
-| **Technical terms**                         | Never translate technical terms into regional-script approximations. Use the English term, then optionally parenthetical local name once.        |
-| **Numerical / formulas**                    | Always use Arabic numerals and standard mathematical notation. Do not transliterate formulas.                                                    |
-| **RTL / complex scripts**                   | For Arabic, Persian, Urdu, Hebrew, maintain right-to-left sentence structure; keep technical terms in English left-to-right.                     |
-| **Terminology consistency**                 | Pick one local equivalent per concept and reuse it throughout the answer. Do not switch synonyms.                                                |
+| Requirement                                    | Rule                                                                                                                                                            |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **User asks in a regional language**           | Answer in the same language. Retain all technical terms in **English** (first use bolded) because examiners expect standard nomenclature.                       |
+| **Bilingual university** (e.g., Hindi/English) | Give the definition in both languages in one sentence, e.g., _"**Blockchain** (ब्लॉकचेन) is a distributed ledger..."_. Then continue in the requested language. |
+| **Technical terms**                            | Never translate technical terms into regional-script approximations. Use the English term, then optionally parenthetical local name once.                       |
+| **Numerical / formulas**                       | Always use Arabic numerals and standard mathematical notation. Do not transliterate formulas.                                                                   |
+| **RTL / complex scripts**                      | For Arabic, Persian, Urdu, Hebrew, maintain right-to-left sentence structure; keep technical terms in English left-to-right.                                    |
+| **Terminology consistency**                    | Pick one local equivalent per concept and reuse it throughout the answer. Do not switch synonyms.                                                               |
 
 ### 1F — Identify Bloom's Level (Implicit)
 
@@ -262,27 +262,26 @@ structure stays consistent.
 
 ### L4 — Analyze Level
 
-| Command                      | Structure                                                                                                                      |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | --- | -------------------------------------------- |
-| **Analyze**                  | Break topic into components → examine each component's role/behavior → show how components interact → identify patterns/issues |
-| **Compare**                  | One framing line → table (Basis                                                                                                | X   | Y) → closing line stating preference/context |
-| **Contrast**                 | Like Compare but emphasize differences only                                                                                    |
-| **Differentiate**            | Like Compare. Table format preferred.                                                                                          |
-| **Distinguish**              | State what distinguishes X from Y → key differentiating factors in table → closing                                             |
-| **Examine**                  | Inspect in detail. Structure → components → function of each → interrelationships                                              |
-| **Investigate**              | Systematic exploration. Question → evidence gathering → analysis → conclusion                                                  |
-| **Categorize**               | Group items by criteria → state each category's defining characteristics → place items correctly                               |
-| **Classify**                 | Like Categorize. Hierarchy or taxonomy format.                                                                                 |
-| **Deconstruct**              | Break into atomic parts → state purpose of each → how they assemble                                                            |
-| **Organize**                 | Arrange information in a logical structure → explain ordering rationale                                                        |
-| **Deduce**                   | From given facts/principles → logical reasoning → reach the deduced conclusion                                                 |
-| **Structure**                | Show how X is structured → levels/components → relationships between levels                                                    |
-| **Map**                      | Show mapping/transformation from one representation to another                                                                 |
-| **Test**                     | Apply test criteria → state what is being tested → show test execution → interpret results                                     |
-| **Separate**                 | Disambiguate confused/merged concepts → clear delineation                                                                      |
-| **Break down** = Deconstruct |                                                                                                                                |
-| **Question**                 | Probe assumptions → examine validity → highlight gaps                                                                          |
-| **Probe** = Examine          |                                                                                                                                |
+| Command | Structure | | ---------------------------- |
+------------------------------------------------------------------------------------------------------------------------------
+| --- | -------------------------------------------- | | **Analyze** | Break topic into components →
+examine each component's role/behavior → show how components interact → identify patterns/issues | |
+**Compare** | One framing line → table (Basis | X | Y) → closing line stating preference/context | |
+**Contrast** | Like Compare but emphasize differences only | | **Differentiate** | Like Compare.
+Table format preferred. | | **Distinguish** | State what distinguishes X from Y → key
+differentiating factors in table → closing | | **Examine** | Inspect in detail. Structure →
+components → function of each → interrelationships | | **Investigate** | Systematic exploration.
+Question → evidence gathering → analysis → conclusion | | **Categorize** | Group items by criteria →
+state each category's defining characteristics → place items correctly | | **Classify** | Like
+Categorize. Hierarchy or taxonomy format. | | **Deconstruct** | Break into atomic parts → state
+purpose of each → how they assemble | | **Organize** | Arrange information in a logical structure →
+explain ordering rationale | | **Deduce** | From given facts/principles → logical reasoning → reach
+the deduced conclusion | | **Structure** | Show how X is structured → levels/components →
+relationships between levels | | **Map** | Show mapping/transformation from one representation to
+another | | **Test** | Apply test criteria → state what is being tested → show test execution →
+interpret results | | **Separate** | Disambiguate confused/merged concepts → clear delineation | |
+**Break down** = Deconstruct | | | **Question** | Probe assumptions → examine validity → highlight
+gaps | | **Probe** = Examine | |
 
 ### L5 — Evaluate Level
 
@@ -476,16 +475,23 @@ A **mandatory diagram** does not count toward the line/point count — it is add
 
 Use these Mermaid patterns for common exam diagrams. Always wrap in ` ```mermaid ` blocks.
 
-| Diagram Type         | Mermaid Syntax                                                                                                                                       | Use When                                         |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ | --------------------------------- | --- | ------------------------ | ------------------------------------- |
-| **Flowchart**        | ` ```mermaid\nflowchart TD\n  A[Start] --> B{Decision}\n  B -- Yes --> C[Process]\n  B -- No --> D[End]\n`                                           | Algorithms, processes, workflows, decision trees |
-| **Sequence Diagram** | ` ```mermaid\nsequenceDiagram\n  Client->>Server: Request\n  Server->>Database: Query\n  Database-->>Server: Result\n  Server-->>Client: Response\n` | Network protocols, communication flows,          |
-| **Class Diagram**    | ` ```mermaid\nclassDiagram\n  class Student {\n    +name: String\n    +enroll()\n  }\n`                                                              | OOP concepts, ER model, UML                      |
-| **ER Diagram**       | `` `mermaid\nerDiagram\n STUDENT                                                                                                                     |                                                  | --o{ ENROLLS : registers\n COURSE |     | --o{ ENROLLS : has\n```` | Database design, entity relationships |
-| **State Diagram**    | ` ```mermaid\nstateDiagram-v2\n  [*] --> Idle\n  Idle --> Processing : start\n  Processing --> Done : complete\n  Done --> [*]\n`                    | Process states, lifecycles, state machines       |
-| **Timeline**         | ` ```mermaid\ntimeline\n  title Project Phases\n  2024 Q1 : Planning\n  2024 Q2 : Development\n  2024 Q3 : Testing\n`                                | Project timelines, historical sequences          |
-| **Pie Chart**        | ` ```mermaid\npie title Budget\n  "Research" : 30\n  "Development" : 50\n  "Testing" : 20\n`                                                         | Resource allocation, percentage distribution     |
-| **Block Diagram**    | Use flowchart with `[/input/]` `[output]` `{process}` shapes                                                                                         | System architecture, hardware components         |
+| Diagram Type | Mermaid Syntax | Use When | | -------------------- |
+----------------------------------------------------------------------------------------------------------------------------------------------------
+| ------------------------------------------------ | --------------------------------- | --- |
+------------------------ | ------------------------------------- | | **Flowchart** |
+` ```mermaid\nflowchart TD\n  A[Start] --> B{Decision}\n  B -- Yes --> C[Process]\n  B -- No --> D[End]\n`
+| Algorithms, processes, workflows, decision trees | | **Sequence Diagram** |
+` ```mermaid\nsequenceDiagram\n  Client->>Server: Request\n  Server->>Database: Query\n  Database-->>Server: Result\n  Server-->>Client: Response\n`
+| Network protocols, communication flows, | | **Class Diagram** |
+` ```mermaid\nclassDiagram\n  class Student {\n    +name: String\n    +enroll()\n  }\n` | OOP
+concepts, ER model, UML | | **ER Diagram** | ``
+`mermaid\nerDiagram\n STUDENT                                                                                                                     |                                                  | --o{ ENROLLS : registers\n COURSE |     | --o{ ENROLLS : has\n```` | Database design, entity relationships | | **State Diagram**    | `
+``mermaid\nstateDiagram-v2\n  [*] --> Idle\n  Idle --> Processing : start\n  Processing --> Done : complete\n  Done --> [*]\n`                    | Process states, lifecycles, state machines       | | **Timeline**         | ` ``mermaid\ntimeline\n
+title Project Phases\n 2024 Q1 : Planning\n 2024 Q2 : Development\n 2024 Q3 :
+Testing\n`                               | Project timelines, historical sequences          | | **Pie Chart**        |`
+```mermaid\npie title Budget\n "Research" : 30\n "Development" : 50\n "Testing" :
+20\n`                                                        | Resource allocation, percentage distribution     | | **Block Diagram**    | Use flowchart with`[/input/]` `[output]` `{process}`
+shapes | System architecture, hardware components |
 
 **Fallback to ASCII** when Mermaid is not renderable (e.g., plain text editor, print-only context):
 
@@ -1255,3 +1261,4 @@ executing, check for an existing session profile:
   `setup-exam-prompt` (or `npm run init`) first.
 - Session config eliminates redundant context detection — detection happens once and is reused
   across all skill calls.
+```

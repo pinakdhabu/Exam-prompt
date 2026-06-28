@@ -431,12 +431,10 @@ complex patterns.
 max(0,x), range [0,∞) — most common in hidden layers, avoids vanishing gradient **Softmax**: f(xᵢ) =
 eˣⁱ/Σⱼeˣʲ — multiclass probability output
 
-| Function | Range  | Gradient                   | Use Case                |
-| -------- | ------ | -------------------------- | ----------------------- | --- | ------------- |
-| Sigmoid  | (0,1)  | Vanishes for large         | x                       |     | Binary output |
-| Tanh     | (-1,1) | Vanishes but zero-centered | Hidden layers           |
-| ReLU     | [0,∞)  | 0 or 1 (no vanish)         | Hidden layers (default) |
-| Softmax  | (0,1)  | Full Jacobian              | Multiclass output       |
+| Function | Range | Gradient | Use Case | | -------- | ------ | -------------------------- |
+----------------------- | --- | ------------- | | Sigmoid | (0,1) | Vanishes for large | x | |
+Binary output | | Tanh | (-1,1) | Vanishes but zero-centered | Hidden layers | | ReLU | [0,∞) | 0 or
+1 (no vanish) | Hidden layers (default) | | Softmax | (0,1) | Full Jacobian | Multiclass output |
 
 ---
 

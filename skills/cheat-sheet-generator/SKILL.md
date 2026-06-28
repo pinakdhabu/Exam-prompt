@@ -50,32 +50,35 @@ ALL academic subjects across engineering, science, management, arts, and humanit
 
 ## Alternative Layout Formats
 
-While the default SPPU Letter 3-column format is the primary output, these variants broaden portability:
+While the default SPPU Letter 3-column format is the primary output, these variants broaden
+portability:
 
-| Format                       | Dimensions            | Best For                                   |
-| ---------------------------- | --------------------- | ------------------------------------------ |
-| **A4 3-column**              | 595×842 pt            | International students, European unis      |
-| **A4 landscape 2-column**    | 842×595 pt            | Wider diagrams, more horizontal space      |
-| **Half-letter (5.5×8.5")**   | 396×612 pt            | Pocket-sized revision, index cards         |
-| **Index card (3×5")**        | 216×360 pt            | Quick recall, flashcard-format micro notes |
-| **One-column (full width)**  | Full page width       | Formula-heavy subjects, mathematical text  |
-| **Two-column (A4)**          | 595×842 pt / 2 cols   | Diagram + text side-by-side, hybrid layout |
+| Format                      | Dimensions          | Best For                                   |
+| --------------------------- | ------------------- | ------------------------------------------ |
+| **A4 3-column**             | 595×842 pt          | International students, European unis      |
+| **A4 landscape 2-column**   | 842×595 pt          | Wider diagrams, more horizontal space      |
+| **Half-letter (5.5×8.5")**  | 396×612 pt          | Pocket-sized revision, index cards         |
+| **Index card (3×5")**       | 216×360 pt          | Quick recall, flashcard-format micro notes |
+| **One-column (full width)** | Full page width     | Formula-heavy subjects, mathematical text  |
+| **Two-column (A4)**         | 595×842 pt / 2 cols | Diagram + text side-by-side, hybrid layout |
 
-When user specifies a format, adjust column count, font size, and margin widths proportionally. Fallback to Letter 3-column if unspecified.
+When user specifies a format, adjust column count, font size, and margin widths proportionally.
+Fallback to Letter 3-column if unspecified.
 
 ## LaTeX & Mathematical Notation Convention
 
 For mathematical or formula-heavy cheat sheets, inline LaTeX within Markdown is required:
 
-| Symbol          | LaTeX                     | Rendered       |
-| --------------- | ------------------------- | -------------- |
-| Integral        | `$\int_a^b f(x)dx$`       | ∫ₐᵇ f(x)dx     |
-| Summation       | `$\sum_{i=1}^n x_i$`      | Σᵢ₌₁ⁿ xᵢ      |
-| Derivative      | `$\frac{dy}{dx}$`         | dy/dx          |
-| Big O notation  | `$O(n \log n)$`           | O(n log n)     |
-| Set notation    | `$\{x \in \mathbb{R} \mid x > 0\}$` | {x ∈ ℝ | x > 0} |
+| Symbol         | LaTeX                               | Rendered   |
+| -------------- | ----------------------------------- | ---------- |
+| Integral       | `$\int_a^b f(x)dx$`                 | ∫ₐᵇ f(x)dx |
+| Summation      | `$\sum_{i=1}^n x_i$`                | Σᵢ₌₁ⁿ xᵢ   |
+| Derivative     | `$\frac{dy}{dx}$`                   | dy/dx      |
+| Big O notation | `$O(n \log n)$`                     | O(n log n) |
+| Set notation   | `$\{x \in \mathbb{R} \mid x > 0\}$` | {x ∈ ℝ     | x > 0} |
 
 Rules:
+
 - Use `$...$` for inline math, `$$...$$` for display equations.
 - Write formulas in their standard notation; avoid diagram-dependence for formulas.
 - For multi-line derivations: use `\begin{aligned} ... \end{aligned}` within `$$`.
@@ -114,4 +117,5 @@ Popular DBMS: Oracle (relational, commercial), MySQL (relational, open-source), 
 Mnemonic: "Every Student Can Learn Databases" (External → Conceptual → Logical → Internal)
 ```
 
-When generating, replace the sample content with the requested subject's actual material. The density, column layout, and formatting style shown above serve as the baseline.
+When generating, replace the sample content with the requested subject's actual material. The
+density, column layout, and formatting style shown above serve as the baseline.

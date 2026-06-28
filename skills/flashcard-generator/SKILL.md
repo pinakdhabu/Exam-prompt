@@ -82,14 +82,13 @@ SRS-ready decks with proper scheduling metadata for long-term memory consolidati
 
 ### Type F — Compare & Contrast
 
-| Element           | Description                                               |
-| ----------------- | --------------------------------------------------------- | -------------------------------------------------- |
-| **Front**         | Two related concepts                                      |
-| **Back**          | Structured comparison (similarities / differences table)  |
-| **Best for**      | Comparative questions, distinguishing confusable concepts |
-| **Bloom's Level** | Analyze                                                   |
-| **Example Front** | Compare TCP vs UDP                                        |
-| **Example Back**  | TCP: connection-oriented, reliable, ordered, slower       | UDP: connectionless, unreliable, unordered, faster |
+| Element | Description | | ----------------- |
+--------------------------------------------------------- |
+-------------------------------------------------- | | **Front** | Two related concepts | | **Back**
+| Structured comparison (similarities / differences table) | | **Best for** | Comparative questions,
+distinguishing confusable concepts | | **Bloom's Level** | Analyze | | **Example Front** | Compare
+TCP vs UDP | | **Example Back** | TCP: connection-oriented, reliable, ordered, slower | UDP:
+connectionless, unreliable, unordered, faster |
 
 ## 2. Difficulty Tiers
 

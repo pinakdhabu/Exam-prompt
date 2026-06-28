@@ -422,13 +422,10 @@ Phase 4 — Accept: 7. δ(q₂, ε, Z₀) = {(q₃, ε)} — accept with empty s
 
 **Design:**
 
-| State | Symbol | Next State | Write | Move |
-| ----- | ------ | ---------- | ----- | ---- | ------------------------ |
-| q₀    | 0      | q₁         | X     | R    | — mark 0 as processed    |
-| q₀    | 1      | q₂         | Y     | R    | — mark 1 as processed    |
-| q₀    | Y      | q₀         | Y     | R    | — skip marked 1s         |
-| q₀    | X      | q₀         | X     | R    | — skip marked 0s         |
-| q₀    | B      | q₅         | B     | L    | — all processed → accept |
+| State | Symbol | Next State | Write | Move | | ----- | ------ | ---------- | ----- | ---- |
+------------------------ | | q₀ | 0 | q₁ | X | R | — mark 0 as processed | | q₀ | 1 | q₂ | Y | R | —
+mark 1 as processed | | q₀ | Y | q₀ | Y | R | — skip marked 1s | | q₀ | X | q₀ | X | R | — skip
+marked 0s | | q₀ | B | q₅ | B | L | — all processed → accept |
 
 | q₁ | 0 | q₁ | 0 | R | — scan right for 1 | q₁ | 1 | q₃ | Y | L | — found matching 1 | q₁ | Y | q₁
 | Y | R | — skip Y | q₁ | B | — | — | — | — no matching 1 → reject
@@ -506,10 +503,9 @@ Final:   B 1 1 1 1 1 1 B
 - Keep all bits as-is until first 1 from right
 - Then 0→1, 1→0
 
-| State | Symbol | Next State | Write | Move |
-| ----- | ------ | ---------- | ----- | ---- | -------------------------- |
-| q₀    | 0      | q₀         | 0     | R    | Scan right                 |
-| q₀    | 1      | q₁         | 1     | R    | Found first 1 from left... |
+| State | Symbol | Next State | Write | Move | | ----- | ------ | ---------- | ----- | ---- |
+-------------------------- | | q₀ | 0 | q₀ | 0 | R | Scan right | | q₀ | 1 | q₁ | 1 | R | Found
+first 1 from left... |
 
 Actually let me redesign. Better approach:
 
@@ -517,17 +513,11 @@ Actually let me redesign. Better approach:
 2. Move left — keep bits unchanged until we see first 1
 3. After seeing first 1 from right, flip all remaining bits (1→0, 0→1)
 
-| State | Symbol | Next State | Write | Move |
-| ----- | ------ | ---------- | ----- | ---- | ------------------------ |
-| q₀    | 0      | q₀         | 0     | R    | Find right end           |
-| q₀    | 1      | q₀         | 1     | R    |                          |
-| q₀    | B      | q₁         | B     | L    | Reached right end        |
-| q₁    | 0      | q₁         | 0     | L    | Skip trailing 0s         |
-| q₁    | 1      | q₂         | 1     | L    | Found first 1 from right |
-| q₁    | B      | q₃         | B     | R    | All zeros → halt with 0  |
-| q₂    | 0      | q₂         | 1     | L    | Flip 0→1                 |
-| q₂    | 1      | q₂         | 0     | L    | Flip 1→0                 |
-| q₂    | B      | q₃         | B     | R    | Done                     |
+| State | Symbol | Next State | Write | Move | | ----- | ------ | ---------- | ----- | ---- |
+------------------------ | | q₀ | 0 | q₀ | 0 | R | Find right end | | q₀ | 1 | q₀ | 1 | R | | | q₀ |
+B | q₁ | B | L | Reached right end | | q₁ | 0 | q₁ | 0 | L | Skip trailing 0s | | q₁ | 1 | q₂ | 1 |
+L | Found first 1 from right | | q₁ | B | q₃ | B | R | All zeros → halt with 0 | | q₂ | 0 | q₂ | 1 |
+L | Flip 0→1 | | q₂ | 1 | q₂ | 0 | L | Flip 1→0 | | q₂ | B | q₃ | B | R | Done |
 
 **Example:** 2's complement of `0110` (6) = `1010` (-6 in 4-bit)
 
@@ -552,17 +542,11 @@ So for 0110: bits from right = 0→copy, 1(second from right)→copy, 1→flip t
 
 **Idea:** Scan for substring `001`. Accept if found, reject if we reach blank without finding it.
 
-| State | Symbol | Next State | Write | Move |
-| ----- | ------ | ---------- | ----- | ---- | ---------------------- |
-| q₀    | 0      | q₁         | 0     | R    | Seen first 0           |
-| q₀    | 1      | q₀         | 1     | R    | Still looking          |
-| q₀    | B      | q_rej      | B     | —    | Not found              |
-| q₁    | 0      | q₂         | 0     | R    | Seen 00                |
-| q₁    | 1      | q₀         | 1     | R    | Reset — only one 0     |
-| q₁    | B      | q_rej      | B     | —    | Not found              |
-| q₂    | 0      | q₂         | 0     | R    | Keep scanning (000...) |
-| q₂    | 1      | q_acc      | 1     | R    | Found 001!             |
-| q₂    | B      | q_rej      | B     | —    | Not found              |
+| State | Symbol | Next State | Write | Move | | ----- | ------ | ---------- | ----- | ---- |
+---------------------- | | q₀ | 0 | q₁ | 0 | R | Seen first 0 | | q₀ | 1 | q₀ | 1 | R | Still
+looking | | q₀ | B | q_rej | B | — | Not found | | q₁ | 0 | q₂ | 0 | R | Seen 00 | | q₁ | 1 | q₀ | 1
+| R | Reset — only one 0 | | q₁ | B | q_rej | B | — | Not found | | q₂ | 0 | q₂ | 0 | R | Keep
+scanning (000...) | | q₂ | 1 | q_acc | 1 | R | Found 001! | | q₂ | B | q_rej | B | — | Not found |
 
 **Processing `1001`:**
 
