@@ -385,24 +385,25 @@ packages.
 
 ## Error Handling
 
-| Situation | Action |
-|---|---|
-| Unknown agent detected | Run `bash scripts/detect-agent.sh --all` to list all detected agents with confidence scores; check environment variables for agent-specific keys |
-| Config write failure | Verify write permissions on target config file; run `bash scripts/generate-agent-config.sh` to regenerate and retry |
-| Config file parse error | Check config file syntax for YAML/JSON errors; regenerate with `bash scripts/generate-agent-config.sh` |
+| Situation                 | Action                                                                                                                                           |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Unknown agent detected    | Run `bash scripts/detect-agent.sh --all` to list all detected agents with confidence scores; check environment variables for agent-specific keys |
+| Config write failure      | Verify write permissions on target config file; run `bash scripts/generate-agent-config.sh` to regenerate and retry                              |
+| Config file parse error   | Check config file syntax for YAML/JSON errors; regenerate with `bash scripts/generate-agent-config.sh`                                           |
 | Unsupported agent version | Add detection logic to `scripts/detect-agent.sh` and submit a PR; as workaround, manually create agent config following `_TEMPLATE_` conventions |
 
 ## Quality Gate — Check Before Output
 
 - [ ] Config loads correctly in target agent — restart agent and verify skill discovery
-- [ ] All skill references (`<available_skills>`, agent rules, etc.) point to existing SKILL.md files
+- [ ] All skill references (`<available_skills>`, agent rules, etc.) point to existing SKILL.md
+      files
 - [ ] All file paths in generated config resolve to valid locations within the repo
 
 ## Trigger Conditions
 
-| Condition | Action |
-|---|---|
-| **New agent onboarding** | Auto-run — run Parts 1-3 (detect, generate config, verify) |
-| **Skills fail to load** | Auto-run — run Part 2 regeneration + Part 6 troubleshooting |
+| Condition                              | Action                                                            |
+| -------------------------------------- | ----------------------------------------------------------------- |
+| **New agent onboarding**               | Auto-run — run Parts 1-3 (detect, generate config, verify)        |
+| **Skills fail to load**                | Auto-run — run Part 2 regeneration + Part 6 troubleshooting       |
 | **User asks "Will this work with X?"** | Auto-run — run Part 1 detection, then check Part 2 for that agent |
-| **Routine Exam Prompt usage** | Do NOT run — only invoke on symptom or explicit request |
+| **Routine Exam Prompt usage**          | Do NOT run — only invoke on symptom or explicit request           |

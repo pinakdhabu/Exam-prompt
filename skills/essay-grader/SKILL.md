@@ -171,12 +171,12 @@ MODEL ANSWER (excerpt):
 
 ## Error Handling
 
-| Situation | Action |
-|---|---|
-| No rubric provided | Construct rubric dynamically using question type, marks, Bloom's level, and subject area defaults |
-| Answer too short | Grade what is present; flag insufficient length in feedback as a limitation |
+| Situation                | Action                                                                                                                      |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| No rubric provided       | Construct rubric dynamically using question type, marks, Bloom's level, and subject area defaults                           |
+| Answer too short         | Grade what is present; flag insufficient length in feedback as a limitation                                                 |
 | Missing criteria weights | Use default weights (Content Accuracy 30%, Coverage 25%, Structure 15%, Depth 10%, Examples 10%, Language 5%, Concision 5%) |
-| Ambiguous scoring scale | Clarify with user or default to percentage-based scoring (0-100%) mapped to letter grades |
+| Ambiguous scoring scale  | Clarify with user or default to percentage-based scoring (0-100%) mapped to letter grades                                   |
 
 ## Quality Gate — Check Before Output
 
@@ -205,7 +205,8 @@ executing, check for an existing session profile:
 
 ## 5. Integration with Other Skills
 
-- **universal-session-config**: Reads grading preferences, university, and subject from session profile
+- **universal-session-config**: Reads grading preferences, university, and subject from session
+  profile
 - **universal-a-plus-answer-writer**: Provides the model answer standards against which answers are
   graded
 - **universal-pyq-analyzer**: Identifies which question types and Bloom's levels are most frequently

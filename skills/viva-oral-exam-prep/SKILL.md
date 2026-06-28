@@ -162,7 +162,8 @@ executing, check for an existing session profile:
 - **universal-a-plus-answer-writer**: Provides structured answer templates adaptable to oral
   delivery
 - **universal-flashcard-generator**: Creates quick-recall flashcards for viva preparation
-- **universal-thesis-generator**: Provides thesis content for PhD defense and comprehensive viva preparation
+- **universal-thesis-generator**: Provides thesis content for PhD defense and comprehensive viva
+  preparation
 
 ---
 
@@ -173,30 +174,30 @@ of CLAIM EVIDENCE LINK.
 
 ### STAR Framework (Situation, Task, Action, Result)
 
-| Component    | Purpose                              | Example (Project Viva)                                                       |
-| ------------ | ------------------------------------ | ---------------------------------------------------------------------------- |
-| **Situation**| Describe the context                 | "Our final-year project was to build a real-time traffic management system." |
-| **Task**     | State your specific responsibility   | "I was responsible for the vehicle detection module using YOLOv5."           |
-| **Action**   | Explain what you did and how         | "I collected 5000 annotated images, fine-tuned the model, and achieved 92% mAP on the test set." |
-| **Result**   | State the outcome and impact         | "The system reduced average intersection wait time by 34% in simulation."    |
+| Component     | Purpose                            | Example (Project Viva)                                                                           |
+| ------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Situation** | Describe the context               | "Our final-year project was to build a real-time traffic management system."                     |
+| **Task**      | State your specific responsibility | "I was responsible for the vehicle detection module using YOLOv5."                               |
+| **Action**    | Explain what you did and how       | "I collected 5000 annotated images, fine-tuned the model, and achieved 92% mAP on the test set." |
+| **Result**    | State the outcome and impact       | "The system reduced average intersection wait time by 34% in simulation."                        |
 
 ### PAR Framework (Problem, Action, Result) — Compact version
 
-| Component  | Purpose                       | Example                                                               |
-| ---------- | ----------------------------- | --------------------------------------------------------------------- |
-| **Problem**| What was the challenge?       | "The existing system had 40% false positives in vehicle detection."   |
-| **Action** | What did you do about it?     | "I implemented background subtraction with adaptive thresholding."    |
-| **Result** | What was the improvement?     | "False positives dropped to 8%, and detection speed improved 2x."     |
+| Component   | Purpose                   | Example                                                             |
+| ----------- | ------------------------- | ------------------------------------------------------------------- |
+| **Problem** | What was the challenge?   | "The existing system had 40% false positives in vehicle detection." |
+| **Action**  | What did you do about it? | "I implemented background subtraction with adaptive thresholding."  |
+| **Result**  | What was the improvement? | "False positives dropped to 8%, and detection speed improved 2x."   |
 
 ### When to Use Which
 
-| Viva Type                    | Recommended Framework | Why                                     |
-| ---------------------------- | --------------------- | --------------------------------------- |
-| Technical project viva       | STAR                  | Depth of technical contribution matters |
-| Internship viva              | PAR                   | Impact-focused, time-constrained        |
-| Behavioral / HR-style        | STAR                  | Shows soft skills and problem-solving   |
-| Comprehensive (cross-subject)| CLAIM EVIDENCE LINK   | Knowledge-based, not project-based      |
-| PhD defense (contributions)  | STAR                  | Highlights specific research impact     |
+| Viva Type                     | Recommended Framework | Why                                     |
+| ----------------------------- | --------------------- | --------------------------------------- |
+| Technical project viva        | STAR                  | Depth of technical contribution matters |
+| Internship viva               | PAR                   | Impact-focused, time-constrained        |
+| Behavioral / HR-style         | STAR                  | Shows soft skills and problem-solving   |
+| Comprehensive (cross-subject) | CLAIM EVIDENCE LINK   | Knowledge-based, not project-based      |
+| PhD defense (contributions)   | STAR                  | Highlights specific research impact     |
 
 ---
 
@@ -238,25 +239,25 @@ Step 7: WRAP
 
 ### Whiteboard Etiquette
 
-| Do                                           | Don't                                         |
-| -------------------------------------------- | --------------------------------------------- |
-| Write legibly and large (visible from 2m)   | Cram everything into a corner                   |
-| Use clear labels and arrows                  | Draw messy or unlabeled diagrams                |
-| Keep diagrams simple (max 5-7 components)   | Overcomplicate with unnecessary detail          |
-| Erase only when space runs out               | Erase immediately — examiner may refer back     |
-| Use color if markers available               | Spend time on artistic quality                  |
-| Number steps or components                   | Write in cursive (harder to read from distance) |
+| Do                                        | Don't                                           |
+| ----------------------------------------- | ----------------------------------------------- |
+| Write legibly and large (visible from 2m) | Cram everything into a corner                   |
+| Use clear labels and arrows               | Draw messy or unlabeled diagrams                |
+| Keep diagrams simple (max 5-7 components) | Overcomplicate with unnecessary detail          |
+| Erase only when space runs out            | Erase immediately — examiner may refer back     |
+| Use color if markers available            | Spend time on artistic quality                  |
+| Number steps or components                | Write in cursive (harder to read from distance) |
 
 ### Common Whiteboard Scenarios
 
-| Scenario                           | Preparation                                                           |
-| ---------------------------------- | --------------------------------------------------------------------- |
-| Data structure visualization       | Practice drawing linked lists, trees, graphs with labeled nodes       |
-| Algorithm walkthrough              | Trace sorting/searching algorithms step-by-step with pointer movement |
-| System design / architecture       | Draw layered diagrams (client → API → service → DB)                  |
-| Network / protocol diagrams        | Practice TCP handshake, HTTP flow, OSI layer diagrams                 |
-| Database schema / ER diagrams      | Tables with keys, relationships, cardinality notation                 |
-| Mathematical derivation            | Write equations top-to-bottom, number each line                       |
+| Scenario                      | Preparation                                                           |
+| ----------------------------- | --------------------------------------------------------------------- |
+| Data structure visualization  | Practice drawing linked lists, trees, graphs with labeled nodes       |
+| Algorithm walkthrough         | Trace sorting/searching algorithms step-by-step with pointer movement |
+| System design / architecture  | Draw layered diagrams (client → API → service → DB)                   |
+| Network / protocol diagrams   | Practice TCP handshake, HTTP flow, OSI layer diagrams                 |
+| Database schema / ER diagrams | Tables with keys, relationships, cardinality notation                 |
+| Mathematical derivation       | Write equations top-to-bottom, number each line                       |
 
 ---
 
@@ -266,13 +267,13 @@ For PhD defense preparation, extend the Mock Viva Simulation into a full defense
 
 ### Defense Format (Typical)
 
-| Phase                | Duration   | What Happens                                              | Preparation Focus                           |
-| -------------------- | ---------- | --------------------------------------------------------- | ------------------------------------------- |
-| **Presentation**     | 20-30 min  | Candidate presents thesis summary (slides)                | 3-minute-per-slide pacing, key contributions |
-| **Panel Questions**  | 30-45 min  | External + internal examiners probe methodology & results | Anticipate 10-15 deep questions              |
-| **Open Floor**       | 10-20 min  | Audience questions (if present)                           | Prepare 3-5 general-interest answers          |
-| **Closed Session**   | 10-15 min  | Panel deliberates (candidate waits outside)               | —                                           |
-| **Result Announcement| 5 min      | Outcome and corrections (if any)                          | —                                           |
+| Phase                 | Duration  | What Happens                                              | Preparation Focus                            |
+| --------------------- | --------- | --------------------------------------------------------- | -------------------------------------------- |
+| **Presentation**      | 20-30 min | Candidate presents thesis summary (slides)                | 3-minute-per-slide pacing, key contributions |
+| **Panel Questions**   | 30-45 min | External + internal examiners probe methodology & results | Anticipate 10-15 deep questions              |
+| **Open Floor**        | 10-20 min | Audience questions (if present)                           | Prepare 3-5 general-interest answers         |
+| **Closed Session**    | 10-15 min | Panel deliberates (candidate waits outside)               | —                                            |
+| **Result Announcement | 5 min     | Outcome and corrections (if any)                          | —                                            |
 
 ### Example Defense Q&A Sequence
 
@@ -317,14 +318,14 @@ For oral exams conducted in languages other than English:
 
 ### Language-Specific Adaptations
 
-| Language   | Common Exam Format                                               | Key Preparation                                                     |
-| ---------- | ---------------------------------------------------------------- | ------------------------------------------------------------------- |
-| **Hindi**  | Viva often mixes Hindi + English (Hinglish)                     | Prepare key technical terms in both languages; expect code-switching |
-| **French** | "Soutenance" — defense format; formal register expected         | Use "vous" form; prepare "synthèse" and "perspectives" sections     |
-| **German** | "Mündliche Prüfung" — structured Q&A; precise terminology valued | Prepare "Fachbegriffe" (technical terms) in German                  |
-| **Spanish**| "Defensa" or "Examen oral" — panel style, less formal than French | Prepare "resumen ejecutivo" and "conclusiones" sections             |
-| **Arabic** | Oral exams in technical universities often bilingual (Arabic/English) | Confirm which language examiner prefers for technical terms     |
-| **Japanese"| "Kōgai" (口頭試問) — formal Q&A; hierarchy matters               | Use proper honorifics; prepare concise answers (time-limited)       |
+| Language    | Common Exam Format                                                    | Key Preparation                                                      |
+| ----------- | --------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **Hindi**   | Viva often mixes Hindi + English (Hinglish)                           | Prepare key technical terms in both languages; expect code-switching |
+| **French**  | "Soutenance" — defense format; formal register expected               | Use "vous" form; prepare "synthèse" and "perspectives" sections      |
+| **German**  | "Mündliche Prüfung" — structured Q&A; precise terminology valued      | Prepare "Fachbegriffe" (technical terms) in German                   |
+| **Spanish** | "Defensa" or "Examen oral" — panel style, less formal than French     | Prepare "resumen ejecutivo" and "conclusiones" sections              |
+| **Arabic**  | Oral exams in technical universities often bilingual (Arabic/English) | Confirm which language examiner prefers for technical terms          |
+| **Japanese" | "Kōgai" (口頭試問) — formal Q&A; hierarchy matters                    | Use proper honorifics; prepare concise answers (time-limited)        |
 
 ### General Rules for Non-English Orals
 
@@ -339,26 +340,28 @@ For oral exams conducted in languages other than English:
 
 ## Error Handling
 
-| Error                                | Cause                                    | Solution                                                          |
-| ------------------------------------ | ---------------------------------------- | ----------------------------------------------------------------- |
-| No viva type specified               | Missing exam format context              | Ask: lab, course, project, comprehensive, PhD defense, or other   |
-| No subject/topic provided            | No scope to prepare                      | Prompt for subject name or syllabus PDF                           |
-| Panel size unknown                   | Missing context                          | Default to 1-2 examiners; let user correct                        |
-| Question too vague                   | User asks unfocused question             | Ask "Which specific aspect would you like to practice?"           |
-| Non-technical question mishandled    | Behavioral question in technical context | Switch to STAR/PAR framework                                      |
-| Language mismatch                    | User prepares in different language       | Apply non-English oral exam rules from Section 12                 |
-| Whiteboard required but unprepared   | User cannot draw diagrams on the spot     | Practice 5 common whiteboard patterns ahead of time               |
-| PhD defense unprepared               | User lacks defense structure             | Use PhD Defense Checklist (Section 11) to scaffold preparation    |
-| Mock session times out               | User runs out of prepared time           | Compress mock session; prioritize high-probability questions       |
+| Error                              | Cause                                    | Solution                                                        |
+| ---------------------------------- | ---------------------------------------- | --------------------------------------------------------------- |
+| No viva type specified             | Missing exam format context              | Ask: lab, course, project, comprehensive, PhD defense, or other |
+| No subject/topic provided          | No scope to prepare                      | Prompt for subject name or syllabus PDF                         |
+| Panel size unknown                 | Missing context                          | Default to 1-2 examiners; let user correct                      |
+| Question too vague                 | User asks unfocused question             | Ask "Which specific aspect would you like to practice?"         |
+| Non-technical question mishandled  | Behavioral question in technical context | Switch to STAR/PAR framework                                    |
+| Language mismatch                  | User prepares in different language      | Apply non-English oral exam rules from Section 12               |
+| Whiteboard required but unprepared | User cannot draw diagrams on the spot    | Practice 5 common whiteboard patterns ahead of time             |
+| PhD defense unprepared             | User lacks defense structure             | Use PhD Defense Checklist (Section 11) to scaffold preparation  |
+| Mock session times out             | User runs out of prepared time           | Compress mock session; prioritize high-probability questions    |
 
 ## Quality Gate
 
 Before presenting viva preparation materials, verify:
 
-- [ ] Viva type is identified (lab, course, project, comprehensive, PhD defense, internship, interview)
+- [ ] Viva type is identified (lab, course, project, comprehensive, PhD defense, internship,
+      interview)
 - [ ] Subject/topic domain is specified
 - [ ] University and exam pattern are known (from session config or user input)
-- [ ] Answer framing framework matches viva type (CLAIM EVIDENCE LINK for technical, STAR/PAR for project/behavioral)
+- [ ] Answer framing framework matches viva type (CLAIM EVIDENCE LINK for technical, STAR/PAR for
+      project/behavioral)
 - [ ] At least one mock viva question is included for practice
 - [ ] Common follow-up probes are anticipated (Section 4)
 - [ ] Examiner strategy profile is identified (Section 2)
@@ -367,6 +370,7 @@ Before presenting viva preparation materials, verify:
 - [ ] PhD defense checklist is included if viva type is PhD defense
 - [ ] "I don't know" protocol (Section 3) is available for reference
 - [ ] Preparation checklist (Section 6) timeline is feasible given available days
-- [ ] Integration with related skills (thesis-generator, notes-generator, mcq-practice-generator) is active
+- [ ] Integration with related skills (thesis-generator, notes-generator, mcq-practice-generator) is
+      active
 
 If any check fails, prompt for missing information or apply sensible defaults before continuing.

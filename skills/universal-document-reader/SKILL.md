@@ -240,15 +240,15 @@ executing, check for an existing session profile:
 
 After document conversion, pass the text to:
 
-| Next Skill                            | How to Use                        |
-| ------------------------------------- | --------------------------------- |
-| **universal-notes-generator**         | Feed extracted syllabus/topics    |
-| **universal-a-plus-answer-writer**    | Use content for answer generation |
-| **universal-pyq-analyzer**            | Process question papers           |
-| **universal-imp-topics-generator**    | Analyze extracted content         |
-| **universal-flashcard-generator**     | Create flashcards from text       |
-| **universal-formula-sheet-generator** | Extract formulas                  |
-| **universal-mcq-practice-generator**  | Generate MCQs from content        |
+| Next Skill                            | How to Use                                  |
+| ------------------------------------- | ------------------------------------------- |
+| **universal-notes-generator**         | Feed extracted syllabus/topics              |
+| **universal-a-plus-answer-writer**    | Use content for answer generation           |
+| **universal-pyq-analyzer**            | Process question papers                     |
+| **universal-imp-topics-generator**    | Analyze extracted content                   |
+| **universal-flashcard-generator**     | Create flashcards from text                 |
+| **universal-formula-sheet-generator** | Extract formulas                            |
+| **universal-mcq-practice-generator**  | Generate MCQs from content                  |
 | **universal-session-config**          | Read university/department for format hints |
 
 ---
@@ -371,23 +371,23 @@ sudo dnf install -y python3-pypdf python3-pytesseract python3-pillow python3-doc
 
 ## Error Handling
 
-| Error                 | Cause                  | Solution                                   |
-| --------------------- | ---------------------- | ------------------------------------------ |
-| "PDF is encrypted"    | Password-protected PDF | Provide password or use decrypted version  |
-| "No text extracted"   | Scanned/image PDF      | Use OCR mode (see Method 3)                |
-| "File not found"      | Wrong path             | Check file path, use absolute paths        |
-| "Corrupt file"        | Damaged document       | Re-download or get clean copy              |
-| "OCR failed"          | Poor image quality     | Improve image quality: contrast, DPI > 300 |
-| "pdftotext not found" | Missing poppler-utils  | `sudo apt install poppler-utils`           |
-| "tesseract not found" | Missing OCR            | `sudo apt install tesseract-ocr`           |
-| "pandoc not found"    | Missing converter      | `sudo apt install pandoc`                  |
-| "Permission denied"   | File locked            | Check file permissions                     |
-| "OCR confidence low"  | Poor scan quality (<80%) | Increase DPI to 300+, adjust contrast/brightness |
-| "OCR language uncertain" | Mixed language document | Specify language: `-l eng+hin` for bilingual |
-| "Fatal OCR error"     | Image corruption or format | Re-save image as PNG, verify file integrity |
-| "Multi-column garbled"| PDF has 2+ columns      | Use `-layout` flag or column-detection OCR mode |
-| "Table structure lost"| Tabular data extracted as loose text | Use OCR with table recognition, or `camelot`/`tabula` |
-| "Image contains only handwriting" | Handwritten notes | Use specialized handwriting OCR (e.g., Google Vision) |
+| Error                             | Cause                                | Solution                                              |
+| --------------------------------- | ------------------------------------ | ----------------------------------------------------- |
+| "PDF is encrypted"                | Password-protected PDF               | Provide password or use decrypted version             |
+| "No text extracted"               | Scanned/image PDF                    | Use OCR mode (see Method 3)                           |
+| "File not found"                  | Wrong path                           | Check file path, use absolute paths                   |
+| "Corrupt file"                    | Damaged document                     | Re-download or get clean copy                         |
+| "OCR failed"                      | Poor image quality                   | Improve image quality: contrast, DPI > 300            |
+| "pdftotext not found"             | Missing poppler-utils                | `sudo apt install poppler-utils`                      |
+| "tesseract not found"             | Missing OCR                          | `sudo apt install tesseract-ocr`                      |
+| "pandoc not found"                | Missing converter                    | `sudo apt install pandoc`                             |
+| "Permission denied"               | File locked                          | Check file permissions                                |
+| "OCR confidence low"              | Poor scan quality (<80%)             | Increase DPI to 300+, adjust contrast/brightness      |
+| "OCR language uncertain"          | Mixed language document              | Specify language: `-l eng+hin` for bilingual          |
+| "Fatal OCR error"                 | Image corruption or format           | Re-save image as PNG, verify file integrity           |
+| "Multi-column garbled"            | PDF has 2+ columns                   | Use `-layout` flag or column-detection OCR mode       |
+| "Table structure lost"            | Tabular data extracted as loose text | Use OCR with table recognition, or `camelot`/`tabula` |
+| "Image contains only handwriting" | Handwritten notes                    | Use specialized handwriting OCR (e.g., Google Vision) |
 
 ---
 
@@ -412,7 +412,8 @@ tesseract page.png output -l eng --psm 6
 tesseract page.png output -l eng --psm 4
 ```
 
-If the extracted text has garbled column ordering, fall back to single-column extraction and note to the user that some interleaving may have occurred.
+If the extracted text has garbled column ordering, fall back to single-column extraction and note to
+the user that some interleaving may have occurred.
 
 ## Quick Reference
 
@@ -476,7 +477,8 @@ with open('output.txt', 'w') as out:
 
 ### Step 1: Install Dependencies
 
-See the [Installation Requirements](#installation-requirements) section above for full per-OS instructions (Ubuntu, Fedora, Arch, Alpine, openSUSE, macOS, Windows, WSL).
+See the [Installation Requirements](#installation-requirements) section above for full per-OS
+instructions (Ubuntu, Fedora, Arch, Alpine, openSUSE, macOS, Windows, WSL).
 
 Quick reference:
 
@@ -599,4 +601,5 @@ Before passing extracted text to downstream skills, verify:
 - [ ] Downstream skill chain is specified (where to send extracted text next)
 - [ ] Document type (syllabus, PYQ, notes, reference) is identified for downstream routing
 
-If any check fails, either retry with a different method (e.g., pdftotext -layout → OCR → manual entry) or report the limitation to the user with suggested fixes.
+If any check fails, either retry with a different method (e.g., pdftotext -layout → OCR → manual
+entry) or report the limitation to the user with suggested fixes.

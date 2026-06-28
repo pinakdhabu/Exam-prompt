@@ -91,11 +91,11 @@ Used by: Most Indian engineering universities (SPPU, VTU, JNTU, Mumbai, AKTU, RG
 
 #### Types of Errors
 
-| Error Type | Description | Example | Mitigation |
-|---|---|---|---|
-| **Systematic** | Consistent bias in one direction | Calibrated instrument reads 0.5 g too high | Calibration, correction factors |
-| **Random** | Unpredictable fluctuations | Slight timing variations in manual stopwatch | Multiple readings, statistical averaging |
-| **Gross** | Blunders or mistakes | Misreading scale, recording wrong value | Careful procedure, peer verification |
+| Error Type     | Description                      | Example                                      | Mitigation                               |
+| -------------- | -------------------------------- | -------------------------------------------- | ---------------------------------------- |
+| **Systematic** | Consistent bias in one direction | Calibrated instrument reads 0.5 g too high   | Calibration, correction factors          |
+| **Random**     | Unpredictable fluctuations       | Slight timing variations in manual stopwatch | Multiple readings, statistical averaging |
+| **Gross**      | Blunders or mistakes             | Misreading scale, recording wrong value      | Careful procedure, peer verification     |
 
 #### Propagation of Uncertainty
 
@@ -107,18 +107,19 @@ For a function f(x, y, ...) with measured variables x, y, ... having uncertainti
 
 **Common special cases:**
 
-| Operation | Uncertainty Formula |
-|---|---|
-| f = x ± y | δf = √(δx² + δy²) |
-| f = c·x (c constant) | δf = \|c\| · δx |
-| f = x·y or f = x/y | δf/f = √((δx/x)² + (δy/y)²) |
-| f = xⁿ | δf/f = \|n\| · δx/x |
+| Operation            | Uncertainty Formula         |
+| -------------------- | --------------------------- |
+| f = x ± y            | δf = √(δx² + δy²)           |
+| f = c·x (c constant) | δf = \|c\| · δx             |
+| f = x·y or f = x/y   | δf/f = √((δx/x)² + (δy/y)²) |
+| f = xⁿ               | δf/f = \|n\| · δx/x         |
 
 #### Percentage Error and Significant Figures
 
 - **Percentage error:** (\|measured - true\| / true) × 100%
 - **Relative error:** δx / x
-- **Significant figures rule:** Result should have same number of decimal places as the least precise measurement
+- **Significant figures rule:** Result should have same number of decimal places as the least
+  precise measurement
 - **Final uncertainty:** Round to 1 significant figure; match result precision to uncertainty
 
 #### Sample Calculation with Uncertainty
@@ -203,17 +204,18 @@ executing, check for an existing session profile:
 
 ## Error Handling
 
-| Situation | Action |
-|---|---|
+| Situation                           | Action                                                                                                            |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | Experiment description insufficient | Respond: "Please provide the experiment name/number, aim, and any available lab manual or procedure description." |
-| University format not recognized | Fall back to Template A (Engineering Lab - Moore Method) and note the assumption |
-| Calculation data missing | Flag missing observations; request raw data before proceeding with calculations |
-| Unit mismatch in measurements | Auto-detect and convert to consistent unit system; flag conversion in notes |
-| Template field mapping failure | Log unrecognized fields and map to nearest standard section |
+| University format not recognized    | Fall back to Template A (Engineering Lab - Moore Method) and note the assumption                                  |
+| Calculation data missing            | Flag missing observations; request raw data before proceeding with calculations                                   |
+| Unit mismatch in measurements       | Auto-detect and convert to consistent unit system; flag conversion in notes                                       |
+| Template field mapping failure      | Log unrecognized fields and map to nearest standard section                                                       |
 
 ## Quality Gate — Check Before Output
 
-- [ ] All standard sections (Aim, Apparatus, Theory, Procedure, Observations, Calculations, Result, Conclusion) are present
+- [ ] All standard sections (Aim, Apparatus, Theory, Procedure, Observations, Calculations, Result,
+      Conclusion) are present
 - [ ] Calculations show at least one sample calculation with correct significant figures
 - [ ] Error analysis included for any experiment involving measurements
 - [ ] Units are consistently used and correctly formatted
@@ -222,10 +224,10 @@ executing, check for an existing session profile:
 
 ## 4. Integration with Other Skills
 
-| Skill | Integration |
-|---|---|
-| **universal-session-config** | Reads university/subject/pattern from session profile |
-| **universal-a-plus-answer-writer** | Provides extended theoretical explanations for the theory section |
-| **universal-viva-oral-exam-prep** | Generates viva questions and answers for the viva section |
-| **universal-formula-sheet-generator** | Derives and formats formulas for the calculations section |
-| **universal-pyq-analyzer** | Supplies commonly asked viva questions from past exams |
+| Skill                                 | Integration                                                       |
+| ------------------------------------- | ----------------------------------------------------------------- |
+| **universal-session-config**          | Reads university/subject/pattern from session profile             |
+| **universal-a-plus-answer-writer**    | Provides extended theoretical explanations for the theory section |
+| **universal-viva-oral-exam-prep**     | Generates viva questions and answers for the viva section         |
+| **universal-formula-sheet-generator** | Derives and formats formulas for the calculations section         |
+| **universal-pyq-analyzer**            | Supplies commonly asked viva questions from past exams            |

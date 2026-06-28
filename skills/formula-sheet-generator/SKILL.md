@@ -193,12 +193,12 @@ executing, check for an existing session profile:
 
 ## Error Handling
 
-| Situation | Action |
-|---|---|
+| Situation                     | Action                                                                                                                                      |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | Formula domain not recognized | Respond: "Unrecognized formula domain. Supported domains: engineering, mathematics, physics, chemistry, finance, statistics, data science." |
-| Variable definition missing | Flag undefined variables during generation and request clarification |
-| Unit inconsistency | Auto-convert to SI units; warn if conversion may introduce error |
-| Circular formula reference | Detect cycles in formula dependencies and break at the simplest formula |
+| Variable definition missing   | Flag undefined variables during generation and request clarification                                                                        |
+| Unit inconsistency            | Auto-convert to SI units; warn if conversion may introduce error                                                                            |
+| Circular formula reference    | Detect cycles in formula dependencies and break at the simplest formula                                                                     |
 
 ## Quality Gate — Check Before Output
 
@@ -212,10 +212,10 @@ executing, check for an existing session profile:
 
 ## 5. Integration with Other Skills
 
-| Skill | Integration |
-|---|---|
-| **universal-session-config** | Reads university/subject/pattern from session profile |
-| **universal-notes-generator** | Provides the full context from which formulas are extracted |
-| **universal-a-plus-answer-writer** | Uses formula sheets for numerical problem solutions |
-| **universal-last-minute-crammer** | Formula sheets are the primary cram resource |
+| Skill                                | Integration                                                   |
+| ------------------------------------ | ------------------------------------------------------------- |
+| **universal-session-config**         | Reads university/subject/pattern from session profile         |
+| **universal-notes-generator**        | Provides the full context from which formulas are extracted   |
+| **universal-a-plus-answer-writer**   | Uses formula sheets for numerical problem solutions           |
+| **universal-last-minute-crammer**    | Formula sheets are the primary cram resource                  |
 | **universal-mcq-practice-generator** | MCQs can be generated targeting specific formula applications |

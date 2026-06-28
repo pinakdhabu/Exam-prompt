@@ -26,17 +26,17 @@ fully explained answer keys.
 
 ## 1. MCQ Types Supported
 
-| Type                    | Description                         | Example University Patterns            |
-| ----------------------- | ----------------------------------- | -------------------------------------- |
-| **Single Correct**      | One correct answer, 3-4 distractors | SPPU, VTU, JNTU, Mumbai, AKTU, IIT/JEE |
-| **Multiple Correct**    | Two or more correct answers         | GATE, IIT, UK universities             |
-| **Assertion-Reason**    | Assertion (A) and Reason (R) pair   | NEET, JEE, AIIMS, UPSC                 |
-| **Match the Following** | Column A vs Column B mapping        | SPPU, Mumbai, VTU                      |
-| **True / False**        | Statement evaluation                | Many universities                      |
-| **Fill in the Blank**   | Complete the statement              | Language tests, general exams          |
-| **Case-Based**          | Multiple MCQs from a common stem    | CBSE, IB, North American               |
-| **Ordering / Sequence** | Arrange in correct order            | GATE, programming exams                |
-| **Diagram-Based**       | MCQ referencing a diagram           | Medical, Engineering, Biology          |
+| Type                     | Description                           | Example University Patterns            |
+| ------------------------ | ------------------------------------- | -------------------------------------- |
+| **Single Correct**       | One correct answer, 3-4 distractors   | SPPU, VTU, JNTU, Mumbai, AKTU, IIT/JEE |
+| **Multiple Correct**     | Two or more correct answers           | GATE, IIT, UK universities             |
+| **Assertion-Reason**     | Assertion (A) and Reason (R) pair     | NEET, JEE, AIIMS, UPSC                 |
+| **Match the Following**  | Column A vs Column B mapping          | SPPU, Mumbai, VTU                      |
+| **True / False**         | Statement evaluation                  | Many universities                      |
+| **Fill in the Blank**    | Complete the statement                | Language tests, general exams          |
+| **Case-Based**           | Multiple MCQs from a common stem      | CBSE, IB, North American               |
+| **Ordering / Sequence**  | Arrange in correct order              | GATE, programming exams                |
+| **Diagram-Based**        | MCQ referencing a diagram             | Medical, Engineering, Biology          |
 | **NAT / Integer Answer** | Single integer value (-9999 to +9999) | GATE, IIT, competitive exams           |
 
 ### NAT (Numerical Answer Type) Format
@@ -210,13 +210,13 @@ executing, check for an existing session profile:
 
 ## Error Handling
 
-| Situation | Action |
-|---|---|
-| Subject/topic not specified | Respond: "Please specify subject and topics for MCQ generation." |
-| Insufficient syllabus detail | Flag: "Syllabus detail is sparse. MCQ coverage may be incomplete. Provide detailed subtopics if possible." |
-| University pattern not recognized | Default to Standard MCQ format (single correct, no negative marking) and note the assumption |
-| NAT question answer out of range | Validate: NAT answers must be integers between -9999 and +9999. Flag violations before final output. |
-| Distractor generation failure | Fall back to 3-distractor model if 4 plausible distractors cannot be generated |
+| Situation                         | Action                                                                                                     |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Subject/topic not specified       | Respond: "Please specify subject and topics for MCQ generation."                                           |
+| Insufficient syllabus detail      | Flag: "Syllabus detail is sparse. MCQ coverage may be incomplete. Provide detailed subtopics if possible." |
+| University pattern not recognized | Default to Standard MCQ format (single correct, no negative marking) and note the assumption               |
+| NAT question answer out of range  | Validate: NAT answers must be integers between -9999 and +9999. Flag violations before final output.       |
+| Distractor generation failure     | Fall back to 3-distractor model if 4 plausible distractors cannot be generated                             |
 
 ## Quality Gate — Check Before Output
 
@@ -230,11 +230,11 @@ executing, check for an existing session profile:
 
 ## 8. Integration with Other Skills
 
-| Skill | Integration |
-|---|---|
-| **universal-session-config** | Reads university/subject/pattern from session profile |
-| **universal-notes-generator** | Feeds notes as source material for MCQ content |
-| **universal-pyq-analyzer** | Uses historical question distribution to guide topic focus |
-| **universal-imp-topics-generator** | Generates targeted MCQs for high-probability topics |
-| **universal-flashcard-generator** | Creates complementary flashcards from missed MCQs |
-| **universal-essay-grader** | Evaluates performance patterns across MCQ attempts |
+| Skill                              | Integration                                                |
+| ---------------------------------- | ---------------------------------------------------------- |
+| **universal-session-config**       | Reads university/subject/pattern from session profile      |
+| **universal-notes-generator**      | Feeds notes as source material for MCQ content             |
+| **universal-pyq-analyzer**         | Uses historical question distribution to guide topic focus |
+| **universal-imp-topics-generator** | Generates targeted MCQs for high-probability topics        |
+| **universal-flashcard-generator**  | Creates complementary flashcards from missed MCQs          |
+| **universal-essay-grader**         | Evaluates performance patterns across MCQ attempts         |

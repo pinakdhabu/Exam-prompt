@@ -158,12 +158,12 @@ Conclusion: The hybrid approach provides the best risk-reward profile, achieving
 
 ## Error Handling
 
-| Situation | Action |
-|---|---|
-| Incomplete case text | Ask user to provide full case text; extract key facts from what is available and note gaps |
+| Situation                      | Action                                                                                        |
+| ------------------------------ | --------------------------------------------------------------------------------------------- |
+| Incomplete case text           | Ask user to provide full case text; extract key facts from what is available and note gaps    |
 | Multiple frameworks applicable | Select the framework best matching the question type; note alternative frameworks in analysis |
-| Missing stakeholder info | Infer stakeholders from case context; flag assumptions in the analysis |
-| No marks given | Default to 10-mark depth (substantial); note the assumed mark allocation |
+| Missing stakeholder info       | Infer stakeholders from case context; flag assumptions in the analysis                        |
+| No marks given                 | Default to 10-mark depth (substantial); note the assumed mark allocation                      |
 
 ## Quality Gate — Check Before Output
 

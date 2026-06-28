@@ -264,6 +264,7 @@ structure stays consistent.
 
 | Command | Structure | | ---------------------------- |
 ------------------------------------------------------------------------------------------------------------------------------
+
 | --- | -------------------------------------------- | | **Analyze** | Break topic into components →
 examine each component's role/behavior → show how components interact → identify patterns/issues | |
 **Compare** | One framing line → table (Basis | X | Y) → closing line stating preference/context | |
@@ -477,6 +478,7 @@ Use these Mermaid patterns for common exam diagrams. Always wrap in ` ```mermaid
 
 | Diagram Type | Mermaid Syntax | Use When | | -------------------- |
 ----------------------------------------------------------------------------------------------------------------------------------------------------
+
 | ------------------------------------------------ | --------------------------------- | --- |
 ------------------------ | ------------------------------------- | | **Flowchart** |
 ` ```mermaid\nflowchart TD\n  A[Start] --> B{Decision}\n  B -- Yes --> C[Process]\n  B -- No --> D[End]\n`
@@ -484,11 +486,13 @@ Use these Mermaid patterns for common exam diagrams. Always wrap in ` ```mermaid
 ` ```mermaid\nsequenceDiagram\n  Client->>Server: Request\n  Server->>Database: Query\n  Database-->>Server: Result\n  Server-->>Client: Response\n`
 | Network protocols, communication flows, | | **Class Diagram** |
 ` ```mermaid\nclassDiagram\n  class Student {\n    +name: String\n    +enroll()\n  }\n` | OOP
-concepts, ER model, UML | | **ER Diagram** | ``
-`mermaid\nerDiagram\n STUDENT                                                                                                                     |                                                  | --o{ ENROLLS : registers\n COURSE |     | --o{ ENROLLS : has\n```` | Database design, entity relationships | | **State Diagram**    | `
-``mermaid\nstateDiagram-v2\n  [*] --> Idle\n  Idle --> Processing : start\n  Processing --> Done : complete\n  Done --> [*]\n`                    | Process states, lifecycles, state machines       | | **Timeline**         | ` ``mermaid\ntimeline\n
-title Project Phases\n 2024 Q1 : Planning\n 2024 Q2 : Development\n 2024 Q3 :
+concepts, ER model, UML | | **ER Diagram** |
+`` `mermaid\nerDiagram\n STUDENT                                                                                                                     |                                                  | --o{ ENROLLS : registers\n COURSE |     | --o{ ENROLLS : has\n```` | Database design, entity relationships | | **State Diagram**    | ` ``mermaid\nstateDiagram-v2\n
+[_] --> Idle\n Idle --> Processing : start\n Processing --> Done : complete\n Done -->
+[_]\n`                   | Process states, lifecycles, state machines       | | **Timeline**         |`
+``mermaid\ntimeline\n title Project Phases\n 2024 Q1 : Planning\n 2024 Q2 : Development\n 2024 Q3 :
 Testing\n`                               | Project timelines, historical sequences          | | **Pie Chart**        |`
+
 ```mermaid\npie title Budget\n "Research" : 30\n "Development" : 50\n "Testing" :
 20\n`                                                        | Resource allocation, percentage distribution     | | **Block Diagram**    | Use flowchart with`[/input/]` `[output]` `{process}`
 shapes | System architecture, hardware components |
@@ -496,14 +500,11 @@ shapes | System architecture, hardware components |
 **Fallback to ASCII** when Mermaid is not renderable (e.g., plain text editor, print-only context):
 
 ```
-+----------------+     +----------------+     +----------------+
-|  Component A   | --> |  Component B   | --> |  Component C   |
-+----------------+     +----------------+     +----------------+
-         |                      |
-         v                      v
-    +---------+           +----------+
-    | Output  |           | Feedback |
-    +---------+           +----------+
+
++----------------+ +----------------+ +----------------+ | Component A | --> | Component B | --> |
+Component C | +----------------+ +----------------+ +----------------+ | | v v +---------+
++----------+ | Output | | Feedback | +---------+ +----------+
+
 ```
 
 ### Table Rules
@@ -511,14 +512,16 @@ shapes | System architecture, hardware components |
 For Compare, Contrast, Differentiate, Distinguish, Classify, Categorize:
 
 ```
+
 [X] and [Y] differ in the following aspects:
 
-| Basis | [X] | [Y] |
-|---|---|---|
+| Basis      | [X]                  | [Y]                  |
+| ---------- | -------------------- | -------------------- |
 | [Aspect 1] | [X's characteristic] | [Y's characteristic] |
 | [Aspect 2] | [X's characteristic] | [Y's characteristic] |
 
 Thus, [X] is preferred when [condition] while [Y] is used when [condition].
+
 ```
 
 Minimum 3 rows. Maximum 8 rows. Each row must have opposite/contrasting entries.
@@ -528,8 +531,10 @@ Minimum 3 rows. Maximum 8 rows. Each row must have opposite/contrasting entries.
 For questions requiring examples:
 
 ```
-For instance, consider [named real-world system / textbook scenario / specific technology].
-[1-2 lines explicitly mapping the example to the concept being explained.]
+
+For instance, consider [named real-world system / textbook scenario / specific technology]. [1-2
+lines explicitly mapping the example to the concept being explained.]
+
 ```
 
 The example MUST be:
@@ -543,7 +548,9 @@ The example MUST be:
 For 4+ marks questions, always include a closing line:
 
 ```
+
 Thus, [concept] [importance / role / what it ensures — 1 assertive line].
+
 ```
 
 Rules:
@@ -757,14 +764,11 @@ Triggered by: "viva", "oral", "orally explain", "defend" Adjustments:
 Triggered by: "lab", "practical", "experiment", "practical exam" Structure:
 
 ```
-Aim: [precise one-liner]
-Apparatus: [materials/instruments list]
-Theory/Principle: [concept used]
-Procedure: [numbered steps]
-Observations: [table with readings]
-Calculations: [formulas → substitution → result]
-Result: [final outcome with units]
-Conclusion: [what the experiment confirms]
+
+Aim: [precise one-liner] Apparatus: [materials/instruments list] Theory/Principle: [concept used]
+Procedure: [numbered steps] Observations: [table with readings] Calculations: [formulas →
+substitution → result] Result: [final outcome with units] Conclusion: [what the experiment confirms]
+
 ```
 
 ### Take-Home / Assignment Mode
@@ -853,10 +857,9 @@ Triggered by: "in X minutes", "quick", "short answer", "gist", "briefly"
 Show Time Budget block if < 5 min:
 
 ```
-Time Budget (X min):
-  Opening        ~1 min
-  Main points    ~Y min
-  Closing        ~30 sec
+
+Time Budget (X min): Opening ~1 min Main points ~Y min Closing ~30 sec
+
 ```
 
 ---
@@ -1110,9 +1113,10 @@ This section teaches students how to use generated answers NOT just as submissio
 Turn any generated answer into a memory aid:
 
 ```
-Answer (6+ marks)  ──→  Flashcard:
-                         Front: "Explain ACID properties [6 marks]"
-                         Back:  5 bold keywords + 1 sentence each
+
+Answer (6+ marks) ──→ Flashcard: Front: "Explain ACID properties [6 marks]" Back: 5 bold keywords +
+1 sentence each
+
 ```
 
 Extraction rule: From each numbered point, extract exactly 1 keyword + 1 sentence. This gives you a
@@ -1136,11 +1140,11 @@ Use the same question answered at increasing Bloom levels as a learning ladder:
 For every major answer (6+ marks):
 
 ```
-5 minutes:  Read and understand the answer structure
-5 minutes:  Cover and recall key points (active recall)
-5 minutes:  Write your own version from memory
-5 minutes:  Compare, correct, and add any missing keywords
-Total: 20 minutes per answer → near-permanent encoding
+
+5 minutes: Read and understand the answer structure 5 minutes: Cover and recall key points (active
+recall) 5 minutes: Write your own version from memory 5 minutes: Compare, correct, and add any
+missing keywords Total: 20 minutes per answer → near-permanent encoding
+
 ```
 
 ### 15E — Mnemonic Generation from Answers
@@ -1148,20 +1152,20 @@ Total: 20 minutes per answer → near-permanent encoding
 Every answer should be reduced to a mnemonic for revision:
 
 ```
-Example — "ACID properties":
-  A -> Atomicity (all or nothing)
-  C -> Consistency (valid state to valid state)
-  I -> Isolation (concurrent = sequential)
-  D -> Durability (committed = permanent)
 
-  Mnemonic: "All Cars In Drive" (Atomicity, Consistency, Isolation, Durability)
+Example — "ACID properties": A -> Atomicity (all or nothing) C -> Consistency (valid state to valid
+state) I -> Isolation (concurrent = sequential) D -> Durability (committed = permanent)
+
+Mnemonic: "All Cars In Drive" (Atomicity, Consistency, Isolation, Durability)
+
 ```
 
 The answer writer should include a **Mnemonic Key** for 6+ mark answers:
 
 ```
---- MNEMONIC ---
-[A memorable acronym or phrase capturing the 4-5 main points]
+
+--- MNEMONIC --- [A memorable acronym or phrase capturing the 4-5 main points]
+
 ```
 
 ### 15F — Spaced Repetition: Answer Review Calendar
@@ -1169,12 +1173,12 @@ The answer writer should include a **Mnemonic Key** for 6+ mark answers:
 For each answer used in exam preparation:
 
 ```
-Day 1:  Study the full answer (write it out once)
-Day 2:  Active recall — write the answer without looking
-Day 4:  Mental recall — check only keywords
-Day 8:  Write full answer again (should be 80%+ accurate)
-Day 16: Speed write — time yourself to write within exam time
-Exam Eve: Quick scan of keyword highlights only
+
+Day 1: Study the full answer (write it out once) Day 2: Active recall — write the answer without
+looking Day 4: Mental recall — check only keywords Day 8: Write full answer again (should be 80%+
+accurate) Day 16: Speed write — time yourself to write within exam time Exam Eve: Quick scan of
+keyword highlights only
+
 ```
 
 This schedule produces ~95% retention at exam time with only ~4 hours of total study per major
@@ -1189,64 +1193,83 @@ When a known international university pattern is detected, these few-shot exempl
 ### Cambridge / Oxford (UK — Essay-Based)
 
 ```
-Question: "Critically evaluate the role of the separation of powers in modern constitutional democracies." [15 marks]
-Pattern: UK Tripos/Finals — answer 3 of 8, 45 minutes per essay
-Structure: Thesis → Argument 1 (+ evidence) → Argument 2 (+ counterpoint) → Argument 3 (+ synthesis) → Evaluated Conclusion
+
+Question: "Critically evaluate the role of the separation of powers in modern constitutional
+democracies." [15 marks] Pattern: UK Tripos/Finals — answer 3 of 8, 45 minutes per essay Structure:
+Thesis → Argument 1 (+ evidence) → Argument 2 (+ counterpoint) → Argument 3 (+ synthesis) →
+Evaluated Conclusion
+
 - Opening: Direct thesis statement answering the question. No definition padding.
 - Body: Each paragraph = claim + authority (case law/scholar) + counter-consideration + resolution
 - Style: Formal but fluid. Use "However", "Nevertheless", "A more nuanced view..."
-- Closing: Explicit judgment — "On balance, the separation of powers remains... but its modern operation reveals..."
+- Closing: Explicit judgment — "On balance, the separation of powers remains... but its modern
+  operation reveals..."
 - No bullet points. No numbered lists. Continuous prose only.
-- Marks: Class-based (First / 2:1 / 2:2). For First-class: originality of argument + depth of reference.
+- Marks: Class-based (First / 2:1 / 2:2). For First-class: originality of argument + depth of
+  reference.
+
 ```
 
 ### North American (US/Canada — Midterm + Problem Set)
 
 ```
-Question: "Solve the following recurrence using the Master Theorem: T(n) = 3T(n/4) + n log n" [8 marks]
-Pattern: US Midterm — 60 min, 5 problems, partial credit
-Structure: Given → Method → Steps → Answer → Verification
+
+Question: "Solve the following recurrence using the Master Theorem: T(n) = 3T(n/4) + n log n" [8
+marks] Pattern: US Midterm — 60 min, 5 problems, partial credit Structure: Given → Method → Steps →
+Answer → Verification
+
 - Step 1: Identify form: T(n) = aT(n/b) + f(n). Here a=3, b=4, f(n)=n log n.
 - Step 2: Compute n^(log_b a) = n^(log_4 3) ≈ n^0.792.
 - Step 3: Compare f(n) = n log n with n^0.792. f(n) grows faster (n log n > n^0.792).
-- Step 4: Check regularity condition: a·f(n/b) = 3·(n/4) log(n/4) = (3/4)n log(n/4) ≤ c·n log n holds for c=3/4 < 1.
+- Step 4: Check regularity condition: a·f(n/b) = 3·(n/4) log(n/4) = (3/4)n log(n/4) ≤ c·n log n
+  holds for c=3/4 < 1.
 - Step 5: Apply Case 3: T(n) = Θ(f(n)) = Θ(n log n).
 - Box answer: T(n) = Θ(n log n)
-- Verification: Expand T(16) as sanity check.
-Style: Show every algebraic step. Label each theorem/rule used. Box final answer.
+- Verification: Expand T(16) as sanity check. Style: Show every algebraic step. Label each
+  theorem/rule used. Box final answer.
+
 ```
 
 ### European (ECTS — Module Exam + Oral Component)
 
 ```
-Question: "Explain the principle of operation of a MOSFET and derive its I-V characteristics." [10 marks]
-Pattern: ECTS Module Exam — 90 min, 50% written + 50% oral follow-up
-Structure: Principle → Physical Operation → Derivation → Characteristics → Oral Prep Notes
+
+Question: "Explain the principle of operation of a MOSFET and derive its I-V characteristics." [10
+marks] Pattern: ECTS Module Exam — 90 min, 50% written + 50% oral follow-up Structure: Principle →
+Physical Operation → Derivation → Characteristics → Oral Prep Notes
+
 - Written answer: Full derivation with diagrams. Label all regions (cutoff, linear, saturation).
 - Include: Cross-section diagram with labeled terminals (Gate, Source, Drain, Substrate).
-- Key equations: I_D = (μ_n C_ox W/L)[(V_GS - V_T)V_DS - V_DS²/2] for linear; I_D = (μ_n C_ox W/2L)(V_GS - V_T)² for saturation.
+- Key equations: I_D = (μ_n C_ox W/L)[(V_GS - V_T)V_DS - V_DS²/2] for linear; I_D = (μ_n C_ox
+  W/2L)(V_GS - V_T)² for saturation.
 - [ORAL PREP] At end, add 3 anticipated follow-up questions with short answers:
   1. "What happens when V_DS exceeds V_GS - V_T?" → Channel pinch-off, saturation region.
   2. "How does body effect modify V_T?" → V_T increases with reverse substrate bias.
-  3. "Compare BJT vs MOSFET for amplification." → MOSFET: high input impedance, voltage-controlled; BJT: lower impedance, current-controlled.
-Style: Diagrams mandatory. Derivations stepwise. Anticipate oral follow-ups explicitly.
+  3. "Compare BJT vs MOSFET for amplification." → MOSFET: high input impedance, voltage-controlled;
+     BJT: lower impedance, current-controlled. Style: Diagrams mandatory. Derivations stepwise.
+     Anticipate oral follow-ups explicitly.
+
 ```
 
 ### Australian / NUS / NTU (Semester-Based with Hurdle)
 
 ```
+
 Question: "Analyse the impact of cloud computing on IT infrastructure management." [10 marks]
-Pattern: Australian Final — 3 hrs, 60% weight, hurdle requirement
-Structure: Introduction → Analysis Themes → Industry Evidence → Conclusion
-- Opening: Define cloud computing (NIST definition: on-demand, broad network access, resource pooling, rapid elasticity, measured service).
+Pattern: Australian Final — 3 hrs, 60% weight, hurdle requirement Structure: Introduction → Analysis
+Themes → Industry Evidence → Conclusion
+
+- Opening: Define cloud computing (NIST definition: on-demand, broad network access, resource
+  pooling, rapid elasticity, measured service).
 - Body: 4 analysis themes:
   1. CAPEX → OPEX shift (capital expenditure eliminated, pay-as-you-go operational model)
   2. Elasticity benefits (auto-scaling, no over-provisioning, match demand curves)
   3. Security concerns (shared responsibility model, data sovereignty, compliance)
   4. Vendor lock-in risk (proprietary APIs, migration costs, multi-cloud strategy)
 - Evidence: Cite 1-2 real examples per theme (AWS, Azure, Google Cloud case studies).
-- Conclusion: Balanced judgment — cloud reduces infrastructure burden but requires new governance skills.
-Style: Analytical depth expected. Cite evidence. Clear structure. Use Australian/British spelling.
+- Conclusion: Balanced judgment — cloud reduces infrastructure burden but requires new governance
+  skills. Style: Analytical depth expected. Cite evidence. Clear structure. Use Australian/British
+  spelling.
 
 ---
 
@@ -1261,4 +1284,7 @@ executing, check for an existing session profile:
   `setup-exam-prompt` (or `npm run init`) first.
 - Session config eliminates redundant context detection — detection happens once and is reused
   across all skill calls.
+
+```
+
 ```

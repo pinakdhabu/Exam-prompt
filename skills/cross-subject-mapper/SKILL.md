@@ -138,19 +138,20 @@ DEPENDENCY PATH:
 
 ## Error Handling
 
-| Situation | Action |
-|---|---|
-| Subjects appear unrelated | Search for indirect connections (shared methodology, analogous structures, applied mathematics); report if genuinely no link found |
-| Insufficient syllabus info | Request detailed syllabus or course descriptions; use default curriculum mappings for common programs |
-| No common concepts found | Expand search to include cross-disciplinary techniques (e.g., optimization, probability, systems thinking) |
-| Too many subjects | Group by department or semester; generate pairwise maps first, then combine into full program view |
+| Situation                  | Action                                                                                                                             |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Subjects appear unrelated  | Search for indirect connections (shared methodology, analogous structures, applied mathematics); report if genuinely no link found |
+| Insufficient syllabus info | Request detailed syllabus or course descriptions; use default curriculum mappings for common programs                              |
+| No common concepts found   | Expand search to include cross-disciplinary techniques (e.g., optimization, probability, systems thinking)                         |
+| Too many subjects          | Group by department or semester; generate pairwise maps first, then combine into full program view                                 |
 
 ## Quality Gate — Check Before Output
 
 - [ ] Link strength scores assigned to each connection (strong / moderate / weak)
 - [ ] Prerequisite chain verified — no subject depends on content that comes later
 - [ ] No circular dependencies in the dependency graph
-- [ ] Cross-reference tables include connection type (prerequisite / shared / application / analogy / extension)
+- [ ] Cross-reference tables include connection type (prerequisite / shared / application / analogy
+      / extension)
 - [ ] Integrated study paths are actionable and sequenced logically
 
 ---
@@ -173,7 +174,8 @@ executing, check for an existing session profile:
 
 - **universal-session-config**: Reads program, department, and subject list from session profile
 - **universal-notes-generator**: Generates cross-subject notes that link related concepts
-- **universal-flashcard-generator**: Creates cross-subject flashcards for interdisciplinary exam prep
+- **universal-flashcard-generator**: Creates cross-subject flashcards for interdisciplinary exam
+  prep
 - **universal-study-planner**: Creates interleaved study schedules based on cross-subject
   connections
 - **universal-mind-map-generator**: Visualizes cross-subject relationships in mind map format

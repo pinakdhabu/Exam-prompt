@@ -562,15 +562,15 @@ use this three-tier fallback:
 
 If the user cannot answer after 3 questions, fall back to:
 
-| Clue                        | Default Pattern Used         |
-| --------------------------- | ---------------------------- |
-| Country = India             | SPPU 2019 Pattern (generic)  |
-| Country = US/Canada         | US semester with midterm+final (4.0 GPA) |
-| Country = UK                | UK module exams (First/2:1/2:2) |
-| Country = Europe            | ECTS module system           |
-| Country = Australia         | Australian semester (7-point GPA) |
-| Country = Singapore/Asia    | 5-point GPA modular system   |
-| No country known            | Generic international format |
+| Clue                     | Default Pattern Used                     |
+| ------------------------ | ---------------------------------------- |
+| Country = India          | SPPU 2019 Pattern (generic)              |
+| Country = US/Canada      | US semester with midterm+final (4.0 GPA) |
+| Country = UK             | UK module exams (First/2:1/2:2)          |
+| Country = Europe         | ECTS module system                       |
+| Country = Australia      | Australian semester (7-point GPA)        |
+| Country = Singapore/Asia | 5-point GPA modular system               |
+| No country known         | Generic international format             |
 
 ### Tier 3 — Manual Profile
 
@@ -635,13 +635,13 @@ When multiple sources provide conflicting information (e.g., syllabus says 80:20
 
 ### Conflict Examples
 
-| Conflict                                 | Resolution                                                    |
-| ---------------------------------------- | ------------------------------------------------------------- |
-| Syllabus says 80:20, PYQ shows 70:30     | Follow syllabus (Priority 1) — PYQ may be from old pattern    |
-| URL says 4.0 GPA, user says 10-point CGPA| Ask user to confirm; URL data may be outdated                 |
-| Verbal says "module exams", PDF shows semester system | Trust PDF (physical document) over recall      |
-| Two different pattern years in PDFs      | Use the most recent pattern year                               |
-| Language mismatch (PDF in Hindi, URL in English) | Extract from both; pattern data from English source preferred |
+| Conflict                                              | Resolution                                                    |
+| ----------------------------------------------------- | ------------------------------------------------------------- |
+| Syllabus says 80:20, PYQ shows 70:30                  | Follow syllabus (Priority 1) — PYQ may be from old pattern    |
+| URL says 4.0 GPA, user says 10-point CGPA             | Ask user to confirm; URL data may be outdated                 |
+| Verbal says "module exams", PDF shows semester system | Trust PDF (physical document) over recall                     |
+| Two different pattern years in PDFs                   | Use the most recent pattern year                              |
+| Language mismatch (PDF in Hindi, URL in English)      | Extract from both; pattern data from English source preferred |
 
 ## Part 9: Language Detection & Decision Rules for Non-English PDFs
 
@@ -649,15 +649,15 @@ When PDFs are detected to be in a language other than English, apply these rules
 
 ### Detection Signals
 
-| Signal                              | Likely Language      |
-| ----------------------------------- | -------------------- |
-| Hindi/Sanskrit terms in header      | Hindi / Marathi / Sanskrit |
-| Arabic script watermark             | Urdu / Arabic        |
-| Chinese/Kanji characters            | Chinese / Japanese   |
-| European accent characters (é, ñ, ü)| Spanish / French / German |
-| Cyrillic characters                 | Russian / Ukrainian  |
-| French terms (Université, Faculté)  | French               |
-| German terms (Universität, Prüfung) | German               |
+| Signal                               | Likely Language            |
+| ------------------------------------ | -------------------------- |
+| Hindi/Sanskrit terms in header       | Hindi / Marathi / Sanskrit |
+| Arabic script watermark              | Urdu / Arabic              |
+| Chinese/Kanji characters             | Chinese / Japanese         |
+| European accent characters (é, ñ, ü) | Spanish / French / German  |
+| Cyrillic characters                  | Russian / Ukrainian        |
+| French terms (Université, Faculté)   | French                     |
+| German terms (Universität, Prüfung)  | German                     |
 
 ### Decision Rules
 
@@ -677,28 +677,28 @@ When PDFs are detected to be in a language other than English, apply these rules
 
 ### Language-Aware Routing
 
-| Detected Language   | Routing Behavior                                        |
-| ------------------- | ------------------------------------------------------- |
-| English             | Normal routing to universal skills                      |
-| Hindi / Indian lang | Route with `lang: hi` context; answers expected in Hindi |
-| French / German     | Route with European exam pattern; expect local grading   |
-| Arabic              | Route with Islamic/Gulf exam pattern if recognized       |
-| CJK (Chinese/Japanese/Korean) | Route with Asian exam pattern                   |
-| Other               | Best-effort extraction; flag to user for validation      |
+| Detected Language             | Routing Behavior                                         |
+| ----------------------------- | -------------------------------------------------------- |
+| English                       | Normal routing to universal skills                       |
+| Hindi / Indian lang           | Route with `lang: hi` context; answers expected in Hindi |
+| French / German               | Route with European exam pattern; expect local grading   |
+| Arabic                        | Route with Islamic/Gulf exam pattern if recognized       |
+| CJK (Chinese/Japanese/Korean) | Route with Asian exam pattern                            |
+| Other                         | Best-effort extraction; flag to user for validation      |
 
 ## Error Handling
 
-| Error                                       | Cause                                          | Solution                                                        |
-| ------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------------- |
-| No PDFs found in directory                  | Empty or wrong path                            | Prompt user to verify path or upload PDFs directly              |
-| University detection failed                 | No clear signals in any source                 | Launch Fallback Handler (Part 7)                                |
-| Conflicting signals across sources          | Syllabus vs URL vs user description mismatch   | Apply Conflict-Resolution Flowchart (Part 8)                    |
-| Language not supported                      | Non-English PDF with unknown script            | Request English translation or description                      |
-| PDF is image-only (no text layer)           | Scanned document without OCR                   | Fall back to OCR pipeline; if OCR fails, request text PDF       |
-| URL fetch fails                             | Link broken, requires auth, or blocked         | Ask user to upload content directly or describe verbally        |
-| Pattern database does not cover university  | Unknown or very new university                 | Use Generic/Other profile and build custom pattern              |
-| No user input after multiple prompts        | User unresponsive                              | Use neutral international format and proceed                    |
-| Zero-information scenario                   | User provides no context at all                | Use Generic pattern: 10-mark standard, 5-mark concise, 2-mark definition |
+| Error                                      | Cause                                        | Solution                                                                 |
+| ------------------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------ |
+| No PDFs found in directory                 | Empty or wrong path                          | Prompt user to verify path or upload PDFs directly                       |
+| University detection failed                | No clear signals in any source               | Launch Fallback Handler (Part 7)                                         |
+| Conflicting signals across sources         | Syllabus vs URL vs user description mismatch | Apply Conflict-Resolution Flowchart (Part 8)                             |
+| Language not supported                     | Non-English PDF with unknown script          | Request English translation or description                               |
+| PDF is image-only (no text layer)          | Scanned document without OCR                 | Fall back to OCR pipeline; if OCR fails, request text PDF                |
+| URL fetch fails                            | Link broken, requires auth, or blocked       | Ask user to upload content directly or describe verbally                 |
+| Pattern database does not cover university | Unknown or very new university               | Use Generic/Other profile and build custom pattern                       |
+| No user input after multiple prompts       | User unresponsive                            | Use neutral international format and proceed                             |
+| Zero-information scenario                  | User provides no context at all              | Use Generic pattern: 10-mark standard, 5-mark concise, 2-mark definition |
 
 ## Quality Gate
 

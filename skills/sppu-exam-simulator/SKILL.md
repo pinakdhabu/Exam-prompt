@@ -519,7 +519,8 @@ executing, check for an existing session profile:
 
 ## Companion Activation with Answer Writer
 
-This skill must NEVER be loaded alone. Always activate it BEFORE or ALONGSIDE `universal-a-plus-answer-writer`.
+This skill must NEVER be loaded alone. Always activate it BEFORE or ALONGSIDE
+`universal-a-plus-answer-writer`.
 
 ### Correct Activation Sequence
 
@@ -530,12 +531,12 @@ This skill must NEVER be loaded alone. Always activate it BEFORE or ALONGSIDE `u
 
 ### Invocation Patterns
 
-| Pattern                      | Command                                                                 |
-| ---------------------------- | ----------------------------------------------------------------------- |
-| Pre-loaded simulation        | `Activate sppu-exam-simulator, then answer-writer for "Explain DBMS"`   |
-| Direct with constraints      | `Activate both sppu-exam-simulator and answer-writer`                   |
-| University-switched          | `Switch to VTU, activate sppu-exam-simulator with VTU budgets`          |
-| Test-only constraints        | `Use sppu-exam-simulator page/time budgets without moderator layer`     |
+| Pattern                 | Command                                                               |
+| ----------------------- | --------------------------------------------------------------------- |
+| Pre-loaded simulation   | `Activate sppu-exam-simulator, then answer-writer for "Explain DBMS"` |
+| Direct with constraints | `Activate both sppu-exam-simulator and answer-writer`                 |
+| University-switched     | `Switch to VTU, activate sppu-exam-simulator with VTU budgets`        |
+| Test-only constraints   | `Use sppu-exam-simulator page/time budgets without moderator layer`   |
 
 ### What NOT to Do
 
@@ -567,20 +568,21 @@ After every answer, immediately append a scoring estimate:
 }
 ```
 
-Marking rationale must reference the specific marking scheme for the target university pattern. Include the self-score as a code block after the answer, before any marking scheme.
+Marking rationale must reference the specific marking scheme for the target university pattern.
+Include the self-score as a code block after the answer, before any marking scheme.
 
 ## Error Handling
 
-| Error                              | Cause                                      | Solution                                                    |
-| ---------------------------------- | ------------------------------------------ | ----------------------------------------------------------- |
-| No answer-writer companion loaded  | Simulator activated alone                  | Load `universal-a-plus-answer-writer` alongside             |
-| Page budget exceeded               | Generated answer is too long               | Reduce content, compress points, remove fluff               |
-| Time budget exceeded               | Answer requires more writing time than available | Split answer, reduce depth, or flag to user            |
-| No university pattern detected     | Session config missing                     | Run `setup-exam-prompt` or specify university explicitly    |
-| Diagram cost > benefit             | Low-value diagram wastes page/time         | Skip diagram, describe concept in 2-3 lines instead         |
-| Moderator check fails              | Phase 16 check does not pass               | Regenerate with focus on the specific failing check         |
-| Unknown command word               | Question uses unfamiliar phrasing          | Map to nearest known command word and flag to user          |
-| Non-theory question detected       | Numerical/coding question                  | Route to `universal-code-solution-generator` instead        |
+| Error                             | Cause                                            | Solution                                                 |
+| --------------------------------- | ------------------------------------------------ | -------------------------------------------------------- |
+| No answer-writer companion loaded | Simulator activated alone                        | Load `universal-a-plus-answer-writer` alongside          |
+| Page budget exceeded              | Generated answer is too long                     | Reduce content, compress points, remove fluff            |
+| Time budget exceeded              | Answer requires more writing time than available | Split answer, reduce depth, or flag to user              |
+| No university pattern detected    | Session config missing                           | Run `setup-exam-prompt` or specify university explicitly |
+| Diagram cost > benefit            | Low-value diagram wastes page/time               | Skip diagram, describe concept in 2-3 lines instead      |
+| Moderator check fails             | Phase 16 check does not pass                     | Regenerate with focus on the specific failing check      |
+| Unknown command word              | Question uses unfamiliar phrasing                | Map to nearest known command word and flag to user       |
+| Non-theory question detected      | Numerical/coding question                        | Route to `universal-code-solution-generator` instead     |
 
 ## Quality Gate
 

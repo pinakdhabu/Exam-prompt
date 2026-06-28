@@ -158,15 +158,15 @@ Synchronization:
 Research shows that sleep deprivation directly impairs the cognitive functions needed for exam
 performance — memory consolidation, attention, and executive function.
 
-| Sleep in 24h Window | Cognitive Effect | Recommendation |
-|---|---|---|
-| < 2 hours | Severe impairment — negates most study gains | Avoid. Study gains lost to cognitive deficit. |
-| 3-4 hours | Moderate impairment — reduced recall, slower thinking | Minimum viable for 12h cram window |
-| 5-6 hours | Mild impairment — acceptable for short-term exams | Target for multi-day cram sessions |
-| 7+ hours | Full cognitive function | Always preferred when time allows |
+| Sleep in 24h Window | Cognitive Effect                                      | Recommendation                                |
+| ------------------- | ----------------------------------------------------- | --------------------------------------------- |
+| < 2 hours           | Severe impairment — negates most study gains          | Avoid. Study gains lost to cognitive deficit. |
+| 3-4 hours           | Moderate impairment — reduced recall, slower thinking | Minimum viable for 12h cram window            |
+| 5-6 hours           | Mild impairment — acceptable for short-term exams     | Target for multi-day cram sessions            |
+| 7+ hours            | Full cognitive function                               | Always preferred when time allows             |
 
-**Rule:** Even in a 12-hour cram window, allocate 3-4 hours for sleep. The memory consolidation
-that occurs during sleep is more valuable than 3-4 additional hours of study.
+**Rule:** Even in a 12-hour cram window, allocate 3-4 hours for sleep. The memory consolidation that
+occurs during sleep is more valuable than 3-4 additional hours of study.
 
 ### Stress Management Techniques
 
@@ -223,11 +223,11 @@ executing, check for an existing session profile:
 
 ## Error Handling
 
-| Situation | Action |
-|---|---|
-| Timeframe not specified | Default to 12-hour plan and ask user to confirm or specify |
-| Subject/topics not provided | Respond: "Please specify the subject and topics you need to cram." |
-| Insufficient time for requested scope | Suggest reducing scope: "3 hours is not enough for 5 units. Recommend focusing on 2 highest-weightage units." |
+| Situation                               | Action                                                                                                                 |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Timeframe not specified                 | Default to 12-hour plan and ask user to confirm or specify                                                             |
+| Subject/topics not provided             | Respond: "Please specify the subject and topics you need to cram."                                                     |
+| Insufficient time for requested scope   | Suggest reducing scope: "3 hours is not enough for 5 units. Recommend focusing on 2 highest-weightage units."          |
 | User health concern (sleep deprivation) | Warn: "Sleep below 2 hours impairs cognitive function. Study gains may be negated. Recommend minimum 3-4 hours sleep." |
 
 ## Quality Gate — Check Before Output
@@ -242,11 +242,11 @@ executing, check for an existing session profile:
 
 ## 8. Integration with Other Skills
 
-| Skill | Integration |
-|---|---|
-| **universal-session-config** | Reads university/subject/pattern from session profile |
+| Skill                              | Integration                                                        |
+| ---------------------------------- | ------------------------------------------------------------------ |
+| **universal-session-config**       | Reads university/subject/pattern from session profile              |
 | **universal-imp-topics-generator** | Provides the high-yield topic list that drives cram prioritization |
-| **universal-pyq-analyzer** | Supplies frequency data for topic selection |
-| **universal-flashcard-generator** | Creates the cram-mode flashcard deck |
-| **universal-study-planner** | Falls back to cram plan when time runs short |
-| **universal-notes-generator** | Produces the rapid revision note format |
+| **universal-pyq-analyzer**         | Supplies frequency data for topic selection                        |
+| **universal-flashcard-generator**  | Creates the cram-mode flashcard deck                               |
+| **universal-study-planner**        | Falls back to cram plan when time runs short                       |
+| **universal-notes-generator**      | Produces the rapid revision note format                            |

@@ -162,13 +162,13 @@ REST | REST | REST | REST | REST | REST |
 
 When two or more exams fall on the same day or consecutive days:
 
-| Scenario                                    | Strategy                                                                                 |
-| ------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Scenario                                        | Strategy                                                                                       |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | Exam A on June 15, Exam B on June 15 (same day) | Allocate 60% time to higher-weightage subject on the day before; use interleaved review blocks |
-| Exam A on June 15, Exam B on June 16       | Study Exam A until 6pm on June 14; 2-hour review of Exam B on evening of June 14         |
-| Exam A on June 15, Exam B on June 17       | Full focus on A until June 14; 1 day gap day for B on June 15 afternoon + June 16         |
-| Exam A on June 15, Exam B on June 14       | Inverted gap — prioritize B first; A review on morning of June 15                        |
-| 3+ exams in 5 days                         | Treat as "exam cluster": high-yield topics only, 1-hour review blocks per subject         |
+| Exam A on June 15, Exam B on June 16            | Study Exam A until 6pm on June 14; 2-hour review of Exam B on evening of June 14               |
+| Exam A on June 15, Exam B on June 17            | Full focus on A until June 14; 1 day gap day for B on June 15 afternoon + June 16              |
+| Exam A on June 15, Exam B on June 14            | Inverted gap — prioritize B first; A review on morning of June 15                              |
+| 3+ exams in 5 days                              | Treat as "exam cluster": high-yield topics only, 1-hour review blocks per subject              |
 
 ### Recovery-Day Rules
 
@@ -228,7 +228,8 @@ Date,Start,End,Subject,Topic,Block Type,Notes
 2026-06-01,17:00,17:30,All,Flashcard Review,Revision,Spaced repetition review
 ```
 
-To export a plan as a calendar file, pipe the output to `plan-to-ics.py` or `plan-to-csv.py` from the `scripts/` directory.
+To export a plan as a calendar file, pipe the output to `plan-to-ics.py` or `plan-to-csv.py` from
+the `scripts/` directory.
 
 ---
 
@@ -255,16 +256,16 @@ executing, check for an existing session profile:
 
 ## Error Handling
 
-| Error                              | Cause                                      | Solution                                                   |
-| ---------------------------------- | ------------------------------------------ | ---------------------------------------------------------- |
-| No exam dates provided             | Required input missing                     | Prompt user for at least one exam date                     |
-| Impossible schedule (time < needs) | Available hours insufficient for scope     | Reduce scope, increase daily hours, or extend timeline     |
-| Negative time remaining            | Exam date has already passed               | Switch to cram plan (Type 3) or imp-topics only            |
-| Subject/topic list empty           | No scope defined                           | Prompt for subject list or syllabus PDF                    |
-| Overlapping exams not handled      | Multiple exams same day/cluster            | Apply overlapping-exam scheduling rules                    |
-| Calendar export fails              | Missing conversion script                  | Run `npm run init` to install scripts; fall back to table  |
-| Difficulty ratings inconsistent    | All topics same rating (unlikely)          | Ask user to differentiate (Hard/Medium/Easy)               |
-| Abnormally high daily hours        | >14 hours/day requested                    | Warn user; cap at 12 with mandatory breaks                 |
+| Error                              | Cause                                  | Solution                                                  |
+| ---------------------------------- | -------------------------------------- | --------------------------------------------------------- |
+| No exam dates provided             | Required input missing                 | Prompt user for at least one exam date                    |
+| Impossible schedule (time < needs) | Available hours insufficient for scope | Reduce scope, increase daily hours, or extend timeline    |
+| Negative time remaining            | Exam date has already passed           | Switch to cram plan (Type 3) or imp-topics only           |
+| Subject/topic list empty           | No scope defined                       | Prompt for subject list or syllabus PDF                   |
+| Overlapping exams not handled      | Multiple exams same day/cluster        | Apply overlapping-exam scheduling rules                   |
+| Calendar export fails              | Missing conversion script              | Run `npm run init` to install scripts; fall back to table |
+| Difficulty ratings inconsistent    | All topics same rating (unlikely)      | Ask user to differentiate (Hard/Medium/Easy)              |
+| Abnormally high daily hours        | >14 hours/day requested                | Warn user; cap at 12 with mandatory breaks                |
 
 ## Quality Gate
 

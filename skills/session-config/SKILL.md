@@ -110,7 +110,7 @@ Switch to Mumbai University, IT department, 2024 pattern
 | **ChatGPT/Custom GPT** | GPT instructions + conversation memory  |
 | **Cursor/Windsurf**    | .cursorrules + session variables        |
 | **Gemini Gems**        | Gem instructions                        |
-| **OpenCode**           | AGENTS.md + deps/session-profile.json  |
+| **OpenCode**           | AGENTS.md + deps/session-profile.json   |
 
 ## JSON Schema Validation
 
@@ -149,39 +149,42 @@ All session config files should validate against the following JSON Schema:
 }
 ```
 
-Validate every config write against this schema. Reject writes that fail validation with a clear error message identifying the missing or malformed field.
+Validate every config write against this schema. Reject writes that fail validation with a clear
+error message identifying the missing or malformed field.
 
 ### Multi-Profile Naming Convention
 
 When storing multiple session profiles, use this naming convention:
 
-| Profile                   | Filename                              |
-| ------------------------- | ------------------------------------- |
-| Current/active profile    | `deps/session-profile.json`           |
-| Named profile             | `deps/session-profile.{name}.json`    |
-| All profiles index        | `deps/session-profiles.json`          |
+| Profile                | Filename                           |
+| ---------------------- | ---------------------------------- |
+| Current/active profile | `deps/session-profile.json`        |
+| Named profile          | `deps/session-profile.{name}.json` |
+| All profiles index     | `deps/session-profiles.json`       |
 
 **Version field semantics:**
 
 | Version | Meaning                                           |
 | ------- | ------------------------------------------------- |
-| `1.0.0` | Initial schema (session + university + subject)    |
-| `1.1.0` | Added exam structure (type, marks, duration)       |
-| `1.2.0` | Added user preferences and active_skills array     |
-| `2.0.0` | Breaking change (schema incompatibility detected)  |
+| `1.0.0` | Initial schema (session + university + subject)   |
+| `1.1.0` | Added exam structure (type, marks, duration)      |
+| `1.2.0` | Added user preferences and active_skills array    |
+| `2.0.0` | Breaking change (schema incompatibility detected) |
 
-When reading a profile with a higher minor version than the system expects, log a warning but continue. When reading a profile with a higher major version, refuse to parse and request recreation via `setup-exam-prompt`.
+When reading a profile with a higher minor version than the system expects, log a warning but
+continue. When reading a profile with a higher major version, refuse to parse and request recreation
+via `setup-exam-prompt`.
 
 ## Error Handling
 
-| Error                          | Cause                            | Solution                                            |
-| ------------------------------ | -------------------------------- | --------------------------------------------------- |
-| Profile file not found         | No `deps/session-profile.json`   | Prompt user to run `setup-exam-prompt` first        |
-| Schema validation failed       | Missing/incorrect fields         | Show diff of what's missing, prompt to fix           |
-| Version mismatch               | Profile schema is outdated       | Run migration or recreate via `setup-exam-prompt`    |
-| Multiple profiles ambiguous    | Several files in deps/           | Use `profile_name` field or ask user which to load   |
-| Concurrent write detected      | Two agents writing simultaneously| Lock file (`deps/.session.lock`), retry after 1 second|
-| Corrupt JSON                   | Manual edit broke syntax         | Restore from backup or recreate via setup            |
+| Error                       | Cause                             | Solution                                               |
+| --------------------------- | --------------------------------- | ------------------------------------------------------ |
+| Profile file not found      | No `deps/session-profile.json`    | Prompt user to run `setup-exam-prompt` first           |
+| Schema validation failed    | Missing/incorrect fields          | Show diff of what's missing, prompt to fix             |
+| Version mismatch            | Profile schema is outdated        | Run migration or recreate via `setup-exam-prompt`      |
+| Multiple profiles ambiguous | Several files in deps/            | Use `profile_name` field or ask user which to load     |
+| Concurrent write detected   | Two agents writing simultaneously | Lock file (`deps/.session.lock`), retry after 1 second |
+| Corrupt JSON                | Manual edit broke syntax          | Restore from backup or recreate via setup              |
 
 ## Quality Gate
 
@@ -197,7 +200,8 @@ Before accepting any config and proceeding to downstream skills, verify:
 - [ ] `active_skills` entries all correspond to valid skill names in the project
 - [ ] `last_updated` is within 24 hours of current time (warn if stale)
 
-If any check fails, log the issue, do NOT pass config to downstream skills, and prompt the user to fix before proceeding.
+If any check fails, log the issue, do NOT pass config to downstream skills, and prompt the user to
+fix before proceeding.
 
 ## Integration with Other Skills
 

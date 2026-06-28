@@ -178,13 +178,13 @@ After setup completes, confirm all the following:
 
 ### Repair / Reset Commands
 
-| Command                                          | What It Does                                                 |
-| ------------------------------------------------ | ------------------------------------------------------------ |
-| `/setup --repair`                                | Validate and fix the session profile without losing settings |
-| `/setup --reset`                                 | Delete session profile and start fresh                       |
-| `/setup --repair --force`                        | Rebuild profile from answers, preserving only PYQ paths      |
-| `npm run init -- --university VTU --pattern 2022`| Non-interactive setup with known parameters                   |
-| `bash deps/resolve.sh --force`                   | Reinstall all dependencies from scratch                       |
+| Command                                           | What It Does                                                 |
+| ------------------------------------------------- | ------------------------------------------------------------ |
+| `/setup --repair`                                 | Validate and fix the session profile without losing settings |
+| `/setup --reset`                                  | Delete session profile and start fresh                       |
+| `/setup --repair --force`                         | Rebuild profile from answers, preserving only PYQ paths      |
+| `npm run init -- --university VTU --pattern 2022` | Non-interactive setup with known parameters                  |
+| `bash deps/resolve.sh --force`                    | Reinstall all dependencies from scratch                      |
 
 ---
 
