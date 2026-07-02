@@ -1,0 +1,209 @@
+{
+  "version": "1.0.0",
+  "description": "Central registry of all AI agents supported by Exam Prompt. Enables coordinated skill distribution and agent-agnostic configuration.",
+  "generated_at": "2026-07-02T22:54:19.256+05:30",
+  "agents": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "vendor": "Anthropic",
+      "supports_parallel_execution": true,
+      "config_paths": [
+        "CLAUDE.md",
+        ".github/claude-instructions.md"
+      ],
+      "supports_skills": true,
+      "skill_format": "markdown",
+      "features": {
+        "mcp_support": true,
+        "async_operations": true,
+        "caching": true
+      }
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "vendor": "Anysphere",
+      "supports_parallel_execution": true,
+      "config_paths": [
+        ".cursor/",
+        ".cursorrules"
+      ],
+      "supports_skills": true,
+      "skill_format": "markdown",
+      "features": {
+        "rule_engine": true,
+        "project_wide_config": true
+      }
+    },
+    {
+      "id": "windsurf",
+      "name": "Windsurf",
+      "vendor": "Codeium",
+      "supports_parallel_execution": true,
+      "config_paths": [
+        ".windsurfrules"
+      ],
+      "supports_skills": true,
+      "skill_format": "markdown",
+      "features": {
+        "flow_support": true,
+        "multi_file_editing": true
+      }
+    },
+    {
+      "id": "copilot",
+      "name": "GitHub Copilot",
+      "vendor": "GitHub",
+      "supports_parallel_execution": false,
+      "config_paths": [
+        ".github/copilot-instructions.md"
+      ],
+      "supports_skills": true,
+      "skill_format": "markdown",
+      "features": {
+        "vscode_integration": true,
+        "pr_review": true
+      }
+    },
+    {
+      "id": "cline",
+      "name": "Cline",
+      "vendor": "Cline Community",
+      "supports_parallel_execution": true,
+      "config_paths": [
+        ".clinerules",
+        "cline_docs/"
+      ],
+      "supports_skills": true,
+      "skill_format": "markdown",
+      "features": {
+        "memory_bank": true,
+        "bash_execution": true
+      }
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "vendor": "Paul Gauthier",
+      "supports_parallel_execution": false,
+      "config_paths": [
+        ".aider.conf.yml"
+      ],
+      "supports_skills": true,
+      "skill_format": "markdown",
+      "features": {
+        "git_integration": true,
+        "multi_file_editing": true
+      }
+    },
+    {
+      "id": "continue",
+      "name": "Continue.dev",
+      "vendor": "Continue",
+      "supports_parallel_execution": true,
+      "config_paths": [
+        ".continue/config.yaml"
+      ],
+      "supports_skills": true,
+      "skill_format": "markdown",
+      "features": {
+        "model_switching": true,
+        "provider_agnostic": true
+      }
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "vendor": "OpenCode",
+      "supports_parallel_execution": true,
+      "config_paths": [],
+      "supports_skills": true,
+      "skill_format": "markdown",
+      "features": {
+        "auto_discovery": true
+      }
+    },
+    {
+      "id": "vscode-copilot",
+      "name": "VS Code Copilot Extension",
+      "vendor": "GitHub",
+      "supports_parallel_execution": false,
+      "config_paths": [
+        ".vscode/extensions.json"
+      ],
+      "supports_skills": true,
+      "skill_format": "markdown",
+      "features": {
+        "editor_integration": true
+      }
+    },
+    {
+      "id": "jetbrains-copilot",
+      "name": "JetBrains Copilot",
+      "vendor": "GitHub",
+      "supports_parallel_execution": false,
+      "config_paths": [],
+      "supports_skills": false,
+      "skill_format": "none",
+      "features": {}
+    },
+    {
+      "id": "neovim-copilot",
+      "name": "Neovim Copilot",
+      "vendor": "GitHub",
+      "supports_parallel_execution": true,
+      "config_paths": [],
+      "supports_skills": false,
+      "skill_format": "none",
+      "features": {}
+    }
+  ],
+  "agent_groups": {
+    "full_featured": [
+      "claude-code",
+      "cursor",
+      "windsurf",
+      "cline"
+    ],
+    "production_ready": [
+      "copilot",
+      "aider",
+      "continue"
+    ],
+    "emerging": [
+      "opencode",
+      "vscode-copilot"
+    ]
+  },
+  "skill_distribution": {
+    "required_for_all": [
+      "universal-session-config",
+      "universal-university-adapter"
+    ],
+    "recommended_first_run": [
+      "setup-exam-prompt",
+      "universal-agent-normalizer"
+    ]
+  },
+  "capabilities_matrix": {
+    "skills_management": {
+      "auto_discovery": ["claude-code", "opencode"],
+      "manual_loading": ["cursor", "windsurf", "copilot", "cline"],
+      "config_based": ["continue", "aider"]
+    },
+    "execution": {
+      "parallel": ["claude-code", "cursor", "windsurf", "cline", "continue"],
+      "serial_only": ["copilot", "aider"]
+    },
+    "caching": {
+      "supported": ["claude-code", "cursor", "windsurf", "cline", "continue"],
+      "unsupported": ["copilot", "aider"]
+    }
+  },
+  "sync_commands": {
+    "update_all_configs": "bash scripts/sync-agent-configs.sh",
+    "validate_configs": "bash scripts/validate-agent-configs.sh",
+    "generate_configs": "npm run generate:config"
+  }
+}

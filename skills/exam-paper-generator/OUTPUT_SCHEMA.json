@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Output schema for universal-exam-paper-generator skill",
+  "properties": {
+    "question_paper": {
+      "type": "string",
+      "minLength": 500,
+      "description": "Complete formatted question paper"
+    },
+    "total_questions": {
+      "type": "number",
+      "minimum": 5,
+      "description": "Total number of questions in paper"
+    },
+    "total_marks": {
+      "type": "number",
+      "minimum": 50,
+      "description": "Total marks in paper"
+    },
+    "section_breakdown": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "questions": { "type": "number" },
+          "marks": { "type": "number" }
+        }
+      },
+      "description": "Section -> (questions, marks) mapping"
+    },
+    "marking_scheme": {
+      "type": "object",
+      "description": "Detailed marking scheme"
+    },
+    "model_answers": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Model answers for all questions"
+    },
+    "answer_key": {
+      "type": ["object", "array"],
+      "description": "Quick answer key (MCQs, true/false, etc.)"
+    },
+    "university_pattern": {
+      "type": "string",
+      "description": "University exam pattern followed"
+    },
+    "duration_mins": {
+      "type": "number",
+      "description": "Exam duration in minutes"
+    },
+    "co_mapping": {
+      "type": "object",
+      "description": "Course Outcome mapping (question -> CO)"
+    },
+    "blooms_mapping": {
+      "type": "object",
+      "description": "Bloom's level mapping (question -> level)"
+    },
+    "difficulty_distribution": {
+      "type": "object",
+      "properties": {
+        "easy": { "type": "number" },
+        "medium": { "type": "number" },
+        "hard": { "type": "number" }
+      }
+    }
+  },
+  "required": ["question_paper", "total_questions", "total_marks"],
+  "additionalProperties": false
+}

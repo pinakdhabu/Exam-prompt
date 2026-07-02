@@ -1,0 +1,228 @@
+{
+  "name": "exam-prompt-skills",
+  "lockfileVersion": 1,
+  "version": "1.0.0",
+  "description": "Skill version lockfile - similar to package-lock.json but for Exam Prompt skills",
+  "generated": "2026-07-02T22:54:19.256+05:30",
+  "timestamp": 1719950659256,
+  "skills": {
+    "universal-agent-normalizer": {
+      "version": "1.0.0",
+      "resolved": "file:skills/agent-normalizer/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-a-plus-answer-writer": {
+      "version": "1.0.0",
+      "resolved": "file:skills/answer-writer/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false,
+      "schema": "skills/answer-writer/OUTPUT_SCHEMA.json"
+    },
+    "universal-assignment-writer": {
+      "version": "1.0.0",
+      "resolved": "file:skills/assignment-writer/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false,
+      "schema": "skills/assignment-writer/OUTPUT_SCHEMA.json"
+    },
+    "universal-case-study-solver": {
+      "version": "1.0.0",
+      "resolved": "file:skills/case-study-solver/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-cheat-sheet-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/cheat-sheet-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-code-solution-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/code-solution-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-cross-subject-mapper": {
+      "version": "1.0.0",
+      "resolved": "file:skills/cross-subject-mapper/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-diagram-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/diagram-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-document-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/document-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-essay-grader": {
+      "version": "1.0.0",
+      "resolved": "file:skills/essay-grader/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-exam-paper-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/exam-paper-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false,
+      "schema": "skills/exam-paper-generator/OUTPUT_SCHEMA.json"
+    },
+    "universal-flashcard-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/flashcard-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-formula-sheet-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/formula-sheet-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-imp-topics-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/imp-topics-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-lab-report-writer": {
+      "version": "1.0.0",
+      "resolved": "file:skills/lab-report-writer/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-last-minute-crammer": {
+      "version": "1.0.0",
+      "resolved": "file:skills/last-minute-crammer/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-mcq-practice-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/mcq-practice-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-mind-map-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/mind-map-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-notes-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/notes-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false,
+      "schema": "skills/notes-generator/OUTPUT_SCHEMA.json"
+    },
+    "universal-pyq-analyzer": {
+      "version": "1.0.0",
+      "resolved": "file:skills/pyq-analyzer/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false,
+      "schema": "skills/pyq-analyzer/OUTPUT_SCHEMA.json"
+    },
+    "universal-qp-fetcher": {
+      "version": "1.0.0",
+      "resolved": "file:skills/qp-fetcher/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-session-config": {
+      "version": "1.0.0",
+      "resolved": "file:skills/session-config/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "setup-exam-prompt": {
+      "version": "1.0.0",
+      "resolved": "file:skills/setup-exam-prompt/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-sppu-exam-simulator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/sppu-exam-simulator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-study-planner": {
+      "version": "1.0.0",
+      "resolved": "file:skills/study-planner/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-subject-prompt-bank": {
+      "version": "1.0.0",
+      "resolved": "file:skills/subject-prompt-bank/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-thesis-generator": {
+      "version": "1.0.0",
+      "resolved": "file:skills/thesis-generator/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-document-reader": {
+      "version": "1.0.0",
+      "resolved": "file:skills/universal-document-reader/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-university-adapter": {
+      "version": "1.0.0",
+      "resolved": "file:skills/universal-university-adapter/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    },
+    "universal-viva-oral-exam-prep": {
+      "version": "1.0.0",
+      "resolved": "file:skills/viva-oral-exam-prep/SKILL.md",
+      "integrity": "sha256-XXXXX",
+      "pinned": false
+    }
+  },
+  "infrastructure": {
+    "cache-manager": {
+      "version": "1.0.0",
+      "location": "infrastructure/cache-manager.js",
+      "required": true
+    },
+    "session-context": {
+      "version": "1.0.0",
+      "location": "infrastructure/session-context.js",
+      "required": true
+    },
+    "output-validator": {
+      "version": "1.0.0",
+      "location": "infrastructure/output-validator.js",
+      "required": true
+    },
+    "skill-router": {
+      "version": "1.0.0",
+      "location": "infrastructure/skill-router.js",
+      "required": false
+    }
+  },
+  "registries": {
+    "skills-dependency-graph": {
+      "version": "1.0.0",
+      "location": "skills-dependency-graph.json"
+    },
+    "agent-registry": {
+      "version": "1.0.0",
+      "location": "AGENT_REGISTRY.json"
+    }
+  },
+  "notes": "This lockfile tracks all skill versions, output schemas, and infrastructure components. Update with: npm run lock:update"
+}

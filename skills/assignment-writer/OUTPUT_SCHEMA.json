@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Output schema for universal-assignment-writer skill",
+  "properties": {
+    "assignment_content": {
+      "type": "string",
+      "minLength": 300,
+      "description": "Complete assignment content"
+    },
+    "assignment_type": {
+      "type": "string",
+      "enum": [
+        "theory",
+        "numerical",
+        "case_study",
+        "research_paper",
+        "literature_review",
+        "project_proposal",
+        "design_document",
+        "analysis",
+        "comparison",
+        "critical_review",
+        "problem_solving",
+        "diagram_illustration"
+      ],
+      "description": "Type of assignment"
+    },
+    "marking_scheme": {
+      "type": "object",
+      "additionalProperties": { "type": "number" },
+      "description": "Criterion or section -> marks mapping"
+    },
+    "submission_format": {
+      "type": "string",
+      "description": "Recommended submission format (PDF, DOCX, etc.)"
+    },
+    "estimated_hours": {
+      "type": "number",
+      "minimum": 0.5,
+      "description": "Estimated time to complete"
+    },
+    "sections": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Main sections of assignment"
+    },
+    "evaluation_criteria": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "How the assignment will be evaluated"
+    },
+    "citations_required": {
+      "type": "boolean",
+      "description": "Whether citations/references are needed"
+    },
+    "citation_style": {
+      "type": ["string", "null"],
+      "enum": ["APA", "MLA", "Chicago", "Harvard", null],
+      "description": "Recommended citation style"
+    },
+    "word_count_range": {
+      "type": "object",
+      "properties": {
+        "minimum": { "type": "number" },
+        "maximum": { "type": "number" }
+      }
+    }
+  },
+  "required": ["assignment_content", "assignment_type", "marking_scheme"],
+  "additionalProperties": false
+}

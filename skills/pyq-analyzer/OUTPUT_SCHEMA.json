@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Output schema for universal-pyq-analyzer skill",
+  "properties": {
+    "analysis_summary": {
+      "type": "string",
+      "minLength": 100,
+      "description": "Executive summary of PYQ analysis findings"
+    },
+    "papers_analyzed": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Number of question papers analyzed"
+    },
+    "years_covered": {
+      "type": "array",
+      "items": { "type": "number" },
+      "description": "Years of papers analyzed"
+    },
+    "unit_wise_frequency": {
+      "type": "object",
+      "additionalProperties": { "type": "number" },
+      "description": "How often each unit appears (unit -> count)"
+    },
+    "mark_distribution": {
+      "type": "object",
+      "properties": {
+        "1_mark": { "type": "number" },
+        "2_mark": { "type": "number" },
+        "4_mark": { "type": "number" },
+        "6_mark": { "type": "number" },
+        "10_mark": { "type": "number" }
+      },
+      "description": "Distribution of questions by marks"
+    },
+    "blooms_distribution": {
+      "type": "object",
+      "additionalProperties": { "type": "number" },
+      "description": "Distribution across Bloom's levels"
+    },
+    "imp_topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "topic": { "type": "string" },
+          "frequency": { "type": "number" },
+          "probability": { "type": "number", "minimum": 0, "maximum": 1 },
+          "units": { "type": "array", "items": { "type": "string" } },
+          "question_patterns": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["topic", "frequency", "probability"]
+      },
+      "minItems": 5,
+      "description": "High-probability important topics"
+    },
+    "question_patterns": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Recurring question patterns found"
+    },
+    "exam_strategy": {
+      "type": "object",
+      "properties": {
+        "focus_units": { "type": "array", "items": { "type": "string" } },
+        "time_allocation_mins": { "type": "object" },
+        "must_attempt": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "required": ["analysis_summary", "papers_analyzed", "unit_wise_frequency", "imp_topics"],
+  "additionalProperties": false
+}

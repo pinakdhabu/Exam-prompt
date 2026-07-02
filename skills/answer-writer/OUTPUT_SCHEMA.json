@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Output schema for universal-a-plus-answer-writer skill",
+  "properties": {
+    "answer_text": {
+      "type": "string",
+      "minLength": 50,
+      "description": "Direct answer text without preamble, fully formed and ready for answer booklet"
+    },
+    "marks_expected": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "Expected marks this answer should fetch"
+    },
+    "diagram_mermaid": {
+      "type": ["string", "null"],
+      "description": "Optional Mermaid diagram code (```mermaid...```)"
+    },
+    "diagram_ascii": {
+      "type": ["string", "null"],
+      "description": "Optional ASCII art diagram as fallback"
+    },
+    "example_provided": {
+      "type": "boolean",
+      "description": "Whether answer includes concrete real-world example"
+    },
+    "structure": {
+      "type": "string",
+      "enum": [
+        "definition_only",
+        "definition_points",
+        "definition_points_diagram",
+        "definition_points_diagram_example",
+        "points_only",
+        "comparison_table",
+        "derivation_stepwise",
+        "numerical_solution_with_working",
+        "design_proposal_with_justification",
+        "list_enumeration"
+      ],
+      "description": "Structural format of answer"
+    },
+    "university_pattern": {
+      "type": "string",
+      "enum": ["SPPU_2019", "SPPU_2024", "VTU", "JNTU", "AKTU", "RGPV", "Mumbai", "IIT", "NIT", "North_American", "Oxford_Cambridge", "Generic"],
+      "description": "University exam pattern"
+    },
+    "word_count": {
+      "type": "number",
+      "minimum": 10,
+      "description": "Approximate word count"
+    },
+    "bloom_level": {
+      "type": "string",
+      "enum": ["remember", "understand", "apply", "analyze", "evaluate", "create"],
+      "description": "Bloom's taxonomy level addressed"
+    },
+    "key_terms_bolded": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Technical terms that should be bolded"
+    }
+  },
+  "required": ["answer_text", "marks_expected", "structure", "word_count"],
+  "additionalProperties": false
+}

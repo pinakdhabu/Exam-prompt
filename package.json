@@ -68,10 +68,24 @@
     "sync:registry": "bash scripts/update-registry.sh",
     "sync:registry:check": "bash scripts/update-registry.sh --dry-run",
     "scaffold:university": "bash scripts/generate-university-scaffold.sh",
+
     "test": "node scripts/test-all.js",
     "test:win": "node scripts/test-all.js"
-  },
+
+    "test": "bash scripts/validate-skills.sh && bash scripts/update-registry.sh --dry-run"
+
+    "test": "bash scripts/validate-skills.sh && bash scripts/update-registry.sh --dry-run",
+    "cache:stats": "node -e \"const {cacheManager} = require('./infrastructure/cache-manager'); console.log(JSON.stringify(cacheManager.stats(), null, 2));\"",
+    "cache:clear": "node -e \"const {cacheManager} = require('./infrastructure/cache-manager'); cacheManager.clear(); console.log('Cache cleared.');\"",
+    "session:view": "node -e \"const {sessionContext} = require('./infrastructure/session-context'); console.log(sessionContext.toString());\"",
+    "session:reset": "node -e \"const {sessionContext} = require('./infrastructure/session-context'); sessionContext.reset(); console.log('Session reset to defaults.');\"",
+    "router:test": "node infrastructure/skill-router.js",
+    "validate:output": "node -e \"const {OutputValidator} = require('./infrastructure/output-validator'); const v = new OutputValidator(); console.log('Available schemas:', v.getSchemas());\"",
+    "infra:status": "echo '=== Exam Prompt Infrastructure Status ===' && npm run cache:stats && npm run session:view"
+
+  }
   "dependencies": {
+    "ajv": "^8.20.0",
     "marked": "^15.0.12",
     "marked-katex-extension": "^5.1.10",
     "mermaid": "^11.15.0",

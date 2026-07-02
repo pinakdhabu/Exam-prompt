@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Output schema for universal-notes-generator skill",
+  "properties": {
+    "notes_markdown": {
+      "type": "string",
+      "minLength": 200,
+      "description": "Complete study notes in well-formatted Markdown"
+    },
+    "format_type": {
+      "type": "string",
+      "enum": [
+        "bullet_points",
+        "numbered_paragraphs",
+        "definitions_and_notes",
+        "concept_map_text",
+        "question_answer_pairs",
+        "comparison_tables",
+        "visual_summary",
+        "formula_reference",
+        "timeline_or_sequence",
+        "flowchart_or_process",
+        "micro_notes_3column",
+        "mind_map_text"
+      ],
+      "description": "Format type of notes"
+    },
+    "topics_covered": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 3,
+      "description": "Main topics included in notes"
+    },
+    "subtopics": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Subtopics covered"
+    },
+    "estimated_read_time_mins": {
+      "type": "number",
+      "minimum": 5,
+      "description": "Estimated reading time in minutes"
+    },
+    "difficulty_level": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced", "expert"],
+      "description": "Difficulty level of notes"
+    },
+    "university_pattern": {
+      "type": "string",
+      "description": "University exam pattern these notes target"
+    },
+    "includes_diagrams": {
+      "type": "boolean",
+      "description": "Whether notes include ASCII/Mermaid diagrams"
+    },
+    "includes_formulas": {
+      "type": "boolean",
+      "description": "Whether notes include mathematical formulas"
+    },
+    "includes_examples": {
+      "type": "boolean",
+      "description": "Whether notes include worked examples"
+    },
+    "revision_time_mins": {
+      "type": "number",
+      "description": "Time needed for quick revision"
+    }
+  },
+  "required": ["notes_markdown", "format_type", "topics_covered", "estimated_read_time_mins"],
+  "additionalProperties": false
+}

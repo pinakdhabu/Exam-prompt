@@ -1,0 +1,416 @@
+{
+  "version": "1.0.0",
+  "description": "Skill dependency graph for Exam Prompt. Maps which skills depend on which, enabling automated workflow composition and multi-step task execution.",
+  "generated_at": "2026-07-02T22:54:19.256+05:30",
+  "total_skills": 30,
+  "dependencies": {
+    "universal-a-plus-answer-writer": {
+      "description": "Generates exam-ready A+ answers",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-essay-grader",
+        "universal-subject-prompt-bank"
+      ],
+      "related_skills": [
+        "universal-sppu-exam-simulator",
+        "universal-subject-prompt-bank"
+      ]
+    },
+    "universal-notes-generator": {
+      "description": "Generates syllabus-locked study notes",
+      "depends_on": [
+        "universal-document-reader"
+      ],
+      "should_run_before": [
+        "universal-flashcard-generator",
+        "universal-cheat-sheet-generator"
+      ],
+      "related_skills": [
+        "universal-mind-map-generator",
+        "universal-diagram-generator"
+      ]
+    },
+    "universal-pyq-analyzer": {
+      "description": "Analyzes PYQs and syllabus",
+      "depends_on": [
+        "universal-document-reader"
+      ],
+      "should_run_before": [
+        "universal-imp-topics-generator",
+        "universal-exam-paper-generator"
+      ],
+      "related_skills": [
+        "universal-study-planner",
+        "universal-sppu-exam-simulator"
+      ]
+    },
+    "universal-imp-topics-generator": {
+      "description": "High-probability IMP topics and preparation strategy",
+      "depends_on": [
+        "universal-pyq-analyzer"
+      ],
+      "should_run_before": [
+        "universal-study-planner",
+        "universal-last-minute-crammer"
+      ],
+      "related_skills": [
+        "universal-notes-generator"
+      ]
+    },
+    "universal-assignment-writer": {
+      "description": "Generates assignment content",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-essay-grader"
+      ],
+      "related_skills": [
+        "universal-case-study-solver"
+      ]
+    },
+    "universal-exam-paper-generator": {
+      "description": "Generates question papers",
+      "depends_on": [
+        "universal-pyq-analyzer"
+      ],
+      "should_run_before": [
+        "universal-sppu-exam-simulator"
+      ],
+      "related_skills": [
+        "universal-a-plus-answer-writer",
+        "universal-essay-grader"
+      ]
+    },
+    "universal-sppu-exam-simulator": {
+      "description": "Physical exam constraints and moderator checks",
+      "depends_on": [
+        "universal-a-plus-answer-writer"
+      ],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-exam-paper-generator"
+      ]
+    },
+    "universal-study-planner": {
+      "description": "Personalized study schedules",
+      "depends_on": [
+        "universal-imp-topics-generator"
+      ],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-last-minute-crammer",
+        "universal-notes-generator"
+      ]
+    },
+    "universal-flashcard-generator": {
+      "description": "Converts material to optimized flashcards",
+      "depends_on": [
+        "universal-notes-generator"
+      ],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-cheat-sheet-generator"
+      ]
+    },
+    "universal-cheat-sheet-generator": {
+      "description": "Generates compact reference sheets",
+      "depends_on": [
+        "universal-notes-generator"
+      ],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-formula-sheet-generator"
+      ]
+    },
+    "universal-formula-sheet-generator": {
+      "description": "Formula reference sheets",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-cheat-sheet-generator"
+      ],
+      "related_skills": [
+        "universal-code-solution-generator"
+      ]
+    },
+    "universal-case-study-solver": {
+      "description": "Solves case studies using frameworks",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-essay-grader"
+      ],
+      "related_skills": [
+        "universal-a-plus-answer-writer"
+      ]
+    },
+    "universal-essay-grader": {
+      "description": "Grades and evaluates answers",
+      "depends_on": [
+        "universal-a-plus-answer-writer"
+      ],
+      "should_run_before": [],
+      "related_skills": []
+    },
+    "universal-document-reader": {
+      "description": "Converts PDFs/docs to clean text",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-notes-generator",
+        "universal-pyq-analyzer"
+      ],
+      "related_skills": []
+    },
+    "universal-mcq-practice-generator": {
+      "description": "Generates exam-style MCQs",
+      "depends_on": [],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-notes-generator"
+      ]
+    },
+    "universal-mind-map-generator": {
+      "description": "Visual concept maps",
+      "depends_on": [],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-notes-generator",
+        "universal-diagram-generator"
+      ]
+    },
+    "universal-diagram-generator": {
+      "description": "Professional diagrams (Mermaid/D2/Graphviz)",
+      "depends_on": [],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-a-plus-answer-writer",
+        "universal-document-generator"
+      ]
+    },
+    "universal-cross-subject-mapper": {
+      "description": "Maps topics across subjects",
+      "depends_on": [
+        "universal-notes-generator"
+      ],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-mind-map-generator"
+      ]
+    },
+    "universal-code-solution-generator": {
+      "description": "Solutions for coding problems",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-essay-grader"
+      ],
+      "related_skills": [
+        "universal-a-plus-answer-writer"
+      ]
+    },
+    "universal-lab-report-writer": {
+      "description": "Laboratory report templates",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-essay-grader"
+      ],
+      "related_skills": [
+        "universal-document-generator"
+      ]
+    },
+    "universal-last-minute-crammer": {
+      "description": "Emergency exam prep",
+      "depends_on": [
+        "universal-imp-topics-generator"
+      ],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-notes-generator",
+        "universal-flashcard-generator"
+      ]
+    },
+    "universal-viva-oral-exam-prep": {
+      "description": "Oral exam and viva preparation",
+      "depends_on": [
+        "universal-a-plus-answer-writer"
+      ],
+      "should_run_before": [],
+      "related_skills": []
+    },
+    "universal-qp-fetcher": {
+      "description": "Auto-fetch question papers",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-pyq-analyzer"
+      ],
+      "related_skills": [
+        "universal-document-reader"
+      ]
+    },
+    "universal-subject-prompt-bank": {
+      "description": "Sample answers and prompts",
+      "depends_on": [],
+      "should_run_before": [],
+      "related_skills": [
+        "universal-a-plus-answer-writer"
+      ]
+    },
+    "universal-thesis-generator": {
+      "description": "Academic thesis and report structures",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-document-generator"
+      ],
+      "related_skills": [
+        "universal-lab-report-writer"
+      ]
+    },
+    "universal-document-generator": {
+      "description": "Markdown to print-ready PDF",
+      "depends_on": [],
+      "should_run_before": [],
+      "related_skills": []
+    },
+    "universal-university-adapter": {
+      "description": "Detects university and routes to correct skill",
+      "depends_on": [
+        "universal-document-reader"
+      ],
+      "should_run_before": [
+        "universal-a-plus-answer-writer",
+        "universal-notes-generator",
+        "universal-pyq-analyzer"
+      ],
+      "related_skills": []
+    },
+    "universal-session-config": {
+      "description": "Persistent session configuration",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-a-plus-answer-writer",
+        "universal-notes-generator",
+        "universal-pyq-analyzer"
+      ],
+      "related_skills": []
+    },
+    "setup-exam-prompt": {
+      "description": "First-time project configuration",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-session-config"
+      ],
+      "related_skills": [
+        "universal-university-adapter"
+      ]
+    },
+    "universal-agent-normalizer": {
+      "description": "Detects AI agent and normalizes config",
+      "depends_on": [],
+      "should_run_before": [
+        "universal-session-config"
+      ],
+      "related_skills": []
+    }
+  },
+  "workflows": {
+    "full-exam-prep": {
+      "name": "Full Exam Preparation",
+      "description": "Complete exam prep workflow: analyze PYQs → find IMP topics → create study plan → generate notes → create practice MCQs",
+      "steps": [
+        {
+          "order": 1,
+          "skill": "universal-document-reader",
+          "input": ["syllabus.pdf", "pyq_directory"],
+          "description": "Extract text from PDFs"
+        },
+        {
+          "order": 2,
+          "skill": "universal-pyq-analyzer",
+          "depends_on": [1],
+          "description": "Analyze PYQ patterns"
+        },
+        {
+          "order": 3,
+          "skill": "universal-imp-topics-generator",
+          "depends_on": [2],
+          "description": "Identify important topics"
+        },
+        {
+          "order": 4,
+          "skill": "universal-study-planner",
+          "depends_on": [3],
+          "description": "Create personalized study schedule"
+        },
+        {
+          "order": 5,
+          "skill": "universal-notes-generator",
+          "parallel_with": 4,
+          "description": "Generate study notes"
+        },
+        {
+          "order": 6,
+          "skill": "universal-mcq-practice-generator",
+          "depends_on": [5],
+          "description": "Generate practice questions"
+        }
+      ]
+    },
+    "quick-answer-prep": {
+      "name": "Quick Answer Preparation",
+      "description": "Quick workflow: analyze PYQs → generate practice answers → grade them",
+      "steps": [
+        {
+          "order": 1,
+          "skill": "universal-pyq-analyzer",
+          "input": ["pyq_directory"],
+          "description": "Analyze past papers"
+        },
+        {
+          "order": 2,
+          "skill": "universal-a-plus-answer-writer",
+          "depends_on": [1],
+          "description": "Generate practice answers"
+        },
+        {
+          "order": 3,
+          "skill": "universal-essay-grader",
+          "depends_on": [2],
+          "description": "Grade answers"
+        }
+      ]
+    },
+    "last-minute-prep": {
+      "name": "Last Minute Exam Prep",
+      "description": "Emergency preparation: 1-12 hours",
+      "steps": [
+        {
+          "order": 1,
+          "skill": "universal-imp-topics-generator",
+          "input": ["pyq_directory", "syllabus"],
+          "description": "Identify must-study topics"
+        },
+        {
+          "order": 2,
+          "skill": "universal-last-minute-crammer",
+          "depends_on": [1],
+          "description": "Generate ultra-compressed study plan"
+        },
+        {
+          "order": 3,
+          "skill": "universal-cheat-sheet-generator",
+          "parallel_with": 2,
+          "description": "Create quick reference sheet"
+        }
+      ]
+    }
+  },
+  "execution_rules": {
+    "parallel_safe": [
+      "universal-notes-generator",
+      "universal-formula-sheet-generator",
+      "universal-diagram-generator",
+      "universal-mcq-practice-generator"
+    ],
+    "must_be_serial": [
+      "universal-document-reader",
+      "universal-pyq-analyzer",
+      "universal-imp-topics-generator"
+    ]
+  }
+}
