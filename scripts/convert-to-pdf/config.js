@@ -10,6 +10,18 @@ function resolveFontFile(filenames) {
     path.join(process.env.HOME || '', 'Library/Fonts'),
     'C:\\Windows\\Fonts',
     path.join(__dirname, '../../fonts'),
+    path.join(__dirname, '../../fonts/times'),
+    path.join(__dirname, '../../fonts/dejavu'),
+    path.join(__dirname, '../../fonts/caskaydia'),
+    path.join(__dirname, '../../fonts/termes-math'),
+    path.join(__dirname, '../../fonts/noto-sans-devanagari'),
+    path.join(__dirname, '../../fonts/noto-serif-devanagari'),
+    path.join(__dirname, '../../fonts/shobhika'),
+    path.join(__dirname, '../../fonts/mukta'),
+    path.join(__dirname, '../../fonts/opendyslexic'),
+    path.join(__dirname, '../../fonts/klee'),
+    path.join(__dirname, '../../fonts/patrick-hand'),
+    path.join(__dirname, '../../fonts/chilanka'),
   ];
 
   for (const dir of possibleDirs) {
@@ -54,7 +66,19 @@ const FONTS = {
   cambriaMath: {
     family: 'Cambria Math',
     variants: {
-      normal:  { file: resolveFontFile(['cambria-math.ttf', 'Cambria-Math.ttf']), weight: 'normal', style: 'normal' },
+      normal:  { file:   resolveFontFile(['cambria-math.ttf', 'Cambria-Math.ttf']), weight: 'normal', style: 'normal' },
+    },
+  },
+  stixMath: {
+    family: 'STIX Two Math',
+    variants: {
+      normal:  { file: resolveFontFile(['STIXTwoMath-Regular.ttf']), weight: 'normal', style: 'normal' },
+    },
+  },
+  termesMath: {
+    family: 'TeX Gyre Termes Math',
+    variants: {
+      normal:  { file: resolveFontFile(['texgyretermes-math.otf']), weight: 'normal', style: 'normal' },
     },
   },
 };

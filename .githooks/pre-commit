@@ -18,15 +18,9 @@ if ! bash scripts/validate-skills.sh 2>/dev/null | grep -q "Errors:   0"; then
   exit 1
 fi
 
-echo "=== Pre-commit: Checking AGENTS.md freshness ==="
-if command -v python3 &>/dev/null; then
-  TMP_AGENTS=$(mktemp)
-  bash scripts/generate-agents-md.sh --dry-run > "$TMP_AGENTS" 2>/dev/null
-  if ! diff -q AGENTS.md "$TMP_AGENTS" &>/dev/null; then
-    echo "WARN: AGENTS.md is out of date. Run 'bash scripts/generate-agents-md.sh' to regenerate."
-  fi
-  rm -f "$TMP_AGENTS"
-fi
+echo "=== Pre-commit: Auto-syncing AGENTS.md & skills.json ==="
+bash scripts/generate-agents-md.sh 2>/dev/null
+echo "  AGENTS.md and skills.json synced"
 
 echo "=== Pre-commit: Checking registry sync ==="
 bash scripts/update-registry.sh --dry-run 2>&1 | grep -E 'NEW:|REMOVED:|UPDATED:' || echo "  Registry is in sync"

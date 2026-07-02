@@ -1,0 +1,43 @@
+---
+description: Multi-step workflow patterns — chaining skills together
+globs: *workflow*,*study*,*prepare*,*plan*,*cram*
+---
+
+# Multi-Step Workflow Patterns
+
+## Complete Semester Prep Chain
+
+```
+Step 1: Load skills/pyq-analyzer/SKILL.md        → Analyze PYQs
+Step 2: Load skills/imp-topics-generator/SKILL.md → IMP topics + time plan
+Step 3: Load skills/notes-generator/SKILL.md      → Notes for top topics
+Step 4: Load skills/mcq-practice-generator/SKILL.md → Practice MCQs
+Step 5: Load skills/flashcard-generator/SKILL.md  → Anki flashcards
+```
+
+## Emergency Prep (0-12 hours)
+
+```
+Step 1: Load skills/last-minute-crammer/SKILL.md  → Cram plan
+Step 2: Load skills/formula-sheet-generator/SKILL.md → Formula reference
+Step 3: Load skills/mind-map-generator/SKILL.md   → Rapid revision mind map
+```
+
+## Assignment Pipeline
+
+```
+Step 1: Load skills/universal-document-reader/SKILL.md → Extract from PDF
+Step 2: Load skills/assignment-writer/SKILL.md     → Write complete assignment
+Step 3: Load skills/document-generator/SKILL.md    → Convert to PDF
+```
+
+## Viva / Oral Exam Prep
+
+```
+Step 1: Load skills/viva-oral-exam-prep/SKILL.md  → Examiner simulation
+Step 2: Load skills/subject-prompt-bank/SKILL.md   → Subject-specific Q&A
+```
+
+## Key Rule
+
+Always read the FULL SKILL.md before generating output. The skill's instructions take precedence over general knowledge.

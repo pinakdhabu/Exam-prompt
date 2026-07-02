@@ -156,7 +156,7 @@ class PdfGenerator {
           footerTemplate:
             '<style>' + _footerFontCss() + '</style>' +
             '<div style="font-family:\'TNR\',\'Times New Roman\',Times,serif;width:100%;display:flex;align-items:baseline;padding:0 0.7cm;">' +
-            '<span style="font-size:17pt;font-weight:bold;">' + this.paperIdentifier + '</span>' +
+            '<span style="font-size:12pt;font-weight:bold;">' + this.paperIdentifier + '</span>' +
             '<span style="flex:1;text-align:center;font-size:12pt;" class="pageNumber"></span></div>',
         }));
 

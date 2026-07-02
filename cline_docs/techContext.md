@@ -8,7 +8,7 @@ exam-prompt/
 ├── CLAUDE.md                    # Claude Code hub
 ├── AGENT-GUIDE.md               # Universal agent instructions
 │
-├── skills/                      # 24 SKILL.md modules
+├── skills/                      # 30 SKILL.md modules
 │   ├── answer-writer/           # Exam answer pipeline (15 phases)
 │   ├── notes-generator/         # 12+ note formats
 │   ├── pyq-analyzer/            # 13+ analysis types

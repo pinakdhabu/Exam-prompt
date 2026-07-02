@@ -1,0 +1,46 @@
+---
+description: Self-validation quality gates — verify output before presenting to user
+globs: *answer*,*notes*,*solution*,*mcq*,*flashcard*
+---
+
+# Quality Gate — Self-Validation
+
+Before presenting any output, verify these checkpoints:
+
+## ✅ Answer Quality Gates
+
+1. **Bold check**: Every technical term bolded (**term**) on first use?
+2. **Preamble check**: No "Here is your answer", "In conclusion", "Firstly/Secondly"?
+3. **Structure check**: Correct for mark level? (2-mark=5-6 lines, 4-mark=12-14, 6-mark=18-22)
+4. **Diagram check**: Does a Mermaid diagram belong here? (comparisons, architectures, flows)
+5. **Table check**: Comparisons must use pipe tables (Basis | X | Y), min 3 rows
+6. **Numerical check**: Boxed final answer? Given→formula→stepwise→result?
+7. **Completeness check**: Definition + points + diagram + example + closing (for 4+ marks)
+
+## ✅ Notes Quality Gates
+
+1. Format matches subject type? (DBMS → tables, Algorithms → flowcharts)
+2. Mnemonic section included?
+3. Spaced repetition schedule included?
+
+## ✅ MCQ Quality Gates
+
+1. Correct answer clearly marked?
+2. Wrong options are plausible (not obviously wrong)?
+3. Explanation provided for each answer?
+4. Bloom's level appropriate for mark level?
+
+## ✅ Infrastructure Tools (Optional)
+
+For rigorous validation, run after generating:
+
+```bash
+# Validate output against schema
+node -e "const {OutputValidator} = require('./infrastructure/output-validator'); console.log('Validator loaded:', new OutputValidator().getSchemas())"
+
+# Check available schemas
+npm run validate:output
+
+# Check infrastructure health
+npm run infra:status
+```

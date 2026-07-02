@@ -195,6 +195,79 @@ check_formatting() {
   fi
 }
 
+# ─── Check 9: YAML frontmatter schema via Python yaml ────
+check_frontmatter_schema() {
+  local dir="$1" name skill_file
+  name=$(basename "$dir")
+  skill_file="$dir/SKILL.md"
+
+  local result
+  local py_script
+  py_script=$(cat << 'PYEOF'
+import sys, yaml, re, os
+
+with open(os.environ['SKILL_FILE']) as f:
+    content = f.read()
+parts = content.split('---', 2)
+if len(parts) < 3:
+    print('FAIL:no frontmatter delimiters')
+    sys.exit(1)
+try:
+    data = yaml.safe_load(parts[1])
+except Exception as e:
+    print(f'FAIL:YAML parse: {e}')
+    sys.exit(1)
+if not isinstance(data, dict):
+    print('FAIL:not a YAML dict')
+    sys.exit(1)
+
+errors = []
+
+if 'name' not in data or not isinstance(data['name'], str) or not data['name'].strip():
+    errors.append('FAIL:missing or empty name')
+elif not re.match(r'^[a-z][a-z0-9]*(-[a-z0-9]+)*$', data['name']):
+    errors.append("FAIL:name not kebab-case: '{n}'".format(n=data['name']))
+
+if 'description' not in data:
+    errors.append('FAIL:missing description')
+elif not isinstance(data['description'], str) or not data['description'].strip():
+    errors.append('FAIL:empty description')
+elif len(data['description'].strip()) < 20:
+    errors.append("WARN:description short ({n} chars)".format(n=len(data['description'].strip())))
+
+if 'version' in data:
+    v = str(data['version'])
+    if not re.match(r'^\d+\.\d+\.\d+$', v):
+        errors.append("WARN:version not semver: '{v}'".format(v=v))
+
+allowed = {'name', 'description', 'version', 'trigger'}
+for field in data:
+    if field not in allowed:
+        errors.append("WARN:unknown field '{f}'".format(f=field))
+
+if errors:
+    for e in errors:
+        print(e)
+    sys.exit(1)
+print('OK')
+PYEOF
+)
+  result=$(SKILL_FILE="$skill_file" python3 -c "$py_script" 2>/dev/null) || true
+
+  if [ -z "$result" ]; then
+    return 0
+  fi
+
+  while IFS= read -r line; do
+    [ -z "$line" ] && continue
+    case "$line" in
+      OK) record "OK" "$name" "frontmatter schema valid" ;;
+      FAIL:*) record "FAIL" "$name" "${line#FAIL:}" ;;
+      WARN:*) record "WARN" "$name" "${line#WARN:}" ;;
+    esac
+  done <<< "$result"
+}
+
 # ─── Check 6: No orphan directories ─────────────────────
 check_orphans() {
   local orphans=0
@@ -274,6 +347,7 @@ validate_one() {
   local dir="$1"
   check_skill_file_exists "$dir" || return
   check_frontmatter "$dir" || true
+  check_frontmatter_schema "$dir" || true
   check_directory_name "$dir" || true
   check_cross_references "$dir" || true
   check_formatting "$dir" || true

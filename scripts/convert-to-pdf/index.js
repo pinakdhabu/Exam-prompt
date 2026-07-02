@@ -99,6 +99,25 @@ async function convertMdToPdf(mdPath, pdfPath, options = {}) {
             margin-bottom: ${4 * scale}pt !important;
             padding: ${6 * scale}pt ${10 * scale}pt !important;
           }
+          .question-main {
+            padding-left: calc(56.8pt * var(--scale-factor)) !important;
+            padding-right: calc(30pt * var(--scale-factor)) !important;
+            text-indent: calc(-56.8pt * var(--scale-factor)) !important;
+          }
+          .question-sub {
+            padding-left: calc(56.8pt * var(--scale-factor)) !important;
+            padding-right: calc(30pt * var(--scale-factor)) !important;
+            text-indent: calc(-28.4pt * var(--scale-factor)) !important;
+          }
+          .q-label, .sub-label {
+            width: calc(28.4pt * var(--scale-factor)) !important;
+          }
+          ul, ol {
+            padding-left: calc(28.4pt * var(--scale-factor)) !important;
+          }
+          .question-sub + table, .question-sub + pre, .question-sub + ul, .question-sub + ol {
+            margin-left: calc(56.8pt * var(--scale-factor)) !important;
+          }
           table {
             margin-top: ${6 * scale}pt !important;
             margin-bottom: ${6 * scale}pt !important;

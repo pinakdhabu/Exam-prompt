@@ -1,0 +1,46 @@
+---
+description: Exam answer formatting rules — bold terms, diagrams, tables, structure
+globs: *answer*,*question*,*marks*,*solution*,*sppu*
+---
+
+# Exam Answer Formatting Rules
+
+## Core Answer Structure (by marks)
+
+| Marks | Lines | Components |
+|-------|-------|------------|
+| 2     | 5-6   | 2-3 facts or definition + 1 point |
+| 4     | 12-14 | Definition + 3-4 points + closing |
+| 6     | 18-22 | Definition + 5-6 points + diagram + closing |
+| 10    | 30-38 | Definition + 8-10 points + diagram(s) + example(s) + closing |
+
+## Formatting Rules
+
+1. **Bold every technical term** on first use — helps examiners spot keywords
+2. **No preamble** — never say "Here is your answer", "In conclusion", "Firstly/Secondly"
+3. **Numbered points** for body content (1., 2., 3.)
+4. **Tables** for comparisons (Basis | X | Y format, minimum 3 rows + summary)
+5. **Boxed answers** for numerical results (use math or clearly mark the answer)
+6. **Mermaid diagrams** for architecture, flowcharts, ER diagrams
+7. **Code blocks** with language tags: ```sql, ```python, ```java, ```mermaid
+
+## Command Word Mapping
+
+| Command | Action |
+|---------|--------|
+| Define/State | 1-2 lines, precise definition, no elaboration |
+| Explain/Describe | Definition + 3-6 points + closing |
+| Compare/Differentiate | Table (Basis \| X \| Y), min 3 rows + closing |
+| Derive/Prove | Step-by-step, name each formula, box final result |
+| Solve/Calculate | Given → formula → stepwise → boxed answer |
+| Design/Develop | Requirements + decisions + architecture + justification |
+| Diagram | Mermaid syntax, all nodes labelled |
+
+## Bloom's Level Depth
+
+- L1 (Remember): Definition + 1-2 facts
+- L2 (Understand): Definition + 3-4 points + example
+- L3 (Apply): Definition + steps + application + example
+- L4 (Analyze): Break down + compare + relate + evaluate
+- L5 (Evaluate): Criteria + compare + judge + justify
+- L6 (Create): Design + combine + develop + innovate

@@ -1,7 +1,6 @@
 {
   "name": "Exam-Prompt — AI Exam Preparation System",
-  "description": "Universal skill hub for AI-powered exam preparation. 24 skills, any university worldwide.",
-  "version": "0.0.0",
+  "description": "Universal skill hub for AI-powered exam preparation. 30+ skills, any university worldwide. Pre-configured for SPPU, adaptable globally.",
 
   "skills": {
     "autoLoad": true,
@@ -12,11 +11,11 @@
 
   "agents": {
     "answer-writer": {
-      "description": "Generates A+ exam answers for any university",
+      "description": "Generates A+ exam answers for any university — all question types, all mark levels",
       "skill": "skills/answer-writer/SKILL.md"
     },
     "notes-generator": {
-      "description": "Creates exam-ready notes in 12+ formats",
+      "description": "Creates exam-ready notes in 12+ formats (Cornell, Outline, Flowchart, Q&A, etc.)",
       "skill": "skills/notes-generator/SKILL.md"
     },
     "pyq-analyzer": {
@@ -24,8 +23,29 @@
       "skill": "skills/pyq-analyzer/SKILL.md"
     },
     "imp-topics": {
-      "description": "Generates high-probability exam topics with time plans",
+      "description": "Generates high-probability exam topics with time-based preparation plans",
       "skill": "skills/imp-topics-generator/SKILL.md"
+    },
+    "exam-paper-generator": {
+      "description": "Generates full question papers for 11+ university patterns",
+      "skill": "skills/exam-paper-generator/SKILL.md"
+    },
+    "flashcard-generator": {
+      "description": "Converts study material to Anki/Quizlet/CSV flashcards with SRS metadata",
+      "skill": "skills/flashcard-generator/SKILL.md"
+    },
+    "study-planner": {
+      "description": "Generates personalized day-by-day study schedules with spaced repetition",
+      "skill": "skills/study-planner/SKILL.md"
     }
+  },
+
+  "hooks": {
+    "pre-commit": [
+      "bash scripts/validate-skills.sh"
+    ],
+    "pre-prompt": [
+      "echo 'Read AGENTS_LEARNING.md for cross-session context before starting work.'"
+    ]
   }
 }

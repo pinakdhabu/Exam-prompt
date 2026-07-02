@@ -68,13 +68,11 @@
     "sync:registry": "bash scripts/update-registry.sh",
     "sync:registry:check": "bash scripts/update-registry.sh --dry-run",
     "scaffold:university": "bash scripts/generate-university-scaffold.sh",
-
-    "test": "node scripts/test-all.js",
-    "test:win": "node scripts/test-all.js"
-
-    "test": "bash scripts/validate-skills.sh && bash scripts/update-registry.sh --dry-run"
-
-    "test": "bash scripts/validate-skills.sh && bash scripts/update-registry.sh --dry-run",
+    "test": "node scripts/integrity-check.js",
+    "test:win": "node scripts/integrity-check.js",
+    "integrity": "node scripts/integrity-check.js",
+    "fonts:install": "bash scripts/download-fonts.sh",
+    "fonts:status": "node -e \"const f=require('fs'),p=require('path');const base=p.join(__dirname,'fonts');const dirs=f.readdirSync(base).filter(d=>f.statSync(p.join(base,d)).isDirectory());dirs.forEach(d=>{const files=f.readdirSync(p.join(base,d));console.log(d+': '+files.length+' files ('+(files.reduce((s,ff)=>s+f.statSync(p.join(base,d,ff)).size,0)/1024).toFixed(0)+'KB)')});\"",
     "cache:stats": "node -e \"const {cacheManager} = require('./infrastructure/cache-manager'); console.log(JSON.stringify(cacheManager.stats(), null, 2));\"",
     "cache:clear": "node -e \"const {cacheManager} = require('./infrastructure/cache-manager'); cacheManager.clear(); console.log('Cache cleared.');\"",
     "session:view": "node -e \"const {sessionContext} = require('./infrastructure/session-context'); console.log(sessionContext.toString());\"",
@@ -82,8 +80,7 @@
     "router:test": "node infrastructure/skill-router.js",
     "validate:output": "node -e \"const {OutputValidator} = require('./infrastructure/output-validator'); const v = new OutputValidator(); console.log('Available schemas:', v.getSchemas());\"",
     "infra:status": "echo '=== Exam Prompt Infrastructure Status ===' && npm run cache:stats && npm run session:view"
-
-  }
+  },
   "dependencies": {
     "ajv": "^8.20.0",
     "marked": "^15.0.12",

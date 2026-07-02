@@ -139,8 +139,6 @@ function generateHeaderHtml(meta) {
     // --- Instructions ---
     instHtml + '\n' +
     '\n' +
-    // --- P.T.O. only ---
-    '<div style="text-align:right;font-size:12pt;font-style:italic;margin:6pt 0 4pt 0;">P .T.O.</div>\n' +
     '</div>'
   );
 }
@@ -169,8 +167,8 @@ function getCss(useMath, fontFaces) {
     ${fontFaces}
     body {
       font-family: 'TNR', 'Times New Roman', serif;
-      font-size: 10.5pt;
-      line-height: 1.4;
+      font-size: 11pt;
+      line-height: 1.35;
       color: #000;
       margin: 0;
       padding: 0;
@@ -188,32 +186,41 @@ function getCss(useMath, fontFaces) {
     /* Main questions (Q1) a)) - Q1) at 0, a) at 28.4pt, continuation at 56.8pt */
     .question-main {
       padding-left: 56.8pt;
+      padding-right: 30pt;
       text-indent: -56.8pt;
       position: relative !important;
     }
     .question-main strong.q-label {
+      font-style: italic;
       display: inline-block;
       width: 28.4pt;
-      font-style: italic;
+    }
+    .sub-label {
+      display: inline-block;
+      width: 28.4pt;
+      font-weight: normal;
     }
     /* Sub-questions (b), c)) - b) at 28.4pt, continuation at 56.8pt */
     .question-sub {
       padding-left: 56.8pt;
+      padding-right: 30pt;
       text-indent: -28.4pt;
       position: relative !important;
     }
     /* Indent elements following sub-questions */
-    .question-sub + table, .question-sub + pre {
+    .question-sub + table, .question-sub + pre, .question-sub + ul, .question-sub + ol {
       margin-left: 56.8pt !important;
     }
     strong{font-weight:bold}
 
-    /* Marks [N] — floated right to align perfectly on the right margin of the first line */
+    /* Marks [N] — positioned absolutely on the right to align perfectly on same baseline */
     .marks {
       font-weight: bold;
       font-size: 12pt;
       color: #000;
-      float: right;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
 
     /* OR separator — centered bold */
@@ -225,7 +232,7 @@ function getCss(useMath, fontFaces) {
     td{padding:3pt 10pt;border:1pt solid #000}
 
     /* Lists */
-    ul,ol{margin:3pt 0;padding-left:20pt}
+    ul,ol{margin:3pt 0;padding-left:28.4pt}
     li{margin:1pt 0}
 
     /* Code blocks — thin border, no background */

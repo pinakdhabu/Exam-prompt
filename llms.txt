@@ -1,0 +1,69 @@
+# Exam Prompt
+
+> Universal AI-powered exam preparation skill hub for any university worldwide. 30+ skills turn any AI coding agent into a personal exam tutor. Pre-configured for SPPU Computer Engineering. Adapts to any university via syllabus PDF input.
+
+## Core structure
+
+- `skills/<name>/SKILL.md` — Complete skill instructions (the "brain"). Read the relevant SKILL.md before generating any exam output.
+- `AGENTS.md` — XML skill registry with all 30+ skills. Auto-discovered by Cursor, Windsurf, OpenCode, and Claude Code.
+- `CLAUDE.md` — Quick-reference skill table with key paths and commands.
+- `AGENT-GUIDE.md` — Full agent onboarding: skill discovery, multi-step workflows, platform configs for all agents.
+- `ARCHITECTURE.md` — Canonical architecture overview (layers, data flow, design decisions).
+- `AGENTS_LEARNING.md` — Cross-session learning log. Read before starting new work to avoid past mistakes.
+- `examples/<year>/<sem>/<subject>/` — Sample papers + solutions organized by year/semester/subject.
+- `universities/<UNIVERSITY>/` — Per-university configs, branches, patterns, syllabus.
+- `scripts/` — Utility scripts (validate, fetch PYQs, generate, convert PDFs).
+- `infrastructure/` — Agent runtime tools: skill-router, output-validator, session-context, cache-manager.
+- `deps/` — Dependency resolution system (`deps/resolve.sh`).
+- `skills-dependency-graph.json` — Which skills depend on which (automated workflow composition).
+- `pyq-index/` — Index of 563 SPPU previous year question papers (actual PDFs not in repo).
+- `docs/` — GitHub Pages website (landing, skill browser, app).
+
+## How agents should use this repo
+
+1. User asks an exam question → find the right skill in `AGENTS.md` → read its `SKILL.md` → follow instructions step-by-step.
+2. Optionally use `infrastructure/skill-router.js` for automatic skill detection from query text.
+3. Validate output quality using checkpoints in `.cursor/rules/004-quality-gate.mdc`.
+4. Default university: SPPU 2019 Pattern (6 units, 4 OR pairs, 70 marks, 2.5 hrs). Default generic: 5 units, 100 marks, 3 hrs.
+5. Never invent university patterns — use `skills/universal-university-adapter/SKILL.md` for unknown patterns.
+6. Never edit SKILL.md files unless explicitly asked.
+7. Bold technical terms on first use in exam answers.
+8. Read `AGENTS_LEARNING.md` before starting — it contains lessons from past sessions.
+
+## Infrastructure tools (agent runtime)
+
+| Tool | Command | Purpose |
+|------|---------|---------|
+| Skill Router | `node infrastructure/skill-router.js` | Auto-detect skill from user query |
+| Output Validator | `npm run validate:output` | Validate output against 5 skill schemas (AJV) |
+| Session Context | `npm run session:view` | View persistent user profile |
+| Cache Manager | `npm run cache:stats` | View cache statistics |
+| Infra Status | `npm run infra:status` | Full infrastructure health check |
+
+## Quick start commands
+
+- `make validate` — Validate all skill structures
+- `make quickstart` — Install deps + validate (one command)
+- `bash deps/resolve.sh` — Check and install project dependencies
+- `node scripts/fetch-qp.js <subject>` — Download PYQs from web
+- `node -e "require('./package.json')"` — Verify package.json is valid JSON
+
+## Agent config files (one per platform)
+
+- Claude Code: `CLAUDE.md`, `.claude/settings.json`, `.claudeignore`
+- Cursor: `.cursorrules`, `.cursor/rules/*.mdc`
+- Windsurf: `.windsurfrules`
+- Aider: `.aider.conf.yml`, `.aiderignore`
+- Cline: `.clinerules`, `cline_docs/`
+- GitHub Copilot: `.github/copilot-instructions.md`
+- Continue.dev: `.continue/config.yaml`
+- OpenCode: `.opencode.jsonc` (auto-reads AGENTS.md)
+
+## Optional
+
+- `USE-CASES.md` — 33 real-world multi-step workflow examples
+- `CONTRIBUTING.md` — How to add sample papers and skills
+- `SYLLABUS.md` — Official SPPU syllabus unit-wise reference
+- `ARCHITECTURE.md` — Canonical architecture with diagrams
+- `docs/ci-cd-reference.md` — CI/CD pipeline documentation
+- `docs/mcp-server-setup.md` — Expose as MCP server

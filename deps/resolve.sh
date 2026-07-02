@@ -210,7 +210,7 @@ AGENT_CONFIGS=$(python3 -c "
 import json
 configs = [
     {'file': 'AGENTS.md', 'agent': 'universal', 'purpose': 'Skill discovery for all AI agents', 'present': __import__('os').path.exists('AGENTS.md')},
-    {'file': 'AGENT-GUIDE.md', 'agent': 'universal', 'purpose': 'Universal agent instructions with 24 skills table', 'present': __import__('os').path.exists('AGENT-GUIDE.md')},
+    {'file': 'AGENT-GUIDE.md', 'agent': 'universal', 'purpose': 'Universal agent instructions with 30 skills table', 'present': __import__('os').path.exists('AGENT-GUIDE.md')},
     {'file': 'CLAUDE.md', 'agent': 'claude-code', 'purpose': 'Claude Code project instructions', 'present': __import__('os').path.exists('CLAUDE.md')},
     {'file': '.claude/settings.json', 'agent': 'claude-code', 'purpose': 'Claude Code project settings', 'present': __import__('os').path.exists('.claude/settings.json')},
     {'file': '.cursor/rules/000-global.mdc', 'agent': 'cursor', 'purpose': 'Cursor global rules', 'present': __import__('os').path.exists('.cursor/rules/000-global.mdc')},

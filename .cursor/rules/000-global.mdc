@@ -6,7 +6,7 @@ globs:
 # Exam-Prompt — Universal Agent Rules
 
 ## Project Identity
-This is a **universal skill hub** that transforms any AI coding agent into a personal exam tutor for **any university worldwide**. It contains 24 reusable skills in `skills/<name>/SKILL.md` format.
+This is a **universal skill hub** that transforms any AI coding agent into a personal exam tutor for **any university worldwide**. It contains 30 reusable skills in `skills/<name>/SKILL.md` format.
 
 ## Key Files
 - `AGENTS.md` — XML registry of all available skills (auto-discovered by agents)
@@ -44,7 +44,7 @@ This is a **universal skill hub** that transforms any AI coding agent into a per
 
 ## Architecture
 ```
-skills/                      # 24 skill modules (SKILL.md format)
+skills/                      # 30 skill modules (SKILL.md format)
 ├── answer-writer/           # A+ answer generator
 ├── notes-generator/         # 12+ note formats
 ├── pyq-analyzer/            # PYQ analysis

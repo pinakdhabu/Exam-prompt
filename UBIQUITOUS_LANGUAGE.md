@@ -6,7 +6,7 @@
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
 | **Skill**              | A self-contained `SKILL.md` file that instructs an AI agent how to perform a specific exam task (answer writing, note generation, PYQ analysis, etc.) | Skill module, agent skill, prompt file |
 | **SKILL.md**           | The canonical format for a skill — Markdown file with YAML frontmatter containing `name`, `description`, and step-by-step agent instructions          | Skill file, agent instructions         |
-| **Exam Prompt**        | The overall system and repository name — a collection of 24 university-agnostic AI skills for exam preparation                                        | N/A                                    |
+| **Exam Prompt**        | The overall system and repository name — a collection of 30 university-agnostic AI skills for exam preparation                                        | N/A                                    |
 | **Agent**              | Any AI coding assistant (Claude Code, Cursor, ChatGPT, Gemini, etc.) that reads and executes `SKILL.md` instructions                                  | AI agent, LLM, assistant               |
 | **University Adapter** | The entry-point skill that auto-detects a user's university from PDFs, URLs, or descriptions and routes to the correct universal skill                | Adapter, detection skill               |
 
@@ -51,7 +51,7 @@
 | **Gemini Gem**      | One-click deployment of a skill as a Google Gemini Gem — no setup, no PROMPT.md paste required                                  | Gem, Gemini deployment                       |
 | **D2 Diagram**      | Architecture diagram rendered from `.d2` source files using the `d2` CLI with `elk` layout — auto-rendered via GitHub Actions   | D2 source, architecture SVG                  |
 | **Session Profile** | A persistent JSON configuration (`~/.exam-prompt/profile.json`) storing university, subject, exam pattern, and user preferences | Config profile, session config, user profile |
-| **Skill Directory** | The `skills/` directory containing all 24 `SKILL.md` files, one per exam task                                                   | Skills folder, skill modules                 |
+| **Skill Directory** | The `skills/` directory containing all 30 `SKILL.md` files, one per exam task                                                   | Skills folder, skill modules                 |
 
 ## Relationships
 

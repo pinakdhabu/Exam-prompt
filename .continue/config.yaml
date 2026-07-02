@@ -2,7 +2,7 @@
 # https://docs.continue.dev/customize/config
 
 name: exam-prompt
-description: Universal AI-powered exam preparation system for any university worldwide
+description: Universal AI-powered exam preparation system — 30 skills, any university worldwide
 
 # Model configuration
 models:
@@ -21,55 +21,103 @@ tabAutocompleteModel:
   provider: mistral
   model: codestral-latest
 
-# Slash commands
+# Slash commands — one per skill for quick access
 slashCommands:
   - name: answer
     description: Write an A+ exam answer
     prompt: |
       Read skills/answer-writer/SKILL.md and follow its instructions to answer this question:
       {{input}}
-    params:
-      skill: answer-writer
 
   - name: notes
     description: Generate exam-ready notes
     prompt: |
-      Read skills/notes-generator/SKILL.md and generate notes for:
-      {{input}}
-    params:
-      skill: notes-generator
+      Read skills/notes-generator/SKILL.md and generate notes for: {{input}}
 
   - name: pyq
     description: Analyze previous year question papers
     prompt: |
-      Read skills/pyq-analyzer/SKILL.md and analyze these papers:
-      {{input}}
-    params:
-      skill: pyq-analyzer
+      Read skills/pyq-analyzer/SKILL.md and analyze these papers: {{input}}
 
   - name: imp
     description: Generate IMP topics with study plan
     prompt: |
-      Read skills/imp-topics-generator/SKILL.md and generate IMP topics:
-      {{input}}
-    params:
-      skill: imp-topics-generator
+      Read skills/imp-topics-generator/SKILL.md and generate IMP topics for: {{input}}
 
   - name: mcq
     description: Generate practice MCQs
     prompt: |
-      Read skills/mcq-practice-generator/SKILL.md and generate MCQs for:
-      {{input}}
-    params:
-      skill: mcq-practice-generator
+      Read skills/mcq-practice-generator/SKILL.md and generate MCQs for: {{input}}
+
+  - name: flashcards
+    description: Generate Anki/Quizlet flashcards
+    prompt: |
+      Read skills/flashcard-generator/SKILL.md and create flashcards for: {{input}}
+
+  - name: study-plan
+    description: Generate a study schedule
+    prompt: |
+      Read skills/study-planner/SKILL.md and create a study plan for: {{input}}
 
   - name: cram
     description: Emergency last-minute cram plan
     prompt: |
-      Read skills/last-minute-crammer/SKILL.md and create cram plan:
-      {{input}}
-    params:
-      skill: last-minute-crammer
+      Read skills/last-minute-crammer/SKILL.md and create a cram plan for: {{input}}
+
+  - name: assignment
+    description: Write a complete assignment
+    prompt: |
+      Read skills/assignment-writer/SKILL.md and write an assignment on: {{input}}
+
+  - name: exam-paper
+    description: Generate a full exam question paper
+    prompt: |
+      Read skills/exam-paper-generator/SKILL.md and generate a question paper for: {{input}}
+
+  - name: viva
+    description: Prepare for viva / oral exam
+    prompt: |
+      Read skills/viva-oral-exam-prep/SKILL.md and prepare me for a viva on: {{input}}
+
+  - name: lab-report
+    description: Write a lab report
+    prompt: |
+      Read skills/lab-report-writer/SKILL.md and write a lab report for: {{input}}
+
+  - name: formula-sheet
+    description: Generate a formula sheet
+    prompt: |
+      Read skills/formula-sheet-generator/SKILL.md and create a formula sheet for: {{input}}
+
+  - name: mind-map
+    description: Generate a mind map
+    prompt: |
+      Read skills/mind-map-generator/SKILL.md and create a mind map for: {{input}}
+
+  - name: case-study
+    description: Solve a case study
+    prompt: |
+      Read skills/case-study-solver/SKILL.md and solve this case study: {{input}}
+
+  - name: grade
+    description: Grade an answer against rubric
+    prompt: |
+      Read skills/essay-grader/SKILL.md and grade this answer: {{input}}
+
+  - name: simulate
+    description: Run a full exam hall simulation
+    prompt: |
+      Read skills/sppu-exam-simulator/SKILL.md + skills/answer-writer/SKILL.md and simulate: {{input}}
+
+  - name: detect-uni
+    description: Detect university from PDFs or description
+    prompt: |
+      Read skills/universal-university-adapter/SKILL.md and detect the university: {{input}}
+
+  - name: cross-map
+    description: Map connections between subjects
+    prompt: |
+      Read skills/cross-subject-mapper/SKILL.md and map connections for: {{input}}
 
 # Context providers
 contextProviders:
@@ -79,7 +127,11 @@ contextProviders:
   - name: folder
     params:
       path: skills/
-      description: All exam preparation skills
+      description: All 30 exam preparation skills
+  - name: file
+    params:
+      path: llms.txt
+      description: Quick project map
   - name: terminal
 
 # Tab context

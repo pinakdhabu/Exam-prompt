@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.env
+.venv/
+
+# Generated / build artifacts
+generated-examples/
+docs/images/pdf-previews/
+*.pdf
+*.png
+*.svg
+
+# Large directories
+.cache/
+.turbo/
+.next/
+dist/
+build/
+node_scripts/
+
+# Git internals
+.git/
+.gitkeep
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# IDE / editor detritus
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Agent state
+.claude/

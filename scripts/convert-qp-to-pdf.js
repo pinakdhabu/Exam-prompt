@@ -12,6 +12,9 @@ function resolveFont(filenames) {
     '/System/Library/Fonts',
     path.join(process.env.HOME || '', 'Library/Fonts'),
     'C:\\Windows\\Fonts',
+    path.join(__dirname, '../fonts'),
+    path.join(__dirname, '../fonts/times'),
+    path.join(__dirname, '../fonts/dejavu'),
   ];
   for (const dir of possibleDirs) {
     for (const name of filenames) {

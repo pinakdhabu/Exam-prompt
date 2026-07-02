@@ -1,0 +1,35 @@
+# Dependencies — never send these to the model
+node_modules/
+__pycache__/
+*.pyc
+.env
+.venv/
+
+# Generated / build artifacts — not source
+generated-examples/
+docs/images/pdf-previews/
+*.pdf
+*.png
+*.svg
+node_scripts/
+
+# Large directories — too many files, too little signal
+.cache/
+.turbo/
+.next/
+dist/
+build/
+
+# Git internals
+.git/
+.gitkeep
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# IDE / editor detritus
+.idea/
+.vscode/
+*.swp
+*.swo

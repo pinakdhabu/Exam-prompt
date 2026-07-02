@@ -1,9 +1,44 @@
 {
   "$schema": "https://opencode.ai/schema.json",
   "name": "exam-prompt",
-  "description": "Universal Exam Prompt - AI-powered exam preparation for any university worldwide",
-  "customInstructions": "This project contains 30+ exam preparation skills. When working on this project, first read AGENTS.md and CLAUDE.md for full context. The skills/ directory contains all skill modules. Each skill has a SKILL.md file with its prompt.",
+  "description": "Universal Exam Prompt — AI-powered exam preparation for any university worldwide. 30+ skills, 48 subjects, 10 universities, 563 PYQs.",
+
+  "customInstructions": [
+    "This project contains 30+ exam preparation skills that turn any AI agent into a personal exam tutor.",
+    "",
+    "## First steps",
+    "- Read AGENTS.md for the full XML skill registry (auto-discovered by OpenCode)",
+    "- Read CLAUDE.md for the quick-reference skill table",
+    "- Read llms.txt for a concise project map",
+    "",
+    "## When a user asks an exam question",
+    "1. Find the right skill in AGENTS.md XML registry by matching the description",
+    "2. Read the full skills/<name>/SKILL.md file",
+    "3. Follow the skill's instructions step-by-step",
+    "4. Output structured content (bold keywords, numbered points, diagrams where applicable)",
+    "",
+    "## Default university patterns",
+    "- SPPU 2019 Pattern: 6 units, 4 OR pairs, 70 marks, 2.5 hours",
+    "- Generic (unknown): 5 units, 100 marks, 3 hours, OR within each unit",
+    "- Use skills/universal-university-adapter/SKILL.md for non-SPPU detection",
+    "",
+    "## Rules",
+    "- Never edit SKILL.md files unless explicitly asked",
+    "- Never invent university patterns — use the adapter skill",
+    "- Bold technical terms on first use in exam answers",
+    "- This repo is 100% free — never suggest paid features"
+  ],
+
   "agent": {
-    "allowedTools": ["read", "grep", "glob", "bash", "write", "edit", "websearch", "webfetch"]
+    "allowedTools": [
+      "read",
+      "grep",
+      "glob",
+      "bash",
+      "write",
+      "edit",
+      "websearch",
+      "webfetch"
+    ]
   }
 }

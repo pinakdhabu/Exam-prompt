@@ -28,12 +28,12 @@ class HtmlRenderer {
   render(markdownHtml) {
     let html = markdownHtml
       .replace(/\[(\d+)\]/g, '<span class="marks">[$1]</span>')
-      .replace(/<p>\*\*OR\*\*<\/p>/g, '<div class="question-or">OR</div>')
+      .replace(/<p><strong>OR<\/strong><\/p>/g, '<div class="question-or">OR</div>')
       // Q1) a) -> Q1) is bold-italic, a) is regular, add class question-main
-      .replace(/<p><strong>Q(\d+)\)\s+([a-z])\)<\/strong>/g, '<p class="question-main"><strong class="q-label">Q$1)</strong> $2)')
+      .replace(/<p><strong>Q(\d+)\)\s+([a-z])\)<\/strong>/g, '<p class="question-main"><strong class="q-label">Q$1)</strong><span class="sub-label">$2)</span>')
       // b) -> wrapped in class question-sub, regular font weight
-      .replace(/<p><strong>([b-z])\)<\/strong>/g, '<p class="question-sub">$1)')
-      .replace(/<p>\*\*\* End of Paper \*\*\*<\/p>/g, '<div style="text-align:center;font-size:16pt;margin:24pt 0 12pt 0;letter-spacing:12px;">⧓ ⧓ ⧓</div>')
+      .replace(/<p><strong>([b-z])\)<\/strong>/g, '<p class="question-sub"><span class="sub-label">$1)</span>')
+      .replace(/<p>\*\*\* End of Paper \*\*\*<\/p>/g, '<div style="text-align:center;font-size:16pt;margin:24pt 0 12pt 0;letter-spacing:6px;">ⓘ ⓘ ⓘ ⓘ</div>')
       .replace(/<pre><code>(\[ANSWER BOX\][\s\S]*?)<\/code><\/pre>/g, '<div class="answer-box"><pre><code>$1</code></pre></div>')
       // Regex to extract marks span from the end and place it at the front of paragraphs
       .replace(/<p([^>]*)>(.*?)(<span class="marks">\[\d+\]<\/span>)(.*?)<\/p>/g, '<p$1>$3$2$4</p>');
@@ -61,7 +61,7 @@ class HtmlRenderer {
 
   _fontFaces() {
     const faces = [];
-    for (const key of ['tnr', 'caskaydia', 'cambria', 'cambriaMath']) {
+    for (const key of ['tnr', 'caskaydia', 'cambria', 'cambriaMath', 'stixMath', 'termesMath']) {
       const cfg = FONTS[key];
       if (!cfg) continue;
       for (const v of Object.values(cfg.variants)) {

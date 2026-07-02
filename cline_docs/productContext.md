@@ -7,7 +7,7 @@ answers. Most study methods are passive (rereading, highlighting) and ineffectiv
 AI coding agents have the capability to generate perfect exam answers, but they need domain-specific
 instructions to do so.
 
-This project bridges that gap by providing **24 pre-built skill modules** that any AI agent can load
+This project bridges that gap by providing **30 pre-built skill modules** that any AI agent can load
 and follow. Each skill contains expert-level instructions for a specific exam task — answer writing,
 notes generation, PYQ analysis, etc.
 
@@ -34,7 +34,7 @@ notes generation, PYQ analysis, etc.
 
 ## What Makes This Different
 
-- Not just a prompt — a full **skills architecture** with 24 modules
+- Not just a prompt — a full **skills architecture** with 30 modules
 - Not just SPPU — **any university worldwide** via the adapter skill
 - Not just answers — **full ecosystem**: notes, PYQ analysis, IMP topics, MCQs, flashcards, viva
   prep, cram plans, lab reports, formula sheets, mind maps, case studies, essay grading
