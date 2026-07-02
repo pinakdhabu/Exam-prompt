@@ -32,7 +32,7 @@ function getFontFace(family, filenames, weight, style) {
   if (!p) return '';
   try {
     const b64 = fs.readFileSync(p).toString('base64');
-    return `@font-face { font-family: '${family}'; src: url(data:font/truetype;base64,${b64}) format('truetype'); font-weight: ${weight}; font-style: ${style}; }\n`;
+    return `@font-face { font-family: '${family}'; src: url(data:font/truetype;base64,${b64}) format('truetype'); font-weight: ${weight}; font-style: ${style}; font-display: swap; }\n`;
   } catch {
     return '';
   }
@@ -53,7 +53,7 @@ const CSS = `
     }
   }
   ${fontFaces}
-  body { font-family: 'TNR', serif; font-size: 11pt; line-height: 1.4; color: #000; margin: 0; padding: 0; }
+  body { font-family: 'TNR', serif; font-size: 11pt; line-height: 1.4; color: #000; margin: 0; padding: 0; font-kerning: normal; font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1; font-variant-ligatures: common-ligatures contextual; text-rendering: optimizeLegibility; }
   h1 { font-size: 15pt; font-weight: bold; text-align: center; margin: 8px 0 3px 0; border: none; text-transform: uppercase; letter-spacing: 1pt; }
   h2 { font-size: 12pt; font-weight: bold; text-align: center; margin: 5px 0 3px 0; border: none; }
   h3 { font-size: 11.5pt; font-weight: bold; margin: 14px 0 4px 0; }

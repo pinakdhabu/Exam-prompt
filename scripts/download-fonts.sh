@@ -135,6 +135,55 @@ else
   echo "  ✅ chilanka already exists"
 fi
 
+# ─── CJK Bold weights (download-only, not bundled — too large for git) ──
+cjk_downloaded=0
+cjk_skipped=0
+echo "[7/6] CJK Bold fonts (download-only — ~15 MB each)..."
+download_cjk_bold() {
+  local variant="$1" dirname="$2"
+  local filename="NotoSansCJK${variant}-Bold.otf"
+  local target="$FONTS_DIR/$dirname/$filename"
+  if [ -f "$target" ]; then
+    echo "  ✅ $dirname/$filename already exists"
+    cjk_skipped=$((cjk_skipped + 1))
+    return 0
+  fi
+  echo "  ⬇️  Downloading CJK Bold ($variant)..."
+  mkdir -p "$FONTS_DIR/$dirname"
+  local zip_url="https://github.com/notofonts/noto-cjk/releases/download/Sans2.004/03_NotoSansCJK${variant}.zip"
+  local tmpdir
+  tmpdir="$(mktemp -d)"
+  if command -v curl &>/dev/null; then
+    curl -sL -o "$tmpdir/cjk.zip" "$zip_url"
+  elif command -v wget &>/dev/null; then
+    wget -q -O "$tmpdir/cjk.zip" "$zip_url"
+  else
+    echo "  ❌ Need curl or wget"
+    rm -rf "$tmpdir"
+    return 1
+  fi
+  if command -v unzip &>/dev/null; then
+    unzip -j "$tmpdir/cjk.zip" "*/$filename" -d "$FONTS_DIR/$dirname" 2>/dev/null
+  else
+    echo "  ❌ Need unzip"
+    rm -rf "$tmpdir"
+    return 1
+  fi
+  rm -rf "$tmpdir"
+  if [ -f "$target" ] && [ -s "$target" ]; then
+    echo "  ✅ $dirname/$filename downloaded ($(du -h "$target" | cut -f1))"
+    cjk_downloaded=$((cjk_downloaded + 1))
+  else
+    echo "  ❌ Failed to download $dirname/$filename"
+    return 1
+  fi
+}
+download_cjk_bold "sc" "noto-sans-cjk-sc"
+download_cjk_bold "tc" "noto-sans-cjk-tc"
+download_cjk_bold "jp" "noto-sans-cjk-jp"
+download_cjk_bold "kr" "noto-sans-cjk-kr"
+download_cjk_bold "hk" "noto-sans-cjk-hk"
+
 echo ""
 echo "=== Font download complete ==="
 echo "  Check fonts/ for available fonts."

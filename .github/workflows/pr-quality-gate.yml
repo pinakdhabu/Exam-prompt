@@ -56,3 +56,10 @@ jobs:
             exit 1
           fi
           echo "OK: No duplicate skill directories"
+
+      - name: Install Chromium for PDF build
+        run: npx playwright install chromium --with-deps
+
+      - name: Full build (validate → integrity → example paper PDFs)
+        run: npm run build
+        timeout-minutes: 15

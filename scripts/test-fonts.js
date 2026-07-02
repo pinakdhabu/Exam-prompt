@@ -80,7 +80,7 @@ async function main() {
 <style>
   ${styleBlock}
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: sans-serif; padding: 20px; background: #fff; color: #333; }
+  body { font-family: sans-serif; padding: 20px; background: #fff; color: #333; font-kerning: normal; font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1; font-variant-ligatures: common-ligatures contextual; text-rendering: optimizeLegibility; }
   h1 { font-size: 22px; margin-bottom: 16px; color: #111; }
   .test-row { padding: 8px 12px; border-bottom: 1px solid #eee; }
   .label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }

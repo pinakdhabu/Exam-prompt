@@ -57,10 +57,12 @@ function generateHeaderHtml(meta) {
   `;
 }
 
-function getCss(useMath, fontFaces) {
+function getCss(useMath, fontFaces, extraFallbacks) {
   const mathCSS = useMath
     ? '.katex{font-size:1.05em}.katex-display{margin:6px 0;text-align:center}'
     : '';
+
+  const bodyFamilies = ['TNR', ...(extraFallbacks || []), 'Times New Roman', 'serif'].join(',');
 
   return `
     @page {
@@ -69,12 +71,16 @@ function getCss(useMath, fontFaces) {
     }
     ${fontFaces}
     body {
-      font-family: 'TNR', 'Times New Roman', serif;
+      font-family: ${bodyFamilies};
       font-size: 11pt;
       line-height: 1.4;
       color: #000;
       margin: 0;
       padding: 0;
+      font-kerning: normal;
+      font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+      font-variant-ligatures: common-ligatures contextual;
+      text-rendering: optimizeLegibility;
     }
     h1{font-size:15pt;font-weight:bold;text-align:center;margin:8px 0 3px 0;border:none;text-transform:uppercase;letter-spacing:1pt}
     h2{font-size:13pt;font-weight:bold;text-align:center;margin:5px 0 2px 0;border:none}
@@ -91,7 +97,7 @@ function getCss(useMath, fontFaces) {
     ul,ol{margin:4px 0;padding-left:22px}
     li{margin:2px 0}
     pre{background:#f4f4f4;border:1px solid #ddd;padding:8px 10px;font-size:8.5pt;line-height:1.3;overflow-x:auto;white-space:pre-wrap;margin:6px 0}
-    code{font-family:'Cask NFM','CaskaydiaCove Nerd Font Mono',monospace;font-size:8.5pt}
+    code{font-family:'Cask NFM','CaskaydiaCove Nerd Font Mono',monospace;font-size:8.5pt;font-kerning:normal;font-variant-ligatures:common-ligatures contextual}
     p>code,li>code{background:#f0f0f0;padding:1px 4px}
     .mermaid{margin:8px 0;text-align:center}.mermaid svg{max-width:100%;height:auto}
     hr{border:none;border-top:1px solid #888;margin:10px 0}

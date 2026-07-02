@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { FONTS } = require('./config');
 const theme = require('./themes/index');
+const { detectScripts, getFontConfigForScripts } = require('./src/script-detector');
 
 const KATEX_VERSION = '0.16.11';
 
@@ -29,14 +30,14 @@ class HtmlRenderer {
     let html = markdownHtml
       .replace(/\[(\d+)\]/g, '<span class="marks">[$1]</span>')
       .replace(/<p><strong>OR<\/strong><\/p>/g, '<div class="question-or">OR</div>')
-      // Q1) a) -> Q1) is bold-italic, a) is regular, add class question-main
       .replace(/<p><strong>Q(\d+)\)\s+([a-z])\)<\/strong>/g, '<p class="question-main"><strong class="q-label">Q$1)</strong><span class="sub-label">$2)</span>')
-      // b) -> wrapped in class question-sub, regular font weight
       .replace(/<p><strong>([b-z])\)<\/strong>/g, '<p class="question-sub"><span class="sub-label">$1)</span>')
       .replace(/<p>\*\*\* End of Paper \*\*\*<\/p>/g, '<div style="text-align:center;font-size:16pt;margin:24pt 0 12pt 0;letter-spacing:6px;">ⓘ ⓘ ⓘ ⓘ</div>')
       .replace(/<pre><code>(\[ANSWER BOX\][\s\S]*?)<\/code><\/pre>/g, '<div class="answer-box"><pre><code>$1</code></pre></div>')
-      // Regex to extract marks span from the end and place it at the front of paragraphs
       .replace(/<p([^>]*)>(.*?)(<span class="marks">\[\d+\]<\/span>)(.*?)<\/p>/g, '<p$1>$3$2$4</p>');
+
+    const detected = detectScripts(html.replace(/<[^>]*>/g, ''));
+    const scriptFonts = getFontConfigForScripts(detected);
 
     let page = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">';
 
@@ -44,7 +45,7 @@ class HtmlRenderer {
       page += '<style>' + KATEX_CSS + '</style>';
     }
 
-    page += '<style>' + this._buildCSS() + '</style></head><body>'
+    page += '<style>' + this._buildCSS(scriptFonts) + '</style></head><body>'
       + html
       + '</body></html>';
     return page;
@@ -59,7 +60,7 @@ class HtmlRenderer {
     }
   }
 
-  _fontFaces() {
+  _fontFaces(scriptFonts) {
     const faces = [];
     for (const key of ['tnr', 'caskaydia', 'cambria', 'cambriaMath', 'stixMath', 'termesMath']) {
       const cfg = FONTS[key];
@@ -67,15 +68,24 @@ class HtmlRenderer {
       for (const v of Object.values(cfg.variants)) {
         const b64 = this._b64(v.file);
         if (b64) {
-          faces.push(`@font-face{font-family:'${cfg.family}';src:url(data:font/truetype;base64,${b64})format('truetype');font-weight:${v.weight};font-style:${v.style}}`);
+          faces.push(`@font-face{font-family:'${cfg.family}';src:url(data:font/truetype;base64,${b64})format('truetype');font-weight:${v.weight};font-style:${v.style};font-display:swap}`);
+        }
+      }
+    }
+    for (const sf of scriptFonts) {
+      for (const v of sf.variants) {
+        const b64 = this._b64(v.file);
+        if (b64) {
+          faces.push(`@font-face{font-family:'${sf.family}';src:url(data:font/truetype;base64,${b64})format('truetype');font-weight:normal;font-style:normal;font-display:swap}`);
         }
       }
     }
     return faces.join('\n');
   }
 
-  _buildCSS() {
-    return theme.getCss(this.useMath, this._fontFaces());
+  _buildCSS(scriptFonts) {
+    const families = scriptFonts.map(sf => `'${sf.family}'`);
+    return theme.getCss(this.useMath, this._fontFaces(scriptFonts), families);
   }
 }
 

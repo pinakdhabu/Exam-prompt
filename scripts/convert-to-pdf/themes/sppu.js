@@ -143,10 +143,12 @@ function generateHeaderHtml(meta) {
   );
 }
 
-function getCss(useMath, fontFaces) {
+function getCss(useMath, fontFaces, extraFallbacks) {
   const mathCSS = useMath
     ? '.katex{font-size:1.05em}.katex-display{margin:6px 0;text-align:center}'
     : '';
+
+  const bodyFamilies = ['TNR', ...(extraFallbacks || []), 'Times New Roman', 'serif'].join(',');
 
   // ===================================================================
   // CSS matches real SPPU question paper measurements:
@@ -166,12 +168,16 @@ function getCss(useMath, fontFaces) {
     }
     ${fontFaces}
     body {
-      font-family: 'TNR', 'Times New Roman', serif;
+      font-family: ${bodyFamilies};
       font-size: 11pt;
       line-height: 1.35;
       color: #000;
       margin: 0;
       padding: 0;
+      font-kerning: normal;
+      font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+      font-variant-ligatures: common-ligatures contextual;
+      text-rendering: optimizeLegibility;
     }
     /* Headings — suppressed in QP body (units use h2/h3 but should not show) */
     h1{font-size:14pt;font-weight:bold;text-align:center;margin:4pt 0 2pt 0;border:none;text-transform:uppercase;letter-spacing:0.5px}
@@ -237,7 +243,7 @@ function getCss(useMath, fontFaces) {
 
     /* Code blocks — thin border, no background */
     pre{border:0.5pt solid #000;padding:6pt 10pt;font-size:9pt;line-height:1.3;overflow-x:auto;white-space:pre-wrap;margin:4pt 0 4pt 28pt}
-    code{font-family:'Cask NFM','CaskaydiaCove Nerd Font Mono',monospace;font-size:9pt}
+    code{font-family:'Cask NFM','CaskaydiaCove Nerd Font Mono',monospace;font-size:9pt;font-kerning:normal;font-variant-ligatures:common-ligatures contextual}
     p>code,li>code{padding:1px 3px}
 
     /* Mermaid */
