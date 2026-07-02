@@ -118,8 +118,8 @@ try {
 console.log('[6/6] Checking essential fonts...');
 const fontsDir = path.join(ROOT, 'fonts');
 const required = [
-  ['times', 'Times.TTF'],
-  ['times', 'Timesbd.TTF'],
+  ['termes', 'texgyretermes-regular.otf'],
+  ['termes', 'texgyretermes-bold.otf'],
   ['dejavu', 'DejaVuSans.ttf'],
   ['dejavu', 'DejaVuSerif.ttf'],
   ['dejavu', 'DejaVuSansMono.ttf'],

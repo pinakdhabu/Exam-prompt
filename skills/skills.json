@@ -1,11 +1,11 @@
 {
-  "$schema": "../schemas/skills-manifest.json",
-  "generated": "2026-06-22T13:03:54Z",
+  "$schema": "exam-prompt-skills-v1",
+  "generated": "2026-07-02T19:05:50Z",
   "total_skills": 30,
   "skills": [
     {
       "name": "universal-agent-normalizer",
-      "description": "Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt skill system to the agent's native configuration format. Supports 20+ coding agents as of June 2026. Ensures every agent can discover, load, and invoke all 30+ skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load.\n",
+      "description": "Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt skill system to the agent's native configuration format. Supports 20+ coding agents as of June 2026. Ensures every agent can discover, load, and invoke all 30+ skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load. Works for any university worldwide.\n",
       "version": "1.0.0",
       "directory": "agent-normalizer"
     },

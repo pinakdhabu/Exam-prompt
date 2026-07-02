@@ -7,7 +7,7 @@ const FONTS_DIR = path.join(__dirname, '..', 'fonts');
 const OUT_DIR = path.join(__dirname, '..', 'tmp');
 
 const FONT_TESTS = [
-  { dir: 'times',         files: ['Times.TTF'],                family: 'TNR',                    label: 'Times New Roman' },
+  { dir: 'termes',        files: ['texgyretermes-regular.otf'], family: 'TNR',                    label: 'TeX Gyre Termes (Times-compatible)' },
   { dir: 'dejavu',        files: ['DejaVuSans.ttf'],           family: 'DejaVu Sans',            label: 'DejaVu Sans' },
   { dir: 'dejavu',        files: ['DejaVuSerif.ttf'],          family: 'DejaVu Serif',           label: 'DejaVu Serif' },
   { dir: 'dejavu',        files: ['DejaVuSansMono.ttf'],       family: 'DejaVu Sans Mono',       label: 'DejaVu Mono' },

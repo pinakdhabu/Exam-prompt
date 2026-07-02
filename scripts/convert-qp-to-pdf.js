@@ -13,7 +13,7 @@ function resolveFont(filenames) {
     path.join(process.env.HOME || '', 'Library/Fonts'),
     'C:\\Windows\\Fonts',
     path.join(__dirname, '../fonts'),
-    path.join(__dirname, '../fonts/times'),
+    path.join(__dirname, '../fonts/termes'),
     path.join(__dirname, '../fonts/dejavu'),
   ];
   for (const dir of possibleDirs) {
@@ -39,10 +39,10 @@ function getFontFace(family, filenames, weight, style) {
 }
 
 const fontFaces =
-  getFontFace('TNR', ['Times.TTF', 'times.ttf'], 'normal', 'normal') +
-  getFontFace('TNR', ['Timesbd.TTF', 'timesbd.ttf'], 'bold', 'normal') +
-  getFontFace('TNR', ['Timesi.TTF', 'timesi.ttf'], 'normal', 'italic') +
-  getFontFace('TNR', ['Timesbi.TTF', 'timesbi.ttf'], 'bold', 'italic');
+  getFontFace('TNR', ['texgyretermes-regular.otf'], 'normal', 'normal') +
+  getFontFace('TNR', ['texgyretermes-bold.otf'], 'bold', 'normal') +
+  getFontFace('TNR', ['texgyretermes-italic.otf'], 'normal', 'italic') +
+  getFontFace('TNR', ['texgyretermes-bolditalic.otf'], 'bold', 'italic');
 
 const CSS = `
   @page {

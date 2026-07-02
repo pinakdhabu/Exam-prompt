@@ -3,7 +3,7 @@
 
 <skill>
 <name>universal-agent-normalizer</name>
-<description>Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt skill system to the agent's native configuration format. Supports 20+ coding agents as of June 2026. Ensures every agent can discover, load, and invoke all 30+ skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load.
+<description>Universal agent normalizer that detects which AI coding agent is running and maps the Exam Prompt skill system to the agent's native configuration format. Supports 20+ coding agents as of June 2026. Ensures every agent can discover, load, and invoke all 30+ skills regardless of its native skill mechanism. Run this skill first whenever you are onboarding a new agent or if skills fail to load. Works for any university worldwide.
 </description>
 <location>project</location>
 </skill>

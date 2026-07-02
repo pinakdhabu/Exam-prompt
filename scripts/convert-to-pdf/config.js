@@ -10,7 +10,7 @@ function resolveFontFile(filenames) {
     path.join(process.env.HOME || '', 'Library/Fonts'),
     'C:\\Windows\\Fonts',
     path.join(__dirname, '../../fonts'),
-    path.join(__dirname, '../../fonts/times'),
+    path.join(__dirname, '../../fonts/termes'),
     path.join(__dirname, '../../fonts/dejavu'),
     path.join(__dirname, '../../fonts/caskaydia'),
     path.join(__dirname, '../../fonts/termes-math'),
@@ -39,10 +39,10 @@ const FONTS = {
   tnr: {
     family: 'TNR',
     variants: {
-      normal:  { file: resolveFontFile(['Times.TTF', 'times.ttf']), weight: 'normal', style: 'normal' },
-      bold:    { file: resolveFontFile(['Timesbd.TTF', 'timesbd.ttf']), weight: 'bold', style: 'normal' },
-      italic:  { file: resolveFontFile(['Timesi.TTF', 'timesi.ttf']), weight: 'normal', style: 'italic' },
-      bi:      { file: resolveFontFile(['Timesbi.TTF', 'timesbi.ttf']), weight: 'bold', style: 'italic' },
+      normal:  { file: resolveFontFile(['texgyretermes-regular.otf', 'texgyretermes-regular.otf']), weight: 'normal', style: 'normal' },
+      bold:    { file: resolveFontFile(['texgyretermes-bold.otf', 'texgyretermes-bold.otf']), weight: 'bold', style: 'normal' },
+      italic:  { file: resolveFontFile(['texgyretermes-italic.otf', 'texgyretermes-italic.otf']), weight: 'normal', style: 'italic' },
+      bi:      { file: resolveFontFile(['texgyretermes-bolditalic.otf', 'texgyretermes-bolditalic.otf']), weight: 'bold', style: 'italic' },
     },
   },
   caskaydia: {
