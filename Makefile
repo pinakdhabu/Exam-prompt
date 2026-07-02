@@ -1,4 +1,4 @@
-.PHONY: help setup validate test lint generate clean pdf preview infra fonts
+.PHONY: help setup validate test lint generate clean pdf preview build build-full infra fonts
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
@@ -15,6 +15,10 @@ integrity: ## Run full base integrity check (cross-platform)
 	node scripts/integrity-check.js
 
 test: validate integrity ## Run all tests + integrity check
+
+build: validate integrity pdf ## Full pipeline: validate → integrity → build PDFs
+
+build-full: build fonts ## Full pipeline + font status
 
 lint: ## Run ESLint
 	npm run lint

@@ -59,8 +59,11 @@ test-*.md
 test-code-*.md
 test-math*.md
 
-# Fonts and media
-fonts/
+# Fonts (tracked in repo for offline PDF generation)
+# fonts/
+
+# Temp build artifacts
+tmp/
 
 # Superpowers tracking files
 .superpowers/

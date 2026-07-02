@@ -30,6 +30,12 @@ jobs:
       - name: Validate skills
         run: bash scripts/validate-skills.sh
 
+      - name: Base integrity check
+        run: npm test
+
+      - name: Validate fonts
+        run: node -e "const f=require('fs'),p=require('path');const e=['times/Times.TTF','dejavu/DejaVuSans.ttf','caskaydia/CaskaydiaCoveNerdFontMono-Regular.ttf','termes-math/texgyretermes-math.otf','noto-sans-devanagari/NotoSansDevanagari-Regular.ttf','opendyslexic/OpenDyslexic3-Regular.ttf','klee/Klee-Regular.ttf','shobhika/Shobhika-Regular.otf','mukta/Mukta-Regular.ttf','patrick-hand/PatrickHand-Regular.ttf','chilanka/Chilanka-Regular.ttf'];let m=e.filter(f=>!fs.existsSync(p.join('fonts',f)));m.length?console.log('FAIL: missing fonts:',m.join(', ')):console.log('OK: '+e.length+' essential fonts present');process.exit(m.length?1:0)"
+
       - name: Validate skills.json structure
         run: |
           python3 -c "
