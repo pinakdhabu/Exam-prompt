@@ -2,7 +2,9 @@
 
 ## Project Purpose
 
-This is a universal skill hub for AI-powered exam preparation. It contains **30 reusable skills** in `skills/<name>/SKILL.md` format that guide AI agents to generate exam answers, notes, analysis, assignments, flashcards, study plans, and more for **ANY university worldwide**.
+This is a universal skill hub for AI-powered exam preparation. It contains **30 reusable skills** in
+`skills/<name>/SKILL.md` format that guide AI agents to generate exam answers, notes, analysis,
+assignments, flashcards, study plans, and more for **ANY university worldwide**.
 
 ## Key Architecture
 
@@ -27,21 +29,22 @@ When asked to write an exam answer, load `skills/answer-writer/SKILL.md` and fol
 
 ## Key Skills
 
-| Skill | File | When to use |
-|-------|------|-------------|
-| Answer Writer | `skills/answer-writer/SKILL.md` | Exam answers, numericals, derivations |
-| Notes Generator | `skills/notes-generator/SKILL.md` | Study notes in 12+ formats |
-| PYQ Analyzer | `skills/pyq-analyzer/SKILL.md` | Past paper analysis with stats |
-| IMP Topics | `skills/imp-topics-generator/SKILL.md` | "What's important?" questions |
-| Study Planner | `skills/study-planner/SKILL.md` | Study schedules & timetables |
-| Flashcard Gen | `skills/flashcard-generator/SKILL.md` | Anki/Quizlet flashcards |
-| MCQ Generator | `skills/mcq-practice-generator/SKILL.md` | Practice questions |
-| Exam Simulator | `skills/sppu-exam-simulator/SKILL.md` | Full exam hall simulation |
-| University Adapter | `skills/universal-university-adapter/SKILL.md` | Non-SPPU universities |
+| Skill              | File                                           | When to use                           |
+| ------------------ | ---------------------------------------------- | ------------------------------------- |
+| Answer Writer      | `skills/answer-writer/SKILL.md`                | Exam answers, numericals, derivations |
+| Notes Generator    | `skills/notes-generator/SKILL.md`              | Study notes in 12+ formats            |
+| PYQ Analyzer       | `skills/pyq-analyzer/SKILL.md`                 | Past paper analysis with stats        |
+| IMP Topics         | `skills/imp-topics-generator/SKILL.md`         | "What's important?" questions         |
+| Study Planner      | `skills/study-planner/SKILL.md`                | Study schedules & timetables          |
+| Flashcard Gen      | `skills/flashcard-generator/SKILL.md`          | Anki/Quizlet flashcards               |
+| MCQ Generator      | `skills/mcq-practice-generator/SKILL.md`       | Practice questions                    |
+| Exam Simulator     | `skills/sppu-exam-simulator/SKILL.md`          | Full exam hall simulation             |
+| University Adapter | `skills/universal-university-adapter/SKILL.md` | Non-SPPU universities                 |
 
 ## University Patterns Supported
 
-SPPU 2019/2024, VTU, JNTU, Mumbai Univ, Anna Univ, AKTU, DU, IIT Bombay, Oxford, Harvard. Generic fallback: 5 units, 100 marks, 3 hours.
+SPPU 2019/2024, VTU, JNTU, Mumbai Univ, Anna Univ, AKTU, DU, IIT Bombay, Oxford, Harvard. Generic
+fallback: 5 units, 100 marks, 3 hours.
 
 ## Rules
 

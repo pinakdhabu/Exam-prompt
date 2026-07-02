@@ -17,23 +17,24 @@ User Query → Skill Discovery → Skill Loading → Execution → Output → Va
 
 Files that tell AI agents how to work here:
 
-| File | Purpose | Consumed By |
-|------|---------|-------------|
-| `AGENTS.md` | XML skill registry (30 skills with descriptions) | All agents (auto-discovery) |
-| `llms.txt` | Concise project map | All agents / LLMs |
-| `CLAUDE.md` | Skill reference table + commands | Claude Code |
-| `AGENT-GUIDE.md` | Full onboarding (discovery, workflows, platform configs) | All agents |
-| `.cursorrules` + `.cursor/rules/*.mdc` | Modular project rules | Cursor |
-| `.windsurfrules` | Project rules | Windsurf |
-| `.clinerules` + `cline_docs/` | Project rules + memory bank | Cline |
-| `.aider.conf.yml` | CLI settings | Aider |
-| `.github/copilot-instructions.md` | IDE context | GitHub Copilot |
-| `.continue/config.yaml` | Slash commands + context | Continue.dev |
-| `.opencode.jsonc` | Agent instructions | OpenCode |
+| File                                   | Purpose                                                  | Consumed By                 |
+| -------------------------------------- | -------------------------------------------------------- | --------------------------- |
+| `AGENTS.md`                            | XML skill registry (30 skills with descriptions)         | All agents (auto-discovery) |
+| `llms.txt`                             | Concise project map                                      | All agents / LLMs           |
+| `CLAUDE.md`                            | Skill reference table + commands                         | Claude Code                 |
+| `AGENT-GUIDE.md`                       | Full onboarding (discovery, workflows, platform configs) | All agents                  |
+| `.cursorrules` + `.cursor/rules/*.mdc` | Modular project rules                                    | Cursor                      |
+| `.windsurfrules`                       | Project rules                                            | Windsurf                    |
+| `.clinerules` + `cline_docs/`          | Project rules + memory bank                              | Cline                       |
+| `.aider.conf.yml`                      | CLI settings                                             | Aider                       |
+| `.github/copilot-instructions.md`      | IDE context                                              | GitHub Copilot              |
+| `.continue/config.yaml`                | Slash commands + context                                 | Continue.dev                |
+| `.opencode.jsonc`                      | Agent instructions                                       | OpenCode                    |
 
 ### Layer 2: Skills (skills/)
 
-30 standalone skill modules. Each is a `SKILL.md` with YAML frontmatter + step-by-step agent instructions:
+30 standalone skill modules. Each is a `SKILL.md` with YAML frontmatter + step-by-step agent
+instructions:
 
 ```
 skills/
@@ -74,20 +75,22 @@ Dependency relationships between skills are in `skills-dependency-graph.json`.
 
 Runtime tools used by agents during execution:
 
-| Tool | File | Purpose |
-|------|------|---------|
-| Skill Router | `skill-router.js` | Auto-detects needed skill from user query (semantic + keyword matching, confidence scoring) |
+| Tool             | File                  | Purpose                                                                                               |
+| ---------------- | --------------------- | ----------------------------------------------------------------------------------------------------- |
+| Skill Router     | `skill-router.js`     | Auto-detects needed skill from user query (semantic + keyword matching, confidence scoring)           |
 | Output Validator | `output-validator.js` | Validates agent output against 5 skill schemas (answer, notes, PYQ, assignment, exam paper) using AJV |
-| Session Context | `session-context.js` | Persists user profile, university, subject across sessions (`~/.exam-prompt/session.json`) |
-| Cache Manager | `cache-manager.js` | TTL-based caching for PYQ analysis, university detection, OCR results (`~/.exam-prompt/cache/`) |
+| Session Context  | `session-context.js`  | Persists user profile, university, subject across sessions (`~/.exam-prompt/session.json`)            |
+| Cache Manager    | `cache-manager.js`    | TTL-based caching for PYQ analysis, university detection, OCR results (`~/.exam-prompt/cache/`)       |
 
 ### Layer 4: Content (examples/)
 
-Sample papers and solutions organized by year/semester/subject for 48 SPPU Computer Engineering subjects.
+Sample papers and solutions organized by year/semester/subject for 48 SPPU Computer Engineering
+subjects.
 
 ### Layer 5: University Configs (universities/)
 
-Per-university configuration (exam patterns, branches, subjects, syllabus). 10 universities supported.
+Per-university configuration (exam patterns, branches, subjects, syllabus). 10 universities
+supported.
 
 ## Data Flow
 
@@ -104,8 +107,10 @@ User: "Explain ACID properties [6 marks]"
 
 ## Key Design Decisions
 
-1. **Skills as Markdown** — SKILL.md is pure Markdown with YAML frontmatter. No proprietary format. Every agent can read it.
-2. **University detection via adapter** — Never hardcode patterns. The adapter skill detects from PDFs.
+1. **Skills as Markdown** — SKILL.md is pure Markdown with YAML frontmatter. No proprietary format.
+   Every agent can read it.
+2. **University detection via adapter** — Never hardcode patterns. The adapter skill detects from
+   PDFs.
 3. **Default fallback** — If no university specified: 5 units, 100 marks, 3 hours.
 4. **100% free** — No paid tiers, no premium features, no API keys needed.
 5. **Agent-first** — Every file is designed to be consumed by AI agents first, humans second.

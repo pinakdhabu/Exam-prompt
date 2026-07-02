@@ -9,7 +9,7 @@ def analyze_xml(path):
         print("No page found")
         return
     print(f"Page size: {page1.attrib.get('width')} x {page1.attrib.get('height')}")
-    
+
     print("\nSample Questions (Q1):")
     for text_elem in page1.findall('text'):
         text = "".join(text_elem.itertext()).strip()

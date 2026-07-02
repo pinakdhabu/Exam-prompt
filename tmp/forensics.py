@@ -12,10 +12,10 @@ def analyze_pdf(pdf_path):
     page = doc[0]
     words = page.get_text("words")
     blocks = page.get_text("dict")["blocks"]
-    
+
     print(f"--- Analysis of {pdf_path} ---")
     print(f"Page size: {page.rect}")
-    
+
     print("\nHeader/Top Elements:")
     for b in blocks:
         if "lines" in b:

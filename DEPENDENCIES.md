@@ -15,7 +15,7 @@ needed for PDF text extraction or the WeasyPrint fallback backend.
 | **Fedora/RHEL**   | `sudo dnf module enable nodejs:22 -y && sudo dnf install nodejs -y`                                |
 | **Arch**          | `sudo pacman -S nodejs npm`                                                                        |
 | **macOS**         | `brew install node`                                                                                |
-| **Windows**       | `winget install -e --id OpenJS.NodeJS` or download from [nodejs.org](https://nodejs.org/)      |
+| **Windows**       | `winget install -e --id OpenJS.NodeJS` or download from [nodejs.org](https://nodejs.org/)          |
 
 > **Windows users:** If `npm` is not recognized after install, reopen your terminal to refresh PATH.
 > If PowerShell blocks npm scripts, run:
