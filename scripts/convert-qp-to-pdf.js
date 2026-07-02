@@ -35,7 +35,7 @@ function getFontFace(family, filenames, weight, style) {
   }
 }
 
-const fontFaces = 
+const fontFaces =
   getFontFace('TNR', ['Times.TTF', 'times.ttf'], 'normal', 'normal') +
   getFontFace('TNR', ['Timesbd.TTF', 'timesbd.ttf'], 'bold', 'normal') +
   getFontFace('TNR', ['Timesi.TTF', 'timesi.ttf'], 'normal', 'italic') +

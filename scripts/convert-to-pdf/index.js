@@ -81,7 +81,7 @@ async function convertMdToPdf(mdPath, pdfPath, options = {}) {
 
   while (attempts < maxAttempts) {
     logger.info({ scale, attempt: attempts + 1 }, 'Compiling PDF page');
-    
+
     // Inject dynamic CSS spacing adjustments using custom property style tag
     let styledHtml = html;
     if (scale !== 1.0) {
@@ -141,7 +141,7 @@ async function convertMdToPdf(mdPath, pdfPath, options = {}) {
       // Too few pages -> expand spacing
       scale += 0.12;
     }
-    
+
     attempts++;
   }
 

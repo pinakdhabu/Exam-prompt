@@ -29,7 +29,7 @@ function generateHeaderHtml(meta) {
   const dept = meta.department || '';
   const subj = meta.subject || '';
   const isInsem = /insem/i.test(dept) || (meta.time && parseInt(meta.time, 10) === 1);
-  
+
   const patternInfoCombined = [
     meta.pattern ? '(' + meta.pattern + ')' : '',
     meta.semester ? '(Semester - ' + meta.semester + ')' : '',

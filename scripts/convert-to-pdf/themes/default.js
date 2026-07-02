@@ -37,20 +37,20 @@ function generateHeaderHtml(meta) {
       ${identifier ? `<div style="float: left; font-size: 11pt; font-weight: bold;">${identifier}</div>` : ''}
       ${code ? `<div style="float: right; font-size: 11pt; font-weight: bold;">${code}</div>` : ''}
       <div style="clear: both;"></div>
-      
+
       <div style="text-align: center; margin-top: 10px;">
         ${dept ? `<h1 style="font-size: 14pt; margin: 5px 0; font-weight: bold; text-transform: uppercase;">${dept}</h1>` : ''}
         ${subj ? `<h2 style="font-size: 13pt; margin: 5px 0; font-weight: bold; text-transform: uppercase;">${subj}</h2>` : ''}
         ${patternInfo ? `<div style="font-size: 11pt; margin: 3px 0; color: #555;">${patternInfo}</div>` : ''}
       </div>
-      
+
       <table style="width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 11pt; border: none;">
         <tr style="border-top: 1px solid #000; border-bottom: 1px solid #000;">
           <td style="border: none; padding: 4px 0; text-align: left; font-weight: bold;">Time: ${time}</td>
           <td style="border: none; padding: 4px 0; text-align: right; font-weight: bold;">${marks}</td>
         </tr>
       </table>
-      
+
       ${instHtml}
       <hr style="border: none; border-top: 1.5px solid #000; margin-top: 12px; margin-bottom: 15px;">
     </div>

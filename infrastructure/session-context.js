@@ -18,13 +18,13 @@ const DEFAULT_SESSION = {
   version: '1.0.0',
   created_at: new Date().toISOString(),
   updated_at: new Date().toISOString(),
-  
+
   // University & Exam Pattern
   university: null,
   exam_pattern: null, // SPPU_2019, SPPU_2024, VTU, JNTU, etc.
   subject: null,
   semester_or_year: null,
-  
+
   // Syllabus & Papers
   paths: {
     syllabus_pdf: null,
@@ -32,7 +32,7 @@ const DEFAULT_SESSION = {
     notes_output: null,
     cache_directory: null
   },
-  
+
   // User Preferences
   preferences: {
     default_marks_level: 4,
@@ -41,14 +41,14 @@ const DEFAULT_SESSION = {
     language: 'en',
     timezone: 'Asia/Kolkata'
   },
-  
+
   // Project Metadata
   project: {
     name: null,
     description: null,
     repository_url: null
   },
-  
+
   // Session Stats
   stats: {
     skills_used: [],

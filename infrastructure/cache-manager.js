@@ -197,7 +197,7 @@ class CacheManager {
       for (const file of files) {
         const cacheFile = path.join(CACHE_DIR, file);
         const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
-        
+
         if (Date.now() > cached.expires_at) {
           fs.unlinkSync(cacheFile);
           cleaned++;
