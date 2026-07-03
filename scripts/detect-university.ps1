@@ -37,9 +37,9 @@ $registry = Get-Content $Registry -Raw | ConvertFrom-Json
 if ($List) {
   Write-Host "Available universities:"
   foreach ($u in $registry.universities) {
-    $icon = switch ($u.status) { "active" { "â—" } "template-only" { "â—‹" } default { "?" } }
+    $icon = switch ($u.status) { "active" { "*" } "template-only" { "o" } default { "?" } }
     $defaultMarker = if ($u.directory -eq $registry.default_university) { " [DEFAULT]" } else { "" }
-    Write-Host "  $icon $($u.full_name) ($($u.short_name)) â€” $($u.status)$defaultMarker"
+    Write-Host "  $icon $($u.full_name) ($($u.short_name)) -- $($u.status)$defaultMarker"
   }
   exit 0
 }
@@ -51,7 +51,7 @@ if ($Active) {
     if ($u.status -eq "active") {
       $activeFound = $true
       $dm = if ($u.directory -eq $registry.default_university) { " [DEFAULT]" } else { "" }
-      Write-Host "  â— $($u.full_name) ($($u.short_name))$dm" -ForegroundColor Green
+      Write-Host "  * $($u.full_name) ($($u.short_name))$dm" -ForegroundColor Green
       Write-Host "    Directory: universities/$($u.directory)"
       Write-Host "    Config exists: $($u.config_exists)"
       Write-Host "    Subjects data: $($u.subjects_data)"

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Install Exam-prompt skills globally (PowerShell)
 .DESCRIPTION

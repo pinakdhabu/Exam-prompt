@@ -15,7 +15,6 @@
  *        npm run integrity
  */
 const fs = require('fs');
-const os = require('os');
 const path = require('path');
 const { execSync } = require('child_process');
 
@@ -75,8 +74,8 @@ try {
     cwd: ROOT, stdio: 'pipe', encoding: 'utf-8', shell: true,
   });
   const lines = generated.split('\n').filter(l => !/^(WARN|INFO|ERR)/.test(l));
-  const cleanOutput = lines.join('\n').trim() + '\n';
-  const current = fs.readFileSync(path.join(ROOT, 'AGENTS.md'), 'utf-8');
+  const cleanOutput = lines.join('\n').replace(/\r/g, '').trimEnd() + '\n';
+  const current = fs.readFileSync(path.join(ROOT, 'AGENTS.md'), 'utf-8').replace(/^\uFEFF/, '').replace(/\r/g, '').trimEnd() + '\n';
   if (cleanOutput === current) {
     ok('AGENTS.md is fresh');
   } else {

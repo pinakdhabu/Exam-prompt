@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Self-Update Script
 .DESCRIPTION

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Cross-platform font installer for Windows
 .DESCRIPTION

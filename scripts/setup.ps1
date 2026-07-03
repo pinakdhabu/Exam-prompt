@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Exam Prompt — Windows Dependency Installer
 .DESCRIPTION

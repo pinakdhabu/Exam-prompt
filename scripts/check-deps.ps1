@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Check dependencies for Document Reader on Windows
 .DESCRIPTION

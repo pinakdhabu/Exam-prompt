@@ -148,16 +148,16 @@ if ($OUTPUT_MODE -eq "subjects") {
 }
 
 Write-Host ""
-Write-Host "â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—"
-Write-Host "â•‘  SPPU Previous Year Question Papers â€” Stats  â•‘"
-Write-Host "â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•"
+Write-Host "+------------------------------------------------------------+"
+Write-Host "|  SPPU Previous Year Question Papers -- Stats               |"
+Write-Host "+------------------------------------------------------------+"
 Write-Host ""
 Write-Host "Source: $Path"
 Write-Host ""
 
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 Write-Host "  OVERVIEW"
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 Write-Host ("  {0,-25} {1}" -f "Total PDFs:", $TOTAL)
 Write-Host ("  {0,-25} {1}" -f "Total Size:", (Format-Size $SIZE))
 Write-Host ("  {0,-25} {1}" -f "Subjects:", $SUBJ_TOTAL.Count)
@@ -165,29 +165,29 @@ Write-Host ("  {0,-25} {1}" -f "End Sem Subjects:", $SUBJ_END.Count)
 Write-Host ("  {0,-25} {1}" -f "In Sem Subjects:", $SUBJ_IN.Count)
 Write-Host ""
 
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 Write-Host "  BY YEAR"
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 foreach ($y in ($CNT.Keys | Sort-Object)) {
   $c = $CNT[$y]
-  $bar = "â–ˆ" * [Math]::Floor($c / 10)
+  $bar = "#" * [Math]::Floor($c / 10)
   Write-Host ("  {0}  {1,5}  {2}" -f $y, $c, $bar)
 }
 Write-Host ""
 
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 Write-Host "  BY SEMESTER"
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 foreach ($s in ($SEM.Keys | Sort-Object)) {
   $c = $SEM[$s]
-  $bar = "â–Š" * [Math]::Floor($c / 10)
+  $bar = "#" * [Math]::Floor($c / 10)
   Write-Host ("  {0,-6}  {1,4}  {2}" -f $s, $c, $bar)
 }
 Write-Host ""
 
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 Write-Host "  TOP SUBJECTS (by paper count)"
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 Write-Host ("  {0,-40} {1,5} {2,6} {3,6}" -f "Subject", "Total", "EndSem", "InSem")
 Write-Host ("  {0,-40} {1,5} {2,6} {3,6}" -f ("-" * 40), "-----", "------", "------")
 $sortedSubjects = $SUBJ_TOTAL.GetEnumerator() | Sort-Object Value -Descending | Select-Object -First 20
@@ -201,9 +201,9 @@ foreach ($entry in $sortedSubjects) {
 }
 Write-Host ""
 
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 Write-Host "  COVERAGE ASSESSMENT"
-Write-Host "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+Write-Host "---------------------------------------------------------------"
 $strong = 0; $moderate = 0; $weak = 0
 foreach ($k in $SUBJ_TOTAL.Keys) {
   $t = $SUBJ_TOTAL[$k]
@@ -211,9 +211,9 @@ foreach ($k in $SUBJ_TOTAL.Keys) {
   elseif ($t -ge 5) { $moderate++ }
   else { $weak++ }
 }
-Write-Host ("  {0,-30} {1} subjects (10+ papers each)" -f "Strong coverage:", $strong)
-Write-Host ("  {0,-30} {1} subjects (5-9 papers)" -f "Moderate coverage:", $moderate)
-Write-Host ("  {0,-30} {1} subjects (<5 papers)" -f "Weak coverage:", $weak)
+Write-Host ("  {0,-30} {1} subjects (10+ papers each)" -f "[S] Strong coverage:", $strong)
+Write-Host ("  {0,-30} {1} subjects (5-9 papers)" -f "[M] Moderate coverage:", $moderate)
+Write-Host ("  {0,-30} {1} subjects (<5 papers)" -f "[W] Weak coverage:", $weak)
 Write-Host ""
 Write-Host "Run with -Subjects for per-subject breakdown."
 Write-Host "Run with -Gaps to find coverage gaps."

@@ -1,6 +1,6 @@
-<#
+﻿<#
 .SYNOPSIS
-    Exam Prompt — University Scaffold Generator (PowerShell)
+    Exam Prompt - University Scaffold Generator (PowerShell)
 .DESCRIPTION
     Scaffolds a new university from _TEMPLATE_ with interactive prompts.
     Cross-platform: runs on Windows, works with linux/macos via pwsh.
@@ -48,10 +48,10 @@ if (-not (Test-Path $TemplateDir)) {
     exit 1
 }
 
-Write-Host "╔══════════════════════════════════════════════════════╗"
-Write-Host "║   University Scaffold Generator                     ║"
-Write-Host "║   Creates a new university from _TEMPLATE_          ║"
-Write-Host "╚══════════════════════════════════════════════════════╝"
+Write-Host "+------------------------------------------------------------+"
+Write-Host "|   University Scaffold Generator                           |"
+Write-Host "|   Creates a new university from _TEMPLATE_                |"
+Write-Host "+------------------------------------------------------------+"
 Write-Host ""
 
 # Collect university info
@@ -85,9 +85,9 @@ if ($NonInteractive) {
     $DEFAULT_PATTERN = if ($inputPattern) { $inputPattern } else { "1.0" }
 }
 
-# Derive directory name (uppercase, non-alphanum → underscore)
+# Derive directory name (uppercase, non-alphanum -> underscore)
 $DIR_NAME = $FULL_NAME.ToUpper() -replace '[^A-Z0-9]', '_' -replace '_+', '_' -trim '_'
-# Derive ID (lowercase, non-alphanum → hyphen)
+# Derive ID (lowercase, non-alphanum -> hyphen)
 $UNI_ID = $FULL_NAME.ToLower() -replace '[^a-z0-9]', '-' -replace '-+', '-' -trim '-'
 
 $TargetDir = Join-Path $UniversitiesDir $DIR_NAME
@@ -133,7 +133,7 @@ $configContent = @"
   "type": "$UNI_TYPE",
   "website": "https://www.$($UNI_ID).edu",
   "established": $establishYear,
-  "description": "$FULL_NAME — Add description here",
+  "description": "$FULL_NAME -- Add description here",
   "exam_system": "$EXAM_SYSTEM",
   "grading_system": "percentage",
   "academic_calendar": {
@@ -202,7 +202,7 @@ if (Test-Path $Registry) {
         # Check for duplicate ID
         $dup = $registry.universities | Where-Object { $_.id -eq $UNI_ID }
         if ($dup) {
-            Write-Warn "Duplicate ID $UNI_ID in registry — skipping registry update"
+            Write-Warn "Duplicate ID $UNI_ID in registry -- skipping registry update"
         } else {
             $newEntry = [PSCustomObject]@{
                 id             = $UNI_ID
@@ -231,17 +231,17 @@ if (Test-Path $Registry) {
 }
 
 Write-Host ""
-Write-Host "╔══════════════════════════════════════════════════════╗"
-Write-Host "║   University scaffolded successfully!               ║"
-Write-Host "║                                                      ║"
-Write-Host "║   Directory: universities/$DIR_NAME"
-Write-Host "║   Config:    universities/$DIR_NAME/config.json"
-Write-Host "║   Pattern:   universities/$DIR_NAME/patterns/$DEFAULT_PATTERN.json"
-Write-Host "║                                                      ║"
-Write-Host "║   Next steps:                                        ║"
-Write-Host "║     1. Edit config.json with real details            ║"
-Write-Host "║     2. Add branches/subjects in branches/            ║"
-Write-Host "║     3. Add more patterns if needed                   ║"
-Write-Host "║     4. Run .\scripts\init-project.sh (bash) or       ║"
-Write-Host "║        manually validate                             ║"
-Write-Host "╚══════════════════════════════════════════════════════╝"
+Write-Host "+------------------------------------------------------------+"
+Write-Host "|   University scaffolded successfully!                     |"
+Write-Host "|                                                            |"
+Write-Host "|   Directory: universities/$DIR_NAME"
+Write-Host "|   Config:    universities/$DIR_NAME/config.json"
+Write-Host "|   Pattern:   universities/$DIR_NAME/patterns/$DEFAULT_PATTERN.json"
+Write-Host "|                                                            |"
+Write-Host "|   Next steps:                                              |"
+Write-Host "|     1. Edit config.json with real details                  |"
+Write-Host "|     2. Add branches/subjects in branches/                  |"
+Write-Host "|     3. Add more patterns if needed                         |"
+Write-Host "|     4. Run .\scripts\init-project.sh (bash) or             |"
+Write-Host "|        manually validate                                   |"
+Write-Host "+------------------------------------------------------------+"

@@ -50,7 +50,7 @@ function Generate-CursorRules {
   if ($DRY_RUN) { Info "[DRY-RUN] Would generate .cursorrules"; return }
 
   $lines = @()
-  $lines += "# Exam Prompt â€” AI-Powered Exam Preparation System"
+  $lines += "# Exam Prompt -- AI-Powered Exam Preparation System"
   $lines += ""
   $lines += "## Project Overview"
   $lines += "Universal exam preparation system supporting ANY university worldwide."
@@ -73,10 +73,10 @@ function Generate-CursorRules {
 
   $lines += ""
   $lines += "## Key Files"
-  $lines += "- `skills/<name>/SKILL.md` â€” Individual skill definitions"
-  $lines += "- `universities/` â€” University configurations"
-  $lines += "- `scripts/` â€” Utility scripts"
-  $lines += "- `AGENTS.md` â€” Machine-readable XML registry (auto-generated)"
+  $lines += "- `skills/<name>/SKILL.md` -- Individual skill definitions"
+  $lines += "- `universities/` -- University configurations"
+  $lines += "- `scripts/` -- Utility scripts"
+  $lines += "- `AGENTS.md` -- Machine-readable XML registry (auto-generated)"
 
   $lines | Out-File -FilePath $file -Encoding utf8
   Ok "Generated .cursorrules"
@@ -88,14 +88,14 @@ function Generate-WindsurfRules {
   if ($DRY_RUN) { Info "[DRY-RUN] Would generate .windsurfrules"; return }
 
   $lines = @()
-  $lines += "# Exam Prompt â€” Windsurf Configuration"
+  $lines += "# Exam Prompt -- Windsurf Configuration"
   $lines += ""
   $lines += "## Available Skills"
   $lines += ""
 
   foreach ($skill in $skills) {
     $name = $skill.name
-    $desc = $skill.description -replace '-', 'â€”'
+    $desc = $skill.description
     $lines += "- **$name**: $desc"
   }
 
@@ -121,7 +121,7 @@ function Generate-CursorMdc {
   $lines += "globs:"
   $lines += "---"
   $lines += ""
-  $lines += "# Exam Prompt â€” Global Rules"
+  $lines += "# Exam Prompt -- Global Rules"
   $lines += ""
   $lines += "## Skill Registry"
   $lines += ""
@@ -155,7 +155,7 @@ function Generate-Agents {
   } elseif (Test-Path $genSh) {
     bash $genSh
   } else {
-    Warn "generate-agents-md.ps1 not found â€” skipping AGENTS.md"
+    Warn "generate-agents-md.ps1 not found -- skipping AGENTS.md"
   }
 }
 
@@ -166,7 +166,7 @@ function Check-Sync {
   foreach ($cfg in @(".cursorrules", ".windsurfrules")) {
     $path = Join-Path $RepoRoot $cfg
     if (-not (Test-Path $path)) {
-      Warn "$cfg does not exist â€” run generate-agent-config.ps1"
+      Warn "$cfg does not exist -- run generate-agent-config.ps1"
       $issues++
     }
   }
@@ -191,10 +191,10 @@ function Check-Sync {
 }
 
 # Main
-Write-Host "â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—"
-Write-Host "â•‘   Agent Config Generator                            â•‘"
-Write-Host "â•‘   Single source of truth: skills/skills.json        â•‘"
-Write-Host "â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•"
+Write-Host "+------------------------------------------------------------+"
+Write-Host "|   Agent Config Generator                                   |"
+Write-Host "|   Single source of truth: skills/skills.json               |"
+Write-Host "+------------------------------------------------------------+"
 Write-Host ""
 
 if ($CHECK_MODE) { Check-Sync; exit 0 }
@@ -205,16 +205,16 @@ Generate-CursorMdc
 Generate-Agents
 
 Write-Host ""
-Write-Host "â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—"
-Write-Host "â•‘   Done!                                             â•‘"
-Write-Host "â•‘                                                      â•‘"
-Write-Host "â•‘   Generated from: skills/skills.json ($SKILL_COUNT skills)"
-Write-Host "â•‘                                                      â•‘"
-Write-Host "â•‘   Files:                                             â•‘"
-Write-Host "â•‘     - .cursorrules                                   â•‘"
-Write-Host "â•‘     - .windsurfrules                                 â•‘"
-Write-Host "â•‘     - .cursor/rules/000-global.mdc                   â•‘"
-Write-Host "â•‘     - AGENTS.md (via generate-agents-md.ps1)         â•‘"
-Write-Host "â•‘                                                      â•‘"
-Write-Host "â•‘   Run with -Check to verify sync                    â•‘"
-Write-Host "â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•"
+Write-Host "+------------------------------------------------------------+"
+Write-Host "|   Done!                                                    |"
+Write-Host "|                                                            |"
+Write-Host "|   Generated from: skills/skills.json ($SKILL_COUNT skills)          |"
+Write-Host "|                                                            |"
+Write-Host "|   Files:                                                   |"
+Write-Host "|     - .cursorrules                                         |"
+Write-Host "|     - .windsurfrules                                       |"
+Write-Host "|     - .cursor/rules/000-global.mdc                         |"
+Write-Host "|     - AGENTS.md (via generate-agents-md.ps1)               |"
+Write-Host "|                                                            |"
+Write-Host "|   Run with -Check to verify sync                          |"
+Write-Host "+------------------------------------------------------------+"

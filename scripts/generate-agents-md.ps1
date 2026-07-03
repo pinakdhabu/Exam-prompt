@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Auto-generate AGENTS.md <available_skills> block (PowerShell)
 .DESCRIPTION

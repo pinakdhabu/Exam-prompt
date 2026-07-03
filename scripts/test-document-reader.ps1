@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Demo/test the document reader skill (PowerShell)
 .DESCRIPTION

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Initialize Exam Prompt Project
 .DESCRIPTION

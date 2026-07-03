@@ -134,13 +134,13 @@ foreach ($subj in $SUBJECT_COUNTS.Keys) {
 }
 
 $lines = @()
-$lines += "# SPPU Previous Year Question Papers â€” Index"
+$lines += "# SPPU Previous Year Question Papers -- Index"
 $lines += ""
 $lines += "**Generated:** $timestamp"
 $lines += "**Source:** `$COMPENG_DIR`"
 $lines += "**Total PDFs:** $TOTAL_PDFS"
 $lines += ""
-$lines += "> âš ï¸ These PDFs are scanned images (no extractable text layer)."
+$lines += "> **Warning:** These PDFs are scanned images (no extractable text layer)."
 $lines += "> Use OCR (e.g., `tesseract`) via `.\scripts\process-document.ps1` for text extraction."
 $lines += ""
 $lines += "---"
@@ -162,9 +162,9 @@ if (Test-Path $syllabusDir) {
 $lines += ""
 
 $sections = @(
-  @{title="Second Year (S.E.) â€” Computer Engineering"; semesters=@("SEM 3","SEM 4"); baseDir="2 S.E."},
-  @{title="Third Year (T.E.) â€” Computer Engineering"; semesters=@("SEM 5","SEM 6"); baseDir="3 T.E."},
-  @{title="Fourth Year (B.E.) â€” Computer Engineering"; semesters=@("SEM 7","SEM 8"); baseDir="4 B.E."}
+  @{title="Second Year (S.E.) -- Computer Engineering"; semesters=@("SEM 3","SEM 4"); baseDir="2 S.E."},
+  @{title="Third Year (T.E.) -- Computer Engineering"; semesters=@("SEM 5","SEM 6"); baseDir="3 T.E."},
+  @{title="Fourth Year (B.E.) -- Computer Engineering"; semesters=@("SEM 7","SEM 8"); baseDir="4 B.E."}
 )
 
 foreach ($section in $sections) {

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Validate all SKILL.md files in skills/ (PowerShell)
 .DESCRIPTION

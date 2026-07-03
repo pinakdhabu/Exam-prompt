@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Auto Dependency Resolver
 .DESCRIPTION

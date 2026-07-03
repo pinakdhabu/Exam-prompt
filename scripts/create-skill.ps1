@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Auto-generate a new skill from template (PowerShell)
 .DESCRIPTION

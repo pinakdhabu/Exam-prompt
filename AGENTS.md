@@ -1,11 +1,4 @@
 ﻿<!-- SKILLS_TABLE_START -->
-<!-- SKILLS_TABLE_START -->
-<!-- SKILLS_TABLE_START -->
-<!-- SKILLS_TABLE_START -->
-<!-- SKILLS_TABLE_START -->
-<!-- SKILLS_TABLE_START -->
-<!-- SKILLS_TABLE_START -->
-<!-- SKILLS_TABLE_START -->
 <available_skills>
 
 <skill>
@@ -189,11 +182,5 @@
 </skill>
 
 </available_skills>
-
-
-
-
-
-
-
 <!-- SKILLS_TABLE_END -->
+

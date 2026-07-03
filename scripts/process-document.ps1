@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Convert document to text and chain to a skill (Windows)
 .DESCRIPTION
