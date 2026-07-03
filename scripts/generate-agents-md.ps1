@@ -13,6 +13,8 @@ param(
     [switch]$DryRun
 )
 
+if ($args -contains '--dry-run' -or $args -contains '-DryRun') { $DryRun = $true }
+
 $RepoRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $SkillsDir = Join-Path $RepoRoot "skills"
 $AgentsMd = Join-Path $RepoRoot "AGENTS.md"

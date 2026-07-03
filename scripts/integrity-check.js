@@ -15,6 +15,7 @@
  *        npm run integrity
  */
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
 const { execSync } = require('child_process');
 
@@ -67,19 +68,22 @@ if (skillsJson && skillsJson.skills) {
 // ─── 3. AGENTS.md freshness ───────────────────────────
 console.log('[3/6] Checking AGENTS.md freshness...');
 try {
-  execSync('bash scripts/generate-agents-md.sh --dry-run > /tmp/_agents_check 2>/dev/null', {
-    cwd: ROOT, stdio: 'pipe', shell: true,
+  const runner = path.join(ROOT, 'scripts', 'runner.js');
+  const nullDev = process.platform === 'win32' ? 'nul' : '/dev/null';
+  const cmd = 'node "' + runner + '" generate-agents-md --dry-run 2>' + nullDev;
+  const generated = execSync(cmd, {
+    cwd: ROOT, stdio: 'pipe', encoding: 'utf-8', shell: true,
   });
-  const generated = fs.readFileSync('/tmp/_agents_check', 'utf-8');
+  const lines = generated.split('\n').filter(l => !/^(WARN|INFO|ERR)/.test(l));
+  const cleanOutput = lines.join('\n').trim() + '\n';
   const current = fs.readFileSync(path.join(ROOT, 'AGENTS.md'), 'utf-8');
-  if (generated === current) {
+  if (cleanOutput === current) {
     ok('AGENTS.md is fresh');
   } else {
-    fail('AGENTS.md is stale — run: bash scripts/generate-agents-md.sh');
+    fail('AGENTS.md is stale - run: npm run generate:agents');
   }
-  try { fs.unlinkSync('/tmp/_agents_check'); } catch {}
 } catch {
-  fail('Could not verify AGENTS.md freshness (bash/python3 required)');
+  fail('Could not verify AGENTS.md freshness');
 }
 
 // ─── 4. No orphan skill dirs ──────────────────────────
@@ -165,7 +169,7 @@ const required = [
   ['noto-sans-georgian', 'NotoSansGeorgian-Regular.ttf'],
   ['noto-sans-ethiopic', 'NotoSansEthiopic-Regular.ttf'],
 ];
-let missingFonts = [];
+const missingFonts = [];
 for (const [subdir, file] of required) {
   const fp = path.join(fontsDir, subdir, file);
   if (!fs.existsSync(fp)) {
