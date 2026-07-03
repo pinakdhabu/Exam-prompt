@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SPPU Answer Sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/paper.css">
+  <link rel="stylesheet" href="/css/handwriting.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+</head>
+<body>
+  <div class="ruled-bg"></div>
+  <div class="margin-line"></div>
+
+  <div class="qno-area">
+    <div class="qno-label">Q.No.</div>
+    <div class="qno-box" contenteditable="true">1</div>
+  </div>
+
+  <div class="marks-area">
+    <table class="marks-tbl">
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="std-info">
+    <span>Name: <span class="info-ul" contenteditable="true">______________________</span></span>
+    <span style="margin-left:8mm">Roll No: <span class="info-ul" contenteditable="true">______________________</span></span>
+  </div>
+
+  <div class="content" id="editor" contenteditable="true" spellcheck="false">
+    <h1>Answer Sheet</h1>
+    <p>Start typing your answers here...</p>
+  </div>
+
+  <div class="page-controls no-print">
+    <button id="add-page" title="Add new page">+ Page</button>
+    <button id="toggle-print" title="Preview print layout">Preview</button>
+  </div>
+
+  <!-- Hidden measurement element for line-based layout -->
+  <div id="measure" aria-hidden="true"></div>
+
+  <script src="/js/config-loader.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/page-manager.js"></script>
+  <script src="/js/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+@media print {
+  body {
+    background: var(--paper) !important;
+  }
+
+  .ruled-bg,
+  .margin-line {
+    position: fixed !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page-controls {
+    display: none !important;
+  }
+}

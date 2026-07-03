@@ -1,0 +1,32 @@
+/* Handwriting font stack — display only.
+   Chromium PDF does NOT embed web fonts.
+   For PDF export use system fonts (Segoe Print, Comic Sans MS). */
+
+.font-kalam {
+  font-family: 'Kalam', sans-serif;
+}
+
+.font-patrick {
+  font-family: 'Patrick Hand', sans-serif;
+}
+
+.font-handlee {
+  font-family: 'Handlee', sans-serif;
+}
+
+/* Editor overrides for smoother typing */
+[contenteditable="true"] {
+  caret-color: var(--ink);
+}
+
+[contenteditable="true"]::selection {
+  background: rgba(103, 191, 229, 0.25);
+}
+
+/* Placeholder when empty */
+.content:empty::before {
+  content: 'Start typing your answers here...';
+  color: var(--muted);
+  font-style: italic;
+  pointer-events: none;
+}

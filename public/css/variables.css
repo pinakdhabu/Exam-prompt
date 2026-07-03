@@ -1,0 +1,71 @@
+:root {
+  --page-w: <%= config.page.width %>mm;
+  --page-h: <%= config.page.height %>mm;
+  --page-top: <%= config.page.top %>mm;
+  --page-bot: <%= config.page.bottom %>mm;
+  --page-left: <%= config.page.left %>mm;
+  --page-right: <%= config.page.right %>mm;
+
+  --writing-top: <%= config.writing.top %>mm;
+  --writing-left: <%= config.writing.left %>mm;
+  --writing-w: <%= config.writing.width %>mm;
+  --writing-h: <%= config.writing.height %>mm;
+  --header-h: <%= config.writing.headerHeight %>mm;
+
+  --line-gap: <%= config.lines.gap %>mm;
+  --line-w: <%= config.lines.thickness %>px;
+  --line-count: <%= config.lines.count %>;
+  --ink: <%= config.colors.ink %>;
+  --ruled: <%= config.colors.ruled %>;
+  --margin-color: <%= config.colors.margin %>;
+  --blue: <%= config.colors.blue %>;
+  --paper: <%= config.colors.paper %>;
+
+  --margin-x: <%= config.marginLine.x %>mm;
+  --margin-w: <%= config.marginLine.thickness %>px;
+  --margin-opacity: <%= config.marginLine.opacity %>;
+
+  --qno-x: <%= config.qno.x %>mm;
+  --qno-y: <%= config.qno.y %>mm;
+  --qbox-w: <%= config.qno.width %>mm;
+  --qbox-h: <%= config.qno.height %>mm;
+  --qbox-border: <%= config.qno.borderWidth %>px;
+  --qbox-color: <%= config.qno.borderColor %>;
+  --qno-font: <%= config.qno.fontSize %>pt;
+  --qno-label-font: <%= config.qno.labelFontSize %>pt;
+  --qno-label-color: <%= config.qno.labelColor %>;
+
+  --marks-y: <%= config.marks.y %>mm;
+  --marks-w: <%= config.marks.width %>mm;
+  --marks-border: <%= config.marks.borderWidth %>px;
+  --marks-color: <%= config.marks.borderColor %>;
+  --marks-cell-h: <%= config.marks.cellHeight %>mm;
+
+  --info-font: <%= config.studentInfo.fontSize %>pt;
+  --info-color: <%= config.studentInfo.labelColor %>;
+  --info-underline: <%= config.studentInfo.underlineColor %>;
+  --info-underline-font: <%= config.studentInfo.underlineFontSize %>pt;
+
+  --font-family: <%= config.font.family %>;
+  --font-size: <%= config.font.size %>px;
+  --line-h: <%= config.font.lineHeight %>px;
+  --word-spacing: <%= config.font.wordSpacing %>px;
+
+  --code-bg: <%= config.colors.codeBg %>;
+  --pre-bg: <%= config.colors.preBg %>;
+  --border-light: <%= config.colors.borderLight %>;
+  --muted: <%= config.colors.muted %>;
+  --subtle: <%= config.colors.subtle %>;
+  --header-bg: <%= config.colors.headerBg %>;
+
+  --sp-h1: <%= config.spacing.h1MarginTop %>mm;
+  --sp-h2: <%= config.spacing.h2MarginTop %>mm;
+  --sp-h3: <%= config.spacing.h3MarginTop %>mm;
+  --sp-list: <%= config.spacing.listMarginLeft %>mm;
+  --sp-table-y: <%= config.spacing.tableMarginY %>mm;
+  --sp-bq-left: <%= config.spacing.blockquoteMarginLeft %>mm;
+  --sp-bq-px: <%= config.spacing.blockquotePaddingX %>mm;
+  --sp-hr-y: <%= config.spacing.hrMarginY %>mm;
+  --sp-pre-y: <%= config.spacing.preMarginY %>mm;
+  --sp-diagram-y: <%= config.spacing.diagramMarginY %>mm;
+}
