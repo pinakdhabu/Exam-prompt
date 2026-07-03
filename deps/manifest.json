@@ -1,264 +1,262 @@
-{
-  "manifest_version": "1.0.0",
-  "generated": "2026-06-22T11:04:49Z",
-  "project": "Exam Prompt \u2014 Universal Exam Preparation System",
-  "platform": {
-    "os": "linux",
-    "distro": "arch",
-    "package_manager": "pacman"
-  },
-  "runtimes": {
-    "node": ">=18.0.0",
-    "python": ">=3.9"
-  },
-  "dependencies": {
-    "system_tools": [
-      {
-        "tool": "node",
-        "installed": true,
-        "purpose": "npm scripts, PDF conversion, QP fetching",
-        "required": true,
-        "install_command": "nodejs"
-      },
-      {
-        "tool": "npm",
-        "installed": true,
-        "purpose": "Node package manager",
-        "required": true,
-        "install_command": "npm"
-      },
-      {
-        "tool": "python3",
-        "installed": true,
-        "purpose": "OCR pipeline, PDF extraction, doc conversion",
-        "required": false,
-        "install_command": "python3"
-      },
-      {
-        "tool": "pdftotext",
-        "installed": true,
-        "purpose": "PDF text extraction",
-        "required": false,
-        "install_command": "poppler-utils"
-      },
-      {
-        "tool": "tesseract",
-        "installed": true,
-        "purpose": "OCR for scanned PDFs",
-        "required": false,
-        "install_command": "tesseract-ocr"
-      },
-      {
-        "tool": "pandoc",
-        "installed": true,
-        "purpose": "Document format conversion",
-        "required": false,
-        "install_command": "pandoc"
-      },
-      {
-        "tool": "d2",
-        "installed": true,
-        "purpose": "Architecture diagram rendering",
-        "required": false,
-        "install_command": "curl -fsSL https://d2lang.com/install.sh | sh"
-      },
-      {
-        "tool": "git",
-        "installed": true,
-        "purpose": "Version control",
-        "required": true,
-        "install_command": "git"
-      },
-      {
-        "tool": "gh",
-        "installed": true,
-        "purpose": "GitHub CLI for workflow + PR management",
-        "required": false,
-        "install_command": "gh"
-      }
-    ],
-    "npm_packages": [
-      {
-        "name": "marked",
-        "version": "^15.0.12",
-        "type": ""
-      },
-      {
-        "name": "marked-katex-extension",
-        "version": "^5.1.10",
-        "type": ""
-      },
-      {
-        "name": "mermaid",
-        "version": "^11.15.0",
-        "type": ""
-      },
-      {
-        "name": "pino",
-        "version": "^10.3.1",
-        "type": ""
-      },
-      {
-        "name": "pino-pretty",
-        "version": "^13.1.3",
-        "type": ""
-      },
-      {
-        "name": "playwright",
-        "version": "^1.61.0",
-        "type": ""
-      },
-      {
-        "name": "eslint",
-        "version": "^8.56.0",
-        "type": "dev"
-      },
-      {
-        "name": "prettier",
-        "version": "^3.0.0",
-        "type": "dev"
-      }
-    ],
-    "python_packages": [
-      {
-        "name": "markdown",
-        "version": ">=3.6",
-        "required": true,
-        "installed": true
-      },
-      {
-        "name": "weasyprint",
-        "version": ">=62.0",
-        "required": true,
-        "installed": true
-      },
-      {
-        "name": "PyPDF2",
-        "version": ">=3.0",
-        "required": true,
-        "installed": true
-      },
-      {
-        "name": "pypdf",
-        "version": ">=4.0  # fallback for PyPDF2",
-        "required": true,
-        "installed": true
-      },
-      {
-        "name": "python-docx",
-        "version": ">=1.1.0  # DOCX reading",
-        "required": true,
-        "installed": true
-      },
-      {
-        "name": "pytesseract",
-        "version": ">=0.3.10 # tesseract OCR Python wrapper",
-        "required": true,
-        "installed": true
-      },
-      {
-        "name": "Pillow",
-        "version": ">=10.0        # image processing",
-        "required": true,
-        "installed": true
-      },
-      {
-        "name": "opencv-python",
-        "version": ">=4.9.0  # advanced image processing (optional)",
-        "required": true,
-        "installed": false
-      }
-    ]
-  },
-  "agent_configs": [
-    {
-      "file": "AGENTS.md",
-      "agent": "universal",
-      "purpose": "Skill discovery for all AI agents",
-      "present": true
-    },
-    {
-      "file": "AGENT-GUIDE.md",
-      "agent": "universal",
-      "purpose": "Universal agent instructions with 30 skills table",
-      "present": true
-    },
-    {
-      "file": "CLAUDE.md",
-      "agent": "claude-code",
-      "purpose": "Claude Code project instructions",
-      "present": true
-    },
-    {
-      "file": ".claude/settings.json",
-      "agent": "claude-code",
-      "purpose": "Claude Code project settings",
-      "present": true
-    },
-    {
-      "file": ".cursor/rules/000-global.mdc",
-      "agent": "cursor",
-      "purpose": "Cursor global rules",
-      "present": true
-    },
-    {
-      "file": ".aider.conf.yml",
-      "agent": "aider",
-      "purpose": "Aider configuration",
-      "present": true
-    },
-    {
-      "file": ".clinerules",
-      "agent": "cline",
-      "purpose": "Cline project rules",
-      "present": true
-    },
-    {
-      "file": "cline_docs/progress.md",
-      "agent": "cline",
-      "purpose": "Cline memory bank",
-      "present": true
-    },
-    {
-      "file": ".github/copilot-instructions.md",
-      "agent": "copilot",
-      "purpose": "GitHub Copilot instructions",
-      "present": true
-    },
-    {
-      "file": ".continue/config.yaml",
-      "agent": "continue",
-      "purpose": "Continue.dev configuration",
-      "present": true
-    },
-    {
-      "file": ".devcontainer/devcontainer.json",
-      "agent": "codespaces",
-      "purpose": "One-click Codespaces setup",
-      "present": true
-    }
-  ],
-  "scripts": {
-    "resolver": "bash deps/resolve.sh",
-    "setup": "bash scripts/setup.sh",
-    "check_deps": "bash scripts/check-deps.sh",
-    "install_skills": "bash scripts/install.sh"
-  },
-  "skills_count": 30,
-  "sample_papers_count": 96,
-  "install_commands": {
-    "all": "bash scripts/setup.sh",
-    "node_only": "bash scripts/setup.sh --node-only",
-    "check_only": "bash scripts/setup.sh --check",
-    "quick": "npm install && pip install -r requirements.txt 2>/dev/null || true",
-    "skills": "bash scripts/install.sh"
-  },
-  "summary": {
-    "total_deps": 9,
-    "installed": 9,
-    "missing": 0,
-    "required_deps": 3,
-    "missing_required": 0,
-    "health": "good"
-  }
+﻿{
+    "scripts":  {
+                    "check_deps":  ".\\scripts\\check-deps.ps1",
+                    "setup":  ".\\scripts\\setup.ps1",
+                    "install_skills":  ".\\scripts\\install.ps1",
+                    "resolver":  ".\\deps\\resolve.ps1"
+                },
+    "summary":  {
+                    "missing_required":  0,
+                    "installed":  4,
+                    "required_deps":  3,
+                    "total_deps":  8,
+                    "health":  "good",
+                    "missing":  4
+                },
+    "sample_papers_count":  97,
+    "runtimes":  {
+                     "python":  "\u003e=3.9",
+                     "node":  "\u003e=18.0.0"
+                 },
+    "manifest_version":  "1.0.0",
+    "skills_count":  30,
+    "project":  "Exam Prompt - Universal Exam Preparation System",
+    "dependencies":  {
+                         "system_tools":  [
+                                              {
+                                                  "install_command":  "winget install OpenJS.NodeJS.LTS",
+                                                  "purpose":  "npm scripts, PDF conversion",
+                                                  "tool":  "node",
+                                                  "installed":  true,
+                                                  "required":  true
+                                              },
+                                              {
+                                                  "install_command":  "winget install npm",
+                                                  "purpose":  "Node package manager",
+                                                  "tool":  "npm",
+                                                  "installed":  true,
+                                                  "required":  true
+                                              },
+                                              {
+                                                  "install_command":  "winget install Python.Python.3.12",
+                                                  "purpose":  "OCR pipeline, PDF extraction",
+                                                  "tool":  "python3",
+                                                  "installed":  true,
+                                                  "required":  false
+                                              },
+                                              {
+                                                  "install_command":  "winget install Poppler.Poppler",
+                                                  "purpose":  "PDF text extraction",
+                                                  "tool":  "pdftotext",
+                                                  "installed":  false,
+                                                  "required":  false
+                                              },
+                                              {
+                                                  "install_command":  "winget install UB-Mannheim.TesseractOCR",
+                                                  "purpose":  "OCR for scanned PDFs",
+                                                  "tool":  "tesseract",
+                                                  "installed":  false,
+                                                  "required":  false
+                                              },
+                                              {
+                                                  "install_command":  "winget install JohnMacFarlane.Pandoc",
+                                                  "purpose":  "Document format conversion",
+                                                  "tool":  "pandoc",
+                                                  "installed":  false,
+                                                  "required":  false
+                                              },
+                                              {
+                                                  "install_command":  "winget install Git.Git",
+                                                  "purpose":  "Version control",
+                                                  "tool":  "git",
+                                                  "installed":  true,
+                                                  "required":  true
+                                              },
+                                              {
+                                                  "install_command":  "winget install GitHub.cli",
+                                                  "purpose":  "GitHub CLI",
+                                                  "tool":  "gh",
+                                                  "installed":  false,
+                                                  "required":  false
+                                              }
+                                          ],
+                         "npm_packages":  [
+                                              {
+                                                  "name":  "ajv",
+                                                  "version":  "^8.20.0",
+                                                  "type":  ""
+                                              },
+                                              {
+                                                  "name":  "marked",
+                                                  "version":  "^15.0.12",
+                                                  "type":  ""
+                                              },
+                                              {
+                                                  "name":  "marked-katex-extension",
+                                                  "version":  "^5.1.10",
+                                                  "type":  ""
+                                              },
+                                              {
+                                                  "name":  "mermaid",
+                                                  "version":  "^11.15.0",
+                                                  "type":  ""
+                                              },
+                                              {
+                                                  "name":  "pino",
+                                                  "version":  "^10.3.1",
+                                                  "type":  ""
+                                              },
+                                              {
+                                                  "name":  "pino-pretty",
+                                                  "version":  "^13.1.3",
+                                                  "type":  ""
+                                              },
+                                              {
+                                                  "name":  "playwright",
+                                                  "version":  "^1.61.0",
+                                                  "type":  ""
+                                              },
+                                              {
+                                                  "name":  "eslint",
+                                                  "version":  "^8.56.0",
+                                                  "type":  "dev"
+                                              },
+                                              {
+                                                  "name":  "prettier",
+                                                  "version":  "^3.0.0",
+                                                  "type":  "dev"
+                                              }
+                                          ],
+                         "python_packages":  [
+                                                 {
+                                                     "name":  "markdown",
+                                                     "version":  "\u003e=3.6",
+                                                     "installed":  true,
+                                                     "required":  true
+                                                 },
+                                                 {
+                                                     "name":  "weasyprint",
+                                                     "version":  "\u003e=62.0",
+                                                     "installed":  false,
+                                                     "required":  true
+                                                 },
+                                                 {
+                                                     "name":  "PyPDF2",
+                                                     "version":  "\u003e=3.0",
+                                                     "installed":  true,
+                                                     "required":  true
+                                                 },
+                                                 {
+                                                     "name":  "pypdf",
+                                                     "version":  "\u003e=4.0  # fallback for PyPDF2",
+                                                     "installed":  true,
+                                                     "required":  true
+                                                 },
+                                                 {
+                                                     "name":  "python-docx",
+                                                     "version":  "\u003e=1.1.0  # DOCX reading",
+                                                     "installed":  true,
+                                                     "required":  true
+                                                 },
+                                                 {
+                                                     "name":  "pytesseract",
+                                                     "version":  "\u003e=0.3.10 # tesseract OCR Python wrapper",
+                                                     "installed":  true,
+                                                     "required":  true
+                                                 },
+                                                 {
+                                                     "name":  "Pillow",
+                                                     "version":  "\u003e=10.0        # image processing",
+                                                     "installed":  true,
+                                                     "required":  true
+                                                 },
+                                                 {
+                                                     "name":  "opencv-python",
+                                                     "version":  "\u003e=4.9.0  # advanced image processing (optional)",
+                                                     "installed":  true,
+                                                     "required":  true
+                                                 }
+                                             ]
+                     },
+    "agent_configs":  [
+                          {
+                              "agent":  "universal",
+                              "purpose":  "Skill discovery",
+                              "file":  "AGENTS.md",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "universal",
+                              "purpose":  "Agent instructions",
+                              "file":  "AGENT-GUIDE.md",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "claude-code",
+                              "purpose":  "Claude Code instructions",
+                              "file":  "CLAUDE.md",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "claude-code",
+                              "purpose":  "Claude Code settings",
+                              "file":  ".claude/settings.json",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "cursor",
+                              "purpose":  "Cursor global rules",
+                              "file":  ".cursor/rules/000-global.mdc",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "aider",
+                              "purpose":  "Aider config",
+                              "file":  ".aider.conf.yml",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "cline",
+                              "purpose":  "Cline rules",
+                              "file":  ".clinerules",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "cline",
+                              "purpose":  "Cline memory bank",
+                              "file":  "cline_docs/progress.md",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "copilot",
+                              "purpose":  "Copilot instructions",
+                              "file":  ".github/copilot-instructions.md",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "continue",
+                              "purpose":  "Continue.dev config",
+                              "file":  ".continue/config.yaml",
+                              "present":  true
+                          },
+                          {
+                              "agent":  "codespaces",
+                              "purpose":  "Codespaces setup",
+                              "file":  ".devcontainer/devcontainer.json",
+                              "present":  true
+                          }
+                      ],
+    "generated":  "2026-07-03T14:55:24Z",
+    "install_commands":  {
+                             "node_only":  ".\\scripts\\setup.ps1 --node-only",
+                             "quick":  "npm install; pip install -r requirements.txt",
+                             "all":  ".\\scripts\\setup.ps1",
+                             "check_only":  ".\\scripts\\setup.ps1 --check",
+                             "skills":  ".\\scripts\\install.ps1"
+                         },
+    "platform":  {
+                     "distro":  "N/A",
+                     "package_manager":  "winget",
+                     "os":  "windows"
+                 }
 }
