@@ -3,11 +3,14 @@
 ## Unit 1: Introduction to Databases
 
 ### What is a DBMS?
-A **Database Management System (DBMS)** is software that manages, stores, retrieves, and manipulates data efficiently.
+
+A **Database Management System (DBMS)** is software that manages, stores, retrieves, and manipulates
+data efficiently.
 
 > "A DBMS serves as an interface between the user and the database."
 
 ### Key Characteristics
+
 - **Data Independence** — Separation of data and programs
 - **Data Integrity** — Accuracy and consistency of data
 - **Security** — Access control mechanisms
@@ -15,18 +18,20 @@ A **Database Management System (DBMS)** is software that manages, stores, retrie
 - **Backup & Recovery** — Crash recovery mechanisms
 
 ### Three-Schema Architecture
+
 1. **Physical Level** — How data is stored (blocks, pages)
 2. **Conceptual Level** — What data is stored (tables, relationships)
 3. **External Level** — How users view data (views)
 
 ### Important Terminologies
-| Term | Definition |
-|------|------------|
-| **Tuple** | A single row in a table |
-| **Attribute** | A column in a table |
-| **Domain** | Set of allowed values for an attribute |
-| **Cardinality** | Number of tuples in a relation |
-| **Degree** | Number of attributes in a relation |
+
+| Term            | Definition                             |
+| --------------- | -------------------------------------- |
+| **Tuple**       | A single row in a table                |
+| **Attribute**   | A column in a table                    |
+| **Domain**      | Set of allowed values for an attribute |
+| **Cardinality** | Number of tuples in a relation         |
+| **Degree**      | Number of attributes in a relation     |
 
 ---
 
@@ -35,6 +40,7 @@ A **Database Management System (DBMS)** is software that manages, stores, retrie
 ### Relational Algebra Operations
 
 **Basic Operations:**
+
 1. **Select (σ)** — Filter rows `σsalary > 50000(Employee)`
 2. **Project (π)** — Select columns `πname, salary(Employee)`
 3. **Union (U)** — Combine two relations
@@ -42,10 +48,12 @@ A **Database Management System (DBMS)** is software that manages, stores, retrie
 5. **Cartesian Product (X)** — Combine all pairs
 
 **Additional Operations:**
+
 - **Join (⨝)** — Combine related tuples
 - **Division (÷)** — "All" queries
 
 ### SQL Example
+
 ```sql
 SELECT e.name, d.dept_name
 FROM Employee e
@@ -59,9 +67,11 @@ ORDER BY e.name;
 ## Unit 3: Normalization
 
 ### Functional Dependencies
+
 **Definition:** X → Y means "X functionally determines Y"
 
 ### Normal Forms
+
 1. **1NF** — Atomic values only
 2. **2NF** — 1NF + No partial dependency on candidate key
 3. **3NF** — 2NF + No transitive dependency
