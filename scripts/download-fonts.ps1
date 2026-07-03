@@ -85,12 +85,17 @@ foreach ($f in @("OpenDyslexic3-Regular.ttf", "OpenDyslexic3-Bold.ttf", "OpenDys
   Download-Font -DirName "opendyslexic" -FileName $f -Url $url
 }
 
-Write-Host "[5/6] Handwriting fonts (Klee, Patrick Hand)..."
+Write-Host "[5/6] Handwriting fonts (Klee, Patrick Hand, Kalam, Caveat)..."
 foreach ($f in @("Klee-Regular.ttf", "Klee-Bold.ttf", "Klee-SemiBold.ttf")) {
   $url = "https://github.com/fontworks-fonts/Klee/raw/master/fonts/ttf/$f"
   Download-Font -DirName "klee" -FileName $f -Url $url
 }
 Download-GoogleFont -DirName "patrickhand" -FileName "PatrickHand-Regular.ttf"
+Download-GoogleFont -DirName "kalam" -FileName "Kalam-Regular.ttf"
+Download-GoogleFont -DirName "kalam" -FileName "Kalam-Bold.ttf"
+Download-GoogleFont -DirName "kalam" -FileName "Kalam-Light.ttf"
+$caveatUrl = "https://github.com/google/fonts/raw/main/ofl/caveat/Caveat%5Bwght%5D.ttf"
+Download-Font -DirName "caveat" -FileName "Caveat-Variable.ttf" -Url $caveatUrl
 
 Write-Host "[6/6] Chilanka (Malayalam handwriting)..."
 Download-Font -DirName "chilanka" -FileName "Chilanka-Regular.ttf" -Url "https://smc.org.in/downloads/fonts/chilanka/Chilanka-Regular.ttf"
